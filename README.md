@@ -111,7 +111,6 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   - [releases](https://github.com/trunkslamchest/spacebar_smasher/tree/master/releases): Collection of legacy builds
   - [src](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src): Root Frontend
     - [assets](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/assets): Art Assets
-    - [css](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/css): CSS stylesheets
     - [game](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/game): Core Gameplay Loop
     - [index](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/index): Index Page Functionality
     - [UI](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/UI): Various UI elements & components

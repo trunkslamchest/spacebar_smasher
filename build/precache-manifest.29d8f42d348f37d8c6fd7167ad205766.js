@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b7a750032b8a9017fd5fdfec510d3f2f",
+    "revision": "0fead013d37a26dfdf81caacbf593059",
     "url": "/spacebarsmasher/index.html"
   },
   {
-    "revision": "eb52cfbf5a54c9790f6a",
-    "url": "/spacebarsmasher/static/css/main.95792370.chunk.css"
+    "revision": "5cdc2894361d419731eb",
+    "url": "/spacebarsmasher/static/css/main.bc5a02d4.chunk.css"
   },
   {
     "revision": "dda6912519a9c9f8c52a",
@@ -16,16 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spacebarsmasher/static/js/2.638b01b8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "eb52cfbf5a54c9790f6a",
-    "url": "/spacebarsmasher/static/js/main.cfd1aa11.chunk.js"
+    "revision": "5cdc2894361d419731eb",
+    "url": "/spacebarsmasher/static/js/main.91ebf4d0.chunk.js"
   },
   {
     "revision": "32f9b653930c088534a2",
     "url": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js"
-  },
-  {
-    "revision": "3c89649614630d9bf36deb57c9a599a8",
-    "url": "/spacebarsmasher/static/media/Helvetica.3c896496.otf"
   },
   {
     "revision": "15a150cac2fe0527216db502a5e63cba",
