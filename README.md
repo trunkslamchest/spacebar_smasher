@@ -37,7 +37,7 @@
 # Introduction
   ### Description
 Spacebar Smasher is an interactive game where a player tries to press the spacebar as many times as possible in 30 seconds, after which they can submit their score and name to a leaderboard, which is then persisted throughout the application.
-  
+
   ### Key Features
   - Competitive gameplay designed to encourage competition
   - Single Page Single Interaction Application
@@ -45,10 +45,10 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   - Logging of player scores
   - Power Meter that fluctuates based on repetitions per keypress
   - Fun for the whole family
-  
+
   ### Goals
   The two main goals of the project is to develop a Single Page Single Interaction Application, as well as to test my abilites to create as much engagement from a user with as little interaction as possible.
-  
+
   ### Challenges
   - Develop the majority of the application within 10 days
   - Work together with a single team member to make sure all deliverables were met and no overlaps in workflow occured
@@ -57,7 +57,7 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   - Refactor the application to utilize React.js instead of vanilla Javascript
   - Refactor the application to utilize Firebase instead of Ruby on Rails
   - Deployment to a 3rd part webhost
-  
+
 &nbsp;
 
 <a href="https://github.com/trunkslamchest/spacebar_smasher/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
@@ -89,10 +89,10 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   ### Local Installation
   - [Clone the most recent branch](https://github.com/trunkslamchest/spacebar_smasher)
   - Run `npm install` in your bash-enabled terminal to make sure all dependancies are installed
-  - Replace fetch request URL's with the appropriate Firebase URLs after you have setup your project on firebase 
+  - Replace fetch request URL's with the appropriate Firebase URLs after you have setup your project on firebase
   - Run `npm start` to locally initalize React on port 3000
-    - You can now access Frontend of Spacebar Smasher by visiting: `http://localhost:3000` 
- 
+    - You can now access Frontend of Spacebar Smasher by visiting: `http://localhost:3000`
+
    Thats it! Have fun breaking/fixing/doing whatever you want with Spacebar Smasher. The world is your oyster!
 
   **If you have recieved any errors during this process, feel free to contact me so I can help you and update this readme accordingly**

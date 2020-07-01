@@ -12,7 +12,7 @@ html, body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-family:  "Lato", "Roboto", "Digital-7 Mono", "Audiowide", "Staatliches", sans-serif;
+  font-family: "Roboto", "Digital-7 Mono", "Saira Stencil One", "Audiowide", "Staatliches", sans-serif;
     background-image: url(assets/bg_01.jpg);
     background-repeat:no-repeat;
     background-position: center center;

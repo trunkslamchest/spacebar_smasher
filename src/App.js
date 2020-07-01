@@ -3,12 +3,12 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
 import Home from './index/Home'
-import Footer from './Footer'
+import Footer from './UI/Footer'
 
 import Countdown from './game/Countdown'
 import PostGameScoreContainer from './game/PostGameScoreContainer'
 
-import Error from './Error'
+import E404 from './error/404'
 
 import './App.css'
 import './css/Response.css'
@@ -47,7 +47,7 @@ export default class App extends React.Component {
                 player={ this.state.player }
               />
             </Route>
-            <Route component={ Error } />
+            <Route component={ E404 } />
           </Switch>
         </div>
         <div className="footer_container">
