@@ -62,7 +62,7 @@ export default class Home extends React.Component {
       </>
 
     const home_page =
-      <div className="home_wrapper">
+      <>
         <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
           <h3>SPACEBAR SMASHER</h3>
         </div>
@@ -79,7 +79,7 @@ export default class Home extends React.Component {
           </button>
         </div>
         { scoreboard_table }
-      </div>
+      </>
 
     return(
       <>

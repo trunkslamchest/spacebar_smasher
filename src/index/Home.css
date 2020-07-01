@@ -1,6 +1,7 @@
 .home_wrapper {
   padding-bottom: 50px;
   padding-top: calc(5px + (10 - 5) * ((100vh - 434px) / (779 - 434)));
+  min-height: 50vh;
 }
 
 .home_header {
@@ -21,7 +22,7 @@
   width: calc(375px + (1000 - 375) * ((100vw - 500px) / (1920 - 500)));
 }
 
-.home_wrapper h3, .dismount_home_wrapper h3 {
+.home_header h3, .dismount_home_header h3 {
   animation: fade_in 1s ease-in-out 1, slide_in_from_left_title_text .5s ease-in-out 1;
   color: yellow;
   font-family: "Saira Stencil One";
@@ -66,7 +67,7 @@
   z-index: 2;
 }
 
-.home_wrapper h4 {
+.home_scoreboard_header h4 {
   text-align: center;
   font-family: "Audiowide";
   font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));

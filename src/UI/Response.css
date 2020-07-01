@@ -1,11 +1,11 @@
 
 /* @viewport { min-height: 100vh; min-width: 100vw } */
 
-@media screen and (min-height: 948px) {
+/* @media screen and (min-height: 948px) {
   html, body {
     overflow: hidden;
   }
-}
+} */
 
 @media only screen and (max-width: 750px) {
 

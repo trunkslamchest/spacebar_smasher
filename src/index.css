@@ -1,5 +1,14 @@
 @import url('./UI/Fonts.css');
 
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
 * {
   margin: 0;
   text-rendering: optimizeLegibility
@@ -7,7 +16,8 @@
 
 html, body {
   height: 100%;
-
+/* 
+  overflow: scroll; */
   overflow-x: hidden;
   margin: 0;
   display: flex;

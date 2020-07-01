@@ -8,7 +8,7 @@ export default class Game extends React.Component {
 
   state = {
     display: 'game',
-    time: 3.01,
+    time: (30.00).toFixed(2),
     count: 0,
     rank: "SUPER BABY FINGERS",
     power: 0,
@@ -100,7 +100,7 @@ export default class Game extends React.Component {
   resetGame = () => {
     this.setState({
       display: 'game',
-      time: (3.00).toFixed(2),
+      time: (30.00).toFixed(2),
       count: 0,
       rank: "SUPER BABY FINGERS",
       power: 0,
@@ -148,8 +148,7 @@ export default class Game extends React.Component {
     const power = <h1>{ (this.state.power).toFixed(3) }</h1>
 
     const game =
-      <div className="game_wrapper">
-
+      <>
         <div className={{
               false: "blank",
               true: this.state.initDismount ? "dismount_game_timer" : "game_timer"
@@ -191,8 +190,7 @@ export default class Game extends React.Component {
           </div>
 
         </div>
-
-      </div>
+      </>
 
     return(
       <>

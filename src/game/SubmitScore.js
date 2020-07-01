@@ -148,7 +148,7 @@ export default class SubmitScore extends React.Component {
     const rank = <h1>{ this.props.rank }</h1>
 
     const submit_score =
-      <div className="submit_score_wrapper">
+      <>
         <div className={{
               false: "blank",
               true: this.state.initDismount ? "dismount_submit_score_header" : "submit_score_header"
@@ -246,8 +246,7 @@ export default class SubmitScore extends React.Component {
             Try Again
           </Link>
         </div>
-
-      </div>
+      </>
 
     return(
       <>

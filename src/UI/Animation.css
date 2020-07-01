@@ -267,7 +267,7 @@
 @keyframes slide_in_from_left
   {
     0% {
-      transform: translateX(-250px);
+      transform: translateX(-500px);
     }
     100% {
       transform: translateY(0px);
@@ -277,7 +277,7 @@
 @keyframes slide_in_from_right
   {
     0% {
-      transform: translateX(250px);
+      transform: translateX(500px);
     }
     100% {
       transform: translateY(0px);

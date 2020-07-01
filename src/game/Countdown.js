@@ -8,7 +8,7 @@ export default class Countdown extends React.Component {
 
   state = {
     display: 'countdown',
-    time: 1,
+    time: 5,
     showHeader: false,
     showTimer: false,
     showGo: false,
@@ -42,7 +42,8 @@ export default class Countdown extends React.Component {
         showTimer: false,
         showGo: true,
       }, clearInterval(this.timerInterval))
-    } else this.setState({ time: (this.state.time - 1) })
+    }
+    else this.setState({ time: (this.state.time - 1) })
   }
 
   onDismount = () => {
@@ -69,7 +70,7 @@ export default class Countdown extends React.Component {
     const countdown_tutorial = <p>Press the spacebar as many times as you can in 30 seconds!</p>
 
     const countdown =
-      <div className={ this.state.display === "countdown" ? "countdown_wrapper": "blank" }>
+      <>
         <div className={{
               true: this.state.initDismount ? "dismount_countdown_header" : "countdown_header",
               false: "blank"
@@ -100,7 +101,7 @@ export default class Countdown extends React.Component {
           >
             { this.state.showTutorial ? countdown_tutorial : blank }
           </div>
-        </div>
+        </>
 
     return(
       <>

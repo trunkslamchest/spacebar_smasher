@@ -28,24 +28,26 @@ export default class App extends React.Component {
     return (
       <>
         <div className="main_container">
-          <Switch>
-            <Route exact path='/spacebarsmasher'>
-              <Home
-                player={ this.state.player }
-              />
-            </Route>
-            <Route exact path='/spacebarsmasher/game'>
-              <Countdown
-                getPlayer={ this.getPlayer }
-              />
-            </Route>
-            <Route exact path='/spacebarsmasher/scoreboard'>
-              <PostGameScoreContainer
-                player={ this.state.player }
-              />
-            </Route>
-            <Route component={ E404 } />
-          </Switch>
+          <div className="wrapper">
+            <Switch>
+              <Route exact path='/spacebarsmasher'>
+                <Home
+                  player={ this.state.player }
+                />
+              </Route>
+              <Route exact path='/spacebarsmasher/game'>
+                <Countdown
+                  getPlayer={ this.getPlayer }
+                />
+              </Route>
+              <Route exact path='/spacebarsmasher/scoreboard'>
+                <PostGameScoreContainer
+                  player={ this.state.player }
+                />
+              </Route>
+              <Route component={ E404 } />
+            </Switch>
+          </div>
         </div>
         <div className="footer_container">
           <Footer/>
