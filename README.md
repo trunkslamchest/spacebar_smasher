@@ -3,20 +3,18 @@
 
 <p align="center">
   <img align="center" src="https://img.shields.io/badge/CSS-3.0-1572B6">
+  <img align="center" src="https://img.shields.io/badge/Firebase-7.15.5-F57C00">
   <img align="center" src="https://img.shields.io/badge/HTML-5.2-E34F26">
   <img align="center" src="https://img.shields.io/badge/Javascript-1.8.5-F7DF1E">
-  <img align="center" src="https://img.shields.io/badge/Postgresql-12.1-336791">
   <img align="center" src="https://img.shields.io/badge/React.JS-16.13.1-61DAFB">
-  <img align="center" src="https://img.shields.io/badge/Ruby-2.6.5-CC342D">
-  <img align="center" src="https://img.shields.io/badge/Ruby%20On%20Rails-6.0.3.2-cc0600">
 </p>
 
 <p align="center">
-  <a href="https://github.com/trunkslamchest/mod3_project/tree/frontend-0.32"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.35-000000"></a>
+  <a href="http://trunkslamchest.com/spacebarsmasher/"><img align="center" src="https://img.shields.io/badge/Current%20Deployment-Link-000000"></a>
 </p>
 
 <p align="center">
-  <img align="center" src="https://img.shields.io/badge/Status-Work%20In%20Progress-000000">
+  <a href="https://github.com/trunkslamchest/mod3_project/tree/frontend-0.35"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.35-000000"></a>
 </p>
 
 # Contents
@@ -62,7 +60,7 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   
 &nbsp;
 
-<a href="https://github.com/trunkslamchest/mod3_project/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
+<a href="https://github.com/trunkslamchest/spacebar_smasher/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
 
 &nbsp;
 
@@ -76,7 +74,7 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
 
 &nbsp;
 
-<a href="https://github.com/trunkslamchest/mod5_project_backend/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
+<a href="https://github.com/trunkslamchest/spacebar_smasher/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
 
 &nbsp;
 
@@ -107,21 +105,21 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
 
 # Summary Of Files
   ### Internal File Structure
-    - [build](): Most recent deployable build
-    - [functions](): Firebase Cloud Functions
-    - [public](https://github.com/trunkslamchest/mod3_project/tree/frontend-0.31/public): Various Assets for General Purposes
-    - [src](https://github.com/trunkslamchest/mod3_project/tree/frontend-0.31/src): Root Frontend
-      - [assets](https://github.com/trunkslamchest/mod3_project/tree/frontend-0.31/src/assets): Art Assets
-      - [css](https://github.com/trunkslamchest/mod3_project/tree/frontend-0.31/src/css): CSS stylesheets
-      - [game](https://github.com/trunkslamchest/mod3_project/tree/frontend-0.31/src/game): Core Gameplay Loop
-      - [index](https://github.com/trunkslamchest/mod3_project/tree/frontend-0.31/src/index): Index Page Functionality
-      - [UI](): Various UI elements & components
-      - [utility](): Abstraction libraries
-    - [package.json](https://github.com/trunkslamchest/mod3_project/blob/frontend-0.31/package.json): Modules & Dependencies
+  - [build](https://github.com/trunkslamchest/spacebar_smasher/tree/master/build): Most recent deployable build
+  - [functions](https://github.com/trunkslamchest/spacebar_smasher/tree/master/functions): Firebase Cloud Functions
+  - [public](https://github.com/trunkslamchest/spacebar_smasher/tree/master/public): Various Assets for General Purposes
+  - [src](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src): Root Frontend
+    - [assets](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/assets): Art Assets
+    - [css](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/css): CSS stylesheets
+    - [game](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/game): Core Gameplay Loop
+    - [index](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/index): Index Page Functionality
+    - [UI](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/UI): Various UI elements & components
+    - [utility](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/utility): Abstraction libraries
+  - [package.json](https://github.com/trunkslamchest/spacebar_smasher/blob/master/package.json): Modules & Dependencies
 
 &nbsp;
 
-<a href="https://github.com/trunkslamchest/mod3_project/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
+<a href="https://github.com/trunkslamchest/spacebar_smasher/blob/master/README.md#contents"><img src="https://img.shields.io/badge/^-Back%20To%20Top-000000"></a>
 
 &nbsp;
 
