@@ -4,6 +4,7 @@ import './Footer.css'
 
 import firebase_logo from '../assets/footer_logo_firebase.png'
 import flatiron_logo from '../assets/footer_logo_flatiron.png'
+import github_logo from '../assets/footer_logo_github.png'
 import react_logo from '../assets/footer_logo_react.png'
 
 const Footer = (props) => {
@@ -37,6 +38,21 @@ const Footer = (props) => {
         className="logo_rectangle"
         alt="The Flatiron School"
         name="footer_flatiron_logo"
+        interaction="click"
+        onClick={ onClickFooterLinksFunctions }
+      />
+    </a>,
+    <a
+      key={"github_logo"}
+      href="https://github.com/trunkslamchest/spacebar_smasher"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        src={ github_logo }
+        className="logo_rectangle"
+        alt="Github Repository"
+        name="footer_github_logo"
         interaction="click"
         onClick={ onClickFooterLinksFunctions }
       />
