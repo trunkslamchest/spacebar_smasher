@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
-import '../css/SubmitScore.css'
+import './SubmitScore.css'
 
 export default class SubmitScore extends React.Component {
 
@@ -32,17 +32,9 @@ export default class SubmitScore extends React.Component {
     this.bottomButtonsTimeout = setTimeout(() => { this.setState({ showBottomButtons: true })}, 500)
   }
 
-  componentDidUpdate(){
-    if(this.state.updatedScoreboard && !this.state.updatedDisplay){
-      this.onDismount()
-    }
-  }
+  componentDidUpdate(){ if(this.state.updatedScoreboard && !this.state.updatedDisplay) this.onDismount() }
 
-  onSubmitScoreChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
+  onSubmitScoreChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
 
   onSubmitScoreFunctions = (event) => {
     event.persist()
@@ -85,9 +77,8 @@ export default class SubmitScore extends React.Component {
     let name = event.target[0].value.trim()
     let randomBroName = broArr[Math.floor(Math.random() * broArr.length)]
 
-    if (name === "") {
-      alert(`Enter Your Name, ${randomBroName}`)
-    } else {
+    if (name === "") alert(`Enter Your Name, ${randomBroName}`)
+    else {
       scoreboardFunctions('post', 'https://spacebarsmasher-96ba1.firebaseio.com/players.json', playerObj)
       .then((resObj) => {
         this.setState({ updatedScoreboard: true })

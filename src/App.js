@@ -11,21 +11,18 @@ import PostGameScoreContainer from './game/PostGameScoreContainer'
 import E404 from './error/E404'
 
 import './App.css'
-import './css/Response.css'
-import './css/Loading.css'
-import './css/Dismount.css'
+import './UI/Response.css'
+import './UI/Loading.css'
+import './UI/Dismount.css'
 
 export default class App extends React.Component {
 
   state = {
   }
 
-  componentDidMount(){
-  }
+  componentDidMount(){ }
 
-  getPlayer = (player) => {
-    this.setState({ player: player })
-  }
+  getPlayer = (player) => { this.setState({ player: player }) }
 
   render(){
     return (

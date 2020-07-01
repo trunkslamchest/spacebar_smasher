@@ -1,18 +1,14 @@
 import React from 'react'
 
-import '../css/Footer.css'
+import './Footer.css'
 
 import firebase_logo from '../assets/footer_logo_firebase.png'
 import flatiron_logo from '../assets/footer_logo_flatiron.png'
-// import postgres_logo from '../assets/footer_logo_postgres.png'
-// import rails_logo from '../assets/footer_logo_rails.png'
 import react_logo from '../assets/footer_logo_react.png'
 
 const Footer = (props) => {
 
-  const onClickFooterLinksFunctions = (event) => {
-
-  }
+  const onClickFooterLinksFunctions = (event) => { }
 
   const footerLogos = [
     <a

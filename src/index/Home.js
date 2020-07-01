@@ -6,8 +6,8 @@ import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import Score from './Score.js'
 
-import '../css/Home.css'
-import '../css/Scoreboard.css'
+import './Home.css'
+import '../UI/Scoreboard.css'
 import '../UI/buttons.css'
 
 export default class Home extends React.Component {
@@ -20,34 +20,16 @@ export default class Home extends React.Component {
 
   componentDidMount(){
     scoreboardFunctions('get', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players')
-    .then(resObj => {
-      this.setState({ scoreboard: Object.entries(resObj.players) })
-    })
-
-    // scoreboardFunctions('get', 'https://spacebarsmasher-96ba1.firebaseio.com/players.json')
-    // .then(resObj => {
-    //   this.setState({ scoreboard: Object.entries(resObj) })
-    // })
-    // .then(resObj => console.log(Object.entries(resObj)))
+    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
-  componentDidUpdate(){
-    if(this.state.initDismount && !this.state.dismounted){
-      this.onDismount()
-    }
-  }
+  componentDidUpdate(){ if(this.state.initDismount && !this.state.dismounted) this.onDismount() }
 
-  onClickStartButtonFunctions = (event) => {
-    this.setState({ initDismount: true})
-  }
+  onClickStartButtonFunctions = (event) => { this.setState({ initDismount: true}) }
 
-  onDismount = () => {
-    this.timerTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500)
-  }
+  onDismount = () => { this.timerTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500) }
 
-  componentWillUnmount(){
-    clearTimeout(this.timerTimeout)
-  }
+  componentWillUnmount(){ clearTimeout(this.timerTimeout) }
 
   render(){
     const scores = this.state.scoreboard.map(score =>

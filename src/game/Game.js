@@ -2,7 +2,7 @@ import React from 'react'
 
 import SubmitScore from './SubmitScore.js'
 
-import '../css/Game.css'
+import './Game.css'
 
 export default class Game extends React.Component {
 
@@ -31,9 +31,7 @@ export default class Game extends React.Component {
     this.updateSpacebarUpState = this.updateSpacebarUpState.bind(this);
   }
 
-  componentDidMount(){
-    this.startGame()
-  }
+  componentDidMount(){ this.startGame() }
 
   startGame = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
@@ -49,17 +47,13 @@ export default class Game extends React.Component {
 
   spacebarDown(event){
     event.preventDefault()
-    if(event.keyCode === 32) {
-      this.updateSpacebarDownState()
-    }
+    if(event.keyCode === 32) this.updateSpacebarDownState()
     this.getRank()
   }
 
   spacebarUp(event){
     event.preventDefault()
-    if(event.keyCode === 32) {
-      this.updateSpacebarUpState()
-    }
+    if(event.keyCode === 32) this.updateSpacebarUpState()
   }
 
   updateSpacebarDownState(){
@@ -77,51 +71,30 @@ export default class Game extends React.Component {
   }
 
   timerFunctions = () => {
-    if (this.state.time <= 0) {
-      this.setState({ time: 0.0 }, this.onDismount())
-    } else {
-      this.setState({ time: (this.state.time - 0.01).toFixed(2) })
-    }
+    if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
+    else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
   getRank = () => {
-    if (this.state.count >= 0 && this.state.count < 25) {
-      this.setState({ rank: "SUPER BABY FINGERS" })
-    } else if (this.state.count >= 25 && this.state.count < 50) {
-      this.setState({ rank: "SLOW HANDS McOLD PERSON" })
-    } else if (this.state.count >= 50 && this.state.count < 75) {
-      this.setState({ rank: "CEMENT WRISTS" })
-    } else if (this.state.count >= 75 && this.state.count < 100) {
-      this.setState({ rank: "BIG MEATY CLAWS" })
-    } else if (this.state.count >= 100 && this.state.count < 125) {
-      this.setState({ rank: "HAIRY KNUCKLES" })
-    } else if (this.state.count >= 125 && this.state.count < 150) {
-      this.setState({ rank: "EDWARD SCISSOR HANDS" })
-    } else if (this.state.count >= 150 && this.state.count < 175) {
-      this.setState({ rank: "UNTRUSTABLE ALI" })
-    } else if (this.state.count >= 175 && this.state.count < 200) {
-      this.setState({ rank: "FURIOUS TIGER" })
-    } else if (this.state.count >= 200 && this.state.count < 225) {
-      this.setState({ rank: "JACKY FENG" })
-    } else if (this.state.count >= 225 && this.state.count < 250) {
-      this.setState({ rank: "RUSSIAN SPY" })
-    } else if (this.state.count >= 250 && this.state.count < 275) {
-      this.setState({ rank: "FROG" })
-    } else if (this.state.count >= 275 && this.state.count < 300) {
-      this.setState({ rank: "SUPER FROG" })
-    }
+    if (this.state.count >= 0 && this.state.count < 25) this.setState({ rank: "SUPER BABY FINGERS" })
+    else if (this.state.count >= 25 && this.state.count < 50) this.setState({ rank: "SLOW HANDS McOLD PERSON" })
+    else if (this.state.count >= 50 && this.state.count < 75) this.setState({ rank: "CEMENT WRISTS" })
+    else if (this.state.count >= 75 && this.state.count < 100) this.setState({ rank: "BIG MEATY CLAWS" })
+    else if (this.state.count >= 100 && this.state.count < 125) this.setState({ rank: "HAIRY KNUCKLES" })
+    else if (this.state.count >= 125 && this.state.count < 150) this.setState({ rank: "EDWARD SCISSOR HANDS" })
+    else if (this.state.count >= 150 && this.state.count < 175) this.setState({ rank: "UNTRUSTABLE ALI" })
+    else if (this.state.count >= 175 && this.state.count < 200) this.setState({ rank: "FURIOUS TIGER" })
+    else if (this.state.count >= 200 && this.state.count < 225) this.setState({ rank: "JACKY FENG" })
+    else if (this.state.count >= 225 && this.state.count < 250) this.setState({ rank: "RUSSIAN SPY" })
+    else if (this.state.count >= 250 && this.state.count < 275) this.setState({ rank: "FROG" })
+    else if (this.state.count >= 275 && this.state.count < 300) this.setState({ rank: "SUPER FROG" })
   }
 
   powerFunctions = () => {
-    if (this.state.power <= 0){
-      this.setState({ power: 0 })
-    } else {
-      this.setState({ power: this.state.power - 0.003 })
-    }
+    if (this.state.power <= 0) this.setState({ power: 0 })
+    else this.setState({ power: this.state.power - 0.003 })
 
-    if (this.state.time === 0){
-      this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
-    }
+    if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
   }
 
   resetGame = () => {
@@ -163,9 +136,7 @@ export default class Game extends React.Component {
     this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
   }
 
-  componentWillUnmount(){
-    this.clearTimers()
-  }
+  componentWillUnmount(){ this.clearTimers() }
 
   render(){
 

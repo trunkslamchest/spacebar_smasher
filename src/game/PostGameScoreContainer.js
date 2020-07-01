@@ -6,7 +6,7 @@ import PostGameScore from './PostGameScore'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
-import '../css/PostGame.css'
+import './PostGame.css'
 
 export default class PostGameScoreContainer extends React.Component {
 
@@ -19,17 +19,9 @@ export default class PostGameScoreContainer extends React.Component {
     dismounted: false
   }
 
-  componentDidMount(){
-    this.setState({
-      mounted: true
-    })
-  }
+  componentDidMount(){ this.setState({ mounted: true }) }
 
-  componentDidUpdate(){
-    if(this.state.mounted && !this.state.updatedScoreboard){
-      this.getScoreboard()
-    }
-  }
+  componentDidUpdate(){ if(this.state.mounted && !this.state.updatedScoreboard) this.getScoreboard() }
 
   getScoreboard(){
     scoreboardFunctions('get', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players')

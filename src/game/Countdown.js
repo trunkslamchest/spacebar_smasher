@@ -2,7 +2,7 @@ import React from 'react'
 
 import Game from './Game.js'
 
-import '../css/Countdown.css'
+import './Countdown.css'
 
 export default class Countdown extends React.Component {
 
@@ -26,12 +26,8 @@ export default class Countdown extends React.Component {
   }
 
   componentDidUpdate(){
-    if(this.state.time === 0 && !this.state.initGame){
-      this.initGame()
-    }
-    if(this.state.initDismount && !this.state.dismounted){
-      this.onDismount()
-    }
+    if(this.state.time === 0 && !this.state.initGame) this.initGame()
+    if(this.state.initDismount && !this.state.dismounted) this.onDismount()
   }
 
   initGame(){
@@ -46,11 +42,7 @@ export default class Countdown extends React.Component {
         showTimer: false,
         showGo: true,
       }, clearInterval(this.timerInterval))
-    } else {
-      this.setState({
-        time: (this.state.time - 1),
-      })
-    }
+    } else this.setState({ time: (this.state.time - 1) })
   }
 
   onDismount = () => {
