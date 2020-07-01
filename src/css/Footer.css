@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   font-size: 10pt;
   margin: 5px;
 }
@@ -30,7 +30,7 @@
   max-width: 100%;
   height: auto;
   max-height: calc(25px + (30 - 25) * ((100vw - 500px) / (1080 - 500)));
-  margin: 5px;
+  margin: 5px 25px 5px 25px;
 }
 
 .fine_print{

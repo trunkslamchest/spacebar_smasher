@@ -8,7 +8,7 @@ import Footer from './UI/Footer'
 import Countdown from './game/Countdown'
 import PostGameScoreContainer from './game/PostGameScoreContainer'
 
-import E404 from './error/404'
+import E404 from './error/E404'
 
 import './App.css'
 import './css/Response.css'

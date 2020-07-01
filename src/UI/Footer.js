@@ -1,11 +1,12 @@
 import React from 'react'
 
-import './css/Footer.css'
+import '../css/Footer.css'
 
-import flatiron_logo from './assets/footer_logo_flatiron.png'
-import postgres_logo from './assets/footer_logo_postgres.png'
-import rails_logo from './assets/footer_logo_rails.png'
-import react_logo from './assets/footer_logo_react.png'
+import firebase_logo from '../assets/footer_logo_firebase.png'
+import flatiron_logo from '../assets/footer_logo_flatiron.png'
+// import postgres_logo from '../assets/footer_logo_postgres.png'
+// import rails_logo from '../assets/footer_logo_rails.png'
+import react_logo from '../assets/footer_logo_react.png'
 
 const Footer = (props) => {
 
@@ -14,6 +15,21 @@ const Footer = (props) => {
   }
 
   const footerLogos = [
+    <a
+      key={"firebase_logo"}
+      href="https://firebase.google.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      <img
+        src={ firebase_logo }
+        className="logo_rectangle"
+        alt="Firebase"
+        name="footer_firebase_logo"
+        interaction="click"
+        onClick={ onClickFooterLinksFunctions }
+      />
+    </a>,
     <a
       key={"flatiron_logo"}
       href="https://flatironschool.com/"
@@ -25,36 +41,6 @@ const Footer = (props) => {
         className="logo_rectangle"
         alt="The Flatiron School"
         name="footer_flatiron_logo"
-        interaction="click"
-        onClick={ onClickFooterLinksFunctions }
-      />
-    </a>,
-    <a
-      key={"postgres_logo"}
-      href="https://www.postgresql.org/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <img
-        src={ postgres_logo }
-        className="logo_rectangle"
-        alt="PostgreSQL"
-        name="footer_postgres_logo"
-        interaction="click"
-        onClick={ onClickFooterLinksFunctions }
-      />
-    </a>,
-    <a
-      key={"rails_logo"}
-      href="https://rubyonrails.org/"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <img
-        src={ rails_logo }
-        className="logo_rectangle"
-        alt="Ruby On Rails"
-        name="footer_rails_logo"
         interaction="click"
         onClick={ onClickFooterLinksFunctions }
       />
