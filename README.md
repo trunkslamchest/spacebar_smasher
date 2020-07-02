@@ -81,7 +81,7 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
 # Installation
   ### Prerequisites
   Spacebar Smasher is built using NPM, React, & Firebase. Make sure you have the latest versions of the following components installed before cloning this repo. You can find their official installation guides below:
-  - [NPM](https://www.npmjs.com/)
+  - [NPM](https://docs.npmjs.com/getting-started/)
   - [React](https://reactjs.org/docs/getting-started.html)
   - [Firebase](https://firebase.google.com/docs/guides)
   - [Firebase CLI](https://firebase.google.com/docs/cli)
@@ -105,16 +105,17 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
 
 # Summary Of Files
   ### Internal File Structure
-  - [build](https://github.com/trunkslamchest/spacebar_smasher/tree/master/build): Most recent deployable build
+  - [build](https://github.com/trunkslamchest/spacebar_smasher/tree/master/build): Most Recent Deployable Build
   - [functions](https://github.com/trunkslamchest/spacebar_smasher/tree/master/functions): Firebase Cloud Functions
   - [public](https://github.com/trunkslamchest/spacebar_smasher/tree/master/public): Various Assets for General Purposes
-  - [releases](https://github.com/trunkslamchest/spacebar_smasher/tree/master/releases): Collection of legacy builds
-  - [src](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src): Root Frontend
+  - [releases](https://github.com/trunkslamchest/spacebar_smasher/tree/master/releases): Collection of Legacy Builds
+  - [src](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src): Root Development Folder
     - [assets](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/assets): Art Assets
+    - [error](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/error): Error handing Components
     - [game](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/game): Core Gameplay Loop
     - [index](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/index): Index Page Functionality
-    - [UI](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/UI): Various UI elements & components
-    - [utility](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/utility): Abstraction libraries
+    - [UI](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/UI): Various UI Elements & Components
+    - [utility](https://github.com/trunkslamchest/spacebar_smasher/tree/master/src/utility): Abstraction Libraries
   - [package.json](https://github.com/trunkslamchest/spacebar_smasher/blob/master/package.json): Modules & Dependencies
 
 &nbsp;
