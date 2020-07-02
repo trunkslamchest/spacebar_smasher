@@ -29,8 +29,6 @@ export default class Game extends React.Component {
     super(props);
     this.spacebarDown = this.spacebarDown.bind(this);
     this.spacebarUp = this.spacebarUp.bind(this);
-    // this.updateSpacebarDownState = this.updateSpacebarDownState.bind(this);
-    // this.updateSpacebarUpState = this.updateSpacebarUpState.bind(this);
   }
 
   componentDidMount(){ this.startGame() }
@@ -62,8 +60,7 @@ export default class Game extends React.Component {
 
     this.getRank()
 
-    if( this.state.avgPress < 0.01 && this.state.time < 29.00 ){
-      alert("Nice try, cheater.")
+    if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
       this.setState({
         time: 0.0,
         count: 0,
@@ -76,45 +73,15 @@ export default class Game extends React.Component {
         dismounted: false
       }, this.onDismount())
     }
-    console.log(this.state)
   }
 
   spacebarUp(){
-    // let diff = this.state.timeMark - this.state.time
-    // let avg = (diff + this.state.avgPress) / 2
-    // if(diff > 0.07 ) {
-      this.setState({
-        spacebar_pressed: false,
-        timeMark: this.state.time
-      }, document.addEventListener('keydown', this.spacebarDown))
-    // }
-    // console.log(this.state.timeMark)
+    this.setState({
+      spacebar_pressed: false,
+      timeMark: this.state.time
+    }, document.addEventListener('keydown', this.spacebarDown))
   }
 
-  // spacebarDown(event){
-  //   event.preventDefault()
-  //   if(event.keyCode === 32) this.updateSpacebarDownState()
-  //   this.getRank()
-  // }
-
-  // spacebarUp(event){
-  //   event.preventDefault()
-  //   if(event.keyCode === 32) this.updateSpacebarUpState()
-  // }
-
-  // updateSpacebarDownState(){
-  //   this.setState({
-  //     spacebar_pressed: true,
-  //     count: this.state.count + 1,
-  //     power: this.state.power + 0.025
-  //   }, document.removeEventListener('keydown', this.spacebarDown))
-  // }
-
-  // updateSpacebarUpState(){
-  //   this.setState({
-  //     spacebar_pressed: false
-  //   }, document.addEventListener('keydown', this.spacebarDown))
-  // }
 
   timerFunctions = () => {
     if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
@@ -122,8 +89,7 @@ export default class Game extends React.Component {
   }
 
   getRank = () => {
-    if (this.state.count < 0) this.setState({ rank: "CHEATER" })
-    else if (this.state.count >= 0 && this.state.count < 25) this.setState({ rank: "SUPER BABY FINGERS" })
+    if (this.state.count >= 0 && this.state.count < 25) this.setState({ rank: "SUPER BABY FINGERS" })
     else if (this.state.count >= 25 && this.state.count < 50) this.setState({ rank: "SLOW HANDS McOLD PERSON" })
     else if (this.state.count >= 50 && this.state.count < 75) this.setState({ rank: "CEMENT WRISTS" })
     else if (this.state.count >= 75 && this.state.count < 100) this.setState({ rank: "BIG MEATY CLAWS" })

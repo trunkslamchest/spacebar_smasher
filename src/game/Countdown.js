@@ -8,7 +8,7 @@ export default class Countdown extends React.Component {
 
   state = {
     display: 'countdown',
-    time: 1,
+    time: 5,
     showHeader: false,
     showTimer: false,
     showGo: false,
@@ -67,7 +67,7 @@ export default class Countdown extends React.Component {
     const countdown_header = <h3>GET READY</h3>
     const countdown_timer = <h1>{ this.state.time }</h1>
     const countdown_go = <h1>GO!</h1>
-    const countdown_tutorial = <p>Press the spacebar as many times as you can in 30 seconds!</p>
+    const countdown_tutorial = <p>Press the spacebar as many times as you can in 30 seconds</p>
 
     const countdown =
       <>

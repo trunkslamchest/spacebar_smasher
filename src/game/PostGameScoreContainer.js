@@ -61,15 +61,16 @@ export default class PostGameScoreContainer extends React.Component {
 
     const scoreboard_table =
       <>
-        <div className={this.state.initDismount ? "dismount_scoreboard_header" : "home_scoreboard_header"}>
-          <h4>HIGH SCORES</h4>
-        </div>
-
         <table
           key={"scoreboard_table"}
           className={this.state.initDismount ? "dismount_scoreboard_table" : "scoreboard_table" }
         >
           <tbody>
+            <tr className={this.state.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}>
+              <td>
+                HIGH SCORES
+              </td>
+            </tr>
             <tr className="scoreboard_head_row">
               <th>NAME</th>
               <th>POWER</th>

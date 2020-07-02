@@ -141,8 +141,6 @@ export default class SubmitScore extends React.Component {
 
   render(){
 
-    console.log(this.props)
-
     const blank = <></>
 
     const score = <h1>{ this.props.count }</h1>
