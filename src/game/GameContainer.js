@@ -1,7 +1,7 @@
 import React from 'react'
 
 import GameDesktop from './GameDesktop'
-import GameMobile from './GameMobile'
+import GameMobileContainer from './GameMobile/GameMobileContainer'
 
 
 import SubmitScore from './SubmitScore.js'
@@ -178,7 +178,7 @@ export default class Game extends React.Component {
     let game
 
     if(this.props.isMobile){
-      game = <GameMobile
+      game = <GameMobileContainer
               time={ this.state.time }
               count={ this.state.count }
               rank={ this.state.rank }

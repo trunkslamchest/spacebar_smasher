@@ -1,8 +1,13 @@
 import React from 'react'
 
-import detectOrientation from '../utility/detectOrientation'
+import detectOrientation from '../../utility/detectOrientation'
 
-import './GameMobile.css'
+import GameMobileTimer from './GameMobileTimer'
+
+import './GameMobileContainer.css'
+// import './GameMobileTimer.css'
+import './GameMobileCounter.css'
+import './GameMobileDismount.css'
 import './GameMobileSmashButton.css'
 
 export default class GameMobile extends React.Component {
@@ -18,9 +23,7 @@ export default class GameMobile extends React.Component {
   }
 
   componentDidMount(){
-    window.addEventListener("orientationchange", this.detectOrientation, false)
-
-    // this.detectOrientation()
+    window.addEventListener("orientationchange", this.detectOrientation)
   }
 
   componentDidUpdate(){
@@ -38,40 +41,45 @@ export default class GameMobile extends React.Component {
     else this.setState({isLandscape: true})
   }
 
-  onRotateLandscape = () => {
-
-  }
-
-  onRotatePortrait = () => {
-
-  }
-
   render(){
 
-    console.log(this.state.isLandscape)
-
+    // console.log(this.state.isLandscape)
 
     const blank = <></>
 
-    const time = <h1>{ this.props.time ? this.props.time : (0.00).toFixed(2) }</h1>
+    // const time = <h1>{ this.props.time ? this.props.time : (0.00).toFixed(2) }</h1>
     const counter = <h1>{ this.props.count ? this.props.count : 0 }</h1>
     const rank = <h1>{ this.props.rank }</h1>
     const power = <h1>{ (this.props.power).toFixed(3) }</h1>
 
     return(
-      <>
-        <div className={{
+      <div className={this.state.isLandscape ? 'game_mobile_landscape': 'game_mobile_portrait'}>
+        {/* <div className={{
               false: "blank",
-              true: this.props.initDismount ? "dismount_game_timer" : "game_timer"
+              true: {
+                false: this.props.initDismount ? "dismount_game_mobile_timer_portrait" : "game_mobile_timer_portrait",
+                true: this.props.initDismount ? "dismount_game_mobile_timer_landscape" : "game_mobile_timer_landscape"
+              }[this.state.isLandscape]
+              // true: this.props.initDismount ? "dismount_game_timer" : this.state.isLandscape ? "game_mobile_time_landscape" : "game_timer"
             }[this.props.showTimer]}
         >
           <h2>TIME</h2>
           { this.props.showTimer ? time : blank }
-        </div>
+        </div> */}
+        <GameMobileTimer
+          time={this.props.time}
+          showTimer={this.props.showTimer}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
 
         <div className={{
               false: "blank",
-              true: this.props.initDismount ? "dismount_game_counter" : "game_counter"
+              true: {
+                false: this.props.initDismount ? "dismount_game_mobile_counter_portrait" : "game_mobile_counter_portrait",
+                true: this.props.initDismount ? "dismount_game_mobile_counter_landscape" : "game_mobile_counter_landscape"
+              }[this.state.isLandscape]
+              // true: this.props.initDismount ? "dismount_game_counter" : "game_counter"
             }[this.props.showCounter]}
         >
           <h2>SMASHES</h2>
@@ -120,7 +128,7 @@ export default class GameMobile extends React.Component {
               SMASH!
             </button>
           </div>
-      </>
+      </div>
     )
 
   }

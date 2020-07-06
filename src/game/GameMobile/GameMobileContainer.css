@@ -1,0 +1,78 @@
+.game_mobile_timer_portrait {
+  animation: slide_in_from_top .6s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 50px 50px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  margin: 0px auto 0 auto;
+  padding: 10px;
+  text-align: center;
+  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.game_mobile_timer_portrait h1, .dismount_game_mobile_timer_portrait h1 {
+  animation: text_shadow_blink 2.5s ease-in-out infinite;
+  background-color: #000;
+  border-radius: 10px;
+  border: 1px solid grey;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
+  color: yellow;
+  font-family: 'Conv_digital-7.mono';
+  font-size:calc(75px + (150 - 75) * ((100vw - 500px) / (1920 - 500))) ;
+  font-weight: 300;
+  letter-spacing: 5px;
+  margin: 0 auto 0 auto;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  text-shadow: 0px 0px 5px yellow;
+  width: calc(250px + (400 - 250) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.game_mobile_timer_portrait h2, .dismount_game_mobile_timer_portrait h2 {
+  color: white;
+  font-family: "Staatliches";
+  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
+  font-weight: 300;
+  margin: 0 auto 0 auto;
+  text-align: center;
+  padding: 10px 10px 0px 10px;
+}
+
+.game_power_mobile {
+  animation: slide_in_from_bottom .6s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 0px;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.game_power_mobile h1, .dismount_game_power_mobile h1 {
+  animation: text_shadow_blink 2.25s ease-in-out infinite;
+  background-color: #000;
+  border: 1px solid grey;
+  border-radius: 10px;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
+  color: yellow;
+  font-family: 'Conv_digital-7.mono';
+  font-size: calc(40px + (60 - 40) * ((100vw - 500px) / (1920 - 500)));
+  font-weight: 300;
+  margin: 0 auto 0 auto;
+  padding: 0px 5px 0px 5px;
+  text-align: center;
+  text-shadow: 0px 0px 2.5px yellow;
+  width: calc(150px + (300 - 150) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.game_power_mobile h2, .dismount_game_power_mobile h2 {
+  font-family: "Staatliches";
+  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
+  font-weight: 300;
+  color: white;
+  margin: 0 auto 0 auto;
+  padding: 10px 10px 0px 10px;
+  text-align: center;
+}
