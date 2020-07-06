@@ -104,8 +104,14 @@
   border-radius: 0px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
   /* margin: 0px auto 0px auto; */
-  min-height: 110px;
-  order: 4;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  /* order: 4; */
   /* padding: 5px; */
   text-align: center;
   /* width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500))); */
@@ -139,12 +145,12 @@
   text-align: center;
 }
 
-
 .game_mobile_power_bar_landscape {
   padding: 0 0 0 0;
   display: block;
   margin: 0 auto 0 auto;
   -webkit-appearance: none;
+  width:100%;
 }
 
 .game_mobile_power_bar_landscape meter, .dismount_game_mobile_power_bar_landscape meter {

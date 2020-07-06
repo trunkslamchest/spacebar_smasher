@@ -14,7 +14,7 @@ const GameMobileRank = (props) => {
         true: {
           false: props.initDismount ? "dismount_game_mobile_rank_portrait" : "game_mobile_rank_portrait",
           true: props.initDismount ? "dismount_game_mobile_rank_landscape" : "game_mobile_rank_landscape"
-        }[props.isLandscape]
+        }[props.isLandscape && window.innerWidth < 1024]
       }[props.showRank]}
     >
       <h2>RANK</h2>

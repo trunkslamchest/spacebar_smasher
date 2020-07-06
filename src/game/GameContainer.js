@@ -93,7 +93,7 @@ export default class Game extends React.Component {
 
   timerFunctions = () => {
     if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
-    // else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
+    else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
   getRank = () => {

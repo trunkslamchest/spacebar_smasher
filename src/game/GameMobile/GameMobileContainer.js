@@ -48,7 +48,7 @@ export default class GameMobile extends React.Component {
     // const power = <h1>{ (this.props.power).toFixed(3) }</h1>
 
     return(
-      <div className={this.state.isLandscape ? 'game_mobile_landscape': 'game_mobile_portrait'}>
+      <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_landscape': 'game_mobile_portrait'}>
         {/* <div className={{
               false: "blank",
               true: {
@@ -116,7 +116,7 @@ export default class GameMobile extends React.Component {
               SMASH!
             </button>
           </div> */}
-
+        <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_counter_landscapeC1': null}>
         <GameMobileTimer
           time={this.props.time}
           showTimer={this.props.showTimer}
@@ -129,6 +129,8 @@ export default class GameMobile extends React.Component {
           isLandscape={this.state.isLandscape}
           initDismount={this.props.initDismount}
         />
+        </div>
+        <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_counter_landscapeC2': null}>
         <GameMobileRank
           rank={this.props.rank}
           showRank={this.props.showRank}
@@ -141,6 +143,7 @@ export default class GameMobile extends React.Component {
           isLandscape={this.state.isLandscape}
           initDismount={this.props.initDismount}
         />
+        </div>
         <GameMobileSmashButton
           smashed={this.state.smashed}
           onSmash={this.onSmash}

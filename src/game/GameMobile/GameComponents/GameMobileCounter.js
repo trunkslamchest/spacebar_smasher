@@ -14,7 +14,7 @@ const GameMobileCounter = (props) => {
         true: {
           false: props.initDismount ? "dismount_game_mobile_counter_portrait" : "game_mobile_counter_portrait",
           true: props.initDismount ? "dismount_game_mobile_counter_landscape" : "game_mobile_counter_landscape"
-        }[props.isLandscape]
+        }[props.isLandscape && window.innerWidth < 1024]
       }[props.showCounter]}
     >
       <h2>SMASHES</h2>

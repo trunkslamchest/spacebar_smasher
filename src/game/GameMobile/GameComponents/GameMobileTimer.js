@@ -14,7 +14,7 @@ const GameMobileTimer = (props) => {
         true: {
           false: props.initDismount ? "dismount_game_mobile_timer_portrait" : "game_mobile_timer_portrait",
           true: props.initDismount ? "dismount_game_mobile_timer_landscape" : "game_mobile_timer_landscape"
-        }[props.isLandscape]
+        }[props.isLandscape && window.innerWidth < 1024]
       }[props.showTimer]}
     >
       <h2>TIME</h2>
