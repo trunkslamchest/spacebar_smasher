@@ -3,10 +3,11 @@ import React from 'react'
 import detectOrientation from '../../utility/detectOrientation'
 
 import GameMobileTimer from './GameMobileTimer'
+import GameMobileCounter from './GameMobileCounter'
 
 import './GameMobileContainer.css'
 // import './GameMobileTimer.css'
-import './GameMobileCounter.css'
+// import './GameMobileCounter.css'
 import './GameMobileDismount.css'
 import './GameMobileSmashButton.css'
 
@@ -48,7 +49,7 @@ export default class GameMobile extends React.Component {
     const blank = <></>
 
     // const time = <h1>{ this.props.time ? this.props.time : (0.00).toFixed(2) }</h1>
-    const counter = <h1>{ this.props.count ? this.props.count : 0 }</h1>
+    // const counter = <h1>{ this.props.count ? this.props.count : 0 }</h1>
     const rank = <h1>{ this.props.rank }</h1>
     const power = <h1>{ (this.props.power).toFixed(3) }</h1>
 
@@ -73,7 +74,7 @@ export default class GameMobile extends React.Component {
           initDismount={this.props.initDismount}
         />
 
-        <div className={{
+        {/* <div className={{
               false: "blank",
               true: {
                 false: this.props.initDismount ? "dismount_game_mobile_counter_portrait" : "game_mobile_counter_portrait",
@@ -84,7 +85,14 @@ export default class GameMobile extends React.Component {
         >
           <h2>SMASHES</h2>
           { this.props.showCounter ? counter : blank }
-        </div>
+        </div> */}
+
+        <GameMobileCounter
+          count={this.props.count}
+          showCounter={this.props.showCounter}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
 
         <div className={{
               false: "blank",
