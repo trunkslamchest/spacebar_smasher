@@ -4,8 +4,6 @@ export default class GameDesktop extends React.Component {
 
   render(){
 
-    console.log(this.props)
-
     const blank = <></>
 
     const time = <h1>{ this.props.time ? this.props.time : (0.00).toFixed(2) }</h1>

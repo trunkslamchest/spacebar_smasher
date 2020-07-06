@@ -201,56 +201,6 @@ export default class Game extends React.Component {
             />
     }
 
-    // const time = <h1>{ this.state.time ? this.state.time : (0.00).toFixed(2) }</h1>
-    // const counter = <h1>{ this.state.count ? this.state.count : 0 }</h1>
-    // const rank = <h1>{ this.state.rank }</h1>
-    // const power = <h1>{ (this.state.power).toFixed(3) }</h1>
-
-    // const game =
-    //   <>
-    //     <div className={{
-    //           false: "blank",
-    //           true: this.state.initDismount ? "dismount_game_timer" : "game_timer"
-    //         }[this.state.showTimer]}
-    //     >
-    //       <h2>TIME</h2>
-    //       { this.state.showTimer ? time : blank }
-    //     </div>
-
-    //     <div className={{
-    //           false: "blank",
-    //           true: this.state.initDismount ? "dismount_game_counter" : "game_counter"
-    //         }[this.state.showCounter]}
-    //     >
-    //       <h2>SMASHES</h2>
-    //       { this.state.showCounter ? counter : blank }
-    //     </div>
-
-    //     <div className={{
-    //           false: "blank",
-    //           true: this.state.initDismount ? "dismount_game_rank" : "game_rank"
-    //         }[this.state.showRank]}
-    //     >
-    //       <h2>RANK</h2>
-    //       { this.state.showRank ? rank : blank }
-    //     </div>
-
-    //     <div className={{
-    //           false: "blank",
-    //           true: this.state.initDismount ? "dismount_game_power" : "game_power"
-    //         }[this.state.showPower]}
-    //     >
-    //       <h2>POWER</h2>
-    //       { this.state.showPower ? power : blank }
-
-    //       <div className={this.state.showPower ? "game_power_bar": "blank"}>
-    //         <meter value={this.state.power} min="0.0" low="1.0" optimum="2.0" high="4.0" max="6.0">
-    //         </meter>
-    //       </div>
-
-    //     </div>
-    //   </>
-
     return(
       <>
         {
