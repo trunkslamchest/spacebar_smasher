@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Game from './Game.js'
+import GameContainer from './GameContainer.js'
 
 import './Countdown.css'
 
@@ -8,7 +8,7 @@ export default class Countdown extends React.Component {
 
   state = {
     display: 'countdown',
-    time: 5,
+    time: 1,
     showHeader: false,
     showTimer: false,
     showGo: false,
@@ -62,7 +62,7 @@ export default class Countdown extends React.Component {
 
   render(){
 
-    console.log(this.props)
+    // console.log(this.props)
 
     const blank = <></>
 
@@ -111,7 +111,7 @@ export default class Countdown extends React.Component {
           (() => {
             switch(this.state.display) {
               case 'countdown': return countdown;
-              case 'game': return <Game getPlayer={this.props.getPlayer} />;
+              case 'game': return <GameContainer getPlayer={this.props.getPlayer} isMobile={this.props.isMobile} />;
               default: return blank;
             }
           })()

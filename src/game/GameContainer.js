@@ -1,8 +1,12 @@
 import React from 'react'
 
+import GameDesktop from './GameDesktop'
+import GameMobile from './GameMobile'
+
+
 import SubmitScore from './SubmitScore.js'
 
-import './Game.css'
+import './GameContainer.css'
 
 export default class Game extends React.Component {
 
@@ -19,6 +23,7 @@ export default class Game extends React.Component {
     showCounter: false,
     showRank: false,
     showPower: false,
+    showMobileSmashButton: false,
     spacebar_pressed: false,
     updated_rank: false,
     initDismount: false,
@@ -43,6 +48,11 @@ export default class Game extends React.Component {
     this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 250)
     this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 250)
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
+
+    // console.log(this.props.isMobile)
+
+    if(this.props.isMobile) this.mobileSmashButtonTimeout = setTimeout(() => { this.setState({ showMobileSmashButton: true })}, 250)
+
   }
 
   spacebarDown(event){
@@ -85,7 +95,7 @@ export default class Game extends React.Component {
 
   timerFunctions = () => {
     if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
-    else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
+    // else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
   getRank = () => {
@@ -108,6 +118,13 @@ export default class Game extends React.Component {
     else this.setState({ power: this.state.power - 0.003 })
 
     if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
+  }
+
+  onSmash = () => {
+    this.setState({
+      count: this.state.count + 1,
+      power: this.state.power + 0.025
+    })
   }
 
   resetGame = () => {
@@ -154,57 +171,89 @@ export default class Game extends React.Component {
 
   render(){
 
+    // console.log(this.props)
+
     const blank = <></>
 
-    const time = <h1>{ this.state.time ? this.state.time : (0.00).toFixed(2) }</h1>
-    const counter = <h1>{ this.state.count ? this.state.count : 0 }</h1>
-    const rank = <h1>{ this.state.rank }</h1>
-    const power = <h1>{ (this.state.power).toFixed(3) }</h1>
+    let game
 
-    const game =
-      <>
-        <div className={{
-              false: "blank",
-              true: this.state.initDismount ? "dismount_game_timer" : "game_timer"
-            }[this.state.showTimer]}
-        >
-          <h2>TIME</h2>
-          { this.state.showTimer ? time : blank }
-        </div>
+    if(this.props.isMobile){
+      game = <GameMobile
+              time={ this.state.time }
+              count={ this.state.count }
+              rank={ this.state.rank }
+              power={ this.state.power }
+              onSmash={ this.onSmash }
+              showTimer={ this.state.showTimer }
+              showCounter={ this.state.showCounter }
+              showRank={ this.state.showRank }
+              showPower={ this.state.showPower }
+              showMobileSmashButton={ this.state.showMobileSmashButton }
+              initDismount={ this.state.initDismount }
+            />
+    } else {
+      game = <GameDesktop
+              time={ this.state.time }
+              count={ this.state.count }
+              rank={ this.state.rank }
+              power={ this.state.power }
+              showTimer={ this.state.showTimer }
+              showCounter={ this.state.showCounter }
+              showRank={ this.state.showRank }
+              showPower={ this.state.showPower }
+              initDismount={ this.state.initDismount }
+            />
+    }
 
-        <div className={{
-              false: "blank",
-              true: this.state.initDismount ? "dismount_game_counter" : "game_counter"
-            }[this.state.showCounter]}
-        >
-          <h2>SMASHES</h2>
-          { this.state.showCounter ? counter : blank }
-        </div>
+    // const time = <h1>{ this.state.time ? this.state.time : (0.00).toFixed(2) }</h1>
+    // const counter = <h1>{ this.state.count ? this.state.count : 0 }</h1>
+    // const rank = <h1>{ this.state.rank }</h1>
+    // const power = <h1>{ (this.state.power).toFixed(3) }</h1>
 
-        <div className={{
-              false: "blank",
-              true: this.state.initDismount ? "dismount_game_rank" : "game_rank"
-            }[this.state.showRank]}
-        >
-          <h2>RANK</h2>
-          { this.state.showRank ? rank : blank }
-        </div>
+    // const game =
+    //   <>
+    //     <div className={{
+    //           false: "blank",
+    //           true: this.state.initDismount ? "dismount_game_timer" : "game_timer"
+    //         }[this.state.showTimer]}
+    //     >
+    //       <h2>TIME</h2>
+    //       { this.state.showTimer ? time : blank }
+    //     </div>
 
-        <div className={{
-              false: "blank",
-              true: this.state.initDismount ? "dismount_game_power" : "game_power"
-            }[this.state.showPower]}
-        >
-          <h2>POWER</h2>
-          { this.state.showPower ? power : blank }
+    //     <div className={{
+    //           false: "blank",
+    //           true: this.state.initDismount ? "dismount_game_counter" : "game_counter"
+    //         }[this.state.showCounter]}
+    //     >
+    //       <h2>SMASHES</h2>
+    //       { this.state.showCounter ? counter : blank }
+    //     </div>
 
-          <div className={this.state.showPower ? "game_power_bar": "blank"}>
-            <meter value={this.state.power} min="0.0" low="1.0" optimum="2.0" high="4.0" max="6.0">
-            </meter>
-          </div>
+    //     <div className={{
+    //           false: "blank",
+    //           true: this.state.initDismount ? "dismount_game_rank" : "game_rank"
+    //         }[this.state.showRank]}
+    //     >
+    //       <h2>RANK</h2>
+    //       { this.state.showRank ? rank : blank }
+    //     </div>
 
-        </div>
-      </>
+    //     <div className={{
+    //           false: "blank",
+    //           true: this.state.initDismount ? "dismount_game_power" : "game_power"
+    //         }[this.state.showPower]}
+    //     >
+    //       <h2>POWER</h2>
+    //       { this.state.showPower ? power : blank }
+
+    //       <div className={this.state.showPower ? "game_power_bar": "blank"}>
+    //         <meter value={this.state.power} min="0.0" low="1.0" optimum="2.0" high="4.0" max="6.0">
+    //         </meter>
+    //       </div>
+
+    //     </div>
+    //   </>
 
     return(
       <>

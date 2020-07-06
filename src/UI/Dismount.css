@@ -337,7 +337,7 @@
   }
 }
 
-.dismount_game_power {
+.dismount_game_power, .dismount_game_power_mobile {
   animation: dismount_game_power 1s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
@@ -358,6 +358,30 @@
   }
   100% {
     transform: translateX(2000px);
+  }
+}
+
+.dismount_game_mobile_smash_button, .dismount_game_mobile_smash_button {
+  animation: dismount_game_power 1s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
+  margin: 0px auto 10px auto;
+  padding: 10px;
+  text-align: center;
+  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+}
+
+@keyframes dismount_game_smash_button {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(-2000px);
   }
 }
 
