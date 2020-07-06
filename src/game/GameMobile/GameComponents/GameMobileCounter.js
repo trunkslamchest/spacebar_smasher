@@ -10,13 +10,12 @@ const GameMobileCounter = (props) => {
 
   return(
     <div className={{
-          false: "blank",
-          true: {
-            false: props.initDismount ? "dismount_game_mobile_counter_portrait" : "game_mobile_counter_portrait",
-            true: props.initDismount ? "dismount_game_mobile_counter_landscape" : "game_mobile_counter_landscape"
-          }[props.isLandscape]
-          // true: this.props.initDismount ? "dismount_game_counter" : "game_counter"
-        }[props.showCounter]}
+        false: "blank",
+        true: {
+          false: props.initDismount ? "dismount_game_mobile_counter_portrait" : "game_mobile_counter_portrait",
+          true: props.initDismount ? "dismount_game_mobile_counter_landscape" : "game_mobile_counter_landscape"
+        }[props.isLandscape]
+      }[props.showCounter]}
     >
       <h2>SMASHES</h2>
       { props.showCounter ? counter : blank }

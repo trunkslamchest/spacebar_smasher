@@ -49,8 +49,6 @@ export default class Game extends React.Component {
     this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 250)
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
-    // console.log(this.props.isMobile)
-
     if(this.props.isMobile) this.mobileSmashButtonTimeout = setTimeout(() => { this.setState({ showMobileSmashButton: true })}, 250)
 
   }
@@ -170,8 +168,6 @@ export default class Game extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
-
-    // console.log(this.props)
 
     const blank = <></>
 

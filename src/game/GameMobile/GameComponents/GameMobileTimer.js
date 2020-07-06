@@ -10,13 +10,12 @@ const GameMobileTimer = (props) => {
 
   return(
     <div className={{
-          false: "blank",
-          true: {
-            false: props.initDismount ? "dismount_game_mobile_timer_portrait" : "game_mobile_timer_portrait",
-            true: props.initDismount ? "dismount_game_mobile_timer_landscape" : "game_mobile_timer_landscape"
-          }[props.isLandscape]
-          // true: this.props.initDismount ? "dismount_game_timer" : this.state.isLandscape ? "game_mobile_time_landscape" : "game_timer"
-        }[props.showTimer]}
+        false: "blank",
+        true: {
+          false: props.initDismount ? "dismount_game_mobile_timer_portrait" : "game_mobile_timer_portrait",
+          true: props.initDismount ? "dismount_game_mobile_timer_landscape" : "game_mobile_timer_landscape"
+        }[props.isLandscape]
+      }[props.showTimer]}
     >
       <h2>TIME</h2>
       { props.showTimer ? time : blank }

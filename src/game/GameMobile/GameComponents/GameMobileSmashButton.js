@@ -3,22 +3,23 @@ import React from 'react'
 import './GameMobileSmashButton.css'
 
 const GameMobileSmashButton = (props) => {
-
-
-
   return(
     <div
-      // className={this.props.showMobileSmashButton ? "game_mobile_smash_button" : "blank"}
       className={{
         false: "blank",
-        true: props.initDismount ? "dismount_game_mobile_smash_button" : "game_mobile_smash_button"
+        true: {
+          false: props.initDismount ? "dismount_game_mobile_smash_button_portrait" : "game_mobile_smash_button_portrait",
+          true: props.initDismount ? "dismount_game_mobile_smash_button_landscape" : "game_mobile_smash_button_landscape"
+        }[props.isLandscape]
       }[props.showMobileSmashButton]}
     >
       <button
-        // className={this.props.showMobileSmashButton ? "smash_button" : "blank"}
         className={{
           false: "blank",
-          true: props.smashed ? "smash_button_on_smash" : "smash_button"
+          true: {
+            false: props.smashed ? "smash_button_on_smash_portrait" : "smash_button_portrait",
+            true: props.smashed ? "smash_button_on_smash_landscape" : "smash_button_landscape"
+          }[props.isLandscape]
         }[props.showMobileSmashButton]}
         onClick={props.onSmash}
       >
@@ -26,7 +27,6 @@ const GameMobileSmashButton = (props) => {
       </button>
     </div>
   )
-
 }
 
 export default GameMobileSmashButton

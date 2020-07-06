@@ -10,13 +10,12 @@ const GameMobileRank = (props) => {
 
   return(
     <div className={{
-          false: "blank",
-          true: {
-            false: props.initDismount ? "dismount_game_mobile_rank_portrait" : "game_mobile_rank_portrait",
-            true: props.initDismount ? "dismount_game_mobile_rank_landscape" : "game_mobile_rank_landscape"
-          }[props.isLandscape]
-          // true: props.initDismount ? "dismount_game_rank" : "game_rank"
-        }[props.showRank]}
+        false: "blank",
+        true: {
+          false: props.initDismount ? "dismount_game_mobile_rank_portrait" : "game_mobile_rank_portrait",
+          true: props.initDismount ? "dismount_game_mobile_rank_landscape" : "game_mobile_rank_landscape"
+        }[props.isLandscape]
+      }[props.showRank]}
     >
       <h2>RANK</h2>
       { props.showRank ? rank : blank }
