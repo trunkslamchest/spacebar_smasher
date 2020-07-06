@@ -8,8 +8,8 @@ admin.initializeApp();
 var firebaseConfig = {
   // Point to the RTDB emulator running on localhost.
   // In almost all cases the ns (namespace) is your project ID.
-  // databaseURL: "http://localhost:9000?ns=spacebarsmasher-96ba1"
-  databaseURL: "https://spacebarsmasher-96ba1.firebaseio.com"
+  databaseURL: "http://localhost:9000?ns=spacebarsmasher-96ba1"
+  // databaseURL: "https://spacebarsmasher-96ba1.firebaseio.com"
 }
 
 var init = firebase.initializeApp(firebaseConfig);

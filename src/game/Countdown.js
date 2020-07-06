@@ -62,6 +62,8 @@ export default class Countdown extends React.Component {
 
   render(){
 
+    console.log(this.props)
+
     const blank = <></>
 
     const countdown_header = <h3>GET READY</h3>

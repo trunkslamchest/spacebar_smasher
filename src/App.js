@@ -2,6 +2,9 @@ import React from 'react'
 
 import { Route, Switch } from 'react-router-dom'
 
+// import detectDevice from './utility/detectDevice'
+import detectDevice2 from './utility/detectDevice2'
+
 import Home from './index/Home'
 import Footer from './UI/Footer'
 
@@ -18,13 +21,33 @@ import './UI/Dismount.css'
 export default class App extends React.Component {
 
   state = {
+    isMobile: null
   }
 
-  componentDidMount(){ }
+  constructor(props){
+    super(props)
+    this.isMobile = detectDevice2;
+  }
+
+  componentDidMount(){
+    // this.setState({
+    //   isMobile: detectDevice2
+    // })
+  }
+
+  isMobile(){
+    this.isMobile = detectDevice2
+  }
 
   getPlayer = (player) => { this.setState({ player: player }) }
 
   render(){
+
+    // console.log(detectDevice)
+    // console.log(detectDevice2)
+    // console.log(this.isMobile)
+
+
     return (
       <>
         <div className="main_container">
@@ -33,11 +56,15 @@ export default class App extends React.Component {
               <Route exact path='/spacebarsmasher'>
                 <Home
                   player={ this.state.player }
+                  isMobile={ this.isMobile }
+                  // isMobile={ this.state.isMobile }
+
                 />
               </Route>
               <Route exact path='/spacebarsmasher/game'>
                 <Countdown
                   getPlayer={ this.getPlayer }
+                  isMobile={ this.isMobile }
                 />
               </Route>
               <Route exact path='/spacebarsmasher/scoreboard'>
