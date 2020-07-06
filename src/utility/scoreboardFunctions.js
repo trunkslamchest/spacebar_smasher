@@ -29,8 +29,6 @@
 
   scoreboardFunctions.init.prototype = scoreboardFunctions.prototype
 
-  // env.scoreboardFunctions = scoreboardFunctions
-
   module.exports = scoreboardFunctions
 
   return scoreboardFunctions.init

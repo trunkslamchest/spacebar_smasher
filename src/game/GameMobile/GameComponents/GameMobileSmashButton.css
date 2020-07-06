@@ -54,12 +54,7 @@
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border-radius: 0px 0px 50px 50px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
-  /* margin: 0px auto 10px auto; */
-  /* order: 5; */
   text-align: center;
-  /* width: 100%; */
-/* flex-grow: 2; */
-  /* width: calc(324px + (500 - 300) * ((100vw - 500px) / (1920 - 500))); */
 }
 
 .smash_button_landscape {
@@ -89,7 +84,6 @@
   border-radius: 0px 0px 50px 50px;
   padding: 10px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
-  /* width: 100%; */
   width: 508px;
 
 }

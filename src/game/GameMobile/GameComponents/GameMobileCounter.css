@@ -44,13 +44,9 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  /* margin: 0px auto 0px auto; */
-  /* order: 3; */
-  /* padding: 5px; */
   padding: 0px;
   text-align: center;
   min-height: 120px;
-  /* width: calc(250px + (500 - 250) * ((100vw - 500px) / (1920 - 500))); */
   width: 250px;
 }
 
@@ -65,10 +61,8 @@
   font-size: calc(75px + (125 - 75) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
   padding: 0px;
-  /* padding: 5px 5px 0px 5px; */
   margin: 0 auto 0 auto;
   text-align: center;
-  /* width: calc(200px + (300 - 200) * ((100vw - 500px) / (1920 - 500))); */
 }
 
 .game_mobile_counter_landscape h2, .dismount_game_mobile_counter_landscape h2 {
@@ -78,6 +72,5 @@
   font-weight: 300;
   margin: 0 auto 0 auto;
   padding: 0px;
-  /* padding: 0px 10px 0px 10px; */
   text-align: center;
 }
