@@ -5,6 +5,8 @@ import detectOrientation from '../../utility/detectOrientation'
 import GameMobileTimer from './GameMobileTimer'
 import GameMobileCounter from './GameMobileCounter'
 import GameMobileRank from './GameMobileRank'
+import GameMobilePower from './GameMobilePower'
+
 
 import './GameMobileContainer.css'
 // import './GameMobileTimer.css'
@@ -47,12 +49,12 @@ export default class GameMobile extends React.Component {
 
     // console.log(this.state.isLandscape)
 
-    const blank = <></>
+    // const blank = <></>
 
     // const time = <h1>{ this.props.time ? this.props.time : (0.00).toFixed(2) }</h1>
     // const counter = <h1>{ this.props.count ? this.props.count : 0 }</h1>
     // const rank = <h1>{ this.props.rank }</h1>
-    const power = <h1>{ (this.props.power).toFixed(3) }</h1>
+    // const power = <h1>{ (this.props.power).toFixed(3) }</h1>
 
     return(
       <div className={this.state.isLandscape ? 'game_mobile_landscape': 'game_mobile_portrait'}>
@@ -111,7 +113,7 @@ export default class GameMobile extends React.Component {
           initDismount={this.props.initDismount}
         />
 
-        <div className={{
+        {/* <div className={{
               false: "blank",
               true: this.props.initDismount ? "dismount_game_power_mobile" : "game_power_mobile"
             }[this.props.showPower]}
@@ -124,7 +126,14 @@ export default class GameMobile extends React.Component {
             </meter>
           </div>
 
-        </div>
+        </div> */}
+
+        <GameMobilePower
+          power={this.props.power}
+          showPower={this.props.showPower}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
 
           <div
             // className={this.props.showMobileSmashButton ? "game_mobile_smash_button" : "blank"}

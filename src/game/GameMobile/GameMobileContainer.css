@@ -1,3 +1,8 @@
+.blank {
+  opacity: 0;
+  height: 0px;
+}
+
 /* .game_mobile_timer_portrait {
   animation: slide_in_from_top .6s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -38,7 +43,7 @@
   padding: 10px 10px 0px 10px;
 } */
 
-.game_power_mobile {
+/* .game_power_mobile {
   animation: slide_in_from_bottom .6s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
@@ -75,4 +80,4 @@
   margin: 0 auto 0 auto;
   padding: 10px 10px 0px 10px;
   text-align: center;
-}
+} */
