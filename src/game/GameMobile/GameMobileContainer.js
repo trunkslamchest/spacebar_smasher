@@ -2,17 +2,14 @@ import React from 'react'
 
 import detectOrientation from '../../utility/detectOrientation'
 
-import GameMobileTimer from './GameMobileTimer'
-import GameMobileCounter from './GameMobileCounter'
-import GameMobileRank from './GameMobileRank'
-import GameMobilePower from './GameMobilePower'
-
+import GameMobileTimer from './GameComponents/GameMobileTimer'
+import GameMobileCounter from './GameComponents/GameMobileCounter'
+import GameMobileRank from './GameComponents/GameMobileRank'
+import GameMobilePower from './GameComponents/GameMobilePower'
+import GameMobileSmashButton from './GameComponents/GameMobileSmashButton'
 
 import './GameMobileContainer.css'
-// import './GameMobileTimer.css'
-// import './GameMobileCounter.css'
 import './GameMobileDismount.css'
-import './GameMobileSmashButton.css'
 
 export default class GameMobile extends React.Component {
 
@@ -26,13 +23,7 @@ export default class GameMobile extends React.Component {
     this.detectOrientation = this.detectOrientation.bind(this);
   }
 
-  componentDidMount(){
-    window.addEventListener("orientationchange", this.detectOrientation)
-  }
-
-  componentDidUpdate(){
-
-  }
+  componentDidMount(){ window.addEventListener("orientationchange", this.detectOrientation) }
 
   onSmash = (event) => {
     this.props.onSmash()
@@ -70,13 +61,6 @@ export default class GameMobile extends React.Component {
           <h2>TIME</h2>
           { this.props.showTimer ? time : blank }
         </div> */}
-        <GameMobileTimer
-          time={this.props.time}
-          showTimer={this.props.showTimer}
-          isLandscape={this.state.isLandscape}
-          initDismount={this.props.initDismount}
-        />
-
         {/* <div className={{
               false: "blank",
               true: {
@@ -90,13 +74,6 @@ export default class GameMobile extends React.Component {
           { this.props.showCounter ? counter : blank }
         </div> */}
 
-        <GameMobileCounter
-          count={this.props.count}
-          showCounter={this.props.showCounter}
-          isLandscape={this.state.isLandscape}
-          initDismount={this.props.initDismount}
-        />
-
         {/* <div className={{
               false: "blank",
               true: this.props.initDismount ? "dismount_game_rank" : "game_rank"
@@ -105,13 +82,6 @@ export default class GameMobile extends React.Component {
           <h2>RANK</h2>
           { this.props.showRank ? rank : blank }
         </div> */}
-
-        <GameMobileRank
-          rank={this.props.rank}
-          showRank={this.props.showRank}
-          isLandscape={this.state.isLandscape}
-          initDismount={this.props.initDismount}
-        />
 
         {/* <div className={{
               false: "blank",
@@ -128,14 +98,7 @@ export default class GameMobile extends React.Component {
 
         </div> */}
 
-        <GameMobilePower
-          power={this.props.power}
-          showPower={this.props.showPower}
-          isLandscape={this.state.isLandscape}
-          initDismount={this.props.initDismount}
-        />
-
-          <div
+          {/* <div
             // className={this.props.showMobileSmashButton ? "game_mobile_smash_button" : "blank"}
             className={{
               false: "blank",
@@ -152,7 +115,39 @@ export default class GameMobile extends React.Component {
             >
               SMASH!
             </button>
-          </div>
+          </div> */}
+
+        <GameMobileTimer
+          time={this.props.time}
+          showTimer={this.props.showTimer}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
+        <GameMobileCounter
+          count={this.props.count}
+          showCounter={this.props.showCounter}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
+        <GameMobileRank
+          rank={this.props.rank}
+          showRank={this.props.showRank}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
+        <GameMobilePower
+          power={this.props.power}
+          showPower={this.props.showPower}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
+        <GameMobileSmashButton
+          smashed={this.state.smashed}
+          onSmash={this.onSmash}
+          showMobileSmashButton={this.props.showMobileSmashButton}
+          isLandscape={this.state.isLandscape}
+          initDismount={this.props.initDismount}
+        />
       </div>
     )
 
