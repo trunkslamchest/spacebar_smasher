@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { Redirect } from 'react-router-dom'
-
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
@@ -48,34 +46,8 @@ export default class Home extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
-    // const home_page =
-    //   <>
-    //     <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
-    //       <h3>SPACEBAR SMASHER</h3>
-    //     </div>
-    //     <div className="start_button_container">
-    //       <button
-    //         key={ "start_button" }
-    //         to='/game'
-    //         name="start_button"
-    //         interaction="click"
-    //         className={this.state.initDismount ? "dismount_start_button" : "start_button"}
-    //         onClick={ this.onClickStartButtonFunctions }
-    //       >
-    //         START
-    //       </button>
-    //     </div>
-    //     <ScoreboardContainer
-    //       mounted={this.state.mounted}
-    //       scoreboard={this.state.scoreboard}
-    //       submittedPlayer={this.props.player}
-    //       initDismount={this.state.initDismount}
-    //     />
-    //   </>
-
     return(
       <>
-        {/* { this.state.dismounted ? <Redirect to='/spacebarsmasher/game' /> : home_page } */}
         <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
           <h3>SPACEBAR SMASHER</h3>
         </div>

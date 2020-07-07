@@ -26,8 +26,6 @@ export default class App extends React.Component {
     this.isMobile = detectDevice;
   }
 
-  componentDidMount(){}
-
   getPlayer = (player) => { this.setState({ player: player }) }
 
   render(){

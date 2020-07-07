@@ -1,13 +1,8 @@
 ;(function(env) {
 
-  var scoreboardFunctions = function(method, url, userObj){
-    var init = new scoreboardFunctions.init(method, url, userObj)
-    return init[method]
-  }
+  var scoreboardFunctions = function(method, url, userObj){ return new scoreboardFunctions.init(method, url, userObj)[method] }
 
-  scoreboardFunctions.init = function(method, url, userObj){
-    this[method] = this[method](url, userObj)
-  }
+  scoreboardFunctions.init = function(method, url, userObj){ this[method] = this[method](url, userObj) }
 
   scoreboardFunctions.prototype = {
     get: function(url) {
@@ -27,18 +22,6 @@
       })
       .then(res => res.json())
     }
-
-    //   fetch(url, {
-    //     method: "POST",
-    //     headers: {
-    //       "Accept": 'application/json',
-    //       "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(playerObj)
-    //   })
-    //   .then(res => console.log(res))
-    //   // .then(obj => console.log(obj))
-    // }
   }
 
   scoreboardFunctions.init.prototype = scoreboardFunctions.prototype

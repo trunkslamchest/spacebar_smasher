@@ -1,9 +1,5 @@
 import React from 'react'
 
-// import { Redirect } from 'react-router-dom'
-
-// import PostGameScore from './PostGameScore'
-
 import scoreboardFunctions from '../../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../../Scoreboard/ScoreboardContainer'
@@ -19,7 +15,6 @@ export default class PostGameContainer extends React.Component {
     dismounted: false
   }
 
-
   componentDidMount(){
     // scoreboardFunctions('get', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/players')
     scoreboardFunctions('get', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players')
@@ -34,7 +29,6 @@ export default class PostGameContainer extends React.Component {
   onClickMainMenuButtonFunctions = (event) => {
     this.setState({ initDismount: true })
     this.mainMenuTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 500 )
-
   }
 
   onClickPlayAgainButtonFunctions = (event) => {
@@ -57,8 +51,6 @@ export default class PostGameContainer extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
-
-
     return(
       <div className="post_game_wrapper">
         <ScoreboardContainer
