@@ -28,11 +28,12 @@ export default class App extends React.Component {
 
   componentDidMount(){}
 
-  isMobile(){ this.isMobile = detectDevice }
-
   getPlayer = (player) => { this.setState({ player: player }) }
 
   render(){
+
+    // console.log(this.isMobile)
+
     return (
       <>
         <div className="main_container">

@@ -18,13 +18,27 @@
     post: function(url, playerObj) {
       return fetch(url, {
         method: "POST",
+        mode: 'cors',
         headers: {
-          "Content-Type": "application/json"
+          "Accept": ['application/json', 'application/x-www-form-urlencoded'],
+          "Content-Type": ['application/json', 'application/x-www-form-urlencoded']
         },
         body: JSON.stringify(playerObj)
       })
       .then(res => res.json())
     }
+
+    //   fetch(url, {
+    //     method: "POST",
+    //     headers: {
+    //       "Accept": 'application/json',
+    //       "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(playerObj)
+    //   })
+    //   .then(res => console.log(res))
+    //   // .then(obj => console.log(obj))
+    // }
   }
 
   scoreboardFunctions.init.prototype = scoreboardFunctions.prototype

@@ -12,8 +12,8 @@ export default class Game extends React.Component {
 
   state = {
     display: 'game',
-    time: (30.00).toFixed(2),
-    timeMark: (30.00).toFixed(2),
+    time: (3.00).toFixed(2),
+    timeMark: (3.00).toFixed(2),
     count: 0,
     avgPress: 0,
     rank: "SUPER BABY FINGERS",
@@ -55,18 +55,27 @@ export default class Game extends React.Component {
 
   spacebarDown(event){
     event.preventDefault()
-    let diff = this.state.timeMark - this.state.time
-    let avg = (diff + this.state.avgPress) / 2
     if(event.keyCode === 32) {
       this.setState({
         spacebar_pressed: true,
         count: this.state.count + 1,
         power: this.state.power + 0.025,
-        avgPress: avg
+       timeMark: this.state.time
       }, document.removeEventListener('keydown', this.spacebarDown))
     }
 
     this.getRank()
+
+  }
+
+  spacebarUp(){
+    let diff = this.state.timeMark - this.state.time
+    let avg = (diff + this.state.avgPress) / 2
+
+    this.setState({
+      spacebar_pressed: false,
+      avgPress: avg
+    }, document.addEventListener('keydown', this.spacebarDown))
 
     if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
       this.setState({
@@ -81,13 +90,6 @@ export default class Game extends React.Component {
         dismounted: false
       }, this.onDismount())
     }
-  }
-
-  spacebarUp(){
-    this.setState({
-      spacebar_pressed: false,
-      timeMark: this.state.time
-    }, document.addEventListener('keydown', this.spacebarDown))
   }
 
 
@@ -128,8 +130,8 @@ export default class Game extends React.Component {
   resetGame = () => {
     this.setState({
       display: 'game',
-      time: (30.00).toFixed(2),
-      timeMark: (30.00).toFixed(2),
+      time: (3.00).toFixed(2),
+      timeMark: (3.00).toFixed(2),
       count: 0,
       rank: "SUPER BABY FINGERS",
       power: 0,

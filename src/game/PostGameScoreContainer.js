@@ -25,6 +25,7 @@ export default class PostGameScoreContainer extends React.Component {
 
   getScoreboard(){
     scoreboardFunctions('get', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players')
+    // scoreboardFunctions('get', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/players')
     .then(resObj => {
       this.setState({
         scoreboard: Object.entries(resObj.players),
