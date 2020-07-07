@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0521226e42782efbf244e0875496c8b",
+    "revision": "6b5ba1a9811070cbd756728b1dc9278e",
     "url": "/spacebarsmasher/index.html"
   },
   {
-    "revision": "4ac4545102e205f63877",
+    "revision": "26a723bf6df184739ae5",
     "url": "/spacebarsmasher/static/css/main.8e1ab3ff.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spacebarsmasher/static/js/2.183ff8fd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4ac4545102e205f63877",
-    "url": "/spacebarsmasher/static/js/main.4f215574.chunk.js"
+    "revision": "26a723bf6df184739ae5",
+    "url": "/spacebarsmasher/static/js/main.b9fef43b.chunk.js"
   },
   {
     "revision": "32f9b653930c088534a2",
