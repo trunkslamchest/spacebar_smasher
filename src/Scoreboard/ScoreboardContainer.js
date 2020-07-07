@@ -12,7 +12,7 @@ const ScoreboardContainer = (props) => {
     <ScoreboardRow
       key={score[0]}
       score={score[1]}
-      submittedPlayer={ props.player }
+      submittedPlayer={ props.submittedPlayer }
     />
   )
 

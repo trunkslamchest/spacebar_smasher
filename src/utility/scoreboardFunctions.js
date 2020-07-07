@@ -16,7 +16,7 @@
         mode: 'cors',
         headers: {
           "Accept": ['application/json', 'application/x-www-form-urlencoded'],
-          "Content-Type": ['application/json', 'application/x-www-form-urlencoded']
+          "Content-Type": 'application/json'
         },
         body: JSON.stringify(playerObj)
       })

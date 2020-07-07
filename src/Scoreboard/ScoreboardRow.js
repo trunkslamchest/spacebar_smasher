@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Scoreboard = (props) => {
+const ScoreboardRow = (props) => {
 
   const player = props.score.name
   const score = props.score.score
@@ -24,4 +24,4 @@ const Scoreboard = (props) => {
   )
 }
 
-export default Scoreboard
+export default ScoreboardRow

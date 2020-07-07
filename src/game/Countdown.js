@@ -7,8 +7,8 @@ import './Countdown.css'
 export default class Countdown extends React.Component {
 
   state = {
-    display: 'countdown',
     time: 1,
+    showCountdown: true,
     showHeader: false,
     showTimer: false,
     showGo: false,
@@ -19,20 +19,20 @@ export default class Countdown extends React.Component {
   }
 
   componentDidMount(){
+    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
     this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 250)
     this.timerTimeout = setTimeout(() => { this.setState({ showTimer: true })}, 500)
-    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
     this.tutorialTimeout = setTimeout(() => { this.setState({ showTutorial: true })}, 500)
   }
 
   componentDidUpdate(){
-    if(this.state.time === 0 && !this.state.initGame) this.initGame()
-    if(this.state.initDismount && !this.state.dismounted) this.onDismount()
+    if(this.state.time === 0 && !this.state.initGame) this.startGame()
+    if(this.state.initDismount) this.onDismount()
   }
 
-  initGame(){
-    this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, display: 'game'})}, 1000)
-    this.dismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 750)
+  startGame = () => {
+    this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, showCountdown: false})}, 1000)
+    this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 750)
   }
 
   timerFunctions = () => {
@@ -46,19 +46,21 @@ export default class Countdown extends React.Component {
     else this.setState({ time: (this.state.time - 1) })
   }
 
-  onDismount = () => {
-    this.dismountedTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500)
-  }
+  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
 
-  componentWillUnmount(){
-    clearInterval(this.startTimer)
+  clearTimers = () => {
+    clearTimeout(this.startTimer)
+    clearInterval(this.timerInterval)
+
     clearTimeout(this.headerTimeout)
     clearTimeout(this.timerTimeout)
     clearTimeout(this.tutorialTimeout)
     clearTimeout(this.initGameTimeout)
-    clearTimeout(this.dismountTimeout)
-    clearTimeout(this.dismountedTimeout)
+    clearTimeout(this.initDismountTimeout)
+    clearTimeout(this.clearTimersTimeout)
   }
+
+  componentWillUnmount(){ this.clearTimers() }
 
   render(){
     const blank = <></>
@@ -104,15 +106,7 @@ export default class Countdown extends React.Component {
 
     return(
       <>
-        {
-          (() => {
-            switch(this.state.display) {
-              case 'countdown': return countdown;
-              case 'game': return <GameContainer getPlayer={this.props.getPlayer} isMobile={this.props.isMobile} />;
-              default: return blank;
-            }
-          })()
-        }
+        { this.state.showCountdown ? countdown : <GameContainer getPlayer={this.props.getPlayer} isMobile={this.props.isMobile} /> }
       </>
     )
   }

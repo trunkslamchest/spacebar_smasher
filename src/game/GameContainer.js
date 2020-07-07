@@ -12,8 +12,8 @@ export default class Game extends React.Component {
 
   state = {
     display: 'game',
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
     count: 0,
     avgPress: 0,
     rank: "SUPER BABY FINGERS",
@@ -24,10 +24,7 @@ export default class Game extends React.Component {
     showRank: false,
     showPower: false,
     showMobileSmashButton: false,
-    spacebar_pressed: false,
-    updated_rank: false,
-    initDismount: false,
-    dismounted: false
+    initDismount: false
   }
 
   constructor(props) {
@@ -50,32 +47,26 @@ export default class Game extends React.Component {
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
     if(this.props.isMobile) this.mobileSmashButtonTimeout = setTimeout(() => { this.setState({ showMobileSmashButton: true })}, 250)
-
   }
 
   spacebarDown(event){
     event.preventDefault()
     if(event.keyCode === 32) {
       this.setState({
-        spacebar_pressed: true,
         count: this.state.count + 1,
         power: this.state.power + 0.025,
-       timeMark: this.state.time
+        timeMark: this.state.time
       }, document.removeEventListener('keydown', this.spacebarDown))
     }
 
     this.getRank()
-
   }
 
   spacebarUp(){
     let diff = this.state.timeMark - this.state.time
     let avg = (diff + this.state.avgPress) / 2
 
-    this.setState({
-      spacebar_pressed: false,
-      avgPress: avg
-    }, document.addEventListener('keydown', this.spacebarDown))
+    this.setState({ avgPress: avg }, document.addEventListener('keydown', this.spacebarDown))
 
     if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
       this.setState({
@@ -83,15 +74,10 @@ export default class Game extends React.Component {
         count: 0,
         rank: "CHEATER",
         power: 0,
-        spacebar_pressed: false,
-        updated_rank: false,
-        mounted: false,
-        initDismount: false,
-        dismounted: false
+        initDismount: false
       }, this.onDismount())
     }
   }
-
 
   timerFunctions = () => {
     if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
@@ -116,7 +102,6 @@ export default class Game extends React.Component {
   powerFunctions = () => {
     if (this.state.power <= 0) this.setState({ power: 0 })
     else this.setState({ power: this.state.power - 0.003 })
-
     if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
   }
 
@@ -130,32 +115,13 @@ export default class Game extends React.Component {
   resetGame = () => {
     this.setState({
       display: 'game',
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
       count: 0,
       rank: "SUPER BABY FINGERS",
       power: 0,
-      spacebar_pressed: false,
-      updated_rank: false,
-      mounted: false,
-      initDismount: false,
-      dismounted: false
+      initDismount: false
     }, this.startGame())
-  }
-
-  clearTimers = () => {
-    clearInterval(this.powerInterval)
-    clearInterval(this.startTimer)
-    clearInterval(this.timerInterval)
-    clearTimeout(this.counterTimeout)
-    clearTimeout(this.powerTimeout)
-    clearTimeout(this.rankTimeout)
-    clearTimeout(this.timerTimeout)
-    clearTimeout(this.initDismountTimeout)
-    clearTimeout(this.dismountTimeout)
-
-    // document.removeEventListener('keydown', this.spacebarDown)
-    // document.removeEventListener('keyup', this.spacebarUp)
   }
 
   onDismount = () => {
@@ -163,8 +129,29 @@ export default class Game extends React.Component {
     document.removeEventListener('keyup', this.spacebarUp)
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    this.dismountedTimeout = setTimeout(() => { this.setState({ dismounted: true, display: 'submit_score' })}, 750)
-    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
+    this.dismountedTimeout = setTimeout(() => { this.setState({ display: 'submit_score' })}, 750)
+    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800)
+  }
+
+  clearTimers = () => {
+    clearTimeout(this.startTimer)
+    clearInterval(this.timerInterval)
+
+    clearTimeout(this.startPower)
+    clearInterval(this.powerInterval)
+
+    clearTimeout(this.timerTimeout)
+    clearTimeout(this.counterTimeout)
+    clearTimeout(this.rankTimeout)
+    clearTimeout(this.powerTimeout)
+
+    clearTimeout(this.spacebarDownListener)
+    clearTimeout(this.spacebarUpListener)
+    clearTimeout(this.mobileSmashButtonTimeout)
+
+    clearTimeout(this.initDismountTimeout)
+    clearTimeout(this.dismountTimeout)
+    clearTimeout(this.clearTimersTimeout)
   }
 
   componentWillUnmount(){ this.clearTimers() }
@@ -210,12 +197,12 @@ export default class Game extends React.Component {
             switch(this.state.display) {
               case 'game': return game;
               case 'submit_score': return <SubmitScore
-                              resetGame={ this.resetGame }
-                              getPlayer={ this.props.getPlayer }
-                              count={ this.state.count }
-                              rank={ this.state.rank }
-                              power={ (this.state.power).toFixed(5) }
-                            />;
+                                            resetGame={ this.resetGame }
+                                            getPlayer={ this.props.getPlayer }
+                                            count={ this.state.count }
+                                            rank={ this.state.rank }
+                                            power={ (this.state.power).toFixed(5) }
+                                          />;
               default: return blank;
             }
           })()

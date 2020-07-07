@@ -12,8 +12,7 @@ export default class Home extends React.Component {
   state = {
     scoreboard: [],
     mounted: false,
-    initDismount: false,
-    dismounted: false
+    initDismount: false
   }
 
   componentDidMount(){
@@ -24,7 +23,7 @@ export default class Home extends React.Component {
 
   componentDidUpdate(){
     if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
-    if (this.state.initDismount && !this.state.dismounted) this.onDismount()
+    if (this.state.initDismount) this.onDismount()
   }
 
   onClickStartButtonFunctions = (event) => {
@@ -32,15 +31,11 @@ export default class Home extends React.Component {
     this.startGameTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/game') }, 500 )
   }
 
-  onDismount = () => {
-    this.dismountTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500)
-    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
-  }
+  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
 
   clearTimers = () => {
-    clearTimeout(this.dismountTimeout)
+    clearTimeout(this.startGameTimeout)
     clearTimeout(this.clearTimersTimeout)
-    clearTimeout(this.stateGameTimeout)
   }
 
   componentWillUnmount(){ this.clearTimers() }
@@ -53,10 +48,7 @@ export default class Home extends React.Component {
         </div>
         <div className="start_button_container">
           <button
-            key={ "start_button" }
-            to='/game'
             name="start_button"
-            interaction="click"
             className={this.state.initDismount ? "dismount_start_button" : "start_button"}
             onClick={ this.onClickStartButtonFunctions }
           >

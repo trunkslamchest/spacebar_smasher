@@ -143,7 +143,6 @@ export default class SubmitScore extends React.Component {
     const blank = <></>
 
     const score = <h1>{ this.props.count }</h1>
-
     const rank = <h1>{ this.props.rank }</h1>
 
     const submit_score =

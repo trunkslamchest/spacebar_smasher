@@ -11,8 +11,7 @@ export default class PostGameContainer extends React.Component {
   state = {
     scoreboard: [],
     mounted: false,
-    initDismount: false,
-    dismounted: false
+    initDismount: false
   }
 
   componentDidMount(){
@@ -23,7 +22,7 @@ export default class PostGameContainer extends React.Component {
 
   componentDidUpdate(){
     if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
-    if (this.state.initDismount && !this.state.dismounted) this.onDismount()
+    if (this.state.initDismount) this.onDismount()
   }
 
   onClickMainMenuButtonFunctions = (event) => {
@@ -36,10 +35,7 @@ export default class PostGameContainer extends React.Component {
     this.playAgainTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/game') }, 500 )
   }
 
-  onDismount = () => {
-    this.dismountTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500)
-    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
-  }
+  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
 
   clearTimers = () => {
     clearTimeout(this.dismountTimeout)
@@ -61,18 +57,14 @@ export default class PostGameContainer extends React.Component {
         />
         <div className="post_game_buttons_container">
           <button
-            key={ "main_menu_button" }
             name="main_menu_button"
-            interaction="click"
             className={this.state.initDismount ? "dismount_post_game_main_menu_button" : "post_game_main_menu_button" }
             onClick={ this.onClickMainMenuButtonFunctions }
           >
             MAIN MENU
           </button>
           <button
-            key={ "play_again_button" }
             name="play_again_button"
-            interaction="click"
             className={this.state.initDismount ? "dismount_post_game_play_again_button" : "post_game_play_again_button" }
             onClick={ this.onClickPlayAgainButtonFunctions }
           >
