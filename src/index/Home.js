@@ -3,11 +3,10 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
-import Loading from '../UI/Loading'
-import Scoreboard from '../Scoreboard/Scoreboard'
+
+import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './Home.css'
-import '../Scoreboard/Scoreboard.css'
 import '../UI/buttons.css'
 
 export default class Home extends React.Component {
@@ -30,39 +29,53 @@ export default class Home extends React.Component {
     if (this.state.initDismount && !this.state.dismounted) this.onDismount()
   }
 
-  onClickStartButtonFunctions = (event) => { this.setState({ initDismount: true}) }
+  onClickStartButtonFunctions = (event) => {
+    this.setState({ initDismount: true})
+    this.startGameTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/game') }, 500 )
+  }
 
-  onDismount = () => { this.timerTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500) }
+  onDismount = () => {
+    this.dismountTimeout = setTimeout(() => { this.setState({ dismounted: true })}, 500)
+    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
+  }
 
-  componentWillUnmount(){ clearTimeout(this.timerTimeout) }
+  clearTimers = () => {
+    clearTimeout(this.dismountTimeout)
+    clearTimeout(this.clearTimersTimeout)
+    clearTimeout(this.stateGameTimeout)
+  }
+
+  componentWillUnmount(){ this.clearTimers() }
 
   render(){
+    // const home_page =
+    //   <>
+    //     <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
+    //       <h3>SPACEBAR SMASHER</h3>
+    //     </div>
+    //     <div className="start_button_container">
+    //       <button
+    //         key={ "start_button" }
+    //         to='/game'
+    //         name="start_button"
+    //         interaction="click"
+    //         className={this.state.initDismount ? "dismount_start_button" : "start_button"}
+    //         onClick={ this.onClickStartButtonFunctions }
+    //       >
+    //         START
+    //       </button>
+    //     </div>
+    //     <ScoreboardContainer
+    //       mounted={this.state.mounted}
+    //       scoreboard={this.state.scoreboard}
+    //       submittedPlayer={this.props.player}
+    //       initDismount={this.state.initDismount}
+    //     />
+    //   </>
 
-    const scores = this.state.scoreboard.map(score =>
-      <Scoreboard
-        key={score[0]}
-        score={score[1]}
-        submittedPlayer={this.props.player}
-      />
-    )
-
-    const scoreboard_table =
-      <div className={this.state.initDismount ? "dismount_scoreboard_table" : "scoreboard_table" } >
-          <div className={this.state.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}>
-              <h1>
-                HIGH SCORES
-              </h1>
-          </div>
-          <div className="scoreboard_head_row">
-            <h1>NAME</h1>
-            <h1>POWER</h1>
-            <h1>SCORE</h1>
-          </div>
-            { this.state.mounted ? scores : <Loading /> }
-      </div>
-
-    const home_page =
+    return(
       <>
+        {/* { this.state.dismounted ? <Redirect to='/spacebarsmasher/game' /> : home_page } */}
         <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
           <h3>SPACEBAR SMASHER</h3>
         </div>
@@ -78,12 +91,12 @@ export default class Home extends React.Component {
             START
           </button>
         </div>
-        { scoreboard_table }
-      </>
-
-    return(
-      <>
-        { this.state.dismounted ? <Redirect to='/spacebarsmasher/game' /> : home_page }
+        <ScoreboardContainer
+          mounted={this.state.mounted}
+          scoreboard={this.state.scoreboard}
+          submittedPlayer={this.props.player}
+          initDismount={this.state.initDismount}
+        />
       </>
     )
   }

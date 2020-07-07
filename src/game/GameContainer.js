@@ -154,8 +154,8 @@ export default class Game extends React.Component {
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.dismountTimeout)
 
-    document.removeEventListener('keydown', this.spacebarDown)
-    document.removeEventListener('keyup', this.spacebarUp)
+    // document.removeEventListener('keydown', this.spacebarDown)
+    // document.removeEventListener('keyup', this.spacebarUp)
   }
 
   onDismount = () => {

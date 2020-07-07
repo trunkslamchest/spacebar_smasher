@@ -8,7 +8,7 @@ import Home from './index/Home'
 import Footer from './UI/Footer'
 
 import Countdown from './game/Countdown'
-import PostGameScoreContainer from './game/PostGameScoreContainer'
+import PostGameContainer from './game/PostGame/PostGameContainer'
 
 import E404 from './error/E404'
 
@@ -38,18 +38,21 @@ export default class App extends React.Component {
             <Switch>
               <Route exact path='/spacebarsmasher'>
                 <Home
+                  history={ this.props.history }
                   player={ this.state.player }
                   isMobile={ this.isMobile }
                 />
               </Route>
               <Route exact path='/spacebarsmasher/game'>
                 <Countdown
+                  history={ this.props.history }
                   getPlayer={ this.getPlayer }
                   isMobile={ this.isMobile }
                 />
               </Route>
               <Route exact path='/spacebarsmasher/scoreboard'>
-                <PostGameScoreContainer
+                <PostGameContainer
+                  history={ this.props.history }
                   player={ this.state.player }
                 />
               </Route>
