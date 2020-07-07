@@ -3,17 +3,18 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
-
-import Score from './Score.js'
+import Loading from '../UI/Loading'
+import Scoreboard from '../Scoreboard/Scoreboard'
 
 import './Home.css'
-import '../UI/Scoreboard.css'
+import '../Scoreboard/Scoreboard.css'
 import '../UI/buttons.css'
 
 export default class Home extends React.Component {
 
   state = {
     scoreboard: [],
+    mounted: false,
     initDismount: false,
     dismounted: false
   }
@@ -24,7 +25,10 @@ export default class Home extends React.Component {
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
-  componentDidUpdate(){ if(this.state.initDismount && !this.state.dismounted) this.onDismount() }
+  componentDidUpdate(){
+    if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
+    if (this.state.initDismount && !this.state.dismounted) this.onDismount()
+  }
 
   onClickStartButtonFunctions = (event) => { this.setState({ initDismount: true}) }
 
@@ -35,7 +39,7 @@ export default class Home extends React.Component {
   render(){
 
     const scores = this.state.scoreboard.map(score =>
-      <Score
+      <Scoreboard
         key={score[0]}
         score={score[1]}
         submittedPlayer={this.props.player}
@@ -43,26 +47,19 @@ export default class Home extends React.Component {
     )
 
     const scoreboard_table =
-      <>
-        <table
-          key={"scoreboard_table"}
-          className={this.state.initDismount ? "dismount_scoreboard_table" : "scoreboard_table" }
-        >
-          <tbody>
-            <tr className={this.state.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}>
-                <td>
-                  HIGH SCORES
-                </td>
-            </tr>
-            <tr className="scoreboard_head_row">
-              <th>NAME</th>
-              <th>POWER</th>
-              <th>SCORE</th>
-            </tr>
-              { scores }
-          </tbody>
-        </table>
-      </>
+      <div className={this.state.initDismount ? "dismount_scoreboard_table" : "scoreboard_table" } >
+          <div className={this.state.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}>
+              <h1>
+                HIGH SCORES
+              </h1>
+          </div>
+          <div className="scoreboard_head_row">
+            <h1>NAME</h1>
+            <h1>POWER</h1>
+            <h1>SCORE</h1>
+          </div>
+            { this.state.mounted ? scores : <Loading /> }
+      </div>
 
     const home_page =
       <>

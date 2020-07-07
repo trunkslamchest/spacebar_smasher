@@ -79,13 +79,9 @@ export default class SubmitScore extends React.Component {
 
     if (name === "") alert(`Enter Your Name, ${randomBroName}`)
     else {
-      // scoreboardFunctions('post', 'https://spacebarsmasher-96ba1.firebaseio.com/players.json', playerObj)
       // scoreboardFunctions('post', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore', playerObj)
       scoreboardFunctions('post', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore', playerObj)
       .then(this.setState({ updatedScoreboard: true }))
-      // .then((resObj) => {
-      //   this.setState({ updatedScoreboard: true }, console.log(resObj))
-      // })
     }
   }
 

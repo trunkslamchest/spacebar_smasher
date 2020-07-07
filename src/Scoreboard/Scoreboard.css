@@ -22,16 +22,6 @@
   width: calc(375px + (1000 - 375) * ((100vw - 500px) / (1920 - 500)));
 }
 
-.scoreboard_table tbody, .dismount_scoreboard_table tbody {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
 .scoreboard_header {
   display: flex;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -43,7 +33,7 @@
   z-index: 2;
 }
 
-.scoreboard_header td {
+.scoreboard_header h1 {
   font-family: "Audiowide";
   font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
@@ -60,14 +50,17 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
+  align-content: center;
   padding: 2.5px 0px 2.5px 0px;
   width: 100%;
 }
 
-.scoreboard_head_row th, .dismount_scoreboard_head_row th {
+.scoreboard_head_row h1, .dismount_scoreboard_head_row th {
   font-family: "Audiowide";
   font-size: calc(12px + (20 - 12) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
+  text-align: center;
   width: 35%;
 }
 
@@ -94,7 +87,7 @@
   width: 100%;
 }
 
-.scoreboard_sub_row td, .dismount_scoreboard_sub_row td {
+.scoreboard_sub_row_field, .dismount_scoreboard_sub_row_field {
   font-family: "Staatliches";
   font-size: calc(14px + (17 - 14) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
@@ -117,12 +110,24 @@
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-.highlighted td, .dismount_highlighted td {
+.highlighted_field, .dismount_highlighted_field {
   font-family: "Staatliches";
   font-size: calc(14px + (20 - 14) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
-  text-align:center;
+  text-align: center;
   width: 35%;
+}
+
+.highlighted_field:last-child, .dismount_highlighted_field:last-child {
+  align-items: center;
+  align-content: center;
+  border: 1px solid black;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .scoreboard_power, .dismount_scoreboard_power {
@@ -130,16 +135,16 @@
   display: block;
   margin: 0 auto 0 auto;
   -webkit-appearance: none;
+  width: 35%;
 }
 
 .scoreboard_power meter, .dismount_scoreboard_power meter {
   background: none;
-  width: 75%;
   box-sizing: border-box;
   padding: 0 0 0 0;
   display: block;
   margin: 0 auto 0 auto;
-
+  width: 75%;
 }
 
 .scoreboard_power meter::-webkit-meter-bar, .dismount_scoreboard_power meter::-webkit-meter-bar {
@@ -150,7 +155,6 @@
 }
 
 .scoreboard_power meter::-webkit-meter-optimum-value, .dismount_scoreboard_power meter::-webkit-meter-optimum-value {
-  width: 100%;
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -158,10 +162,10 @@
   );
   background-size: 100% 100%;
   border-radius: 5px;
+  width: 100%;
 }
 
 .scoreboard_power meter::-webkit-meter-suboptimum-value, .dismount_scoreboard_power meter::-webkit-meter-suboptimum-value {
-  width: 100%;
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -170,10 +174,10 @@
   );
   background-size: 100% 100%;
   border-radius: 5px;
+  width: 100%;
 }
 
 .scoreboard_power meter::-webkit-meter-even-less-good-value, .dismount_scoreboard_power meter::-webkit-meter-even-less-good-value {
-  width: 100%;
   background-image: linear-gradient(
     90deg,
     #107A00 0%,
@@ -181,102 +185,5 @@
   );
   background-size: 100% 100%;
   border-radius: 5px;
-}
-
-.scoreboard_power_low meter, .dismount_scoreboard_power_low meter {
-  background: none;
-  width: 75%;
-  box-sizing: border-box;
-  padding: 0 0 0 0;
-  display: block;
-  margin: 0 auto 0 auto;
-}
-
-.scoreboard_power_low meter::-webkit-meter-bar, .dismount_scoreboard_power_low meter::-webkit-meter-bar {
-  background: #000;
-  border-radius: 5px;
-  border: 1px solid grey;
-  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.8), 0 0px 5px 0 rgba(0, 0, 0, 0.8);
-}
-
-.scoreboard_power_low meter::-webkit-meter-optimum-value, .dismount_scoreboard_power_low meter::-webkit-meter-optimum-value {
   width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    #FFC300 0%,
-    #FFC300 100%
-  );
-  background-size: 100% 100%;
-  border-radius: 5px;
-}
-
-.scoreboard_power_low meter::-webkit-meter-suboptimum-value, .dismount_scoreboard_power_low meter::-webkit-meter-suboptimum-value {
-  width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    #FFC300 0%,
-    #FFC300 100%
-  );
-  background-size: 100% 100%;
-  border-radius: 5px;
-}
-
-.scoreboard_power_low meter::-webkit-meter-even-less-good-value, .dismount_scoreboard_power_low meter::-webkit-meter-even-less-good-value {
-  width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    #FFC300 0%,
-    #FFC300 100%,
-  );
-  background-size: 100% 100%;
-  border-radius: 5px;
-}
-
-.scoreboard_power_high meter, .dismount_scoreboard_power_high meter {
-  background: none;
-  width: 75%;
-  box-sizing: border-box;
-  padding: 0 0 0 0;
-  display: block;
-  margin: 0 auto 0 auto;
-}
-
-.scoreboard_power_high meter::-webkit-meter-bar, .dismount_scoreboard_power_high meter::-webkit-meter-bar {
-  background: #000;
-  border-radius: 5px;
-  border: 1px solid grey;
-  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.8), 0 0px 5px 0 rgba(0, 0, 0, 0.8);
-}
-
-.scoreboard_power_high meter::-webkit-meter-optimum-value, .dismount_scoreboard_power_high meter::-webkit-meter-optimum-value {
-  width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    #FFC300 0%,
-    #FF0000 100%
-  );
-  background-size: 100% 100%;
-  border-radius: 5px;
-}
-
-.scoreboard_power_high meter::-webkit-meter-suboptimum-value, .dismount_scoreboard_power_high meter::-webkit-meter-suboptimum-value {
-  width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    #FFC300 0%,
-    #FF0000 100%
-  );
-  background-size: 100% 100%;
-  border-radius: 5px;
-}
-
-.scoreboard_power_high meter::-webkit-meter-even-less-good-value, .dismount_scoreboard_power_high meter::-webkit-meter-even-less-good-value {
-  width: 100%;
-  background-image: linear-gradient(
-    90deg,
-    #107A00 0%,
-    #FF0000 100%,
-  );
-  background-size: 100% 100%;
-  border-radius: 5px;
 }

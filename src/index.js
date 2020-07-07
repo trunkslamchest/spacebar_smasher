@@ -3,9 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(<Router><App /></Router>, document.getElementById('root'));
+// import { BrowserRouter as Router } from 'react-router-dom';
+
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+
+import ScrollRestore from './utility/scrollRestore'
+
+const history = createBrowserHistory();
+
+const RouterApp = (
+  <Router history={history}>
+    <ScrollRestore />
+    <App history={history}/>
+  </Router>
+)
+
+ReactDOM.render(RouterApp, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
