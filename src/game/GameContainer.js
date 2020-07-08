@@ -72,7 +72,6 @@ export default class Game extends React.Component {
     // this.setState({ avgPress: avg }, document.addEventListener('keydown', this.spacebarDown))
     this.setState({ avgPress: avg })
 
-
     if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
       this.setState({
         time: 0.0,
@@ -163,8 +162,6 @@ export default class Game extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
-
-    const blank = <></>
 
     let game
 
