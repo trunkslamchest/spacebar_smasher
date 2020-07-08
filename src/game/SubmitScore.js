@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -11,7 +11,6 @@ import './SubmitScore.css'
 export default class SubmitScore extends React.Component {
 
   state = {
-    display: 'submit_score',
     player: '',
     showHeader: false,
     showScore: false,
@@ -19,10 +18,8 @@ export default class SubmitScore extends React.Component {
     showPower: false,
     showForm: false,
     showBottomButtons: false,
-    updatedScoreboard: false,
-    updatedDisplay: false,
-    initDismount: false,
-    dismounted: false
+    showSubmitScore: true,
+    initDismount: false
   }
 
   componentDidMount(){
@@ -33,8 +30,6 @@ export default class SubmitScore extends React.Component {
     this.formTimeout = setTimeout(() => { this.setState({ showForm: true })}, 500)
     this.bottomButtonsTimeout = setTimeout(() => { this.setState({ showBottomButtons: true })}, 500)
   }
-
-  componentDidUpdate(){ if(this.state.updatedScoreboard && !this.state.updatedDisplay) this.onDismount() }
 
   onSubmitScoreChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
 
@@ -60,11 +55,14 @@ export default class SubmitScore extends React.Component {
     else {
       scoreboardFunctions('post', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore', playerObj)
       // scoreboardFunctions('post', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore', playerObj)
-      .then(this.setState({ updatedScoreboard: true }))
+      .then( this.onDismount() )
     }
   }
 
-  onClickMainMenuButtonFunctions = (event) => {
+  onClickButtonFunctions = (event) => {
+
+    let buttonNav = event.target.attributes.nav.value
+
     this.setState({ initDismount: true })
 
     this.initResetTimeout = setTimeout(() => {
@@ -74,48 +72,40 @@ export default class SubmitScore extends React.Component {
         showRank: false,
         showPower: false,
         showForm: false,
-        showBottomButtons: false,
-      })
-    }, 250)
-
-    this.mainMenuTimeout = setTimeout(() => { this.setState({ display: "main_menu" })}, 500 )
-  }
-
-  onClickTryAgainButtonFunctions = (event) => {
-    this.setState({ initDismount: true })
-
-    this.initResetTimeout = setTimeout(() => {
-      this.setState({
-        showHeader: false,
-        showScore: false,
-        showRank: false,
-        showPower: false,
-        showForm: false,
-        showBottomButtons: false,
+        showBottomButtons: false
       })
     }, 500)
 
-    this.resetTimeout = setTimeout(() => { this.setState({ display: "game", dismounted: true }, this.props.resetGame())}, 1000 )
+    if (buttonNav === 'game')  {
+      this.resetTimeout = setTimeout(() => {
+        this.props.history.push('/spacebarsmasher/' + buttonNav)
+        this.props.resetGame()
+      }, 1000 )
+    }
+    else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 1000 )
   }
+
 
   onDismount = () => {
     this.props.getPlayer(this.state.player)
-    this.setState({ initDismount: true, updatedDisplay: true })
-    this.dismountedTimeout = setTimeout(() => { this.setState({ dismounted: true, display: "scoreboard" })}, 500)
+    this.setState({ initDismount: true })
+    this.dismountedTimeout = setTimeout(() => { this.setState({ showSubmitScore: false })}, 500)
+    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 750)
   }
 
-  componentWillUnmount(){
+  clearTimers = () => {
     clearTimeout(this.headerTimeout)
     clearTimeout(this.scoreTimeout)
     clearTimeout(this.rankTimeout)
     clearTimeout(this.powerTimeout)
     clearTimeout(this.formTimeout)
-    clearTimeout(this.initDismountTimeout)
-    clearTimeout(this.dismountTimeout)
+    clearTimeout(this.bottomButtonsTimeout)
     clearTimeout(this.initResetTimeout)
     clearTimeout(this.resetTimeout)
-    clearTimeout(this.mainMenuTimeout)
+    clearTimeout(this.dismountedTimeout)
   }
+
+  componentWillUnmount(){ this.clearTimers() }
 
   render(){
 
@@ -123,6 +113,7 @@ export default class SubmitScore extends React.Component {
 
     const score = <h1>{ this.props.count }</h1>
     const rank = <h1>{ this.props.rank }</h1>
+    const power = this.props.power
 
     const submit_score =
       <>
@@ -160,7 +151,7 @@ export default class SubmitScore extends React.Component {
           <h2>POWER</h2>
 
           <div className={this.state.showPower ? "game_power_bar": "blank"}>
-            <meter value={this.props.power} min="0.0" low="1.0" optimum="2.0" high="4.0" max="6.0">
+            <meter value={ power } min="0.0" low="1.0" optimum="2.0" high="4.0" max="6.0">
             </meter>
           </div>
 
@@ -175,11 +166,9 @@ export default class SubmitScore extends React.Component {
 
           <form
             name="submit_score_form"
-            interaction="submit"
             onSubmit={ this.onSubmitScoreFunctions }
           >
             <input
-              id="player"
               name="player"
               type="text"
               className="submit_score_text_box"
@@ -202,40 +191,31 @@ export default class SubmitScore extends React.Component {
               true: this.state.initDismount ? "dismount_submit_score_bottom_buttons_container" : "submit_score_bottom_buttons_container"
             }[this.state.showBottomButtons]}
         >
-          <Link
-            key={ "main_menu_button" }
-            to='/spacebarsmasher'
+          <button
+            nav="main_menu"
             name="main_menu_button"
-            interaction="click"
             className="main_menu_button"
-            onClick={ this.onClickMainMenuButtonFunctions }
+            onClick={ this.onClickButtonFunctions }
           >
             Main Menu
-          </Link>
-          <Link
-            key={ "try_again_button" }
-            to='/spacebarsmasher/game'
+          </button>
+          <button
+            nav="game"
             name="try_again_button"
-            interaction="click"
             className="try_again_button"
-            onClick={ this.onClickTryAgainButtonFunctions }
+            onClick={ this.onClickButtonFunctions }
           >
             Try Again
-          </Link>
+          </button>
         </div>
       </>
 
     return(
       <>
-        {
-          (() => {
-            switch(this.state.display) {
-              case 'submit_score': return submit_score;
-              case 'main_menu': return <Redirect to="/spacebarsmasher" />
-              case 'scoreboard': return <Redirect to="/spacebarsmasher/scoreboard" />;
-              default: return blank;
-            }
-          })()
+        { this.state.showSubmitScore ?
+          submit_score
+        :
+          <Redirect to="/spacebarsmasher/scoreboard" />
         }
       </>
     )

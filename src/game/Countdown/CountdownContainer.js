@@ -1,8 +1,8 @@
 import React from 'react'
 
-import CountdownHeader from './CountdownHeader'
-import CountdownTimer from './CountdownTimer'
-import CountdownTutorial from './CountdownTutorial'
+import CountdownHeader from './CountdownComponents/CountdownHeader'
+import CountdownTimer from './CountdownComponents/CountdownTimer'
+import CountdownTutorial from './CountdownComponents/CountdownTutorial'
 
 import GameContainer from '../GameContainer.js'
 
@@ -11,15 +11,14 @@ import './CountdownContainer.css'
 export default class CountdownContainer extends React.Component {
 
   state = {
-    time: 5,
+    time: 1,
     showCountdown: true,
     showHeader: false,
     showTimer: false,
     showGo: false,
     showTutorial: false,
     initGame: false,
-    initDismount: false,
-    dismounted: false
+    initDismount: false
   }
 
   componentDidMount(){
@@ -55,7 +54,6 @@ export default class CountdownContainer extends React.Component {
   clearTimers = () => {
     clearTimeout(this.startTimer)
     clearInterval(this.timerInterval)
-
     clearTimeout(this.headerTimeout)
     clearTimeout(this.timerTimeout)
     clearTimeout(this.tutorialTimeout)
@@ -90,7 +88,11 @@ export default class CountdownContainer extends React.Component {
         { this.state.showCountdown ?
           countdown
         :
-          <GameContainer getPlayer={this.props.getPlayer} isMobile={this.props.isMobile} />
+          <GameContainer
+            history={ this.props.history }
+            getPlayer={ this.props.getPlayer }
+            isMobile={ this.props.isMobile }
+          />
         }
       </>
     )

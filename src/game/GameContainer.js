@@ -10,8 +10,8 @@ import './GameContainer.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (1.00).toFixed(2),
+    timeMark: (1.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
@@ -116,8 +116,8 @@ export default class Game extends React.Component {
 
   resetGame = () => {
     this.setState({
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (1.00).toFixed(2),
+      timeMark: (1.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",
@@ -139,19 +139,15 @@ export default class Game extends React.Component {
   clearTimers = () => {
     clearTimeout(this.startTimer)
     clearInterval(this.timerInterval)
-
     clearTimeout(this.startPower)
     clearInterval(this.powerInterval)
-
     clearTimeout(this.timerTimeout)
     clearTimeout(this.counterTimeout)
     clearTimeout(this.rankTimeout)
     clearTimeout(this.powerTimeout)
-
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
     clearTimeout(this.mobileSmashButtonTimeout)
-
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.dismountTimeout)
     clearTimeout(this.clearTimersTimeout)
@@ -197,11 +193,12 @@ export default class Game extends React.Component {
           game
         :
           <SubmitScore
-            resetGame={ this.resetGame }
-            getPlayer={ this.props.getPlayer }
+            history={ this.props.history }
             count={ this.state.count }
             rank={ this.state.rank }
             power={ (this.state.power).toFixed(5) }
+            getPlayer={ this.props.getPlayer }
+            resetGame={ this.resetGame }
           />
         }
       </>

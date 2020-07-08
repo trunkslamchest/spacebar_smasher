@@ -25,22 +25,20 @@ export default class PostGameContainer extends React.Component {
     if (this.state.initDismount) this.onDismount()
   }
 
-  onClickMainMenuButtonFunctions = (event) => {
+  onClickButtonFunctions = (event) => {
+    let buttonNav = event.target.attributes.nav.value
+
     this.setState({ initDismount: true })
-    this.mainMenuTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 500 )
+
+    if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/' + buttonNav) }, 500 )
+    else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 500 )
   }
 
-  onClickPlayAgainButtonFunctions = (event) => {
-    this.setState({ initDismount: true })
-    this.playAgainTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/game') }, 500 )
-  }
-
-  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
+  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 750) }
 
   clearTimers = () => {
+    clearTimeout(this.resetTimeout)
     clearTimeout(this.dismountTimeout)
-    clearTimeout(this.mainMenuTimeout)
-    clearTimeout(this.playAgainTimeout)
     clearTimeout(this.clearTimersTimeout)
   }
 
@@ -57,16 +55,19 @@ export default class PostGameContainer extends React.Component {
         />
         <div className="post_game_buttons_container">
           <button
+            nav="main_menu"
             name="main_menu_button"
             className={this.state.initDismount ? "dismount_post_game_main_menu_button" : "post_game_main_menu_button" }
-            onClick={ this.onClickMainMenuButtonFunctions }
+            onClick={ this.onClickButtonFunctions }
+
           >
             MAIN MENU
           </button>
           <button
+            nav="game"
             name="play_again_button"
             className={this.state.initDismount ? "dismount_post_game_play_again_button" : "post_game_play_again_button" }
-            onClick={ this.onClickPlayAgainButtonFunctions }
+            onClick={ this.onClickButtonFunctions }
           >
             PLAY AGAIN
           </button>
