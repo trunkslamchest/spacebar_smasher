@@ -3,11 +3,11 @@
   height: 0px;
 }
 
-.game_wrapper {
+/* .game_wrapper {
   padding-bottom: 50px;
   padding-top: calc(12.5px + (25 - 12.5) * ((100vh - 434px) / (779 - 434)));
   min-height: 50vh;
-}
+} */
 
 .game_timer {
   animation: slide_in_from_top .6s 1;

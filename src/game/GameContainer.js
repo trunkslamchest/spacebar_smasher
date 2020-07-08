@@ -12,8 +12,8 @@ export default class Game extends React.Component {
 
   state = {
     display: 'game',
-    time: (30.00).toFixed(2),
-    timeMark: (30.00).toFixed(2),
+    time: (3.00).toFixed(2),
+    timeMark: (3.00).toFixed(2),
     count: 0,
     avgPress: 0,
     rank: "SUPER BABY FINGERS",
@@ -115,8 +115,8 @@ export default class Game extends React.Component {
   resetGame = () => {
     this.setState({
       display: 'game',
-      time: (30.00).toFixed(2),
-      timeMark: (30.00).toFixed(2),
+      time: (3.00).toFixed(2),
+      timeMark: (3.00).toFixed(2),
       count: 0,
       rank: "SUPER BABY FINGERS",
       power: 0,

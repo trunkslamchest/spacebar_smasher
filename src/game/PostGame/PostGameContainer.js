@@ -15,8 +15,8 @@ export default class PostGameContainer extends React.Component {
   }
 
   componentDidMount(){
-    // scoreboardFunctions('get', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/players')
-    scoreboardFunctions('get', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players')
+    scoreboardFunctions('get', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/players')
+    // scoreboardFunctions('get', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players')
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 

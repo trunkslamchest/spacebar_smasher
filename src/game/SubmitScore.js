@@ -4,6 +4,8 @@ import { Link, Redirect } from 'react-router-dom'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
+import broNames from '../datasets/broNames'
+
 import './SubmitScore.css'
 
 export default class SubmitScore extends React.Component {
@@ -51,36 +53,13 @@ export default class SubmitScore extends React.Component {
       timestamp: 'test'
     }
 
-    let broArr =	[
-      "Bromato",
-      "Bronado",
-      "Brostrodamus",
-      "Brozo the Clown",
-      "Angelina Brolie",
-      "Marco Brolo",
-      "Vincent Van Brogh",
-      "Brosef Stalin",
-      "Brometheus",
-      "Fidel Castbro",
-      "Brolden Caulfield",
-      "Edgar Allen Bro",
-      "Brofessor X",
-      "Bromer Simpson",
-      "Zambroni",
-      "Mr. Brojangles",
-      "Brohammed",
-      "G.I. Bro",
-      "Ringbro Starr",
-      "Shaquille Bro’Neal"
-    ]
-
     let name = event.target[0].value.trim()
-    let randomBroName = broArr[Math.floor(Math.random() * broArr.length)]
+    let randomBroName = broNames[Math.floor(Math.random() * broNames.length)]
 
     if (name === "") alert(`Enter Your Name, ${randomBroName}`)
     else {
-      // scoreboardFunctions('post', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore', playerObj)
-      scoreboardFunctions('post', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore', playerObj)
+      scoreboardFunctions('post', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore', playerObj)
+      // scoreboardFunctions('post', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore', playerObj)
       .then(this.setState({ updatedScoreboard: true }))
     }
   }

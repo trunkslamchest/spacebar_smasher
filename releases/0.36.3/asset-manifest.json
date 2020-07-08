@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/spacebarsmasher/static/css/main.8e1ab3ff.chunk.css",
-    "main.js": "/spacebarsmasher/static/js/main.b9fef43b.chunk.js",
-    "main.js.map": "/spacebarsmasher/static/js/main.b9fef43b.chunk.js.map",
+    "main.js": "/spacebarsmasher/static/js/main.21298c1b.chunk.js",
+    "main.js.map": "/spacebarsmasher/static/js/main.21298c1b.chunk.js.map",
     "runtime-main.js": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js",
     "runtime-main.js.map": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js.map",
     "static/js/2.183ff8fd.chunk.js": "/spacebarsmasher/static/js/2.183ff8fd.chunk.js",
     "static/js/2.183ff8fd.chunk.js.map": "/spacebarsmasher/static/js/2.183ff8fd.chunk.js.map",
     "index.html": "/spacebarsmasher/index.html",
-    "precache-manifest.6b699a3a5be92f424349f4000af918a0.js": "/spacebarsmasher/precache-manifest.6b699a3a5be92f424349f4000af918a0.js",
+    "precache-manifest.ffbb80d95b479f23341c3e551b3c161a.js": "/spacebarsmasher/precache-manifest.ffbb80d95b479f23341c3e551b3c161a.js",
     "service-worker.js": "/spacebarsmasher/service-worker.js",
     "static/css/main.8e1ab3ff.chunk.css.map": "/spacebarsmasher/static/css/main.8e1ab3ff.chunk.css.map",
     "static/js/2.183ff8fd.chunk.js.LICENSE.txt": "/spacebarsmasher/static/js/2.183ff8fd.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.b024a8d1.js",
     "static/js/2.183ff8fd.chunk.js",
     "static/css/main.8e1ab3ff.chunk.css",
-    "static/js/main.b9fef43b.chunk.js"
+    "static/js/main.21298c1b.chunk.js"
   ]
 }
