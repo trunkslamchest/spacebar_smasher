@@ -3,6 +3,7 @@ import React from 'react'
 import SubmitScoreForm from './SubmitScoreForm'
 
 import scoreboardFunctions from '../../../utility/scoreboardFunctions'
+import { postPaths } from '../../../utility/paths'
 
 import broNames from '../../../datasets/broNames'
 
@@ -37,8 +38,8 @@ export default class SubmitScoreFormContainer extends React.Component {
 
     if (name === "") alert(`Enter Your Name, ${randomBroName}`)
     else {
-      scoreboardFunctions('post', 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore', playerObj)
-      // scoreboardFunctions('post', 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore', playerObj)
+      // scoreboardFunctions('post', postPaths.local, playerObj)
+      scoreboardFunctions('post', postPaths.deploy, playerObj)
       .then( this.props.onDismount() )
     }
   }
