@@ -7,13 +7,14 @@ import detectDevice from './utility/detectDevice'
 import Home from './index/Home'
 import Footer from './UI/Footer'
 
-import Countdown from './game/Countdown'
+import CountdownContainer from './game/Countdown/CountdownContainer'
 import PostGameContainer from './game/PostGame/PostGameContainer'
 
 import E404 from './error/E404'
 
 import './App.css'
-import './UI/Response.css'
+// import './UI/Response.css'
+
 import './UI/Loading.css'
 import './UI/Dismount.css'
 
@@ -42,7 +43,7 @@ export default class App extends React.Component {
                 />
               </Route>
               <Route exact path='/spacebarsmasher/game'>
-                <Countdown
+                <CountdownContainer
                   history={ this.props.history }
                   getPlayer={ this.getPlayer }
                   isMobile={ this.isMobile }

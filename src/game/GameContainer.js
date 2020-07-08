@@ -66,10 +66,8 @@ export default class Game extends React.Component {
 
     document.addEventListener('keydown', this.spacebarDown)
 
-    // let diff = this.state.timeMark - this.state.time
     let avg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
 
-    // this.setState({ avgPress: avg }, document.addEventListener('keydown', this.spacebarDown))
     this.setState({ avgPress: avg })
 
     if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
