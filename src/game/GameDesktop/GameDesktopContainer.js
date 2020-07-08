@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class GameDesktop extends React.Component {
+export default class GameDesktopContainer extends React.Component {
 
   render(){
 

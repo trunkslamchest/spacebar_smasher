@@ -1,8 +1,7 @@
 import React from 'react'
 
-import GameDesktop from './GameDesktop'
+import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
 import GameMobileContainer from './GameMobile/GameMobileContainer'
-
 
 import SubmitScore from './SubmitScore.js'
 
@@ -11,13 +10,13 @@ import './GameContainer.css'
 export default class Game extends React.Component {
 
   state = {
-    display: 'game',
     time: (3.00).toFixed(2),
     timeMark: (3.00).toFixed(2),
     count: 0,
-    avgPress: 0,
+    avgPress: 1,
     rank: "SUPER BABY FINGERS",
     power: 0,
+    showGame: true,
     showTimer: false,
     startTimer: false,
     showCounter: false,
@@ -62,11 +61,17 @@ export default class Game extends React.Component {
     this.getRank()
   }
 
-  spacebarUp(){
-    let diff = this.state.timeMark - this.state.time
-    let avg = (diff + this.state.avgPress) / 2
+  spacebarUp(event){
+    event.preventDefault()
 
-    this.setState({ avgPress: avg }, document.addEventListener('keydown', this.spacebarDown))
+    document.addEventListener('keydown', this.spacebarDown)
+
+    // let diff = this.state.timeMark - this.state.time
+    let avg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
+
+    // this.setState({ avgPress: avg }, document.addEventListener('keydown', this.spacebarDown))
+    this.setState({ avgPress: avg })
+
 
     if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
       this.setState({
@@ -114,12 +119,13 @@ export default class Game extends React.Component {
 
   resetGame = () => {
     this.setState({
-      display: 'game',
       time: (3.00).toFixed(2),
       timeMark: (3.00).toFixed(2),
       count: 0,
+      avgPress: 1,
       rank: "SUPER BABY FINGERS",
       power: 0,
+      showGame: true,
       initDismount: false
     }, this.startGame())
   }
@@ -129,7 +135,7 @@ export default class Game extends React.Component {
     document.removeEventListener('keyup', this.spacebarUp)
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    this.dismountedTimeout = setTimeout(() => { this.setState({ display: 'submit_score' })}, 750)
+    this.dismountedTimeout = setTimeout(() => { this.setState({ showGame: false })}, 750)
     this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800)
   }
 
@@ -177,7 +183,7 @@ export default class Game extends React.Component {
               initDismount={ this.state.initDismount }
             />
     } else {
-      game = <GameDesktop
+      game = <GameDesktopContainer
               time={ this.state.time }
               count={ this.state.count }
               rank={ this.state.rank }
@@ -192,20 +198,16 @@ export default class Game extends React.Component {
 
     return(
       <>
-        {
-          (() => {
-            switch(this.state.display) {
-              case 'game': return game;
-              case 'submit_score': return <SubmitScore
-                                            resetGame={ this.resetGame }
-                                            getPlayer={ this.props.getPlayer }
-                                            count={ this.state.count }
-                                            rank={ this.state.rank }
-                                            power={ (this.state.power).toFixed(5) }
-                                          />;
-              default: return blank;
-            }
-          })()
+        { this.state.showGame ?
+          game
+        :
+          <SubmitScore
+            resetGame={ this.resetGame }
+            getPlayer={ this.props.getPlayer }
+            count={ this.state.count }
+            rank={ this.state.rank }
+            power={ (this.state.power).toFixed(5) }
+          />
         }
       </>
     )
