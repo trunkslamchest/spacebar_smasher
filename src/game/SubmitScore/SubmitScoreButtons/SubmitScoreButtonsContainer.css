@@ -1,0 +1,132 @@
+.submit_score_buttons_container {
+  animation: slide_in_from_bottom .5s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
+  align-items: baseline;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  padding: 10px;
+  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.main_menu_button {
+  -webkit-appearance: none;
+  align-items: flex-start;
+  animation: text_shadow_blink 2s ease-in-out infinite;
+  background-color: #000;
+  border: 1px solid grey;
+  border-radius: 25px 0px 0px 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  color: yellow;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Staatliches";
+  font-size: calc(15px + (20 - 15) * ((100vw - 500px) / (1920 - 500)));
+  font-weight: 400;
+  letter-spacing: normal;
+  margin: 5px 0px 5px 0px;
+  padding: 13px 30px 13px 30px;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  word-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  transform: matrix3d(
+    1,0,0,0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+    );
+}
+
+.main_menu_button:hover {
+  animation: blinker_hover .1s ease-in-out 1;
+  background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
+  border: 1px solid black;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  color: rgb(0, 0, 0, 1) !important;
+  transition-property: color;
+  transition-duration: .1s, .1s;
+  transition-timing-function: ease-in-out;
+    transform: matrix3d(
+      1,0,0,0,
+      0,1,0,0,
+      0,0,1,0,
+      0,0,0,1
+    );
+}
+
+.main_menu_button:active {
+  color: rgb(40, 44, 52, 1);
+  background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
+  transition-property: color, background-image;
+  transition-duration: .1s, .1s;
+  transition-timing-function: ease-in-out;
+  animation: scale_out .1s ease-in-out 1, blur_out .1s ease-in-out 1;
+}
+
+.try_again_button {
+  -webkit-appearance: none;
+  align-items: flex-start;
+  animation: text_shadow_blink 1.9s ease-in-out infinite;
+  background-color: #000;
+  border: 1px solid grey;
+  border-radius: 0px 25px 25px 0px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  color: yellow;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Staatliches";
+  font-size:calc(15px + (20 - 15) * ((100vw - 500px) / (1920 - 500))) ;
+  font-weight: 400;
+  letter-spacing: normal;
+  margin: 5px 0px 5px -5px;
+  padding: 13px 30px 13px 30px;
+  text-indent: 0px;
+  text-rendering: auto;
+  text-shadow: none;
+  text-transform: none;
+  word-spacing: normal;
+  text-align: center;
+  text-decoration: none;
+  transform: matrix3d(
+    1,0,0,-0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+    );
+}
+
+.try_again_button:hover {
+  animation: blinker_hover .1s ease-in-out 1;
+  background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
+  border: 1px solid black;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  color: rgb(0, 0, 0, 1) !important;
+  transition-property: color;
+  transition-duration: .1s, .1s;
+  transition-timing-function: ease-in-out;
+    transform: matrix3d(
+      1,0,0,0,
+      0,1,0,0,
+      0,0,1,0,
+      0,0,0,1
+    );
+}
+
+.try_again_button:active {
+  color: rgb(40, 44, 52, 1);
+  background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
+  transition-property: color, background-image;
+  transition-duration: .1s, .1s;
+  transition-timing-function: ease-in-out;
+  animation: scale_out .1s ease-in-out 1, blur_out .1s ease-in-out 1;
+}

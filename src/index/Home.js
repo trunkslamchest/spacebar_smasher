@@ -5,7 +5,6 @@ import scoreboardFunctions from '../utility/scoreboardFunctions'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './Home.css'
-import '../UI/buttons.css'
 
 export default class Home extends React.Component {
 

@@ -3,7 +3,7 @@ import React from 'react'
 import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
 import GameMobileContainer from './GameMobile/GameMobileContainer'
 
-import SubmitScore from './SubmitScore.js'
+import SubmitScoreContainer from './SubmitScore/SubmitScoreContainer'
 
 import './GameContainer.css'
 
@@ -192,7 +192,7 @@ export default class Game extends React.Component {
         { this.state.showGame ?
           game
         :
-          <SubmitScore
+          <SubmitScoreContainer
             history={ this.props.history }
             count={ this.state.count }
             rank={ this.state.rank }
