@@ -14,7 +14,7 @@ const ScoreboardRow = (props) => {
           {player}
         </div>
           <div className="scoreboard_power">
-          <meter value={power} min="0.0" low="1.0" optimum="2.0" high="4.0" max="6.0"></meter>
+          <meter value={power} min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
         </div>
         <div className='scoreboard_sub_row_field'>
           {score}
