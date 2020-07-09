@@ -11,12 +11,13 @@ import './GameDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (1.00).toFixed(2),
-    timeMark: (1.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
     power: 0,
+    powerRaw: 0,
     showGame: true,
     showTimer: false,
     startTimer: false,
@@ -51,13 +52,16 @@ export default class Game extends React.Component {
 
   spacebarDown(event){
     event.preventDefault()
+
     if(event.keyCode === 32) {
       this.setState({
         count: this.state.count + 1,
-        power: this.state.power + 0.025,
+        power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+        powerRaw: this.state.powerRaw + 0.025,
         timeMark: this.state.time
       }, document.removeEventListener('keydown', this.spacebarDown))
     }
+
 
     this.getRank()
   }
@@ -67,9 +71,10 @@ export default class Game extends React.Component {
 
     document.addEventListener('keydown', this.spacebarDown)
 
-    let avg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
-
-    this.setState({ avgPress: avg })
+    if(event.keyCode === 32) {
+      let pressAvg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
+      this.setState({ avgPress: pressAvg })
+    }
 
     if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
       this.setState({
@@ -104,25 +109,30 @@ export default class Game extends React.Component {
 
   powerFunctions = () => {
     if (this.state.power <= 0) this.setState({ power: 0 })
-    else this.setState({ power: this.state.power - 0.003 })
+    else this.setState({
+      power: ((this.state.powerRaw - 0.003) / 4).toFixed(3) * 100,
+      powerRaw: this.state.powerRaw - 0.003
+    })
     if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
   }
 
   onSmash = () => {
     this.setState({
       count: this.state.count + 1,
-      power: this.state.power + 0.025
+      power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+      powerRaw: this.state.powerRaw + 0.025,
     })
   }
 
   resetGame = () => {
     this.setState({
-      time: (1.00).toFixed(2),
-      timeMark: (1.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",
       power: 0,
+      powerRaw: 0,
       showGame: true,
       initDismount: false
     }, this.startGame())
@@ -157,6 +167,8 @@ export default class Game extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
+    console.log('this.state.powerRaw', this.state.powerRaw)
+    console.log('this.state.power', this.state.power)
 
     let game
 
@@ -166,6 +178,7 @@ export default class Game extends React.Component {
               count={ this.state.count }
               rank={ this.state.rank }
               power={ this.state.power }
+              powerRaw={ this.state.powerRaw }
               onSmash={ this.onSmash }
               showTimer={ this.state.showTimer }
               showCounter={ this.state.showCounter }
@@ -180,6 +193,7 @@ export default class Game extends React.Component {
               count={ this.state.count }
               rank={ this.state.rank }
               power={ this.state.power }
+              powerRaw={ this.state.powerRaw }
               showTimer={ this.state.showTimer }
               showCounter={ this.state.showCounter }
               showRank={ this.state.showRank }
@@ -197,7 +211,8 @@ export default class Game extends React.Component {
             history={ this.props.history }
             count={ this.state.count }
             rank={ this.state.rank }
-            power={ (this.state.power).toFixed(5) }
+            power={ this.state.power }
+            powerRaw={ this.state.powerRaw }
             getPlayer={ this.props.getPlayer }
             resetGame={ this.resetGame }
           />

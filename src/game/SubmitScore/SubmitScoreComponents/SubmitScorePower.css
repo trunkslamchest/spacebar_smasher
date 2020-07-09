@@ -8,7 +8,7 @@
   margin: 0px auto 0px auto;
   padding: 10px;
   text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .submit_score_power h1, .dismount_submit_score_power h1 {
@@ -16,27 +16,27 @@
   background-color: #000;
   border: 1px solid grey;
   border-radius: 10px;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
   color: yellow;
-  font-family: "Audiowide";
-  font-size: calc(25px + (50 - 25) * ((100vw - 500px) / (1920 - 500)));
+  font-family: 'Conv_digital-7.mono';
+  font-size: calc(25px + (50 - 25) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  margin: 0 auto 0 auto;
-  padding: 0px;
+  margin: 0 auto 5px auto;
+  padding: 0px 5px 0px 5px;
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;
-  width: calc(200px + (350 - 200) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(110px + (220 - 110) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .submit_score_power h2, .dismount_submit_score_power h1 {
   font-family: "Staatliches";
-  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   color: white;
   margin: 0 auto 0 auto;
   padding: 0px;
   text-align: center;
 }
-
 
 .submit_score_power_bar {
   padding: 0 0 0 0;

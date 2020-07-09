@@ -32,7 +32,8 @@ export default class SubmitScoreFormContainer extends React.Component {
     let playerObj = {
       name: this.state.player,
       score: this.props.count,
-      power_level: this.props.power,
+      power_level: this.props.powerRaw,
+      power_percent: this.props.power,
       timestamp: getTime('fullDate')
     }
 
@@ -44,13 +45,11 @@ export default class SubmitScoreFormContainer extends React.Component {
       scoreboardFunctions('post', postPaths.local, playerObj)
       // scoreboardFunctions('post', postPaths.deploy, playerObj)
       .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
+      // .then( this.setState({ submittedScore: true }))
     }
   }
 
   render(){
-
-    // console.log(getTime('now'))
-
     return(
       <SubmitScoreForm
         player={ this.state.player }

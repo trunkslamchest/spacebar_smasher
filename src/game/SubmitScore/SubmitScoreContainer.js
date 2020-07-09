@@ -102,6 +102,7 @@ export default class SubmitScoreContainer extends React.Component {
         />
         <SubmitScorePower
           power={ this.props.power }
+          powerRaw={ this.props.powerRaw }
           showPower={ this.state.showPower }
           initDismount={ this.state.initDismount }
         />
@@ -109,6 +110,7 @@ export default class SubmitScoreContainer extends React.Component {
           showForm={ this.state.showForm }
           count={ this.props.count }
           power={ this.props.power }
+          powerRaw={ this.props.powerRaw }
           getPlayer={ this.props.getPlayer }
           initDismount={ this.state.initDismount }
           onDismount={ this.onDismount }

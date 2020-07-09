@@ -26,6 +26,7 @@ const SubmitScoreForm = (props) => {
           <input
             name="player"
             type="text"
+            maxLength="12"
             className="submit_score_text_box"
             placeholder="Enter Your Name"
             autoComplete="off"

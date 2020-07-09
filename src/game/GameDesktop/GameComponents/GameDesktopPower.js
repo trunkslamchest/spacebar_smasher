@@ -6,7 +6,7 @@ const GameDesktopPower = (props) => {
 
   const blank = <></>
 
-  const power = <h1>{ (props.power).toFixed(3) }</h1>
+  const power = <h1>{ (props.power).toFixed(2) } %</h1>
 
   return(
     <div className={{
@@ -18,7 +18,7 @@ const GameDesktopPower = (props) => {
       { props.showPower ? power : blank }
 
       <div className={ props.showPower ? "game_power_bar": "blank" }>
-        <meter value={ props.power } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0">
+        <meter value={ props.powerRaw } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0">
         </meter>
       </div>
     </div>

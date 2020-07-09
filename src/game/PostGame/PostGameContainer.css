@@ -1,7 +1,7 @@
-.post_game_wrapper {
+/* .post_game_wrapper {
   padding-bottom: 50px;
   padding-top: calc(10px + (75 - 10) * ((100vh - 756px) / (980 - 756)));
-}
+} */
 
 .post_game_header {
   animation: slide_in_from_bottom_home_scoreboard_header .5s ease-in-out 1;
@@ -17,14 +17,14 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(333px + (870 - 333) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(333px + (870 - 333) * ((100vw - 320px) / (1920 - 320)));
   z-index: 2;
 }
 
 .post_game_wrapper h4 {
   text-align: center;
   font-family: "Audiowide";
-  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   padding: 5px 0px 5px 0px;
   margin: 0px;
@@ -56,7 +56,7 @@
   box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
   color: white !important;
   font-family: 'Audiowide';
-  font-size: calc(17px + (25 - 17) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   padding: 10px;
   margin-right: -5px;
@@ -68,7 +68,7 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(150px + (300 - 150) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .post_game_main_menu_button:hover {
@@ -106,7 +106,7 @@
   box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
   color: white !important;
   font-family: "Audiowide";
-  font-size: calc(17px + (25 - 17) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   margin-left: -5px;
   padding: 10px;
@@ -118,7 +118,7 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(150px + (300 - 150) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .post_game_play_again_button:hover {
