@@ -13,7 +13,6 @@ const SubmitScoreCounter = (props) => {
         }[props.showCounter]}
     >
       <h2>SMASHES</h2>
-      {/* { props.showCounter ? count : blank } */}
       { count }
     </div>
   )

@@ -3,9 +3,6 @@ import React from 'react'
 import './SubmitScoreRank.css'
 
 const SubmitScoreRank = (props) => {
-
-  // const rank = <h1>{ this.props.rank }</h1>
-
   return(
     <div className={{
           false: "blank",
@@ -13,7 +10,6 @@ const SubmitScoreRank = (props) => {
         }[props.showRank]}
     >
       <h2>RANK</h2>
-      {/* { this.state.showRank ? rank : blank } */}
       <h1>{ props.rank }</h1>
     </div>
   )

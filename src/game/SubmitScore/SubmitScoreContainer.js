@@ -10,11 +10,6 @@ import SubmitScorePower from './SubmitScoreComponents/SubmitScorePower'
 import SubmitScoreFormContainer from './SubmitScoreForm/SubmitScoreFormContainer'
 import SubmitScoreButtonsContainer from './SubmitScoreButtons/SubmitScoreButtonsContainer'
 
-
-// import scoreboardFunctions from '../../utility/scoreboardFunctions'
-
-// import broNames from '../../datasets/broNames'
-
 import './SubmitScoreContainer.css'
 
 export default class SubmitScoreContainer extends React.Component {
