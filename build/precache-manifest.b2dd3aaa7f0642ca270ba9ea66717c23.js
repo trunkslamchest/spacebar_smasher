@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b08a3cd54daefdc81db466e4b8f93189",
+    "revision": "1ff31730fb66d38d5db46081f6e8d1d0",
     "url": "/spacebarsmasher/index.html"
   },
   {
-    "revision": "8993072e0c37559a55c6",
-    "url": "/spacebarsmasher/static/css/main.7685db81.chunk.css"
+    "revision": "401d48e8ceff8b52336d",
+    "url": "/spacebarsmasher/static/css/main.7439b489.chunk.css"
   },
   {
     "revision": "462c7b86803f72d12bde",
@@ -16,16 +16,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/spacebarsmasher/static/js/2.4d089672.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8993072e0c37559a55c6",
-    "url": "/spacebarsmasher/static/js/main.e7aa5d63.chunk.js"
+    "revision": "401d48e8ceff8b52336d",
+    "url": "/spacebarsmasher/static/js/main.38d29f3b.chunk.js"
   },
   {
     "revision": "32f9b653930c088534a2",
     "url": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js"
   },
   {
-    "revision": "15a150cac2fe0527216db502a5e63cba",
-    "url": "/spacebarsmasher/static/media/bg_01.15a150ca.jpg"
+    "revision": "3c89649614630d9bf36deb57c9a599a8",
+    "url": "/spacebarsmasher/static/media/Helvetica.3c896496.otf"
+  },
+  {
+    "revision": "0fd06d221d690e82006884c526dbb51f",
+    "url": "/spacebarsmasher/static/media/bg_02.0fd06d22.jpg"
   },
   {
     "revision": "1a92408a1cadaa74f2fed063b20f4f4d",
