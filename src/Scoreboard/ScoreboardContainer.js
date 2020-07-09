@@ -4,7 +4,9 @@ import ScoreboardRow from './ScoreboardRow'
 
 import Loading from '../UI/Loading'
 
-import './Scoreboard.css'
+import './ScoreboardContainer.css'
+import './ScoreboardDismount.css'
+
 
 const ScoreboardContainer = (props) => {
 
@@ -17,7 +19,6 @@ const ScoreboardContainer = (props) => {
   )
 
   return(
-    <>
     <div className={ props.initDismount ? "dismount_scoreboard_table" : "scoreboard_table" } >
         <div className={ props.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}>
             <h1>
@@ -31,7 +32,6 @@ const ScoreboardContainer = (props) => {
         </div>
           { props.mounted ? scores : <Loading /> }
     </div>
-    </>
   )
 }
 

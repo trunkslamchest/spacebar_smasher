@@ -7,11 +7,13 @@ import CountdownTutorial from './CountdownComponents/CountdownTutorial'
 import GameContainer from '../GameContainer.js'
 
 import './CountdownContainer.css'
+import './CountdownDismount.css'
+
 
 export default class CountdownContainer extends React.Component {
 
   state = {
-    time: 1,
+    time: 5,
     showCountdown: true,
     showHeader: false,
     showTimer: false,

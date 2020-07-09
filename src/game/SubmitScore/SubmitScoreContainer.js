@@ -11,6 +11,7 @@ import SubmitScoreFormContainer from './SubmitScoreForm/SubmitScoreFormContainer
 import SubmitScoreButtonsContainer from './SubmitScoreButtons/SubmitScoreButtonsContainer'
 
 import './SubmitScoreContainer.css'
+import './SubmitScoreDismount.css'
 
 export default class SubmitScoreContainer extends React.Component {
 

@@ -6,7 +6,8 @@ import scoreboardFunctions from '../../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../../Scoreboard/ScoreboardContainer'
 
-import './PostGame.css'
+import './PostGameContainer.css'
+import './PostGameDismount.css'
 
 export default class PostGameContainer extends React.Component {
 
@@ -17,8 +18,8 @@ export default class PostGameContainer extends React.Component {
   }
 
   componentDidMount(){
-    scoreboardFunctions('get', getPaths.local)
-    // scoreboardFunctions('get', getPaths.deploy)
+    // scoreboardFunctions('get', getPaths.local)
+    scoreboardFunctions('get', getPaths.deploy)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
