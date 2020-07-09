@@ -13,7 +13,6 @@ import PostGameContainer from './game/PostGame/PostGameContainer'
 import E404 from './error/E404'
 
 import './App.css'
-// import './UI/Response.css'
 
 import './UI/Loading.css'
 import './UI/Dismount.css'
@@ -58,8 +57,6 @@ export default class App extends React.Component {
               <Route component={ E404 } />
             </Switch>
           </div>
-        </div>
-        <div className="footer_container">
           <Footer/>
         </div>
       </>
