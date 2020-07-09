@@ -1,7 +1,8 @@
 import React from 'react'
 
-import scoreboardFunctions from '../../utility/scoreboardFunctions'
 import { getPaths } from '../../utility/paths'
+
+import scoreboardFunctions from '../../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../../Scoreboard/ScoreboardContainer'
 
@@ -16,8 +17,8 @@ export default class PostGameContainer extends React.Component {
   }
 
   componentDidMount(){
-    // scoreboardFunctions('get', getPaths.local)
-    scoreboardFunctions('get', getPaths.deploy)
+    scoreboardFunctions('get', getPaths.local)
+    // scoreboardFunctions('get', getPaths.deploy)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 

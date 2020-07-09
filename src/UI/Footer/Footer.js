@@ -2,10 +2,11 @@ import React from 'react'
 
 import './Footer.css'
 
-import firebase_logo from '../assets/footer_logo_firebase.png'
-import flatiron_logo from '../assets/footer_logo_flatiron.png'
-import github_logo from '../assets/footer_logo_github.png'
-import react_logo from '../assets/footer_logo_react.png'
+import firebase_logo from '../../assets/footer_logo_firebase.png'
+import flatiron_logo from '../../assets/footer_logo_flatiron2.png'
+import github_logo from '../../assets/footer_logo_github.png'
+import HVH_logo from '../../assets/footer_logo_HVH4.png'
+import react_logo from '../../assets/footer_logo_react2.png'
 
 const Footer = (props) => {
 
@@ -18,7 +19,6 @@ const Footer = (props) => {
       <div className="footer_wrapper">
         <div className="logos">
           <a
-            key={"firebase_logo"}
             href="https://firebase.google.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -27,13 +27,11 @@ const Footer = (props) => {
               src={ firebase_logo }
               className="logo_rectangle"
               alt="Firebase"
-              name="footer_firebase_logo"
-              interaction="click"
+              name="footer_logo_firebase"
               onClick={ onClickFooterLinksFunctions }
             />
           </a>
           <a
-            key={"flatiron_logo"}
             href="https://flatironschool.com/"
             rel="noopener noreferrer"
             target="_blank"
@@ -42,13 +40,11 @@ const Footer = (props) => {
               src={ flatiron_logo }
               className="logo_rectangle"
               alt="The Flatiron School"
-              name="footer_flatiron_logo"
-              interaction="click"
+              name="footer_logo_flatiron"
               onClick={ onClickFooterLinksFunctions }
             />
           </a>
           <a
-            key={"github_logo"}
             href="https://github.com/trunkslamchest/spacebar_smasher"
             rel="noopener noreferrer"
             target="_blank"
@@ -57,13 +53,24 @@ const Footer = (props) => {
               src={ github_logo }
               className="logo_rectangle"
               alt="Github Repository"
-              name="footer_github_logo"
-              interaction="click"
+              name="footer_logo_github"
               onClick={ onClickFooterLinksFunctions }
             />
           </a>
           <a
-            key={"react_logo"}
+            href="https://hudsonvalleyhost.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              src={ HVH_logo }
+              className="logo_rectangle"
+              alt="Hudson Valley Host"
+              name="footer_logo_HVH"
+              onClick={ onClickFooterLinksFunctions }
+            />
+          </a>
+          <a
             href="https://reactjs.org/"
             rel="noopener noreferrer"
             target="_blank"
@@ -72,8 +79,7 @@ const Footer = (props) => {
               src={ react_logo }
               className="logo_rectangle"
               alt="React"
-              name="footer_react_logo"
-              interaction="click"
+              name="footer_logo_react"
               onClick={ onClickFooterLinksFunctions }
             />
           </a>

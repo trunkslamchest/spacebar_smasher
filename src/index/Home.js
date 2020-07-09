@@ -1,9 +1,10 @@
 import React from 'react'
 
-import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
+import { getPaths } from '../utility/paths'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
-import { getPaths } from '../utility/paths'
+
+import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './Home.css'
 
@@ -16,8 +17,8 @@ export default class Home extends React.Component {
   }
 
   componentDidMount(){
-    // scoreboardFunctions('get', getPaths.local)
-    scoreboardFunctions('get', getPaths.deploy)
+    scoreboardFunctions('get', getPaths.local)
+    // scoreboardFunctions('get', getPaths.deploy)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 

@@ -5,7 +5,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-  height: 99.8vh;
+  height: 99.7vh;
   animation: slide_in_from_bottom_footer .5s ease-in-out 1;
 }
 

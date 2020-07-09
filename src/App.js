@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import detectDevice from './utility/detectDevice'
 
 import Home from './index/Home'
-import Footer from './UI/Footer'
+import Footer from './UI/Footer/Footer'
 
 import CountdownContainer from './game/Countdown/CountdownContainer'
 import PostGameContainer from './game/PostGame/PostGameContainer'
