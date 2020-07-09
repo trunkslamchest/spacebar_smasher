@@ -65,7 +65,7 @@ a:-webkit-any-link {
   visibility: hidden;
 }
 
-.loading_container {
+/* .loading_container {
   width: 100wh !important;
   min-height: 50vh !important;
   margin: 0px auto 0px auto;
@@ -93,7 +93,7 @@ a:-webkit-any-link {
 .loading_animation_container {
   margin: 0px auto 0px auto !important;
   animation: loading_pulse 1.2s ease-in-out infinite !important;
-}
+} */
 
 /* input:-webkit-autofill,
 input:-webkit-autofill:hover,

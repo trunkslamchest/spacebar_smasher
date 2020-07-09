@@ -13,7 +13,8 @@ import './SubmitScoreFormContainer.css'
 export default class SubmitScoreFormContainer extends React.Component {
 
   state={
-    player: ''
+    player: '',
+    submittedScore: false
   }
 
   onNameChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
@@ -39,9 +40,10 @@ export default class SubmitScoreFormContainer extends React.Component {
 
     if (name === "") alert(`Enter Your Name, ${randomBroName}`)
     else {
-      // scoreboardFunctions('post', postPaths.local, playerObj)
-      scoreboardFunctions('post', postPaths.deploy, playerObj)
-      .then( this.props.onDismount() )
+      scoreboardFunctions('post', postPaths.local, playerObj)
+      // scoreboardFunctions('post', postPaths.deploy, playerObj)
+      .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
+      // .then( this.setState({ submittedScore: true }) )
     }
   }
 
@@ -49,6 +51,7 @@ export default class SubmitScoreFormContainer extends React.Component {
     return(
       <SubmitScoreForm
         player={ this.state.player }
+        submittedScore={ this.state.submittedScore }
         showForm={ this.props.showForm }
         initDismount={ this.props.initDismount }
         onSubmit={ this.onSubmit }

@@ -92,7 +92,7 @@
   }
 }
 
-.dismount_submit_score_form {
+.dismount_submit_score_form_container {
   animation: dismount_submit_score_form 1s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;

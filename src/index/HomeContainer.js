@@ -9,7 +9,6 @@ import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 import './HomeContainer.css'
 import './HomeDismount.css'
 
-
 export default class HomeContainer extends React.Component {
 
   state = {
@@ -19,8 +18,8 @@ export default class HomeContainer extends React.Component {
   }
 
   componentDidMount(){
-    // scoreboardFunctions('get', getPaths.local)
-    scoreboardFunctions('get', getPaths.deploy)
+    scoreboardFunctions('get', getPaths.local)
+    // scoreboardFunctions('get', getPaths.deploy)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 

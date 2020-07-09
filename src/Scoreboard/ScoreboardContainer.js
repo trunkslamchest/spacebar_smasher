@@ -2,11 +2,10 @@ import React from 'react'
 
 import ScoreboardRow from './ScoreboardRow'
 
-import Loading from '../UI/Loading'
+import LoadingScoreboard from '../UI/Loading/LoadingScoreboard'
 
 import './ScoreboardContainer.css'
 import './ScoreboardDismount.css'
-
 
 const ScoreboardContainer = (props) => {
 
@@ -30,7 +29,7 @@ const ScoreboardContainer = (props) => {
           <h1>POWER</h1>
           <h1>SCORE</h1>
         </div>
-          { props.mounted ? scores : <Loading /> }
+          { props.mounted ? scores : <LoadingScoreboard /> }
     </div>
   )
 }
