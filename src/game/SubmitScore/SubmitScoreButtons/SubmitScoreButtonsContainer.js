@@ -7,26 +7,24 @@ const SubmitScoreButtonsContainer = (props) => {
   const onClickFunctions = (event) => { props.onClickButtonFunctions(event) }
 
   return(
-    <div className={{
-          false: "blank",
-          true: props.initDismount ? "dismount_submit_score_buttons_container" : "submit_score_buttons_container"
-        }[props.showButtons]}
-    >
+    <div className="submit_score_buttons_container">
       <button
         nav="main_menu"
-        name="main_menu_button"
-        className="main_menu_button"
+        name="submit_score_main_menu_button"
+        className={props.initDismount ? "dismount_submit_score_main_menu_button" : "submit_score_main_menu_button" }
+        // className="submit_score_main_menu_button"
         onClick={ onClickFunctions }
       >
-        Main Menu
+        MAIN MENU
       </button>
       <button
         nav="game"
-        name="try_again_button"
-        className="try_again_button"
+        name="submit_score_try_again_button"
+        className={props.initDismount ? "dismount_submit_score_try_again_button" : "submit_score_try_again_button" }
+        // className="submit_score_try_again_button"
         onClick={ onClickFunctions }
       >
-        Try Again
+        TRY AGAIN
       </button>
     </div>
   )

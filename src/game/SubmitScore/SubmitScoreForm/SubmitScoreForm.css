@@ -1,4 +1,4 @@
-.submit_score_form_container {
+/* .submit_score_form_container {
   animation: slide_in_from_bottom .4s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
@@ -26,7 +26,7 @@
   margin-block-end: 0.0px;
   padding: 0px;
   text-align: center;
-}
+} */
 
 .submit_score_form {
   display: flex;
