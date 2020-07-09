@@ -5,7 +5,7 @@ import './LoadingAnimations.css'
 
 const LoadingSubmitScore = () => {
   return(
-    <div class="loadingTriplePulsBars">
+    <div className="loadingTriplePulsBars">
       <div></div>
       <div></div>
       <div></div>

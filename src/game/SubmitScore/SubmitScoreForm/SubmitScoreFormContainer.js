@@ -3,6 +3,7 @@ import React from 'react'
 import { postPaths } from '../../../utility/paths'
 
 import scoreboardFunctions from '../../../utility/scoreboardFunctions'
+import getTime from '../../../utility/getTime'
 
 import broNames from '../../../datasets/broNames'
 
@@ -32,7 +33,7 @@ export default class SubmitScoreFormContainer extends React.Component {
       name: this.state.player,
       score: this.props.count,
       power_level: this.props.power,
-      timestamp: 'test'
+      timestamp: getTime('fullDate')
     }
 
     let name = event.target[0].value.trim()
@@ -43,11 +44,13 @@ export default class SubmitScoreFormContainer extends React.Component {
       scoreboardFunctions('post', postPaths.local, playerObj)
       // scoreboardFunctions('post', postPaths.deploy, playerObj)
       .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
-      // .then( this.setState({ submittedScore: true }) )
     }
   }
 
   render(){
+
+    // console.log(getTime('now'))
+
     return(
       <SubmitScoreForm
         player={ this.state.player }
