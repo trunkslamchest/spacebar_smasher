@@ -4,7 +4,7 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   border: 2px solid grey;
   margin: 0px auto 0 auto;
-  padding: 10px;
+  padding: 10px 0px 5px 0px;
   text-align: center;
   width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
@@ -19,7 +19,7 @@
   font-family: 'Conv_digital-7.mono';
   font-size: calc(75px + (125 - 75) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 0px 0px 0px;
   margin: 0 auto 0 auto;
   text-align: center;
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
@@ -31,6 +31,6 @@
   font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   margin: 0 auto 0 auto;
-  padding: 0px;
+  padding: 0px 0px 0px 0px;
   text-align: center;
 }

@@ -12,7 +12,6 @@ import PostGameContainer from './game/PostGame/PostGameContainer'
 import E404 from './error/E404'
 
 import './App.css'
-// import './UI/Loading.css'
 
 export default class App extends React.Component {
 

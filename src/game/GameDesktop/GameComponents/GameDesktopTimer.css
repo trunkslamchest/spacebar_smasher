@@ -5,9 +5,9 @@
   border-radius: 50px 50px 0px 0px;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0 auto;
-  padding: 10px;
+  padding: 10px 0px 5px 0px;
   text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .game_timer h1, .dismount_game_timer h1 {
@@ -18,22 +18,22 @@
   box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
   color: yellow;
   font-family: 'Conv_digital-7.mono';
-  font-size:calc(75px + (150 - 75) * ((100vw - 500px) / (1920 - 500))) ;
+  font-size:calc(75px + (150 - 75) * ((100vw - 320px) / (1920 - 320))) ;
   font-weight: 300;
   letter-spacing: 5px;
   margin: 0 auto 0 auto;
   padding: 0px 0px 0px 0px;
   text-align: center;
   text-shadow: 0px 0px 5px yellow;
-  width: calc(250px + (400 - 250) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(200px + (400 - 200) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .game_timer h2, .dismount_game_timer h2 {
   color: white;
   font-family: "Staatliches";
-  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   margin: 0 auto 0 auto;
   text-align: center;
-  padding: 10px 10px 0px 10px;
+  padding: 0px 0px 0px 0px;
 }

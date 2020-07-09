@@ -11,8 +11,8 @@ import './GameDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
@@ -126,8 +126,8 @@ export default class Game extends React.Component {
 
   resetGame = () => {
     this.setState({
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",

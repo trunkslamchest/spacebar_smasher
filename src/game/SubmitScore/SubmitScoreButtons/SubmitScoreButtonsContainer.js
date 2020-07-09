@@ -12,7 +12,6 @@ const SubmitScoreButtonsContainer = (props) => {
         nav="main_menu"
         name="submit_score_main_menu_button"
         className={props.initDismount ? "dismount_submit_score_main_menu_button" : "submit_score_main_menu_button" }
-        // className="submit_score_main_menu_button"
         onClick={ onClickFunctions }
       >
         MAIN MENU
@@ -21,7 +20,6 @@ const SubmitScoreButtonsContainer = (props) => {
         nav="game"
         name="submit_score_try_again_button"
         className={props.initDismount ? "dismount_submit_score_try_again_button" : "submit_score_try_again_button" }
-        // className="submit_score_try_again_button"
         onClick={ onClickFunctions }
       >
         TRY AGAIN

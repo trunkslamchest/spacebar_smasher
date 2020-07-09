@@ -4,7 +4,7 @@
   border: 2px solid grey;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0 auto;
-  padding: 10px;
+  padding: 5px 0px 5px 0px;
   text-align: center;
   width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
@@ -20,17 +20,17 @@
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   margin: 0 auto 0 auto;
-  padding: 0px 10px 0px 10px;
+  padding: 0px 0px 0px 0px;
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;
   width: calc(200px + (400 - 200) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .submit_score_rank h2, .dismount_submit_score_rank h2 {
-  font-family: "Staatliches";
-  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 300;
   color: white;
+  font-family: "Staatliches";
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
   margin: 0 auto 0 auto;
   padding: 0px;
   text-align: center;
