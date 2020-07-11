@@ -36,7 +36,13 @@ const ScoreboardContainer = (props) => {
           <h1>POWER LEVEL</h1>
           <h1>SCORE</h1>
         </div>
-          { props.mounted ? scores : <LoadingScoreboard /> }
+          { props.mounted ?
+            <div className="scoreboard_sub_rows_wrapper">
+              { scores }
+            </div>
+          :
+            <LoadingScoreboard />
+          }
     </div>
   )
 }
