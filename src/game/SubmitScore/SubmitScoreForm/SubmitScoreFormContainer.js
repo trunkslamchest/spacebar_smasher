@@ -42,8 +42,8 @@ export default class SubmitScoreFormContainer extends React.Component {
 
     if (name === "") alert(`Enter Your Name, ${randomBroName}`)
     else {
-      // scoreboardFunctions('post', postPaths.local, playerObj)
-      scoreboardFunctions('post', postPaths.deploy, playerObj)
+      scoreboardFunctions('post', postPaths.local, playerObj)
+      // scoreboardFunctions('post', postPaths.deploy, playerObj)
       .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
     }
   }

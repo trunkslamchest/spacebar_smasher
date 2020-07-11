@@ -6,8 +6,8 @@ const admin = require('firebase-admin');
 admin.initializeApp();
 
 var firebaseConfig = {
-  // databaseURL: "http://localhost:9000?ns=spacebarsmasher-96ba1"
-  databaseURL: "https://spacebarsmasher-96ba1.firebaseio.com"
+  databaseURL: "http://localhost:9000?ns=spacebarsmasher-96ba1"
+  // databaseURL: "https://spacebarsmasher-96ba1.firebaseio.com"
 }
 
 var init = firebase.initializeApp(firebaseConfig);
@@ -22,14 +22,17 @@ exports.players = functions
   .https.onRequest((req, res) => {
 
     res.set('Access-Control-Allow-Methods', ['GET', 'OPTIONS'])
+    // res.set('Access-Control-Allow-Origin', 'http://trunkslamchest.com' )
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000' )
 
-    if(req.headers.origin === 'http://localhost:3000' || 'http://trunkslamchest.com' ) {
-      res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
-    }
+    // if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    //   res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // }
 
     let players = []
 
-    var sorted = firebase.database().ref('/players').orderByChild('score').limitToLast(20)
+    // var sorted = firebase.database().ref('/players').orderByChild('score').limitToLast(20)
+    var sorted = firebase.database().ref('/players').orderByChild('score')
 
     var parsed = sorted.once('value', function(player){
       player.forEach(function(snap) { players.unshift(snap.val()) })
@@ -45,15 +48,18 @@ exports.addScore = functions
     res.set('Access-Control-Allow-Methods', ['POST', 'OPTIONS'])
     res.set('Access-Control-Allow-Headers', ['Content-Type', 'Accept'])
 
-    if(req.headers.origin === 'http://localhost:3000' || 'http://trunkslamchest.com' ) {
-      res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
-    }
+    // res.set('Access-Control-Allow-Origin', 'http://trunkslamchest.com' )
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000' )
+
+    // if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    //   res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // }
 
     var obj = { }
 
-    var newKey = firebase.database().ref().child('players').push().key
+    var createKey = firebase.database().ref().child('players').push().key
 
-    obj['/players/' + newKey] = req.body
+    obj['/players/' + createKey] = req.body
 
     firebase.database().ref().update(obj)
 
