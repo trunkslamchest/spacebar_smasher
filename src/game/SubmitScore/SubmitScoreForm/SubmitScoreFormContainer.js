@@ -80,8 +80,8 @@ export default class SubmitScoreFormContainer extends React.Component {
         broName: broNames.random()
       })
     } else {
-      scoreboardFunctions('post', postPaths.local, playerObj)
-      // scoreboardFunctions('post', postPaths.deploy, playerObj)
+      // scoreboardFunctions('post', postPaths.local, playerObj)
+      scoreboardFunctions('post', postPaths.deploy, playerObj)
       .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
     }
   }

@@ -15,10 +15,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* .wrapper { */
+.wrapper {
   /* padding-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (568 - 320))); */
-  /* padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (568 - 320))); */
-/* } */
+  padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (568 - 320)));
+}
 
 ::selection {
 	background-color: #000;

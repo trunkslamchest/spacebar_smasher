@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d1552f2b90c11b9938caf11b0871dab3",
+    "revision": "298d1006195c98f2165d7a35e5258c5f",
     "url": "/spacebarsmasher/index.html"
   },
   {
-    "revision": "a01b9839a6170659e8bd",
-    "url": "/spacebarsmasher/static/css/main.dbb9c668.chunk.css"
+    "revision": "178266ad57bc56aef41c",
+    "url": "/spacebarsmasher/static/css/main.51aebf06.chunk.css"
   },
   {
-    "revision": "550fb8c1c857023d4e7b",
-    "url": "/spacebarsmasher/static/js/2.fc8111db.chunk.js"
+    "revision": "36dbeeb2beb980256e6d",
+    "url": "/spacebarsmasher/static/js/2.eab04776.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/spacebarsmasher/static/js/2.fc8111db.chunk.js.LICENSE.txt"
+    "url": "/spacebarsmasher/static/js/2.eab04776.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a01b9839a6170659e8bd",
-    "url": "/spacebarsmasher/static/js/main.6175ca14.chunk.js"
+    "revision": "178266ad57bc56aef41c",
+    "url": "/spacebarsmasher/static/js/main.505c3dc5.chunk.js"
   },
   {
     "revision": "32f9b653930c088534a2",
