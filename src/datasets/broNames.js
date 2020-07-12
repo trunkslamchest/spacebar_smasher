@@ -1,4 +1,4 @@
-const broNames = [
+const broNameArr = [
     "Bromato",
     "Bronado",
     "Brostrodamus",
@@ -20,5 +20,10 @@ const broNames = [
     "Ringbro Starr",
     "Shaquille Bro’Neal"
   ]
+
+const broNames = {
+  arr: broNameArr,
+  random: () => { return broNameArr[Math.floor(Math.random() * broNameArr.length)] }
+}
 
 export default broNames

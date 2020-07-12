@@ -1,0 +1,37 @@
+const specialCharsArr = [
+  '!',
+  '@',
+  '#',
+  '$',
+  '%',
+  '^',
+  '&',
+  '*',
+  '(',
+  ')',
+  '[',
+  ']',
+  '{',
+  '}',
+  ';',
+  ':',
+  ',',
+  '<',
+  '>',
+  '\\',
+  '/',
+  '?',
+  '|',
+  '-',
+  '_',
+  '=',
+  '+',
+  ',',
+  '.',
+  '`',
+  '~',
+]
+
+const specialChars = { arr: specialCharsArr, str: specialCharsArr.join(' ') }
+
+export default specialChars

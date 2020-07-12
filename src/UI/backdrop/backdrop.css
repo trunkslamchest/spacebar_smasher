@@ -1,0 +1,21 @@
+.backdrop {
+  animation: fade_in .3s ease-in-out 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.dismount_backdrop {
+  animation: fade_out .3s ease-in-out 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}

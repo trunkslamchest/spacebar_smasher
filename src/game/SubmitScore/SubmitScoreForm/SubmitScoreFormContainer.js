@@ -1,21 +1,52 @@
 import React from 'react'
 
 import { postPaths } from '../../../utility/paths'
-
 import scoreboardFunctions from '../../../utility/scoreboardFunctions'
 import getTime from '../../../utility/getTime'
+import validatePost from '../../../utility/validatePost'
 
 import broNames from '../../../datasets/broNames'
 
 import SubmitScoreForm from './SubmitScoreForm'
+import SubmitScoreErrorContainer from './SubmitScoreErrorHandling/SubmitScoreErrorContainer'
+
+import Modal from '../../../UI/modal/modal'
 
 import './SubmitScoreFormContainer.css'
 
 export default class SubmitScoreFormContainer extends React.Component {
 
   state={
+    broName: '',
     player: '',
+    modal: {
+      initDismount: false,
+      show: false,
+      validationErrors: []
+    },
     submittedScore: false
+  }
+
+  initDismountModal = () => {
+    this.setState({
+      modal: {
+        ...this.state.modal,
+        initDismount: true
+      }
+    }, this.onDismountModal())
+  }
+
+  onDismountModal = () => {
+    this.dismountModalTimeout = setTimeout(() => {
+      this.setState({
+        modal: {
+          ...this.state.modal,
+          show: false,
+          initDismount: false,
+          validationErrors: []
+        }
+      })
+    }, 250)
   }
 
   onNameChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
@@ -37,20 +68,46 @@ export default class SubmitScoreFormContainer extends React.Component {
       timestamp: getTime('fullDate')
     }
 
-    let name = event.target[0].value.trim()
-    let randomBroName = broNames[Math.floor(Math.random() * broNames.length)]
+    let postCheck = validatePost(event.target[0].value.trim(), this.props.count)
 
-    if (name === "") alert(`Enter Your Name, ${randomBroName}`)
-    else if (this.props.count === 0) alert('Your score is too low to be added to the Leaderboard. Please Try Again')
-    else {
+    if (!(postCheck.valid)) {
+      this.setState({
+        modal: {
+          ...this.state.modal,
+          show: true,
+          validationErrors: postCheck.errors
+        },
+        broName: broNames.random()
+      })
+    } else {
       scoreboardFunctions('post', postPaths.local, playerObj)
       // scoreboardFunctions('post', postPaths.deploy, playerObj)
       .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
     }
   }
 
+  componentWillUnmount(){
+    clearTimeout(this.dismountModalTimeout)
+  }
+
   render(){
     return(
+      <>
+      { this.state.modal.show ?
+          <Modal
+            show={ this.state.modal.show }
+            initDismount={ this.state.modal.initDismount }
+          >
+            <SubmitScoreErrorContainer
+              broName={ this.state.broName }
+              count={ this.props.count }
+              validationErrors={ this.state.modal.validationErrors }
+              initDismountModal={ this.initDismountModal }
+            />
+          </Modal>
+        :
+          null
+        }
       <SubmitScoreForm
         player={ this.state.player }
         submittedScore={ this.state.submittedScore }
@@ -59,6 +116,7 @@ export default class SubmitScoreFormContainer extends React.Component {
         onSubmit={ this.onSubmit }
         onNameChange={ this.onNameChange }
       />
+      </>
     )
   }
 }

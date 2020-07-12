@@ -1,0 +1,21 @@
+.modal_wrapper {
+  animation: modal_slide_in_from_top .3s ease-in-out 1;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 50%;
+  max-width: 75%;
+  z-index: 500;
+}
+
+.dismount_modal_wrapper {
+  animation: modal_slide_out_to_top .3s ease-in-out 1;
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 50%;
+  max-width: 75%;
+  z-index: 500;
+}
