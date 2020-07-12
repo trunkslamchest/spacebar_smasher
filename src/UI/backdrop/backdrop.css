@@ -1,6 +1,6 @@
 .backdrop {
   animation: fade_in .3s ease-in-out 1;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   height: 100%;
   left: 0;
   position: fixed;
