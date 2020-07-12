@@ -41,6 +41,7 @@ export default class SubmitScoreFormContainer extends React.Component {
     let randomBroName = broNames[Math.floor(Math.random() * broNames.length)]
 
     if (name === "") alert(`Enter Your Name, ${randomBroName}`)
+    else if (this.props.count === 0) alert('Your score is too low to be added to the Leaderboard. Please Try Again')
     else {
       scoreboardFunctions('post', postPaths.local, playerObj)
       // scoreboardFunctions('post', postPaths.deploy, playerObj)

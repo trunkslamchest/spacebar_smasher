@@ -5,9 +5,6 @@ import './LoadingAnimations.css'
 
 const LoadingScoreboard = () => {
   return(
-    //   <div className='loading_scoreboard_animation_container'>
-    //     <div className='lds-roller'><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-    //   </div>
     <div className='loading_scoreboard_container'>
       <div className="loadingTriplePulsBars">
         <div></div>

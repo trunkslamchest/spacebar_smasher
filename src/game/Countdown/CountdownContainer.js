@@ -13,7 +13,7 @@ import './CountdownDismount.css'
 export default class CountdownContainer extends React.Component {
 
   state = {
-    time: 5,
+    time: 1,
     showCountdown: true,
     showHeader: false,
     showTimer: false,

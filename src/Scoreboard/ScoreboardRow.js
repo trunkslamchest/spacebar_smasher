@@ -1,33 +1,44 @@
 import React from 'react'
 
-const ScoreboardRow = (props) => {
+export default class ScoreboardRow extends React.Component {
 
-  console.log(props)
+  constructor(props) {
+    super(props);
+    this.rowRef = React.createRef();
+  }
 
-  // const player = props.score.name
-  // const score = props.score.score
-  // const power = props.score.power_level
-  // const submittedPlayer = props.submittedPlayer
+  componentDidMount() {
+    if(this.props.submittedPlayer === this.props.score.name ) {
+      this.scrollToHighlightTimeout = setTimeout(() => { this.rowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' }) }, 250)
+    }
+  }
 
-  return(
-    <>
-      <div className={ props.submittedPlayer === props.score.name ? "highlighted" : "scoreboard_sub_row" }>
-        <div className='scoreboard_sub_row_place'>
-          { props.place }
-        </div>
-        <div className='scoreboard_sub_row_name'>
-          { props.score.name }
-        </div>
-          <div className="scoreboard_sub_row_power">
-            <meter value={ props.score.power_level } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
-            <span>{ (props.score.power_percent).toFixed(2) }%</span>
+  componentWillUnmount(){
+    clearTimeout(this.scrollToHighlightTimeout)
+  }
+
+  render(){
+    return(
+      <>
+        <div
+          className={ this.props.submittedPlayer === this.props.score.name ? "highlighted" : "scoreboard_sub_row" }
+          ref={ this.rowRef }
+        >
+          <div className='scoreboard_sub_row_place'>
+            { this.props.place }
           </div>
-        <div className='scoreboard_sub_row_score'>
-          { props.score.score }
+          <div className='scoreboard_sub_row_name'>
+            { this.props.score.name }
+          </div>
+            <div className="scoreboard_sub_row_power">
+              <meter value={ this.props.score.power_level } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
+              <span>{ (this.props.score.power_percent).toFixed(2) }%</span>
+            </div>
+          <div className='scoreboard_sub_row_score'>
+            { this.props.score.score }
+          </div>
         </div>
-      </div>
-    </>
-  )
+      </>
+    )
+  }
 }
-
-export default ScoreboardRow

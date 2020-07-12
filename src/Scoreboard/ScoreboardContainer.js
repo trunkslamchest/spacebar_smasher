@@ -9,25 +9,20 @@ import './ScoreboardDismount.css'
 
 const ScoreboardContainer = (props) => {
 
-  // let place = 0
-
-  const scores =  props.scoreboard.map(score => {
-    // place += 1
-    return <ScoreboardRow
+  const scores =  props.scoreboard.map(score =>
+    <ScoreboardRow
       place={props.scoreboard.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
       submittedPlayer={ props.submittedPlayer }
     />
-
-    }
   )
 
   return(
     <div className={ props.initDismount ? "dismount_scoreboard_table" : "scoreboard_table" } >
         <div className={ props.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}>
             <h1>
-              HIGH SCORES
+              LEADERBOARD
             </h1>
         </div>
         <div className="scoreboard_head_row">
@@ -35,6 +30,7 @@ const ScoreboardContainer = (props) => {
           <h1>NAME</h1>
           <h1>POWER LEVEL</h1>
           <h1>SCORE</h1>
+          <h1>SCROLLBAR</h1>
         </div>
           { props.mounted ?
             <div className="scoreboard_sub_rows_wrapper">

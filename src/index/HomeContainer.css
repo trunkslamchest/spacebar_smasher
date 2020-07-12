@@ -1,8 +1,8 @@
-.home_wrapper {
+/* .home_wrapper {
   padding-bottom: 50px;
   padding-top: calc(5px + (10 - 5) * ((100vh - 434px) / (779 - 434)));
   min-height: 50vh;
-}
+} */
 
 .home_header {
   animation: mount_home_header .5s ease-in-out 1;

@@ -1,6 +1,5 @@
 .footer_container {
   animation: fade_in .5s ease-in-out 1, slide_in_from_bottom_footer .5s ease-in-out 1;
-  /* background-image: linear-gradient(180deg, rgba(0,0,0, 0), rgba(0,0,0, 0), rgba(0,0,0, 0.75) ); */
   color: white;
   height: calc(47px + (91 - 47) * ((100vw - 320px) / (1920 - 320)));
   z-index: 0;
@@ -16,9 +15,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* align-content: stretch;
-  align-items: center;
-  font-size: 10pt; */
   margin: 5px auto;
   width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
 
