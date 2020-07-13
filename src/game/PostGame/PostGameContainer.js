@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getPaths } from '../../utility/paths'
+import { fetch, routes } from '../../utility/paths'
 
 import scoreboardFunctions from '../../utility/scoreboardFunctions'
 
@@ -18,8 +18,8 @@ export default class PostGameContainer extends React.Component {
   }
 
   componentDidMount(){
-    // scoreboardFunctions('get', getPaths.local)
-    scoreboardFunctions('get', getPaths.deploy)
+    document.title = 'Spacebar Smasher - Scoreboard'
+    scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
@@ -33,8 +33,10 @@ export default class PostGameContainer extends React.Component {
 
     this.setState({ initDismount: true })
 
-    if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/' + buttonNav) }, 500 )
-    else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 500 )
+    // if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/' + buttonNav) }, 500 )
+    if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
+    // else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 500 )
+    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 500 )
   }
 
   onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 750) }

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Redirect } from 'react-router-dom'
+import { routes } from '../../utility/paths'
 
 import SubmitScoreHeader from './SubmitScoreComponents/SubmitScoreHeader'
 import SubmitScoreCounter from './SubmitScoreComponents/SubmitScoreCounter'
@@ -28,6 +29,7 @@ export default class SubmitScoreContainer extends React.Component {
   }
 
   componentDidMount(){
+    document.title = 'Spacebar Smasher - Submit Score'
     this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 500)
     this.scoreTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 500)
     this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 500)
@@ -55,11 +57,13 @@ export default class SubmitScoreContainer extends React.Component {
 
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
-        this.props.history.push('/spacebarsmasher/' + buttonNav)
+        // this.props.history.push( '/spacebarsmasher/game' )
+        this.props.history.push( routes.game )
         this.props.resetGame()
       }, 1000 )
     }
-    else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 1000 )
+    // else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 1000 )
+    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 1000 )
   }
 
 
@@ -127,7 +131,8 @@ export default class SubmitScoreContainer extends React.Component {
         { this.state.showSubmitScore ?
           submit_score
         :
-          <Redirect to="/spacebarsmasher/scoreboard" />
+          // <Redirect to="/spacebarsmasher/scoreboard" />
+          <Redirect to={ routes.scoreboard } />
         }
       </>
     )

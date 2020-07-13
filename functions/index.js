@@ -5,17 +5,21 @@ const firebase = require("firebase")
 const admin = require('firebase-admin');
 admin.initializeApp();
 
+const url = {
+  database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
+  // database: 'https://spacebarsmasher-96ba1.firebaseio.com',
+  rootSecured: 'https://localhost:3000',
+  // rootSecured: 'https://trunkslamchest.com',
+  rootUnsecured: 'http://localhost:3000'
+  // rootUnsecured: 'http://trunkslamchest.com'
+}
+
 var firebaseConfig = {
-  // databaseURL: "http://localhost:9000?ns=spacebarsmasher-96ba1"
-  databaseURL: "https://spacebarsmasher-96ba1.firebaseio.com"
+  databaseURL: url.database
 }
 
 var init = firebase.initializeApp(firebaseConfig);
 var db = init.database();
-
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   response.send("Hello from Firebase!");
-// });
 
 exports.players = functions
   .region('us-east1')
@@ -25,7 +29,11 @@ exports.players = functions
 
     // res.set('Access-Control-Allow-Origin', 'http://localhost:3000' )
 
-    if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    // if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    //   res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // }
+
+    if(req.headers.origin === url.rootSecured || url.rootUnsecured ) {
       res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
     }
 
@@ -49,7 +57,11 @@ exports.addScore = functions
 
     // res.set('Access-Control-Allow-Origin', 'http://localhost:3000' )
 
-    if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    // if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    //   res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // }
+
+    if(req.headers.origin === url.rootSecured || url.rootUnsecured ) {
       res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
     }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { postPaths } from '../../../utility/paths'
+import { fetch } from '../../../utility/paths'
+
 import scoreboardFunctions from '../../../utility/scoreboardFunctions'
 import getTime from '../../../utility/getTime'
 import validatePost from '../../../utility/validatePost'
@@ -28,6 +29,7 @@ export default class SubmitScoreFormContainer extends React.Component {
   }
 
   initDismountModal = () => {
+    document.title = 'Spacebar Smasher - Submit Score'
     this.setState({
       modal: {
         ...this.state.modal,
@@ -80,8 +82,7 @@ export default class SubmitScoreFormContainer extends React.Component {
         broName: broNames.random()
       })
     } else {
-      // scoreboardFunctions('post', postPaths.local, playerObj)
-      scoreboardFunctions('post', postPaths.deploy, playerObj)
+      scoreboardFunctions('post', fetch.post, playerObj)
       .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
     }
   }

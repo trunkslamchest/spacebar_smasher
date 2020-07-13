@@ -13,7 +13,7 @@ import './CountdownDismount.css'
 export default class CountdownContainer extends React.Component {
 
   state = {
-    time: 5,
+    time: 1,
     showCountdown: true,
     showHeader: false,
     showTimer: false,
@@ -24,6 +24,7 @@ export default class CountdownContainer extends React.Component {
   }
 
   componentDidMount(){
+    document.title = 'Spacebar Smasher - Countdown'
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
     this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 250)
     this.timerTimeout = setTimeout(() => { this.setState({ showTimer: true })}, 500)

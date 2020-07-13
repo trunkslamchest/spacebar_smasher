@@ -20,6 +20,8 @@ const validatePost = (name, score) => {
 
   if(!!validation['errors'].length) validation['valid'] = false
 
+  validation['valid'] = true
+
   return validation
 }
 

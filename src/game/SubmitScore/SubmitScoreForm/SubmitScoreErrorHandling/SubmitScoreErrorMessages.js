@@ -27,13 +27,8 @@ const SubmitScoreErrorMessages = (props) => {
       }
     })
 
-  if(props.validationErrors.length > 1) {
-    headerText = "You cannot place a score on the Leaderboard due to one of the following problems:"
-  } else {
-    headerText = "You cannot place a score on the Leaderboard due to the following problem:"
-  }
-
-  console.log(errorMessageArr)
+  if (props.validationErrors.length > 1) headerText = "You cannot place a score on the Leaderboard due to one of the following problems:"
+  else headerText = "You cannot place a score on the Leaderboard due to the following problem:"
 
   return(
     <>

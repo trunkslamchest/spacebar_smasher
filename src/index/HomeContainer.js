@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getPaths } from '../utility/paths'
+import { fetch, routes } from '../utility/paths'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -18,8 +18,8 @@ export default class HomeContainer extends React.Component {
   }
 
   componentDidMount(){
-    // scoreboardFunctions('get', getPaths.local)
-    scoreboardFunctions('get', getPaths.deploy)
+    document.title = 'Spacebar Smasher - Home'
+    scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
@@ -30,7 +30,7 @@ export default class HomeContainer extends React.Component {
 
   onClickStartButtonFunctions = (event) => {
     this.setState({ initDismount: true})
-    this.startGameTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/game') }, 500 )
+    this.startGameTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
   }
 
   onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
