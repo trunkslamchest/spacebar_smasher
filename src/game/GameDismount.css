@@ -5,9 +5,9 @@
   border-radius: 50px 50px 0px 0px;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0 auto;
-  padding: 10px;
+  padding: 10px 0px 5px 0px;
   text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
 @keyframes dismount_game_timer {
@@ -28,9 +28,9 @@
   border: 2px solid grey;
   box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0 auto;
-  padding: 10px;
+  padding: 10px 0px 5px 0px;
   text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
 @keyframes dismount_game_counter {
@@ -51,9 +51,9 @@
   border: 2px solid grey;
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0 auto;
-  padding: 10px;
+  padding: 5px 0px 5px 0px;
   text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
 @keyframes dismount_game_rank {
@@ -75,9 +75,9 @@
   border-radius: 0px 0px 50px 50px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 10px auto;
-  padding: 10px;
+  padding: 5px 0px 5px 0px;
   text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
 @keyframes dismount_game_power {

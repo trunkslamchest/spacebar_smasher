@@ -4,9 +4,9 @@ import './GameDesktopCounter.css'
 
 const GameDesktopCounter = (props) => {
 
-  const blank = <></>
+  // const blank = <></>
 
-  const counter = <h1>{ props.count ? props.count : 0 }</h1>
+  const counter = <h1>{ props.counts ? props.count : 0 }</h1>
 
   return(
     <div className={{
@@ -15,7 +15,8 @@ const GameDesktopCounter = (props) => {
         }[props.showCounter]}
     >
       <h2>SMASHES</h2>
-      { props.showCounter ? counter : blank }
+      {/* { props.showCounter ? counter : blank } */}
+      { counter }
     </div>
   )
 }

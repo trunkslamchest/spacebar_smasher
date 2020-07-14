@@ -4,7 +4,7 @@ import './GameDesktopTimer.css'
 
 const GameDesktopTimer = (props) => {
 
-  const blank = <></>
+  // const blank = <></>
 
   const time = <h1>{ props.time ? props.time : (0.00).toFixed(2) }</h1>
 
@@ -15,7 +15,8 @@ const GameDesktopTimer = (props) => {
         }[props.showTimer]}
     >
       <h2>TIME</h2>
-      { props.showTimer ? time : blank }
+      {/* { props.showTimer ? time : blank } */}
+      { time }
     </div>
   )
 }
