@@ -57,7 +57,7 @@
     }
   }
 
-@keyframes slide_in_from_left_title_text
+/* @keyframes slide_in_from_left_title_text
   {
     0% {
       transform: translateX(-250px);
@@ -70,7 +70,7 @@
         0,0,0,1
         ) translateX(15px);
     }
-  }
+  } */
 
 @keyframes slide_down
   {

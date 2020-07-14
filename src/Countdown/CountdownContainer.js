@@ -2,14 +2,18 @@ import React from 'react'
 
 import Footer from 'UI/Footer/Footer'
 
-import CountdownDesktopHeader from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopHeader/CountdownDesktopHeader'
+// import CountdownDesktopHeader from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopHeader/CountdownDesktopHeader'
+import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHeader'
+
 import CountdownDesktopTimer from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopTimer/CountdownDesktopTimer'
 import CountdownDesktopTutorial from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopTutorial/CountdownDesktopTutorial'
 
 import GameContainer from 'game/GameContainer.js'
 
-import './CountdownContainer.css'
-import './CountdownDismount.css'
+import './CountdownDesktopContainer.css'
+import './CountdownDesktopDismount.css'
+import './CountdownMobileContainer.css'
+import './CountdownMobileDismount.css'
 
 export default class CountdownContainer extends React.Component {
 
@@ -38,7 +42,7 @@ export default class CountdownContainer extends React.Component {
   }
 
   startGame = () => {
-    this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, showCountdown: false})}, 1000)
+    // this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, showCountdown: false})}, 1000)
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 750)
   }
 
@@ -70,11 +74,14 @@ export default class CountdownContainer extends React.Component {
 
   render(){
 
+    console.log(this.props)
+
     const countdown =
       <>
-        <div className="countdown_wrapper">
-          <div className='countdown_pill'>
-            <CountdownDesktopHeader
+        <div className={ this.props.isMobile ? "countdown_mobile_wrapper" : "countdown_desktop_wrapper" }>
+          <div className={ this.props.isMobile ? "countdown_mobile_pill" : "countdown_desktop_pill" }>
+            <CountdownHeader
+              isMobile={ this.props.isMobile }
               showHeader={ this.state.showHeader }
               initDismount={ this.state.initDismount }
             />

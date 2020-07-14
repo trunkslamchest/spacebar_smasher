@@ -1,3 +1,3 @@
-const detectOrientation = (!window.orientation ? false : true)
+// const detectOrientation = (!window.orientation ? 'portrait' : 'landscape')
 
-export default detectOrientation
+// export default detectOrientation
