@@ -1,4 +1,16 @@
-.blank {
+/* .blank {
   opacity: 0;
   height: 0px;
+} */
+
+.countdown_wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.countdown_pill {
+  padding-top: calc(50px + (100 - 50) * ((100vw - 320px) / (1920 - 320)));
 }

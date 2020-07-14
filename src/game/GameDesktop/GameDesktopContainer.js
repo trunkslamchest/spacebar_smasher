@@ -8,33 +8,32 @@ import GameDesktopPower from './GameComponents/GameDesktopPower'
 import './GameDesktopContainer.css'
 import './GameDesktopDismount.css'
 
-export default class GameDesktopContainer extends React.Component {
-
-  render(){
-    return(
-      <>
-        <GameDesktopTimer
-          time={ this.props.time }
-          showTimer={ this.props.showTimer }
-          initDismount={ this.props.initDismount }
-        />
-        <GameDesktopCounter
-          count={ this.props.count }
-          showCounter={ this.props.showCounter }
-          initDismount={ this.props.initDismount }
-        />
-        <GameDesktopRank
-          rank={ this.props.rank }
-          showRank={ this.props.showRank }
-          initDismount={ this.props.initDismount }
-        />
-        <GameDesktopPower
-          power={ this.props.power }
-          powerRaw={ this.props.powerRaw }
-          showPower={ this.props.showPower }
-          initDismount={ this.props.initDismount }
-        />
-      </>
-    )
-  }
+const GameDesktopContainer = (props) => {
+  return(
+    <>
+      <GameDesktopTimer
+        time={ props.time }
+        showTimer={ props.showTimer }
+        initDismount={ props.initDismount }
+      />
+      <GameDesktopCounter
+        count={ props.count }
+        showCounter={ props.showCounter }
+        initDismount={ props.initDismount }
+      />
+      <GameDesktopRank
+        rank={ props.rank }
+        showRank={ props.showRank }
+        initDismount={ props.initDismount }
+      />
+      <GameDesktopPower
+        power={ props.power }
+        powerRaw={ props.powerRaw }
+        showPower={ props.showPower }
+        initDismount={ props.initDismount }
+      />
+    </>
+  )
 }
+
+export default GameDesktopContainer

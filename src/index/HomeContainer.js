@@ -2,6 +2,9 @@ import React from 'react'
 
 import { fetch, routes } from '../utility/paths'
 
+import Footer from '../UI/Footer/Footer'
+
+
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
@@ -45,23 +48,31 @@ export default class HomeContainer extends React.Component {
   render(){
     return(
       <>
-        <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
-          <h3>SPACEBAR SMASHER</h3>
+        <div className="home_wrapper">
+          <div className="home_header_wrapper">
+            <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
+              <h3>SPACEBAR SMASHER</h3>
+            </div>
+            <div className="start_button_container">
+              <button
+                name="start_button"
+                className={this.state.initDismount ? "dismount_start_button" : "start_button"}
+                onClick={ this.onClickStartButtonFunctions }
+              >
+                START
+              </button>
+            </div>
+          </div>
+          <ScoreboardContainer
+            isPostGame={false}
+            mounted={this.state.mounted}
+            scoreboard={this.state.scoreboard}
+            submittedPlayer={this.props.player}
+            initDismount={this.state.initDismount}
+          />
         </div>
-        <div className="start_button_container">
-          <button
-            name="start_button"
-            className={this.state.initDismount ? "dismount_start_button" : "start_button"}
-            onClick={ this.onClickStartButtonFunctions }
-          >
-            START
-          </button>
-        </div>
-        <ScoreboardContainer
-          mounted={this.state.mounted}
-          scoreboard={this.state.scoreboard}
-          submittedPlayer={this.props.player}
-          initDismount={this.state.initDismount}
+        <Footer
+          initDismount={ this.state.initDismount }
         />
       </>
     )

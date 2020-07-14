@@ -1,14 +1,14 @@
 .footer_container {
   animation: fade_in .5s ease-in-out 1, slide_in_from_bottom_footer .5s ease-in-out 1;
   color: white;
-  height: calc(47px + (91 - 47) * ((100vw - 320px) / (1920 - 320)));
+  /* height: calc(47px + (91 - 47) * ((100vw - 320px) / (1920 - 320))); */
   z-index: 0;
 }
 
 .footer_wrapper {
-  padding: 0px;
+  /* padding: 0px;
   height: 100%;
-  margin: -7px auto 0px auto;
+  margin: 0px auto 0px auto; */
 }
 
 .logos {
@@ -33,7 +33,7 @@
   margin-bottom: 5px;
 }
 
-.fine_print p {
+.fine_print_text {
   font-family: "Helvetica";
   font-size: calc(2.6px + (11 - 2.7) * ((100vw - 320px) / (1920 - 320)));
   margin-block-start: 0px;

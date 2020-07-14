@@ -3,6 +3,8 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { routes } from '../../utility/paths'
 
+import Footer from '../../UI/Footer/Footer'
+
 import SubmitScoreHeader from './SubmitScoreComponents/SubmitScoreHeader'
 import SubmitScoreCounter from './SubmitScoreComponents/SubmitScoreCounter'
 import SubmitScoreRank from './SubmitScoreComponents/SubmitScoreRank'
@@ -25,17 +27,31 @@ export default class SubmitScoreContainer extends React.Component {
     showForm: false,
     showButtons: false,
     showSubmitScore: true,
+    showFooter: false,
     initDismount: false
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Submit Score'
-    this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 500)
-    this.scoreTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 500)
-    this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 500)
-    this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 500)
-    this.formTimeout = setTimeout(() => { this.setState({ showForm: true })}, 500)
-    this.bottomButtonsTimeout = setTimeout(() => { this.setState({ showButtons: true })}, 500)
+
+    this.componentTimeout = setTimeout(() => {
+      this.setState({
+        showHeader: true,
+        showCounter: true,
+        showRank: true,
+        showPower: true,
+        showForm: true,
+        showButtons: true,
+        showFooter: true
+      })
+    }, 500)
+
+    // this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 500)
+    // this.scoreTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 500)
+    // this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 500)
+    // this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 500)
+    // this.formTimeout = setTimeout(() => { this.setState({ showForm: true })}, 500)
+    // this.bottomButtonsTimeout = setTimeout(() => { this.setState({ showButtons: true })}, 500)
   }
 
   onClickButtonFunctions = (event) => {
@@ -51,7 +67,8 @@ export default class SubmitScoreContainer extends React.Component {
         showRank: false,
         showPower: false,
         showForm: false,
-        showButtons: false
+        showButtons: false,
+        showFooter: false
       })
     }, 500)
 
@@ -90,40 +107,51 @@ export default class SubmitScoreContainer extends React.Component {
   render(){
     const submit_score =
       <>
-        <SubmitScoreHeader
-          showHeader={ this.state.showHeader }
-          initDismount={ this.state.initDismount }
-        />
-        <SubmitScoreCounter
-          count={ this.props.count }
-          showCounter={ this.state.showCounter }
-          initDismount={ this.state.initDismount }
-        />
-        <SubmitScoreRank
-          rank={ this.props.rank }
-          showRank={ this.state.showRank }
-          initDismount={ this.state.initDismount }
-        />
-        <SubmitScorePower
-          power={ this.props.power }
-          powerRaw={ this.props.powerRaw }
-          showPower={ this.state.showPower }
-          initDismount={ this.state.initDismount }
-        />
-        <SubmitScoreFormContainer
-          showForm={ this.state.showForm }
-          count={ this.props.count }
-          power={ this.props.power }
-          powerRaw={ this.props.powerRaw }
-          getPlayer={ this.props.getPlayer }
-          initDismount={ this.state.initDismount }
-          onDismount={ this.onDismount }
-        />
-        <SubmitScoreButtonsContainer
-          showButtons={ this.state.showButtons }
-          initDismount={ this.state.initDismount }
-          onClickButtonFunctions={ this.onClickButtonFunctions }
-        />
+        <div className="submit_score_wrapper">
+          <div className="submit_score_pill">
+            <SubmitScoreHeader
+              showHeader={ this.state.showHeader }
+              initDismount={ this.state.initDismount }
+            />
+            <SubmitScoreCounter
+              count={ this.props.count }
+              showCounter={ this.state.showCounter }
+              initDismount={ this.state.initDismount }
+            />
+            <SubmitScoreRank
+              rank={ this.props.rank }
+              showRank={ this.state.showRank }
+              initDismount={ this.state.initDismount }
+            />
+            <SubmitScorePower
+              power={ this.props.power }
+              powerRaw={ this.props.powerRaw }
+              showPower={ this.state.showPower }
+              initDismount={ this.state.initDismount }
+            />
+            <SubmitScoreFormContainer
+              showForm={ this.state.showForm }
+              count={ this.props.count }
+              power={ this.props.power }
+              powerRaw={ this.props.powerRaw }
+              getPlayer={ this.props.getPlayer }
+              initDismount={ this.state.initDismount }
+              onDismount={ this.onDismount }
+            />
+          </div>
+          <SubmitScoreButtonsContainer
+            showButtons={ this.state.showButtons }
+            initDismount={ this.state.initDismount }
+            onClickButtonFunctions={ this.onClickButtonFunctions }
+          />
+        </div>
+        { this.state.showFooter ?
+          <Footer
+            initDismount={ this.state.initDismount }
+          />
+        :
+          <></>
+        }
       </>
 
     return(

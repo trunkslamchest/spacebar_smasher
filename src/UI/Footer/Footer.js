@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Footer.css'
+import './FooterDismount.css'
 
 import firebase_logo from '../../assets/footer_logo_firebase.png'
 import flatiron_logo from '../../assets/footer_logo_flatiron2.png'
@@ -13,7 +14,7 @@ const Footer = (props) => {
   const onClickFooterLinksFunctions = (event) => { }
 
   return(
-    <div className="footer_container">
+<div className={ props.initDismount ? 'dismount_footer' : "footer_container" }>
       <div className="footer_wrapper">
         <div className="logos">
           <a
@@ -83,13 +84,13 @@ const Footer = (props) => {
           </a>
         </div>
         <div className="fine_print">
-            <p>
+            <p className='fine_print_text'>
               © 2020 Created by Jamal Farah & Austin Smith
             </p>
-            <p>
+            <p className='fine_print_text'>
               All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and the respective employees and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises, L.P. © Spacebar Smasher 2020
             </p>
-            <p>
+            <p className='fine_print_text'>
               All Rights Reserved.
             </p>
         </div>

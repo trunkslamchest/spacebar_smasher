@@ -29,7 +29,7 @@ export default class App extends React.Component {
     return (
       <>
         <div className="main_container">
-          <div className="wrapper">
+          {/* <div className="wrapper"> */}
             <Switch>
               {/* <Route exact path='/spacebarsmasher'> */}
               <Route exact path={ routes.home }>
@@ -56,8 +56,8 @@ export default class App extends React.Component {
               </Route>
               <Route component={ E404 } />
             </Switch>
-          </div>
-          <Footer/>
+          {/* </div> */}
+          {/* <Footer/> */}
         </div>
       </>
     )

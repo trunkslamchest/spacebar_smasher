@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Footer from '../../UI/Footer/Footer'
+
 import CountdownHeader from './CountdownComponents/CountdownHeader'
 import CountdownTimer from './CountdownComponents/CountdownTimer'
 import CountdownTutorial from './CountdownComponents/CountdownTutorial'
@@ -8,7 +10,6 @@ import GameContainer from '../GameContainer.js'
 
 import './CountdownContainer.css'
 import './CountdownDismount.css'
-
 
 export default class CountdownContainer extends React.Component {
 
@@ -71,17 +72,24 @@ export default class CountdownContainer extends React.Component {
 
     const countdown =
       <>
-        <CountdownHeader
-          showHeader={ this.state.showHeader }
-          initDismount={ this.state.initDismount }
-        />
-        <CountdownTimer
-          time={ this.state.time }
-          showTimer={ this.state.showTimer }
-          initDismount={ this.state.initDismount }
-        />
-        <CountdownTutorial
-          showTutorial={ this.state.showTutorial }
+        <div className="countdown_wrapper">
+          <div className='countdown_pill'>
+            <CountdownHeader
+              showHeader={ this.state.showHeader }
+              initDismount={ this.state.initDismount }
+            />
+            <CountdownTimer
+              time={ this.state.time }
+              showTimer={ this.state.showTimer }
+              initDismount={ this.state.initDismount }
+            />
+            <CountdownTutorial
+              showTutorial={ this.state.showTutorial }
+              initDismount={ this.state.initDismount }
+            />
+          </div>
+        </div>
+        <Footer
           initDismount={ this.state.initDismount }
         />
       </>

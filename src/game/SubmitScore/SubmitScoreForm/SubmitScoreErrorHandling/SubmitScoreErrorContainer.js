@@ -9,9 +9,7 @@ const SubmitScoreErrorContainer = (props) => {
 
   const onClickFunctions = (event) => { props.initDismountModal() }
 
-  useEffect(() => {
-    document.title = "Spacebar Smasher - Error"
-  }, [])
+  useEffect(() => { document.title = "Spacebar Smasher - Error" }, [])
 
   return(
     <div className='submit_score_error_container'>
@@ -26,7 +24,7 @@ const SubmitScoreErrorContainer = (props) => {
         className='submit_score_error_button'
         onClick={ onClickFunctions }
       >
-          OK
+        OK
       </button>
     </div>
   )

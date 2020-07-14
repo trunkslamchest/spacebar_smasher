@@ -1,0 +1,26 @@
+.dismount_footer {
+  animation: fade_out .5s ease-in-out 1, slide_out_from_bottom_footer .5s ease-in-out 1;
+  color: white;
+  height: calc(47px + (91 - 47) * ((100vw - 320px) / (1920 - 320)));
+  z-index: 0;
+}
+
+@keyframes slide_in_from_bottom_footer
+  {
+    0% {
+      transform: translateY(2500px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+@keyframes slide_out_from_bottom_footer
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(2500px);
+    }
+  }

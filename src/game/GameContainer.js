@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Footer from '../UI/Footer/Footer'
+
 import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
 import GameMobileContainer from './GameMobile/GameMobileContainer'
 
@@ -24,6 +26,7 @@ export default class Game extends React.Component {
     showCounter: false,
     showRank: false,
     showPower: false,
+    showFooter: false,
     showMobileSmashButton: false,
     initDismount: false
   }
@@ -43,11 +46,21 @@ export default class Game extends React.Component {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
-    this.timerTimeout = setTimeout(() => { this.setState({ showTimer: true })}, 250)
+    this.componentTimeout = setTimeout(() => {
+      this.setState({
+        showTimer: true,
+        showCounter: true,
+        showRank: true,
+        showPower: true,
+        showFooter: true
+      })
+    }, 250)
+
+    // this.timerTimeout = setTimeout(() => { this.setState({ showTimer: true })}, 250)
+    // this.counterTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 250)
+    // this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 250)
+    // this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 250)
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
-    this.counterTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 250)
-    this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 250)
-    this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 250)
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
     if(this.props.isMobile) this.mobileSmashButtonTimeout = setTimeout(() => { this.setState({ showMobileSmashButton: true })}, 250)
@@ -128,6 +141,7 @@ export default class Game extends React.Component {
   }
 
   resetGame = () => {
+    document.title = 'Spacebar Smasher - Game'
     this.setState({
       time: (3.00).toFixed(2),
       timeMark: (3.00).toFixed(2),
@@ -137,6 +151,7 @@ export default class Game extends React.Component {
       power: 0,
       powerRaw: 0,
       showGame: true,
+      showFooter: false,
       initDismount: false
     }, this.startGame())
   }
@@ -146,7 +161,7 @@ export default class Game extends React.Component {
     document.removeEventListener('keyup', this.spacebarUp)
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    this.dismountedTimeout = setTimeout(() => { this.setState({ showGame: false })}, 750)
+    this.dismountedTimeout = setTimeout(() => { this.setState({ showGame: false, showFooter: false })}, 750)
     this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800)
   }
 
@@ -154,14 +169,16 @@ export default class Game extends React.Component {
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
 
+    clearTimeout(this.componentTimeout)
+
     clearTimeout(this.startTimer)
     clearInterval(this.timerInterval)
     clearTimeout(this.startPower)
     clearInterval(this.powerInterval)
-    clearTimeout(this.timerTimeout)
-    clearTimeout(this.counterTimeout)
-    clearTimeout(this.rankTimeout)
-    clearTimeout(this.powerTimeout)
+    // clearTimeout(this.timerTimeout)
+    // clearTimeout(this.counterTimeout)
+    // clearTimeout(this.rankTimeout)
+    // clearTimeout(this.powerTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
     clearTimeout(this.mobileSmashButtonTimeout)
@@ -192,7 +209,10 @@ export default class Game extends React.Component {
               initDismount={ this.state.initDismount }
             />
     } else {
-      game = <GameDesktopContainer
+      game = <>
+        <div className="game_wrapper">
+          <div className="game_pill">
+            <GameDesktopContainer
               time={ this.state.time }
               count={ this.state.count }
               rank={ this.state.rank }
@@ -204,6 +224,16 @@ export default class Game extends React.Component {
               showPower={ this.state.showPower }
               initDismount={ this.state.initDismount }
             />
+          </div>
+        </div>
+        { this.state.showFooter ?
+          <Footer
+            initDismount={ this.state.initDismount }
+          />
+        :
+          <></>
+        }
+      </>
     }
 
     return(

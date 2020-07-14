@@ -4,10 +4,7 @@ import './CountdownHeader.css'
 
 const CountdownHeader = (props) => {
   return(
-    <div className={{
-          true: props.initDismount ? "dismount_countdown_header" : "countdown_header",
-          false: "blank"
-        }[props.showHeader]}
+    <div className={props.initDismount ? "dismount_countdown_header" : "countdown_header"}
     >
       <h3>
         GET READY

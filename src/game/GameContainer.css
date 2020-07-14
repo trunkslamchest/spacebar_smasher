@@ -1,11 +1,17 @@
-.blank {
+/* .blank {
   opacity: 0;
   height: 0px;
   width: 0px;
+} */
+
+.game_wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
 }
 
-/* .game_wrapper {
-  padding-bottom: 50px;
-  padding-top: calc(12.5px + (25 - 12.5) * ((100vh - 434px) / (779 - 434)));
-  min-height: 50vh;
-} */
+.game_pill {
+  padding-top: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+}

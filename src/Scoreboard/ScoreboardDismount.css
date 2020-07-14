@@ -1,60 +1,17 @@
-.dismount_scoreboard_header {
-  animation: dismount_scoreboard_header .6s ease-in-out 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border-radius: 30px 30px 5px 5px;
-  border: 2px solid grey;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.0), 0 0 10px 0 rgba(0, 0, 0, 0.8);
-  color: white;
-  margin: 0 auto 0 auto;
-  transform: matrix3d(
-    1,0,0,0.0,
-    0,1,0,-0.001,
-    0,0,1,0,
-    0,0,0,1
-    );
-  width: calc(336px + (871 - 336) * ((100vw - 500px) / (1920 - 500)));
-  z-index: 2;
-}
-
-@keyframes dismount_scoreboard_header {
-  0% {
-    transform: matrix3d(
-      1,0,0,0.0,
-      0,1,0,-0.001,
-      0,0,1,0,
-      0,0,0,1
-    ) translateX(0px) translateY(0px);
-  }
-  25% {
-    transform: matrix3d(
-      1,0,0,0.0,
-      0,1,0,-0.001,
-      0,0,1,0,
-      0,0,0,1
-    ) translateX(2000px);
-  }
-  100% {
-    transform: matrix3d(
-      1,0,0,0.0,
-      0,1,0,-0.001,
-      0,0,1,0,
-      0,0,0,1
-    ) translateX(2000px) translateY(-18px);
-  }
-}
-
 .dismount_scoreboard_table {
-  animation: dismount_home_scoreboard .6s ease-in-out 1;
+  animation: dismount_scoreboard_table .6s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
-  border-radius: 0px 0px 15px 15px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 15px 0 rgba(0, 0, 0, 0.8);
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 10px 0 rgba(0, 0, 0, 0.8);
   color: white;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  max-height: calc(200px + (600 - 200) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;
@@ -63,18 +20,18 @@
     0,1,0,-0.0004,
     0,0,1,0,
     0,0,0,1
-    ) translateY(calc(-31px + (-40 - -31) * ((100vw - 500px) / (1920 - 500))));
-  width: calc(375px + (1000 - 375) * ((100vw - 500px) / (1920 - 500)));
+    );
+  width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_home_scoreboard {
+@keyframes dismount_scoreboard_table {
   0% {
     transform: matrix3d(
       1,0,0,0.0,
       0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
-    ) translateX(0px) translateY(-33px);
+    ) translateX(0px);
   }
   25% {
     transform: matrix3d(
@@ -82,7 +39,7 @@
       0,1,0,-0.0002,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px) translateY(0px);
+    ) translateX(2000px);
   }
   100% {
     transform: matrix3d(
@@ -90,6 +47,58 @@
       0,1,0,-0.0000,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px) translateY(0px);
+    ) translateX(2000px);
+  }
+}
+
+.dismount_scoreboard_table_post_game {
+  animation: dismount_scoreboard_table_post_game .6s ease-in-out 1;
+  align-items: center;
+  align-content: center;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 10px 0 rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
+  justify-content: flex-start;
+  padding: 0px;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+    );
+  width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@keyframes dismount_scoreboard_table_post_game {
+  0% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0004,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(0px);
+  }
+  25% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0002,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(2000px);
+  }
+  100% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0000,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(2000px);
   }
 }

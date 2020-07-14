@@ -2,6 +2,8 @@ import React from 'react'
 
 import { fetch, routes } from '../../utility/paths'
 
+import Footer from '../../UI/Footer/Footer'
+
 import scoreboardFunctions from '../../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../../Scoreboard/ScoreboardContainer'
@@ -14,7 +16,8 @@ export default class PostGameContainer extends React.Component {
   state = {
     scoreboard: [],
     mounted: false,
-    initDismount: false
+    initDismount: false,
+    showFooter: false,
   }
 
   componentDidMount(){
@@ -24,14 +27,14 @@ export default class PostGameContainer extends React.Component {
   }
 
   componentDidUpdate(){
-    if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
+    if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true, showFooter: true })
     if (this.state.initDismount) this.onDismount()
   }
 
   onClickButtonFunctions = (event) => {
     let buttonNav = event.target.attributes.nav.value
 
-    this.setState({ initDismount: true })
+    this.setState({ initDismount: true, showFooter: false })
 
     // if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/' + buttonNav) }, 500 )
     if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
@@ -51,33 +54,43 @@ export default class PostGameContainer extends React.Component {
 
   render(){
     return(
-      <div className="post_game_wrapper">
-        <ScoreboardContainer
-          mounted={this.state.mounted}
-          scoreboard={this.state.scoreboard}
-          submittedPlayer={this.props.player}
-          initDismount={this.state.initDismount}
-        />
-        <div className="post_game_buttons_container">
-          <button
-            nav="main_menu"
-            name="main_menu_button"
-            className={this.state.initDismount ? "dismount_post_game_main_menu_button" : "post_game_main_menu_button" }
-            onClick={ this.onClickButtonFunctions }
+      <>
+        <div className="post_game_wrapper">
+          <ScoreboardContainer
+            isPostGame={true}
+            mounted={this.state.mounted}
+            scoreboard={this.state.scoreboard}
+            submittedPlayer={this.props.player}
+            initDismount={this.state.initDismount}
+          />
+          <div className="post_game_buttons_container">
+            <button
+              nav="main_menu"
+              name="main_menu_button"
+              className={this.state.initDismount ? "dismount_post_game_main_menu_button" : "post_game_main_menu_button" }
+              onClick={ this.onClickButtonFunctions }
 
-          >
-            MAIN MENU
-          </button>
-          <button
-            nav="game"
-            name="play_again_button"
-            className={this.state.initDismount ? "dismount_post_game_play_again_button" : "post_game_play_again_button" }
-            onClick={ this.onClickButtonFunctions }
-          >
-            PLAY AGAIN
-          </button>
+            >
+              MAIN MENU
+            </button>
+            <button
+              nav="game"
+              name="play_again_button"
+              className={this.state.initDismount ? "dismount_post_game_play_again_button" : "post_game_play_again_button" }
+              onClick={ this.onClickButtonFunctions }
+            >
+              PLAY AGAIN
+            </button>
+          </div>
         </div>
-      </div>
+        { this.state.showFooter ?
+          <Footer
+            initDismount={ this.state.initDismount }
+          />
+        :
+          <></>
+        }
+      </>
     )
   }
 }
