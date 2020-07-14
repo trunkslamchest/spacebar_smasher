@@ -3,6 +3,8 @@ import React from 'react'
 import Backdrop from '../backdrop/backdrop'
 
 import './modal.css'
+import './modalDismount.css'
+import './modalOnmount.css'
 
 const Modal = (props) => {
   return(

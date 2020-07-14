@@ -9,7 +9,7 @@
 
 .post_game_buttons_container {
   padding-top: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320)));
-  animation: fade_in .4s ease-in-out 1, blur_in .4s ease-in-out 1, slide_in_from_bottom_post_game_buttons .5s ease-in-out 1;
+  animation: onmount_post_game_buttons .5s ease-in-out 1;
 }
 
 .post_game_main_menu_button {
@@ -51,7 +51,7 @@
 }
 
 .post_game_main_menu_button:active {
-  animation: scale_out .1s ease-in-out 1, blur_out .1s ease-in-out 1;
+  animation: scale_out .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 2px solid black;
   color: rgb(0, 0, 0, 1) !important;
@@ -100,7 +100,7 @@
 }
 
 .post_game_play_again_button:active {
-  animation: scale_out .1s ease-in-out 1, blur_out .1s ease-in-out 1;
+  animation: scale_out .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 2px solid black;
   color: rgb(0, 0, 0, 1) !important;

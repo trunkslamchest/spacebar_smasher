@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './Footer.css'
+import './FooterOnmount.css'
 import './FooterDismount.css'
 
 import firebase_logo from '../../assets/footer_logo_firebase.png'
@@ -14,7 +15,7 @@ const Footer = (props) => {
   const onClickFooterLinksFunctions = (event) => { }
 
   return(
-<div className={ props.initDismount ? 'dismount_footer' : "footer_container" }>
+    <div className={ props.initDismount ? 'dismount_footer' : "footer_container" }>
       <div className="footer_wrapper">
         <div className="logos">
           <a

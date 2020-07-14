@@ -1,5 +1,5 @@
 .scoreboard_table {
-  animation: fade_in .5s ease-in-out 1, slide_in_from_bottom_home_scoreboard .5s ease-in-out 1;
+  animation: onmount_scoreboard .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -25,7 +25,7 @@
 }
 
 .scoreboard_table_post_game {
-  animation: fade_in .5s ease-in-out 1, slide_in_from_bottom_home_scoreboard .5s ease-in-out 1;
+  animation: onmount_scoreboard .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);

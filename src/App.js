@@ -7,7 +7,7 @@ import detectDevice from './utility/detectDevice'
 
 import CountdownContainer from './Countdown/CountdownContainer'
 import HomeContainer from './index/HomeContainer'
-import PostGameContainer from './game/PostGame/PostGameContainer'
+import PostGameContainer from './PostGame/PostGameContainer'
 
 import E404 from './error/E404'
 

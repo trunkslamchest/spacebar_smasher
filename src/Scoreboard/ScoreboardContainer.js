@@ -5,6 +5,7 @@ import ScoreboardRow from './ScoreboardRow'
 import LoadingScoreboard from '../UI/Loading/LoadingScoreboard'
 
 import './ScoreboardContainer.css'
+import './ScoreboardOnmount.css'
 import './ScoreboardDismount.css'
 
 const ScoreboardContainer = (props) => {

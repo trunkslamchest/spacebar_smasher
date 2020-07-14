@@ -1,14 +1,15 @@
 import React from 'react'
 
-import { fetch, routes } from '../../utility/paths'
+import { fetch, routes } from '../utility/paths'
 
-import Footer from '../../UI/Footer/Footer'
+import Footer from '../UI/Footer/Footer'
 
-import scoreboardFunctions from '../../utility/scoreboardFunctions'
+import scoreboardFunctions from '../utility/scoreboardFunctions'
 
-import ScoreboardContainer from '../../Scoreboard/ScoreboardContainer'
+import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './PostGameContainer.css'
+import './PostGameOnmount.css'
 import './PostGameDismount.css'
 
 export default class PostGameContainer extends React.Component {
