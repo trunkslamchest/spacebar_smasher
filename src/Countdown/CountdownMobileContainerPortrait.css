@@ -1,4 +1,3 @@
-
 .countdown_mobile_wrapper_portrait {
   flex-grow: 1;
   display: flex;
@@ -8,5 +7,5 @@
 }
 
 .countdown_mobile_pill_portrait {
-  padding-top: calc(50px + (50 - 50) * ((100vw - 320px) / (1920 - 320)));
+  padding-top: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
 }

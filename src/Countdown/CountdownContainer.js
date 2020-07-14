@@ -2,17 +2,16 @@ import React from 'react'
 
 import Footer from 'UI/Footer/Footer'
 
-// import CountdownDesktopHeader from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopHeader/CountdownDesktopHeader'
 import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHeader'
-
-import CountdownDesktopTimer from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopTimer/CountdownDesktopTimer'
-import CountdownDesktopTutorial from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopTutorial/CountdownDesktopTutorial'
+import CountdownTimer from './CountdownComponents/CountdownTimer/CountdownTimer'
+import CountdownTutorial from './CountdownComponents/CountdownTutorial/CountdownTutorial'
 
 import GameContainer from 'game/GameContainer.js'
 
 import './CountdownDesktopContainer.css'
 import './CountdownDesktopDismount.css'
-import './CountdownMobileContainer.css'
+import './CountdownMobileContainerLandscape.css'
+import './CountdownMobileContainerPortrait.css'
 import './CountdownMobileDismount.css'
 
 export default class CountdownContainer extends React.Component {
@@ -78,21 +77,26 @@ export default class CountdownContainer extends React.Component {
 
     const countdown =
       <>
-        <div className={ this.props.isMobile ? "countdown_mobile_wrapper" : "countdown_desktop_wrapper" }>
-          <div className={ this.props.isMobile ? "countdown_mobile_pill" : "countdown_desktop_pill" }>
+        <div className={ !this.props.isMobile ? "countdown_desktop_wrapper" : this.props.orientation === 'landscape' ? "countdown_mobile_wrapper_landscape" : "countdown_mobile_wrapper_portrait"  }>
+          <div className={ !this.props.isMobile ? "countdown_desktop_pill" : this.props.orientation === 'landscape' ? "countdown_mobile_pill_landscape" : "countdown_mobile_pill_portrait" }>
             <CountdownHeader
               isMobile={ this.props.isMobile }
+              initDismount={ this.state.initDismount }
               showHeader={ this.state.showHeader }
-              initDismount={ this.state.initDismount }
+              orientation={ this.props.orientation }
             />
-            <CountdownDesktopTimer
+            <CountdownTimer
+              isMobile={ this.props.isMobile }
               time={ this.state.time }
+              initDismount={ this.state.initDismount }
               showTimer={ this.state.showTimer }
-              initDismount={ this.state.initDismount }
+              orientation={ this.props.orientation }
             />
-            <CountdownDesktopTutorial
-              showTutorial={ this.state.showTutorial }
+            <CountdownTutorial
+              isMobile={ this.props.isMobile }
               initDismount={ this.state.initDismount }
+              showTutorial={ this.state.showTutorial }
+              orientation={ this.props.orientation }
             />
           </div>
         </div>

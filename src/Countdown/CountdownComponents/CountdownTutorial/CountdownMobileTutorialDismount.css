@@ -1,16 +1,16 @@
-.dismount_countdown_mobile_header_landscape {
-  animation: dismount_countdown_mobile_header_landscape 1s ease-in-out 1;
+.dismount_countdown_mobile_tutorial_landscape {
+  animation: dismount_countdown_mobile_tutorial_landscape 1s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
-  border-radius: 50px 50px 0px 0px;
-  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 0px 0px 0px 0px;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 15px 0 rgba(0, 0, 0, 0.8);
+  display: flex;
+  color: white;
   text-align: center;
   width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_countdown_mobile_header_landscape {
+@keyframes dismount_countdown_mobile_tutorial_landscape {
   0% {
     transform: translateX(0px);
   }
@@ -22,19 +22,19 @@
   }
 }
 
-.dismount_countdown_mobile_header_portrait {
-  animation: dismount_countdown_mobile_header_portrait 1s ease-in-out 1;
+.dismount_countdown_mobile_tutorial_portrait {
+  animation: dismount_countdown_mobile_tutorial_portrait 1s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
-  border-radius: 50px 50px 0px 0px;
-  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 0px 0px 0px 0px;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 15px 0 rgba(0, 0, 0, 0.8);
+  display: flex;
+  color: white;
   text-align: center;
   width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_countdown_mobile_header_portrait {
+@keyframes dismount_countdown_mobile_tutorial_portrait{
   0% {
     transform: translateX(0px);
   }
