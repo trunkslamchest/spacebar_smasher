@@ -3,6 +3,9 @@ import React from 'react'
 import './SubmitScoreRank.css'
 
 const SubmitScoreRank = (props) => {
+
+  const rank = <h1>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h1>
+
   return(
     <div className={{
           false: "blank",
@@ -10,7 +13,7 @@ const SubmitScoreRank = (props) => {
         }[props.showRank]}
     >
       <h2>RANK</h2>
-      <h1>{ props.rank }</h1>
+      { rank }
     </div>
   )
 }

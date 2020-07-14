@@ -6,7 +6,7 @@ const GameDesktopCounter = (props) => {
 
   // const blank = <></>
 
-  const counter = <h1>{ props.counts ? props.count : 0 }</h1>
+  const counter = <h1>{ props.count ? props.count : 0 }</h1>
 
   return(
     <div className={{

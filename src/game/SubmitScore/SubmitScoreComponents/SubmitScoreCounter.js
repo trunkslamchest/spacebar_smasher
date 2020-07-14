@@ -4,7 +4,7 @@ import './SubmitScoreCounter.css'
 
 const SubmitScoreCounter = (props) => {
 
-  const count = <h1>{ props.count }</h1>
+  const count = <h1>{ props.count ? props.count : 0 }</h1>
 
   return(
     <div className={{
