@@ -1,0 +1,24 @@
+.submit_score_header {
+  animation: slide_in_from_top .5s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 50px 50px 0px 0px;
+  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  margin: 0px auto 0 auto;
+  padding: 10px 0px 5px 0px;
+  text-align: center;
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.submit_score_header h1, .dismount_submit_score_header h1 {
+  animation: text_shadow_blink_red 2.5s ease-in-out infinite;
+  color: red;
+  font-family: "Audiowide";
+  font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  margin: 0 auto 0 auto;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  text-shadow: 0px 0px 5px red;
+  width: calc(220px + (440 - 220) * ((100vw - 320px) / (1920 - 320)));
+}

@@ -5,7 +5,7 @@ import Footer from '../UI/Footer/Footer'
 import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
 import GameMobileContainer from './GameMobile/GameMobileContainer'
 
-import SubmitScoreContainer from './SubmitScore/SubmitScoreContainer'
+import SubmitScoreContainer from '../SubmitScore/SubmitScoreContainer'
 
 import './GameContainer.css'
 import './GameDismount.css'

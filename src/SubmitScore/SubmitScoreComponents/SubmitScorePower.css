@@ -1,0 +1,98 @@
+.submit_score_power {
+  animation: slide_in_from_bottom .3s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 0px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  margin: 0px auto 0px auto;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.submit_score_power h1, .dismount_submit_score_power h1 {
+  animation: text_shadow_blink 2.25s ease-in-out infinite;
+  background-color: #000;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
+  color: yellow;
+  font-family: 'Conv_digital-7.mono';
+  font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  margin: 0 auto 0px auto;
+  padding: 0px 5px 0px 5px;
+  text-align: center;
+  text-shadow: 0px 0px 2.5px yellow;
+  width: calc(125px + (250 - 125) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.submit_score_power h2, .dismount_submit_score_power h1 {
+  font-family: "Staatliches";
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  color: white;
+  margin: 0 auto 0 auto;
+  padding: 0px 10px 0px 10px;
+  text-align: center;
+}
+
+.submit_score_power_bar {
+  padding: 0px;
+  display: block;
+  margin: 0 auto 0 auto;
+  -webkit-appearance: none;
+}
+
+.submit_score_power_bar meter, .dismount_submit_score_power_bar meter {
+  background: none;
+  width: 75%;
+  height: 25px;
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  display: block;
+  margin: 0 auto 0 auto;
+}
+
+.submit_score_power_bar meter::-webkit-meter-bar, .dismount_submit_score_power_bar meter::-webkit-meter-bar {
+  background: #000;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.submit_score_power_bar meter::-webkit-meter-optimum-value, .dismount_submit_score_power_bar meter::-webkit-meter-optimum-value {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #FFC300 0%,
+    #FF5733 100%
+  );
+  background-size: 100% 100%;
+  border-radius: 5px;
+  transition: background 1s 1s ease-in-out;
+}
+
+.submit_score_power_bar meter::-webkit-meter-suboptimum-value, .dismount_submit_score_power_bar meter::-webkit-meter-suboptimum-value {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #FFC300 0%,
+    #FF5733 100%,
+    #7A0000 100%
+  );
+  background-size: 100% 100%;
+  border-radius: 5px;
+  transition: background 1s 1s ease-in-out;
+}
+
+.submit_score_power_bar meter::-webkit-meter-even-less-good-value, .dismount_submit_score_power_bar meter::-webkit-meter-even-less-good-value {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #107A00 0%,
+    #FF5733 100%,
+  );
+  background-size: 100% 100%;
+  border-radius: 5px;
+  transition: background 1s 1s ease-in-out;
+}
