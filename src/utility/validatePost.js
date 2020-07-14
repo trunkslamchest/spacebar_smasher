@@ -16,11 +16,12 @@ const validatePost = (name, score) => {
 
   if(score < 25) validation['errors'] = [ ...validation.errors, "Your score is less than 25" ]
 
-  if(!!invalidCharArr.length) validation['errors'].push({ "You entered a name with any of the following characters": invalidCharArr })
+  if(score > 400) validation['errors'] = [ ...validation.errors, `With a score of ${score}, you are probably cheating.` ]
+
+
+  if(!!invalidCharArr.length) validation['errors'].push({ "You cannot enter a name with any of these characters": invalidCharArr })
 
   if(!!validation['errors'].length) validation['valid'] = false
-
-  validation['valid'] = true
 
   return validation
 }

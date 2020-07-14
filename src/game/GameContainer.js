@@ -13,8 +13,8 @@ import './GameDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
@@ -67,9 +67,8 @@ export default class Game extends React.Component {
   }
 
   spacebarDown(event){
-    event.preventDefault()
-
-    if(event.keyCode === 32) {
+    if((event.keyCode === 32 || event.which === 32)) {
+      event.preventDefault()
       this.setState({
         count: this.state.count + 1,
         power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
@@ -83,21 +82,23 @@ export default class Game extends React.Component {
   }
 
   spacebarUp(event){
-    event.preventDefault()
-
     document.addEventListener('keydown', this.spacebarDown)
 
-    if(event.keyCode === 32) {
+    if((event.keyCode === 32 || event.which === 32)) {
       let pressAvg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
       this.setState({ avgPress: pressAvg })
     }
 
-    if( this.state.avgPress < 0.01 && this.state.time < 28.00 ){
+    if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
+      document.removeEventListener('keydown', this.spacebarDown)
+      document.removeEventListener('keyup', this.spacebarUp)
+
       this.setState({
         time: 0.0,
         count: 0,
         rank: "CHEATER",
         power: 0,
+        powerRaw: 0,
         initDismount: false
       }, this.onDismount())
     }
@@ -143,8 +144,8 @@ export default class Game extends React.Component {
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
     this.setState({
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",

@@ -4,7 +4,6 @@ import { fetch, routes } from '../utility/paths'
 
 import Footer from '../UI/Footer/Footer'
 
-
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'

@@ -91,15 +91,17 @@ export default class SubmitScoreContainer extends React.Component {
   }
 
   clearTimers = () => {
-    clearTimeout(this.headerTimeout)
-    clearTimeout(this.scoreTimeout)
-    clearTimeout(this.rankTimeout)
-    clearTimeout(this.powerTimeout)
-    clearTimeout(this.formTimeout)
-    clearTimeout(this.bottomButtonsTimeout)
+    clearTimeout(this.componentTimeout)
+    // clearTimeout(this.headerTimeout)
+    // clearTimeout(this.scoreTimeout)
+    // clearTimeout(this.rankTimeout)
+    // clearTimeout(this.powerTimeout)
+    // clearTimeout(this.formTimeout)
+    // clearTimeout(this.bottomButtonsTimeout)
     clearTimeout(this.initResetTimeout)
     clearTimeout(this.resetTimeout)
     clearTimeout(this.dismountedTimeout)
+    clearTimeout(this.clearTimersTimeout)
   }
 
   componentWillUnmount(){ this.clearTimers() }

@@ -27,7 +27,15 @@ exports.players = functions
 
     res.set('Access-Control-Allow-Methods', ['GET', 'OPTIONS'])
 
-    if(req.headers.origin === url.rootSecured || url.rootUnsecured ) { res.set('Access-Control-Allow-Origin', `${req.headers.origin}`) }
+    // res.set('Access-Control-Allow-Origin', 'http://localhost:3000' )
+
+    // if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    //   res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // }
+
+    if(req.headers.origin === url.rootSecured || url.rootUnsecured ) {
+      res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    }
 
     let players = []
 
@@ -47,7 +55,15 @@ exports.addScore = functions
     res.set('Access-Control-Allow-Methods', ['POST', 'OPTIONS'])
     res.set('Access-Control-Allow-Headers', ['Content-Type', 'Accept'])
 
-    if(req.headers.origin === url.rootSecured || url.rootUnsecured ) res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // res.set('Access-Control-Allow-Origin', 'http://localhost:3000' )
+
+    // if(req.headers.origin === 'http://trunkslamchest.com' || 'https://trunkslamchest.com' ) {
+    //   res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    // }
+
+    if(req.headers.origin === url.rootSecured || url.rootUnsecured ) {
+      res.set('Access-Control-Allow-Origin', `${req.headers.origin}`)
+    }
 
     var obj = { }
 
