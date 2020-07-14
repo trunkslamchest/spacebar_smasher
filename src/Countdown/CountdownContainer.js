@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Footer from '../../UI/Footer/Footer'
+import Footer from 'UI/Footer/Footer'
 
-import CountdownHeader from './CountdownComponents/CountdownHeader'
-import CountdownTimer from './CountdownComponents/CountdownTimer'
-import CountdownTutorial from './CountdownComponents/CountdownTutorial'
+import CountdownDesktopHeader from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopHeader/CountdownDesktopHeader'
+import CountdownDesktopTimer from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopTimer/CountdownDesktopTimer'
+import CountdownDesktopTutorial from './CountdownDesktop/CountdownDesktopComponents/CountdownDesktopTutorial/CountdownDesktopTutorial'
 
-import GameContainer from '../GameContainer.js'
+import GameContainer from 'game/GameContainer.js'
 
 import './CountdownContainer.css'
 import './CountdownDismount.css'
@@ -74,16 +74,16 @@ export default class CountdownContainer extends React.Component {
       <>
         <div className="countdown_wrapper">
           <div className='countdown_pill'>
-            <CountdownHeader
+            <CountdownDesktopHeader
               showHeader={ this.state.showHeader }
               initDismount={ this.state.initDismount }
             />
-            <CountdownTimer
+            <CountdownDesktopTimer
               time={ this.state.time }
               showTimer={ this.state.showTimer }
               initDismount={ this.state.initDismount }
             />
-            <CountdownTutorial
+            <CountdownDesktopTutorial
               showTutorial={ this.state.showTutorial }
               initDismount={ this.state.initDismount }
             />

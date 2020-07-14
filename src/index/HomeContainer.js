@@ -1,12 +1,11 @@
 import React from 'react'
 
 import { fetch, routes } from '../utility/paths'
-
-import Footer from '../UI/Footer/Footer'
-
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
+import HomeHeader from './HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
+import Footer from '../UI/Footer/Footer'
 
 import './HomeContainer.css'
 import './HomeDismount.css'
@@ -16,7 +15,8 @@ export default class HomeContainer extends React.Component {
   state = {
     scoreboard: [],
     mounted: false,
-    initDismount: false
+    initDismount: false,
+    isPostGame: false
   }
 
   componentDidMount(){
@@ -30,7 +30,7 @@ export default class HomeContainer extends React.Component {
     if (this.state.initDismount) this.onDismount()
   }
 
-  onClickStartButtonFunctions = (event) => {
+  onClickStartButton = (event) => {
     this.setState({ initDismount: true})
     this.startGameTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
   }
@@ -48,26 +48,16 @@ export default class HomeContainer extends React.Component {
     return(
       <>
         <div className="home_wrapper">
-          <div className="home_header_wrapper">
-            <div className={this.state.initDismount ? "dismount_home_header" : "home_header" } >
-              <h3>SPACEBAR SMASHER</h3>
-            </div>
-            <div className="start_button_container">
-              <button
-                name="start_button"
-                className={this.state.initDismount ? "dismount_start_button" : "start_button"}
-                onClick={ this.onClickStartButtonFunctions }
-              >
-                START
-              </button>
-            </div>
-          </div>
+          <HomeHeader
+            initDismount={ this.state.initDismount }
+            onClickStartButton={ this.onClickStartButton }
+          />
           <ScoreboardContainer
-            isPostGame={false}
-            mounted={this.state.mounted}
-            scoreboard={this.state.scoreboard}
-            submittedPlayer={this.props.player}
-            initDismount={this.state.initDismount}
+            isPostGame={ this.state.isPostGame }
+            mounted={ this.state.mounted }
+            scoreboard={ this.state.scoreboard }
+            submittedPlayer={ this.props.player }
+            initDismount={ this.state.initDismount }
           />
         </div>
         <Footer

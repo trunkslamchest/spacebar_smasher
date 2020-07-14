@@ -1,25 +1,28 @@
-const functions = require('firebase-functions');
+const functions = require('firebase-functions')
 
 const firebase = require("firebase")
 
-const admin = require('firebase-admin');
-admin.initializeApp();
+const admin = require('firebase-admin')
 
 const url = {
-  // database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
-  database: 'https://spacebarsmasher-96ba1.firebaseio.com',
-  // rootSecured: 'https://localhost:3000',
-  rootSecured: 'https://trunkslamchest.com',
-  // rootUnsecured: 'http://localhost:3000'
-  rootUnsecured: 'http://trunkslamchest.com'
+  database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
+  // database: 'https://spacebarsmasher-96ba1.firebaseio.com',
+  rootSecured: 'https://localhost:3000',
+  // rootSecured: 'https://trunkslamchest.com',
+  rootUnsecured: 'http://localhost:3000'
+  // rootUnsecured: 'http://trunkslamchest.com'
 }
 
 var firebaseConfig = {
   databaseURL: url.database
 }
 
-var init = firebase.initializeApp(firebaseConfig);
-var db = init.database();
+var init = firebase.initializeApp(firebaseConfig)
+// var db = init.database()
+
+admin.initializeApp()
+init.database()
+
 
 exports.players = functions
   .region('us-east1')

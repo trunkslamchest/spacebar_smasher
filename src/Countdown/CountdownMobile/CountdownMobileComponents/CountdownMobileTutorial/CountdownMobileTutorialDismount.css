@@ -1,0 +1,23 @@
+.dismount_countdown_mobile_tutorial {
+  animation: dismount_countdown_mobile_tutorial 1s ease-in-out 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 0px 0px 50px 50px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 15px 0 rgba(0, 0, 0, 0.8);
+  display: flex;
+  color: white;
+  text-align: center;
+  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@keyframes dismount_countdown_mobile_tutorial {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}

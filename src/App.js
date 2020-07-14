@@ -5,7 +5,7 @@ import { routes } from './utility/paths'
 
 import detectDevice from './utility/detectDevice'
 
-import CountdownContainer from './game/Countdown/CountdownContainer'
+import CountdownContainer from './Countdown/CountdownContainer'
 import HomeContainer from './index/HomeContainer'
 import PostGameContainer from './game/PostGame/PostGameContainer'
 
@@ -19,7 +19,7 @@ export default class App extends React.Component {
 
   constructor(props){
     super(props)
-    this.isMobile = detectDevice;
+    this.isMobile = detectDevice
   }
 
   getPlayer = (player) => { this.setState({ player: player }) }
@@ -47,6 +47,7 @@ export default class App extends React.Component {
               <PostGameContainer
                 history={ this.props.history }
                 player={ this.state.player }
+                isMobile={ this.isMobile }
               />
             </Route>
             <Route component={ E404 } />
