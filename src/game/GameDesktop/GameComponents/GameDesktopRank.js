@@ -4,8 +4,6 @@ import './GameDesktopRank.css'
 
 const GameDesktopRank = (props) => {
 
-  // const blank = <></>
-
   const rank = <h1>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h1>
 
   return(
@@ -15,7 +13,6 @@ const GameDesktopRank = (props) => {
         }[props.showRank]}
     >
       <h2>RANK</h2>
-      {/* { props.showRank ? rank : blank } */}
       { rank }
     </div>
   )

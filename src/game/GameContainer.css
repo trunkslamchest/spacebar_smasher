@@ -1,9 +1,3 @@
-/* .blank {
-  opacity: 0;
-  height: 0px;
-  width: 0px;
-} */
-
 .game_wrapper {
   flex-grow: 1;
   display: flex;

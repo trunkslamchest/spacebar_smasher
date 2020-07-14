@@ -56,10 +56,6 @@ export default class Game extends React.Component {
       })
     }, 250)
 
-    // this.timerTimeout = setTimeout(() => { this.setState({ showTimer: true })}, 250)
-    // this.counterTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 250)
-    // this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 250)
-    // this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 250)
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
@@ -176,10 +172,6 @@ export default class Game extends React.Component {
     clearInterval(this.timerInterval)
     clearTimeout(this.startPower)
     clearInterval(this.powerInterval)
-    // clearTimeout(this.timerTimeout)
-    // clearTimeout(this.counterTimeout)
-    // clearTimeout(this.rankTimeout)
-    // clearTimeout(this.powerTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
     clearTimeout(this.mobileSmashButtonTimeout)

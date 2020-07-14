@@ -87,9 +87,7 @@ export default class SubmitScoreFormContainer extends React.Component {
     }
   }
 
-  componentWillUnmount(){
-    clearTimeout(this.dismountModalTimeout)
-  }
+  componentWillUnmount(){ clearTimeout(this.dismountModalTimeout) }
 
   render(){
     return(

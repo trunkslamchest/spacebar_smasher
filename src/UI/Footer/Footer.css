@@ -2,7 +2,6 @@
   animation: slide_in_from_bottom_footer .5s ease-in-out 1;
   color: white;
   padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
-  /* height: calc(47px + (91 - 47) * ((100vw - 320px) / (1920 - 320))); */
   z-index: 0;
 }
 

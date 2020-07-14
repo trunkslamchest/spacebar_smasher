@@ -19,12 +19,10 @@ const ScoreboardContainer = (props) => {
   )
 
   return(
-    // <div className={ props.initDismount ? "dismount_scoreboard_table" : props.isPostGame ? 'scoreboard_table_post_game' : "scoreboard_table" } >
     <div className={{
           false: props.initDismount ? 'dismount_scoreboard_table' : "scoreboard_table",
           true: props.initDismount ? 'dismount_scoreboard_table_post_game' : "scoreboard_table_post_game"
         }[props.isPostGame]}>
-        {/* <div className={ props.initDismount ? "dismount_scoreboard_header" : "scoreboard_header"}> */}
         <div className="scoreboard_header" >
             <h1>LEADERBOARD</h1>
         </div>

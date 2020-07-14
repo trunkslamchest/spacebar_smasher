@@ -4,8 +4,6 @@ import './SubmitScoreHeader.css'
 
 const SubmitScoreHeader = (props) => {
 
-  // const blank = <></>
-
   const header = <h1>OUTTA TIME!</h1>
 
   return(
@@ -14,7 +12,6 @@ const SubmitScoreHeader = (props) => {
           true: props.initDismount ? "dismount_submit_score_header" : "submit_score_header"
         }[props.showHeader]}
     >
-      {/* { props.showHeader ? header : blank } */}
       { header }
     </div>
   )

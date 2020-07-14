@@ -29,7 +29,6 @@ export default class App extends React.Component {
       <>
         <div className="main_container">
           <Switch>
-            {/* <Route exact path='/spacebarsmasher'> */}
             <Route exact path={ routes.home }>
               <HomeContainer
                 history={ this.props.history }
@@ -37,7 +36,6 @@ export default class App extends React.Component {
                 isMobile={ this.isMobile }
               />
             </Route>
-            {/* <Route exact path='/spacebarsmasher/game'> */}
             <Route exact path={ routes.game }>
               <CountdownContainer
                 history={ this.props.history }
@@ -45,7 +43,6 @@ export default class App extends React.Component {
                 isMobile={ this.isMobile }
               />
             </Route>
-            {/* <Route exact path='/spacebarsmasher/scoreboard'> */}
             <Route exact path={ routes.scoreboard } >
               <PostGameContainer
                 history={ this.props.history }

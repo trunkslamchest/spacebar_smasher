@@ -5,7 +5,6 @@ import LoadingSubmitScore from '../../../UI/Loading/LoadingSubmitScore'
 import './SubmitScoreForm.css'
 
 const SubmitScoreForm = (props) => {
-
   return(
     <>
       <div className={{

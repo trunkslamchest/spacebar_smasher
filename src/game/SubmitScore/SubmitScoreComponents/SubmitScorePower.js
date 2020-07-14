@@ -4,8 +4,6 @@ import './SubmitScorePower.css'
 
 const SubmitScorePower = (props) => {
 
-  // const blank = <></>
-
   const power = <h1>{ props.power ? (props.power).toFixed(2) : (0.00).toFixed(2) } %</h1>
 
   return(

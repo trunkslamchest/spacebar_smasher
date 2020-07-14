@@ -5,9 +5,6 @@ import Backdrop from '../backdrop/backdrop'
 import './modal.css'
 
 const Modal = (props) => {
-
-  // console.log(props)
-
   return(
     <>
       { props.show ?

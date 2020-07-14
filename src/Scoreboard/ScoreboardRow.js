@@ -1,21 +1,14 @@
 import React from 'react'
 
 export default class ScoreboardRow extends React.Component {
-
   constructor(props) {
     super(props);
     this.rowRef = React.createRef();
   }
 
-  componentDidMount() {
-    if(this.props.submittedPlayer === this.props.score.name ) {
-      this.scrollToHighlightTimeout = setTimeout(() => { this.rowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' }) }, 250)
-    }
-  }
+  componentDidMount() { if(this.props.submittedPlayer === this.props.score.name ) this.scrollToHighlightTimeout = setTimeout(() => { this.rowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' }) }, 250) }
 
-  componentWillUnmount(){
-    clearTimeout(this.scrollToHighlightTimeout)
-  }
+  componentWillUnmount(){ clearTimeout(this.scrollToHighlightTimeout) }
 
   render(){
     return(

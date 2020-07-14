@@ -36,9 +36,7 @@ export default class PostGameContainer extends React.Component {
 
     this.setState({ initDismount: true, showFooter: false })
 
-    // if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher/' + buttonNav) }, 500 )
     if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
-    // else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 500 )
     else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 500 )
   }
 

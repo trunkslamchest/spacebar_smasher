@@ -46,12 +46,6 @@ export default class SubmitScoreContainer extends React.Component {
       })
     }, 500)
 
-    // this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 500)
-    // this.scoreTimeout = setTimeout(() => { this.setState({ showCounter: true })}, 500)
-    // this.rankTimeout = setTimeout(() => { this.setState({ showRank: true })}, 500)
-    // this.powerTimeout = setTimeout(() => { this.setState({ showPower: true })}, 500)
-    // this.formTimeout = setTimeout(() => { this.setState({ showForm: true })}, 500)
-    // this.bottomButtonsTimeout = setTimeout(() => { this.setState({ showButtons: true })}, 500)
   }
 
   onClickButtonFunctions = (event) => {
@@ -74,12 +68,10 @@ export default class SubmitScoreContainer extends React.Component {
 
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
-        // this.props.history.push( '/spacebarsmasher/game' )
         this.props.history.push( routes.game )
         this.props.resetGame()
       }, 1000 )
     }
-    // else this.resetTimeout = setTimeout(() => { this.props.history.push('/spacebarsmasher') }, 1000 )
     else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 1000 )
   }
 
@@ -92,12 +84,6 @@ export default class SubmitScoreContainer extends React.Component {
 
   clearTimers = () => {
     clearTimeout(this.componentTimeout)
-    // clearTimeout(this.headerTimeout)
-    // clearTimeout(this.scoreTimeout)
-    // clearTimeout(this.rankTimeout)
-    // clearTimeout(this.powerTimeout)
-    // clearTimeout(this.formTimeout)
-    // clearTimeout(this.bottomButtonsTimeout)
     clearTimeout(this.initResetTimeout)
     clearTimeout(this.resetTimeout)
     clearTimeout(this.dismountedTimeout)
@@ -161,7 +147,6 @@ export default class SubmitScoreContainer extends React.Component {
         { this.state.showSubmitScore ?
           submit_score
         :
-          // <Redirect to="/spacebarsmasher/scoreboard" />
           <Redirect to={ routes.scoreboard } />
         }
       </>

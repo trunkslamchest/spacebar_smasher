@@ -12,17 +12,9 @@
   flex-grow: 1;
   flex-wrap: nowrap;
   max-height: calc(200px + (600 - 200) * ((100vh - 320px) / (1080 - 320)));
-  /* max-height: calc(200px + (700 - 200) * ((100vh - 320px) / (1080 - 320))); */
-  /* max-height: calc(200px + (700 - 200) * ((100vh - 320px) / (1080 - 320))); */
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;
-  /* transform: matrix3d(
-    1,0,0,0.0,
-    0,1,0,-0.0004,
-    0,0,1,0,
-    0,0,0,1
-    ) translateY(calc(-10px + (-75 - -10) * ((100vw - 320px) / (1920 - 320)))); */
   transform: matrix3d(
     1,0,0,0.0,
     0,1,0,-0.0004,
@@ -46,11 +38,7 @@
   flex-grow: 1;
   flex-wrap: nowrap;
   max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
-  /* max-height: calc(200px + (700 - 200) * ((100vh - 320px) / (1080 - 320))); */
-  /* max-height: calc(200px + (700 - 200) * ((100vh - 320px) / (1080 - 320))); */
   justify-content: flex-start;
-  /* margin: 10px auto 0 auto; */
-  /* margin-top: calc(5px + (10 - 5) * ((100vw - 320px) / (1080 - 320))); */
   padding: 0px;
   transform: matrix3d(
     1,0,0,0.0,
@@ -291,15 +279,3 @@
   text-align: center;
   width: 25%;
 }
-
-/* .highlighted_field:last-child, .dismount_highlighted_field:last-child {
-  align-items: center;
-  align-content: center;
-  border: 1px solid black;
-  border-radius: 0px 0px 10px 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  width: 100%;
-} */
