@@ -23,8 +23,8 @@ import './GameMobileDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (1.00).toFixed(2),
+    timeMark: (1.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
@@ -150,8 +150,8 @@ export default class Game extends React.Component {
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
     this.setState({
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (1.00).toFixed(2),
+      timeMark: (1.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",
@@ -285,12 +285,14 @@ export default class Game extends React.Component {
           game
         :
           <SubmitScoreContainer
-            history={ this.props.history }
             count={ this.state.count }
-            rank={ this.state.rank }
+            getPlayer={ this.props.getPlayer }
+            history={ this.props.history }
+            isMobile={ this.props.isMobile }
+            orientation={ this.props.orientation }
             power={ this.state.power }
             powerRaw={ this.state.powerRaw }
-            getPlayer={ this.props.getPlayer }
+            rank={ this.state.rank }
             resetGame={ this.resetGame }
           />
         }

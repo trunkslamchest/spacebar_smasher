@@ -14,8 +14,6 @@ const Footer = (props) => {
 
   const onClickFooterLinksFunctions = (event) => { }
 
-  console.log(props)
-
   return(
     <div className={ props.initDismount ? 'dismount_footer' : "footer_container" }>
       <div className="footer_wrapper">

@@ -1,17 +1,17 @@
 import React from 'react'
 
-import { fetch } from '../../utility/paths'
+import { fetch } from '../../../utility/paths'
 
-import scoreboardFunctions from '../../utility/scoreboardFunctions'
-import getTime from '../../utility/getTime'
-import validatePost from '../../utility/validatePost'
+import scoreboardFunctions from '../../../utility/scoreboardFunctions'
+import getTime from '../../../utility/getTime'
+import validatePost from '../../../utility/validatePost'
 
-import broNames from '../../datasets/broNames'
+import broNames from '../../../datasets/broNames'
 
-import SubmitScoreForm from './SubmitScoreForm'
+import SubmitScoreForm from './SubmitScoreForm/SubmitScoreForm'
 import SubmitScoreErrorContainer from './SubmitScoreErrorHandling/SubmitScoreErrorContainer'
 
-import Modal from '../../UI/modal/modal'
+import Modal from '../../../UI/modal/modal'
 
 import './SubmitScoreFormContainer.css'
 
@@ -108,12 +108,14 @@ export default class SubmitScoreFormContainer extends React.Component {
           null
         }
       <SubmitScoreForm
-        player={ this.state.player }
-        submittedScore={ this.state.submittedScore }
-        showForm={ this.props.showForm }
         initDismount={ this.props.initDismount }
-        onSubmit={ this.onSubmit }
+        isMobile={ this.props.isMobile }
         onNameChange={ this.onNameChange }
+        onSubmit={ this.onSubmit }
+        orientation={ this.props.orientation }
+        player={ this.state.player }
+        showForm={ this.props.showForm }
+        submittedScore={ this.state.submittedScore }
       />
       </>
     )

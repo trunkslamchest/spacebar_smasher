@@ -54,15 +54,24 @@ export default class HomeContainer extends React.Component {
 
   if(this.props.isMobile){
     if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
-      if(this.props.initDismount) wrapperClass = "dismount_home_mobile_wrapper_landscape"
-      else wrapperClass = "home_mobile_wrapper_landscape"
+      if(this.props.initDismount) {
+        wrapperClass = "dismount_home_mobile_wrapper_landscape"
+      } else {
+        wrapperClass = "home_mobile_wrapper_landscape"
+      }
     } else {
-      if(this.props.initDismount) wrapperClass = "dismount_home_mobile_wrapper_portrait"
-      else wrapperClass = "home_mobile_wrapper_portrait"
+      if(this.props.initDismount) {
+        wrapperClass = "dismount_home_mobile_wrapper_portrait"
+      } else {
+        wrapperClass = "home_mobile_wrapper_portrait"
+      }
     }
   } else {
-    if(this.props.initDismount) wrapperClass = "dismount_home_desktop_wrapper"
-    else wrapperClass = "home_desktop_wrapper"
+    if(this.props.initDismount) {
+      wrapperClass = "dismount_home_desktop_wrapper"
+    } else {
+      wrapperClass = "home_desktop_wrapper"
+    }
   }
 
     return(
