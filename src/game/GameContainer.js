@@ -2,15 +2,11 @@ import React from 'react'
 
 import Footer from '../UI/Footer/Footer'
 
-// import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
-// import GameMobileContainer from './GameMobile/GameMobileContainer'
-
 import GameTimer from './GameComponents/GameTimer/GameTimer'
 import GameCounter from './GameComponents/GameCounter/GameCounter'
 import GameRank from './GameComponents/GameRank/GameRank'
 import GamePower from './GameComponents/GamePower/GamePower'
 import GameMobileSmashButton from './GameComponents/GameMobileSmashButton/GameMobileSmashButton'
-
 
 import SubmitScoreContainer from '../SubmitScore/SubmitScoreContainer'
 
@@ -23,8 +19,8 @@ import './GameMobileDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (1.00).toFixed(2),
-    timeMark: (1.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
@@ -150,8 +146,8 @@ export default class Game extends React.Component {
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
     this.setState({
-      time: (1.00).toFixed(2),
-      timeMark: (1.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",

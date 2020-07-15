@@ -83,7 +83,11 @@ export default class SubmitScoreFormContainer extends React.Component {
       })
     } else {
       scoreboardFunctions('post', fetch.post, playerObj)
-      .then( this.setState({ submittedScore: true }, this.props.onDismount()) )
+      .then(resObj => {
+        if(!!resObj){
+          this.setState({ submittedScore: true }, this.props.onDismount())
+        }
+      })
     }
   }
 

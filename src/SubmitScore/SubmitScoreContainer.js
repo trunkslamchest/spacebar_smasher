@@ -67,13 +67,13 @@ export default class SubmitScoreContainer extends React.Component {
       })
     }, 500)
 
-    // if (buttonNav === 'game')  {
-    //   this.resetTimeout = setTimeout(() => {
-    //     this.props.history.push( routes.game )
-    //     this.props.resetGame()
-    //   }, 1000 )
-    // }
-    // else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 1000 )
+    if (buttonNav === 'game')  {
+      this.resetTimeout = setTimeout(() => {
+        this.props.history.push( routes.game )
+        this.props.resetGame()
+      }, 1000 )
+    }
+    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 1000 )
   }
 
   onDismount = () => {
