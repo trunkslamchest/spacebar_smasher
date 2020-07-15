@@ -1,17 +1,25 @@
 import React from 'react'
 
-import ScoreboardRow from './ScoreboardRow'
+import ScoreboardRow from './ScoreboardRow/ScoreboardRow'
 
 import LoadingScoreboard from '../UI/Loading/LoadingScoreboard'
 
-import './ScoreboardContainer.css'
-import './ScoreboardOnmount.css'
-import './ScoreboardDismount.css'
+import './ScoreboardDesktopContainer.css'
+import './ScoreboardDesktopOnmount.css'
+import './ScoreboardDesktopDismount.css'
+
+import './ScoreboardMobileContainerLandscape.css'
+import './ScoreboardMobileContainerPortrait.css'
+import './ScoreboardMobileOnmount.css'
+import './ScoreboardMobileDismount.css'
 
 const ScoreboardContainer = (props) => {
 
   const scores =  props.scoreboard.map(score =>
     <ScoreboardRow
+      isMobile={props.isMobile}
+      isPostGame={props.isPostGame}
+      orientation={props.orientation}
       place={props.scoreboard.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
@@ -19,15 +27,96 @@ const ScoreboardContainer = (props) => {
     />
   )
 
+  let tableClass, headerClass, headRowClass, subRowClass
+
+  if(props.isPostGame) {
+    if(props.isMobile){
+      if(props.orientation === "landscape" && window.innerWidth < 1024) {
+        if(props.initDismount) {
+          tableClass = "dismount_scoreboard_table_mobile_landscape_post_game"
+          headerClass = "scoreboard_header_mobile_landscape"
+          headRowClass = "scoreboard_head_row_mobile_landscape"
+          subRowClass = "scoreboard_sub_row_mobile_landscape"
+        } else {
+          tableClass = "scoreboard_table_mobile_landscape_post_game"
+          headerClass = "scoreboard_header_mobile_landscape"
+          headRowClass = "scoreboard_head_row_mobile_landscape"
+          subRowClass = "scoreboard_sub_row_mobile_landscape"
+        }
+      } else {
+        if(props.initDismount) {
+          tableClass = "dismount_scoreboard_table_mobile_portrait_post_game"
+          headerClass = "scoreboard_header_mobile_portrait"
+          headRowClass = "scoreboard_head_row_mobile_portrait"
+          subRowClass = "scoreboard_sub_row_mobile_portrait"
+        } else {
+          tableClass = "scoreboard_table_mobile_portrait_post_game"
+          headerClass = "scoreboard_header_mobile_portrait"
+          headRowClass = "scoreboard_head_row_mobile_portrait"
+          subRowClass = "scoreboard_sub_row_mobile_portrait"
+        }
+      }
+    } else {
+      if(props.initDismount){
+        tableClass = "dismount_scoreboard_table_desktop_post_game"
+        headerClass = "scoreboard_header_desktop"
+        headRowClass = "scoreboard_head_row_desktop"
+        subRowClass = "scoreboard_sub_row_desktop"
+      } else {
+        tableClass = "scoreboard_table_desktop_post_game"
+        headerClass = "scoreboard_header_desktop"
+        headRowClass = "scoreboard_head_row_desktop"
+        subRowClass = "scoreboard_sub_row_desktop"
+      }
+    }
+  } else {
+    if(props.isMobile){
+      if(props.orientation === "landscape" && window.innerWidth < 1024) {
+        if(props.initDismount) {
+          tableClass = "dismount_scoreboard_table_mobile_landscape"
+          headerClass = "scoreboard_header_mobile_landscape"
+          headRowClass = "scoreboard_head_row_mobile_landscape"
+          subRowClass = "scoreboard_sub_row_mobile_landscape"
+        } else {
+          tableClass = "scoreboard_table_mobile_landscape"
+          headerClass = "scoreboard_header_mobile_landscape"
+          headRowClass = "scoreboard_head_row_mobile_landscape"
+          subRowClass = "scoreboard_sub_row_mobile_landscape"
+        }
+      } else {
+        if(props.initDismount) {
+          tableClass = "scoreboard_table_mobile_portrait"
+          headerClass = "scoreboard_header_mobile_portrait"
+          headRowClass = "scoreboard_head_row_mobile_portrait"
+          subRowClass = "scoreboard_sub_row_mobile_portrait"
+        } else {
+          tableClass = "scoreboard_table_mobile_portrait"
+          headerClass = "scoreboard_header_mobile_portrait"
+          headRowClass = "scoreboard_head_row_mobile_portrait"
+          subRowClass = "scoreboard_sub_row_mobile_portrait"
+        }
+      }
+    } else {
+      if(props.initDismount){
+        tableClass = "dismount_scoreboard_table_desktop"
+        headerClass = "scoreboard_header_desktop"
+        headRowClass = "scoreboard_head_row_desktop"
+        subRowClass = "scoreboard_sub_row_desktop"
+      } else {
+        tableClass = "scoreboard_table_desktop"
+        headerClass = "scoreboard_header_desktop"
+        headRowClass = "scoreboard_head_row_desktop"
+        subRowClass = "scoreboard_sub_row_desktop"
+      }
+    }
+  }
+
   return(
-    <div className={{
-          false: props.initDismount ? 'dismount_scoreboard_table' : "scoreboard_table",
-          true: props.initDismount ? 'dismount_scoreboard_table_post_game' : "scoreboard_table_post_game"
-        }[props.isPostGame]}>
-        <div className="scoreboard_header" >
+      <div className={ tableClass }>
+        <div className={ headerClass } >
             <h1>LEADERBOARD</h1>
         </div>
-        <div className="scoreboard_head_row">
+        <div className={ headRowClass }>
           <h1>PLACE</h1>
           <h1>NAME</h1>
           <h1>POWER LEVEL</h1>
@@ -35,7 +124,7 @@ const ScoreboardContainer = (props) => {
           <h1>SCROLLBAR</h1>
         </div>
           { props.mounted ?
-            <div className="scoreboard_sub_rows_wrapper">
+            <div className={ subRowClass }>
               { scores }
             </div>
           :

@@ -18,6 +18,7 @@ export default class PostGameContainer extends React.Component {
     scoreboard: [],
     mounted: false,
     initDismount: false,
+    isPostGame: true,
     showFooter: false,
   }
 
@@ -56,11 +57,13 @@ export default class PostGameContainer extends React.Component {
       <>
         <div className="post_game_wrapper">
           <ScoreboardContainer
-            isPostGame={true}
-            mounted={this.state.mounted}
-            scoreboard={this.state.scoreboard}
-            submittedPlayer={this.props.player}
             initDismount={this.state.initDismount}
+            isMobile={ this.props.isMobile }
+            isPostGame={ this.state.isPostGame }
+            mounted={ this.state.mounted }
+            orientation={ this.props.orientation }
+            scoreboard={ this.state.scoreboard }
+            submittedPlayer={ this.props.player }
           />
           <div className="post_game_buttons_container">
             <button

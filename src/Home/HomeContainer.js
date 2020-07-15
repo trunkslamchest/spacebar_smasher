@@ -75,11 +75,13 @@ export default class HomeContainer extends React.Component {
             orientation={ this.props.orientation }
           />
           <ScoreboardContainer
+            initDismount={ this.state.initDismount }
+            isMobile={ this.props.isMobile }
             isPostGame={ this.state.isPostGame }
             mounted={ this.state.mounted }
+            orientation={ this.props.orientation }
             scoreboard={ this.state.scoreboard }
             submittedPlayer={ this.props.player }
-            initDismount={ this.state.initDismount }
           />
         </div>
         <Footer
