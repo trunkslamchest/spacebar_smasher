@@ -1,18 +1,9 @@
-.post_game_wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-}
-
-.post_game_buttons_container {
+.post_game_desktop_buttons_container {
   padding-top: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320)));
   animation: onmount_post_game_buttons .5s ease-in-out 1;
 }
 
-.post_game_main_menu_button {
+.post_game_desktop_main_menu_button {
   animation: shadow_blink 1.4s infinite;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid white;
@@ -34,7 +25,7 @@
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.post_game_main_menu_button:hover {
+.post_game_desktop_main_menu_button:hover {
   animation: blinker_hover .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 2px solid black;
@@ -50,7 +41,7 @@
     );
 }
 
-.post_game_main_menu_button:active {
+.post_game_desktop_main_menu_button:active {
   animation: scale_out .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 2px solid black;
@@ -61,7 +52,7 @@
   transition-timing-function: ease-in-out;
 }
 
-.post_game_play_again_button {
+.post_game_desktop_play_again_button {
   animation: shadow_blink 1.6s infinite;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid white;
@@ -83,7 +74,7 @@
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.post_game_play_again_button:hover {
+.post_game_desktop_play_again_button:hover {
   animation: blinker_hover .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 2px solid black;
@@ -99,7 +90,7 @@
     );
 }
 
-.post_game_play_again_button:active {
+.post_game_desktop_play_again_button:active {
   animation: scale_out .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 2px solid black;

@@ -1,4 +1,4 @@
-.dismount_scoreboard_table_desktop, .dismount_scoreboard_table_desktop_post_game  {
+.dismount_scoreboard_table_desktop  {
   animation: dismount_scoreboard_table .6s ease-in-out 1;
   align-items: center;
   align-content: center;
@@ -51,8 +51,8 @@
   }
 }
 
-.dismount_scoreboard_table_post_game {
-  animation: dismount_scoreboard_table_post_game .6s ease-in-out 1;
+.dismount_scoreboard_table_desktop_post_game {
+  animation: dismount_scoreboard_table_desktop_post_game .6s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -76,7 +76,7 @@
   width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_scoreboard_table_post_game {
+@keyframes dismount_scoreboard_table_desktop_post_game {
   0% {
     transform: matrix3d(
       1,0,0,0.0,

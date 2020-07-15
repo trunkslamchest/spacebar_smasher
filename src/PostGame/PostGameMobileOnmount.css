@@ -1,0 +1,19 @@
+@keyframes onmount_post_game_mobile_buttons_landscape
+  {
+    0% {
+      transform: translateY(2000px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+@keyframes onmount_post_game_buttons_mobile_portrait
+  {
+    0% {
+      transform: translateY(2000px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }

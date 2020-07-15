@@ -8,9 +8,16 @@ import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
-import './PostGameContainer.css'
-import './PostGameOnmount.css'
-import './PostGameDismount.css'
+import './PostGameDesktopContainer.css'
+import './PostGameMobileContainerLandscape.css'
+import './PostGameMobileContainerPortrait.css'
+
+import './PostGameDesktopOnmount.css'
+import './PostGameMobileOnmount.css'
+
+import './PostGameDesktopDismount.css'
+import './PostGameMobileDismount.css'
+
 
 export default class PostGameContainer extends React.Component {
 
@@ -53,45 +60,75 @@ export default class PostGameContainer extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
+
+    let buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
+
+    if(this.props.isMobile){
+      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+        if(this.state.initDismount) {
+          buttonsContainerClass = "post_game_mobile_buttons_container_landscape"
+          mainMenuButtonClass = "dismount_post_game_mobile_main_menu_button_landscape"
+          playAgainButtonClass = "dismount_post_game_mobile_play_again_button_landscape"
+        } else {
+          buttonsContainerClass = "post_game_mobile_buttons_container_landscape"
+          mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
+          playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
+        }
+      } else {
+        if(this.state.initDismount) {
+          buttonsContainerClass = "post_game_mobile_buttons_container_portrait"
+          mainMenuButtonClass = "dismount_post_game_mobile_main_menu_button_portrait"
+          playAgainButtonClass = "dismount_post_game_mobile_play_again_button_portrait"
+        } else {
+          buttonsContainerClass = "post_game_mobile_buttons_container_portrait"
+          mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
+          playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
+        }
+      }
+    } else {
+      if(this.state.initDismount) {
+        buttonsContainerClass = "post_game_desktop_buttons_container"
+        mainMenuButtonClass = "dismount_post_game_desktop_main_menu_button"
+        playAgainButtonClass = "dismount_post_game_desktop_play_again_button"
+      } else {
+        buttonsContainerClass = "post_game_desktop_buttons_container"
+        mainMenuButtonClass = "post_game_desktop_main_menu_button"
+        playAgainButtonClass = "post_game_desktop_play_again_button"
+      }
+    }
+
     return(
       <>
-        <div className="post_game_wrapper">
-          <ScoreboardContainer
-            initDismount={this.state.initDismount}
-            isMobile={ this.props.isMobile }
-            isPostGame={ this.state.isPostGame }
-            mounted={ this.state.mounted }
-            orientation={ this.props.orientation }
-            scoreboard={ this.state.scoreboard }
-            submittedPlayer={ this.props.player }
-          />
-          <div className="post_game_buttons_container">
-            <button
-              nav="main_menu"
-              name="main_menu_button"
-              className={this.state.initDismount ? "dismount_post_game_main_menu_button" : "post_game_main_menu_button" }
-              onClick={ this.onClickButtonFunctions }
-
-            >
-              MAIN MENU
-            </button>
-            <button
-              nav="game"
-              name="play_again_button"
-              className={this.state.initDismount ? "dismount_post_game_play_again_button" : "post_game_play_again_button" }
-              onClick={ this.onClickButtonFunctions }
-            >
-              PLAY AGAIN
-            </button>
-          </div>
+        <ScoreboardContainer
+          initDismount={this.state.initDismount}
+          isMobile={ this.props.isMobile }
+          isPostGame={ this.state.isPostGame }
+          mounted={ this.state.mounted }
+          orientation={ this.props.orientation }
+          scoreboard={ this.state.scoreboard }
+          submittedPlayer={ this.props.player }
+        />
+        <div className={ buttonsContainerClass }>
+          <button
+            nav="main_menu"
+            name="main_menu_button"
+            className={ mainMenuButtonClass }
+            onClick={ this.onClickButtonFunctions }
+          >
+            MAIN MENU
+          </button>
+          <button
+            nav="game"
+            name="play_again_button"
+            className={ playAgainButtonClass }
+            onClick={ this.onClickButtonFunctions }
+          >
+            PLAY AGAIN
+          </button>
         </div>
-        { this.state.showFooter ?
           <Footer
-            initDismount={ this.state.initDismount }
+            initDismount={this.state.initDismount}
           />
-        :
-          <></>
-        }
       </>
     )
   }

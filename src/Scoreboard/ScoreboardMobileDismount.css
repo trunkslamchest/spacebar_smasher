@@ -1,5 +1,5 @@
-.dismount_scoreboard_table {
-  animation: dismount_scoreboard_table .6s ease-in-out 1;
+.dismount_scoreboard_table_mobile_landscape {
+  animation: dismount_scoreboard_table_mobile_landscape .6s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -24,7 +24,7 @@
   width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_scoreboard_table {
+@keyframes dismount_scoreboard_table_mobile_landscape {
   0% {
     transform: matrix3d(
       1,0,0,0.0,
@@ -51,8 +51,61 @@
   }
 }
 
-.dismount_scoreboard_table_post_game {
-  animation: dismount_scoreboard_table_post_game .6s ease-in-out 1;
+.dismount_scoreboard_table_mobile_portrait {
+  animation: dismount_scoreboard_table_mobile_portrait .6s ease-in-out 1;
+  align-items: center;
+  align-content: center;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 10px 0 rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  max-height: calc(200px + (600 - 200) * ((100vh - 320px) / (1080 - 320)));
+  justify-content: flex-start;
+  margin: 0 auto 0 auto;
+  padding: 0px;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+    );
+  width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@keyframes dismount_scoreboard_table_mobile_portrait {
+  0% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0004,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(0px);
+  }
+  25% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0002,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(2000px);
+  }
+  100% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0000,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(2000px);
+  }
+}
+
+.dismount_scoreboard_table_mobile_post_game_landscape {
+  animation: dismount_scoreboard_table_mobile_post_game_landscape .6s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -76,7 +129,59 @@
   width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_scoreboard_table_post_game {
+@keyframes dismount_scoreboard_table_mobile_post_game_landscape {
+  0% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0004,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(0px);
+  }
+  25% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0002,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(2000px);
+  }
+  100% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0000,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(2000px);
+  }
+}
+
+.dismount_scoreboard_table_mobile_post_game_portrait {
+  animation: dismount_scoreboard_table_mobile_post_game_portrait 1s ease-in-out 1;
+  align-items: center;
+  align-content: center;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 10px 0 rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
+  justify-content: flex-start;
+  padding: 0px;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+    );
+  width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
+}
+
+@keyframes dismount_scoreboard_table_mobile_post_game_portrait {
   0% {
     transform: matrix3d(
       1,0,0,0.0,

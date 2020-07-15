@@ -24,7 +24,7 @@
   width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.scoreboard_table_mobile_portrait_post_game {
+.scoreboard_table_mobile_post_game_portrait {
   animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
   align-items: center;
   align-content: center;
@@ -68,7 +68,7 @@
   padding: 5px 0px 5px 0px;
 }
 
-.scoreboard_head_row_mobile_portrait, .dismount_scoreboard_head_row_mobile_portrait {
+.scoreboard_head_row_mobile_portrait {
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -83,86 +83,76 @@
   width: 100%;
 }
 
-.scoreboard_head_row_mobile_portrait h1, .dismount_scoreboard_head_row_mobile_portrait th {
+.scoreboard_head_row_mobile_portrait h1 {
   font-family: "Audiowide";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-align: center;
 }
 
-.scoreboard_head_row_mobile_portrait h1:nth-child(1), .dismount_scoreboard_head_row_mobile_portrait th:nth-child(1) {
+.scoreboard_head_row_mobile_portrait h1:nth-child(1) {
   opacity: 0;
   width: 10%;
 }
 
-.scoreboard_head_row_mobile_portrait h1:nth-child(2), .dismount_scoreboard_head_row_mobile_portrait th:nth-child(2) {
+.scoreboard_head_row_mobile_portrait h1:nth-child(2) {
   text-align: left;
   width: 40%;
 }
 
-.scoreboard_head_row_mobile_portrait h1:nth-child(3), .dismount_scoreboard_head_row_mobile_portrait th:nth-child(3) {
+.scoreboard_head_row_mobile_portrait h1:nth-child(3) {
   width: 35%;
 }
 
-.scoreboard_head_row_mobile_portrait h1:nth-child(4), .dismount_scoreboard_head_row_mobile_portrait th:nth-child(4) {
+.scoreboard_head_row_mobile_portrait h1:nth-child(4) {
   width: 15%;
 }
 
-.scoreboard_head_row_mobile_portrait h1:nth-child(5), .dismount_scoreboard_head_row_mobile_portrait th:nth-child(5) {
+.scoreboard_head_row_mobile_portrait h1:nth-child(5) {
   opacity: 0;
   width: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.scoreboard_sub_row_mobile_portrait {
+.scoreboard_row_wrapper_mobile_portrait {
   overflow: visible;
   overflow-x: hidden;
   overflow-y: scroll !important;
   width: 100%;
 }
 
- .scoreboard_sub_row_mobile_portrait::-webkit-scrollbar {
+ .scoreboard_row_wrapper_mobile_portrait::-webkit-scrollbar {
   width: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.scoreboard_sub_row_mobile_portrait::-webkit-scrollbar-track {
+.scoreboard_row_wrapper_mobile_portrait::-webkit-scrollbar-track {
   opacity: 1 !important;
 }
 
-.scoreboard_sub_row_mobile_portrait::-webkit-scrollbar-thumb {
+.scoreboard_row_wrapper_mobile_portrait::-webkit-scrollbar-thumb {
   opacity: 1 !important;
   border-radius: 5px;
   border: 1px solid grey;
 }
 
-.scoreboard_sub_rows_wrapper::-webkit-scrollbar-thumb:hover {
+.scoreboard_row_wrapper_mobile_portrait::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 0, 1);
 }
 
-.scoreboard_sub_row_mobile_portrait::-webkit-scrollbar-button:vertical:decrement {
+.scoreboard_row_wrapper_mobile_portrait::-webkit-scrollbar-button:vertical:decrement {
   background-image: url(../assets/scrollbar_arrow_up2.png);
   background-repeat:no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
-.scoreboard_sub_row_mobile_portrait::-webkit-scrollbar-button:vertical:increment {
+.scoreboard_row_wrapper_mobile_portrait::-webkit-scrollbar-button:vertical:increment {
   background-image: url(../assets/scrollbar_arrow_down2.png);
   background-repeat:no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
-.scoreboard_sub_row, .dismount_scoreboard_sub_row {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  align-content: center;
-  border: 1px solid grey;
-}
-
-.scoreboard_sub_row_place, .dismount_scoreboard_sub_row_place {
+.scoreboard_sub_row_place_mobile_portrait {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -170,7 +160,7 @@
   width: 10%;
 }
 
-.scoreboard_sub_row_name, .dismount_scoreboard_sub_row_name {
+.scoreboard_sub_row_name_mobile_portrait {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -179,7 +169,7 @@
 }
 
 
-.scoreboard_sub_row_score, .dismount_scoreboard_sub_row_score {
+.scoreboard_sub_row_score_mobile_portrait {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -187,7 +177,7 @@
   width: 15%;
 }
 
-.scoreboard_sub_row_power, .dismount_scoreboard_sub_row_power {
+.scoreboard_sub_row_power_mobile_portrait {
   align-content: center;
   align-items: center;
   display: flex;
@@ -197,7 +187,7 @@
   width: 35%;
 }
 
-.scoreboard_sub_row_power span, .dismount_scoreboard_sub_row_power span {
+.scoreboard_sub_row_power_mobile_portrait span {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -207,7 +197,7 @@
 
 }
 
-.scoreboard_sub_row_power meter, .dismount_scoreboard_sub_row_power meter {
+.scoreboard_sub_row_power_mobile_portrait meter meter {
   margin: 0 auto 0 auto;
   background: none;
   box-sizing: border-box;
@@ -216,14 +206,14 @@
   width: calc(50px + (275 - 50) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.scoreboard_sub_row_power meter::-webkit-meter-bar, .dismount_scoreboard_sub_row_power meter::-webkit-meter-bar {
+.scoreboard_sub_row_power_mobile_portrait meter::-webkit-meter-bar {
   background: #000;
   border-radius: 5px;
   border: 1px solid grey;
   box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.8), 0 0px 5px 0 rgba(0, 0, 0, 0.8);
 }
 
-.scoreboard_sub_row_power meter::-webkit-meter-optimum-value, .dismount_scoreboard_sub_row_power meter::-webkit-meter-optimum-value {
+.scoreboard_sub_row_power_mobile_portrait meter::-webkit-meter-optimum-value {
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -234,7 +224,7 @@
   width: 100%;
 }
 
-.scoreboard_sub_row_power meter::-webkit-meter-suboptimum-value, .dismount_scoreboard_sub_row_power meter::-webkit-meter-suboptimum-value {
+.scoreboard_sub_row_power_mobile_portrait meter::-webkit-meter-suboptimum-value {
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -246,7 +236,7 @@
   width: 100%;
 }
 
-.scoreboard_sub_row_power meter::-webkit-meter-even-less-good-value, .dismount_scoreboard_sub_row_power meter::-webkit-meter-even-less-good-value {
+.scoreboard_sub_row_power_mobile_portrait meter::-webkit-meter-even-less-good-value {
   background-image: linear-gradient(
     90deg,
     #107A00 0%,
@@ -257,7 +247,7 @@
   width: 100%;
 }
 
-.highlighted, .dismount_highlighted {
+.highlighted {
   width: 100%;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 1px solid black;
@@ -272,7 +262,7 @@
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-.highlighted_field, .dismount_highlighted_field {
+.highlighted_field {
   font-family: "Staatliches";
   font-size: calc(14px + (20 - 14) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;

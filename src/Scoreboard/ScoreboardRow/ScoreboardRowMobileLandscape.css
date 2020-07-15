@@ -1,4 +1,4 @@
-.scoreboard_row_mobile_landscape, .dismount_scoreboard_row_mobile_landscape {
+.scoreboard_row_mobile_landscape {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -8,7 +8,7 @@
   border: 1px solid grey;
 }
 
-.scoreboard_row_place_mobile_landscape, .dismount_scoreboard_row_place_mobile_landscape {
+.scoreboard_row_place_mobile_landscape {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -16,7 +16,7 @@
   width: 10%;
 }
 
-.scoreboard_row_name_mobile_landscape, .dismount_scoreboard_row_name_mobile_landscape {
+.scoreboard_row_name_mobile_landscape {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -24,8 +24,7 @@
   width: 40%;
 }
 
-
-.scoreboard_row_score_mobile_landscape, .dismount_scoreboard_row_score_mobile_landscape {
+.scoreboard_row_score_mobile_landscape {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -33,7 +32,7 @@
   width: 15%;
 }
 
-.scoreboard_row_power_mobile_landscape, .dismount_scoreboard_row_power_mobile_landscape {
+.scoreboard_row_power_mobile_landscape {
   align-content: center;
   align-items: center;
   display: flex;
@@ -43,7 +42,7 @@
   width: 35%;
 }
 
-.scoreboard_row_power_mobile_landscape span, .dismount_scoreboard_row_power_mobile_landscape span {
+.scoreboard_row_power_mobile_landscape span {
   font-family: "Staatliches";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -53,7 +52,7 @@
 
 }
 
-.scoreboard_row_power_mobile_landscape meter, .dismount_scoreboard_row_power_mobile_landscape meter {
+.scoreboard_row_power_mobile_landscape meter {
   margin: 0 auto 0 auto;
   background: none;
   box-sizing: border-box;
@@ -62,14 +61,14 @@
   width: calc(50px + (275 - 50) * ((100vw - 320px) / (1920 - 320)));
 }
 
-.scoreboard_row_power_mobile_landscape meter::-webkit-meter-bar, .dismount_scoreboard_row_power_mobile_landscape meter::-webkit-meter-bar {
+.scoreboard_row_power_mobile_landscape meter::-webkit-meter-bar {
   background: #000;
   border-radius: 5px;
   border: 1px solid grey;
   box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.8), 0 0px 5px 0 rgba(0, 0, 0, 0.8);
 }
 
-.scoreboard_row_power_mobile_landscape meter::-webkit-meter-optimum-value, .dismount_scoreboard_row_power_mobile_landscape meter::-webkit-meter-optimum-value {
+.scoreboard_row_power_mobile_landscape meter::-webkit-meter-optimum-value {
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -80,7 +79,7 @@
   width: 100%;
 }
 
-.scoreboard_row_power_mobile_landscape meter::-webkit-meter-suboptimum-value, .dismount_scoreboard_row_power_mobile_landscape meter::-webkit-meter-suboptimum-value {
+.scoreboard_row_power_mobile_landscape meter::-webkit-meter-suboptimum-value {
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -92,7 +91,7 @@
   width: 100%;
 }
 
-.scoreboard_row_power_mobile_landscape meter::-webkit-meter-even-less-good-value, .dismount_scoreboard_row_power_mobile_landscape meter::-webkit-meter-even-less-good-value {
+.scoreboard_row_power_mobile_landscape meter::-webkit-meter-even-less-good-value {
   background-image: linear-gradient(
     90deg,
     #107A00 0%,
@@ -103,7 +102,7 @@
   width: 100%;
 }
 
-.highlighted_row_mobile_landscape, .dismount_highlighted_row_mobile_landscape {
+.highlighted_row_mobile_landscape {
   width: 100%;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 1px solid black;
@@ -118,7 +117,7 @@
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-.highlighted_field_mobile_landscape, .dismount_highlighted_field_mobile_landscape {
+.highlighted_field_mobile_landscape {
   font-family: "Staatliches";
   font-size: calc(14px + (20 - 14) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
