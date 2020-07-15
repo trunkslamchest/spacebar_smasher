@@ -1,0 +1,51 @@
+.dismount_game_mobile_timer_landscape {
+  align-self: center;
+  animation: dismount_game_mobile_timer_landscape 1s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 50px 0px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+  min-height: 120px;
+  width: 250px;
+}
+
+@keyframes dismount_game_mobile_timer_landscape {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+
+.dismount_game_mobile_timer_portrait {
+  animation: dismount_game_mobile_timer_portrait 1s 1;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 50px 50px 0px 0px;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  margin: 0px auto 0 auto;
+  padding: 10px;
+  text-align: center;
+  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
+}
+
+@keyframes dismount_game_mobile_timer_portrait {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}

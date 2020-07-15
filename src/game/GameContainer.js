@@ -2,13 +2,23 @@ import React from 'react'
 
 import Footer from '../UI/Footer/Footer'
 
-import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
-import GameMobileContainer from './GameMobile/GameMobileContainer'
+// import GameDesktopContainer from './GameDesktop/GameDesktopContainer'
+// import GameMobileContainer from './GameMobile/GameMobileContainer'
+
+import GameTimer from './GameComponents/GameTimer/GameTimer'
+import GameCounter from './GameComponents/GameCounter/GameCounter'
+import GameRank from './GameComponents/GameRank/GameRank'
+import GamePower from './GameComponents/GamePower/GamePower'
+import GameMobileSmashButton from './GameComponents/GameMobileSmashButton/GameMobileSmashButton'
+
 
 import SubmitScoreContainer from '../SubmitScore/SubmitScoreContainer'
 
-import './GameContainer.css'
-import './GameDismount.css'
+import './GameDesktopContainer.css'
+import './GameDesktopDismount.css'
+import './GameMobileContainerLandscape.css'
+import './GameMobileContainerPortrait.css'
+import './GameMobileDismount.css'
 
 export default class Game extends React.Component {
 
@@ -184,39 +194,80 @@ export default class Game extends React.Component {
 
   render(){
 
-    let game
+    let wrapperClass, pillClass, columnClass1, columnClass2
 
     if(this.props.isMobile){
-      game = <GameMobileContainer
-              time={ this.state.time }
-              count={ this.state.count }
-              rank={ this.state.rank }
-              power={ this.state.power }
-              powerRaw={ this.state.powerRaw }
-              onSmash={ this.onSmash }
-              showTimer={ this.state.showTimer }
-              showCounter={ this.state.showCounter }
-              showRank={ this.state.showRank }
-              showPower={ this.state.showPower }
-              showMobileSmashButton={ this.state.showMobileSmashButton }
-              initDismount={ this.state.initDismount }
-            />
+      if(this.props.orientation === 'landscape'){
+        if(window.innerWidth >= 1024) {
+          wrapperClass = "game_mobile_wrapper_landscape"
+          pillClass = "game_mobile_pill_landscape_ipad"
+        } else {
+          wrapperClass = "game_mobile_wrapper_landscape"
+          pillClass = "game_mobile_pill_landscape"
+        }
+      } else {
+        wrapperClass = "game_mobile_wrapper_portrait"
+        pillClass = "game_mobile_pill_portrait"
+      }
     } else {
-      game = <>
-        <div className="game_wrapper">
-          <div className="game_pill">
-            <GameDesktopContainer
-              time={ this.state.time }
-              count={ this.state.count }
-              rank={ this.state.rank }
-              power={ this.state.power }
-              powerRaw={ this.state.powerRaw }
-              showTimer={ this.state.showTimer }
-              showCounter={ this.state.showCounter }
-              showRank={ this.state.showRank }
-              showPower={ this.state.showPower }
-              initDismount={ this.state.initDismount }
-            />
+      wrapperClass = "game_desktop_wrapper"
+      pillClass = "game_desktop_pill"
+    }
+
+    if (this.props.orientation === 'landscape' && window.innerWidth >= 1024){
+      columnClass1 = 'game_mobile_landscapeC1'
+      columnClass2 = 'game_mobile_landscapeC2'
+    }
+
+    const game =
+      <>
+        <div className={ wrapperClass }>
+        <div className={ pillClass }>
+            <div className={ columnClass1 }>
+              <GameTimer
+                initDismount={ this.state.initDismount }
+                isMobile={ this.props.isMobile }
+                orientation={ this.props.orientation }
+                showTimer={ this.state.showTimer }
+                time={ this.state.time }
+              />
+              <GameCounter
+                count={ this.state.count }
+                initDismount={ this.state.initDismount }
+                isMobile={ this.props.isMobile }
+                orientation={ this.props.orientation }
+                showCounter={ this.state.showCounter }
+              />
+            </div>
+            <div className={ columnClass2 }>
+              <GameRank
+                initDismount={ this.state.initDismount }
+                isMobile={ this.props.isMobile }
+                orientation={ this.props.orientation }
+                rank={ this.state.rank }
+                showRank={ this.state.showRank }
+              />
+              <GamePower
+                initDismount={ this.state.initDismount }
+                isMobile={ this.props.isMobile }
+                orientation={ this.props.orientation }
+                power={ this.state.power }
+                powerRaw={ this.state.powerRaw }
+                showPower={ this.state.showPower }
+              />
+            </div>
+           { this.props.isMobile ?
+              <GameMobileSmashButton
+                initDismount={this.state.initDismount}
+                isMobile={ this.props.isMobile }
+                onSmash={this.onSmash}
+                orientation={ this.props.orientation }
+                showMobileSmashButton={this.state.showMobileSmashButton}
+                smashed={this.state.smashed}
+              />
+            :
+              null
+            }
           </div>
         </div>
         { this.state.showFooter ?
@@ -227,7 +278,6 @@ export default class Game extends React.Component {
           <></>
         }
       </>
-    }
 
     return(
       <>

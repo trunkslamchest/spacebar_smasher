@@ -1,0 +1,31 @@
+.game_mobile_wrapper_landscape {
+
+}
+
+.game_mobile_pill_landscape {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto 0 auto;
+}
+
+.game_mobile_pill_landscape_ipad {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto 0 auto;
+}
+
+.game_mobile_landscapeC1 {
+
+}
+
+.game_mobile_landscapeC2 {
+
+}

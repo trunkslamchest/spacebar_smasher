@@ -1,0 +1,11 @@
+.game_desktop_wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.game_desktop_pill {
+  padding-top: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+}

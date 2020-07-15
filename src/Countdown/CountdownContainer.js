@@ -41,7 +41,7 @@ export default class CountdownContainer extends React.Component {
   }
 
   startGame = () => {
-    // this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, showCountdown: false})}, 1000)
+    this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, showCountdown: false})}, 1000)
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 750)
   }
 
@@ -73,7 +73,7 @@ export default class CountdownContainer extends React.Component {
 
   render(){
 
-    console.log(this.props)
+    // console.log(this.props)
 
     const countdown =
       <>
@@ -111,9 +111,10 @@ export default class CountdownContainer extends React.Component {
           countdown
         :
           <GameContainer
-            history={ this.props.history }
             getPlayer={ this.props.getPlayer }
+            history={ this.props.history }
             isMobile={ this.props.isMobile }
+            orientation={ this.props.orientation }
           />
         }
       </>

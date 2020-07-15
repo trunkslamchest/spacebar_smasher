@@ -68,6 +68,10 @@
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
+.start_button:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
 .start_button:hover {
   animation: blinker_hover .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );

@@ -39,7 +39,7 @@ export default class GameMobile extends React.Component {
   render(){
     return(
       <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_landscape': 'game_mobile_portrait'}>
-        <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_counter_landscapeC1': null}>
+        <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_landscapeC1': null}>
           <GameMobileTimer
             time={this.props.time}
             showTimer={this.props.showTimer}
@@ -53,7 +53,7 @@ export default class GameMobile extends React.Component {
             initDismount={this.props.initDismount}
           />
         </div>
-        <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_counter_landscapeC2': null}>
+        <div className={this.state.isLandscape && window.innerWidth < 1024 ? 'game_mobile_landscapeC2': null}>
           <GameMobileRank
             rank={this.props.rank}
             showRank={this.props.showRank}
