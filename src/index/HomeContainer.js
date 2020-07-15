@@ -7,8 +7,12 @@ import HomeHeader from './HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 import Footer from '../UI/Footer/Footer'
 
-import './HomeContainer.css'
-import './HomeDismount.css'
+import './HomeDesktopContainer.css'
+import './HomeDesktopDismount.css'
+
+import './HomeMobileContainerLandscape.css'
+import './HomeMobileContainerPortrait.css'
+import './HomeMobileDismount.css'
 
 export default class HomeContainer extends React.Component {
 
@@ -45,12 +49,30 @@ export default class HomeContainer extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
+
+  let wrapperClass
+
+  if(this.props.isMobile){
+    if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(this.props.initDismount) wrapperClass = "dismount_home_mobile_wrapper_landscape"
+      else wrapperClass = "home_mobile_wrapper_landscape"
+    } else {
+      if(this.props.initDismount) wrapperClass = "dismount_home_mobile_wrapper_portrait"
+      else wrapperClass = "home_mobile_wrapper_portrait"
+    }
+  } else {
+    if(this.props.initDismount) wrapperClass = "dismount_home_desktop_wrapper"
+    else wrapperClass = "home_desktop_wrapper"
+  }
+
     return(
       <>
-        <div className="home_wrapper">
+        <div className={ wrapperClass }>
           <HomeHeader
             initDismount={ this.state.initDismount }
+            isMobile={ this.props.isMobile }
             onClickStartButton={ this.onClickStartButton }
+            orientation={ this.props.orientation }
           />
           <ScoreboardContainer
             isPostGame={ this.state.isPostGame }

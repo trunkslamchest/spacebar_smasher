@@ -1,19 +1,67 @@
 import React from 'react'
 
-import './HomeHeader.css'
-import './HomeHeaderDismount.css'
-import './HomeHeaderOnmount.css'
+import './HomeDesktopHeader.css'
+import './HomeDesktopHeaderDismount.css'
+import './HomeDesktopHeaderOnmount.css'
+
+import './HomeMobileHeaderLandscape.css'
+import './HomeMobileHeaderPortrait.css'
+import './HomeMobileHeaderDismount.css'
+import './HomeMobileHeaderOnmount.css'
 
 const HomeHeader = (props) => {
+
+  let wrapperClass, headerClass, startButtonContainerClass, startButtonClass
+
+  if(props.isMobile){
+    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(props.initDismount) {
+        wrapperClass = "dismount_home_header_mobile_wrapper_landscape"
+        headerClass = "dismount_home_header_mobile_landscape"
+        startButtonContainerClass = "dismount_start_button_container_mobile_landscape"
+        startButtonClass = "start_button_mobile_landscape"
+      } else {
+        wrapperClass = "home_header_mobile_wrapper_landscape"
+        headerClass = "home_header_mobile_landscape"
+        startButtonContainerClass = "start_button_container_mobile_landscape"
+        startButtonClass = "start_button_mobile_landscape"
+      }
+    } else {
+      if(props.initDismount) {
+        wrapperClass = "dismount_home_header_mobile_wrapper_portrait"
+        headerClass = "dismount_home_header_mobile_portrait"
+        startButtonContainerClass = "dismount_start_button_container_mobile_portrait"
+        startButtonClass = "start_button_mobile_portrait"
+      } else {
+        wrapperClass = "home_header_mobile_wrapper_portrait"
+        headerClass = "home_header_mobile_portrait"
+        startButtonContainerClass = "start_button_container_mobile_portrait"
+        startButtonClass = "start_button_mobile_portrait"
+      }
+    }
+  } else {
+    if(props.initDismount){
+      wrapperClass = "dismount_home_header_desktop_wrapper"
+      headerClass = "dismount_home_header_desktop"
+      startButtonContainerClass = "dismount_start_button_container_desktop"
+      startButtonClass = "start_button_desktop"
+    } else {
+      wrapperClass = "home_header_desktop_wrapper"
+      headerClass = "home_header_desktop"
+      startButtonContainerClass = "start_button_container_desktop"
+      startButtonClass = "start_button_desktop"
+    }
+  }
+
   return(
-    <div className="home_header_wrapper">
-      <div className={props.initDismount ? "dismount_home_header" : "home_header" } >
+    <div className={ wrapperClass }>
+      <div className={ headerClass } >
         <h3>SPACEBAR SMASHER</h3>
       </div>
-      <div className="start_button_container">
+      <div className={ startButtonContainerClass }>
         <button
           name="start_button"
-          className={props.initDismount ? "dismount_start_button" : "start_button"}
+          className={ startButtonClass }
           onClick={ props.onClickStartButton }
         >
           START

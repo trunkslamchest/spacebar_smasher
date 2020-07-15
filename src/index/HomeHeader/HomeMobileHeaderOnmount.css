@@ -1,0 +1,49 @@
+@keyframes onmount_home_header_mobile_landscape
+  {
+    0% {
+      transform: translateX(10px) translateY(-2500px);
+    }
+    100% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+        ) translateX(10px) translateY(0px);
+    }
+  }
+
+@keyframes onmount_home_header_mobile_portrait
+  {
+    0% {
+      transform: translateX(10px) translateY(-2500px);
+    }
+    100% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+        ) translateX(10px) translateY(0px);
+    }
+  }
+
+@keyframes onmount_start_button_container_mobile_landscape
+  {
+    0% {
+      transform: translateY(1000px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+@keyframes onmount_start_button_container_mobile_portrait
+  {
+    0% {
+      transform: translateY(1000px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }

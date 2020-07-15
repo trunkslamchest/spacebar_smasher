@@ -1,4 +1,4 @@
-@keyframes onmount_home_header
+@keyframes onmount_home_header_desktop
   {
     0% {
       transform: translateX(10px) translateY(-2500px);
@@ -13,7 +13,7 @@
     }
   }
 
-@keyframes onmount_start_button
+@keyframes onmount_start_button_container_desktop
   {
     0% {
       transform: translateY(1000px);
