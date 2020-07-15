@@ -94,7 +94,7 @@ const Footer = (props) => {
               All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and the respective employees and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises, L.P. © Spacebar Smasher 2020
             </p>
             <p className='fine_print_text'>
-              All Rights Reserved.
+              version 0.37.0 | Last Updated: 3:14PM 07/15/20
             </p>
         </div>
       </div>
