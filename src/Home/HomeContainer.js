@@ -23,8 +23,6 @@ export default class HomeContainer extends React.Component {
     onDismount: false,
     scoreboard: [],
     showFooter: false,
-    showHeader: false,
-    showScoreboard: false,
     showWrapper: false
   }
 
@@ -42,8 +40,6 @@ export default class HomeContainer extends React.Component {
   onMount = () => {
     this.setState({
       showWrapper: true,
-      showHeader: true,
-      showScoreboard: true,
       showFooter: true
     })
   }
@@ -56,11 +52,9 @@ export default class HomeContainer extends React.Component {
   onDismount = () => {
     this.setState({ onDismount: true })
 
-    this.hideComponents = setTimeout(() => {
+    this.onDismountTimeout = setTimeout(() => {
       this.setState({
         showWrapper: false,
-        showHeader: false,
-        showScoreboard: false,
         showFooter: false
       })
     }, 500)
@@ -70,7 +64,7 @@ export default class HomeContainer extends React.Component {
 
   clearTimers = () => {
     clearTimeout(this.startCountdownTimeout)
-    clearTimeout(this.hideComponentsTimeout)
+    clearTimeout(this.onDismountTimeout)
     // clearTimeout(this.clearTimersTimeout)
   }
 
@@ -104,25 +98,27 @@ export default class HomeContainer extends React.Component {
 
     return(
       <>
-        <div className={ this.state.showWrapper ? wrapperClass : "blank" }>
-          <HomeHeader
-            initDismount={ this.state.initDismount }
-            isMobile={ this.props.isMobile }
-            onClickStartButton={ this.onClickStartButton }
-            orientation={ this.props.orientation }
-            showHeader={ this.state.showHeader }
-          />
-          <ScoreboardContainer
-            initDismount={ this.state.initDismount }
-            isMobile={ this.props.isMobile }
-            isPostGame={ this.state.isPostGame }
-            mounted={ this.state.mounted }
-            orientation={ this.props.orientation }
-            scoreboard={ this.state.scoreboard }
-            showScoreboard={ this.state.showScoreboard }
-            submittedPlayer={ this.props.player }
-          />
-        </div>
+        { this.state.showWrapper ?
+          <div className={ wrapperClass }>
+            <HomeHeader
+              initDismount={ this.state.initDismount }
+              isMobile={ this.props.isMobile }
+              onClickStartButton={ this.onClickStartButton }
+              orientation={ this.props.orientation }
+            />
+            <ScoreboardContainer
+              initDismount={ this.state.initDismount }
+              isMobile={ this.props.isMobile }
+              isPostGame={ this.state.isPostGame }
+              mounted={ this.state.mounted }
+              orientation={ this.props.orientation }
+              scoreboard={ this.state.scoreboard }
+              submittedPlayer={ this.props.player }
+            />
+          </div>
+        :
+          <></>
+        }
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }

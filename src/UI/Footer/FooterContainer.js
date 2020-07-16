@@ -34,7 +34,7 @@ const FooterContainer = (props) => {
   }
 
   return(
-    <div className={ props.showFooter ? footerClass : "blank" }>
+    <div className={ footerClass }>
       <FooterLogosContainer
         isMobile={ props.isMobile }
         orientation={ props.orientation }
