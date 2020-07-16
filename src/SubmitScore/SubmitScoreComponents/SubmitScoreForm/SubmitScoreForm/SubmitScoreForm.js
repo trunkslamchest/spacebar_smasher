@@ -52,7 +52,7 @@ const SubmitScoreForm = (props) => {
   }
 
   return(
-    <div className={ props.showForm ? formWrapperClass : "blank" }>
+    <div className={ formWrapperClass }>
       <h2>Submit Score</h2>
       <form
         name="submit_score_form"

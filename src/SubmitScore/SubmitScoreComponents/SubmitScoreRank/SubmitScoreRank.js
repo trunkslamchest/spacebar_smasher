@@ -34,12 +34,7 @@ const SubmitScoreRank = (props) => {
   }
 
   return(
-    // <div className={{
-    //       false: "blank",
-    //       true: props.initDismount ? "dismount_submit_score_rank" : "submit_score_rank"
-    //     }[props.showRank]}
-    // >
-    <div className={ props.showRank ? rankClass : "blank" }>
+    <div className={ rankClass }>
 
       <h2>RANK</h2>
       <h1>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h1>

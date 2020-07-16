@@ -181,8 +181,6 @@ export default class Game extends React.Component {
 
   render(){
 
-    console.log(this.state)
-
     let wrapperClass, pillClass, columnClass1, columnClass2
 
     if(this.props.isMobile){

@@ -118,7 +118,6 @@ export default class SubmitScoreFormContainer extends React.Component {
         onSubmit={ this.onSubmit }
         orientation={ this.props.orientation }
         player={ this.state.player }
-        showForm={ this.props.showForm }
         submittedScore={ this.state.submittedScore }
       />
       </>

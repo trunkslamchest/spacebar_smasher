@@ -35,7 +35,7 @@ const SubmitScoreHeader = (props) => {
   }
 
   return(
-    <div className={ props.showHeader ? headerClass : "blank" }>
+    <div className={ headerClass }>
       <h1>OUTTA TIME!</h1>
     </div>
   )

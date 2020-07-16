@@ -34,7 +34,7 @@ const SubmitScoreCounter = (props) => {
   }
 
   return(
-    <div className={ props.showCounter ? counterClass : "blank" }>
+    <div className={ counterClass }>
       <h2>SMASHES</h2>
       <h1>{ props.count ? props.count : 0 }</h1>
     </div>

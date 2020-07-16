@@ -9,8 +9,6 @@ import './SubmitScoreMobilePowerDismount.css'
 
 const SubmitScorePower = (props) => {
 
-  const power = <h1>{ props.power ? (props.power).toFixed(2) : (0.00).toFixed(2) } %</h1>
-
   let powerClass, powerBarClass
 
   if(props.isMobile){
@@ -44,9 +42,9 @@ const SubmitScorePower = (props) => {
   }
 
   return(
-    <div className={ props.showPower ? powerClass : "blank" }>
+    <div className={ powerClass }>
       <h2>POWER</h2>
-      { power }
+      <h1>{ props.power ? (props.power).toFixed(2) : (0.00).toFixed(2) } %</h1>
       <div className={ powerBarClass }>
         <meter value={ props.powerRaw } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0">
         </meter>
