@@ -7,7 +7,8 @@
   margin: 0px auto 0 auto;
   padding: 10px 0px 5px 0px;
   text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+  /* width: calc(320px + (640 - 320) * ((100vw - 320px) / (1920 - 320))); */
+  width: 100%;
 }
 
 .submit_score_mobile_header_landscape h1, .dismount_submit_score_mobile_header_landscape h1 {

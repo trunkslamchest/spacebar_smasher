@@ -1,11 +1,40 @@
 .submit_score_mobile_wrapper_landscape {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
+  width: 95vw;
+
 }
 
 .submit_score_mobile_pill_landscape {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  margin: 0 auto 0 auto;
+  /* height: 95vh; */
+}
+
+.submit_score_mobile_pill_landscape_ipad {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto 0 auto;
+}
+
+.submit_score_mobile_landscapeR1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  width: 95vw;
+  /* height: 40vh; */
+}
+
+.submit_score_mobile_landscapeR2 {
 
 }

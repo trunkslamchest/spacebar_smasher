@@ -4,9 +4,17 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   border: 2px solid grey;
   margin: 0px auto 0 auto;
-  padding: 10px 0px 5px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-grow: 2;
+ flex-shrink: 1;
+  order: 2;
+  padding: 5px 0px 5px 0px;
   text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+  /* width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320))); */
 }
 
 .submit_score_mobile_counter_landscape h1, .dismount_submit_score_mobile_counter_landscape h1 {
@@ -19,10 +27,12 @@
   font-family: 'Conv_digital-7.mono';
   font-size: calc(75px + (125 - 75) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  padding: 0px 0px 0px 0px;
   margin: 0 auto 0 auto;
+  /* padding: 5px 10px; */
+  /* height: 100%; */
   text-align: center;
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+  width: 50%;
+  /* width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320))); */
 }
 
 .submit_score_mobile_counter_landscape h2, .dismount_submit_score_mobile_counter_landscape h2 {

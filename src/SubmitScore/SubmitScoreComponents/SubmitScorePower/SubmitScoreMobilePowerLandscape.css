@@ -5,9 +5,17 @@
   border-radius: 0px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 2;
+  order: 3;
   padding: 5px 0px 5px 0px;
   text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+  /* width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320))); */
 }
 
 .submit_score_mobile_power_landscape h1, .dismount_submit_score_mobile_power_landscape h1 {
@@ -20,16 +28,18 @@
   font-family: 'Conv_digital-7.mono';
   font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  margin: 0 auto 0px auto;
-  padding: 0px 5px 0px 5px;
+  margin: 0 auto 0 auto;
+  padding: 5px 10px;
+  /* height: 100%; */
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;
-  width: calc(125px + (250 - 125) * ((100vw - 320px) / (1920 - 320)));
+
+  /* width: calc(125px + (250 - 125) * ((100vw - 320px) / (1920 - 320))); */
 }
 
 .submit_score_mobile_power_landscape h2, .dismount_submit_score_mobile_power_landscape h2 {
   font-family: "Staatliches";
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   color: white;
   margin: 0 auto 0 auto;
@@ -42,12 +52,14 @@
   display: block;
   margin: 0 auto 0 auto;
   -webkit-appearance: none;
+  height: 50%;
+  width: 75%;
 }
 
 .submit_score_mobile_power_bar_landscape meter, .dismount_submit_score_mobile_power_bar_landscape meter {
   background: none;
+  height: 50%;
   width: 75%;
-  height: 25px;
   box-sizing: border-box;
   padding: 0 0 0 0;
   display: block;

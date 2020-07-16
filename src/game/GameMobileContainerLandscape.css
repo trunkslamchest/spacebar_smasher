@@ -22,10 +22,15 @@
   margin: 0 auto 0 auto;
 }
 
-.game_mobile_landscapeC1 {
-
+.game_mobile_landscapeR1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
 }
 
-.game_mobile_landscapeC2 {
+.game_mobile_landscapeR2 {
 
 }
