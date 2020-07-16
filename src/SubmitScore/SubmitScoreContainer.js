@@ -82,7 +82,8 @@ export default class SubmitScoreContainer extends React.Component {
 
   render(){
 
-    let wrapperClass, pillClass, rowClass1, columnClass2
+    let wrapperClass, pillClass, rowClass1
+    // rowClass2
 
   if(this.props.isMobile){
     if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
@@ -99,7 +100,7 @@ export default class SubmitScoreContainer extends React.Component {
 
     if (this.props.orientation === 'landscape' && window.innerWidth <= 1024){
       rowClass1 = 'submit_score_mobile_landscapeR1'
-      columnClass2 = 'submit_score_mobile_landscapeC2'
+      // rowClass2 = 'submit_score_mobile_landscapeR2'
     }
 
     const submitScore =

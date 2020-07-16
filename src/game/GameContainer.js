@@ -30,8 +30,8 @@ export default class Game extends React.Component {
     showSubmitScore: false,
     showWrapper: false,
     startTimer: false,
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
   }
 
   constructor(props) {
@@ -137,6 +137,8 @@ export default class Game extends React.Component {
       power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
       powerRaw: this.state.powerRaw + 0.025,
     })
+
+    this.getRank()
   }
 
   resetGame = () => {
@@ -152,8 +154,8 @@ export default class Game extends React.Component {
       showFooter: false,
       showSubmitScore: false,
       rank: "SUPER BABY FINGERS",
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
     })
 
     this.restartGameTimeout = setTimeout(() => { this.startGame() }, 250)
