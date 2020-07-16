@@ -46,7 +46,7 @@ export default class HomeContainer extends React.Component {
 
   onClickStartButton = (event) => {
     this.setState({ initDismount: true })
-    // this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
+    this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
   }
 
   onDismount = () => {
@@ -58,17 +58,12 @@ export default class HomeContainer extends React.Component {
         showFooter: false
       })
     }, 500)
-
-    // this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 750)
   }
 
-  clearTimers = () => {
+  componentWillUnmount(){
     clearTimeout(this.startCountdownTimeout)
     clearTimeout(this.onDismountTimeout)
-    // clearTimeout(this.clearTimersTimeout)
   }
-
-  componentWillUnmount(){ this.clearTimers() }
 
   render(){
 
@@ -124,7 +119,6 @@ export default class HomeContainer extends React.Component {
             initDismount={ this.state.initDismount }
             isMobile={ this.props.isMobile }
             orientation={ this.props.orientation }
-            showFooter={ this.state.showFooter }
           />
         :
           <></>

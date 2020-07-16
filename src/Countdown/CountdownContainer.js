@@ -18,12 +18,10 @@ export default class CountdownContainer extends React.Component {
 
   state = {
     initDismount: false,
-    showCountdown: true,
-    showHeader: false,
-    showTimer: false,
-    showGo: false,
-    showTutorial: false,
     showFooter: false,
+    showGame: false,
+    showWrapper: false,
+    startGame: false,
     time: 1,
   }
 
@@ -33,52 +31,34 @@ export default class CountdownContainer extends React.Component {
     this.startCountdown()
   }
 
-  componentDidUpdate(){
-    if(this.state.time === 0 && this.state.showCountdown) this.startGame()
-    if(this.state.initDismount) this.onDismount()
-  }
+  componentDidUpdate(){ if(this.state.time === 0 && !this.state.startGame) this.startGame() }
 
   startCountdown = () => {
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
-
-    this.componentTimeout = setTimeout(() => {
-      this.setState({
-        showHeader: true,
-        showTimer: true,
-        showTutorial: true,
-        showFooter: true
-      })
-    }, 500)
+    this.componentTimeout = setTimeout(() => { this.setState({ showFooter: true, showWrapper: true }) }, 250)
   }
 
   startGame = () => {
+    this.setState({ startGame: true })
+
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    // this.hideCountdownTimeout = setTimeout(() => { this.setState({ showCountdown: false })}, 1000)
+    this.onDismountTimeout = setTimeout(() => { this.setState({ showFooter: false, showWrapper: false }) }, 750)
+    this.showGameTimeout = setTimeout(() => { this.setState({ showGame: true })}, 1000)
   }
 
   timerFunctions = () => {
-    if (this.state.time <= 0) {
-      this.setState({
-        time: 0,
-        showTimer: false,
-        showGo: true,
-      }, clearInterval(this.timerInterval))
-    }
+    if (this.state.time <= 0) { this.setState({ time: 0 }, clearInterval(this.timerInterval)) }
     else this.setState({ time: (this.state.time - 1) })
   }
 
-  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
-
-  clearTimers = () => {
+  componentWillUnmount(){
     clearTimeout(this.startTimer)
     clearInterval(this.timerInterval)
     clearTimeout(this.componentTimeout)
-    clearTimeout(this.hideCountdownTimeout)
     clearTimeout(this.initDismountTimeout)
-    clearTimeout(this.clearTimersTimeout)
+    clearTimeout(this.onDismountTimeout)
+    clearTimeout(this.startGameTimeout)
   }
-
-  componentWillUnmount(){ this.clearTimers() }
 
   render(){
 
@@ -86,49 +66,51 @@ export default class CountdownContainer extends React.Component {
 
     if(this.props.isMobile){
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
-          wrapperClass = "countdown_mobile_wrapper_landscape"
-          pillClass = "countdown_mobile_pill_landscape"
+        wrapperClass = "countdown_mobile_wrapper_landscape"
+        pillClass = "countdown_mobile_pill_landscape"
       } else {
-          wrapperClass = "countdown_mobile_wrapper_portrait"
-          pillClass = "countdown_mobile_pill_portrait"
+        wrapperClass = "countdown_mobile_wrapper_portrait"
+        pillClass = "countdown_mobile_pill_portrait"
       }
     } else {
-        wrapperClass = "countdown_desktop_wrapper"
-        pillClass = "countdown_desktop_pill"
+      wrapperClass = "countdown_desktop_wrapper"
+      pillClass = "countdown_desktop_pill"
     }
 
     const countdown =
       <>
-        <div className={ this.state.showCountdown ? wrapperClass : "blank" }>
-          <div className={ this.state.showCountdown ? pillClass : "blank" }>
-            <CountdownHeader
-              isMobile={ this.props.isMobile }
-              initDismount={ this.state.initDismount }
-              showHeader={ this.state.showHeader }
-              orientation={ this.props.orientation }
-            />
-            <CountdownTimer
-              isMobile={ this.props.isMobile }
-              time={ this.state.time }
-              initDismount={ this.state.initDismount }
-              showTimer={ this.state.showTimer }
-              orientation={ this.props.orientation }
-            />
-            <CountdownTutorial
-              isMobile={ this.props.isMobile }
-              initDismount={ this.state.initDismount }
-              showTutorial={ this.state.showTutorial }
-              orientation={ this.props.orientation }
-            />
-          </div>
-        </div>
-        { this.state.showFooter ?
-          <FooterContainer
-            initDismount={ this.state.initDismount }
-            isMobile={ this.props.isMobile }
-            orientation={ this.props.orientation }
-            showFooter={ this.state.showFooter }
-          />
+        { this.state.showWrapper ?
+          <>
+            <div className={ wrapperClass }>
+              <div className={ pillClass }>
+                <CountdownHeader
+                  isMobile={ this.props.isMobile }
+                  initDismount={ this.state.initDismount }
+                  orientation={ this.props.orientation }
+                />
+                <CountdownTimer
+                  isMobile={ this.props.isMobile }
+                  time={ this.state.time }
+                  initDismount={ this.state.initDismount }
+                  orientation={ this.props.orientation }
+                />
+                <CountdownTutorial
+                  isMobile={ this.props.isMobile }
+                  initDismount={ this.state.initDismount }
+                  orientation={ this.props.orientation }
+                />
+              </div>
+            </div>
+            { this.state.showFooter ?
+              <FooterContainer
+                initDismount={ this.state.initDismount }
+                isMobile={ this.props.isMobile }
+                orientation={ this.props.orientation }
+              />
+            :
+              <></>
+            }
+          </>
         :
           <></>
         }
@@ -136,15 +118,15 @@ export default class CountdownContainer extends React.Component {
 
     return(
       <>
-        { this.state.showCountdown ?
-          countdown
-        :
+        { this.state.showGame ?
           <GameContainer
             getPlayer={ this.props.getPlayer }
             history={ this.props.history }
             isMobile={ this.props.isMobile }
             orientation={ this.props.orientation }
           />
+        :
+          countdown
         }
       </>
     )
