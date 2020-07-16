@@ -6,6 +6,10 @@ import './GameMobileSmashButtonDismount.css'
 
 const GameMobileSmashButton = (props) => {
 
+  const onSmashFunctions = (event) => {
+    props.onSmash(event)
+  }
+
   let currentClass, buttonClass
 
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
@@ -32,7 +36,7 @@ const GameMobileSmashButton = (props) => {
     <div className={ currentClass }>
       <button
         className={ buttonClass }
-        onClick={props.onSmash}
+        onClick={ onSmashFunctions }
       >
         SMASH!
       </button>

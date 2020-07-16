@@ -25,7 +25,8 @@ export default class SubmitScoreFormContainer extends React.Component {
       show: false,
       validationErrors: []
     },
-    submittedScore: false
+    submittedScore: false,
+    submitClicked: false
   }
 
   initDismountModal = () => {
@@ -54,12 +55,15 @@ export default class SubmitScoreFormContainer extends React.Component {
   onNameChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
 
   onSubmit = (event) => {
-    event.persist()
+    event.preventDefault()
+
     this.addScore(event)
-    this.props.getPlayer(this.state.player)
+
+    this.setState({ submitClicked: true })
   }
 
   addScore = (event) => {
+    this.props.getPlayer(this.state.player)
     event.preventDefault()
 
     let playerObj = {
@@ -82,18 +86,23 @@ export default class SubmitScoreFormContainer extends React.Component {
         broName: broNames.random()
       })
     } else {
-      scoreboardFunctions('post', fetch.post, playerObj)
-      .then(resObj => {
-        if(!!resObj){
-          this.setState({ submittedScore: true }, this.props.onDismount())
-        }
-      })
+      if(this.state.submitClicked === false ){
+        scoreboardFunctions('post', fetch.post, playerObj)
+        .then(resObj => {
+          if(!!resObj){
+            this.setState({ submittedScore: true }, this.props.onDismount())
+          }
+        })
+      }
     }
   }
 
   componentWillUnmount(){ clearTimeout(this.dismountModalTimeout) }
 
   render(){
+
+    console.log(this.state.submitClicked)
+
     return(
       <>
       { this.state.modal.show ?
@@ -115,6 +124,7 @@ export default class SubmitScoreFormContainer extends React.Component {
         initDismount={ this.props.initDismount }
         isMobile={ this.props.isMobile }
         onNameChange={ this.onNameChange }
+        disabled={ this.state.submitClicked }
         onSubmit={ this.onSubmit }
         orientation={ this.props.orientation }
         player={ this.state.player }

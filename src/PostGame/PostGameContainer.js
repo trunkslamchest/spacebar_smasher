@@ -62,7 +62,7 @@ export default class PostGameContainer extends React.Component {
         showWrapper: false,
         showFooter: false
       })
-    }, 500)
+    }, 250)
   }
 
   componentWillUnmount(){

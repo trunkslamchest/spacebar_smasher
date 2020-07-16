@@ -53,7 +53,7 @@ export default class SubmitScoreContainer extends React.Component {
         showFooter: false,
         showWrapper: false,
       })
-    }, 500)
+    }, 250)
 
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
@@ -142,7 +142,6 @@ export default class SubmitScoreContainer extends React.Component {
               isMobile={ this.props.isMobile }
               onClickButtonFunctions={ this.onClickButtonFunctions }
               orientation={ this.props.orientation }
-              showButtons={ this.state.showButtons }
             />
           </div>
         :

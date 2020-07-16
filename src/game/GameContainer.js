@@ -63,15 +63,15 @@ export default class Game extends React.Component {
   }
 
   spacebarDown(event){
-    if((event.keyCode === 32 || event.which === 32)) {
-      event.preventDefault()
-      this.setState({
-        count: this.state.count + 1,
-        power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
-        powerRaw: this.state.powerRaw + 0.025,
-        timeMark: this.state.time
-      }, document.removeEventListener('keydown', this.spacebarDown))
-    }
+      if((event.keyCode === 32 || event.which === 32)) {
+        event.preventDefault()
+        this.setState({
+          count: this.state.count + 1,
+          power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+          powerRaw: this.state.powerRaw + 0.025,
+          timeMark: this.state.time
+        }, document.removeEventListener('keydown', this.spacebarDown))
+      }
 
 
     this.getRank()
@@ -129,7 +129,9 @@ export default class Game extends React.Component {
     if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
   }
 
-  onSmash = () => {
+  onSmash = (event) => {
+    event.preventDefault()
+
     this.setState({
       count: this.state.count + 1,
       power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
@@ -138,18 +140,23 @@ export default class Game extends React.Component {
   }
 
   resetGame = () => {
+
     document.title = 'Spacebar Smasher - Game'
+
     this.setState({
       avgPress: 1,
       count: 0,
       initDismount: false,
       power: 0,
       powerRaw: 0,
+      showFooter: false,
       showSubmitScore: false,
       rank: "SUPER BABY FINGERS",
       time: (3.00).toFixed(2),
       timeMark: (3.00).toFixed(2),
-    }, this.startGame())
+    })
+
+    this.restartGameTimeout = setTimeout(() => { this.startGame() }, 250)
   }
 
   onDismount = () => {
@@ -168,6 +175,7 @@ export default class Game extends React.Component {
 
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.mobileSmashButtonTimeout)
+    clearTimeout(this.restartGameTimeout)
     clearTimeout(this.showSubmitScoreTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)

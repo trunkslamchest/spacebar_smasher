@@ -57,7 +57,7 @@ export default class HomeContainer extends React.Component {
         showWrapper: false,
         showFooter: false
       })
-    }, 500)
+    }, 250)
   }
 
   componentWillUnmount(){

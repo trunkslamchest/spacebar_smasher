@@ -57,6 +57,7 @@ const SubmitScoreForm = (props) => {
       <form
         name="submit_score_form"
         className={ formClass }
+        disabled={ props.submitClicked }
         onSubmit={ props.onSubmit }
       >
         <input
@@ -71,6 +72,7 @@ const SubmitScoreForm = (props) => {
         />
         <input
           className={ buttonClass }
+          disabled={ props.submitClicked }
           type="submit"
           value="Confirm"
         />

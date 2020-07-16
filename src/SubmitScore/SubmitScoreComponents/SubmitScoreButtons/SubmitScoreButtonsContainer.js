@@ -51,7 +51,7 @@ const SubmitScoreButtonsContainer = (props) => {
   }
 
   return(
-    <div className={ props.showButtons ? wrapperClass : "blank" }>
+    <div className={ wrapperClass }>
       <button
         nav="main_menu"
         name="submit_score_main_menu_button"
