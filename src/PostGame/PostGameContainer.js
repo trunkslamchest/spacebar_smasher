@@ -2,7 +2,7 @@ import React from 'react'
 
 import { fetch, routes } from '../utility/paths'
 
-import Footer from '../UI/Footer/Footer'
+import FooterContainer from '../UI/Footer/FooterContainer'
 
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -126,7 +126,7 @@ export default class PostGameContainer extends React.Component {
             PLAY AGAIN
           </button>
         </div>
-          <Footer
+          <FooterContainer
             initDismount={this.state.initDismount}
           />
       </>

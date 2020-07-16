@@ -1,0 +1,23 @@
+.footer_logos_desktop_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5px auto;
+  width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.footer_logos_mobile_container_landscape {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5px auto;
+  width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.footer_logos_mobile_container_portrait {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5px auto;
+  width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
+}

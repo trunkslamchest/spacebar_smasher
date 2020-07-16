@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Footer from '../UI/Footer/Footer'
+import FooterContainer from '../UI/Footer/FooterContainer'
 
 import GameTimer from './GameComponents/GameTimer/GameTimer'
 import GameCounter from './GameComponents/GameCounter/GameCounter'
@@ -19,8 +19,8 @@ import './GameMobileDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (30.00).toFixed(2),
-    timeMark: (30.00).toFixed(2),
+    time: (3.00).toFixed(2),
+    timeMark: (3.00).toFixed(2),
     count: 0,
     avgPress: 1,
     rank: "SUPER BABY FINGERS",
@@ -146,8 +146,8 @@ export default class Game extends React.Component {
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
     this.setState({
-      time: (30.00).toFixed(2),
-      timeMark: (30.00).toFixed(2),
+      time: (3.00).toFixed(2),
+      timeMark: (3.00).toFixed(2),
       count: 0,
       avgPress: 1,
       rank: "SUPER BABY FINGERS",
@@ -267,7 +267,7 @@ export default class Game extends React.Component {
           </div>
         </div>
         { this.state.showFooter ?
-          <Footer
+          <FooterContainer
             initDismount={ this.state.initDismount }
           />
         :

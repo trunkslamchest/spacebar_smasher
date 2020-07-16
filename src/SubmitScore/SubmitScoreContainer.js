@@ -3,7 +3,7 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { routes } from '../utility/paths'
 
-import Footer from '../UI/Footer/Footer'
+import FooterContainer from '../UI/Footer/FooterContainer'
 
 import SubmitScoreHeader from './SubmitScoreComponents/SubmitScoreHeader/SubmitScoreHeader'
 import SubmitScoreCounter from './SubmitScoreComponents/SubmitScoreCounter/SubmitScoreCounter'
@@ -162,7 +162,7 @@ export default class SubmitScoreContainer extends React.Component {
           />
         </div>
         { this.state.showFooter ?
-          <Footer
+          <FooterContainer
             initDismount={ this.state.initDismount }
           />
         :

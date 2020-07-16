@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Footer from 'UI/Footer/Footer'
+import FooterContainer from 'UI/Footer/FooterContainer'
 
 import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHeader'
 import CountdownTimer from './CountdownComponents/CountdownTimer/CountdownTimer'
@@ -17,32 +17,43 @@ import './CountdownMobileDismount.css'
 export default class CountdownContainer extends React.Component {
 
   state = {
-    time: 5,
+    initDismount: false,
     showCountdown: true,
     showHeader: false,
     showTimer: false,
     showGo: false,
     showTutorial: false,
-    initGame: false,
-    initDismount: false
+    showFooter: false,
+    time: 1,
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Countdown'
-    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
-    this.headerTimeout = setTimeout(() => { this.setState({ showHeader: true })}, 250)
-    this.timerTimeout = setTimeout(() => { this.setState({ showTimer: true })}, 500)
-    this.tutorialTimeout = setTimeout(() => { this.setState({ showTutorial: true })}, 500)
+
+    this.startCountdown()
   }
 
   componentDidUpdate(){
-    if(this.state.time === 0 && !this.state.initGame) this.startGame()
+    if(this.state.time === 0 && this.state.showCountdown) this.startGame()
     if(this.state.initDismount) this.onDismount()
   }
 
+  startCountdown = () => {
+    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
+
+    this.componentTimeout = setTimeout(() => {
+      this.setState({
+        showHeader: true,
+        showTimer: true,
+        showTutorial: true,
+        showFooter: true
+      })
+    }, 500)
+  }
+
   startGame = () => {
-    this.initGameTimeout = setTimeout(() => { this.setState({ initGame: true, showCountdown: false})}, 1000)
-    this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 750)
+    this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
+    // this.hideCountdownTimeout = setTimeout(() => { this.setState({ showCountdown: false })}, 1000)
   }
 
   timerFunctions = () => {
@@ -61,10 +72,8 @@ export default class CountdownContainer extends React.Component {
   clearTimers = () => {
     clearTimeout(this.startTimer)
     clearInterval(this.timerInterval)
-    clearTimeout(this.headerTimeout)
-    clearTimeout(this.timerTimeout)
-    clearTimeout(this.tutorialTimeout)
-    clearTimeout(this.initGameTimeout)
+    clearTimeout(this.componentTimeout)
+    clearTimeout(this.hideCountdownTimeout)
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.clearTimersTimeout)
   }
@@ -73,12 +82,25 @@ export default class CountdownContainer extends React.Component {
 
   render(){
 
-    // console.log(this.props)
+    let wrapperClass, pillClass
+
+    if(this.props.isMobile){
+      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+          wrapperClass = "countdown_mobile_wrapper_landscape"
+          pillClass = "countdown_mobile_pill_landscape"
+      } else {
+          wrapperClass = "countdown_mobile_wrapper_portrait"
+          pillClass = "countdown_mobile_pill_portrait"
+      }
+    } else {
+        wrapperClass = "countdown_desktop_wrapper"
+        pillClass = "countdown_desktop_pill"
+    }
 
     const countdown =
       <>
-        <div className={ !this.props.isMobile ? "countdown_desktop_wrapper" : this.props.orientation === 'landscape' ? "countdown_mobile_wrapper_landscape" : "countdown_mobile_wrapper_portrait"  }>
-          <div className={ !this.props.isMobile ? "countdown_desktop_pill" : this.props.orientation === 'landscape' ? "countdown_mobile_pill_landscape" : "countdown_mobile_pill_portrait" }>
+        <div className={ this.state.showCountdown ? wrapperClass : "blank" }>
+          <div className={ this.state.showCountdown ? pillClass : "blank" }>
             <CountdownHeader
               isMobile={ this.props.isMobile }
               initDismount={ this.state.initDismount }
@@ -100,9 +122,16 @@ export default class CountdownContainer extends React.Component {
             />
           </div>
         </div>
-        <Footer
-          initDismount={ this.state.initDismount }
-        />
+        { this.state.showFooter ?
+          <FooterContainer
+            initDismount={ this.state.initDismount }
+            isMobile={ this.props.isMobile }
+            orientation={ this.props.orientation }
+            showFooter={ this.state.showFooter }
+          />
+        :
+          <></>
+        }
       </>
 
     return(

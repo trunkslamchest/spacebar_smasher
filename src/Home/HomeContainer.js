@@ -5,7 +5,7 @@ import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import HomeHeader from './HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
-import Footer from '../UI/Footer/Footer'
+import FooterContainer from '../UI/Footer/FooterContainer'
 
 import './HomeDesktopContainer.css'
 import './HomeDesktopDismount.css'
@@ -17,33 +17,61 @@ import './HomeMobileDismount.css'
 export default class HomeContainer extends React.Component {
 
   state = {
-    scoreboard: [],
-    mounted: false,
     initDismount: false,
-    isPostGame: false
+    isPostGame: false,
+    mounted: false,
+    onDismount: false,
+    scoreboard: [],
+    showFooter: false,
+    showHeader: false,
+    showScoreboard: false,
+    showWrapper: false
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Home'
     scoreboardFunctions('get', fetch.get)
-    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
+    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
   }
 
   componentDidUpdate(){
     if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
-    if (this.state.initDismount) this.onDismount()
+    if (!this.state.onDismount && this.state.initDismount) this.onDismount()
+  }
+
+  onMount = () => {
+    this.setState({
+      showWrapper: true,
+      showHeader: true,
+      showScoreboard: true,
+      showFooter: true
+    })
   }
 
   onClickStartButton = (event) => {
-    this.setState({ initDismount: true})
-    this.startGameTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
+    this.setState({ initDismount: true })
+    // this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
   }
 
-  onDismount = () => { this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800) }
+  onDismount = () => {
+    this.setState({ onDismount: true })
+
+    this.hideComponents = setTimeout(() => {
+      this.setState({
+        showWrapper: false,
+        showHeader: false,
+        showScoreboard: false,
+        showFooter: false
+      })
+    }, 500)
+
+    // this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 750)
+  }
 
   clearTimers = () => {
-    clearTimeout(this.startGameTimeout)
-    clearTimeout(this.clearTimersTimeout)
+    clearTimeout(this.startCountdownTimeout)
+    clearTimeout(this.hideComponentsTimeout)
+    // clearTimeout(this.clearTimersTimeout)
   }
 
   componentWillUnmount(){ this.clearTimers() }
@@ -76,12 +104,13 @@ export default class HomeContainer extends React.Component {
 
     return(
       <>
-        <div className={ wrapperClass }>
+        <div className={ this.state.showWrapper ? wrapperClass : "blank" }>
           <HomeHeader
             initDismount={ this.state.initDismount }
             isMobile={ this.props.isMobile }
             onClickStartButton={ this.onClickStartButton }
             orientation={ this.props.orientation }
+            showHeader={ this.state.showHeader }
           />
           <ScoreboardContainer
             initDismount={ this.state.initDismount }
@@ -90,12 +119,20 @@ export default class HomeContainer extends React.Component {
             mounted={ this.state.mounted }
             orientation={ this.props.orientation }
             scoreboard={ this.state.scoreboard }
+            showScoreboard={ this.state.showScoreboard }
             submittedPlayer={ this.props.player }
           />
         </div>
-        <Footer
-          initDismount={ this.state.initDismount }
-        />
+        { this.state.showFooter ?
+          <FooterContainer
+            initDismount={ this.state.initDismount }
+            isMobile={ this.props.isMobile }
+            orientation={ this.props.orientation }
+            showFooter={ this.state.showFooter }
+          />
+        :
+          <></>
+        }
       </>
     )
   }
