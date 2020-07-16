@@ -1,5 +1,5 @@
 .dismount_scoreboard_table_desktop  {
-  animation: dismount_scoreboard_table .6s ease-in-out 1;
+  animation: dismount_scoreboard_table_desktop .6s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -11,7 +11,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(200px + (600 - 200) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(300px + (550 - 300) * ((100vh - 500px) / (1080 - 500)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;
@@ -24,7 +24,7 @@
   width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_scoreboard_table {
+@keyframes dismount_scoreboard_table_desktop {
   0% {
     transform: matrix3d(
       1,0,0,0.0,

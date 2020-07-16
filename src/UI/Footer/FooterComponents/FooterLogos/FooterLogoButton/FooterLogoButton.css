@@ -13,5 +13,5 @@
 .logo_rectangle_mobile_portrait {
   max-width: 100%;
   height: auto;
-  max-height: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
+  max-height: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
 }

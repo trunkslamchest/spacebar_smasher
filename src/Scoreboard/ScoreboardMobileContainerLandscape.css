@@ -11,7 +11,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(200px + (600 - 200) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(180px + (360 - 180) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;
@@ -21,7 +21,7 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(275px + (1000 - 275) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(320px + (1000 - 320) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .scoreboard_table_mobile_post_game_landscape {
@@ -37,7 +37,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(200px + (400 - 200) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
   padding: 0px;
   transform: matrix3d(
@@ -62,10 +62,10 @@
 
 .scoreboard_header_mobile_landscape h1 {
   font-family: "Audiowide";
-  font-size: calc(20px + (30 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   margin: 0px auto 0px auto;
-  padding: 5px 0px 5px 0px;
+  padding: 2.5px 0px 2.5px 0px;
 }
 
 .scoreboard_head_row_mobile_landscape {

@@ -1,7 +1,7 @@
 @keyframes onmount_home_header_desktop
   {
     0% {
-      transform: translateX(10px) translateY(-2500px);
+      transform: translateX(10px) translateY(-2000px);
     }
     100% {
       transform: matrix3d(

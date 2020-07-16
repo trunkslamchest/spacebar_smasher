@@ -11,7 +11,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(200px + (600 - 200) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(150px + (350 - 150) * ((100vh - 320px) / (568 - 320)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;

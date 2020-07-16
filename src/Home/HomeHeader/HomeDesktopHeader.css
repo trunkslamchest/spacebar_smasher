@@ -1,5 +1,5 @@
-.home_header__desktopwrapper {
-  padding-top: calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
+.home_header_desktop_wrapper {
+  padding-top: calc(15px + (25 - 15) * ((100vw - 500px) / (1920 - 500)));
 }
 
 .home_header_desktop {
@@ -17,13 +17,13 @@
     0,0,1,0,
     0,0,0,1
     ) translateX(10px);
-  width: calc(300px + (1000 - 300) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(450px + (1000 - 450) * ((100vw - 500px) / (1920 - 500)));
 }
 
 .home_header_desktop h3, .dismount_home_header_desktop h3 {
   color: yellow;
   font-family: "Saira Stencil One";
-  font-size: calc(26px + (90 - 26) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(40px + (90 - 40) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
   margin: 0 auto 0 auto;
   text-align: center;
@@ -32,7 +32,7 @@
     0,1,0,0,
     0,0,1,0,
     0,0,0,1
-  ) translateX(calc(5px + (50 - 5) * ((100vw - 320px) / (1920 - 320))));
+  ) translateX(calc(12.5px + (55 - 12.5) * ((100vw - 500px) / (1920 - 500))));
 }
 
 .start_button_container_desktop {
@@ -42,7 +42,7 @@
   flex-direction: row;
   justify-content: center;
   margin: 0 auto 0 auto;
-  padding: 10px;
+  padding: 20px;
 }
 
 .start_button_desktop {
@@ -51,7 +51,7 @@
   border-radius: 30px;
   color: white !important;
   font-family: "Audiowide";
-  font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300 ;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
@@ -65,7 +65,7 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(175px + (350 - 175) * ((100vw - 500px) / (1920 - 500)));
 }
 
 .start_button_desktop:focus {

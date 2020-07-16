@@ -86,7 +86,7 @@ export default class SubmitScoreFormContainer extends React.Component {
         broName: broNames.random()
       })
     } else {
-      if(this.state.submitClicked === false ){
+      if(!this.state.submitClicked){
         scoreboardFunctions('post', fetch.post, playerObj)
         .then(resObj => {
           if(!!resObj){
@@ -100,9 +100,6 @@ export default class SubmitScoreFormContainer extends React.Component {
   componentWillUnmount(){ clearTimeout(this.dismountModalTimeout) }
 
   render(){
-
-    console.log(this.state.submitClicked)
-
     return(
       <>
       { this.state.modal.show ?
