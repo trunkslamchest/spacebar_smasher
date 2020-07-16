@@ -26,7 +26,7 @@ const GameCounter = (props) => {
   return(
     <div className={ currentClass }>
       <h2>SMASHES</h2>
-      <h1>{ props.showCounter ? props.count : 0 }</h1>
+      <h1>{ props.count ? props.count : 0 }</h1>
     </div>
   )
 }

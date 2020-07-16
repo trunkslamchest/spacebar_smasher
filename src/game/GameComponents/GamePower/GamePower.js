@@ -45,7 +45,7 @@ const GamePower = (props) => {
   return(
     <div className={ currentClass }>
       <h2>POWER</h2>
-      <h1>{ props.showPower ? (props.power).toFixed(2) : (0.00).toFixed(2) } %</h1>
+      <h1>{ props.power ? (props.power).toFixed(2) : (0.00).toFixed(2) } %</h1>
       <div className={ powerClass }>
         <meter value={ props.powerRaw } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0">
         </meter>

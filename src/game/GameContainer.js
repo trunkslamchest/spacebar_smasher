@@ -19,22 +19,19 @@ import './GameMobileDismount.css'
 export default class Game extends React.Component {
 
   state = {
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
-    count: 0,
     avgPress: 1,
-    rank: "SUPER BABY FINGERS",
+    count: 0,
+    initDismount: false,
     power: 0,
     powerRaw: 0,
-    showGame: true,
-    showTimer: false,
-    startTimer: false,
-    showCounter: false,
-    showRank: false,
-    showPower: false,
+    rank: "SUPER BABY FINGERS",
     showFooter: false,
     showMobileSmashButton: false,
-    initDismount: false
+    showSubmitScore: false,
+    showWrapper: false,
+    startTimer: false,
+    time: (3.00).toFixed(2),
+    timeMark: (3.00).toFixed(2),
   }
 
   constructor(props) {
@@ -52,20 +49,17 @@ export default class Game extends React.Component {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
-    this.componentTimeout = setTimeout(() => {
+    this.startGameTimeout = setTimeout(() => {
       this.setState({
-        showTimer: true,
-        showCounter: true,
-        showRank: true,
-        showPower: true,
-        showFooter: true
+        showFooter: true,
+        showMobileSmashButton: this.props.isMobile ? true : false,
+        showWrapper: true
       })
     }, 250)
 
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
-    if(this.props.isMobile) this.mobileSmashButtonTimeout = setTimeout(() => { this.setState({ showMobileSmashButton: true })}, 250)
   }
 
   spacebarDown(event){
@@ -96,12 +90,12 @@ export default class Game extends React.Component {
       document.removeEventListener('keyup', this.spacebarUp)
 
       this.setState({
-        time: 0.0,
         count: 0,
-        rank: "CHEATER",
+        initDismount: false,
         power: 0,
         powerRaw: 0,
-        initDismount: false
+        rank: "CHEATER",
+        time: 0.00,
       }, this.onDismount())
     }
   }
@@ -146,16 +140,15 @@ export default class Game extends React.Component {
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
     this.setState({
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
-      count: 0,
       avgPress: 1,
-      rank: "SUPER BABY FINGERS",
+      count: 0,
+      initDismount: false,
       power: 0,
       powerRaw: 0,
-      showGame: true,
-      showFooter: false,
-      initDismount: false
+      showSubmitScore: false,
+      rank: "SUPER BABY FINGERS",
+      time: (3.00).toFixed(2),
+      timeMark: (3.00).toFixed(2),
     }, this.startGame())
   }
 
@@ -164,31 +157,31 @@ export default class Game extends React.Component {
     document.removeEventListener('keyup', this.spacebarUp)
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    this.dismountedTimeout = setTimeout(() => { this.setState({ showGame: false, showFooter: false })}, 750)
-    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 800)
+    this.stopGameTimeout = setTimeout(() => { this.setState({ showWrapper: false, showFooter: false })}, 750)
+    this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true }, this.clearTimers())}, 1000)
   }
 
   clearTimers = () => {
-    document.removeEventListener('keydown', this.spacebarDown)
-    document.removeEventListener('keyup', this.spacebarUp)
 
-    clearTimeout(this.componentTimeout)
-
-    clearTimeout(this.startTimer)
-    clearInterval(this.timerInterval)
-    clearTimeout(this.startPower)
     clearInterval(this.powerInterval)
+    clearInterval(this.timerInterval)
+
+    clearTimeout(this.initDismountTimeout)
+    clearTimeout(this.mobileSmashButtonTimeout)
+    clearTimeout(this.showSubmitScoreTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
-    clearTimeout(this.mobileSmashButtonTimeout)
-    clearTimeout(this.initDismountTimeout)
-    clearTimeout(this.dismountTimeout)
-    clearTimeout(this.clearTimersTimeout)
+    clearTimeout(this.startGameTimeout)
+    clearTimeout(this.startPower)
+    clearTimeout(this.startTimer)
+    clearTimeout(this.stopGameTimeout)
   }
 
-  componentWillUnmount(){ this.clearTimers() }
+  componentWillUnmount() { this.clearTimers() }
 
   render(){
+
+    console.log(this.state)
 
     let wrapperClass, pillClass, columnClass1, columnClass2
 
@@ -217,55 +210,54 @@ export default class Game extends React.Component {
 
     const game =
       <>
-        <div className={ wrapperClass }>
-        <div className={ pillClass }>
-            <div className={ columnClass1 }>
-              <GameTimer
-                initDismount={ this.state.initDismount }
-                isMobile={ this.props.isMobile }
-                orientation={ this.props.orientation }
-                showTimer={ this.state.showTimer }
-                time={ this.state.time }
-              />
-              <GameCounter
-                count={ this.state.count }
-                initDismount={ this.state.initDismount }
-                isMobile={ this.props.isMobile }
-                orientation={ this.props.orientation }
-                showCounter={ this.state.showCounter }
-              />
+        { this.state.showWrapper ?
+          <div className={ wrapperClass }>
+            <div className={ pillClass }>
+              <div className={ columnClass1 }>
+                <GameTimer
+                  initDismount={ this.state.initDismount }
+                  isMobile={ this.props.isMobile }
+                  orientation={ this.props.orientation }
+                  time={ this.state.time }
+                />
+                <GameCounter
+                  count={ this.state.count }
+                  initDismount={ this.state.initDismount }
+                  isMobile={ this.props.isMobile }
+                  orientation={ this.props.orientation }
+                />
+              </div>
+              <div className={ columnClass2 }>
+                <GameRank
+                  initDismount={ this.state.initDismount }
+                  isMobile={ this.props.isMobile }
+                  orientation={ this.props.orientation }
+                  rank={ this.state.rank }
+                />
+                <GamePower
+                  initDismount={ this.state.initDismount }
+                  isMobile={ this.props.isMobile }
+                  orientation={ this.props.orientation }
+                  power={ this.state.power }
+                  powerRaw={ this.state.powerRaw }
+                />
+              </div>
+            { this.props.isMobile ?
+                <GameMobileSmashButton
+                  initDismount={this.state.initDismount}
+                  isMobile={ this.props.isMobile }
+                  onSmash={this.onSmash}
+                  orientation={ this.props.orientation }
+                  smashed={this.state.smashed}
+                />
+              :
+                <></>
+              }
             </div>
-            <div className={ columnClass2 }>
-              <GameRank
-                initDismount={ this.state.initDismount }
-                isMobile={ this.props.isMobile }
-                orientation={ this.props.orientation }
-                rank={ this.state.rank }
-                showRank={ this.state.showRank }
-              />
-              <GamePower
-                initDismount={ this.state.initDismount }
-                isMobile={ this.props.isMobile }
-                orientation={ this.props.orientation }
-                power={ this.state.power }
-                powerRaw={ this.state.powerRaw }
-                showPower={ this.state.showPower }
-              />
-            </div>
-           { this.props.isMobile ?
-              <GameMobileSmashButton
-                initDismount={this.state.initDismount}
-                isMobile={ this.props.isMobile }
-                onSmash={this.onSmash}
-                orientation={ this.props.orientation }
-                showMobileSmashButton={this.state.showMobileSmashButton}
-                smashed={this.state.smashed}
-              />
-            :
-              null
-            }
           </div>
-        </div>
+        :
+          <></>
+        }
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
@@ -277,9 +269,7 @@ export default class Game extends React.Component {
 
     return(
       <>
-        { this.state.showGame ?
-          game
-        :
+        { this.state.showSubmitScore ?
           <SubmitScoreContainer
             count={ this.state.count }
             getPlayer={ this.props.getPlayer }
@@ -291,6 +281,8 @@ export default class Game extends React.Component {
             rank={ this.state.rank }
             resetGame={ this.resetGame }
           />
+        :
+          game
         }
       </>
     )

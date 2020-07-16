@@ -26,7 +26,7 @@ const GameRank = (props) => {
   return(
     <div className={ currentClass }>
       <h2>RANK</h2>
-      <h1>{ props.showRank ? props.rank : "SUPER BABY FINGERS" }</h1>
+      <h1>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h1>
     </div>
   )
 }

@@ -8,8 +8,6 @@ import './GameMobileTimerDismount.css'
 
 const GameMobileTimer = (props) => {
 
-  let timer = props.time ? props.time : (0.00).toFixed(2)
-
   let currentClass
 
   if(props.isMobile){
@@ -28,7 +26,7 @@ const GameMobileTimer = (props) => {
   return(
     <div className={ currentClass }>
       <h2>TIME</h2>
-      <h1>{ props.showTimer ? timer : (30.00).toFixed(2) }</h1>
+      <h1>{ props.time ? props.time : (0.00).toFixed(2) }</h1>
     </div>
   )
 }
