@@ -1,7 +1,7 @@
 @keyframes onmount_home_header_mobile_landscape
   {
     0% {
-      transform: translateX(10px) translateY(-2500px);
+      transform: translateX(-2000px);
     }
     100% {
       transform: matrix3d(
@@ -9,32 +9,24 @@
         0,1,0,0,
         0,0,1,0,
         0,0,0,1
-        ) translateX(10px) translateY(0px);
-    }
-  }
-
-@keyframes onmount_home_header_mobile_portrait
-  {
-    0% {
-      transform: translateX(10px) translateY(-2500px);
-    }
-    100% {
-      transform: matrix3d(
-        1,0,0,0.00025,
-        0,1,0,0,
-        0,0,1,0,
-        0,0,0,1
-        ) translateX(10px) translateY(0px);
+        ) translateX(calc(10px + (20 - 10) * ((100vw - 568px) / (823 - 568))));
     }
   }
 
 @keyframes onmount_start_button_container_mobile_landscape
   {
     0% {
-      transform: translateY(1000px);
+      transform: translateX(-1000px);
     }
     100% {
-      transform: translateY(0px);
+      transform: translateX(0px);
+    }
+  }
+
+@keyframes onmount_home_header_mobile_portrait
+  {
+    0% {
+      transform: translateX(calc(5px + (10 - 5) * ((100vh - 568px) / (823 - 568)))) translateY(2000px);
     }
   }
 
@@ -42,8 +34,5 @@
   {
     0% {
       transform: translateY(1000px);
-    }
-    100% {
-      transform: translateY(0px);
     }
   }

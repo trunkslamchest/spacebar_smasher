@@ -1,25 +1,39 @@
+.home_header_mobile_wrapper_portrait {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: calc(40px + (100 - 40) * ((100vh - 568px) / (823 - 568)));
+}
+
 .home_header_mobile_portrait {
   animation: onmount_home_header_mobile_portrait .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 0.75) 90%);
   border: 2px solid white;
-  border-radius: 30px 30px;
+  border-radius: calc(10px + (15 - 10) * ((100vh - 568px) / (823 - 568)));
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0px auto;
-  padding: 0 0 0 0;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(2px + (4 - 2) * ((100vh - 568px) / (823 - 568)));
+  margin-bottom: calc(2.5px + (5 - 2.5) * ((100vh - 568px) / (823 - 568)));
   transform: matrix3d(
     1,0,0,0.00025,
     0,1,0,0,
     0,0,1,0,
     0,0,0,1
-    ) translateX(10px);
-  width: calc(300px + (1000 - 300) * ((100vw - 320px) / (1920 - 320)));
+  ) translateX(calc(5px + (10 - 5) * ((100vh - 568px) / (823 - 568))));
+  height: calc(40px + (50 - 40) * ((100vh - 568px) / (823 - 568)));
+  width: calc(300px + (350 - 300) * ((100vh - 568px) / (823 - 568)));
 }
 
-.home_header_mobile_portrait h3, .dismount_home_header_mobile_portrait h3 {
+.home_header_mobile_portrait h1, .dismount_home_header_mobile_portrait h1 {
   color: yellow;
   font-family: "Saira Stencil One";
-  font-size: calc(26px + (90 - 26) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(26px + (30 - 26) * ((100vh - 568px) / (823 - 568)));
   font-weight: 300;
   margin: 0 auto 0 auto;
   text-align: center;
@@ -28,17 +42,15 @@
     0,1,0,0,
     0,0,1,0,
     0,0,0,1
-  ) translateX(calc(5px + (50 - 5) * ((100vw - 320px) / (1920 - 320))));
+  ) translateX(calc(5px + (10 - 5) * ((100vh - 568px) / (823 - 568))));
 }
 
 .start_button_container_mobile_portrait {
-  align-items: baseline;
-  animation: onmount_start_button_container_mobile_portrait .5s ease-in-out 1;
+  animation: onmount_start_button_container_mobile_portrait .6s ease-in-out 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto 0 auto;
-  padding: 10px;
 }
 
 .start_button_mobile_portrait {
@@ -47,11 +59,11 @@
   border-radius: 30px;
   color: white !important;
   font-family: "Audiowide";
-  font-size: calc(20px + (25 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(20px + (25 - 20) * ((100vh - 568px) / (823 - 568)));
   font-weight: 300 ;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
-  margin-top: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+  margin-top: calc(10px + (20 - 10) * ((100vh - 568px) / (823 - 568)));
   margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
@@ -64,27 +76,11 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(175px + (225 - 175) * ((100vh - 568px) / (823 - 568)));
 }
 
 .start_button_mobile_portrait:focus {
   outline: -webkit-focus-ring-color auto 0px;
-}
-
-.start_button_mobile_portrait:hover {
-  animation: blinker_hover .1s ease-in-out 1;
-  background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
-  border: 2px solid black;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  color: rgb(0, 0, 0, 1) !important;
-  cursor: pointer;
-  opacity: 1;
-  transform: matrix3d(
-    1,0,0,0,
-    0,1,0,0,
-    0,0,1,0,
-    0,0,0,1
-  );
 }
 
 .start_button_mobile_portrait:active {

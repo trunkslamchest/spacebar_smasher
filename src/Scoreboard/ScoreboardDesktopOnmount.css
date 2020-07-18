@@ -3,10 +3,18 @@
     0% {
       transform: matrix3d(
         1,0,0,0.0,
-        0,1,0,-0.0000,
+        0,1,0,-0.0004,
         0,0,1,0,
         0,0,0,1
-      ) translateY(2000px);
+      ) translateX(-2000px);
+    }
+    50% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-2000px);
     }
     100% {
       transform: matrix3d(

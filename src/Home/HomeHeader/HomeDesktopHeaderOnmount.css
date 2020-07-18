@@ -6,7 +6,7 @@
         0,1,0,0,
         0,0,1,0,
         0,0,0,1
-      ) translateX(calc(12.5px + (55 - 12.5) * ((100vw - 500px) / (1920 - 500)))) translateY(-2000px);
+      ) translateX(-2000px);
     }
     100% {
       transform: matrix3d(
@@ -14,16 +14,16 @@
         0,1,0,0,
         0,0,1,0,
         0,0,0,1
-      ) translateX(calc(12.5px + (55 - 12.5) * ((100vw - 500px) / (1920 - 500)))) translateY(0px);
+      ) translateX(calc(12.5px + (55 - 12.5) * ((100vw - 500px) / (1920 - 500))));
     }
   }
 
 @keyframes onmount_start_button_container_desktop
   {
     0% {
-      transform: translateY(1000px);
+      transform: translateX(-1500px);
     }
     100% {
-      transform: translateY(0px);
+      transform: translateX(0px);
     }
   }

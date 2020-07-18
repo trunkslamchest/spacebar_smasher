@@ -1,5 +1,5 @@
 .scoreboard_table_mobile_portrait {
-  animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
+  animation: onmount_scoreboard_mobile_portrait .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -11,7 +11,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(150px + (350 - 150) * ((100vh - 320px) / (568 - 320)));
+  max-height: calc(150px + (325 - 150) * ((100vh - 320px) / (568 - 320)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;
@@ -25,7 +25,7 @@
 }
 
 .scoreboard_table_mobile_post_game_portrait {
-  animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
+  animation: onmount_scoreboard_mobile_portrait .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -37,7 +37,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(225px + (700 - 225) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
   padding: 0px;
   transform: matrix3d(

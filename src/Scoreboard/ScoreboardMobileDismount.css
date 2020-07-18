@@ -1,5 +1,5 @@
 .dismount_scoreboard_table_mobile_landscape {
-  animation: dismount_scoreboard_table_mobile_landscape .6s ease-in-out 1;
+  animation: dismount_scoreboard_table_mobile_landscape .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -39,7 +39,7 @@
       0,1,0,-0.0002,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateX(1500px);
   }
   100% {
     transform: matrix3d(
@@ -52,7 +52,7 @@
 }
 
 .dismount_scoreboard_table_mobile_portrait {
-  animation: dismount_scoreboard_table_mobile_portrait .6s ease-in-out 1;
+  animation: dismount_scoreboard_table_mobile_portrait .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -92,7 +92,7 @@
       0,1,0,-0.0002,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateY(-1000px);
   }
   100% {
     transform: matrix3d(
@@ -100,12 +100,12 @@
       0,1,0,-0.0000,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateY(-1000px);
   }
 }
 
 .dismount_scoreboard_table_mobile_post_game_landscape {
-  animation: dismount_scoreboard_table_mobile_post_game_landscape .6s ease-in-out 1;
+  animation: dismount_scoreboard_table_mobile_post_game_landscape .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -157,7 +157,7 @@
 }
 
 .dismount_scoreboard_table_mobile_post_game_portrait {
-  animation: dismount_scoreboard_table_mobile_post_game_portrait 1s ease-in-out 1;
+  animation: dismount_scoreboard_table_mobile_post_game_portrait .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);

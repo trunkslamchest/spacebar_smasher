@@ -4,6 +4,5 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  /* padding-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (568 - 320))); */
-  padding-top: calc(10px + (15 - 10) * ((100vw - 320px) / (568 - 320)));
+  width: 100vw;
 }

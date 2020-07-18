@@ -1,5 +1,5 @@
 .scoreboard_table_mobile_landscape {
-  animation: onmount_scoreboard_mobile_landscape .5s ease-in-out 1;
+  animation: onmount_scoreboard_mobile_landscape .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -11,7 +11,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(180px + (360 - 180) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(195px + (260 - 195) * ((100vh - 320px) / (411 - 320)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
   padding: 0px;
@@ -21,11 +21,11 @@
     0,0,1,0,
     0,0,0,1
     );
-  width: calc(320px + (1000 - 320) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(425px + (625 - 425) * ((100vw - 568px) / (823 - 568)));
 }
 
 .scoreboard_table_mobile_post_game_landscape {
-  animation: onmount_scoreboard_mobile_landscape .5s ease-in-out 1;
+  animation: onmount_scoreboard_mobile_landscape .7s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
