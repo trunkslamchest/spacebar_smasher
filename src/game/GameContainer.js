@@ -15,6 +15,7 @@ import './GameDesktopDismount.css'
 import './GameMobileContainerLandscape.css'
 import './GameMobileContainerPortrait.css'
 import './GameMobileDismount.css'
+import './GameMobileOnmount.css'
 
 export default class Game extends React.Component {
 
@@ -101,8 +102,8 @@ export default class Game extends React.Component {
   }
 
   timerFunctions = () => {
-    if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
-    else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
+    // if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
+    // else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
   getRank = () => {
@@ -167,7 +168,7 @@ export default class Game extends React.Component {
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
     this.stopGameTimeout = setTimeout(() => { this.setState({ showWrapper: false, showFooter: false })}, 750)
-    this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true }, this.clearTimers())}, 1000)
+    // this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true }, this.clearTimers())}, 1000)
   }
 
   clearTimers = () => {
@@ -191,17 +192,19 @@ export default class Game extends React.Component {
 
   render(){
 
-    let wrapperClass, pillClass, columnClass1, columnClass2
+    // console.log(this.props.initDismount)
+
+    let wrapperClass, pillClass, rowClass1, subRowClass1
 
     if(this.props.isMobile){
       if(this.props.orientation === 'landscape'){
-        if(window.innerWidth >= 1024) {
+      if(this.state.initDismount) {
           wrapperClass = "game_mobile_wrapper_landscape"
-          pillClass = "game_mobile_pill_landscape_ipad"
-        } else {
+          pillClass = "dismount_game_mobile_pill_landscape"
+      } else {
           wrapperClass = "game_mobile_wrapper_landscape"
           pillClass = "game_mobile_pill_landscape"
-        }
+      }
       } else {
         wrapperClass = "game_mobile_wrapper_portrait"
         pillClass = "game_mobile_pill_portrait"
@@ -211,9 +214,12 @@ export default class Game extends React.Component {
       pillClass = "game_desktop_pill"
     }
 
-    if (this.props.orientation === 'landscape' && window.innerWidth >= 1024){
-      columnClass1 = 'game_mobile_landscapeC1'
-      columnClass2 = 'game_mobile_landscapeC2'
+    if (this.props.orientation === 'landscape'){
+      rowClass1 = 'game_mobile_landscapeR1'
+      subRowClass1 = 'game_mobile_landscapeSR1'
+    } else {
+      rowClass1 = 'game_mobile_portraitR1'
+      subRowClass1 = 'game_mobile_portraitSR1'
     }
 
     const game =
@@ -221,34 +227,34 @@ export default class Game extends React.Component {
         { this.state.showWrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
-              <div className={ columnClass1 }>
                 <GameTimer
                   initDismount={ this.state.initDismount }
                   isMobile={ this.props.isMobile }
                   orientation={ this.props.orientation }
                   time={ this.state.time }
                 />
+              <div className={ rowClass1 }>
                 <GameCounter
                   count={ this.state.count }
                   initDismount={ this.state.initDismount }
                   isMobile={ this.props.isMobile }
                   orientation={ this.props.orientation }
                 />
-              </div>
-              <div className={ columnClass2 }>
-                <GameRank
-                  initDismount={ this.state.initDismount }
-                  isMobile={ this.props.isMobile }
-                  orientation={ this.props.orientation }
-                  rank={ this.state.rank }
-                />
-                <GamePower
-                  initDismount={ this.state.initDismount }
-                  isMobile={ this.props.isMobile }
-                  orientation={ this.props.orientation }
-                  power={ this.state.power }
-                  powerRaw={ this.state.powerRaw }
-                />
+                <div className={ subRowClass1 }>
+                  <GameRank
+                    initDismount={ this.state.initDismount }
+                    isMobile={ this.props.isMobile }
+                    orientation={ this.props.orientation }
+                    rank={ this.state.rank }
+                  />
+                  <GamePower
+                    initDismount={ this.state.initDismount }
+                    isMobile={ this.props.isMobile }
+                    orientation={ this.props.orientation }
+                    power={ this.state.power }
+                    powerRaw={ this.state.powerRaw }
+                  />
+                </div>
               </div>
             { this.props.isMobile ?
                 <GameMobileSmashButton

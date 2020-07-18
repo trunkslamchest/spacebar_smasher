@@ -10,6 +10,16 @@
 }
 
 .game_desktop_counter h1, .dismount_game_desktop_counter h1 {
+  color: white;
+  font-family: "Staatliches";
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  margin: 0 auto 0 auto;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+}
+
+.game_desktop_counter h2, .dismount_game_desktop_counter h2 {
   animation: text_shadow_blink 2s ease-in-out infinite;
   background-color: #000;
   border-radius: 10px;
@@ -23,14 +33,4 @@
   margin: 0 auto 0 auto;
   text-align: center;
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
-}
-
-.game_desktop_counter h2, .dismount_game_desktop_counter h2 {
-  color: white;
-  font-family: "Staatliches";
-  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 300;
-  margin: 0 auto 0 auto;
-  padding: 0px 0px 0px 0px;
-  text-align: center;
 }

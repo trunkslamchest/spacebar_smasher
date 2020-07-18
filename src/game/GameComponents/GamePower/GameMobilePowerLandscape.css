@@ -1,10 +1,8 @@
 .game_mobile_power_landscape {
-  animation: slide_in_from_bottom .6s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 0px;
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
-  min-height: 120px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -12,10 +10,19 @@
   align-content: center;
   align-items: center;
   text-align: center;
-  width: 250px;
+  padding: 5px;
 }
 
 .game_mobile_power_landscape h1, .dismount_game_mobile_power_landscape h1 {
+  font-family: "Staatliches";
+  font-size: calc(15px + (20 - 15) * ((100vw - 568px) / (823 - 568)));
+  font-weight: 300;
+  color: white;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+.game_mobile_power_landscape h2, .dismount_game_mobile_power_landscape h2 {
   animation: text_shadow_blink 2.25s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;
@@ -23,20 +30,12 @@
   box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
   color: yellow;
   font-family: 'Conv_digital-7.mono';
-  font-size: calc(40px + (60 - 40) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(30px + (50 - 30) * ((100vw - 568px) / (823 - 568)));
   font-weight: 300;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 5px auto;
+  min-width: calc(150px + (250 - 150) * ((100vw - 568px) / (823 - 568)));
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;
-}
-
-.game_mobile_power_landscape h2, .dismount_game_mobile_power_landscape h2 {
-  font-family: "Staatliches";
-  font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
-  font-weight: 300;
-  color: white;
-  margin: 0 auto 0 auto;
-  text-align: center;
 }
 
 .game_mobile_power_bar_landscape {

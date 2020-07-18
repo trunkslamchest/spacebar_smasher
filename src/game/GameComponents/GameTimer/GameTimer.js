@@ -4,7 +4,6 @@ import './GameDesktopTimer.css'
 import './GameDesktopTimerDismount.css'
 import './GameMobileTimerLandscape.css'
 import './GameMobileTimerPortrait.css'
-import './GameMobileTimerDismount.css'
 
 const GameMobileTimer = (props) => {
 
@@ -12,21 +11,18 @@ const GameMobileTimer = (props) => {
 
   if(props.isMobile){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
-      if(props.initDismount) currentClass = "dismount_game_mobile_timer_landscape"
-      else currentClass = "game_mobile_timer_landscape"
+      currentClass = "game_mobile_timer_landscape"
     } else {
-      if(props.initDismount) currentClass = "dismount_game_mobile_timer_portrait"
-      else currentClass = "game_mobile_timer_portrait"
+      currentClass = "game_mobile_timer_portrait"
     }
   } else {
-    if(props.initDismount) currentClass = "dismount_game_desktop_timer"
-    else currentClass = "game_desktop_timer"
+    currentClass = "game_desktop_timer"
   }
 
   return(
     <div className={ currentClass }>
-      <h2>TIME</h2>
-      <h1>{ props.time ? props.time : (0.00).toFixed(2) }</h1>
+      <h1>TIME</h1>
+      <h2>{ props.time ? props.time : (0.00).toFixed(2) }</h2>
     </div>
   )
 }
