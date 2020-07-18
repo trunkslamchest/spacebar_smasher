@@ -9,10 +9,8 @@ import CountdownTutorial from './CountdownComponents/CountdownTutorial/Countdown
 import GameContainer from 'game/GameContainer.js'
 
 import './CountdownDesktopContainer.css'
-import './CountdownDesktopDismount.css'
 import './CountdownMobileContainerLandscape.css'
 import './CountdownMobileContainerPortrait.css'
-import './CountdownMobileDismount.css'
 
 export default class CountdownContainer extends React.Component {
 

@@ -1,0 +1,5 @@
+@keyframes onmount_countdown_desktop_header {
+  0% {
+    transform: translateX(-2000px);
+  }
+}

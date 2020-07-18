@@ -1,13 +1,9 @@
 .dismount_countdown_mobile_header_landscape {
-  animation: dismount_countdown_mobile_header_landscape 1s ease-in-out 1;
+  animation: dismount_countdown_mobile_header_landscape .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 50px 50px 0px 0px;
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 0px 0px 0px 0px;
-  text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 @keyframes dismount_countdown_mobile_header_landscape {
@@ -15,23 +11,19 @@
     transform: translateX(0px);
   }
   25% {
-    transform: translateX(-2000px);
+    transform: translateX(2000px);
   }
   100% {
-    transform: translateX(-2000px);
+    transform: translateX(2000px);
   }
 }
 
 .dismount_countdown_mobile_header_portrait {
-  animation: dismount_countdown_mobile_header_portrait 1s ease-in-out 1;
+  animation: dismount_countdown_mobile_header_portrait .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 50px 50px 0px 0px;
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 0px 0px 0px 0px;
-  text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 @keyframes dismount_countdown_mobile_header_portrait {
@@ -39,9 +31,9 @@
     transform: translateX(0px);
   }
   25% {
-    transform: translateX(-2000px);
+    transform: translateY(-2000px);
   }
   100% {
-    transform: translateX(-2000px);
+    transform: translateY(-2000px);
   }
 }

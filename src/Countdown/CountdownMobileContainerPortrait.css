@@ -8,4 +8,5 @@
 
 .countdown_mobile_pill_portrait {
   padding-top: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(300px + (400 - 300) * ((100vw - 320px) / (411 - 320)));
 }

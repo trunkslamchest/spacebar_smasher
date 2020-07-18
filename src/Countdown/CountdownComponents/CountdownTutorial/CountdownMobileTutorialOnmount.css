@@ -1,0 +1,11 @@
+@keyframes onmount_countdown_mobile_tutorial_landscape {
+  0% {
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes onmount_countdown_mobile_tutorial_portrait {
+  0% {
+    transform: translateY(2000px);
+  }
+}

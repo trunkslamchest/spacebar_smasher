@@ -2,9 +2,12 @@ import React from 'react'
 
 import './CountdownDesktopTutorial.css'
 import './CountdownDesktopTutorialDismount.css'
+import './CountdownDesktopTutorialOnmount.css'
+
 import './CountdownMobileTutorialLandscape.css'
 import './CountdownMobileTutorialPortrait.css'
 import './CountdownMobileTutorialDismount.css'
+import './CountdownMobileTutorialOnmount.css'
 
 const CountdownTutorial = (props) => {
 
@@ -24,7 +27,6 @@ const CountdownTutorial = (props) => {
   }
 
   return(
-    // <div className={ props.initDismount ? "dismount_countdown_desktop_tutorial" : "countdown_desktop_tutorial" }>
     <div className={ currentClass }>
         <p>Press the spacebar as many times as you can in 30 seconds</p>
     </div>

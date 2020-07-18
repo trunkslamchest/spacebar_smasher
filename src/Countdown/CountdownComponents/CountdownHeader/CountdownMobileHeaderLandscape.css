@@ -1,19 +1,15 @@
 .countdown_mobile_header_landscape {
-  animation: slide_in_from_top .25s ease-in-out 1;
+  animation: onmount_countdown_mobile_header_landscape .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 50px 50px 0px 0px;
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 0px 0px 0px 0px;
-  text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_mobile_header_landscape h3, .dismount_countdown_mobile_header_landscape h3 {
   text-align: center;
   font-family: 'Audiowide';
-  font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(40px + (50 - 40) * ((100vh - 320px) / (411 - 320)));
   font-weight: 300;
   padding: 10px;
   margin: 0px;

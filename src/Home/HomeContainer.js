@@ -47,7 +47,7 @@ export default class HomeContainer extends React.Component {
 
   onClickStartButton = (event) => {
     this.setState({ initDismount: true })
-    // this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
+    this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
   }
 
   onDismount = () => {

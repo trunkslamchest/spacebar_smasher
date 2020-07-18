@@ -7,5 +7,6 @@
 }
 
 .countdown_mobile_pill_landscape {
-  padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
+  padding-top: calc(5px + (10 - 5) * ((100vw - 568px) / (823 - 568)));
+  width: calc(450px + (550 - 450) * ((100vw - 568px) / (823 - 568)));
 }

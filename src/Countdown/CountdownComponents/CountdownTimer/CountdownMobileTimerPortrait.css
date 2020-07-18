@@ -1,148 +1,78 @@
 .countdown_mobile_timer_portrait {
-  align-items: center;
-  align-content: center;
-  animation: slide_in_from_left .25s ease-in-out 1;
+  animation: onmount_countdown_mobile_timer_portrait .6s ease-in-out 1;
   background-color: rgba(255,255,255, 1);
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border-radius: 0px;
-  display: flex;
-  color: white;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  margin: 0 auto 0 auto;
-  padding: 0px;
-  text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_mobile_timer_portrait h1, .dismount_countdown_mobile_timer_portrait h1 {
-  align-self: center;
   color: green;
   font-family: "Audiowide";
   font-size: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-shadow: 0 0 10px rgb(255, 255, 0);
-  padding: 0px;
 }
 
 .countdown_mobile_timer_five_portrait {
-  align-items: center;
-  align-content: center;
-  animation: slide_in_from_left .25s ease-in-out 1, shadow_blink 1.5s infinite;
-  background-color: rgba(255,255,255, 1);
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  animation: shadow_blink 1.5s infinite;
   border: 2px solid red;
-  border-radius: 0px;
   box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.8), 0 10px 10px 0 rgba(255, 0, 0, 0.8);
-  display: flex;
-  color: white;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding: 0px;
   text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_mobile_timer_five_portrait h1 {
   animation: text_shadow_blink_red 1.5s infinite;
-  align-self: center;
   color: red;
   font-family: "Audiowide";
   font-size: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-shadow: 0 0 10px rgb(255, 0, 0);
-  padding: 0px;
 }
 
 .countdown_mobile_timer_three_portrait {
-  align-items: center;
-  align-content: center;
   animation: shadow_blink 1.5s infinite;
-  background-color: rgba(255,255,255, 1);
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid orange;
-  border-radius: 0px;
   box-shadow: 0 0 10px 0 rgba(255, 165, 0, 0.8), 0 10px 10px 0 rgba(255, 165, 0, 0.8);
-  display: flex;
-  color: white;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding: 0px;
   text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_mobile_timer_three_portrait h1 {
   animation: text_shadow_blink_orange 1.5s infinite;
-  align-self: center;
   color: orange;
   font-family: "Audiowide";
   font-size: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-shadow: 0 0 10px rgb(255, 0, 0);
-  padding: 0px;
 }
 
 .countdown_mobile_timer_one_portrait {
-  align-items: center;
-  align-content: center;
   animation: shadow_blink 1.5s infinite;
-  background-color: rgba(255,255,255, 1);
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid yellow;
-  border-radius: 0px;
   box-shadow: 0 0 10px 0 rgba(255, 255, 0, 0.8), 0 10px 10px 0 rgba(255, 255, 0, 0.8);
-  display: flex;
-  color: white;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding: 0px;
   text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_mobile_timer_one_portrait h1 {
   animation: text_shadow_blink 1.5s infinite;
-  align-self: center;
   color: yellow;
   font-family: "Audiowide";
   font-size: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-shadow: 0 0 10px rgb(255, 255, 0);
-  padding: 0px;
 }
 
 .countdown_mobile_timer_go_portrait {
-  align-items: center;
-  align-content: center;
   animation: shadow_blink 1.25s infinite;
-  background-color: rgba(255,255,255, 1);
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid green;
-  border-radius:0px;
   box-shadow: 0px 10px 20px 0px rgba(0, 128, 0, 0.75);
-  display: flex;
-  color: white;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  padding: 0px;
   text-align: center;
-  width: calc(300px + (600 - 300) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_mobile_timer_go_portrait h1 {
   animation: text_shadow_blink_green 1.5s infinite;
-  align-self: center;
   color: green;
   font-family: "Audiowide";
   font-size: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-shadow: 0 0 10px rgb(255, 255, 0);
-  padding: 0px;
 }
 
