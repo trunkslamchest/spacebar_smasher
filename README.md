@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="http://trunkslamchest.com/spacebarsmasher/"><img align="center" src="https://img.shields.io/badge/Current%20Deployment-Link-000000"></a>
+  <a href="https://trunkslamchest.com/spacebarsmasher/"><img align="center" src="https://img.shields.io/badge/Current%20Deployment-Link-000000"></a>
 </p>
 
 <p align="center">

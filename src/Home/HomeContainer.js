@@ -28,6 +28,7 @@ export default class HomeContainer extends React.Component {
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Home'
+
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
   }

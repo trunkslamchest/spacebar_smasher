@@ -56,7 +56,7 @@ const HomeHeader = (props) => {
   return(
     <div className={ wrapperClass }>
       <div className={ headerClass } >
-        <h3>SPACEBAR SMASHER</h3>
+        <h1>SPACEBAR SMASHER</h1>
       </div>
       <div className={ startButtonContainerClass }>
         <button

@@ -4,12 +4,4 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  /* margin-bottom:  */
-  /* flex-basis: auto; */
-  /* padding-bottom: calc(5px + (10 - 5) * ((100vw - 320px) / (568 - 320))); */
-  /* padding-top: calc(5px + (10 - 5) * ((100vw - 320px) / (568 - 320))); */
-  /* transition-property: height;
-  transition-duration: 2s;
-  transition-timing-function: linear;
-  transition-delay: 1s; */
 }
