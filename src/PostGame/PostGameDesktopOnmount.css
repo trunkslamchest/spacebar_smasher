@@ -1,9 +1,9 @@
 @keyframes onmount_post_game_buttons_desktop
   {
     0% {
-      transform: translateY(2000px);
+      transform: translateX(-2000px);
     }
     100% {
-      transform: translateY(0px);
+      transform: translateX(0px);
     }
   }

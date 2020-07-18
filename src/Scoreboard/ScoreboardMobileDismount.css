@@ -117,7 +117,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(200px + (400 - 200) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
   padding: 0px;
   transform: matrix3d(
@@ -188,7 +188,7 @@
       0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
-    ) translateX(0px);
+    ) translateY(0px);
   }
   25% {
     transform: matrix3d(
@@ -196,7 +196,7 @@
       0,1,0,-0.0002,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateY(-2000px);
   }
   100% {
     transform: matrix3d(
@@ -204,6 +204,6 @@
       0,1,0,-0.0000,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateY(-2000px);
   }
 }
