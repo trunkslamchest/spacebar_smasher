@@ -1,5 +1,4 @@
 .submit_score_mobile_header_portrait {
-  animation: slide_in_from_top .5s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 50px 50px 0px 0px;
@@ -7,10 +6,10 @@
   margin: 0px auto 0 auto;
   padding: 10px 0px 5px 0px;
   text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+  width: 100%;
 }
 
-.submit_score_mobile_header_portrait h1, .dismount_submit_score_mobile_header_portrait h1 {
+.submit_score_mobile_header_portrait h1 {
   animation: text_shadow_blink_red 2.5s ease-in-out infinite;
   color: red;
   font-family: "Audiowide";

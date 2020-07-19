@@ -1,11 +1,11 @@
-@keyframes onmount_game_mobile_pill_landscape
+@keyframes onmount_submit_score_mobile_pill_landscape
   {
     0% {
       transform: translateX(-1000px);
     }
   }
 
-@keyframes onmount_game_mobile_pill_portrait
+@keyframes onmount_submit_score_mobile_pill_portrait
   {
     0% {
       transform: translateX(1000px);

@@ -1,193 +1,43 @@
-.dismount_submit_score_header {
-  animation: dismount_submit_score_header 1s 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid grey;
-  border-radius: 50px 50px 0px 0px;
-  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 10px 0px 5px 0px;
-  text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
-}
-
-@keyframes dismount_submit_score_header {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(-2000px);
-  }
-  100% {
-    transform: translateX(-2000px);
-  }
-}
-
-.dismount_submit_score_counter {
-  animation: dismount_submit_score_counter 1s 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  border: 2px solid grey;
-  margin: 0px auto 0 auto;
-  padding: 10px 0px 5px 0px;
-  text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
-}
-
-@keyframes dismount_submit_score_counter {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
-    transform: translateX(2000px);
-  }
-}
-
-.dismount_submit_score_rank {
-  animation: dismount_submit_score_rank 1s 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid grey;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0 auto;
-  padding: 5px 0px 5px 0px;
-  text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
-}
-
-@keyframes dismount_submit_score_rank {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(-2000px);
-  }
-  100% {
-    transform: translateX(-2000px);
-  }
-}
-
-.dismount_submit_score_power {
-  animation: dismount_submit_score_power 1s 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid grey;
-  border-radius: 0px;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0px auto;
-  padding: 10px;
-  text-align: center;
-  width: calc(300px + (500 - 300) * ((100vw - 500px) / (1920 - 500)));
-}
-
-@keyframes dismount_submit_score_power {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(-2000px);
-  }
-  100% {
-    transform: translateX(-2000px);
-  }
-}
-
-.dismount_submit_score_form_container {
-  animation: dismount_submit_score_form_container 1s 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid grey;
-  border-radius: 0px 0px 50px 50px;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  margin: 0px auto 0px auto;
-  height: calc(50px + (100 - 50) * ((100vw - 320px) / (1920 - 320)));
+.dismount_submit_score_mobile_pill_landscape {
+  animation: dismount_submit_score_mobile_pill_landscape .5s ease-in-out 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
   align-items: center;
-  padding: 0px 0px 10px 0px;
-  text-align: center;
-  width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
+  align-content: center;
+  margin: 0 auto 0 auto;
+  width: calc(500px + (800 - 500) * ((100vw - 568px) / (823 - 568)));
 }
 
-@keyframes dismount_submit_score_form_container {
-  0% {
-    transform: translateX(0px);
+@keyframes dismount_submit_score_mobile_pill_landscape
+  {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(1000px);
+    }
   }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
-    transform: translateX(2000px);
-  }
+
+.dismount_submit_score_mobile_pill_portrait {
+  animation: dismount_submit_score_mobile_pill_portrait .5s ease-in-out 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto 0 auto;
+  width: calc(275px + (375 - 275) * ((100vw - 320px) / (411 - 320)));
 }
 
-.dismount_submit_score_main_menu_button {
-  animation: dismount_submit_score_main_menu_button 1s ease-in-out 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid white;
-  border-radius: 30px 0px 0px 30px;
-  box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
-  color: white !important;
-  font-family: 'Audiowide';
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 300;
-  padding: 10px;
-  margin-right: -5px;
-  text-align: center;
-  text-shadow: 1px 1px 2px #000;
-  transform: matrix3d(
-    1,0,0,0.0005,
-    0,1,0,0,
-    0,0,1,0,
-    0,0,0,1
-    );
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
-}
-
-@keyframes dismount_submit_score_main_menu_button {
-  0% {
-    transform: translateX(0px);
+@keyframes dismount_submit_score_mobile_pill_portrait
+  {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-1000px);
+    }
   }
-  25% {
-    transform: translateX(-2000px);
-  }
-  100% {
-    transform: translateX(-2000px);
-  }
-}
-
-.dismount_submit_score_try_again_button {
-  animation: dismount_submit_score_try_again_button 1s ease-in-out 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid white;
-  border-radius: 0px 30px 30px 0px;
-  box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
-  color: white !important;
-  font-family: "Audiowide";
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 300;
-  margin-left: -5px;
-  padding: 10px;
-  text-align: center;
-  text-shadow: 1px 1px 2px #000;
-  transform: matrix3d(
-    1,0,0,-0.0005,
-    0,1,0,0,
-    0,0,1,0,
-    0,0,0,1
-    );
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
-}
-
-@keyframes dismount_submit_score_try_again_button {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
-    transform: translateX(2000px);
-  }
-}

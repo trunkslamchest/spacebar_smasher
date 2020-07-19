@@ -1,5 +1,5 @@
 .dismount_countdown_mobile_tutorial_landscape {
-  animation: dismount_countdown_mobile_tutorial_landscape .7s ease-in-out 1;
+  animation: dismount_countdown_mobile_tutorial_landscape .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 0px 0px 50px 50px;
@@ -28,12 +28,12 @@
 
 @keyframes dismount_countdown_mobile_tutorial_portrait{
   0% {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
   25% {
-    transform: translateY(-2000px);
+    transform: translateX(-2000px);
   }
   100% {
-    transform: translateY(-2000px);
+    transform: translateX(-2000px);
   }
 }

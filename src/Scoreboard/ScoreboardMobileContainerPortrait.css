@@ -1,5 +1,5 @@
 .scoreboard_table_mobile_portrait {
-  animation: onmount_scoreboard_mobile_portrait .7s ease-in-out 1;
+  animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -25,7 +25,7 @@
 }
 
 .scoreboard_table_mobile_post_game_portrait {
-  animation: onmount_scoreboard_mobile_portrait .7s ease-in-out 1;
+  animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);

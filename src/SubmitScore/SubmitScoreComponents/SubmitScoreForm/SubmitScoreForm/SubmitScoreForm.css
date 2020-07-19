@@ -80,7 +80,7 @@
 }
 
 .submit_score_button:active, .dismount_submit_score_button:active {
-  animation: scale_out .1s ease-in-out 1, blur_out .1s ease-in-out 1;
+  animation: scale_out .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 1px solid black;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);

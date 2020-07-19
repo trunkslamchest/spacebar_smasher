@@ -13,7 +13,7 @@
   padding: 5px;
 }
 
-.game_mobile_power_landscape h1, .dismount_game_mobile_power_landscape h1 {
+.game_mobile_power_landscape h1 {
   font-family: "Staatliches";
   font-size: calc(15px + (20 - 15) * ((100vw - 568px) / (823 - 568)));
   font-weight: 300;
@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-.game_mobile_power_landscape h2, .dismount_game_mobile_power_landscape h2 {
+.game_mobile_power_landscape h2 {
   animation: text_shadow_blink 2.25s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;
@@ -46,7 +46,7 @@
   width:100%;
 }
 
-.game_mobile_power_bar_landscape meter, .dismount_game_mobile_power_bar_landscape meter {
+.game_mobile_power_bar_landscape meter {
   background: none;
   width: 75%;
   height: 25px;
@@ -56,13 +56,13 @@
   margin: 0 auto 0 auto;
 }
 
-.game_mobile_power_bar_landscape meter::-webkit-meter-bar, .dismount_game_mobile_power_bar_landscape meter::-webkit-meter-bar {
+.game_mobile_power_bar_landscape meter::-webkit-meter-bar {
   background: #000;
   border-radius: 5px;
   border: 1px solid grey;
 }
 
-.game_mobile_power_bar_landscape meter::-webkit-meter-optimum-value, .dismount_game_mobile_power_bar_landscape meter::-webkit-meter-optimum-value {
+.game_mobile_power_bar_landscape meter::-webkit-meter-optimum-value {
   width: 100%;
   background: linear-gradient(
     90deg,
@@ -74,7 +74,7 @@
   transition: background 1s 1s ease-in-out;
 }
 
-.game_mobile_power_bar_landscape meter::-webkit-meter-suboptimum-value, .dismount_game_mobile_power_bar_landscape meter::-webkit-meter-suboptimum-value {
+.game_mobile_power_bar_landscape meter::-webkit-meter-suboptimum-value {
   width: 100%;
   background: linear-gradient(
     90deg,

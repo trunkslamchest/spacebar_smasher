@@ -4,10 +4,9 @@
   box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   padding: 10px;
   text-align: center;
-  /* width: 100%; */
 }
 
-.game_mobile_rank_portrait h1, .dismount_game_mobile_rank_portrait h1 {
+.game_mobile_rank_portrait h1 {
   color: white;
   font-family: "Staatliches";
   font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
@@ -17,7 +16,7 @@
   text-align: center;
 }
 
-.game_mobile_rank_portrait h2, .dismount_game_mobile_rank_portrait h2 {
+.game_mobile_rank_portrait h2 {
   animation: text_shadow_blink 1.5s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;

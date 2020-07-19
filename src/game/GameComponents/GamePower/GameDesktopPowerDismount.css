@@ -1,5 +1,5 @@
 .dismount_game_desktop_power {
-  animation: dismount_game_desktop_power .65s ease-in-out 1;
+  animation: dismount_game_desktop_power .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 0px 0px 50px 50px;

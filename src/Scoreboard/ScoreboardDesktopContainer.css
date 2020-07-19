@@ -1,5 +1,5 @@
 .scoreboard_table_desktop {
-  animation: onmount_scoreboard_desktop .7s ease-in-out 1;
+  animation: onmount_scoreboard_desktop .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -9,7 +9,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   flex-wrap: nowrap;
   max-height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
   justify-content: flex-start;
@@ -25,7 +24,7 @@
 }
 
 .scoreboard_table_desktop_post_game {
-  animation: onmount_scoreboard_desktop .7s ease-in-out 1;
+  animation: onmount_scoreboard_desktop .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -35,7 +34,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   flex-wrap: nowrap;
   max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
@@ -68,7 +66,7 @@
   padding: 5px 0px 5px 0px;
 }
 
-.scoreboard_head_row_desktop, .dismount_scoreboard_head_row_desktop {
+.scoreboard_head_row_desktop {
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -83,32 +81,32 @@
   width: 100%;
 }
 
-.scoreboard_head_row_desktop h1, .dismount_scoreboard_head_row_desktop th {
+.scoreboard_head_row_desktop h1 {
   font-family: "Audiowide";
   font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   text-align: center;
 }
 
-.scoreboard_head_row_desktop h1:nth-child(1), .dismount_scoreboard_head_row_desktop th:nth-child(1) {
+.scoreboard_head_row_desktop h1:nth-child(1) {
   opacity: 0;
   width: 10%;
 }
 
-.scoreboard_head_row_desktop h1:nth-child(2), .dismount_scoreboard_head_row_desktop th:nth-child(2) {
+.scoreboard_head_row_desktop h1:nth-child(2) {
   text-align: left;
   width: 40%;
 }
 
-.scoreboard_head_row_desktop h1:nth-child(3), .dismount_scoreboard_head_row_desktop th:nth-child(3) {
+.scoreboard_head_row_desktop h1:nth-child(3) {
   width: 35%;
 }
 
-.scoreboard_head_row_desktop h1:nth-child(4), .dismount_scoreboard_head_row_desktop th:nth-child(4) {
+.scoreboard_head_row_desktop h1:nth-child(4) {
   width: 15%;
 }
 
-.scoreboard_head_row_desktop h1:nth-child(5), .dismount_scoreboard_head_row_desktop th:nth-child(5) {
+.scoreboard_head_row_desktop h1:nth-child(5) {
   opacity: 0;
   width: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
 }

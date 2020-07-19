@@ -7,13 +7,12 @@ import FooterContainer from '../UI/Footer/FooterContainer'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './PostGameDesktopContainer.css'
+import './PostGameDesktopOnmount.css'
+import './PostGameDesktopDismount.css'
+
 import './PostGameMobileContainerLandscape.css'
 import './PostGameMobileContainerPortrait.css'
-
-import './PostGameDesktopOnmount.css'
 import './PostGameMobileOnmount.css'
-
-import './PostGameDesktopDismount.css'
 import './PostGameMobileDismount.css'
 
 export default class PostGameContainer extends React.Component {
@@ -29,6 +28,7 @@ export default class PostGameContainer extends React.Component {
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Scoreboard'
+    // document.body.scrollTop = 0
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
   }
@@ -77,9 +77,9 @@ export default class PostGameContainer extends React.Component {
     if(this.props.isMobile){
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         if(this.state.initDismount) {
-          buttonsContainerClass = "post_game_mobile_buttons_container_landscape"
-          mainMenuButtonClass = "dismount_post_game_mobile_main_menu_button_landscape"
-          playAgainButtonClass = "dismount_post_game_mobile_play_again_button_landscape"
+          buttonsContainerClass = "dismount_post_game_mobile_buttons_container_landscape"
+          mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
+          playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
         } else {
           buttonsContainerClass = "post_game_mobile_buttons_container_landscape"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
@@ -87,9 +87,9 @@ export default class PostGameContainer extends React.Component {
         }
       } else {
         if(this.state.initDismount) {
-          buttonsContainerClass = "post_game_mobile_buttons_container_portrait"
-          mainMenuButtonClass = "dismount_post_game_mobile_main_menu_button_portrait"
-          playAgainButtonClass = "dismount_post_game_mobile_play_again_button_portrait"
+          buttonsContainerClass = "dismount_post_game_mobile_buttons_container_portrait"
+          mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
+          playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
         } else {
           buttonsContainerClass = "post_game_mobile_buttons_container_portrait"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
@@ -98,9 +98,9 @@ export default class PostGameContainer extends React.Component {
       }
     } else {
       if(this.state.initDismount) {
-        buttonsContainerClass = "post_game_desktop_buttons_container"
-        mainMenuButtonClass = "dismount_post_game_desktop_main_menu_button"
-        playAgainButtonClass = "dismount_post_game_desktop_play_again_button"
+        buttonsContainerClass = "dismount_post_game_desktop_buttons_container"
+        mainMenuButtonClass = "post_game_desktop_main_menu_button"
+        playAgainButtonClass = "post_game_desktop_play_again_button"
       } else {
         buttonsContainerClass = "post_game_desktop_buttons_container"
         mainMenuButtonClass = "post_game_desktop_main_menu_button"

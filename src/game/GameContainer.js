@@ -11,7 +11,6 @@ import GameMobileSmashButton from './GameComponents/GameMobileSmashButton/GameMo
 import SubmitScoreContainer from '../SubmitScore/SubmitScoreContainer'
 
 import './GameDesktopContainer.css'
-import './GameDesktopDismount.css'
 import './GameMobileContainerLandscape.css'
 import './GameMobileContainerPortrait.css'
 import './GameMobileDismount.css'
@@ -31,8 +30,8 @@ export default class Game extends React.Component {
     showSubmitScore: false,
     showWrapper: false,
     startTimer: false,
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (1.00).toFixed(2),
+    timeMark: (1.00).toFixed(2),
   }
 
   constructor(props) {
@@ -168,7 +167,7 @@ export default class Game extends React.Component {
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
     this.stopGameTimeout = setTimeout(() => { this.setState({ showWrapper: false, showFooter: false })}, 750)
-    // this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true }, this.clearTimers())}, 1000)
+    this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true }, this.clearTimers())}, 1000)
   }
 
   clearTimers = () => {
@@ -196,6 +195,8 @@ export default class Game extends React.Component {
 
     if(this.props.isMobile){
       if(this.props.orientation === 'landscape'){
+        rowClass1 = 'game_mobile_landscapeR1'
+        subRowClass1 = 'game_mobile_landscapeSR1'
         if(this.state.initDismount) {
             wrapperClass = "game_mobile_wrapper_landscape"
             pillClass = "dismount_game_mobile_pill_landscape"
@@ -204,6 +205,8 @@ export default class Game extends React.Component {
             pillClass = "game_mobile_pill_landscape"
         }
       } else {
+        rowClass1 = 'game_mobile_portraitR1'
+        subRowClass1 = 'game_mobile_portraitSR1'
         if(this.state.initDismount) {
           wrapperClass = "game_mobile_wrapper_portrait"
           pillClass = "dismount_game_mobile_pill_portrait"
@@ -215,14 +218,6 @@ export default class Game extends React.Component {
     } else {
       wrapperClass = "game_desktop_wrapper"
       pillClass = "game_desktop_pill"
-    }
-
-    if (this.props.orientation === 'landscape'){
-      rowClass1 = 'game_mobile_landscapeR1'
-      subRowClass1 = 'game_mobile_landscapeSR1'
-    } else {
-      rowClass1 = 'game_mobile_portraitR1'
-      subRowClass1 = 'game_mobile_portraitSR1'
     }
 
     const game =

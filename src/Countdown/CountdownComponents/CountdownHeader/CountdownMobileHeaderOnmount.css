@@ -6,6 +6,6 @@
 
 @keyframes onmount_countdown_mobile_header_portrait {
   0% {
-    transform: translateY(2000px);
+    transform: translateX(2000px);
   }
 }

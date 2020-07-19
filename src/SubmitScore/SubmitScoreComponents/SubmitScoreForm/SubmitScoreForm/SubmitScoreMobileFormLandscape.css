@@ -1,11 +1,9 @@
 .submit_score_mobile_form_container_landscape {
-  animation: slide_in_from_bottom .4s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 0px 0px 50px 50px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   margin: 0px auto 0px auto;
-  /* height: calc(50px + (100 - 50) * ((100vw - 320px) / (1920 - 320))); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,11 +11,10 @@
   align-items: center;
   padding: 5px 5px 10px 5px;
   text-align: center;
-  /* width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320))); */
   width: 95vw;
 }
 
-.submit_score_mobile_form_container_landscape h2, .dismount_submit_score_mobile_form_container_landscape h2 {
+.submit_score_mobile_form_container_landscape h2 {
   font-family: "Staatliches";
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -37,7 +34,7 @@
 
 }
 
-.submit_score_mobile_text_box_landscape, .dismount_submit_score_mobile_text_box_landscape {
+.submit_score_mobile_text_box_landscape {
   animation: text_shadow_blink 1.25s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;
@@ -60,7 +57,7 @@
   outline: -webkit-focus-ring-color auto 0px;
 }
 
-.submit_score_mobile_text_box_landscape::placeholder, .dismount_submit_score_mobile_text_box_landscape::placeholder {
+.submit_score_mobile_text_box_landscape::placeholder {
   animation: text_shadow_blink 2.1s ease-in-out infinite;
   color: yellow;
   font-family: 'Conv_digital-7.mono';
@@ -73,7 +70,7 @@
   max-width: 25%;
 }
 
-.submit_score_mobile_button_landscape, .dismount_submit_score_mobile_button_landscape {
+.submit_score_mobile_button_landscape {
   -webkit-appearance: none;
   align-items: flex-start;
   animation: text_shadow_blink 2s ease-in-out infinite;
@@ -100,7 +97,7 @@
   width: 25%;
 }
 
-.submit_score_mobile_button_landscape:hover, .dismount_submit_score_mobile_button_landscape:hover {
+.submit_score_mobile_button_landscape:hover {
   animation: blinker_hover .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 1px solid black;
@@ -117,8 +114,8 @@
     );
 }
 
-.submit_score_mobile_button_landscape:active, .dismount_submit_score_mobile_button_landscape:active {
-  animation: scale_out .1s ease-in-out 1, blur_out .1s ease-in-out 1;
+.submit_score_mobile_button_landscape:active {
+  animation: scale_out .1s ease-in-out 1;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 1px solid black;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);

@@ -1,5 +1,5 @@
 .dismount_submit_score_mobile_counter_landscape {
-  animation: dismount_submit_score_mobile_counter_landscape 1s 1;
+  animation: dismount_submit_score_mobile_counter_landscape .5s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   border: 2px solid grey;

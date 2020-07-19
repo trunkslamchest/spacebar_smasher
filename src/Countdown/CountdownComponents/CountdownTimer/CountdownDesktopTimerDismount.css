@@ -1,5 +1,5 @@
 .dismount_countdown_desktop_timer {
-  animation: dismount_countdown_desktop_timer .6s ease-in-out 1;
+  animation: dismount_countdown_desktop_timer .5s ease-in-out 1;
   background-color: rgba(255,255,255, 1);
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
 }

@@ -31,9 +31,9 @@
     transform: translateX(0px);
   }
   25% {
-    transform: translateY(-2000px);
+    transform: translateX(-2000px);
   }
   100% {
-    transform: translateY(-2000px);
+    transform: translateX(-2000px);
   }
 }

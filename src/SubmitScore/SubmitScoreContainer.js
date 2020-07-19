@@ -16,6 +16,8 @@ import SubmitScoreButtonsContainer from './SubmitScoreComponents/SubmitScoreButt
 import './SubmitScoreDesktopContainer.css'
 import './SubmitScoreMobileContainerLandscape.css'
 import './SubmitScoreMobileContainerPortrait.css'
+import './SubmitScoreMobileDismount.css'
+import './SubmitScoreMobileOnmount.css'
 
 export default class SubmitScoreContainer extends React.Component {
 
@@ -82,26 +84,34 @@ export default class SubmitScoreContainer extends React.Component {
 
   render(){
 
-    let wrapperClass, pillClass, rowClass1
-    // rowClass2
+  let wrapperClass, pillClass, rowClass1, subRowClass1
 
   if(this.props.isMobile){
-    if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
-        wrapperClass = "submit_score_mobile_wrapper_landscape"
-        pillClass = "submit_score_mobile_pill_landscape"
+    if(this.props.orientation === "landscape") {
+      rowClass1 = 'submit_score_mobile_landscapeR1'
+      subRowClass1 = 'submit_score_mobile_landscapeSR1'
+        if(this.state.initDismount) {
+            wrapperClass = "submit_score_mobile_wrapper_landscape"
+            pillClass = "dismount_submit_score_mobile_pill_landscape"
+        } else {
+            wrapperClass = "submit_score_mobile_wrapper_landscape"
+            pillClass = "submit_score_mobile_pill_landscape"
+        }
     } else {
+      rowClass1 = 'submit_score_mobile_portraitR1'
+      subRowClass1 = 'submit_score_mobile_portraitSR1'
+      if(this.state.initDismount) {
+        wrapperClass = "submit_score_mobile_wrapper_portrait"
+        pillClass = "dismount_submit_score_mobile_pill_portrait"
+      } else {
         wrapperClass = "submit_score_mobile_wrapper_portrait"
         pillClass = "submit_score_mobile_pill_portrait"
+      }
     }
   } else {
     wrapperClass = "submit_score_desktop_wrapper"
     pillClass = "submit_score_desktop_pill"
   }
-
-    if (this.props.orientation === 'landscape' && window.innerWidth <= 1024){
-      rowClass1 = 'submit_score_mobile_landscapeR1'
-      // rowClass2 = 'submit_score_mobile_landscapeR2'
-    }
 
     const submitScore =
       <>
@@ -120,30 +130,32 @@ export default class SubmitScoreContainer extends React.Component {
                   isMobile={ this.props.isMobile }
                   orientation={ this.props.orientation }
                 />
-                <SubmitScoreRank
-                  isMobile={ this.props.isMobile }
-                  initDismount={ this.state.initDismount }
-                  orientation={ this.props.orientation }
-                  rank={ this.props.rank }
-                />
-                <SubmitScorePower
-                  isMobile={ this.props.isMobile }
-                  initDismount={ this.state.initDismount }
-                  orientation={ this.props.orientation }
-                  power={ this.props.power }
-                  powerRaw={ this.props.powerRaw }
-                />
+                <div className={ subRowClass1 }>
+                  <SubmitScoreRank
+                    isMobile={ this.props.isMobile }
+                    initDismount={ this.state.initDismount }
+                    orientation={ this.props.orientation }
+                    rank={ this.props.rank }
+                  />
+                  <SubmitScorePower
+                    isMobile={ this.props.isMobile }
+                    initDismount={ this.state.initDismount }
+                    orientation={ this.props.orientation }
+                    power={ this.props.power }
+                    powerRaw={ this.props.powerRaw }
+                  />
+                </div>
               </div>
-                <SubmitScoreFormContainer
-                  count={ this.props.count }
-                  getPlayer={ this.props.getPlayer }
-                  isMobile={ this.props.isMobile }
-                  initDismount={ this.state.initDismount }
-                  onDismount={ this.onDismount }
-                  orientation={ this.props.orientation }
-                  power={ this.props.power }
-                  powerRaw={ this.props.powerRaw }
-                />
+              <SubmitScoreFormContainer
+                count={ this.props.count }
+                getPlayer={ this.props.getPlayer }
+                isMobile={ this.props.isMobile }
+                initDismount={ this.state.initDismount }
+                onDismount={ this.onDismount }
+                orientation={ this.props.orientation }
+                power={ this.props.power }
+                powerRaw={ this.props.powerRaw }
+              />
             </div>
             <SubmitScoreButtonsContainer
               initDismount={ this.state.initDismount }

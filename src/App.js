@@ -18,7 +18,9 @@ export default class App extends React.Component {
     orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape'
   }
 
-  componentDidMount(){ this.detectDevice = window.addEventListener("resize", this.detectDevice) }
+  componentDidMount(){
+    this.detectDevice = window.addEventListener("resize", this.detectDevice)
+  }
 
   detectDevice = () => {
     this.setState({

@@ -1,7 +1,6 @@
 .dismount_footer_desktop_container {
   animation: dismount_footer_desktop_container .5s ease-in-out 1;
-  color: white;
-  padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
+  padding-top: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
   z-index: 0;
 }
 
@@ -11,13 +10,12 @@
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(2500px);
+      transform: translateY(1000px);
     }
   }
 
 .dismount_footer_mobile_container_landscape {
   animation: dismount_footer_mobile_container_landscape .5s ease-in-out 1;
-  color: white;
   padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
   z-index: 0;
 }
@@ -28,13 +26,12 @@
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(2500px);
+      transform: translateY(1000px);
     }
   }
 
 .dismount_footer_mobile_container_portrait {
   animation: dismount_footer_mobile_container_portrait .5s ease-in-out 1;
-  color: white;
   padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
   z-index: 0;
 }
@@ -45,6 +42,6 @@
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(2500px);
+      transform: translateY(1000px);
     }
   }

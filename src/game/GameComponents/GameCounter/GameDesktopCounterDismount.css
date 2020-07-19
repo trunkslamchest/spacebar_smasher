@@ -1,5 +1,5 @@
 .dismount_game_desktop_counter {
-  animation: dismount_game_desktop_counter .55s ease-in-out 1;
+  animation: dismount_game_desktop_counter .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);

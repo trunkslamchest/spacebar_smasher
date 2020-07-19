@@ -51,7 +51,7 @@
 }
 
 .dismount_start_button_container_desktop {
-  animation: dismount_start_button_container_desktop .6s ease-in-out 1;
+  animation: dismount_start_button_container_desktop .5s ease-in-out 1;
   display: flex;
   justify-content: center;
   align-items: center;

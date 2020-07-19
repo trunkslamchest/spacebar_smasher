@@ -42,7 +42,7 @@
 }
 
 .start_button_container_desktop {
-  animation: onmount_start_button_container_desktop .6s ease-in-out 1;
+  animation: onmount_start_button_container_desktop .5s ease-in-out 1;
   display: flex;
   justify-content: center;
   align-items: center;

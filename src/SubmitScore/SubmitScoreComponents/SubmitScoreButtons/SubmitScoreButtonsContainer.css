@@ -1,7 +1,7 @@
 .submit_score_buttons_container {
   align-items: baseline;
   align-content: center;
-  animation: ease-in-out 1, onmount_submit_score_buttons 1s ease-in-out 1;
+  animation: onmount_submit_score_buttons 1s ease-in-out 1;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

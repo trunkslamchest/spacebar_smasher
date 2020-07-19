@@ -1,5 +1,5 @@
 .submit_score_desktop_rank {
-  animation: slide_in_from_top .3s 1;
+  animation: onmount_submit_score_desktop_rank .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
@@ -10,6 +10,16 @@
 }
 
 .submit_score_desktop_rank h1, .dismount_submit_score_desktop_rank h1 {
+  color: white;
+  font-family: "Staatliches";
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  margin: 0 auto 0 auto;
+  padding: 0px;
+  text-align: center;
+}
+
+.submit_score_desktop_rank h2, .dismount_submit_score_desktop_rank h2 {
   animation: text_shadow_blink 1.5s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;
@@ -24,14 +34,4 @@
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;
   width: calc(200px + (400 - 200) * ((100vw - 320px) / (1920 - 320)));
-}
-
-.submit_score_desktop_rank h2, .dismount_submit_score_desktop_rank h2 {
-  color: white;
-  font-family: "Staatliches";
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 300;
-  margin: 0 auto 0 auto;
-  padding: 0px;
-  text-align: center;
 }

@@ -1,5 +1,5 @@
 .submit_score_desktop_header {
-  animation: slide_in_from_top .5s 1;
+  animation: onmount_submit_score_desktop_header .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 50px 50px 0px 0px;

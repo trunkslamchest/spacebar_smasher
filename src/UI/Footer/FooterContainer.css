@@ -1,17 +1,17 @@
 .footer_desktop_container {
-  animation: onmount_footer_desktop_container .5s ease-in-out 1;
+  animation: onmount_footer_desktop_container .25s ease-in-out 1;
   padding-top: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
   z-index: 0;
 }
 
 .footer_mobile_container_landscape {
-  animation: onmount_footer_mobile_container_landscape .5s ease-in-out 1;
+  animation: onmount_footer_mobile_container_landscape .25s ease-in-out 1;
   padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
   z-index: 0;
 }
 
 .footer_mobile_container_portrait {
-  animation: onmount_footer_mobile_container_portrait .5s ease-in-out 1;
+  animation: onmount_footer_mobile_container_portrait .25s ease-in-out 1;
   padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
   z-index: 0;
 }

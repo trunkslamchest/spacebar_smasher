@@ -52,7 +52,7 @@
 }
 
 .dismount_scoreboard_table_desktop_post_game {
-  animation: dismount_scoreboard_table_desktop_post_game .7s ease-in-out 1;
+  animation: dismount_scoreboard_table_desktop_post_game .5s ease-in-out 1;
   align-items: center;
   align-content: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -62,7 +62,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   flex-wrap: nowrap;
   max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
@@ -88,7 +87,7 @@
   25% {
     transform: matrix3d(
       1,0,0,0.0,
-      0,1,0,-0.0002,
+      0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
     ) translateX(2000px);
@@ -96,7 +95,7 @@
   100% {
     transform: matrix3d(
       1,0,0,0.0,
-      0,1,0,-0.0000,
+      0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
     ) translateX(2000px);

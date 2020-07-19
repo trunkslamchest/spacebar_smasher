@@ -26,13 +26,13 @@
 @keyframes onmount_home_header_mobile_portrait
   {
     0% {
-      transform: translateX(calc(5px + (10 - 5) * ((100vh - 568px) / (823 - 568)))) translateY(2000px);
+      transform: translateX(1000px);;
     }
   }
 
 @keyframes onmount_start_button_container_mobile_portrait
   {
     0% {
-      transform: translateY(1000px);
+      transform: translateX(1000px);
     }
   }

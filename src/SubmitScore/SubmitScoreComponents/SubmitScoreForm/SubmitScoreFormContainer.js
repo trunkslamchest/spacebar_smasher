@@ -13,8 +13,6 @@ import SubmitScoreErrorContainer from './SubmitScoreErrorHandling/SubmitScoreErr
 
 import Modal from '../../../UI/modal/modal'
 
-import './SubmitScoreFormContainer.css'
-
 export default class SubmitScoreFormContainer extends React.Component {
 
   state={
