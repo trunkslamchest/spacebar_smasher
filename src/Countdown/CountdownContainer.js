@@ -20,7 +20,7 @@ export default class CountdownContainer extends React.Component {
     showGame: false,
     showWrapper: false,
     startGame: false,
-    time: 1,
+    time: 5,
   }
 
   componentDidMount(){

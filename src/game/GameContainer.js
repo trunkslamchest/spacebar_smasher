@@ -30,8 +30,8 @@ export default class Game extends React.Component {
     showSubmitScore: false,
     showWrapper: false,
     startTimer: false,
-    time: (1.00).toFixed(2),
-    timeMark: (1.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
   }
 
   constructor(props) {
@@ -85,19 +85,19 @@ export default class Game extends React.Component {
       this.setState({ avgPress: pressAvg })
     }
 
-    // if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
-    //   document.removeEventListener('keydown', this.spacebarDown)
-    //   document.removeEventListener('keyup', this.spacebarUp)
+    if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
+      document.removeEventListener('keydown', this.spacebarDown)
+      document.removeEventListener('keyup', this.spacebarUp)
 
-    //   this.setState({
-    //     count: 0,
-    //     initDismount: false,
-    //     power: 0,
-    //     powerRaw: 0,
-    //     rank: "CHEATER",
-    //     time: 0.00,
-    //   }, this.onDismount())
-    // }
+      this.setState({
+        count: 0,
+        initDismount: false,
+        power: 0,
+        powerRaw: 0,
+        rank: "CHEATER",
+        time: 0.00,
+      }, this.onDismount())
+    }
   }
 
   timerFunctions = () => {
@@ -154,8 +154,8 @@ export default class Game extends React.Component {
       showFooter: false,
       showSubmitScore: false,
       rank: "SUPER BABY FINGERS",
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
+      time: (30.00).toFixed(2),
+      timeMark: (30.00).toFixed(2),
     })
 
     this.restartGameTimeout = setTimeout(() => { this.startGame() }, 250)
