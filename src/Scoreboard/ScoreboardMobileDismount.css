@@ -39,7 +39,7 @@
       0,1,0,-0.0002,
       0,0,1,0,
       0,0,0,1
-    ) translateX(1500px);
+    ) translateX(1000px);
   }
   100% {
     transform: matrix3d(
@@ -47,7 +47,7 @@
       0,1,0,-0.0000,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateX(1000px);
   }
 }
 
@@ -92,7 +92,7 @@
       0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
-    ) translateX(-1000px);
+    ) translateX(1000px);
   }
   100% {
     transform: matrix3d(
@@ -100,7 +100,7 @@
       0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
-    ) translateX(-1000px);
+    ) translateX(1000px);
   }
 }
 
@@ -144,7 +144,7 @@
       0,1,0,-0.0002,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateX(1000px);
   }
   100% {
     transform: matrix3d(
@@ -152,7 +152,7 @@
       0,1,0,-0.0000,
       0,0,1,0,
       0,0,0,1
-    ) translateX(2000px);
+    ) translateX(1000px);
   }
 }
 
@@ -196,7 +196,7 @@
       0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
-    ) translateX(-2000px);
+    ) translateX(1000px);
   }
   100% {
     transform: matrix3d(
@@ -204,6 +204,6 @@
       0,1,0,-0.0004,
       0,0,1,0,
       0,0,0,1
-    ) translateX(-2000px);
+    ) translateX(1000px);
   }
 }

@@ -8,6 +8,6 @@
 @keyframes onmount_submit_score_mobile_pill_portrait
   {
     0% {
-      transform: translateX(1000px);
+      transform: translateX(-1000px);
     }
   }

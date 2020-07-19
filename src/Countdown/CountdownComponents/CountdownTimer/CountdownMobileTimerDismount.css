@@ -9,10 +9,10 @@
     transform: translateX(0px);
   }
   25% {
-    transform: translateX(2000px);
+    transform: translateX(1000px);
   }
   100% {
-    transform: translateX(2000px);
+    transform: translateX(1000px);
   }
 }
 
@@ -27,9 +27,9 @@
     transform: translateX(0px);
   }
   25% {
-    transform: translateX(-2000px);
+    transform: translateX(1000px);
   }
   100% {
-    transform: translateX(-2000px);
+    transform: translateX(1000px);
   }
 }

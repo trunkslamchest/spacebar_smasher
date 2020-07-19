@@ -1,9 +1,6 @@
 @keyframes onmount_submit_score_desktop_buttons
   {
     0% {
-      transform: translateX(2000px);
-    }
-    100% {
-      transform: translateX(0px);
+      transform: translateX(-2000px);
     }
   }

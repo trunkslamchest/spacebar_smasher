@@ -1,19 +1,13 @@
 @keyframes onmount_submit_score_mobile_buttons_landscape
   {
     0% {
-      transform: translateX(-2000px);
-    }
-    100% {
-      transform: translateX(0px);
+      transform: translateX(-1000px);
     }
   }
 
 @keyframes onmount_submit_score_mobile_buttons_portrait
   {
     0% {
-      transform: translateX(2000px);
-    }
-    100% {
-      transform: translateX(0px);
+      transform: translateX(-1000px);
     }
   }
