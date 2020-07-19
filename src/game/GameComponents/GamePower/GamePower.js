@@ -2,6 +2,7 @@ import React from 'react'
 
 import './GameDesktopPower.css'
 import './GameDesktopPowerDismount.css'
+import './GameDesktopPowerOnmount.css'
 import './GameMobilePowerLandscape.css'
 import './GameMobilePowerPortrait.css'
 
@@ -18,8 +19,13 @@ const GamePower = (props) => {
         powerClass = "game_mobile_power_bar_portrait"
     }
   } else {
-    currentClass = "game_desktop_power"
-    powerClass = "game_desktop_power_bar"
+    if(props.initDismount) {
+      currentClass = "dismount_game_desktop_power"
+      powerClass = "game_desktop_power_bar"
+    } else {
+      currentClass = "game_desktop_power"
+      powerClass = "game_desktop_power_bar"
+    }
   }
 
   return(

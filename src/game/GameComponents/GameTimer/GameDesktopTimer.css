@@ -1,5 +1,5 @@
 .game_desktop_timer {
-  animation: slide_in_from_top .6s 1;
+  animation: onmount_game_desktop_timer .5s 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid grey;
   border-radius: 50px 50px 0px 0px;

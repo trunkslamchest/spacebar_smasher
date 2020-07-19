@@ -102,8 +102,8 @@ export default class Game extends React.Component {
   }
 
   timerFunctions = () => {
-    // if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
-    // else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
+    if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
+    else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
   getRank = () => {
@@ -192,22 +192,25 @@ export default class Game extends React.Component {
 
   render(){
 
-    // console.log(this.props.initDismount)
-
     let wrapperClass, pillClass, rowClass1, subRowClass1
 
     if(this.props.isMobile){
       if(this.props.orientation === 'landscape'){
-      if(this.state.initDismount) {
-          wrapperClass = "game_mobile_wrapper_landscape"
-          pillClass = "dismount_game_mobile_pill_landscape"
+        if(this.state.initDismount) {
+            wrapperClass = "game_mobile_wrapper_landscape"
+            pillClass = "dismount_game_mobile_pill_landscape"
+        } else {
+            wrapperClass = "game_mobile_wrapper_landscape"
+            pillClass = "game_mobile_pill_landscape"
+        }
       } else {
-          wrapperClass = "game_mobile_wrapper_landscape"
-          pillClass = "game_mobile_pill_landscape"
-      }
-      } else {
-        wrapperClass = "game_mobile_wrapper_portrait"
-        pillClass = "game_mobile_pill_portrait"
+        if(this.state.initDismount) {
+          wrapperClass = "game_mobile_wrapper_portrait"
+          pillClass = "dismount_game_mobile_pill_portrait"
+        } else {
+          wrapperClass = "game_mobile_wrapper_portrait"
+          pillClass = "game_mobile_pill_portrait"
+        }
       }
     } else {
       wrapperClass = "game_desktop_wrapper"

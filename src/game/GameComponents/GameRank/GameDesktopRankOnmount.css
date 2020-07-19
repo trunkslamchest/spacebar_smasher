@@ -1,0 +1,5 @@
+@keyframes onmount_game_desktop_rank {
+  0% {
+    transform: translateX(-2000px);
+  }
+}

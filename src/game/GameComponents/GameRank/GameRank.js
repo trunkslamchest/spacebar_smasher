@@ -2,6 +2,7 @@ import React from 'react'
 
 import './GameDesktopRank.css'
 import './GameDesktopRankDismount.css'
+import './GameDesktopRankOnmount.css'
 import './GameMobileRankLandscape.css'
 import './GameMobileRankPortrait.css'
 
@@ -16,7 +17,8 @@ const GameRank = (props) => {
       currentClass = "game_mobile_rank_portrait"
     }
   } else {
-    currentClass = "game_desktop_rank"
+    if(props.initDismount) currentClass = "dismount_game_desktop_rank"
+    else currentClass = "game_desktop_rank"
   }
 
   return(

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './GameDesktopTimer.css'
+import './GameDesktopTimerOnmount.css'
 import './GameDesktopTimerDismount.css'
 import './GameMobileTimerLandscape.css'
 import './GameMobileTimerPortrait.css'
@@ -16,8 +17,10 @@ const GameMobileTimer = (props) => {
       currentClass = "game_mobile_timer_portrait"
     }
   } else {
-    currentClass = "game_desktop_timer"
+    if(props.initDismount) currentClass = "dismount_game_desktop_timer"
+    else currentClass = "game_desktop_timer"
   }
+
 
   return(
     <div className={ currentClass }>

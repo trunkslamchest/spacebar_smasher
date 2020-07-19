@@ -22,14 +22,22 @@
 
 .dismount_game_mobile_pill_portrait {
   animation: dismount_game_mobile_pill_portrait .5s ease-in-out 1;
-
-
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto 0 auto;
+  width: calc(275px + (375 - 275) * ((100vw - 320px) / (411 - 320)));
 }
 
 @keyframes dismount_game_mobile_pill_portrait
   {
     0% {
+      transform: translateY(0px);
+    }
+    100% {
       transform: translateY(-1000px);
     }
   }

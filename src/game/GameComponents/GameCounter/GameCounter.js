@@ -2,6 +2,7 @@ import React from 'react'
 
 import './GameDesktopCounter.css'
 import './GameDesktopCounterDismount.css'
+import './GameDesktopCounterOnmount.css'
 import './GameMobileCounterLandscape.css'
 import './GameMobileCounterPortrait.css'
 
@@ -16,7 +17,8 @@ const GameCounter = (props) => {
       currentClass = "game_mobile_counter_portrait"
     }
   } else {
-    currentClass = "game_desktop_counter"
+    if(props.initDismount) currentClass = "dismount_game_desktop_counter"
+    else currentClass = "game_desktop_counter"
   }
 
   return(
