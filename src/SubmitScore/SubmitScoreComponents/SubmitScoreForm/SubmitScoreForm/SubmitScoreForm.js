@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './SubmitScoreDesktopForm.css'
 import './SubmitScoreDesktopFormDismount.css'
 import './SubmitScoreDesktopFormOnmount.css'
@@ -11,7 +13,8 @@ const SubmitScoreForm = (props) => {
 
   let formWrapperClass, formClass, textBoxClass, buttonClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       formWrapperClass = "submit_score_mobile_form_container_landscape"
       formClass = "submit_score_mobile_form_landscape"
@@ -67,4 +70,11 @@ const SubmitScoreForm = (props) => {
   )
 }
 
-export default SubmitScoreForm
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(SubmitScoreForm)

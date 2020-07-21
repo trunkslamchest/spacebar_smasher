@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './SubmitScoreDesktopRank.css'
 import './SubmitScoreDesktopRankDismount.css'
 import './SubmitScoreDesktopRankOnmount.css'
@@ -11,7 +13,8 @@ const SubmitScoreRank = (props) => {
 
   let rankClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       rankClass = "submit_score_mobile_rank_landscape"
     } else {
@@ -27,11 +30,17 @@ const SubmitScoreRank = (props) => {
 
   return(
     <div className={ rankClass }>
-
       <h1>RANK</h1>
       <h2>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h2>
     </div>
   )
 }
 
-export default SubmitScoreRank
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(SubmitScoreRank)

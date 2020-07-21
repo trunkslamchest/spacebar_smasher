@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import { Redirect } from 'react-router-dom'
 import { routes } from '../utility/paths'
 
@@ -19,7 +21,7 @@ import './SubmitScoreMobileContainerPortrait.css'
 import './SubmitScoreMobileDismount.css'
 import './SubmitScoreMobileOnmount.css'
 
-export default class SubmitScoreContainer extends React.Component {
+class SubmitScoreContainer extends React.Component {
 
   state = {
     initDismount: false,
@@ -61,14 +63,14 @@ export default class SubmitScoreContainer extends React.Component {
       this.resetTimeout = setTimeout(() => {
         this.props.history.push( routes.game )
         this.props.resetGame()
-      }, 750 )
+      }, 500 )
     }
-    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 750 )
+    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 500 )
   }
 
   onDismount = () => {
     this.setState({ initDismount: true })
-    this.dismountedTimeout = setTimeout(() => { this.setState({ showSubmitScore: false })}, 500)
+    this.dismountedTimeout = setTimeout(() => { this.setState({ showSubmitScore: false })}, 250)
     this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
   }
 
@@ -86,7 +88,8 @@ export default class SubmitScoreContainer extends React.Component {
 
   let wrapperClass, pillClass, rowClass1, subRowClass1
 
-  if(this.props.isMobile){
+  // if(this.props.isMobile){
+  if(this.props.device === "mobile") {
     if(this.props.orientation === "landscape") {
       rowClass1 = 'submit_score_mobile_landscapeR1'
       subRowClass1 = 'submit_score_mobile_landscapeSR1'
@@ -119,28 +122,28 @@ export default class SubmitScoreContainer extends React.Component {
           <div className={ wrapperClass }>
             <div className={ pillClass }>
               <SubmitScoreHeader
-                isMobile={ this.props.isMobile }
+                // isMobile={ this.props.isMobile }
                 initDismount={ this.state.initDismount }
-                orientation={ this.props.orientation }
+                // orientation={ this.props.orientation }
               />
               <div className={ rowClass1 }>
                 <SubmitScoreCounter
                   count={ this.props.count }
                   initDismount={ this.state.initDismount }
-                  isMobile={ this.props.isMobile }
-                  orientation={ this.props.orientation }
+                  // isMobile={ this.props.isMobile }
+                  // orientation={ this.props.orientation }
                 />
                 <div className={ subRowClass1 }>
                   <SubmitScoreRank
-                    isMobile={ this.props.isMobile }
+                    // isMobile={ this.props.isMobile }
                     initDismount={ this.state.initDismount }
-                    orientation={ this.props.orientation }
+                    // orientation={ this.props.orientation }
                     rank={ this.props.rank }
                   />
                   <SubmitScorePower
-                    isMobile={ this.props.isMobile }
+                    // isMobile={ this.props.isMobile }
                     initDismount={ this.state.initDismount }
-                    orientation={ this.props.orientation }
+                    // orientation={ this.props.orientation }
                     power={ this.props.power }
                     powerRaw={ this.props.powerRaw }
                   />
@@ -149,19 +152,19 @@ export default class SubmitScoreContainer extends React.Component {
               <SubmitScoreFormContainer
                 count={ this.props.count }
                 getPlayer={ this.props.getPlayer }
-                isMobile={ this.props.isMobile }
+                // isMobile={ this.props.isMobile }
                 initDismount={ this.state.initDismount }
                 onDismount={ this.onDismount }
-                orientation={ this.props.orientation }
+                // orientation={ this.props.orientation }
                 power={ this.props.power }
                 powerRaw={ this.props.powerRaw }
               />
             </div>
             <SubmitScoreButtonsContainer
               initDismount={ this.state.initDismount }
-              isMobile={ this.props.isMobile }
+              // isMobile={ this.props.isMobile }
               onClickButtonFunctions={ this.onClickButtonFunctions }
-              orientation={ this.props.orientation }
+              // orientation={ this.props.orientation }
             />
           </div>
         :
@@ -170,6 +173,8 @@ export default class SubmitScoreContainer extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
+            // isMobile={ this.props.isMobile }
+            // orientation={ this.props.orientation }
           />
         :
           <></>
@@ -187,3 +192,12 @@ export default class SubmitScoreContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(SubmitScoreContainer)

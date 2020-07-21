@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './SubmitScoreDesktopHeader.css'
 import './SubmitScoreDesktopHeaderOnmount.css'
 import './SubmitScoreDesktopHeaderDismount.css'
@@ -12,29 +14,8 @@ const SubmitScoreHeader = (props) => {
   let headerClass
 
   // if(props.isMobile){
-  //   if(props.orientation === "landscape" && window.innerWidth < 1024) {
-  //     if(props.initDismount) {
-  //       headerClass = "dismount_submit_score_mobile_header_landscape"
-  //     } else {
-  //       headerClass = "submit_score_mobile_header_landscape"
-  //     }
-  //   } else {
-  //     if(props.initDismount) {
-  //       headerClass = "dismount_submit_score_mobile_header_portrait"
-  //     } else {
-  //       headerClass = "submit_score_mobile_header_portrait"
-  //     }
-  //   }
-  // } else {
-  //   if(props.initDismount) {
-  //     headerClass = "dismount_submit_score_desktop_header"
-  //   } else {
-  //     headerClass = "submit_score_desktop_header"
-  //   }
-  // }
-
-  if(props.isMobile){
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+  if(props.device === "mobile") {
+    if(props.orientation === "landscape") {
       headerClass = "submit_score_mobile_header_landscape"
     } else {
       headerClass = "submit_score_mobile_header_portrait"
@@ -51,4 +32,11 @@ const SubmitScoreHeader = (props) => {
   )
 }
 
-export default SubmitScoreHeader
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(SubmitScoreHeader)
