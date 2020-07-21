@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import FooterContainer from 'UI/Footer/FooterContainer'
@@ -62,11 +61,8 @@ class CountdownContainer extends React.Component {
 
   render(){
 
-    console.log(this.props)
-
     let wrapperClass, pillClass
 
-    // if(this.props.isMobile){
     if(this.props.device === "mobile") {
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         wrapperClass = "countdown_mobile_wrapper_landscape"
@@ -87,28 +83,20 @@ class CountdownContainer extends React.Component {
             <div className={ wrapperClass }>
               <div className={ pillClass }>
                 <CountdownHeader
-                  // isMobile={ this.props.isMobile }
                   initDismount={ this.state.initDismount }
-                  // orientation={ this.props.orientation }
                 />
                 <CountdownTimer
-                  // isMobile={ this.props.isMobile }
                   time={ this.state.time }
                   initDismount={ this.state.initDismount }
-                  // orientation={ this.props.orientation }
                 />
                 <CountdownTutorial
-                  // isMobile={ this.props.isMobile }
                   initDismount={ this.state.initDismount }
-                  // orientation={ this.props.orientation }
                 />
               </div>
             </div>
             { this.state.showFooter ?
               <FooterContainer
                 initDismount={ this.state.initDismount }
-                // isMobile={ this.props.isMobile }
-                // orientation={ this.props.orientation }
               />
             :
               <></>
@@ -125,8 +113,6 @@ class CountdownContainer extends React.Component {
           <GameContainer
             getPlayer={ this.props.getPlayer }
             history={ this.props.history }
-            // isMobile={ this.props.isMobile }
-            // orientation={ this.props.orientation }
           />
         :
           countdown

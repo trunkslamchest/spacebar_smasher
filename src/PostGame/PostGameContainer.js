@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import { fetch, routes } from '../utility/paths'
@@ -76,7 +75,6 @@ class PostGameContainer extends React.Component {
 
     let buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
 
-    // if(this.props.isMobile){
     if(this.props.device === "mobile") {
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         if(this.state.initDismount) {
@@ -117,10 +115,8 @@ class PostGameContainer extends React.Component {
           <>
             <ScoreboardContainer
               initDismount={this.state.initDismount}
-              // isMobile={ this.props.isMobile }
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
-              // orientation={ this.props.orientation }
               scoreboard={ this.state.scoreboard }
               submittedPlayer={ this.props.player }
             />
@@ -149,8 +145,6 @@ class PostGameContainer extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
-            // isMobile={ this.props.isMobile }
-            // orientation={ this.props.orientation }
           />
         :
           <></>

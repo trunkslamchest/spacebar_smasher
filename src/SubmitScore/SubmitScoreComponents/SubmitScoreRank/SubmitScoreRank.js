@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './SubmitScoreDesktopRank.css'
@@ -13,7 +12,6 @@ const SubmitScoreRank = (props) => {
 
   let rankClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       rankClass = "submit_score_mobile_rank_landscape"

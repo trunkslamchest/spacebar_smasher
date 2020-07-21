@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import './SubmitScoreDesktopButtonsContainer.css'
 import './SubmitScoreMobileButtonsContainerLandscape.css'
@@ -16,7 +17,7 @@ const SubmitScoreButtonsContainer = (props) => {
 
   let wrapperClass, mainMenuButtonClass, tryAgainButtonClass
 
-  if(props.isMobile){
+  if(props.device === "mobile"){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       if(props.initDismount) {
         wrapperClass = "dismount_submit_score_mobile_buttons_container_landscape"
@@ -72,4 +73,11 @@ const SubmitScoreButtonsContainer = (props) => {
   )
 }
 
-export default SubmitScoreButtonsContainer
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(SubmitScoreButtonsContainer)

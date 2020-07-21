@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './ScoreboardRowDesktop.css'
@@ -22,7 +21,6 @@ class ScoreboardRow extends React.Component {
     let highlightedClass, rowClass, placeClass, nameClass, powerClass, scoreClass
 
   if(this.props.isPostGame) {
-    // if(this.props.isMobile){
     if(this.props.device === "mobile"){
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         highlightedClass = "highlighted_row_mobile_landscape"
@@ -48,7 +46,6 @@ class ScoreboardRow extends React.Component {
       scoreClass = "scoreboard_row_score_desktop"
     }
   } else {
-    // if(this.props.isMobile){
     if(this.props.device === "mobile"){
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         highlightedClass = "highlighted_row_mobile_landscape"

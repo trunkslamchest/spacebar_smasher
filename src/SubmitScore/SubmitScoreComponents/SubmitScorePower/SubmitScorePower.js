@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './SubmitScoreDesktopPower.css'
@@ -14,7 +13,6 @@ const SubmitScorePower = (props) => {
 
   let powerClass, powerBarClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       powerClass = "submit_score_mobile_power_landscape"

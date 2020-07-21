@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import ScoreboardRow from './ScoreboardRow/ScoreboardRow'
@@ -19,9 +18,7 @@ const ScoreboardContainer = (props) => {
 
   const scores =  props.scoreboard.map(score =>
     <ScoreboardRow
-      // isMobile={props.isMobile}
       isPostGame={props.isPostGame}
-      // orientation={props.orientation}
       place={props.scoreboard.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
@@ -32,7 +29,6 @@ const ScoreboardContainer = (props) => {
   let tableClass, headerClass, headRowClass, rowWrapperClass
 
   if(props.isPostGame) {
-    // if(props.isMobile){
     if(props.device === "mobile"){
       if(props.orientation === "landscape" && window.innerWidth < 1024) {
         if(props.initDismount) {
@@ -73,7 +69,6 @@ const ScoreboardContainer = (props) => {
       }
     }
   } else {
-    // if(props.isMobile){
     if(props.device === "mobile"){
       if(props.orientation === "landscape" && window.innerWidth < 1024) {
         if(props.initDismount) {

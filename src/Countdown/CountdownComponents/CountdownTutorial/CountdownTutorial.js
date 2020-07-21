@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './CountdownDesktopTutorial.css'
@@ -15,7 +14,6 @@ const CountdownTutorial = (props) => {
 
   let currentClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape") {
       if(props.initDismount) currentClass = "dismount_countdown_mobile_tutorial_landscape"

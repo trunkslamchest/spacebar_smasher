@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './GameDesktopRank.css'
@@ -12,7 +11,6 @@ const GameRank = (props) => {
 
   let currentClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       currentClass = "game_mobile_rank_landscape"

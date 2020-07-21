@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
-
 
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
@@ -73,7 +71,6 @@ class HomeContainer extends React.Component {
 
   let wrapperClass
 
-  // if(this.props.isMobile){
   if(this.props.device === "mobile"){
     if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
       if(this.props.initDismount) {
@@ -102,16 +99,12 @@ class HomeContainer extends React.Component {
           <div className={ wrapperClass }>
             <HomeHeader
               initDismount={ this.state.initDismount }
-              // isMobile={ this.props.isMobile }
               onClickStartButton={ this.onClickStartButton }
-              // orientation={ this.props.orientation }
             />
             <ScoreboardContainer
               initDismount={ this.state.initDismount }
-              // isMobile={ this.props.isMobile }
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
-              // orientation={ this.props.orientation }
               scoreboard={ this.state.scoreboard }
               submittedPlayer={ this.props.player }
             />
@@ -122,8 +115,6 @@ class HomeContainer extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
-            // isMobile={ this.props.isMobile }
-            // orientation={ this.props.orientation }
           />
         :
           <></>

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './GameDesktopPower.css'
@@ -12,7 +11,6 @@ const GamePower = (props) => {
 
   let powerClass, powerBarClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       powerClass = "game_mobile_power_landscape"
@@ -49,4 +47,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-  export default connect(mapStateToProps)(GamePower)
+export default connect(mapStateToProps)(GamePower)

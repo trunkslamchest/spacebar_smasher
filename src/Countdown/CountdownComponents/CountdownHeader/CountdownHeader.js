@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './CountdownDesktopHeader.css'
@@ -14,7 +13,6 @@ const CountdownHeader = (props) => {
 
   let currentClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape") {
       if(props.initDismount) currentClass = "dismount_countdown_mobile_header_landscape"

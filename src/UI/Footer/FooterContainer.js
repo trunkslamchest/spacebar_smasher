@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import FooterLogosContainer from './FooterComponents/FooterLogos/FooterLogosContainer'
@@ -13,7 +12,6 @@ const FooterContainer = (props) => {
 
   let footerClass
 
-  // if(props.isMobile){
   if(props.device === "mobile"){
     if(props.orientation === "landscape") {
       if(props.initDismount) {
@@ -38,14 +36,8 @@ const FooterContainer = (props) => {
 
   return(
     <div className={ footerClass }>
-      <FooterLogosContainer
-        // isMobile={ props.isMobile }
-        // orientation={ props.orientation }
-      />
-      <FooterFinePrint
-        // isMobile={ props.isMobile }
-        // orientation={ props.orientation }
-      />
+      <FooterLogosContainer />
+      <FooterFinePrint />
     </div>
   )
 }

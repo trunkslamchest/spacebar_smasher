@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './FooterFinePrintDesktop.css'
@@ -11,7 +10,7 @@ const FooterFinePrint = (props) => {
   let finePrintClass
 
   if(props.device === "mobile"){
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       finePrintClass = "footer_fine_print_mobile_landscape"
     } else {
       finePrintClass = "footer_fine_print_mobile_portrait"
@@ -26,7 +25,7 @@ const FooterFinePrint = (props) => {
           © 2020 Created by Jamal Farah & Austin Smith
         </p>
         <p>
-          version 0.37.2 | 07/18/20
+          version 0.37.3 | 07/21/20
         </p>
         <p>
           All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises, L.P. © Spacebar Smasher 2020

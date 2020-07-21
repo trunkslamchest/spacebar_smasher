@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import FooterLogoButton from './FooterLogoButton/FooterLogoButton'
@@ -16,7 +15,6 @@ const FooterLogos = (props) => {
 
   let containerClass, buttonClass
 
-  // if(props.isMobile){
   if(props.device === "mobile"){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       containerClass = "footer_logos_mobile_container_landscape"
@@ -29,7 +27,6 @@ const FooterLogos = (props) => {
     containerClass = "footer_logos_desktop_container"
     buttonClass = "logo_rectangle_desktop"
   }
-
 
   return(
     <div className={ containerClass }>

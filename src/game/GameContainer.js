@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import FooterContainer from '../UI/Footer/FooterContainer'
@@ -75,7 +74,6 @@ class GameContainer extends React.Component {
         }, document.removeEventListener('keydown', this.spacebarDown))
       }
 
-
     this.getRank()
   }
 
@@ -144,7 +142,6 @@ class GameContainer extends React.Component {
   }
 
   resetGame = () => {
-
     document.title = 'Spacebar Smasher - Game'
 
     this.setState({
@@ -173,7 +170,6 @@ class GameContainer extends React.Component {
   }
 
   clearTimers = () => {
-
     clearInterval(this.powerInterval)
     clearInterval(this.timerInterval)
 
@@ -195,7 +191,6 @@ class GameContainer extends React.Component {
 
     let wrapperClass, pillClass, rowClass1, subRowClass1
 
-    // if(this.props.isMobile){
     if(this.props.device === "mobile") {
       if(this.props.orientation === 'landscape') {
         rowClass1 = 'game_mobile_landscapeR1'
@@ -230,28 +225,20 @@ class GameContainer extends React.Component {
             <div className={ pillClass }>
                 <GameTimer
                   initDismount={ this.state.initDismount }
-                  // isMobile={ this.props.isMobile }
-                  // orientation={ this.props.orientation }
                   time={ this.state.time }
                 />
               <div className={ rowClass1 }>
                 <GameCounter
                   count={ this.state.count }
                   initDismount={ this.state.initDismount }
-                  // isMobile={ this.props.isMobile }
-                  // orientation={ this.props.orientation }
                 />
                 <div className={ subRowClass1 }>
                   <GameRank
                     initDismount={ this.state.initDismount }
-                    // isMobile={ this.props.isMobile }
-                    // orientation={ this.props.orientation }
                     rank={ this.state.rank }
                   />
                   <GamePower
                     initDismount={ this.state.initDismount }
-                    // isMobile={ this.props.isMobile }
-                    // orientation={ this.props.orientation }
                     power={ this.state.power }
                     powerRaw={ this.state.powerRaw }
                   />
@@ -260,9 +247,7 @@ class GameContainer extends React.Component {
             { this.props.device === "mobile" ?
                 <GameMobileSmashButton
                   initDismount={this.state.initDismount}
-                  // isMobile={ this.props.isMobile }
                   onSmash={this.onSmash}
-                  // orientation={ this.props.orientation }
                   smashed={this.state.smashed}
                 />
               :
@@ -276,8 +261,6 @@ class GameContainer extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
-            // isMobile={ this.props.isMobile }
-            // orientation={ this.props.orientation }
           />
         :
           <></>
@@ -291,8 +274,6 @@ class GameContainer extends React.Component {
             count={ this.state.count }
             getPlayer={ this.props.getPlayer }
             history={ this.props.history }
-            // isMobile={ this.props.isMobile }
-            // orientation={ this.props.orientation }
             power={ this.state.power }
             powerRaw={ this.state.powerRaw }
             rank={ this.state.rank }
@@ -312,6 +293,5 @@ const mapStateToProps = (state) => {
     orientation: state.detect.orientation
   }
 }
-
 
 export default connect(mapStateToProps)(GameContainer)

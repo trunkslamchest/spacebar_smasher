@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './HomeDesktopHeader.css'
@@ -15,7 +14,6 @@ const HomeHeader = (props) => {
 
   let wrapperClass, headerClass, startButtonContainerClass, startButtonClass
 
-  // if(props.isMobile){
   if(props.device === "mobile"){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       if(props.initDismount) {

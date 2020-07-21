@@ -1,5 +1,4 @@
 import React from 'react'
-
 // import { connect } from 'react-redux'
 
 import { fetch } from '../../../utility/paths'
@@ -119,11 +118,9 @@ class SubmitScoreFormContainer extends React.Component {
         }
       <SubmitScoreForm
         initDismount={ this.props.initDismount }
-        // isMobile={ this.props.isMobile }
         onNameChange={ this.onNameChange }
         disabled={ this.state.submitClicked }
         onSubmit={ this.onSubmit }
-        // orientation={ this.props.orientation }
         player={ this.state.player }
         submittedScore={ this.state.submittedScore }
       />

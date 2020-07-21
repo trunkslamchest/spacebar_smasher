@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './SubmitScoreDesktopHeader.css'
@@ -13,7 +12,6 @@ const SubmitScoreHeader = (props) => {
 
   let headerClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape") {
       headerClass = "submit_score_mobile_header_landscape"

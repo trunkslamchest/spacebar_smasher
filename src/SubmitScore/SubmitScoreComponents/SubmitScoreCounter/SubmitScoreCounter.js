@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './SubmitScoreDesktopCounter.css'
@@ -13,7 +12,6 @@ const SubmitScoreCounter = (props) => {
 
   let counterClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       counterClass = "submit_score_mobile_counter_landscape"

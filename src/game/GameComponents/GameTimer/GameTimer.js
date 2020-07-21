@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { connect } from 'react-redux'
 
 import './GameDesktopTimer.css'
@@ -12,7 +11,6 @@ const GameMobileTimer = (props) => {
 
   let currentClass
 
-  // if(props.isMobile){
   if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       currentClass = "game_mobile_timer_landscape"
@@ -23,7 +21,6 @@ const GameMobileTimer = (props) => {
     if(props.initDismount) currentClass = "dismount_game_desktop_timer"
     else currentClass = "game_desktop_timer"
   }
-
 
   return(
     <div className={ currentClass }>
