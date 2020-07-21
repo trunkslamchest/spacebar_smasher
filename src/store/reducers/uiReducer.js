@@ -17,6 +17,16 @@ const uiReducer = (currentState = initialState, action) => {
         ...currentState,
         showFooter: false
       }
+    case actionTypes.SHOWWRAPPER:
+      return {
+        ...currentState,
+        showWrapper: true
+      }
+    case actionTypes.HIDEWRAPPER:
+      return {
+        ...currentState,
+        showWrapper: false
+      }
     default:
       return currentState
   }

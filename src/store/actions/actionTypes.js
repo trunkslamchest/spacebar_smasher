@@ -6,3 +6,6 @@ export const RESETPLAYER = 'RESETPLAYER'
 
 export const SHOWFOOTER = 'SHOWFOOTER'
 export const HIDEFOOTER = 'HIDEFOOTER'
+
+export const SHOWWRAPPER = 'SHOWWRAPPER'
+export const HIDEWRAPPER = 'HIDEWRAPPER'

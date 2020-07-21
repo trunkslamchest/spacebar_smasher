@@ -19,9 +19,7 @@ class CountdownContainer extends React.Component {
 
   state = {
     initDismount: false,
-    showFooter: false,
     showGame: false,
-    showWrapper: false,
     startGame: false,
     time: 1,
   }
@@ -37,18 +35,16 @@ class CountdownContainer extends React.Component {
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
     this.startCountdownTimeout = setTimeout(() => {
       this.props.onShowFooter()
-
-      this.setState({ showWrapper: true })
+      this.props.onShowWrapper()
     }, 250)
   }
 
   startGame = () => {
     this.setState({ startGame: true })
-
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
-      this.setState({ showWrapper: false })
+      this.props.onHideWrapper()
     }, 750)
     this.startGameTimeout = setTimeout(() => { this.setState({ showGame: true })}, 1000)
   }
@@ -86,7 +82,7 @@ class CountdownContainer extends React.Component {
 
     const countdown =
       <>
-        { this.state.showWrapper ?
+        { this.props.ui.showWrapper ?
           <>
             <div className={ wrapperClass }>
               <div className={ pillClass }>
@@ -140,7 +136,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter())
+    onHideFooter: () => dispatch(actions.hideFooter()),
+    onShowWrapper: () => dispatch(actions.showWrapper()),
+    onHideWrapper: () => dispatch(actions.hideWrapper())
   }
 }
 

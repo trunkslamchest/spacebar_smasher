@@ -10,5 +10,7 @@ export {
 
 export {
   showFooter,
-  hideFooter
+  hideFooter,
+  showWrapper,
+  hideWrapper
 } from './uiActions'

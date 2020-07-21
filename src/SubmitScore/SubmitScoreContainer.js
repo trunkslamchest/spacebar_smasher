@@ -27,8 +27,7 @@ class SubmitScoreContainer extends React.Component {
     initDismount: false,
     player: '',
     showButtons: false,
-    showSubmitScore: true,
-    showWrapper: false
+    showSubmitScore: true
   }
 
   componentDidMount(){
@@ -40,10 +39,10 @@ class SubmitScoreContainer extends React.Component {
     this.startSubmitScoreTimeout = setTimeout(() => {
 
       this.props.onShowFooter()
+      this.props.onShowWrapper()
 
       this.setState({
-        showButtons: true,
-        showWrapper: true
+        showButtons: true
       })
     }, 500)
   }
@@ -57,10 +56,10 @@ class SubmitScoreContainer extends React.Component {
     this.initResetTimeout = setTimeout(() => {
 
       this.props.onHideFooter()
+      this.props.onHideWrapper()
 
       this.setState({
         showButtons: false,
-        showWrapper: false,
       })
     }, 250)
 
@@ -90,8 +89,6 @@ class SubmitScoreContainer extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
-
-  console.log(this.props)
 
   let wrapperClass, pillClass, rowClass1, subRowClass1
 
@@ -124,7 +121,7 @@ class SubmitScoreContainer extends React.Component {
 
     const submitScore =
       <>
-        { this.state.showWrapper ?
+        { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
               <SubmitScoreHeader
@@ -195,7 +192,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter())
+    onHideFooter: () => dispatch(actions.hideFooter()),
+    onShowWrapper: () => dispatch(actions.showWrapper()),
+    onHideWrapper: () => dispatch(actions.hideWrapper())
   }
 }
 

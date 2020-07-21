@@ -24,8 +24,7 @@ class PostGameContainer extends React.Component {
     mounted: false,
     initDismount: false,
     isPostGame: true,
-    scoreboard: [],
-    showWrapper: false
+    scoreboard: []
   }
 
   componentDidMount(){
@@ -33,6 +32,7 @@ class PostGameContainer extends React.Component {
     // document.body.scrollTop = 0
 
     this.props.onHideFooter()
+    this.props.onHideWrapper()
 
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
@@ -45,12 +45,8 @@ class PostGameContainer extends React.Component {
 
   onMount = () => {
     this.startPostGameTimeout = setTimeout(() => {
-
       this.props.onShowFooter()
-
-      this.setState({
-        showWrapper: true
-      })
+      this.props.onShowWrapper()
     }, 500)
   }
 
@@ -70,12 +66,8 @@ class PostGameContainer extends React.Component {
     this.setState({ onDismount: true })
 
     this.onDismountTimeout = setTimeout(() => {
-
       this.props.onHideFooter()
-
-      this.setState({
-        showWrapper: false
-      })
+      this.props.onHideWrapper()
     }, 250)
   }
 
@@ -124,7 +116,7 @@ class PostGameContainer extends React.Component {
 
     return(
       <>
-        { this.state.showWrapper ?
+        { this.props.ui.showWrapper ?
           <>
             <ScoreboardContainer
               initDismount={this.state.initDismount}
@@ -179,7 +171,9 @@ const mapDispatchToProps = (dispatch) => {
   return{
     onResetPlayer: () => dispatch(actions.resetPlayer()),
     onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter())
+    onHideFooter: () => dispatch(actions.hideFooter()),
+    onShowWrapper: () => dispatch(actions.showWrapper()),
+    onHideWrapper: () => dispatch(actions.hideWrapper())
   }
 }
 

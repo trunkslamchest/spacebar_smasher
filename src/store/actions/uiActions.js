@@ -11,3 +11,15 @@ export const hideFooter = () => {
     type: actionTypes.HIDEFOOTER
   }
 }
+
+export const showWrapper = () => {
+  return{
+    type: actionTypes.SHOWWRAPPER
+  }
+}
+
+export const hideWrapper = () => {
+  return{
+    type: actionTypes.HIDEWRAPPER
+  }
+}

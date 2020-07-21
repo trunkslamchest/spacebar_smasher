@@ -7,6 +7,7 @@
   <img align="center" src="https://img.shields.io/badge/HTML-5.2-E34F26">
   <img align="center" src="https://img.shields.io/badge/Javascript-1.8.5-F7DF1E">
   <img align="center" src="https://img.shields.io/badge/React.JS-16.13.1-61DAFB">
+  <img align="center" src="https://img.shields.io/badge/Redux.JS-7.2.0-764ABC">
 </p>
 
 <p align="center">
@@ -14,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/trunkslamchest/spacebar_smasher/tree/0.37"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.37-000000"></a>
+  <a href="https://github.com/trunkslamchest/spacebar_smasher/tree/0.37.3"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.37.3-000000"></a>
 </p>
 
 # Contents
@@ -134,6 +135,7 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   - [Fast JSON API](https://github.com/Netflix/fast_jsonapi)
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
   - [React](https://reactjs.org/)
+  - [Redux](https://redux.js.org/)
   - [The Flatiron School](https://flatironschool.com/)
 
 &nbsp;

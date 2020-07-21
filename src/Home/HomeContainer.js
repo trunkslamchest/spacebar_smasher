@@ -25,13 +25,13 @@ class HomeContainer extends React.Component {
     mounted: false,
     onDismount: false,
     scoreboard: [],
-    showWrapper: false
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Home'
 
     this.props.onHideFooter()
+    this.props.onHideWrapper()
 
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
@@ -43,12 +43,8 @@ class HomeContainer extends React.Component {
   }
 
   onMount = () => {
-
     this.props.onShowFooter()
-
-    this.setState({
-      showWrapper: true
-    })
+    this.props.onShowWrapper()
   }
 
   onClickStartButton = (event) => {
@@ -61,12 +57,8 @@ class HomeContainer extends React.Component {
     this.setState({ onDismount: true })
 
     this.onDismountTimeout = setTimeout(() => {
-
       this.props.onHideFooter()
-
-      this.setState({
-        showWrapper: false
-      })
+      this.props.onHideWrapper()
     }, 250)
   }
 
@@ -77,12 +69,10 @@ class HomeContainer extends React.Component {
 
   render(){
 
-    console.log(this.props.ui.showFooter)
-
     let wrapperClass
 
     if(this.props.device === "mobile"){
-      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(this.props.orientation === "landscape") {
         if(this.props.initDismount) {
           wrapperClass = "dismount_home_mobile_wrapper_landscape"
         } else {
@@ -105,7 +95,7 @@ class HomeContainer extends React.Component {
 
     return(
       <>
-        { this.state.showWrapper ?
+        { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
             <HomeHeader
               initDismount={ this.state.initDismount }
@@ -146,7 +136,9 @@ const mapDispatchToProps = (dispatch) => {
   return{
     onResetPlayer: () => dispatch(actions.resetPlayer()),
     onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter())
+    onHideFooter: () => dispatch(actions.hideFooter()),
+    onShowWrapper: () => dispatch(actions.showWrapper()),
+    onHideWrapper: () => dispatch(actions.hideWrapper())
   }
 }
 

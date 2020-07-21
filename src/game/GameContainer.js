@@ -30,7 +30,6 @@ class GameContainer extends React.Component {
     rank: "SUPER BABY FINGERS",
     showMobileSmashButton: false,
     showSubmitScore: false,
-    showWrapper: false,
     startTimer: false,
     stopGame: false,
     time: (3.00).toFixed(2),
@@ -58,10 +57,10 @@ class GameContainer extends React.Component {
     this.startGameTimeout = setTimeout(() => {
 
       this.props.onShowFooter()
+      this.props.onShowWrapper()
 
       this.setState({
         showMobileSmashButton: this.props.device === "mobile" ? true : false,
-        showWrapper: true
       })
     }, 250)
 
@@ -152,6 +151,7 @@ class GameContainer extends React.Component {
     document.title = 'Spacebar Smasher - Game'
 
     this.props.onHideFooter()
+    this.props.onHideWrapper()
 
     this.setState({
       avgPress: 1,
@@ -172,15 +172,13 @@ class GameContainer extends React.Component {
   stopGame = () => {
     this.setState({ stopGame: true })
 
-
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
-
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
-      this.setState({ showWrapper: false })
+      this.props.onHideWrapper()
     }, 750)
     this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true })}, 1000)
 
@@ -232,7 +230,7 @@ class GameContainer extends React.Component {
 
     const game =
       <>
-        { this.state.showWrapper ?
+        { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
                 <GameTimer
@@ -309,7 +307,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return{
     onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter())
+    onHideFooter: () => dispatch(actions.hideFooter()),
+    onShowWrapper: () => dispatch(actions.showWrapper()),
+    onHideWrapper: () => dispatch(actions.hideWrapper())
   }
 }
 
