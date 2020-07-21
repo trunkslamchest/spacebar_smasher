@@ -37,10 +37,7 @@ class PostGameContainer extends React.Component {
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
   }
 
-  componentDidUpdate(){
-    if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
-    // if (!this.state.onDismount && this.props.ui.initDismount) this.onDismount()
-  }
+  componentDidUpdate(){ if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true }) }
 
   onMount = () => {
     this.startPostGameTimeout = setTimeout(() => {
@@ -62,6 +59,7 @@ class PostGameContainer extends React.Component {
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
         this.props.onExitDismount()
+        this.props.onResetPlayer()
         this.props.history.push( routes.game )
       }, 500 )
     }
@@ -69,14 +67,6 @@ class PostGameContainer extends React.Component {
       this.props.onExitDismount()
       this.props.history.push( routes.home )
     }, 500 )
-  }
-
-  onDismount = () => {
-    this.setState({ onDismount: true })
-    this.onDismountTimeout = setTimeout(() => {
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
-    }, 250)
   }
 
   componentWillUnmount(){

@@ -34,7 +34,7 @@ const GameMobileSmashButton = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    orientation: state.device.orientation
+    orientation: state.detect.orientation
   }
 }
 

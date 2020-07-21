@@ -138,9 +138,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onStorePlayer: (name) => dispatch(actions.storePlayer(name)),
-    // onInitDismount: () => dispatch(actions.initDismount()),
-    // onExitDismount: () => dispatch(actions.exitDismount())
+    onStorePlayer: (name) => dispatch(actions.storePlayer(name))
   }
 }
 

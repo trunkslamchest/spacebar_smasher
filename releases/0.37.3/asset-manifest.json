@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/spacebarsmasher/static/css/main.7e6a4bd5.chunk.css",
+    "main.js": "/spacebarsmasher/static/js/main.f1a27e3e.chunk.js",
+    "main.js.map": "/spacebarsmasher/static/js/main.f1a27e3e.chunk.js.map",
+    "runtime-main.js": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js",
+    "runtime-main.js.map": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js.map",
+    "static/js/2.f69821c0.chunk.js": "/spacebarsmasher/static/js/2.f69821c0.chunk.js",
+    "static/js/2.f69821c0.chunk.js.map": "/spacebarsmasher/static/js/2.f69821c0.chunk.js.map",
+    "index.html": "/spacebarsmasher/index.html",
+    "precache-manifest.b2b0bc53f6be005de9e7253dd2251d43.js": "/spacebarsmasher/precache-manifest.b2b0bc53f6be005de9e7253dd2251d43.js",
+    "service-worker.js": "/spacebarsmasher/service-worker.js",
+    "static/css/main.7e6a4bd5.chunk.css.map": "/spacebarsmasher/static/css/main.7e6a4bd5.chunk.css.map",
+    "static/js/2.f69821c0.chunk.js.LICENSE.txt": "/spacebarsmasher/static/js/2.f69821c0.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/spacebarsmasher/static/media/digital-7.mono.da2d95fc.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b024a8d1.js",
+    "static/js/2.f69821c0.chunk.js",
+    "static/css/main.7e6a4bd5.chunk.css",
+    "static/js/main.f1a27e3e.chunk.js"
+  ]
+}
