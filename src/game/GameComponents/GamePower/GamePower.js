@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './GameDesktopPower.css'
 import './GameDesktopPowerDismount.css'
 import './GameDesktopPowerOnmount.css'
@@ -10,13 +12,14 @@ const GamePower = (props) => {
 
   let powerClass, powerBarClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       powerClass = "game_mobile_power_landscape"
       powerBarClass = "game_mobile_power_bar_landscape"
     } else {
-        powerClass = "game_mobile_power_portrait"
-        powerBarClass = "game_mobile_power_bar_portrait"
+      powerClass = "game_mobile_power_portrait"
+      powerBarClass = "game_mobile_power_bar_portrait"
     }
   } else {
     if(props.initDismount) {
@@ -40,4 +43,11 @@ const GamePower = (props) => {
   )
 }
 
-  export default GamePower
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+  export default connect(mapStateToProps)(GamePower)

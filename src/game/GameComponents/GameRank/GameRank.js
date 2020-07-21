@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './GameDesktopRank.css'
 import './GameDesktopRankDismount.css'
 import './GameDesktopRankOnmount.css'
@@ -10,7 +12,8 @@ const GameRank = (props) => {
 
   let currentClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       currentClass = "game_mobile_rank_landscape"
     } else {
@@ -29,4 +32,11 @@ const GameRank = (props) => {
   )
 }
 
-export default GameRank
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(GameRank)

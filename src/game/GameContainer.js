@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import FooterContainer from '../UI/Footer/FooterContainer'
 
 import GameTimer from './GameComponents/GameTimer/GameTimer'
@@ -16,7 +18,7 @@ import './GameMobileContainerPortrait.css'
 import './GameMobileDismount.css'
 import './GameMobileOnmount.css'
 
-export default class Game extends React.Component {
+class GameContainer extends React.Component {
 
   state = {
     avgPress: 1,
@@ -52,12 +54,12 @@ export default class Game extends React.Component {
     this.startGameTimeout = setTimeout(() => {
       this.setState({
         showFooter: true,
-        showMobileSmashButton: this.props.isMobile ? true : false,
+        showMobileSmashButton: this.props.device === "mobile" ? true : false,
         showWrapper: true
       })
     }, 250)
 
-    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
+    // this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
   }
@@ -193,8 +195,9 @@ export default class Game extends React.Component {
 
     let wrapperClass, pillClass, rowClass1, subRowClass1
 
-    if(this.props.isMobile){
-      if(this.props.orientation === 'landscape'){
+    // if(this.props.isMobile){
+    if(this.props.device === "mobile") {
+      if(this.props.orientation === 'landscape') {
         rowClass1 = 'game_mobile_landscapeR1'
         subRowClass1 = 'game_mobile_landscapeSR1'
         if(this.state.initDismount) {
@@ -227,39 +230,39 @@ export default class Game extends React.Component {
             <div className={ pillClass }>
                 <GameTimer
                   initDismount={ this.state.initDismount }
-                  isMobile={ this.props.isMobile }
-                  orientation={ this.props.orientation }
+                  // isMobile={ this.props.isMobile }
+                  // orientation={ this.props.orientation }
                   time={ this.state.time }
                 />
               <div className={ rowClass1 }>
                 <GameCounter
                   count={ this.state.count }
                   initDismount={ this.state.initDismount }
-                  isMobile={ this.props.isMobile }
-                  orientation={ this.props.orientation }
+                  // isMobile={ this.props.isMobile }
+                  // orientation={ this.props.orientation }
                 />
                 <div className={ subRowClass1 }>
                   <GameRank
                     initDismount={ this.state.initDismount }
-                    isMobile={ this.props.isMobile }
-                    orientation={ this.props.orientation }
+                    // isMobile={ this.props.isMobile }
+                    // orientation={ this.props.orientation }
                     rank={ this.state.rank }
                   />
                   <GamePower
                     initDismount={ this.state.initDismount }
-                    isMobile={ this.props.isMobile }
-                    orientation={ this.props.orientation }
+                    // isMobile={ this.props.isMobile }
+                    // orientation={ this.props.orientation }
                     power={ this.state.power }
                     powerRaw={ this.state.powerRaw }
                   />
                 </div>
               </div>
-            { this.props.isMobile ?
+            { this.props.device === "mobile" ?
                 <GameMobileSmashButton
                   initDismount={this.state.initDismount}
-                  isMobile={ this.props.isMobile }
+                  // isMobile={ this.props.isMobile }
                   onSmash={this.onSmash}
-                  orientation={ this.props.orientation }
+                  // orientation={ this.props.orientation }
                   smashed={this.state.smashed}
                 />
               :
@@ -273,6 +276,8 @@ export default class Game extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
+            // isMobile={ this.props.isMobile }
+            // orientation={ this.props.orientation }
           />
         :
           <></>
@@ -286,8 +291,8 @@ export default class Game extends React.Component {
             count={ this.state.count }
             getPlayer={ this.props.getPlayer }
             history={ this.props.history }
-            isMobile={ this.props.isMobile }
-            orientation={ this.props.orientation }
+            // isMobile={ this.props.isMobile }
+            // orientation={ this.props.orientation }
             power={ this.state.power }
             powerRaw={ this.state.powerRaw }
             rank={ this.state.rank }
@@ -300,3 +305,13 @@ export default class Game extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+
+export default connect(mapStateToProps)(GameContainer)

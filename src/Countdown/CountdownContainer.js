@@ -47,8 +47,8 @@ class CountdownContainer extends React.Component {
   }
 
   timerFunctions = () => {
-    // if (this.state.time <= 0) { this.setState({ time: 0 }, clearInterval(this.timerInterval)) }
-    // else this.setState({ time: (this.state.time - 1) })
+    if (this.state.time <= 0) { this.setState({ time: 0 }, clearInterval(this.timerInterval)) }
+    else this.setState({ time: (this.state.time - 1) })
   }
 
   componentWillUnmount(){
