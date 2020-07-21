@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './HomeDesktopHeader.css'
 import './HomeDesktopHeaderDismount.css'
 import './HomeDesktopHeaderOnmount.css'
@@ -11,9 +13,12 @@ import './HomeMobileHeaderOnmount.css'
 
 const HomeHeader = (props) => {
 
+  console.log(props)
+
   let wrapperClass, headerClass, startButtonContainerClass, startButtonClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile"){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       if(props.initDismount) {
         wrapperClass = "dismount_home_header_mobile_wrapper_landscape"
@@ -71,4 +76,11 @@ const HomeHeader = (props) => {
   )
 }
 
-export default HomeHeader
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(HomeHeader)

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import FooterLogosContainer from './FooterComponents/FooterLogos/FooterLogosContainer'
 import FooterFinePrint from './FooterComponents/FooterFinePrint/FooterFinePrint'
 
@@ -11,8 +13,9 @@ const FooterContainer = (props) => {
 
   let footerClass
 
-  if(props.isMobile){
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+  // if(props.isMobile){
+  if(props.device === "mobile"){
+    if(props.orientation === "landscape") {
       if(props.initDismount) {
         footerClass = "dismount_footer_mobile_container_landscape"
       } else {
@@ -36,15 +39,22 @@ const FooterContainer = (props) => {
   return(
     <div className={ footerClass }>
       <FooterLogosContainer
-        isMobile={ props.isMobile }
-        orientation={ props.orientation }
+        // isMobile={ props.isMobile }
+        // orientation={ props.orientation }
       />
       <FooterFinePrint
-        isMobile={ props.isMobile }
-        orientation={ props.orientation }
+        // isMobile={ props.isMobile }
+        // orientation={ props.orientation }
       />
     </div>
   )
 }
 
-export default FooterContainer
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(FooterContainer)

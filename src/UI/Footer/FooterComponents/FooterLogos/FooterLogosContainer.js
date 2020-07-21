@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import FooterLogoButton from './FooterLogoButton/FooterLogoButton'
 
 import firebase_logo from '../../../../assets/footer_logo_firebase.png'
@@ -14,7 +16,8 @@ const FooterLogos = (props) => {
 
   let containerClass, buttonClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile"){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       containerClass = "footer_logos_mobile_container_landscape"
       buttonClass = "logo_rectangle_mobile_landscape"
@@ -69,4 +72,11 @@ const FooterLogos = (props) => {
   )
 }
 
-export default FooterLogos
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(FooterLogos)

@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
+
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -14,7 +17,7 @@ import './HomeMobileContainerLandscape.css'
 import './HomeMobileContainerPortrait.css'
 import './HomeMobileDismount.css'
 
-export default class HomeContainer extends React.Component {
+class HomeContainer extends React.Component {
 
   state = {
     initDismount: false,
@@ -70,7 +73,8 @@ export default class HomeContainer extends React.Component {
 
   let wrapperClass
 
-  if(this.props.isMobile){
+  // if(this.props.isMobile){
+  if(this.props.device === "mobile"){
     if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
       if(this.props.initDismount) {
         wrapperClass = "dismount_home_mobile_wrapper_landscape"
@@ -98,9 +102,9 @@ export default class HomeContainer extends React.Component {
           <div className={ wrapperClass }>
             <HomeHeader
               initDismount={ this.state.initDismount }
-              isMobile={ this.props.isMobile }
+              // isMobile={ this.props.isMobile }
               onClickStartButton={ this.onClickStartButton }
-              orientation={ this.props.orientation }
+              // orientation={ this.props.orientation }
             />
             <ScoreboardContainer
               initDismount={ this.state.initDismount }
@@ -118,8 +122,8 @@ export default class HomeContainer extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
-            isMobile={ this.props.isMobile }
-            orientation={ this.props.orientation }
+            // isMobile={ this.props.isMobile }
+            // orientation={ this.props.orientation }
           />
         :
           <></>
@@ -128,3 +132,12 @@ export default class HomeContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(HomeContainer)

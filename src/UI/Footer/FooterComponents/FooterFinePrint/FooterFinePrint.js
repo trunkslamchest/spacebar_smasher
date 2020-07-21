@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './FooterFinePrintDesktop.css'
 import './FooterFinePrintMobileLandscape.css'
 import './FooterFinePrintMobilePortrait.css'
@@ -8,7 +10,7 @@ const FooterFinePrint = (props) => {
 
   let finePrintClass
 
-  if(props.isMobile){
+  if(props.device === "mobile"){
     if(props.orientation === "landscape" && window.innerWidth < 1024) {
       finePrintClass = "footer_fine_print_mobile_landscape"
     } else {
@@ -33,4 +35,11 @@ const FooterFinePrint = (props) => {
   )
 }
 
-export default FooterFinePrint
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(FooterFinePrint)

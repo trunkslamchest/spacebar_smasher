@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
+import * as actions from './store/actions/actionIndex'
+
 import { Route, Switch } from 'react-router-dom'
 import { routes } from './utility/paths'
 
@@ -11,11 +15,11 @@ import E404 from './error/E404'
 
 import './App.css'
 
-export default class App extends React.Component {
+class App extends React.Component {
 
   state = {
-    isMobile: !!navigator.maxTouchPoints,
-    orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape'
+  //   isMobile: !!navigator.maxTouchPoints,
+  //   orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape'
   }
 
   componentDidMount(){
@@ -23,15 +27,23 @@ export default class App extends React.Component {
   }
 
   detectDevice = () => {
-    this.setState({
-      isMobile: !!navigator.maxTouchPoints,
-      orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape'
-    })
+
+    this.props.onDevice()
+    this.props.onOrientation()
+
+    // this.setState({
+    //   isMobile: !!navigator.maxTouchPoints,
+    //   orientation: !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape'
+    // })
   }
 
   getPlayer = (player) => { this.setState({ player: player }) }
 
   render(){
+
+    // console.log(this.props)
+
+
     return (
       <>
         <div className="main_container">
@@ -39,25 +51,25 @@ export default class App extends React.Component {
             <Route exact path={ routes.home }>
               <HomeContainer
                 history={ this.props.history }
-                isMobile={ this.state.isMobile }
+                // isMobile={ this.state.isMobile }
                 player={ this.state.player }
-                orientation={ this.state.orientation }
+                // orientation={ this.state.orientation }
               />
             </Route>
             <Route exact path={ routes.game }>
               <CountdownContainer
                 history={ this.props.history }
-                isMobile={ this.state.isMobile }
+                // isMobile={ this.state.isMobile }
                 getPlayer={ this.getPlayer }
-                orientation={ this.state.orientation }
+                // orientation={ this.state.orientation }
               />
             </Route>
             <Route exact path={ routes.scoreboard } >
               <PostGameContainer
                 history={ this.props.history }
-                isMobile={ this.state.isMobile }
+                // isMobile={ this.state.isMobile }
                 player={ this.state.player }
-                orientation={ this.state.orientation }
+                // orientation={ this.state.orientation }
               />
             </Route>
             <Route component={ E404 } />
@@ -67,3 +79,19 @@ export default class App extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onDevice: () => dispatch(actions.device()),
+    onOrientation: () => dispatch(actions.orientation())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
