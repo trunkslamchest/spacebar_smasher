@@ -16,14 +16,14 @@ const CountdownTutorial = (props) => {
 
   if(props.device === "mobile") {
     if(props.orientation === "landscape") {
-      if(props.initDismount) currentClass = "dismount_countdown_mobile_tutorial_landscape"
+      if(props.ui.initDismount) currentClass = "dismount_countdown_mobile_tutorial_landscape"
       else currentClass = "countdown_mobile_tutorial_landscape"
     } else {
-      if(props.initDismount) currentClass = "dismount_countdown_mobile_tutorial_portrait"
+      if(props.ui.initDismount) currentClass = "dismount_countdown_mobile_tutorial_portrait"
       else currentClass = "countdown_mobile_tutorial_portrait"
     }
   } else {
-    if(props.initDismount) currentClass = "dismount_countdown_desktop_tutorial"
+    if(props.ui.initDismount) currentClass = "dismount_countdown_desktop_tutorial"
     else currentClass = "countdown_desktop_tutorial"
   }
 
@@ -37,7 +37,8 @@ const CountdownTutorial = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

@@ -12,13 +12,13 @@ const GameCounter = (props) => {
   let currentClass
 
   if(props.device === "mobile") {
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       currentClass = "game_mobile_counter_landscape"
     } else {
       currentClass = "game_mobile_counter_portrait"
     }
   } else {
-    if(props.initDismount) currentClass = "dismount_game_desktop_counter"
+    if(props.ui.initDismount) currentClass = "dismount_game_desktop_counter"
     else currentClass = "game_desktop_counter"
   }
 
@@ -33,7 +33,8 @@ const GameCounter = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

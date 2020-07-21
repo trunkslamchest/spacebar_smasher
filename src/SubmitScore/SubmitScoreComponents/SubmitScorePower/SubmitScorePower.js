@@ -14,7 +14,7 @@ const SubmitScorePower = (props) => {
   let powerClass, powerBarClass
 
   if(props.device === "mobile") {
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       powerClass = "submit_score_mobile_power_landscape"
       powerBarClass = "submit_score_mobile_power_bar_landscape"
     } else {
@@ -22,7 +22,7 @@ const SubmitScorePower = (props) => {
       powerBarClass = "submit_score_mobile_power_bar_portrait"
     }
   } else {
-    if(props.initDismount) {
+    if(props.ui.initDismount) {
       powerClass = "dismount_submit_score_desktop_power"
       powerBarClass = "submit_score_desktop_power_bar"
     } else {
@@ -45,7 +45,8 @@ const SubmitScorePower = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

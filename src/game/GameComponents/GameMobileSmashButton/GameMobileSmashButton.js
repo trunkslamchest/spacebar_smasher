@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import './GameMobileSmashButtonPortrait.css'
 import './GameMobileSmashButtonLandscape.css'
@@ -11,7 +12,7 @@ const GameMobileSmashButton = (props) => {
 
   let currentClass, buttonClass
 
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       currentClass = "game_mobile_smash_button_landscape"
       buttonClass = "smash_button_landscape"
     } else {
@@ -31,4 +32,10 @@ const GameMobileSmashButton = (props) => {
   )
 }
 
-export default GameMobileSmashButton
+const mapStateToProps = (state) => {
+  return{
+    orientation: state.device.orientation
+  }
+}
+
+export default connect(mapStateToProps)(GameMobileSmashButton)

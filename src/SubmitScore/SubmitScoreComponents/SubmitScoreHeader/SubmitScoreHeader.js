@@ -19,7 +19,7 @@ const SubmitScoreHeader = (props) => {
       headerClass = "submit_score_mobile_header_portrait"
     }
   } else {
-    if(props.initDismount) headerClass = "dismount_submit_score_desktop_header"
+    if(props.ui.initDismount) headerClass = "dismount_submit_score_desktop_header"
     else headerClass = "submit_score_desktop_header"
   }
 
@@ -33,7 +33,8 @@ const SubmitScoreHeader = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

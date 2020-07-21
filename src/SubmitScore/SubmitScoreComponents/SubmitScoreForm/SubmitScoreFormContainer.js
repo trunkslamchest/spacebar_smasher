@@ -118,7 +118,6 @@ class SubmitScoreFormContainer extends React.Component {
           null
         }
       <SubmitScoreForm
-        initDismount={ this.props.initDismount }
         onNameChange={ this.onNameChange }
         disabled={ this.state.submitClicked }
         onSubmit={ this.onSubmit }
@@ -132,13 +131,16 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name
+    player: state.player.name,
+    ui: state.ui
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onStorePlayer: (name) => dispatch(actions.storePlayer(name))
+    onStorePlayer: (name) => dispatch(actions.storePlayer(name)),
+    // onInitDismount: () => dispatch(actions.initDismount()),
+    // onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 

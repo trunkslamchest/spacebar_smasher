@@ -20,7 +20,6 @@ import './HomeMobileDismount.css'
 class HomeContainer extends React.Component {
 
   state = {
-    initDismount: false,
     isPostGame: false,
     mounted: false,
     onDismount: false,
@@ -32,6 +31,7 @@ class HomeContainer extends React.Component {
 
     this.props.onHideFooter()
     this.props.onHideWrapper()
+    this.props.onExitDismount()
 
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
@@ -39,7 +39,8 @@ class HomeContainer extends React.Component {
 
   componentDidUpdate(){
     if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
-    if (!this.state.onDismount && this.state.initDismount) this.onDismount()
+    if (!this.state.onDismount && this.props.ui.initDismount) this.onDismount()
+
   }
 
   onMount = () => {
@@ -49,8 +50,11 @@ class HomeContainer extends React.Component {
 
   onClickStartButton = (event) => {
     this.props.onResetPlayer()
-    this.setState({ initDismount: true })
-    this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
+    this.props.onInitDismount()
+    this.startCountdownTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.props.history.push( routes.game )
+    }, 750 )
   }
 
   onDismount = () => {
@@ -73,20 +77,20 @@ class HomeContainer extends React.Component {
 
     if(this.props.device === "mobile"){
       if(this.props.orientation === "landscape") {
-        if(this.props.initDismount) {
+        if(this.props.ui.initDismount) {
           wrapperClass = "dismount_home_mobile_wrapper_landscape"
         } else {
           wrapperClass = "home_mobile_wrapper_landscape"
         }
       } else {
-        if(this.props.initDismount) {
+        if(this.props.ui.initDismount) {
           wrapperClass = "dismount_home_mobile_wrapper_portrait"
         } else {
           wrapperClass = "home_mobile_wrapper_portrait"
         }
       }
     } else {
-      if(this.props.initDismount) {
+      if(this.props.ui.initDismount) {
         wrapperClass = "dismount_home_desktop_wrapper"
       } else {
         wrapperClass = "home_desktop_wrapper"
@@ -98,11 +102,9 @@ class HomeContainer extends React.Component {
         { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
             <HomeHeader
-              initDismount={ this.state.initDismount }
               onClickStartButton={ this.onClickStartButton }
             />
             <ScoreboardContainer
-              initDismount={ this.state.initDismount }
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
               scoreboard={ this.state.scoreboard }
@@ -112,9 +114,7 @@ class HomeContainer extends React.Component {
           <></>
         }
         { this.props.ui.showFooter ?
-          <FooterContainer
-            initDismount={ this.state.initDismount }
-          />
+          <FooterContainer />
         :
           <></>
         }
@@ -138,7 +138,9 @@ const mapDispatchToProps = (dispatch) => {
     onShowFooter: () => dispatch(actions.showFooter()),
     onHideFooter: () => dispatch(actions.hideFooter()),
     onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper())
+    onHideWrapper: () => dispatch(actions.hideWrapper()),
+    onInitDismount: () => dispatch(actions.initDismount()),
+    onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 

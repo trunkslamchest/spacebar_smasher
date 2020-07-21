@@ -22,7 +22,6 @@ class PostGameContainer extends React.Component {
 
   state = {
     mounted: false,
-    initDismount: false,
     isPostGame: true,
     scoreboard: []
   }
@@ -40,7 +39,7 @@ class PostGameContainer extends React.Component {
 
   componentDidUpdate(){
     if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
-    if (!this.state.onDismount && this.state.initDismount) this.onDismount()
+    // if (!this.state.onDismount && this.props.ui.initDismount) this.onDismount()
   }
 
   onMount = () => {
@@ -53,18 +52,27 @@ class PostGameContainer extends React.Component {
   onClickButtonFunctions = (event) => {
     let buttonNav = event.target.attributes.nav.value
 
-    this.setState({ initDismount: true })
+    this.props.onInitDismount()
 
-    if (buttonNav === 'game') {
-      this.props.onResetPlayer()
-      this.resetTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
+    this.onDismountTimeout = setTimeout(() => {
+      this.props.onHideFooter()
+      this.props.onHideWrapper()
+    }, 250)
+
+    if (buttonNav === 'game')  {
+      this.resetTimeout = setTimeout(() => {
+        this.props.onExitDismount()
+        this.props.history.push( routes.game )
+      }, 500 )
     }
-    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 500 )
+    else this.resetTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.props.history.push( routes.home )
+    }, 500 )
   }
 
   onDismount = () => {
     this.setState({ onDismount: true })
-
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
       this.props.onHideWrapper()
@@ -82,7 +90,7 @@ class PostGameContainer extends React.Component {
 
     if(this.props.device === "mobile") {
       if(this.props.orientation === "landscape") {
-        if(this.state.initDismount) {
+        if(this.props.ui.initDismount) {
           buttonsContainerClass = "dismount_post_game_mobile_buttons_container_landscape"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
           playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
@@ -92,7 +100,7 @@ class PostGameContainer extends React.Component {
           playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
         }
       } else {
-        if(this.state.initDismount) {
+        if(this.props.ui.initDismount) {
           buttonsContainerClass = "dismount_post_game_mobile_buttons_container_portrait"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
           playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
@@ -103,7 +111,7 @@ class PostGameContainer extends React.Component {
         }
       }
     } else {
-      if(this.state.initDismount) {
+      if(this.props.ui.initDismount) {
         buttonsContainerClass = "dismount_post_game_desktop_buttons_container"
         mainMenuButtonClass = "post_game_desktop_main_menu_button"
         playAgainButtonClass = "post_game_desktop_play_again_button"
@@ -119,7 +127,6 @@ class PostGameContainer extends React.Component {
         { this.props.ui.showWrapper ?
           <>
             <ScoreboardContainer
-              initDismount={this.state.initDismount}
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
               scoreboard={ this.state.scoreboard }
@@ -147,9 +154,7 @@ class PostGameContainer extends React.Component {
           <></>
         }
         { this.props.ui.showFooter ?
-          <FooterContainer
-            initDismount={ this.state.initDismount }
-          />
+          <FooterContainer />
         :
           <></>
         }
@@ -173,7 +178,9 @@ const mapDispatchToProps = (dispatch) => {
     onShowFooter: () => dispatch(actions.showFooter()),
     onHideFooter: () => dispatch(actions.hideFooter()),
     onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper())
+    onHideWrapper: () => dispatch(actions.hideWrapper()),
+    onInitDismount: () => dispatch(actions.initDismount()),
+    onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 

@@ -18,8 +18,8 @@ const SubmitScoreButtonsContainer = (props) => {
   let wrapperClass, mainMenuButtonClass, tryAgainButtonClass
 
   if(props.device === "mobile"){
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
-      if(props.initDismount) {
+    if(props.orientation === "landscape") {
+      if(props.ui.initDismount) {
         wrapperClass = "dismount_submit_score_mobile_buttons_container_landscape"
         mainMenuButtonClass = "submit_score_mobile_main_menu_button_landscape"
         tryAgainButtonClass = "submit_score_mobile_try_again_button_landscape"
@@ -29,7 +29,7 @@ const SubmitScoreButtonsContainer = (props) => {
         tryAgainButtonClass = "submit_score_mobile_try_again_button_landscape"
       }
     } else {
-      if(props.initDismount) {
+      if(props.ui.initDismount) {
         wrapperClass = "dismount_submit_score_mobile_buttons_container_portrait"
         mainMenuButtonClass = "submit_score_mobile_main_menu_button_portrait"
         tryAgainButtonClass = "submit_score_mobile_try_again_button_portrait"
@@ -40,7 +40,7 @@ const SubmitScoreButtonsContainer = (props) => {
       }
     }
   } else {
-    if(props.initDismount) {
+    if(props.ui.initDismount) {
         wrapperClass = "dismount_submit_score_desktop_buttons_container"
         mainMenuButtonClass = "submit_score_desktop_main_menu_button"
         tryAgainButtonClass = "submit_score_desktop_try_again_button"
@@ -76,7 +76,8 @@ const SubmitScoreButtonsContainer = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

@@ -12,13 +12,13 @@ const GameMobileTimer = (props) => {
   let currentClass
 
   if(props.device === "mobile") {
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       currentClass = "game_mobile_timer_landscape"
     } else {
       currentClass = "game_mobile_timer_portrait"
     }
   } else {
-    if(props.initDismount) currentClass = "dismount_game_desktop_timer"
+    if(props.ui.initDismount) currentClass = "dismount_game_desktop_timer"
     else currentClass = "game_desktop_timer"
   }
 
@@ -33,7 +33,8 @@ const GameMobileTimer = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

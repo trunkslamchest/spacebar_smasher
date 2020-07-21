@@ -12,13 +12,13 @@ const GameRank = (props) => {
   let currentClass
 
   if(props.device === "mobile") {
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       currentClass = "game_mobile_rank_landscape"
     } else {
       currentClass = "game_mobile_rank_portrait"
     }
   } else {
-    if(props.initDismount) currentClass = "dismount_game_desktop_rank"
+    if(props.ui.initDismount) currentClass = "dismount_game_desktop_rank"
     else currentClass = "game_desktop_rank"
   }
 
@@ -33,7 +33,8 @@ const GameRank = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

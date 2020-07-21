@@ -25,7 +25,7 @@ const SubmitScoreForm = (props) => {
       buttonClass = "submit_score_mobile_button_portrait"
     }
   } else {
-    if(props.initDismount) {
+    if(props.ui.initDismount) {
       formWrapperClass = "dismount_submit_score_desktop_form_container"
       formClass = "submit_score_desktop_form"
       textBoxClass = "submit_score_desktop_text_box"
@@ -71,7 +71,8 @@ const SubmitScoreForm = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

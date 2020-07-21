@@ -2,7 +2,8 @@ import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
   showFooter: false,
-  showWrapper: false
+  showWrapper: false,
+  initDismount: false
 }
 
 const uiReducer = (currentState = initialState, action) => {
@@ -26,6 +27,16 @@ const uiReducer = (currentState = initialState, action) => {
       return {
         ...currentState,
         showWrapper: false
+      }
+    case actionTypes.INITDISMOUNT:
+      return {
+        ...currentState,
+        initDismount: true
+      }
+    case actionTypes.EXITDISMOUNT:
+      return {
+        ...currentState,
+        initDismount: false
       }
     default:
       return currentState

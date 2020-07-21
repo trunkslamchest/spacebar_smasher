@@ -12,5 +12,7 @@ export {
   showFooter,
   hideFooter,
   showWrapper,
-  hideWrapper
+  hideWrapper,
+  initDismount,
+  exitDismount
 } from './uiActions'

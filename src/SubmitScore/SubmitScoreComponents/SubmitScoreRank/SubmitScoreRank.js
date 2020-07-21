@@ -13,13 +13,13 @@ const SubmitScoreRank = (props) => {
   let rankClass
 
   if(props.device === "mobile") {
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       rankClass = "submit_score_mobile_rank_landscape"
     } else {
       rankClass = "submit_score_mobile_rank_portrait"
     }
   } else {
-    if(props.initDismount) {
+    if(props.ui.initDismount) {
       rankClass = "dismount_submit_score_desktop_rank"
     } else {
       rankClass = "submit_score_desktop_rank"
@@ -37,7 +37,8 @@ const SubmitScoreRank = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

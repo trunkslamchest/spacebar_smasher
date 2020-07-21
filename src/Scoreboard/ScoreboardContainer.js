@@ -29,8 +29,8 @@ const ScoreboardContainer = (props) => {
 
   if(props.isPostGame) {
     if(props.device === "mobile"){
-      if(props.orientation === "landscape" && window.innerWidth < 1024) {
-        if(props.initDismount) {
+      if(props.orientation === "landscape") {
+        if(props.ui.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_post_game_landscape"
           headerClass = "scoreboard_header_mobile_landscape"
           headRowClass = "scoreboard_head_row_mobile_landscape"
@@ -42,7 +42,7 @@ const ScoreboardContainer = (props) => {
           rowWrapperClass = "scoreboard_row_wrapper_mobile_landscape"
         }
       } else {
-        if(props.initDismount) {
+        if(props.ui.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_post_game_portrait"
           headerClass = "scoreboard_header_mobile_portrait"
           headRowClass = "scoreboard_head_row_mobile_portrait"
@@ -55,7 +55,7 @@ const ScoreboardContainer = (props) => {
         }
       }
     } else {
-      if(props.initDismount){
+      if(props.ui.initDismount){
         tableClass = "dismount_scoreboard_table_desktop_post_game"
         headerClass = "scoreboard_header_desktop"
         headRowClass = "scoreboard_head_row_desktop"
@@ -69,8 +69,8 @@ const ScoreboardContainer = (props) => {
     }
   } else {
     if(props.device === "mobile"){
-      if(props.orientation === "landscape" && window.innerWidth < 1024) {
-        if(props.initDismount) {
+      if(props.orientation === "landscape") {
+        if(props.ui.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_landscape"
           headerClass = "scoreboard_header_mobile_landscape"
           headRowClass = "scoreboard_head_row_mobile_landscape"
@@ -82,7 +82,7 @@ const ScoreboardContainer = (props) => {
           rowWrapperClass = "scoreboard_row_wrapper_mobile_landscape"
         }
       } else {
-        if(props.initDismount) {
+        if(props.ui.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_portrait"
           headerClass = "scoreboard_header_mobile_portrait"
           headRowClass = "scoreboard_head_row_mobile_portrait"
@@ -95,7 +95,7 @@ const ScoreboardContainer = (props) => {
         }
       }
     } else {
-      if(props.initDismount){
+      if(props.ui.initDismount){
         tableClass = "dismount_scoreboard_table_desktop"
         headerClass = "scoreboard_header_desktop"
         headRowClass = "scoreboard_head_row_desktop"
@@ -135,7 +135,8 @@ const ScoreboardContainer = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

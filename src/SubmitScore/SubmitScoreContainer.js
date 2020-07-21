@@ -24,7 +24,6 @@ import './SubmitScoreMobileOnmount.css'
 class SubmitScoreContainer extends React.Component {
 
   state = {
-    initDismount: false,
     player: '',
     showButtons: false,
     showSubmitScore: true
@@ -51,42 +50,52 @@ class SubmitScoreContainer extends React.Component {
 
     let buttonNav = event.target.attributes.nav.value
 
-    this.setState({ initDismount: true })
+    this.props.onInitDismount()
 
     this.initResetTimeout = setTimeout(() => {
 
       this.props.onHideFooter()
       this.props.onHideWrapper()
 
-      this.setState({
-        showButtons: false,
-      })
+      this.setState({ showButtons: false })
     }, 250)
 
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
+        this.props.onExitDismount()
         this.props.history.push( routes.game )
         this.props.resetGame()
       }, 500 )
     }
-    else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 500 )
+    else this.resetTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.props.history.push( routes.home )
+    }, 500 )
   }
 
   onDismount = () => {
-    this.setState({ initDismount: true })
-    this.dismountedTimeout = setTimeout(() => { this.setState({ showSubmitScore: false })}, 250)
-    this.clearTimersTimeout = setTimeout(() => { this.clearTimers() }, 1000)
+    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
+
+    this.onDismountTimeout = setTimeout(() => {
+      this.props.onHideFooter()
+      this.props.onHideWrapper()
+    }, 750)
+
+    this.showScoreboardTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.setState({ showSubmitScore: false })
+    }, 1000)
   }
 
-  clearTimers = () => {
+  componentWillUnmount(){
     clearTimeout(this.startSubmitScoreTimeout)
     clearTimeout(this.initResetTimeout)
     clearTimeout(this.resetTimeout)
-    clearTimeout(this.dismountedTimeout)
-    clearTimeout(this.clearTimersTimeout)
-  }
 
-  componentWillUnmount(){ this.clearTimers() }
+    clearTimeout(this.initDismountTimeout)
+    clearTimeout(this.onDismountTimeout)
+    clearTimeout(this.showScoreboardTimeout)
+  }
 
   render(){
 
@@ -96,7 +105,7 @@ class SubmitScoreContainer extends React.Component {
     if(this.props.orientation === "landscape") {
       rowClass1 = 'submit_score_mobile_landscapeR1'
       subRowClass1 = 'submit_score_mobile_landscapeSR1'
-        if(this.state.initDismount) {
+        if(this.props.ui.initDismount) {
             wrapperClass = "submit_score_mobile_wrapper_landscape"
             pillClass = "dismount_submit_score_mobile_pill_landscape"
         } else {
@@ -106,7 +115,7 @@ class SubmitScoreContainer extends React.Component {
     } else {
       rowClass1 = 'submit_score_mobile_portraitR1'
       subRowClass1 = 'submit_score_mobile_portraitSR1'
-      if(this.state.initDismount) {
+      if(this.props.ui.initDismount) {
         wrapperClass = "submit_score_mobile_wrapper_portrait"
         pillClass = "dismount_submit_score_mobile_pill_portrait"
       } else {
@@ -124,21 +133,16 @@ class SubmitScoreContainer extends React.Component {
         { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
-              <SubmitScoreHeader
-                initDismount={ this.state.initDismount }
-              />
+              <SubmitScoreHeader />
               <div className={ rowClass1 }>
                 <SubmitScoreCounter
                   count={ this.props.count }
-                  initDismount={ this.state.initDismount }
                 />
                 <div className={ subRowClass1 }>
                   <SubmitScoreRank
-                    initDismount={ this.state.initDismount }
                     rank={ this.props.rank }
                   />
                   <SubmitScorePower
-                    initDismount={ this.state.initDismount }
                     power={ this.props.power }
                     powerRaw={ this.props.powerRaw }
                   />
@@ -146,14 +150,12 @@ class SubmitScoreContainer extends React.Component {
               </div>
               <SubmitScoreFormContainer
                 count={ this.props.count }
-                initDismount={ this.state.initDismount }
                 onDismount={ this.onDismount }
                 power={ this.props.power }
                 powerRaw={ this.props.powerRaw }
               />
             </div>
             <SubmitScoreButtonsContainer
-              initDismount={ this.state.initDismount }
               onClickButtonFunctions={ this.onClickButtonFunctions }
             />
           </div>
@@ -161,9 +163,7 @@ class SubmitScoreContainer extends React.Component {
           <></>
         }
         { this.props.ui.showFooter ?
-          <FooterContainer
-            initDismount={ this.state.initDismount }
-          />
+          <FooterContainer />
         :
           <></>
         }
@@ -194,7 +194,9 @@ const mapDispatchToProps = (dispatch) => {
     onShowFooter: () => dispatch(actions.showFooter()),
     onHideFooter: () => dispatch(actions.hideFooter()),
     onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper())
+    onHideWrapper: () => dispatch(actions.hideWrapper()),
+    onInitDismount: () => dispatch(actions.initDismount()),
+    onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 

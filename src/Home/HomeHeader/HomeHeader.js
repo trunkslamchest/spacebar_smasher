@@ -15,8 +15,8 @@ const HomeHeader = (props) => {
   let wrapperClass, headerClass, startButtonContainerClass, startButtonClass
 
   if(props.device === "mobile"){
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
-      if(props.initDismount) {
+    if(props.orientation === "landscape") {
+      if(props.ui.initDismount) {
         wrapperClass = "dismount_home_header_mobile_wrapper_landscape"
         headerClass = "dismount_home_header_mobile_landscape"
         startButtonContainerClass = "dismount_start_button_container_mobile_landscape"
@@ -28,7 +28,7 @@ const HomeHeader = (props) => {
         startButtonClass = "start_button_mobile_landscape"
       }
     } else {
-      if(props.initDismount) {
+      if(props.ui.initDismount) {
         wrapperClass = "dismount_home_header_mobile_wrapper_portrait"
         headerClass = "dismount_home_header_mobile_portrait"
         startButtonContainerClass = "dismount_start_button_container_mobile_portrait"
@@ -41,7 +41,7 @@ const HomeHeader = (props) => {
       }
     }
   } else {
-    if(props.initDismount){
+    if(props.ui.initDismount){
       wrapperClass = "dismount_home_header_desktop_wrapper"
       headerClass = "dismount_home_header_desktop"
       startButtonContainerClass = "dismount_start_button_container_desktop"
@@ -75,7 +75,8 @@ const HomeHeader = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

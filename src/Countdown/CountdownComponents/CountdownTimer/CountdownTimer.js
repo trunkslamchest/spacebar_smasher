@@ -15,14 +15,14 @@ const CountdownTimer = (props) => {
 
   if(props.device === "mobile") {
     if(props.orientation === "landscape") {
-      if(props.initDismount) currentParentClass = "dismount_countdown_mobile_timer_landscape"
+      if(props.ui.initDismount) currentParentClass = "dismount_countdown_mobile_timer_landscape"
       else currentParentClass = "countdown_mobile_timer_landscape"
     } else {
-      if(props.initDismount) currentParentClass = "dismount_countdown_mobile_timer_portrait"
+      if(props.ui.initDismount) currentParentClass = "dismount_countdown_mobile_timer_portrait"
       else currentParentClass = "countdown_mobile_timer_portrait"
     }
   } else {
-    if(props.initDismount) currentParentClass = "dismount_countdown_desktop_timer"
+    if(props.ui.initDismount) currentParentClass = "dismount_countdown_desktop_timer"
     else currentParentClass = "countdown_desktop_timer"
   }
 
@@ -86,7 +86,8 @@ const CountdownTimer = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

@@ -18,7 +18,6 @@ import './CountdownMobileContainerPortrait.css'
 class CountdownContainer extends React.Component {
 
   state = {
-    initDismount: false,
     showGame: false,
     startGame: false,
     time: 1,
@@ -41,12 +40,15 @@ class CountdownContainer extends React.Component {
 
   startGame = () => {
     this.setState({ startGame: true })
-    this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
+    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 750)
-    this.startGameTimeout = setTimeout(() => { this.setState({ showGame: true })}, 1000)
+    this.startGameTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.setState({ showGame: true })
+    }, 1000)
   }
 
   timerFunctions = () => {
@@ -86,22 +88,15 @@ class CountdownContainer extends React.Component {
           <>
             <div className={ wrapperClass }>
               <div className={ pillClass }>
-                <CountdownHeader
-                  initDismount={ this.state.initDismount }
-                />
+                <CountdownHeader />
                 <CountdownTimer
                   time={ this.state.time }
-                  initDismount={ this.state.initDismount }
                 />
-                <CountdownTutorial
-                  initDismount={ this.state.initDismount }
-                />
+                <CountdownTutorial />
               </div>
             </div>
             { this.props.ui.showFooter ?
-              <FooterContainer
-                initDismount={ this.state.initDismount }
-              />
+              <FooterContainer />
             :
               <></>
             }
@@ -138,7 +133,9 @@ const mapDispatchToProps = (dispatch) => {
     onShowFooter: () => dispatch(actions.showFooter()),
     onHideFooter: () => dispatch(actions.hideFooter()),
     onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper())
+    onHideWrapper: () => dispatch(actions.hideWrapper()),
+    onInitDismount: () => dispatch(actions.initDismount()),
+    onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 

@@ -14,20 +14,20 @@ const FooterContainer = (props) => {
 
   if(props.device === "mobile"){
     if(props.orientation === "landscape") {
-      if(props.initDismount) {
+      if(props.ui.initDismount) {
         footerClass = "dismount_footer_mobile_container_landscape"
       } else {
         footerClass = "footer_mobile_container_landscape"
       }
     } else {
-      if(props.initDismount) {
+      if(props.ui.initDismount) {
         footerClass = "dismount_footer_mobile_container_portrait"
       } else {
         footerClass = "footer_mobile_container_portrait"
       }
     }
   } else {
-    if(props.initDismount) {
+    if(props.ui.initDismount) {
       footerClass = "dismount_footer_desktop_container"
     } else {
       footerClass = "footer_desktop_container"
@@ -45,7 +45,8 @@ const FooterContainer = (props) => {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 

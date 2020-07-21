@@ -23,3 +23,15 @@ export const hideWrapper = () => {
     type: actionTypes.HIDEWRAPPER
   }
 }
+
+export const initDismount = () => {
+  return{
+    type: actionTypes.INITDISMOUNT
+  }
+}
+
+export const exitDismount = () => {
+  return{
+    type: actionTypes.EXITDISMOUNT
+  }
+}

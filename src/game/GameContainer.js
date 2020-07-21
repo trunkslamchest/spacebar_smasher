@@ -24,7 +24,6 @@ class GameContainer extends React.Component {
   state = {
     avgPress: 1,
     count: 0,
-    initDismount: false,
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
@@ -175,12 +174,15 @@ class GameContainer extends React.Component {
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
 
-    this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
+    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 750)
-    this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true })}, 1000)
+    this.showSubmitScoreTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.setState({ showSubmitScore: true })
+    }, 1000)
 
   }
 
@@ -205,7 +207,7 @@ class GameContainer extends React.Component {
       if(this.props.orientation === 'landscape') {
         rowClass1 = 'game_mobile_landscapeR1'
         subRowClass1 = 'game_mobile_landscapeSR1'
-        if(this.state.initDismount) {
+        if(this.props.ui.initDismount) {
             wrapperClass = "game_mobile_wrapper_landscape"
             pillClass = "dismount_game_mobile_pill_landscape"
         } else {
@@ -215,7 +217,7 @@ class GameContainer extends React.Component {
       } else {
         rowClass1 = 'game_mobile_portraitR1'
         subRowClass1 = 'game_mobile_portraitSR1'
-        if(this.state.initDismount) {
+        if(this.props.ui.initDismount) {
           wrapperClass = "game_mobile_wrapper_portrait"
           pillClass = "dismount_game_mobile_pill_portrait"
         } else {
@@ -234,21 +236,17 @@ class GameContainer extends React.Component {
           <div className={ wrapperClass }>
             <div className={ pillClass }>
                 <GameTimer
-                  initDismount={ this.state.initDismount }
                   time={ this.state.time }
                 />
               <div className={ rowClass1 }>
                 <GameCounter
                   count={ this.state.count }
-                  initDismount={ this.state.initDismount }
                 />
                 <div className={ subRowClass1 }>
                   <GameRank
-                    initDismount={ this.state.initDismount }
                     rank={ this.state.rank }
                   />
                   <GamePower
-                    initDismount={ this.state.initDismount }
                     power={ this.state.power }
                     powerRaw={ this.state.powerRaw }
                   />
@@ -256,7 +254,6 @@ class GameContainer extends React.Component {
               </div>
             { this.props.device === "mobile" ?
                 <GameMobileSmashButton
-                  initDismount={this.state.initDismount}
                   onSmash={this.onSmash}
                   smashed={this.state.smashed}
                 />
@@ -269,9 +266,7 @@ class GameContainer extends React.Component {
           <></>
         }
         { this.props.ui.showFooter ?
-          <FooterContainer
-            initDismount={ this.state.initDismount }
-          />
+          <FooterContainer />
         :
           <></>
         }
@@ -309,7 +304,9 @@ const mapDispatchToProps = (dispatch) => {
     onShowFooter: () => dispatch(actions.showFooter()),
     onHideFooter: () => dispatch(actions.hideFooter()),
     onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper())
+    onHideWrapper: () => dispatch(actions.hideWrapper()),
+    onInitDismount: () => dispatch(actions.initDismount()),
+    onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 
