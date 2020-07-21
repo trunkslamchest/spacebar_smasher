@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import ScoreboardRow from './ScoreboardRow/ScoreboardRow'
 
 import LoadingScoreboard from '../UI/Loading/LoadingScoreboard'
@@ -15,11 +17,13 @@ import './ScoreboardMobileDismount.css'
 
 const ScoreboardContainer = (props) => {
 
+  console.log(props)
+
   const scores =  props.scoreboard.map(score =>
     <ScoreboardRow
-      isMobile={props.isMobile}
+      // isMobile={props.isMobile}
       isPostGame={props.isPostGame}
-      orientation={props.orientation}
+      // orientation={props.orientation}
       place={props.scoreboard.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
@@ -30,7 +34,8 @@ const ScoreboardContainer = (props) => {
   let tableClass, headerClass, headRowClass, rowWrapperClass
 
   if(props.isPostGame) {
-    if(props.isMobile){
+    // if(props.isMobile){
+    if(props.device === "mobile"){
       if(props.orientation === "landscape" && window.innerWidth < 1024) {
         if(props.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_post_game_landscape"
@@ -70,7 +75,8 @@ const ScoreboardContainer = (props) => {
       }
     }
   } else {
-    if(props.isMobile){
+    // if(props.isMobile){
+    if(props.device === "mobile"){
       if(props.orientation === "landscape" && window.innerWidth < 1024) {
         if(props.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_landscape"
@@ -134,4 +140,11 @@ const ScoreboardContainer = (props) => {
   )
 }
 
-export default ScoreboardContainer
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(ScoreboardContainer)

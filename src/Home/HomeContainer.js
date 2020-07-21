@@ -108,10 +108,10 @@ class HomeContainer extends React.Component {
             />
             <ScoreboardContainer
               initDismount={ this.state.initDismount }
-              isMobile={ this.props.isMobile }
+              // isMobile={ this.props.isMobile }
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
-              orientation={ this.props.orientation }
+              // orientation={ this.props.orientation }
               scoreboard={ this.state.scoreboard }
               submittedPlayer={ this.props.player }
             />

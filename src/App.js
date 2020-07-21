@@ -27,7 +27,6 @@ class App extends React.Component {
   }
 
   detectDevice = () => {
-
     this.props.onDevice()
     this.props.onOrientation()
 
@@ -40,10 +39,6 @@ class App extends React.Component {
   getPlayer = (player) => { this.setState({ player: player }) }
 
   render(){
-
-    // console.log(this.props)
-
-
     return (
       <>
         <div className="main_container">

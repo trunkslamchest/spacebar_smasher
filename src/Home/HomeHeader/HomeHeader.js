@@ -13,8 +13,6 @@ import './HomeMobileHeaderOnmount.css'
 
 const HomeHeader = (props) => {
 
-  console.log(props)
-
   let wrapperClass, headerClass, startButtonContainerClass, startButtonClass
 
   // if(props.isMobile){

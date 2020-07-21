@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -15,7 +17,7 @@ import './PostGameMobileContainerPortrait.css'
 import './PostGameMobileOnmount.css'
 import './PostGameMobileDismount.css'
 
-export default class PostGameContainer extends React.Component {
+class PostGameContainer extends React.Component {
 
   state = {
     mounted: false,
@@ -74,7 +76,8 @@ export default class PostGameContainer extends React.Component {
 
     let buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
 
-    if(this.props.isMobile){
+    // if(this.props.isMobile){
+    if(this.props.device === "mobile") {
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         if(this.state.initDismount) {
           buttonsContainerClass = "dismount_post_game_mobile_buttons_container_landscape"
@@ -114,10 +117,10 @@ export default class PostGameContainer extends React.Component {
           <>
             <ScoreboardContainer
               initDismount={this.state.initDismount}
-              isMobile={ this.props.isMobile }
+              // isMobile={ this.props.isMobile }
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
-              orientation={ this.props.orientation }
+              // orientation={ this.props.orientation }
               scoreboard={ this.state.scoreboard }
               submittedPlayer={ this.props.player }
             />
@@ -146,8 +149,8 @@ export default class PostGameContainer extends React.Component {
         { this.state.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
-            isMobile={ this.props.isMobile }
-            orientation={ this.props.orientation }
+            // isMobile={ this.props.isMobile }
+            // orientation={ this.props.orientation }
           />
         :
           <></>
@@ -156,3 +159,12 @@ export default class PostGameContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(PostGameContainer)
