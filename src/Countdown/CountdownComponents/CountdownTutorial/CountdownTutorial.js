@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './CountdownDesktopTutorial.css'
 import './CountdownDesktopTutorialDismount.css'
 import './CountdownDesktopTutorialOnmount.css'
@@ -13,7 +15,8 @@ const CountdownTutorial = (props) => {
 
   let currentClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape") {
       if(props.initDismount) currentClass = "dismount_countdown_mobile_tutorial_landscape"
       else currentClass = "countdown_mobile_tutorial_landscape"
@@ -33,4 +36,11 @@ const CountdownTutorial = (props) => {
   )
 }
 
-export default CountdownTutorial
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(CountdownTutorial)

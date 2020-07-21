@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import './CountdownDesktopTimer.css'
 import './CountdownDesktopTimerDismount.css'
 import './CountdownDesktopTimerOnmount.css'
@@ -12,7 +14,8 @@ const CountdownTimer = (props) => {
 
   let currentParentClass, currentChildClass
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape") {
       if(props.initDismount) currentParentClass = "dismount_countdown_mobile_timer_landscape"
       else currentParentClass = "countdown_mobile_timer_landscape"
@@ -25,7 +28,8 @@ const CountdownTimer = (props) => {
     else currentParentClass = "countdown_desktop_timer"
   }
 
-  if(props.isMobile){
+  // if(props.isMobile){
+  if(props.device === "mobile") {
     if(props.orientation === "landscape") {
       (props.time === 5 || props.time === 4) ?
           currentChildClass = "countdown_mobile_timer_five_landscape"
@@ -82,4 +86,11 @@ const CountdownTimer = (props) => {
   )
 }
 
-export default CountdownTimer
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(CountdownTimer)

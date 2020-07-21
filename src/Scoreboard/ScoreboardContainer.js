@@ -17,8 +17,6 @@ import './ScoreboardMobileDismount.css'
 
 const ScoreboardContainer = (props) => {
 
-  console.log(props)
-
   const scores =  props.scoreboard.map(score =>
     <ScoreboardRow
       // isMobile={props.isMobile}

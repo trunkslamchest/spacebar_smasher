@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { connect } from 'react-redux'
+
 import FooterContainer from 'UI/Footer/FooterContainer'
 
 import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHeader'
@@ -12,7 +14,7 @@ import './CountdownDesktopContainer.css'
 import './CountdownMobileContainerLandscape.css'
 import './CountdownMobileContainerPortrait.css'
 
-export default class CountdownContainer extends React.Component {
+class CountdownContainer extends React.Component {
 
   state = {
     initDismount: false,
@@ -45,8 +47,8 @@ export default class CountdownContainer extends React.Component {
   }
 
   timerFunctions = () => {
-    if (this.state.time <= 0) { this.setState({ time: 0 }, clearInterval(this.timerInterval)) }
-    else this.setState({ time: (this.state.time - 1) })
+    // if (this.state.time <= 0) { this.setState({ time: 0 }, clearInterval(this.timerInterval)) }
+    // else this.setState({ time: (this.state.time - 1) })
   }
 
   componentWillUnmount(){
@@ -60,9 +62,12 @@ export default class CountdownContainer extends React.Component {
 
   render(){
 
+    console.log(this.props)
+
     let wrapperClass, pillClass
 
-    if(this.props.isMobile){
+    // if(this.props.isMobile){
+    if(this.props.device === "mobile") {
       if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
         wrapperClass = "countdown_mobile_wrapper_landscape"
         pillClass = "countdown_mobile_pill_landscape"
@@ -82,28 +87,28 @@ export default class CountdownContainer extends React.Component {
             <div className={ wrapperClass }>
               <div className={ pillClass }>
                 <CountdownHeader
-                  isMobile={ this.props.isMobile }
+                  // isMobile={ this.props.isMobile }
                   initDismount={ this.state.initDismount }
-                  orientation={ this.props.orientation }
+                  // orientation={ this.props.orientation }
                 />
                 <CountdownTimer
-                  isMobile={ this.props.isMobile }
+                  // isMobile={ this.props.isMobile }
                   time={ this.state.time }
                   initDismount={ this.state.initDismount }
-                  orientation={ this.props.orientation }
+                  // orientation={ this.props.orientation }
                 />
                 <CountdownTutorial
-                  isMobile={ this.props.isMobile }
+                  // isMobile={ this.props.isMobile }
                   initDismount={ this.state.initDismount }
-                  orientation={ this.props.orientation }
+                  // orientation={ this.props.orientation }
                 />
               </div>
             </div>
             { this.state.showFooter ?
               <FooterContainer
                 initDismount={ this.state.initDismount }
-                isMobile={ this.props.isMobile }
-                orientation={ this.props.orientation }
+                // isMobile={ this.props.isMobile }
+                // orientation={ this.props.orientation }
               />
             :
               <></>
@@ -120,8 +125,8 @@ export default class CountdownContainer extends React.Component {
           <GameContainer
             getPlayer={ this.props.getPlayer }
             history={ this.props.history }
-            isMobile={ this.props.isMobile }
-            orientation={ this.props.orientation }
+            // isMobile={ this.props.isMobile }
+            // orientation={ this.props.orientation }
           />
         :
           countdown
@@ -130,3 +135,12 @@ export default class CountdownContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation
+  }
+}
+
+export default connect(mapStateToProps)(CountdownContainer)

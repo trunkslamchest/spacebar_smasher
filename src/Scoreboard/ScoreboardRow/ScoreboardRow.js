@@ -76,26 +76,24 @@ class ScoreboardRow extends React.Component {
   }
 
     return(
-      <>
-        <div
-          className={ this.props.submittedPlayer === this.props.score.name ? highlightedClass : rowClass }
-          ref={ this.rowRef }
-        >
-          <div className={ placeClass }>
-            { this.props.place }
-          </div>
-          <div className={ nameClass }>
-            { this.props.score.name }
-          </div>
-            <div className={ powerClass }>
-              <meter value={ this.props.score.power_level } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
-              <span>{ (this.props.score.power_percent).toFixed(2) }%</span>
-            </div>
-          <div className={ scoreClass } >
-            { this.props.score.score }
-          </div>
+      <div
+        className={ this.props.submittedPlayer === this.props.score.name ? highlightedClass : rowClass }
+        ref={ this.rowRef }
+      >
+        <div className={ placeClass }>
+          { this.props.place }
         </div>
-      </>
+        <div className={ nameClass }>
+          { this.props.score.name }
+        </div>
+          <div className={ powerClass }>
+            <meter value={ this.props.score.power_level } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
+            <span>{ (this.props.score.power_percent).toFixed(2) }%</span>
+          </div>
+        <div className={ scoreClass } >
+          { this.props.score.score }
+        </div>
+      </div>
     )
   }
 }
