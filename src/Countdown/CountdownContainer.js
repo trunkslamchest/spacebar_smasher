@@ -26,7 +26,6 @@ class CountdownContainer extends React.Component {
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Countdown'
-
     this.startCountdown()
   }
 
@@ -64,7 +63,7 @@ class CountdownContainer extends React.Component {
     let wrapperClass, pillClass
 
     if(this.props.device === "mobile") {
-      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(this.props.orientation === "landscape") {
         wrapperClass = "countdown_mobile_wrapper_landscape"
         pillClass = "countdown_mobile_pill_landscape"
       } else {
@@ -111,7 +110,6 @@ class CountdownContainer extends React.Component {
       <>
         { this.state.showGame ?
           <GameContainer
-            getPlayer={ this.props.getPlayer }
             history={ this.props.history }
           />
         :

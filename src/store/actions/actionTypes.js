@@ -1,2 +1,5 @@
 export const DEVICE = 'DEVICE'
 export const ORIENTATION = 'ORIENTATION'
+
+export const STOREPLAYER = 'STOREPLAYER'
+export const RESETPLAYER = 'RESETPLAYER'

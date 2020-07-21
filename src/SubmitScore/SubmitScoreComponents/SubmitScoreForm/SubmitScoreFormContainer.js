@@ -1,5 +1,7 @@
 import React from 'react'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux'
+
+import * as actions from '../../../store/actions/actionIndex'
 
 import { fetch } from '../../../utility/paths'
 
@@ -24,7 +26,6 @@ class SubmitScoreFormContainer extends React.Component {
       show: false,
       validationErrors: []
     },
-    submittedScore: false,
     submitClicked: false
   }
 
@@ -62,7 +63,6 @@ class SubmitScoreFormContainer extends React.Component {
   }
 
   addScore = (event) => {
-    this.props.getPlayer(this.state.player)
     event.preventDefault()
 
     let playerObj = {
@@ -89,7 +89,8 @@ class SubmitScoreFormContainer extends React.Component {
         scoreboardFunctions('post', fetch.post, playerObj)
         .then(resObj => {
           if(!!resObj){
-            this.setState({ submittedScore: true }, this.props.onDismount())
+            this.props.onStorePlayer(this.state.player)
+            this.props.onDismount()
           }
         })
       }
@@ -121,21 +122,24 @@ class SubmitScoreFormContainer extends React.Component {
         onNameChange={ this.onNameChange }
         disabled={ this.state.submitClicked }
         onSubmit={ this.onSubmit }
-        player={ this.state.player }
-        submittedScore={ this.state.submittedScore }
       />
       </>
     )
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return{
-//     device: state.detect.device,
-//     orientation: state.detect.orientation
-//   }
-// }
+const mapStateToProps = (state) => {
+  return{
+    device: state.detect.device,
+    orientation: state.detect.orientation,
+    player: state.player.name
+  }
+}
 
-// export default connect(mapStateToProps)(SubmitScoreFormContainer)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onStorePlayer: (name) => dispatch(actions.storePlayer(name))
+  }
+}
 
-export default SubmitScoreFormContainer
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitScoreFormContainer)

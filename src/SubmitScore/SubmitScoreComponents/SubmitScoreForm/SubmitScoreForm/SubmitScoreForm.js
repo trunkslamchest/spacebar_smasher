@@ -13,7 +13,7 @@ const SubmitScoreForm = (props) => {
   let formWrapperClass, formClass, textBoxClass, buttonClass
 
   if(props.device === "mobile") {
-    if(props.orientation === "landscape" && window.innerWidth < 1024) {
+    if(props.orientation === "landscape") {
       formWrapperClass = "submit_score_mobile_form_container_landscape"
       formClass = "submit_score_mobile_form_landscape"
       textBoxClass = "submit_score_mobile_text_box_landscape"

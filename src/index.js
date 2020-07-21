@@ -12,13 +12,15 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 import detectReducer from './store/reducers/detectReducer'
+import playerReducer from './store/reducers/playerReducer'
 
 import ScrollRestore from './utility/scrollRestore'
 
 const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
-  detect: detectReducer
+  detect: detectReducer,
+  player: playerReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

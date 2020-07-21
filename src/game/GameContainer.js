@@ -272,7 +272,6 @@ class GameContainer extends React.Component {
         { this.state.showSubmitScore ?
           <SubmitScoreContainer
             count={ this.state.count }
-            getPlayer={ this.props.getPlayer }
             history={ this.props.history }
             power={ this.state.power }
             powerRaw={ this.state.powerRaw }

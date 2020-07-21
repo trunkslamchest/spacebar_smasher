@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -14,56 +15,46 @@ import E404 from './error/E404'
 
 import './App.css'
 
-class App extends React.Component {
+const App = (props) => {
 
-  state = { }
+  const { onDevice, onOrientation } = props
 
-  componentDidMount(){
-    this.detectDevice = window.addEventListener("resize", this.detectDevice)
-  }
+  useEffect(() => { window.addEventListener("resize", () => {
+    onDevice()
+    onOrientation()
+  }) }, [onDevice, onOrientation])
 
-  detectDevice = () => {
-    this.props.onDevice()
-    this.props.onOrientation()
-  }
-
-  getPlayer = (player) => { this.setState({ player: player }) }
-
-  render(){
-    return (
-      <>
-        <div className="main_container">
-          <Switch>
-            <Route exact path={ routes.home }>
-              <HomeContainer
-                history={ this.props.history }
-                player={ this.state.player }
-              />
-            </Route>
-            <Route exact path={ routes.game }>
-              <CountdownContainer
-                history={ this.props.history }
-                getPlayer={ this.getPlayer }
-              />
-            </Route>
-            <Route exact path={ routes.scoreboard } >
-              <PostGameContainer
-                history={ this.props.history }
-                player={ this.state.player }
-              />
-            </Route>
-            <Route component={ E404 } />
-          </Switch>
-        </div>
-      </>
-    )
-  }
+  return (
+    <>
+      <div className="main_container">
+        <Switch>
+          <Route exact path={ routes.home }>
+            <HomeContainer
+              history={ props.history }
+            />
+          </Route>
+          <Route exact path={ routes.game }>
+            <CountdownContainer
+              history={ props.history }
+            />
+          </Route>
+          <Route exact path={ routes.scoreboard } >
+            <PostGameContainer
+              history={ props.history }
+            />
+          </Route>
+          <Route component={ E404 } />
+        </Switch>
+      </div>
+    </>
+  )
 }
 
 const mapStateToProps = (state) => {
   return {
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    player: state.player.name
   }
 }
 

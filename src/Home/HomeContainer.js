@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import * as actions from '../store/actions/actionIndex'
+
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -47,6 +49,7 @@ class HomeContainer extends React.Component {
   }
 
   onClickStartButton = (event) => {
+    this.props.onResetPlayer()
     this.setState({ initDismount: true })
     this.startCountdownTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 750 )
   }
@@ -68,30 +71,29 @@ class HomeContainer extends React.Component {
   }
 
   render(){
+    let wrapperClass
 
-  let wrapperClass
-
-  if(this.props.device === "mobile"){
-    if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
-      if(this.props.initDismount) {
-        wrapperClass = "dismount_home_mobile_wrapper_landscape"
+    if(this.props.device === "mobile"){
+      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+        if(this.props.initDismount) {
+          wrapperClass = "dismount_home_mobile_wrapper_landscape"
+        } else {
+          wrapperClass = "home_mobile_wrapper_landscape"
+        }
       } else {
-        wrapperClass = "home_mobile_wrapper_landscape"
+        if(this.props.initDismount) {
+          wrapperClass = "dismount_home_mobile_wrapper_portrait"
+        } else {
+          wrapperClass = "home_mobile_wrapper_portrait"
+        }
       }
     } else {
       if(this.props.initDismount) {
-        wrapperClass = "dismount_home_mobile_wrapper_portrait"
+        wrapperClass = "dismount_home_desktop_wrapper"
       } else {
-        wrapperClass = "home_mobile_wrapper_portrait"
+        wrapperClass = "home_desktop_wrapper"
       }
     }
-  } else {
-    if(this.props.initDismount) {
-      wrapperClass = "dismount_home_desktop_wrapper"
-    } else {
-      wrapperClass = "home_desktop_wrapper"
-    }
-  }
 
     return(
       <>
@@ -106,7 +108,6 @@ class HomeContainer extends React.Component {
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
               scoreboard={ this.state.scoreboard }
-              submittedPlayer={ this.props.player }
             />
           </div>
         :
@@ -127,8 +128,15 @@ class HomeContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    player: state.player.name
   }
 }
 
-export default connect(mapStateToProps)(HomeContainer)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onResetPlayer: () => dispatch(actions.resetPlayer())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)

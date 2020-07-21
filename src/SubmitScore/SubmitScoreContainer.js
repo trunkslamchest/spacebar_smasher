@@ -139,7 +139,6 @@ class SubmitScoreContainer extends React.Component {
               </div>
               <SubmitScoreFormContainer
                 count={ this.props.count }
-                getPlayer={ this.props.getPlayer }
                 initDismount={ this.state.initDismount }
                 onDismount={ this.onDismount }
                 power={ this.props.power }

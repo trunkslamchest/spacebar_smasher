@@ -22,7 +22,6 @@ const ScoreboardContainer = (props) => {
       place={props.scoreboard.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
-      submittedPlayer={ props.submittedPlayer }
     />
   )
 

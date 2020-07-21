@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import * as actions from '../store/actions/actionIndex'
+
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
@@ -51,7 +53,10 @@ class PostGameContainer extends React.Component {
 
     this.setState({ initDismount: true })
 
-    if (buttonNav === 'game') this.resetTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
+    if (buttonNav === 'game') {
+      this.props.onResetPlayer()
+      this.resetTimeout = setTimeout(() => { this.props.history.push( routes.game ) }, 500 )
+    }
     else this.resetTimeout = setTimeout(() => { this.props.history.push( routes.home ) }, 500 )
   }
 
@@ -72,11 +77,10 @@ class PostGameContainer extends React.Component {
   }
 
   render(){
-
     let buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
 
     if(this.props.device === "mobile") {
-      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(this.props.orientation === "landscape") {
         if(this.state.initDismount) {
           buttonsContainerClass = "dismount_post_game_mobile_buttons_container_landscape"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
@@ -118,7 +122,6 @@ class PostGameContainer extends React.Component {
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
               scoreboard={ this.state.scoreboard }
-              submittedPlayer={ this.props.player }
             />
             <div className={ buttonsContainerClass }>
               <button
@@ -157,8 +160,15 @@ class PostGameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    player: state.player.name
   }
 }
 
-export default connect(mapStateToProps)(PostGameContainer)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onResetPlayer: () => dispatch(actions.resetPlayer())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostGameContainer)

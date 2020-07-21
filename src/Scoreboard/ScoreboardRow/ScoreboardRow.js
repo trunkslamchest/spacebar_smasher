@@ -12,7 +12,7 @@ class ScoreboardRow extends React.Component {
     this.rowRef = React.createRef();
   }
 
-  componentDidMount() { if(this.props.submittedPlayer === this.props.score.name ) this.scrollToHighlightTimeout = setTimeout(() => { this.rowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' }) }, 250) }
+  componentDidMount() { if(this.props.player === this.props.score.name ) this.scrollToHighlightTimeout = setTimeout(() => { this.rowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' }) }, 250) }
 
   componentWillUnmount(){ clearTimeout(this.scrollToHighlightTimeout) }
 
@@ -22,7 +22,7 @@ class ScoreboardRow extends React.Component {
 
   if(this.props.isPostGame) {
     if(this.props.device === "mobile"){
-      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(this.props.orientation === "landscape") {
         highlightedClass = "highlighted_row_mobile_landscape"
         rowClass = "scoreboard_row_mobile_landscape"
         placeClass = "scoreboard_row_place_mobile_landscape"
@@ -47,7 +47,7 @@ class ScoreboardRow extends React.Component {
     }
   } else {
     if(this.props.device === "mobile"){
-      if(this.props.orientation === "landscape" && window.innerWidth < 1024) {
+      if(this.props.orientation === "landscape") {
         highlightedClass = "highlighted_row_mobile_landscape"
         rowClass = "scoreboard_row_mobile_landscape"
         placeClass = "scoreboard_row_place_mobile_landscape"
@@ -74,7 +74,7 @@ class ScoreboardRow extends React.Component {
 
     return(
       <div
-        className={ this.props.submittedPlayer === this.props.score.name ? highlightedClass : rowClass }
+        className={ this.props.player === this.props.score.name ? highlightedClass : rowClass }
         ref={ this.rowRef }
       >
         <div className={ placeClass }>
@@ -98,7 +98,8 @@ class ScoreboardRow extends React.Component {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    player: state.player.name
   }
 }
 
