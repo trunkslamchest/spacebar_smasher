@@ -25,13 +25,15 @@ class PostGameContainer extends React.Component {
     initDismount: false,
     isPostGame: true,
     scoreboard: [],
-    showFooter: false,
     showWrapper: false
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Scoreboard'
     // document.body.scrollTop = 0
+
+    this.props.onHideFooter()
+
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
   }
@@ -42,10 +44,14 @@ class PostGameContainer extends React.Component {
   }
 
   onMount = () => {
-    this.setState({
-      showWrapper: true,
-      showFooter: true
-    })
+    this.startPostGameTimeout = setTimeout(() => {
+
+      this.props.onShowFooter()
+
+      this.setState({
+        showWrapper: true
+      })
+    }, 500)
   }
 
   onClickButtonFunctions = (event) => {
@@ -64,14 +70,17 @@ class PostGameContainer extends React.Component {
     this.setState({ onDismount: true })
 
     this.onDismountTimeout = setTimeout(() => {
+
+      this.props.onHideFooter()
+
       this.setState({
-        showWrapper: false,
-        showFooter: false
+        showWrapper: false
       })
     }, 250)
   }
 
   componentWillUnmount(){
+    clearTimeout(this.startPostGameTimeout)
     clearTimeout(this.resetTimeout)
     clearTimeout(this.onDismountTimeout)
   }
@@ -145,7 +154,7 @@ class PostGameContainer extends React.Component {
         :
           <></>
         }
-        { this.state.showFooter ?
+        { this.props.ui.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
           />
@@ -161,13 +170,16 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name
+    player: state.player.name,
+    ui: state.ui
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onResetPlayer: () => dispatch(actions.resetPlayer())
+    onResetPlayer: () => dispatch(actions.resetPlayer()),
+    onShowFooter: () => dispatch(actions.showFooter()),
+    onHideFooter: () => dispatch(actions.hideFooter())
   }
 }
 

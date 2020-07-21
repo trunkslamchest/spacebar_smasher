@@ -25,12 +25,13 @@ class HomeContainer extends React.Component {
     mounted: false,
     onDismount: false,
     scoreboard: [],
-    showFooter: false,
     showWrapper: false
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Home'
+
+    this.props.onHideFooter()
 
     scoreboardFunctions('get', fetch.get)
     .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
@@ -42,9 +43,11 @@ class HomeContainer extends React.Component {
   }
 
   onMount = () => {
+
+    this.props.onShowFooter()
+
     this.setState({
-      showWrapper: true,
-      showFooter: true
+      showWrapper: true
     })
   }
 
@@ -58,9 +61,11 @@ class HomeContainer extends React.Component {
     this.setState({ onDismount: true })
 
     this.onDismountTimeout = setTimeout(() => {
+
+      this.props.onHideFooter()
+
       this.setState({
-        showWrapper: false,
-        showFooter: false
+        showWrapper: false
       })
     }, 250)
   }
@@ -71,6 +76,9 @@ class HomeContainer extends React.Component {
   }
 
   render(){
+
+    console.log(this.props.ui.showFooter)
+
     let wrapperClass
 
     if(this.props.device === "mobile"){
@@ -113,7 +121,7 @@ class HomeContainer extends React.Component {
         :
           <></>
         }
-        { this.state.showFooter ?
+        { this.props.ui.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
           />
@@ -129,13 +137,16 @@ const mapStateToProps = (state) => {
   return {
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name
+    player: state.player.name,
+    ui: state.ui
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onResetPlayer: () => dispatch(actions.resetPlayer())
+    onResetPlayer: () => dispatch(actions.resetPlayer()),
+    onShowFooter: () => dispatch(actions.showFooter()),
+    onHideFooter: () => dispatch(actions.hideFooter())
   }
 }
 

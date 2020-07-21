@@ -3,3 +3,6 @@ export const ORIENTATION = 'ORIENTATION'
 
 export const STOREPLAYER = 'STOREPLAYER'
 export const RESETPLAYER = 'RESETPLAYER'
+
+export const SHOWFOOTER = 'SHOWFOOTER'
+export const HIDEFOOTER = 'HIDEFOOTER'

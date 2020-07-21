@@ -7,3 +7,8 @@ export {
   storePlayer,
   resetPlayer
 } from './playerActions'
+
+export {
+  showFooter,
+  hideFooter
+} from './uiActions'

@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import * as actions from '../store/actions/actionIndex'
+
 import FooterContainer from '../UI/Footer/FooterContainer'
 
 import GameTimer from './GameComponents/GameTimer/GameTimer'
@@ -26,11 +28,11 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    showFooter: false,
     showMobileSmashButton: false,
     showSubmitScore: false,
     showWrapper: false,
     startTimer: false,
+    stopGame: false,
     time: (3.00).toFixed(2),
     timeMark: (3.00).toFixed(2),
   }
@@ -46,13 +48,18 @@ class GameContainer extends React.Component {
     this.startGame()
   }
 
+  componentDidUpdate(){ if(this.state.time === 0 && !this.state.stopGame) this.stopGame() }
+
+
   startGame = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
     this.startGameTimeout = setTimeout(() => {
+
+      this.props.onShowFooter()
+
       this.setState({
-        showFooter: true,
         showMobileSmashButton: this.props.device === "mobile" ? true : false,
         showWrapper: true
       })
@@ -101,7 +108,7 @@ class GameContainer extends React.Component {
   }
 
   timerFunctions = () => {
-    if (this.state.time <= 0) this.setState({ time: 0.0 }, this.onDismount())
+    if (this.state.time <= 0) this.setState({ time: 0.0 }, clearInterval(this.timerInterval))
     else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
@@ -144,14 +151,16 @@ class GameContainer extends React.Component {
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
 
+    this.props.onHideFooter()
+
     this.setState({
       avgPress: 1,
       count: 0,
       initDismount: false,
       power: 0,
       powerRaw: 0,
-      showFooter: false,
       showSubmitScore: false,
+      stopGame: false,
       rank: "SUPER BABY FINGERS",
       time: (3.00).toFixed(2),
       timeMark: (3.00).toFixed(2),
@@ -160,32 +169,35 @@ class GameContainer extends React.Component {
     this.restartGameTimeout = setTimeout(() => { this.startGame() }, 250)
   }
 
-  onDismount = () => {
+  stopGame = () => {
+    this.setState({ stopGame: true })
+
+
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
 
+
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    this.stopGameTimeout = setTimeout(() => { this.setState({ showWrapper: false, showFooter: false })}, 750)
-    this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true }, this.clearTimers())}, 1000)
+    this.onDismountTimeout = setTimeout(() => {
+      this.props.onHideFooter()
+      this.setState({ showWrapper: false })
+    }, 750)
+    this.showSubmitScoreTimeout = setTimeout(() => { this.setState({ showSubmitScore: true })}, 1000)
+
   }
 
-  clearTimers = () => {
+  componentWillUnmount() {
     clearInterval(this.powerInterval)
     clearInterval(this.timerInterval)
-
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.mobileSmashButtonTimeout)
     clearTimeout(this.restartGameTimeout)
     clearTimeout(this.showSubmitScoreTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
-    clearTimeout(this.startGameTimeout)
     clearTimeout(this.startPower)
     clearTimeout(this.startTimer)
-    clearTimeout(this.stopGameTimeout)
   }
-
-  componentWillUnmount() { this.clearTimers() }
 
   render(){
 
@@ -258,7 +270,7 @@ class GameContainer extends React.Component {
         :
           <></>
         }
-        { this.state.showFooter ?
+        { this.props.ui.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
           />
@@ -289,8 +301,16 @@ class GameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 
-export default connect(mapStateToProps)(GameContainer)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onShowFooter: () => dispatch(actions.showFooter()),
+    onHideFooter: () => dispatch(actions.hideFooter())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GameContainer)

@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import * as actions from '../store/actions/actionIndex'
+
 import FooterContainer from 'UI/Footer/FooterContainer'
 
 import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHeader'
@@ -33,15 +35,22 @@ class CountdownContainer extends React.Component {
 
   startCountdown = () => {
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
-    this.componentTimeout = setTimeout(() => { this.setState({ showFooter: true, showWrapper: true }) }, 250)
+    this.startCountdownTimeout = setTimeout(() => {
+      this.props.onShowFooter()
+
+      this.setState({ showWrapper: true })
+    }, 250)
   }
 
   startGame = () => {
     this.setState({ startGame: true })
 
     this.initDismountTimeout = setTimeout(() => { this.setState({ initDismount: true })}, 500)
-    this.onDismountTimeout = setTimeout(() => { this.setState({ showFooter: false, showWrapper: false }) }, 750)
-    this.showGameTimeout = setTimeout(() => { this.setState({ showGame: true })}, 1000)
+    this.onDismountTimeout = setTimeout(() => {
+      this.props.onHideFooter()
+      this.setState({ showWrapper: false })
+    }, 750)
+    this.startGameTimeout = setTimeout(() => { this.setState({ showGame: true })}, 1000)
   }
 
   timerFunctions = () => {
@@ -52,7 +61,7 @@ class CountdownContainer extends React.Component {
   componentWillUnmount(){
     clearTimeout(this.startTimer)
     clearInterval(this.timerInterval)
-    clearTimeout(this.componentTimeout)
+    clearTimeout(this.startCountdownTimeout)
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
     clearTimeout(this.startGameTimeout)
@@ -93,7 +102,7 @@ class CountdownContainer extends React.Component {
                 />
               </div>
             </div>
-            { this.state.showFooter ?
+            { this.props.ui.showFooter ?
               <FooterContainer
                 initDismount={ this.state.initDismount }
               />
@@ -123,8 +132,16 @@ class CountdownContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 
-export default connect(mapStateToProps)(CountdownContainer)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onShowFooter: () => dispatch(actions.showFooter()),
+    onHideFooter: () => dispatch(actions.hideFooter())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CountdownContainer)

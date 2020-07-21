@@ -13,6 +13,7 @@ import thunk from 'redux-thunk'
 
 import detectReducer from './store/reducers/detectReducer'
 import playerReducer from './store/reducers/playerReducer'
+import uiReducer from './store/reducers/uiReducer'
 
 import ScrollRestore from './utility/scrollRestore'
 
@@ -20,7 +21,8 @@ const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
   detect: detectReducer,
-  player: playerReducer
+  player: playerReducer,
+  ui: uiReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

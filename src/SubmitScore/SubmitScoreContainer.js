@@ -2,6 +2,8 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import * as actions from '../store/actions/actionIndex'
+
 import { routes } from '../utility/paths'
 
 import FooterContainer from '../UI/Footer/FooterContainer'
@@ -25,18 +27,22 @@ class SubmitScoreContainer extends React.Component {
     initDismount: false,
     player: '',
     showButtons: false,
-    showFooter: false,
     showSubmitScore: true,
     showWrapper: false
   }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Submit Score'
+    this.startSubmitScore()
+  }
 
-    this.componentTimeout = setTimeout(() => {
+  startSubmitScore = () => {
+    this.startSubmitScoreTimeout = setTimeout(() => {
+
+      this.props.onShowFooter()
+
       this.setState({
         showButtons: true,
-        showFooter: true,
         showWrapper: true
       })
     }, 500)
@@ -49,9 +55,11 @@ class SubmitScoreContainer extends React.Component {
     this.setState({ initDismount: true })
 
     this.initResetTimeout = setTimeout(() => {
+
+      this.props.onHideFooter()
+
       this.setState({
         showButtons: false,
-        showFooter: false,
         showWrapper: false,
       })
     }, 250)
@@ -72,7 +80,7 @@ class SubmitScoreContainer extends React.Component {
   }
 
   clearTimers = () => {
-    clearTimeout(this.componentTimeout)
+    clearTimeout(this.startSubmitScoreTimeout)
     clearTimeout(this.initResetTimeout)
     clearTimeout(this.resetTimeout)
     clearTimeout(this.dismountedTimeout)
@@ -82,6 +90,8 @@ class SubmitScoreContainer extends React.Component {
   componentWillUnmount(){ this.clearTimers() }
 
   render(){
+
+  console.log(this.props)
 
   let wrapperClass, pillClass, rowClass1, subRowClass1
 
@@ -153,7 +163,7 @@ class SubmitScoreContainer extends React.Component {
         :
           <></>
         }
-        { this.state.showFooter ?
+        { this.props.ui.showFooter ?
           <FooterContainer
             initDismount={ this.state.initDismount }
           />
@@ -177,8 +187,16 @@ class SubmitScoreContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
-    orientation: state.detect.orientation
+    orientation: state.detect.orientation,
+    ui: state.ui
   }
 }
 
-export default connect(mapStateToProps)(SubmitScoreContainer)
+const mapDispatchToProps = (dispatch) => {
+  return{
+    onShowFooter: () => dispatch(actions.showFooter()),
+    onHideFooter: () => dispatch(actions.hideFooter())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitScoreContainer)
