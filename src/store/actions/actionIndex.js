@@ -16,3 +16,7 @@ export {
   initDismount,
   exitDismount
 } from './uiActions'
+
+export {
+  getScoreboard
+} from './scoreboardActions'

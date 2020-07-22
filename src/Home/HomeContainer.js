@@ -22,8 +22,7 @@ class HomeContainer extends React.Component {
   state = {
     isPostGame: false,
     mounted: false,
-    onDismount: false,
-    scoreboard: [],
+    onDismount: false
   }
 
   componentDidMount(){
@@ -35,13 +34,16 @@ class HomeContainer extends React.Component {
     this.onMount()
 
     scoreboardFunctions('get', fetch.get)
-    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
+    .then(resObj => {
+      // this.setState({ scoreboard: Object.entries(resObj.players) })
+      this.props.onGetScoreboard(Object.entries(resObj.players))
+    })
+
   }
 
   componentDidUpdate(){
-    if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true })
+    if (!this.state.mounted && this.props.scoreboard.length > 0) this.setState({ mounted: true })
     if (!this.state.onDismount && this.props.ui.initDismount) this.onDismount()
-
   }
 
   onMount = () => {
@@ -108,7 +110,8 @@ class HomeContainer extends React.Component {
             <ScoreboardContainer
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
-              scoreboard={ this.state.scoreboard }
+              // scoreboard={ this.state.scoreboard }
+              // scoreboard={ this.props.scoreboard }
             />
           </div>
         :
@@ -129,7 +132,8 @@ const mapStateToProps = (state) => {
     device: state.detect.device,
     orientation: state.detect.orientation,
     player: state.player.name,
-    ui: state.ui
+    ui: state.ui,
+    scoreboard: state.scoreboard
   }
 }
 
@@ -141,7 +145,8 @@ const mapDispatchToProps = (dispatch) => {
     onShowWrapper: () => dispatch(actions.showWrapper()),
     onHideWrapper: () => dispatch(actions.hideWrapper()),
     onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount())
+    onExitDismount: () => dispatch(actions.exitDismount()),
+    onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard))
   }
 }
 

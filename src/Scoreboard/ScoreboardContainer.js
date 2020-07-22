@@ -136,7 +136,8 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    ui: state.ui
+    ui: state.ui,
+    scoreboard: state.scoreboard
   }
 }
 

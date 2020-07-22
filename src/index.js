@@ -14,6 +14,7 @@ import thunk from 'redux-thunk'
 import detectReducer from './store/reducers/detectReducer'
 import playerReducer from './store/reducers/playerReducer'
 import uiReducer from './store/reducers/uiReducer'
+import scoreboardReducer from './store/reducers/scoreboardReducer'
 
 import ScrollRestore from './utility/scrollRestore'
 
@@ -22,25 +23,26 @@ const history = createBrowserHistory();
 const rootReducer = combineReducers({
   detect: detectReducer,
   player: playerReducer,
-  ui: uiReducer
+  ui: uiReducer,
+  scoreboard: scoreboardReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-// const logger = (store) => {
-//   return next => {
-//     return action => {
-//       console.log('[Middleware] action', action)
-//       const nextResult = next(action)
-//       console.log('[Middleware] next state', store.getState())
-//       return nextResult
-//     }
-//   }
-// }
+const logger = (store) => {
+  return next => {
+    return action => {
+      console.log('[Middleware] action', action)
+      const nextResult = next(action)
+      console.log('[Middleware] next state', store.getState())
+      return nextResult
+    }
+  }
+}
 
-// const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)))
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)))
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+// const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 const RouterApp = (
   <Provider store={store}>
