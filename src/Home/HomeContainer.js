@@ -33,12 +33,13 @@ class HomeContainer extends React.Component {
     this.props.onExitDismount()
     this.onMount()
 
-    scoreboardFunctions('get', fetch.get)
-    .then(resObj => {
-      // this.setState({ scoreboard: Object.entries(resObj.players) })
-      this.props.onGetScoreboard(Object.entries(resObj.players))
-    })
-
+    if(this.props.scoreboard.allScores.length === 0){
+      scoreboardFunctions('get', fetch.get)
+      .then(resObj => {
+        // this.setState({ scoreboard: Object.entries(resObj.players) })
+        this.props.onGetScoreboard(Object.entries(resObj.players))
+      })
+    }
   }
 
   componentDidUpdate(){
@@ -129,7 +130,6 @@ const mapStateToProps = (state) => {
   return {
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name,
     ui: state.ui,
     scoreboard: state.scoreboard
   }

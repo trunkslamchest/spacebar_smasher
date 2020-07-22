@@ -34,14 +34,18 @@ class PostGameContainer extends React.Component {
     this.props.onHideWrapper()
     this.onMount()
 
-    scoreboardFunctions('get', fetch.get)
-    .then(resObj => {
-      // this.setState({ scoreboard: Object.entries(resObj.players) })
-      this.props.onGetScoreboard(Object.entries(resObj.players))
-    })
+    if(this.props.scoreboard.allScores.length === 0){
+      scoreboardFunctions('get', fetch.get)
+      .then(resObj => {
+        // this.setState({ scoreboard: Object.entries(resObj.players) })
+        this.props.onGetScoreboard(Object.entries(resObj.players))
+      })
+    }
   }
 
-  componentDidUpdate(){ if (!this.state.mounted && this.props.scoreboard.allScores.length > 0) this.setState({ mounted: true }) }
+  componentDidUpdate(){
+    if (!this.state.mounted && this.props.scoreboard.allScores.length > 0) this.setState({ mounted: true })
+  }
 
   onMount = () => {
     this.startPostGameTimeout = setTimeout(() => {
@@ -160,7 +164,6 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name,
     ui: state.ui,
     scoreboard: state.scoreboard
   }

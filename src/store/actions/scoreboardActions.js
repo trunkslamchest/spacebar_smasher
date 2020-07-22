@@ -16,7 +16,6 @@ export const addScore = (value) => {
 
 export const clearScore = () => {
   return{
-    type: actionTypes.CLEARSCORE,
-    addedScore: {}
+    type: actionTypes.CLEARSCORE
   }
 }

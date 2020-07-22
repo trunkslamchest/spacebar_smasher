@@ -28,61 +28,61 @@ class ScoreboardRow extends React.Component {
 
     let highlightedClass, rowClass, placeClass, nameClass, powerClass, scoreClass
 
-  if(this.props.isPostGame) {
-    if(this.props.device === "mobile"){
-      if(this.props.orientation === "landscape") {
-        highlightedClass = "highlighted_row_mobile_landscape"
-        rowClass = "scoreboard_row_mobile_landscape"
-        placeClass = "scoreboard_row_place_mobile_landscape"
-        nameClass = "scoreboard_row_name_mobile_landscape"
-        powerClass = "scoreboard_row_power_mobile_landscape"
-        scoreClass = "scoreboard_row_score_mobile_landscape"
+    if(this.props.isPostGame) {
+      if(this.props.device === "mobile"){
+        if(this.props.orientation === "landscape") {
+          highlightedClass = "highlighted_row_mobile_landscape"
+          rowClass = "scoreboard_row_mobile_landscape"
+          placeClass = "scoreboard_row_place_mobile_landscape"
+          nameClass = "scoreboard_row_name_mobile_landscape"
+          powerClass = "scoreboard_row_power_mobile_landscape"
+          scoreClass = "scoreboard_row_score_mobile_landscape"
+        } else {
+          highlightedClass = "highlighted_row_mobile_portrait"
+          rowClass = "scoreboard_row_mobile_portrait"
+          placeClass = "scoreboard_row_place_mobile_portrait"
+          nameClass = "scoreboard_row_name_mobile_portrait"
+          powerClass = "scoreboard_row_power_mobile_portrait"
+          scoreClass = "scoreboard_row_score_mobile_portrait"
+        }
       } else {
-        highlightedClass = "highlighted_row_mobile_portrait"
-        rowClass = "scoreboard_row_mobile_portrait"
-        placeClass = "scoreboard_row_place_mobile_portrait"
-        nameClass = "scoreboard_row_name_mobile_portrait"
-        powerClass = "scoreboard_row_power_mobile_portrait"
-        scoreClass = "scoreboard_row_score_mobile_portrait"
+        highlightedClass = "highlighted_row_desktop"
+        rowClass = "scoreboard_row_desktop"
+        placeClass = "scoreboard_row_place_desktop"
+        nameClass = "scoreboard_row_name_desktop"
+        powerClass = "scoreboard_row_power_desktop"
+        scoreClass = "scoreboard_row_score_desktop"
       }
     } else {
-      highlightedClass = "highlighted_row_desktop"
-      rowClass = "scoreboard_row_desktop"
-      placeClass = "scoreboard_row_place_desktop"
-      nameClass = "scoreboard_row_name_desktop"
-      powerClass = "scoreboard_row_power_desktop"
-      scoreClass = "scoreboard_row_score_desktop"
-    }
-  } else {
-    if(this.props.device === "mobile"){
-      if(this.props.orientation === "landscape") {
-        highlightedClass = "highlighted_row_mobile_landscape"
-        rowClass = "scoreboard_row_mobile_landscape"
-        placeClass = "scoreboard_row_place_mobile_landscape"
-        nameClass = "scoreboard_row_name_mobile_landscape"
-        powerClass = "scoreboard_row_power_mobile_landscape"
-        scoreClass = "scoreboard_row_score_mobile_landscape"
+      if(this.props.device === "mobile"){
+        if(this.props.orientation === "landscape") {
+          highlightedClass = "highlighted_row_mobile_landscape"
+          rowClass = "scoreboard_row_mobile_landscape"
+          placeClass = "scoreboard_row_place_mobile_landscape"
+          nameClass = "scoreboard_row_name_mobile_landscape"
+          powerClass = "scoreboard_row_power_mobile_landscape"
+          scoreClass = "scoreboard_row_score_mobile_landscape"
+        } else {
+          highlightedClass = "highlighted_row_mobile_portrait"
+          rowClass = "scoreboard_row_mobile_portrait"
+          placeClass = "scoreboard_row_place_mobile_portrait"
+          nameClass = "scoreboard_row_name_mobile_portrait"
+          powerClass = "scoreboard_row_power_mobile_portrait"
+          scoreClass = "scoreboard_row_score_mobile_portrait"
+        }
       } else {
-        highlightedClass = "highlighted_row_mobile_portrait"
-        rowClass = "scoreboard_row_mobile_portrait"
-        placeClass = "scoreboard_row_place_mobile_portrait"
-        nameClass = "scoreboard_row_name_mobile_portrait"
-        powerClass = "scoreboard_row_power_mobile_portrait"
-        scoreClass = "scoreboard_row_score_mobile_portrait"
+        highlightedClass = "highlighted_row_desktop"
+        rowClass = "scoreboard_row_desktop"
+        placeClass = "scoreboard_row_place_desktop"
+        nameClass = "scoreboard_row_name_desktop"
+        powerClass = "scoreboard_row_power_desktop"
+        scoreClass = "scoreboard_row_score_desktop"
       }
-    } else {
-      highlightedClass = "highlighted_row_desktop"
-      rowClass = "scoreboard_row_desktop"
-      placeClass = "scoreboard_row_place_desktop"
-      nameClass = "scoreboard_row_name_desktop"
-      powerClass = "scoreboard_row_power_desktop"
-      scoreClass = "scoreboard_row_score_desktop"
     }
-  }
 
     return(
       <div
-        className={ this.props.player === this.props.score.name ? highlightedClass : rowClass }
+        className={ this.props.scoreboard.addedScore.name === this.props.score.name ? highlightedClass : rowClass }
         ref={ this.rowRef }
       >
         <div className={ placeClass }>
@@ -107,7 +107,6 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name,
     scoreboard: state.scoreboard
   }
 }

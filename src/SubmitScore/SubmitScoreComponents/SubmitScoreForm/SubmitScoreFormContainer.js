@@ -56,22 +56,12 @@ class SubmitScoreFormContainer extends React.Component {
 
   onSubmit = (event) => {
     event.preventDefault()
-
     this.addScore(event)
-
     this.setState({ submitClicked: true })
   }
 
   addScore = (event) => {
     event.preventDefault()
-
-    let playerObj = {
-      name: this.state.player,
-      score: this.props.count,
-      power_level: this.props.powerRaw,
-      power_percent: this.props.power,
-      timestamp: getTime('fullDate')
-    }
 
     let postCheck = validatePost(event.target[0].value.trim(), this.props.count)
 
@@ -86,6 +76,15 @@ class SubmitScoreFormContainer extends React.Component {
       })
     } else {
       if(!this.state.submitClicked){
+
+        let playerObj = {
+          name: this.state.player,
+          score: this.props.count,
+          power_level: this.props.powerRaw,
+          power_percent: this.props.power,
+          timestamp: getTime('fullDate')
+        }
+
         scoreboardFunctions('post', fetch.post, playerObj)
         .then(resObj => {
           if(!!resObj){
@@ -115,7 +114,7 @@ class SubmitScoreFormContainer extends React.Component {
             />
           </Modal>
         :
-          null
+          <></>
         }
       <SubmitScoreForm
         onNameChange={ this.onNameChange }
@@ -131,7 +130,6 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name,
     ui: state.ui,
     scoreboard: state.scoreboard
   }

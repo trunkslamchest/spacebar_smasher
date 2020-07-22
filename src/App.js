@@ -53,8 +53,7 @@ const App = (props) => {
 const mapStateToProps = (state) => {
   return {
     device: state.detect.device,
-    orientation: state.detect.orientation,
-    player: state.player.name
+    orientation: state.detect.orientation
   }
 }
 
