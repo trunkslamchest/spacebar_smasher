@@ -1,4 +1,4 @@
-.loading_scoreboard_container {
+.loading_home_container {
   min-height: 50vh !important;
   width: 80% !important;
   display: flex;
@@ -7,7 +7,7 @@
   align-content: center;
 }
 
-.loading_scoreboard_header {
+/* .loading_scoreboard_header {
   width: 100%;
   padding: 10px 0px 10px 0px;
   animation: loading_pulse 2s linear infinite;
@@ -23,4 +23,4 @@
 .loading_scoreboard_animation_container {
   margin: 0px auto 0px auto !important;
   animation: loading_pulse 1.2s ease-in-out infinite !important;
-}
+} */

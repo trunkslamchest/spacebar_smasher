@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import LoadingSubmitScore from '../../../../UI/Loading/LoadingSubmitScore/LoadingSubmitScore'
+
 import './SubmitScoreDesktopForm.css'
 import './SubmitScoreDesktopFormDismount.css'
 import './SubmitScoreDesktopFormOnmount.css'
@@ -39,32 +41,40 @@ const SubmitScoreForm = (props) => {
   }
 
   return(
-    <div className={ formWrapperClass }>
-      <h2>Submit Score</h2>
-      <form
-        name="submit_score_form"
-        className={ formClass }
-        disabled={ props.submitClicked }
-        onSubmit={ props.onSubmit }
-      >
-        <input
-          name="player"
-          type="text"
-          maxLength="12"
-          className={ textBoxClass }
-          placeholder="Enter Your Name"
-          autoComplete="off"
-          value={ props.player }
-          onChange={ props.onNameChange }
-        />
-        <input
-          className={ buttonClass }
-          disabled={ props.submitClicked }
-          type="submit"
-          value="Confirm"
-        />
-      </form>
-    </div>
+    <>
+      { props.submitClicked ?
+        <div className={ formWrapperClass }>
+          <LoadingSubmitScore />
+        </div>
+      :
+        <div className={ formWrapperClass }>
+          <h2>Submit Score</h2>
+          <form
+            name="submit_score_form"
+            className={ formClass }
+            disabled={ props.submitClicked }
+            onSubmit={ props.onSubmit }
+          >
+            <input
+              name="player"
+              type="text"
+              maxLength="12"
+              className={ textBoxClass }
+              placeholder="Enter Your Name"
+              autoComplete="off"
+              value={ props.player }
+              onChange={ props.onNameChange }
+            />
+            <input
+              className={ buttonClass }
+              disabled={ props.submitClicked }
+              type="submit"
+              value="Confirm"
+            />
+          </form>
+        </div>
+      }
+    </>
   )
 }
 

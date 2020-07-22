@@ -20,7 +20,7 @@ class CountdownContainer extends React.Component {
   state = {
     showGame: false,
     startGame: false,
-    time: 5,
+    time: 1,
   }
 
   componentDidMount(){

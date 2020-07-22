@@ -32,9 +32,10 @@ class PostGameContainer extends React.Component {
 
     this.props.onHideFooter()
     this.props.onHideWrapper()
+    this.onMount()
 
     scoreboardFunctions('get', fetch.get)
-    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
+    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
   componentDidUpdate(){ if (!this.state.mounted && this.state.scoreboard.length > 0) this.setState({ mounted: true }) }

@@ -25,7 +25,7 @@ const FooterFinePrint = (props) => {
           © 2020 Created by Jamal Farah & Austin Smith
         </p>
         <p>
-          version 0.37.3 | 07/21/20
+          0.37.4 | 07.22.20
         </p>
         <p>
           All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises, L.P. © Spacebar Smasher 2020

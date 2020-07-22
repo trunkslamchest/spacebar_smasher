@@ -32,9 +32,10 @@ class HomeContainer extends React.Component {
     this.props.onHideFooter()
     this.props.onHideWrapper()
     this.props.onExitDismount()
+    this.onMount()
 
     scoreboardFunctions('get', fetch.get)
-    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }, this.onMount()) })
+    .then(resObj => { this.setState({ scoreboard: Object.entries(resObj.players) }) })
   }
 
   componentDidUpdate(){

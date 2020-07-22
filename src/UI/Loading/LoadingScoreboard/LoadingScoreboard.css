@@ -1,0 +1,80 @@
+.loading_scoreboard_container {
+  min-height: 50vh !important;
+  max-height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
+  width: 75% !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.loading_scoreboard_container h1 {
+  color: white;
+  font-family: "Staatliches";
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  animation: loading_pulse 2s linear infinite;
+}
+
+.loading_scoreboard {
+  height: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: center;
+  min-height: 50px;
+  width: 80%;
+  background-color: #000;
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
+}
+
+.loading_scoreboard div {
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  width: 10px;
+  background-color: yellow;
+  animation: loading_scoreboard 1s cubic-bezier(1, 0, 1, 1) infinite;
+}
+
+.loading_scoreboard div:nth-child(1) {
+  animation-delay: 0s;
+}
+.loading_scoreboard div:nth-child(2) {
+  animation-delay: -0.1s;
+}
+.loading_scoreboard div:nth-child(3) {
+  animation-delay: -0.2s;
+}
+.loading_scoreboard div:nth-child(4) {
+  animation-delay: -0.3s;
+}
+.loading_scoreboard div:nth-child(5) {
+  animation-delay: -0.4s;
+}
+
+@keyframes loading_scoreboard {
+  0% {
+    left: calc(0% - 10px);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    left: calc(100% - 60px);
+    opacity: 0;
+  }
+}

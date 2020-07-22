@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import ScoreboardRow from './ScoreboardRow/ScoreboardRow'
 
-import LoadingScoreboard from '../UI/Loading/LoadingScoreboard'
+import LoadingScoreboard from '../UI/Loading/LoadingScoreboard/LoadingScoreboard'
 
 import './ScoreboardDesktopContainer.css'
 import './ScoreboardDesktopOnmount.css'

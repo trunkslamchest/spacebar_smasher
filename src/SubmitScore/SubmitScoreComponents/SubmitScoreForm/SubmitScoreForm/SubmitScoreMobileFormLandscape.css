@@ -9,7 +9,7 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding: 5px 5px 10px 5px;
+  padding: 10px;
   text-align: center;
   width: 100%;
 }
@@ -31,7 +31,6 @@
   flex-direction: row;
   justify-content: center;
   width: 75%;
-
 }
 
 .submit_score_mobile_text_box_landscape {
@@ -42,7 +41,7 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
   color: yellow;
   font-family: 'Conv_digital-7.mono';
-  font-size:calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320))) ;
+  font-size:calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   width: 75%;
   padding: 5px;
@@ -61,7 +60,7 @@
   animation: text_shadow_blink 2.1s ease-in-out infinite;
   color: yellow;
   font-family: 'Conv_digital-7.mono';
-  font-size: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
+  font-size:calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   opacity: 1;
 }
@@ -72,7 +71,7 @@
 
 .submit_score_mobile_button_landscape {
   -webkit-appearance: none;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   animation: text_shadow_blink 2s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;
@@ -81,20 +80,20 @@
   box-sizing: border-box;
   color: yellow;
   cursor: pointer;
-  display: inline-block;
+  /* display: inline-block; */
   font-family: "Staatliches";
-  font-size: calc(10px + (30 - 10) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 400;
-  letter-spacing: normal;
-  padding: calc(6px + (12 - 6) * ((100vw - 320px) / (1920 - 320))) 30px;
-  text-indent: 0px;
-  text-rendering: auto;
-  text-shadow: none;
-  text-transform: none;
-  word-spacing: normal;
+  font-size:calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  /* letter-spacing: normal; */
+  padding-left: 25px;
+  padding-right: 25px;
+  /* text-indent: 0px; */
+  /* text-rendering: auto; */
+  /* text-shadow: none; */
+  /* text-transform: none; */
+  /* word-spacing: normal; */
   text-align: center;
   text-decoration: none;
-  width: 25%;
 }
 
 .submit_score_mobile_button_landscape:hover {

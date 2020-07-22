@@ -4,7 +4,7 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   border: 2px solid grey;
   margin: 0px auto 0 auto;
-  padding: 10px 0px 5px 0px;
+  padding: 10px;
   text-align: center;
   width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }

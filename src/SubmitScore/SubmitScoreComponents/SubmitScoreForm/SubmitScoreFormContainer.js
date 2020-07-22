@@ -119,7 +119,7 @@ class SubmitScoreFormContainer extends React.Component {
         }
       <SubmitScoreForm
         onNameChange={ this.onNameChange }
-        disabled={ this.state.submitClicked }
+        submitClicked={ this.state.submitClicked }
         onSubmit={ this.onSubmit }
       />
       </>
