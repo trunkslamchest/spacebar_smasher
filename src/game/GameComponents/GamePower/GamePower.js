@@ -11,8 +11,8 @@ const GamePower = (props) => {
 
   let powerClass, powerBarClass
 
-  if(props.device === "mobile") {
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile") {
+    if(props.detect.orientation === "landscape") {
       powerClass = "game_mobile_power_landscape"
       powerBarClass = "game_mobile_power_bar_landscape"
     } else {
@@ -42,8 +42,7 @@ const GamePower = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

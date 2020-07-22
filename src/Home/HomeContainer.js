@@ -54,6 +54,7 @@ class HomeContainer extends React.Component {
     this.props.onClearScore()
     this.props.onInitDismount()
     this.startCountdownTimeout = setTimeout(() => {
+      this.props.onExitDismount()
       this.props.history.push( routes.game )
     }, 750 )
   }
@@ -68,7 +69,6 @@ class HomeContainer extends React.Component {
   }
 
   componentWillUnmount(){
-    this.props.onExitDismount()
     clearTimeout(this.startCountdownTimeout)
     clearTimeout(this.onDismountTimeout)
   }

@@ -57,17 +57,18 @@ class PostGameContainer extends React.Component {
 
     if (event.target.attributes.nav.value === 'game')  {
       this.resetTimeout = setTimeout(() => {
+        this.props.onExitDismount()
         this.props.onClearScore()
         this.props.history.push( routes.game )
       }, 500 )
     }
     else this.resetTimeout = setTimeout(() => {
+      this.props.onExitDismount()
       this.props.history.push( routes.home )
     }, 500 )
   }
 
   componentWillUnmount(){
-    this.props.onExitDismount()
     this.props.onPostGame()
     clearTimeout(this.startPostGameTimeout)
     clearTimeout(this.resetTimeout)

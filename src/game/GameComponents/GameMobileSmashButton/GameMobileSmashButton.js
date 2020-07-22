@@ -12,7 +12,7 @@ const GameMobileSmashButton = (props) => {
 
   let currentClass, buttonClass
 
-    if(props.orientation === "landscape") {
+    if(props.detect.orientation === "landscape") {
       currentClass = "game_mobile_smash_button_landscape"
       buttonClass = "smash_button_landscape"
     } else {
@@ -34,7 +34,7 @@ const GameMobileSmashButton = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    orientation: state.detect.orientation
+    detect: state.detect
   }
 }
 

@@ -128,10 +128,8 @@ class SubmitScoreFormContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
-    ui: state.ui,
-    scoreboard: state.scoreboard
+    scoreboard: state.scoreboard,
+    ui: state.ui
   }
 }
 

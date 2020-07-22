@@ -14,8 +14,8 @@ const SubmitScoreForm = (props) => {
 
   let formWrapperClass, formClass, textBoxClass, buttonClass
 
-  if(props.device === "mobile") {
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile") {
+    if(props.detect.orientation === "landscape") {
       formWrapperClass = "submit_score_mobile_form_container_landscape"
       formClass = "submit_score_mobile_form_landscape"
       textBoxClass = "submit_score_mobile_text_box_landscape"
@@ -80,8 +80,7 @@ const SubmitScoreForm = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

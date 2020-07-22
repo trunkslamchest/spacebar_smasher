@@ -42,11 +42,11 @@ class CountdownContainer extends React.Component {
     this.setState({ startGame: true })
     this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
     this.onDismountTimeout = setTimeout(() => {
+      this.props.onExitDismount()
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 750)
     this.startGameTimeout = setTimeout(() => {
-      this.props.onExitDismount()
       this.setState({ showGame: true })
     }, 1000)
   }
@@ -69,8 +69,8 @@ class CountdownContainer extends React.Component {
 
     let wrapperClass, pillClass
 
-    if(this.props.device === "mobile") {
-      if(this.props.orientation === "landscape") {
+    if(this.props.detect.device === "mobile") {
+      if(this.props.detect.orientation === "landscape") {
         wrapperClass = "countdown_mobile_wrapper_landscape"
         pillClass = "countdown_mobile_pill_landscape"
       } else {
@@ -122,8 +122,7 @@ class CountdownContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

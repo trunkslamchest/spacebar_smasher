@@ -12,8 +12,8 @@ const SubmitScoreCounter = (props) => {
 
   let counterClass
 
-  if(props.device === "mobile") {
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile") {
+    if(props.detect.orientation === "landscape") {
       counterClass = "submit_score_mobile_counter_landscape"
     } else {
       counterClass = "submit_score_mobile_counter_portrait"
@@ -36,8 +36,7 @@ const SubmitScoreCounter = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

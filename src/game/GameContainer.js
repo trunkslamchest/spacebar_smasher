@@ -58,7 +58,7 @@ class GameContainer extends React.Component {
       this.props.onShowWrapper()
 
       this.setState({
-        showMobileSmashButton: this.props.device === "mobile" ? true : false,
+        showMobileSmashButton: this.props.detect.device === "mobile" ? true : false
       })
     }, 250)
 
@@ -198,8 +198,8 @@ class GameContainer extends React.Component {
 
     let wrapperClass, pillClass, rowClass1, subRowClass1
 
-    if(this.props.device === "mobile") {
-      if(this.props.orientation === 'landscape') {
+    if(this.props.detect.device === "mobile") {
+      if(this.props.detect.orientation === 'landscape') {
         rowClass1 = 'game_mobile_landscapeR1'
         subRowClass1 = 'game_mobile_landscapeSR1'
         if(this.props.ui.initDismount) {
@@ -247,7 +247,7 @@ class GameContainer extends React.Component {
                   />
                 </div>
               </div>
-            { this.props.device === "mobile" ?
+            { this.props.detect.device === "mobile" ?
                 <GameMobileSmashButton
                   onSmash={this.onSmash}
                   smashed={this.state.smashed}
@@ -288,8 +288,7 @@ class GameContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

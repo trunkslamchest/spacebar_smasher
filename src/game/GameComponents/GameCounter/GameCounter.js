@@ -11,8 +11,8 @@ const GameCounter = (props) => {
 
   let currentClass
 
-  if(props.device === "mobile") {
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile") {
+    if(props.detect.orientation === "landscape") {
       currentClass = "game_mobile_counter_landscape"
     } else {
       currentClass = "game_mobile_counter_portrait"
@@ -32,8 +32,7 @@ const GameCounter = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

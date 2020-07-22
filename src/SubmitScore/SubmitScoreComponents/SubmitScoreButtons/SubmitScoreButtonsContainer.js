@@ -17,8 +17,8 @@ const SubmitScoreButtonsContainer = (props) => {
 
   let wrapperClass, mainMenuButtonClass, tryAgainButtonClass
 
-  if(props.device === "mobile"){
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
       if(props.ui.initDismount) {
         wrapperClass = "dismount_submit_score_mobile_buttons_container_landscape"
         mainMenuButtonClass = "submit_score_mobile_main_menu_button_landscape"
@@ -75,8 +75,7 @@ const SubmitScoreButtonsContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

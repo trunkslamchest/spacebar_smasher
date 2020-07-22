@@ -14,8 +14,8 @@ const CountdownTutorial = (props) => {
 
   let currentClass
 
-  if(props.device === "mobile") {
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile") {
+    if(props.detect.orientation === "landscape") {
       if(props.ui.initDismount) currentClass = "dismount_countdown_mobile_tutorial_landscape"
       else currentClass = "countdown_mobile_tutorial_landscape"
     } else {
@@ -36,8 +36,7 @@ const CountdownTutorial = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }
