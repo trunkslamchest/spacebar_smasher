@@ -54,6 +54,7 @@ class SubmitScoreContainer extends React.Component {
 
     this.initResetTimeout = setTimeout(() => {
 
+      // this.props.onShowGame()
       this.props.onHideFooter()
       this.props.onHideWrapper()
 
@@ -63,8 +64,8 @@ class SubmitScoreContainer extends React.Component {
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
         this.props.onExitDismount()
-        this.props.history.push( routes.game )
-        this.props.resetGame()
+        this.props.history.push( routes.countdown )
+        // this.props.resetGame()
       }, 500 )
     }
     else this.resetTimeout = setTimeout(() => {
@@ -101,8 +102,8 @@ class SubmitScoreContainer extends React.Component {
 
   let wrapperClass, pillClass, rowClass1, subRowClass1
 
-  if(this.props.device === "mobile") {
-    if(this.props.orientation === "landscape") {
+  if(this.props.detect.device === "mobile") {
+    if(this.props.detect.orientation === "landscape") {
       rowClass1 = 'submit_score_mobile_landscapeR1'
       subRowClass1 = 'submit_score_mobile_landscapeSR1'
         if(this.props.ui.initDismount) {
@@ -136,23 +137,23 @@ class SubmitScoreContainer extends React.Component {
               <SubmitScoreHeader />
               <div className={ rowClass1 }>
                 <SubmitScoreCounter
-                  count={ this.props.count }
+                  // count={ this.props.count }
                 />
                 <div className={ subRowClass1 }>
                   <SubmitScoreRank
-                    rank={ this.props.rank }
+                    // rank={ this.props.rank }
                   />
                   <SubmitScorePower
-                    power={ this.props.power }
-                    powerRaw={ this.props.powerRaw }
+                    // power={ this.props.power }
+                    // powerRaw={ this.props.powerRaw }
                   />
                 </div>
               </div>
               <SubmitScoreFormContainer
-                count={ this.props.count }
+                // count={ this.props.count }
                 onDismount={ this.onDismount }
-                power={ this.props.power }
-                powerRaw={ this.props.powerRaw }
+                // power={ this.props.power }
+                // powerRaw={ this.props.powerRaw }
               />
             </div>
             <SubmitScoreButtonsContainer
@@ -183,8 +184,8 @@ class SubmitScoreContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
+    scoreboard: state.scoreboard,
     ui: state.ui
   }
 }
@@ -196,7 +197,8 @@ const mapDispatchToProps = (dispatch) => {
     onShowWrapper: () => dispatch(actions.showWrapper()),
     onHideWrapper: () => dispatch(actions.hideWrapper()),
     onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount())
+    onExitDismount: () => dispatch(actions.exitDismount()),
+    // onShowGame: () => dispatch(actions.showGame())
   }
 }
 

@@ -2,11 +2,13 @@ import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
     allScores: [],
-    addedScore: {
-      name: "",
+    score: {
+      name: '',
+      avgPres: 1,
       power_level: 0.00,
       power_percent: 0.0,
       score: 0,
+      rank: "SUPER BABY FINGERS",
       timestamp: ""
     }
   }
@@ -18,15 +20,37 @@ const getScoreboard = (currentState, action) => {
   }
 }
 
-const addScore = (currentState, action) => {
+const clearScore = (currentState) => {
+  return{
+    ...currentState,
+    score: {
+      name: '',
+      avgPres: 1,
+      power_level: 0.00,
+      power_percent: 0.0,
+      score: 0,
+      rank: "SUPER BABY FINGERS",
+      timestamp: ""
+    }
+  }
+}
+
+const storeScore = (currentState, action) => {
+  return{
+    ...currentState,
+    score: action.score
+  }
+}
+
+const submitScore = (currentState, action) => {
 
   var updatedScoreboard
 
   for(let score in currentState.allScores){
-    if(!(currentState.allScores[score][1].score > action.addedScore.score)){
+    if(!(currentState.allScores[score][1].score > action.score.score)){
       let lowerScores = currentState.allScores.slice(parseInt(score), currentState.allScores.length + 1)
       lowerScores.forEach(score => score[0] = (parseInt(score[0]) + 1).toString())
-      updatedScoreboard = [ ...currentState.allScores.slice(0, score), [score, action.addedScore], ...lowerScores ]
+      updatedScoreboard = [ ...currentState.allScores.slice(0, score), [score, action.score], ...lowerScores ]
       break
     }
   }
@@ -34,28 +58,16 @@ const addScore = (currentState, action) => {
   return{
     ...currentState,
     allScores: updatedScoreboard,
-    addedScore: action.addedScore
-  }
-}
-
-const clearScore = (currentState) => {
-  return{
-    ...currentState,
-    addedScore: {
-      name: "",
-      power_level: 0.00,
-      power_percent: 0.0,
-      score: 0,
-      timestamp: ""
-    }
+    score: action.score
   }
 }
 
 const scoreboardReducer = (currentState = initialState, action) => {
   switch(action.type){
     case actionTypes.GETSCOREBOARD: return getScoreboard(currentState, action)
-    case actionTypes.ADDSCORE: return addScore(currentState, action)
     case actionTypes.CLEARSCORE: return clearScore(currentState, action)
+    case actionTypes.STORESCORE: return storeScore(currentState, action)
+    case actionTypes.SUBMITSCORE: return submitScore(currentState, action)
     default: return currentState
   }
 }

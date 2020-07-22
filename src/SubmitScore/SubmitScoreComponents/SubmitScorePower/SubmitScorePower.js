@@ -34,9 +34,9 @@ const SubmitScorePower = (props) => {
   return(
     <div className={ powerClass }>
       <h1>POWER</h1>
-      <h2>{ props.power ? (props.power).toFixed(2) : (0.00).toFixed(2) } %</h2>
+      <h2>{ props.scoreboard.score.power_percent ? (props.scoreboard.score.power_percent).toFixed(2) : (0.00).toFixed(2) } %</h2>
       <div className={ powerBarClass }>
-        <meter value={ props.powerRaw } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
+        <meter value={ props.scoreboard.score.power_level } min="0.0" low="1.0" optimum="2.0" high="3.0" max="4.0"></meter>
       </div>
     </div>
   )
@@ -45,6 +45,7 @@ const SubmitScorePower = (props) => {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    scoreboard: state.scoreboard,
     ui: state.ui
   }
 }

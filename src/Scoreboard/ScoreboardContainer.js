@@ -26,7 +26,7 @@ const ScoreboardContainer = (props) => {
 
   let tableClass, headerClass, headRowClass, rowWrapperClass
 
-  if(props.ui.postGame) {
+  if(props.game.postGame) {
     if(props.detect.device === "mobile"){
       if(props.detect.orientation === "landscape") {
         if(props.ui.initDismount) {
@@ -134,6 +134,7 @@ const ScoreboardContainer = (props) => {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    game: state.game,
     scoreboard: state.scoreboard,
     ui: state.ui
   }

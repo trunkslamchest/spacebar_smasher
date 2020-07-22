@@ -29,7 +29,7 @@ const SubmitScoreCounter = (props) => {
   return(
     <div className={ counterClass }>
       <h1>SMASHES</h1>
-      <h2>{ props.count ? props.count : 0 }</h2>
+      <h2>{ props.scoreboard.score.score ? props.scoreboard.score.score : 0 }</h2>
     </div>
   )
 }
@@ -37,6 +37,7 @@ const SubmitScoreCounter = (props) => {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    scoreboard: state.scoreboard,
     ui: state.ui
   }
 }

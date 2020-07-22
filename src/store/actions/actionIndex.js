@@ -9,12 +9,16 @@ export {
   showWrapper,
   hideWrapper,
   initDismount,
-  exitDismount,
-  postGame
+  exitDismount
 } from './uiActions'
 
 export {
   getScoreboard,
-  addScore,
-  clearScore
+  clearScore,
+  storeScore,
+  submitScore
 } from './scoreboardActions'
+
+export {
+  postGame
+} from './gameActions'

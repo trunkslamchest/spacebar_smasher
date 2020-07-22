@@ -26,7 +26,7 @@ class PostGameContainer extends React.Component {
     document.title = 'Spacebar Smasher - Scoreboard'
     // document.body.scrollTop = 0
 
-    this.props.onPostGame()
+    this.props.onPostGame(true)
     this.props.onHideFooter()
     this.props.onHideWrapper()
 
@@ -69,7 +69,7 @@ class PostGameContainer extends React.Component {
   }
 
   componentWillUnmount(){
-    this.props.onPostGame()
+    this.props.onPostGame(false)
     clearTimeout(this.startPostGameTimeout)
     clearTimeout(this.resetTimeout)
     clearTimeout(this.onDismountTimeout)
@@ -154,6 +154,7 @@ class PostGameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    game: state.game,
     scoreboard: state.scoreboard,
     ui: state.ui
   }
@@ -169,7 +170,7 @@ const mapDispatchToProps = (dispatch) => {
     onExitDismount: () => dispatch(actions.exitDismount()),
     onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
     onClearScore: () => dispatch(actions.clearScore()),
-    onPostGame: () => dispatch(actions.postGame())
+    onPostGame: (bool) => dispatch(actions.postGame(bool))
   }
 }
 

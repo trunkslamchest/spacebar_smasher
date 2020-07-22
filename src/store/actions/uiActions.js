@@ -35,9 +35,3 @@ export const exitDismount = () => {
     type: actionTypes.EXITDISMOUNT
   }
 }
-
-export const postGame = () => {
-  return{
-    type: actionTypes.POSTGAME
-  }
-}

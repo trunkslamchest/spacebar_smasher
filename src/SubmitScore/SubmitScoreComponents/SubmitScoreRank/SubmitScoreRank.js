@@ -29,7 +29,7 @@ const SubmitScoreRank = (props) => {
   return(
     <div className={ rankClass }>
       <h1>RANK</h1>
-      <h2>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h2>
+      <h2>{ props.scoreboard.score.rank ? props.scoreboard.score.rank : "SUPER BABY FINGERS" }</h2>
     </div>
   )
 }
@@ -37,6 +37,7 @@ const SubmitScoreRank = (props) => {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    scoreboard: state.scoreboard,
     ui: state.ui
   }
 }

@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import * as actions from '../store/actions/actionIndex'
 
+import { routes } from '../utility/paths'
+
 import FooterContainer from '../UI/Footer/FooterContainer'
 
 import GameTimer from './GameComponents/GameTimer/GameTimer'
@@ -10,8 +12,6 @@ import GameCounter from './GameComponents/GameCounter/GameCounter'
 import GameRank from './GameComponents/GameRank/GameRank'
 import GamePower from './GameComponents/GamePower/GamePower'
 import GameMobileSmashButton from './GameComponents/GameMobileSmashButton/GameMobileSmashButton'
-
-import SubmitScoreContainer from '../SubmitScore/SubmitScoreContainer'
 
 import './GameDesktopContainer.css'
 import './GameMobileContainerLandscape.css'
@@ -28,7 +28,6 @@ class GameContainer extends React.Component {
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
     showMobileSmashButton: false,
-    showSubmitScore: false,
     startTimer: false,
     stopGame: false,
     time: (3.00).toFixed(2),
@@ -103,7 +102,18 @@ class GameContainer extends React.Component {
   }
 
   timerFunctions = () => {
-    if (this.state.time <= 0) this.setState({ time: 0.0 }, clearInterval(this.timerInterval))
+    if (this.state.time <= 0 || this.state.time === 0) {
+      this.setState({ time: 0 })
+      this.props.onStoreScore({
+        avgPress: this.state.avgPress,
+        score: this.state.count,
+        power_level: this.state.powerRaw,
+        power_percent: this.state.power,
+        rank: this.state.rank,
+      })
+      this.stopGame()
+      clearInterval(this.timerInterval)
+    }
     else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
@@ -133,19 +143,16 @@ class GameContainer extends React.Component {
 
   onSmash = (event) => {
     event.preventDefault()
-
     this.setState({
       count: this.state.count + 1,
       power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
       powerRaw: this.state.powerRaw + 0.025,
     })
-
     this.getRank()
   }
 
   resetGame = () => {
     document.title = 'Spacebar Smasher - Game'
-
     this.props.onHideFooter()
     this.props.onHideWrapper()
 
@@ -154,7 +161,6 @@ class GameContainer extends React.Component {
       count: 0,
       power: 0,
       powerRaw: 0,
-      showSubmitScore: false,
       stopGame: false,
       rank: "SUPER BABY FINGERS",
       time: (3.00).toFixed(2),
@@ -175,9 +181,9 @@ class GameContainer extends React.Component {
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 750)
-    this.showSubmitScoreTimeout = setTimeout(() => {
+    this.showGameTimeout = setTimeout(() => {
       this.props.onExitDismount()
-      this.setState({ showSubmitScore: true })
+      this.props.history.push( routes.submitScore )
     }, 1000)
   }
 
@@ -187,7 +193,7 @@ class GameContainer extends React.Component {
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.mobileSmashButtonTimeout)
     clearTimeout(this.restartGameTimeout)
-    clearTimeout(this.showSubmitScoreTimeout)
+    clearTimeout(this.showGameTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
     clearTimeout(this.startPower)
@@ -225,7 +231,7 @@ class GameContainer extends React.Component {
       pillClass = "game_desktop_pill"
     }
 
-    const game =
+    return(
       <>
         { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
@@ -266,22 +272,6 @@ class GameContainer extends React.Component {
           <></>
         }
       </>
-
-    return(
-      <>
-        { this.state.showSubmitScore ?
-          <SubmitScoreContainer
-            count={ this.state.count }
-            history={ this.props.history }
-            power={ this.state.power }
-            powerRaw={ this.state.powerRaw }
-            rank={ this.state.rank }
-            resetGame={ this.resetGame }
-          />
-        :
-          game
-        }
-      </>
     )
   }
 }
@@ -289,6 +279,7 @@ class GameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    game: state.game,
     ui: state.ui
   }
 }
@@ -300,7 +291,8 @@ const mapDispatchToProps = (dispatch) => {
     onShowWrapper: () => dispatch(actions.showWrapper()),
     onHideWrapper: () => dispatch(actions.hideWrapper()),
     onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount())
+    onExitDismount: () => dispatch(actions.exitDismount()),
+    onStoreScore: (score) => dispatch(actions.storeScore(score))
   }
 }
 

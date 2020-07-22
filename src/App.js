@@ -7,8 +7,10 @@ import * as actions from './store/actions/actionIndex'
 
 import { routes } from './utility/paths'
 
-import CountdownContainer from './Countdown/CountdownContainer'
 import HomeContainer from './Home/HomeContainer'
+import CountdownContainer from './Countdown/CountdownContainer'
+import GameContainer from './game/GameContainer'
+import SubmitScoreContainer from './SubmitScore/SubmitScoreContainer'
 import PostGameContainer from './PostGame/PostGameContainer'
 
 import E404 from './error/E404'
@@ -33,8 +35,18 @@ const App = (props) => {
               history={ props.history }
             />
           </Route>
-          <Route exact path={ routes.game }>
+          <Route exact path={ routes.countdown }>
             <CountdownContainer
+              history={ props.history }
+            />
+          </Route>
+          <Route exact path={ routes.game }>
+            <GameContainer
+              history={ props.history }
+            />
+          </Route>
+          <Route exact path={ routes.submitScore }>
+            <SubmitScoreContainer
               history={ props.history }
             />
           </Route>

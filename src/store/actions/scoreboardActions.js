@@ -7,15 +7,22 @@ export const getScoreboard = (value) => {
   }
 }
 
-export const addScore = (value) => {
-  return{
-    type: actionTypes.ADDSCORE,
-    addedScore: value
-  }
-}
-
 export const clearScore = () => {
   return{
     type: actionTypes.CLEARSCORE
+  }
+}
+
+export const storeScore = (value) => {
+  return{
+    type: actionTypes.STORESCORE,
+    score: value
+  }
+}
+
+export const submitScore = (value) => {
+  return{
+    type: actionTypes.SUBMITSCORE,
+    score: value
   }
 }

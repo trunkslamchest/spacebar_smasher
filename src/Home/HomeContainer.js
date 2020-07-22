@@ -55,7 +55,7 @@ class HomeContainer extends React.Component {
     this.props.onInitDismount()
     this.startCountdownTimeout = setTimeout(() => {
       this.props.onExitDismount()
-      this.props.history.push( routes.game )
+      this.props.history.push( routes.countdown )
     }, 750 )
   }
 

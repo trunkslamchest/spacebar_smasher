@@ -13,7 +13,7 @@ class ScoreboardRow extends React.Component {
   }
 
   componentDidMount() {
-    if(this.props.scoreboard.addedScore.name === this.props.score.name ) {
+    if(this.props.scoreboard.score.name === this.props.score.name ) {
       this.scrollToHighlightTimeout = setTimeout(() => {
         this.rowRef.current.scrollIntoView({
           behavior: 'smooth', block: 'center', inline: 'nearest'
@@ -27,7 +27,7 @@ class ScoreboardRow extends React.Component {
 
     let highlightedClass, rowClass, placeClass, nameClass, powerClass, scoreClass
 
-    if(this.props.ui.postGame) {
+    if(this.props.game.postGame) {
       if(this.props.detect.device === "mobile"){
         if(this.props.detect.orientation === "landscape") {
           highlightedClass = "highlighted_row_mobile_landscape"
@@ -81,7 +81,7 @@ class ScoreboardRow extends React.Component {
 
     return(
       <div
-        className={ this.props.scoreboard.addedScore.name === this.props.score.name ? highlightedClass : rowClass }
+        className={ this.props.scoreboard.score.name === this.props.score.name ? highlightedClass : rowClass }
         ref={ this.rowRef }
       >
         <div className={ placeClass }>
@@ -105,6 +105,7 @@ class ScoreboardRow extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    game: state.game,
     scoreboard: state.scoreboard,
     ui: state.ui
   }

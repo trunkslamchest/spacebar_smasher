@@ -10,8 +10,10 @@ export const HIDEWRAPPER = 'HIDEWRAPPER'
 export const INITDISMOUNT = 'INITDISMOUNT'
 export const EXITDISMOUNT = 'EXITDISMOUNT'
 
-export const POSTGAME = 'POSTGAME'
-
 export const GETSCOREBOARD = 'GETSCOREBOARD'
-export const ADDSCORE = 'ADDSCORE'
+
 export const CLEARSCORE = 'CLEARSCORE'
+export const STORESCORE = 'STORESCORE'
+export const SUBMITSCORE = 'SUBMITSCORE'
+
+export const POSTGAME = 'POSTGAME'

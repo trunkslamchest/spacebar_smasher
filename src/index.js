@@ -12,8 +12,9 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 import detectReducer from './store/reducers/detectReducer'
-import uiReducer from './store/reducers/uiReducer'
+import gameReducer from './store/reducers/gameReducer'
 import scoreboardReducer from './store/reducers/scoreboardReducer'
+import uiReducer from './store/reducers/uiReducer'
 
 import ScrollRestore from './utility/scrollRestore'
 
@@ -21,8 +22,9 @@ const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
   detect: detectReducer,
-  ui: uiReducer,
-  scoreboard: scoreboardReducer
+  game: gameReducer,
+  scoreboard: scoreboardReducer,
+  ui: uiReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

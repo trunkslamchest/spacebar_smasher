@@ -78,20 +78,36 @@ class SubmitScoreFormContainer extends React.Component {
       if(!this.state.submitClicked){
 
         let playerObj = {
+          ...this.props.scoreboard.score,
           name: this.state.player,
-          score: this.props.count,
-          power_level: this.props.powerRaw,
-          power_percent: this.props.power,
           timestamp: getTime('fullDate')
         }
 
-        scoreboardFunctions('post', fetch.post, playerObj)
-        .then(resObj => {
-          if(!!resObj){
-            this.props.onAddScore(resObj)
-            this.props.onDismount()
-          }
-        })
+        if(this.props.scoreboard.allScores.length > 0){
+
+          scoreboardFunctions('post', fetch.post, playerObj)
+          .then(resObj => {
+            if(!!resObj){
+              this.props.onSubmitScore(resObj)
+              this.props.onDismount()
+            }
+          })
+
+        } else {
+
+          scoreboardFunctions('get', fetch.get)
+          .then(resObj => {
+            this.props.onGetScoreboard(Object.entries(resObj.players))
+            scoreboardFunctions('post', fetch.post, playerObj)
+            .then(resObj => {
+              if(!!resObj){
+                this.props.onSubmitScore(resObj)
+                this.props.onDismount()
+              }
+            })
+          })
+
+        }
       }
     }
   }
@@ -108,7 +124,7 @@ class SubmitScoreFormContainer extends React.Component {
           >
             <SubmitScoreErrorContainer
               broName={ this.state.broName }
-              count={ this.props.count }
+              count={ this.props.game.score.count }
               validationErrors={ this.state.modal.validationErrors }
               initDismountModal={ this.initDismountModal }
             />
@@ -135,7 +151,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onAddScore: (score) => dispatch(actions.addScore(score))
+    onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
+    onSubmitScore: (score) => dispatch(actions.submitScore(score)),
+    onStoreScore: (score) => dispatch(actions.storeScore(score))
   }
 }
 
