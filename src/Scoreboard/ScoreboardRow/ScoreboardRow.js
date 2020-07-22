@@ -12,7 +12,6 @@ class ScoreboardRow extends React.Component {
     this.rowRef = React.createRef();
   }
 
-
   componentDidMount() {
     if(this.props.scoreboard.addedScore.name === this.props.score.name ) {
       this.scrollToHighlightTimeout = setTimeout(() => {
@@ -28,9 +27,9 @@ class ScoreboardRow extends React.Component {
 
     let highlightedClass, rowClass, placeClass, nameClass, powerClass, scoreClass
 
-    if(this.props.isPostGame) {
-      if(this.props.device === "mobile"){
-        if(this.props.orientation === "landscape") {
+    if(this.props.ui.postGame) {
+      if(this.props.detect.device === "mobile"){
+        if(this.props.detect.orientation === "landscape") {
           highlightedClass = "highlighted_row_mobile_landscape"
           rowClass = "scoreboard_row_mobile_landscape"
           placeClass = "scoreboard_row_place_mobile_landscape"
@@ -54,8 +53,8 @@ class ScoreboardRow extends React.Component {
         scoreClass = "scoreboard_row_score_desktop"
       }
     } else {
-      if(this.props.device === "mobile"){
-        if(this.props.orientation === "landscape") {
+      if(this.props.detect.device === "mobile"){
+        if(this.props.detect.orientation === "landscape") {
           highlightedClass = "highlighted_row_mobile_landscape"
           rowClass = "scoreboard_row_mobile_landscape"
           placeClass = "scoreboard_row_place_mobile_landscape"
@@ -105,9 +104,9 @@ class ScoreboardRow extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
-    scoreboard: state.scoreboard
+    detect: state.detect,
+    scoreboard: state.scoreboard,
+    ui: state.ui
   }
 }
 

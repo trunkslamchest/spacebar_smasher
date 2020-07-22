@@ -18,7 +18,6 @@ const ScoreboardContainer = (props) => {
 
   const scores =  props.scoreboard.allScores.map(score =>
     <ScoreboardRow
-      isPostGame={props.isPostGame}
       place={props.scoreboard.allScores.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
@@ -27,9 +26,9 @@ const ScoreboardContainer = (props) => {
 
   let tableClass, headerClass, headRowClass, rowWrapperClass
 
-  if(props.isPostGame) {
-    if(props.device === "mobile"){
-      if(props.orientation === "landscape") {
+  if(props.ui.postGame) {
+    if(props.detect.device === "mobile"){
+      if(props.detect.orientation === "landscape") {
         if(props.ui.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_post_game_landscape"
           headerClass = "scoreboard_header_mobile_landscape"
@@ -68,8 +67,8 @@ const ScoreboardContainer = (props) => {
       }
     }
   } else {
-    if(props.device === "mobile"){
-      if(props.orientation === "landscape") {
+    if(props.detect.device === "mobile"){
+      if(props.detect.orientation === "landscape") {
         if(props.ui.initDismount) {
           tableClass = "dismount_scoreboard_table_mobile_landscape"
           headerClass = "scoreboard_header_mobile_landscape"
@@ -134,10 +133,9 @@ const ScoreboardContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
-    ui: state.ui,
-    scoreboard: state.scoreboard
+    detect: state.detect,
+    scoreboard: state.scoreboard,
+    ui: state.ui
   }
 }
 

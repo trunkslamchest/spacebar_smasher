@@ -50,13 +50,6 @@ const App = (props) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    device: state.detect.device,
-    orientation: state.detect.orientation
-  }
-}
-
 const mapDispatchToProps = dispatch => {
   return {
     onDevice: () => dispatch(actions.device()),
@@ -64,4 +57,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(null, mapDispatchToProps)(App)

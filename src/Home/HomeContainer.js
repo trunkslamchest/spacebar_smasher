@@ -20,7 +20,6 @@ import './HomeMobileDismount.css'
 class HomeContainer extends React.Component {
 
   state = {
-    isPostGame: false,
     mounted: false,
     onDismount: false
   }
@@ -36,7 +35,6 @@ class HomeContainer extends React.Component {
     if(this.props.scoreboard.allScores.length === 0){
       scoreboardFunctions('get', fetch.get)
       .then(resObj => {
-        // this.setState({ scoreboard: Object.entries(resObj.players) })
         this.props.onGetScoreboard(Object.entries(resObj.players))
       })
     }
@@ -56,7 +54,6 @@ class HomeContainer extends React.Component {
     this.props.onClearScore()
     this.props.onInitDismount()
     this.startCountdownTimeout = setTimeout(() => {
-      this.props.onExitDismount()
       this.props.history.push( routes.game )
     }, 750 )
   }
@@ -71,6 +68,7 @@ class HomeContainer extends React.Component {
   }
 
   componentWillUnmount(){
+    this.props.onExitDismount()
     clearTimeout(this.startCountdownTimeout)
     clearTimeout(this.onDismountTimeout)
   }
@@ -79,8 +77,8 @@ class HomeContainer extends React.Component {
 
     let wrapperClass
 
-    if(this.props.device === "mobile"){
-      if(this.props.orientation === "landscape") {
+    if(this.props.detect.device === "mobile"){
+      if(this.props.detect.orientation === "landscape") {
         if(this.props.ui.initDismount) {
           wrapperClass = "dismount_home_mobile_wrapper_landscape"
         } else {
@@ -109,7 +107,6 @@ class HomeContainer extends React.Component {
               onClickStartButton={ this.onClickStartButton }
             />
             <ScoreboardContainer
-              isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
             />
           </div>
@@ -128,10 +125,9 @@ class HomeContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    device: state.detect.device,
-    orientation: state.detect.orientation,
-    ui: state.ui,
-    scoreboard: state.scoreboard
+    detect: state.detect,
+    scoreboard: state.scoreboard,
+    ui: state.ui
   }
 }
 

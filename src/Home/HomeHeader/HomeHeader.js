@@ -14,8 +14,8 @@ const HomeHeader = (props) => {
 
   let wrapperClass, headerClass, startButtonContainerClass, startButtonClass
 
-  if(props.device === "mobile"){
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
       if(props.ui.initDismount) {
         wrapperClass = "dismount_home_header_mobile_wrapper_landscape"
         headerClass = "dismount_home_header_mobile_landscape"
@@ -74,8 +74,7 @@ const HomeHeader = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation,
+    detect: state.detect,
     ui: state.ui
   }
 }

@@ -9,7 +9,8 @@ export {
   showWrapper,
   hideWrapper,
   initDismount,
-  exitDismount
+  exitDismount,
+  postGame
 } from './uiActions'
 
 export {

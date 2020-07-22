@@ -3,7 +3,16 @@ import * as actionTypes from '../actions/actionTypes'
 const initialState = {
   showFooter: false,
   showWrapper: false,
-  initDismount: false
+  initDismount: false,
+  postGame: false
+}
+
+const switchPostGame = (currentState, action) => {
+  let toggle = !currentState.postGame
+  return{
+    ...currentState,
+    postGame: toggle
+  }
 }
 
 const uiReducer = (currentState = initialState, action) => {
@@ -38,6 +47,7 @@ const uiReducer = (currentState = initialState, action) => {
         ...currentState,
         initDismount: false
       }
+    case actionTypes.POSTGAME: return switchPostGame(currentState, action)
     default:
       return currentState
   }
