@@ -16,10 +16,10 @@ import './ScoreboardMobileDismount.css'
 
 const ScoreboardContainer = (props) => {
 
-  const scores =  props.scoreboard.map(score =>
+  const scores =  props.scoreboard.allScores.map(score =>
     <ScoreboardRow
       isPostGame={props.isPostGame}
-      place={props.scoreboard.indexOf(score) + 1}
+      place={props.scoreboard.allScores.indexOf(score) + 1}
       key={score[0]}
       score={score[1]}
     />

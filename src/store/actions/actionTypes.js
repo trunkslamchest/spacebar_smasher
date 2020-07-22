@@ -1,9 +1,6 @@
 export const DEVICE = 'DEVICE'
 export const ORIENTATION = 'ORIENTATION'
 
-export const STOREPLAYER = 'STOREPLAYER'
-export const RESETPLAYER = 'RESETPLAYER'
-
 export const SHOWFOOTER = 'SHOWFOOTER'
 export const HIDEFOOTER = 'HIDEFOOTER'
 
@@ -14,3 +11,5 @@ export const INITDISMOUNT = 'INITDISMOUNT'
 export const EXITDISMOUNT = 'EXITDISMOUNT'
 
 export const GETSCOREBOARD = 'GETSCOREBOARD'
+export const ADDSCORE = 'ADDSCORE'
+export const CLEARSCORE = 'CLEARSCORE'

@@ -89,7 +89,7 @@ class SubmitScoreFormContainer extends React.Component {
         scoreboardFunctions('post', fetch.post, playerObj)
         .then(resObj => {
           if(!!resObj){
-            this.props.onStorePlayer(this.state.player)
+            this.props.onAddScore(resObj)
             this.props.onDismount()
           }
         })
@@ -132,13 +132,14 @@ const mapStateToProps = (state) => {
     device: state.detect.device,
     orientation: state.detect.orientation,
     player: state.player.name,
-    ui: state.ui
+    ui: state.ui,
+    scoreboard: state.scoreboard
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onStorePlayer: (name) => dispatch(actions.storePlayer(name))
+    onAddScore: (score) => dispatch(actions.addScore(score))
   }
 }
 

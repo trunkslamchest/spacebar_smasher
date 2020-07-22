@@ -41,7 +41,7 @@ class PostGameContainer extends React.Component {
     })
   }
 
-  componentDidUpdate(){ if (!this.state.mounted && this.props.scoreboard.length > 0) this.setState({ mounted: true }) }
+  componentDidUpdate(){ if (!this.state.mounted && this.props.scoreboard.allScores.length > 0) this.setState({ mounted: true }) }
 
   onMount = () => {
     this.startPostGameTimeout = setTimeout(() => {
@@ -63,7 +63,7 @@ class PostGameContainer extends React.Component {
     if (buttonNav === 'game')  {
       this.resetTimeout = setTimeout(() => {
         this.props.onExitDismount()
-        this.props.onResetPlayer()
+        this.props.onClearScore()
         this.props.history.push( routes.game )
       }, 500 )
     }
@@ -123,7 +123,6 @@ class PostGameContainer extends React.Component {
             <ScoreboardContainer
               isPostGame={ this.state.isPostGame }
               mounted={ this.state.mounted }
-              // scoreboard={ this.state.scoreboard }
             />
             <div className={ buttonsContainerClass }>
               <button
@@ -169,14 +168,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onResetPlayer: () => dispatch(actions.resetPlayer()),
     onShowFooter: () => dispatch(actions.showFooter()),
     onHideFooter: () => dispatch(actions.hideFooter()),
     onShowWrapper: () => dispatch(actions.showWrapper()),
     onHideWrapper: () => dispatch(actions.hideWrapper()),
     onInitDismount: () => dispatch(actions.initDismount()),
     onExitDismount: () => dispatch(actions.exitDismount()),
-    onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard))
+    onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
+    onClearScore: () => dispatch(actions.clearScore())
   }
 }
 

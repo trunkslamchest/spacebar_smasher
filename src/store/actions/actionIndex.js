@@ -4,11 +4,6 @@ export {
 } from './detectActions'
 
 export {
-  storePlayer,
-  resetPlayer
-} from './playerActions'
-
-export {
   showFooter,
   hideFooter,
   showWrapper,
@@ -18,5 +13,7 @@ export {
 } from './uiActions'
 
 export {
-  getScoreboard
+  getScoreboard,
+  addScore,
+  clearScore
 } from './scoreboardActions'

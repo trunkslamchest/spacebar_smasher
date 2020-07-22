@@ -12,7 +12,15 @@ class ScoreboardRow extends React.Component {
     this.rowRef = React.createRef();
   }
 
-  componentDidMount() { if(this.props.player === this.props.score.name ) this.scrollToHighlightTimeout = setTimeout(() => { this.rowRef.current.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' }) }, 250) }
+
+  componentDidMount() {
+    if(this.props.scoreboard.addedScore.name === this.props.score.name ) {
+      this.scrollToHighlightTimeout = setTimeout(() => {
+        this.rowRef.current.scrollIntoView({
+          behavior: 'smooth', block: 'center', inline: 'nearest'
+        })
+      }, 250)}
+    }
 
   componentWillUnmount(){ clearTimeout(this.scrollToHighlightTimeout) }
 
@@ -99,7 +107,8 @@ const mapStateToProps = (state) => {
   return{
     device: state.detect.device,
     orientation: state.detect.orientation,
-    player: state.player.name
+    player: state.player.name,
+    scoreboard: state.scoreboard
   }
 }
 
