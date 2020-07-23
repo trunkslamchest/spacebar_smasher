@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import * as actions from '../store/actions/actionIndex'
@@ -23,11 +22,7 @@ import './SubmitScoreMobileOnmount.css'
 
 class SubmitScoreContainer extends React.Component {
 
-  state = {
-    player: '',
-    showButtons: false,
-    showSubmitScore: true
-  }
+  state = { player: '' }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Submit Score'
@@ -36,45 +31,14 @@ class SubmitScoreContainer extends React.Component {
 
   startSubmitScore = () => {
     this.startSubmitScoreTimeout = setTimeout(() => {
-
       this.props.onShowFooter()
       this.props.onShowWrapper()
-
-      this.setState({
-        showButtons: true
-      })
     }, 500)
   }
 
-  onClickButtonFunctions = (event) => {
-
+  onDismount = (event) => {
     let buttonNav = event.target.attributes.nav.value
 
-    this.props.onInitDismount()
-
-    this.initResetTimeout = setTimeout(() => {
-
-      // this.props.onShowGame()
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
-
-      this.setState({ showButtons: false })
-    }, 250)
-
-    if (buttonNav === 'game')  {
-      this.resetTimeout = setTimeout(() => {
-        this.props.onExitDismount()
-        this.props.history.push( routes.countdown )
-        // this.props.resetGame()
-      }, 500 )
-    }
-    else this.resetTimeout = setTimeout(() => {
-      this.props.onExitDismount()
-      this.props.history.push( routes.home )
-    }, 500 )
-  }
-
-  onDismount = () => {
     this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
 
     this.onDismountTimeout = setTimeout(() => {
@@ -82,20 +46,17 @@ class SubmitScoreContainer extends React.Component {
       this.props.onHideWrapper()
     }, 750)
 
-    this.showScoreboardTimeout = setTimeout(() => {
+    this.exitDismountTimeout = setTimeout(() => {
       this.props.onExitDismount()
-      this.setState({ showSubmitScore: false })
+      this.props.history.push( buttonNav === 'game' ? routes.countdown : buttonNav === 'main_menu' ? routes.home : routes.scoreboard )
     }, 1000)
   }
 
   componentWillUnmount(){
     clearTimeout(this.startSubmitScoreTimeout)
-    clearTimeout(this.initResetTimeout)
-    clearTimeout(this.resetTimeout)
-
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
-    clearTimeout(this.showScoreboardTimeout)
+    clearTimeout(this.exitDismountTimeout)
   }
 
   render(){
@@ -129,36 +90,22 @@ class SubmitScoreContainer extends React.Component {
     pillClass = "submit_score_desktop_pill"
   }
 
-    const submitScore =
+    return(
       <>
         { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
               <SubmitScoreHeader />
               <div className={ rowClass1 }>
-                <SubmitScoreCounter
-                  // count={ this.props.count }
-                />
+                <SubmitScoreCounter />
                 <div className={ subRowClass1 }>
-                  <SubmitScoreRank
-                    // rank={ this.props.rank }
-                  />
-                  <SubmitScorePower
-                    // power={ this.props.power }
-                    // powerRaw={ this.props.powerRaw }
-                  />
+                  <SubmitScoreRank />
+                  <SubmitScorePower />
                 </div>
               </div>
-              <SubmitScoreFormContainer
-                // count={ this.props.count }
-                onDismount={ this.onDismount }
-                // power={ this.props.power }
-                // powerRaw={ this.props.powerRaw }
-              />
+              <SubmitScoreFormContainer onDismount={ this.onDismount } />
             </div>
-            <SubmitScoreButtonsContainer
-              onClickButtonFunctions={ this.onClickButtonFunctions }
-            />
+            <SubmitScoreButtonsContainer onDismount={ this.onDismount } />
           </div>
         :
           <></>
@@ -167,15 +114,6 @@ class SubmitScoreContainer extends React.Component {
           <FooterContainer />
         :
           <></>
-        }
-      </>
-
-    return(
-      <>
-        { this.state.showSubmitScore ?
-          submitScore
-        :
-          <Redirect to={ routes.scoreboard } />
         }
       </>
     )
@@ -197,8 +135,7 @@ const mapDispatchToProps = (dispatch) => {
     onShowWrapper: () => dispatch(actions.showWrapper()),
     onHideWrapper: () => dispatch(actions.hideWrapper()),
     onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount()),
-    // onShowGame: () => dispatch(actions.showGame())
+    onExitDismount: () => dispatch(actions.exitDismount())
   }
 }
 

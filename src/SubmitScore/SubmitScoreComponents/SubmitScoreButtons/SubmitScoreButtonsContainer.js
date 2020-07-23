@@ -13,7 +13,7 @@ import './SubmitScoreMobileButtonsContainerDismount.css'
 
 const SubmitScoreButtonsContainer = (props) => {
 
-  const onClickFunctions = (event) => { props.onClickButtonFunctions(event) }
+  const onClickFunctions = (event) => { props.onDismount(event) }
 
   let wrapperClass, mainMenuButtonClass, tryAgainButtonClass
 
@@ -54,17 +54,17 @@ const SubmitScoreButtonsContainer = (props) => {
   return(
     <div className={ wrapperClass }>
       <button
-        nav="main_menu"
-        name="submit_score_main_menu_button"
         className={ mainMenuButtonClass }
+        name="submit_score_main_menu_button"
+        nav="main_menu"
         onClick={ onClickFunctions }
       >
         MAIN MENU
       </button>
       <button
-        nav="game"
-        name="submit_score_try_again_button"
         className={ tryAgainButtonClass }
+        name="submit_score_try_again_button"
+        nav="game"
         onClick={ onClickFunctions }
       >
         TRY AGAIN

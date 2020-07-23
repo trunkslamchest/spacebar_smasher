@@ -59,7 +59,7 @@ class PostGameContainer extends React.Component {
       this.resetTimeout = setTimeout(() => {
         this.props.onExitDismount()
         this.props.onClearScore()
-        this.props.history.push( routes.game )
+        this.props.history.push( routes.countdown )
       }, 500 )
     }
     else this.resetTimeout = setTimeout(() => {

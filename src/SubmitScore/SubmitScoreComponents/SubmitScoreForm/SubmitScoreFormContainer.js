@@ -55,13 +55,13 @@ class SubmitScoreFormContainer extends React.Component {
   onNameChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
 
   onSubmit = (event) => {
+    event.persist()
     event.preventDefault()
     this.addScore(event)
     this.setState({ submitClicked: true })
   }
 
   addScore = (event) => {
-    event.preventDefault()
 
     let postCheck = validatePost(event.target[0].value.trim(), this.props.count)
 
@@ -89,7 +89,7 @@ class SubmitScoreFormContainer extends React.Component {
           .then(resObj => {
             if(!!resObj){
               this.props.onSubmitScore(resObj)
-              this.props.onDismount()
+              this.props.onDismount(event)
             }
           })
 
@@ -102,7 +102,7 @@ class SubmitScoreFormContainer extends React.Component {
             .then(resObj => {
               if(!!resObj){
                 this.props.onSubmitScore(resObj)
-                this.props.onDismount()
+                this.props.onDismount(event)
               }
             })
           })
@@ -132,11 +132,11 @@ class SubmitScoreFormContainer extends React.Component {
         :
           <></>
         }
-      <SubmitScoreForm
-        onNameChange={ this.onNameChange }
-        submitClicked={ this.state.submitClicked }
-        onSubmit={ this.onSubmit }
-      />
+        <SubmitScoreForm
+          onNameChange={ this.onNameChange }
+          submitClicked={ this.state.submitClicked }
+          onSubmit={ this.onSubmit }
+        />
       </>
     )
   }

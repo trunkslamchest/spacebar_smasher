@@ -28,8 +28,6 @@ class GameContainer extends React.Component {
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
     showMobileSmashButton: false,
-    startTimer: false,
-    stopGame: false,
     time: (3.00).toFixed(2),
     timeMark: (3.00).toFixed(2),
   }
@@ -44,8 +42,6 @@ class GameContainer extends React.Component {
     document.title = 'Spacebar Smasher - Game'
     this.startGame()
   }
-
-  componentDidUpdate(){ if(this.state.time === 0 && !this.state.stopGame) this.stopGame() }
 
   startGame = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
@@ -143,36 +139,18 @@ class GameContainer extends React.Component {
 
   onSmash = (event) => {
     event.preventDefault()
-    this.setState({
-      count: this.state.count + 1,
-      power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
-      powerRaw: this.state.powerRaw + 0.025,
-    })
-    this.getRank()
-  }
 
-  resetGame = () => {
-    document.title = 'Spacebar Smasher - Game'
-    this.props.onHideFooter()
-    this.props.onHideWrapper()
-
-    this.setState({
-      avgPress: 1,
-      count: 0,
-      power: 0,
-      powerRaw: 0,
-      stopGame: false,
-      rank: "SUPER BABY FINGERS",
-      time: (3.00).toFixed(2),
-      timeMark: (3.00).toFixed(2),
-    })
-
-    this.restartGameTimeout = setTimeout(() => { this.startGame() }, 250)
+    if(this.state.time > 0) {
+      this.setState({
+        count: this.state.count + 1,
+        power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+        powerRaw: this.state.powerRaw + 0.025,
+      })
+      this.getRank()
+    }
   }
 
   stopGame = () => {
-    this.setState({ stopGame: true })
-
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
 
@@ -181,7 +159,7 @@ class GameContainer extends React.Component {
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 750)
-    this.showGameTimeout = setTimeout(() => {
+    this.exitDismountTimeout = setTimeout(() => {
       this.props.onExitDismount()
       this.props.history.push( routes.submitScore )
     }, 1000)
@@ -193,7 +171,7 @@ class GameContainer extends React.Component {
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.mobileSmashButtonTimeout)
     clearTimeout(this.restartGameTimeout)
-    clearTimeout(this.showGameTimeout)
+    clearTimeout(this.exitDismountTimeout)
     clearTimeout(this.spacebarDownListener)
     clearTimeout(this.spacebarUpListener)
     clearTimeout(this.startPower)

@@ -50,20 +50,21 @@ const SubmitScoreForm = (props) => {
         <div className={ formWrapperClass }>
           <h2>Submit Score</h2>
           <form
-            name="submit_score_form"
             className={ formClass }
             disabled={ props.submitClicked }
+            name="submit_score_form"
+            nav="scoreboard"
             onSubmit={ props.onSubmit }
           >
             <input
-              name="player"
-              type="text"
-              maxLength="12"
-              className={ textBoxClass }
-              placeholder="Enter Your Name"
               autoComplete="off"
-              value={ props.player }
+              className={ textBoxClass }
+              name="player"
+              maxLength="12"
               onChange={ props.onNameChange }
+              placeholder="Enter Your Name"
+              type="text"
+              value={ props.player }
             />
             <input
               className={ buttonClass }
