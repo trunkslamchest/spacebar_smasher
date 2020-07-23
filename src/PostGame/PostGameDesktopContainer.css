@@ -1,9 +1,10 @@
 .post_game_desktop_wrapper, .dismount_post_game_desktop_wrapper {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   flex-wrap: nowrap;
   justify-content: space-evenly;
+  width: 100%;
 }
 
 .post_game_desktop_buttons_container {
