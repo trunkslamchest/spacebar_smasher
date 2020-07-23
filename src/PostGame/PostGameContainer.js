@@ -141,11 +141,7 @@ class PostGameContainer extends React.Component {
         :
           <></>
         }
-        { this.props.ui.showFooter ?
-          <FooterContainer />
-        :
-          <></>
-        }
+        <FooterContainer />
       </>
     )
   }

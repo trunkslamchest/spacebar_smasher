@@ -35,10 +35,16 @@ const FooterContainer = (props) => {
   }
 
   return(
-    <div className={ footerClass }>
-      <FooterLogosContainer />
-      <FooterFinePrint />
-    </div>
+    <>
+      { props.ui.showFooter ?
+        <div className={ footerClass }>
+          <FooterLogosContainer />
+          <FooterFinePrint />
+        </div>
+      :
+        <></>
+      }
+    </>
   )
 }
 

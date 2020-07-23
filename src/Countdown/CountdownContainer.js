@@ -92,11 +92,7 @@ class CountdownContainer extends React.Component {
                 <CountdownTutorial />
               </div>
             </div>
-            { this.props.ui.showFooter ?
-              <FooterContainer />
-            :
-              <></>
-            }
+            <FooterContainer />
           </>
         :
           <></>
