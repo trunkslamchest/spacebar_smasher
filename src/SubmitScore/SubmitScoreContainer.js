@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
@@ -23,16 +24,21 @@ import './SubmitScoreMobileOnmount.css'
 
 const SubmitScoreContainer = (props) => {
 
-  const { onFooter, onWrapper, onInitDismount } = props
+  const { onFooter, onWrapper, onInitDismount, scoreboard } = props
+
+  const history = useHistory()
 
   useEffect(() => {
-    document.title = 'Spacebar Smasher - Submit Score'
-
-    setTimeout(() => {
-      onFooter(true)
-      onWrapper(true)
-    }, 125)
-  }, [onFooter, onWrapper])
+    if(scoreboard.allScores.length === 0){
+      history.push( routes.home )
+    } else {
+      document.title = 'Spacebar Smasher | Submit Score'
+      setTimeout(() => {
+        onFooter(true)
+        onWrapper(true)
+      }, 125)
+    }
+  }, [onFooter, onWrapper, scoreboard, history])
 
   const onDismount = (event) => {
     let buttonNav = event.target.attributes.nav.value

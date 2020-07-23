@@ -84,27 +84,13 @@ class SubmitScoreFormContainer extends React.Component {
           timestamp: getTime('fullDate')
         }
 
-        if(this.props.scoreboard.allScores.length > 0){
-          scoreboardFunctions('post', fetch.post, playerObj)
-          .then(resObj => {
-            if(!!resObj){
-              this.props.onSubmitScore(resObj)
-              this.props.onDismount(event)
-            }
-          })
-        } else {
-          scoreboardFunctions('get', fetch.get)
-          .then(resObj => {
-            this.props.onGetScoreboard(Object.entries(resObj.players))
-            scoreboardFunctions('post', fetch.post, playerObj)
-            .then(resObj => {
-              if(!!resObj){
-                this.props.onSubmitScore(resObj)
-                this.props.onDismount(event)
-              }
-            })
-          })
-        }
+        scoreboardFunctions('post', fetch.post, playerObj)
+        .then(resObj => {
+          if(!!resObj){
+            this.props.onSubmitScore(resObj)
+            this.props.onDismount(event)
+          }
+        })
       }
     }
   }

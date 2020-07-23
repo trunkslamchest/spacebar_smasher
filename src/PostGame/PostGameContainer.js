@@ -25,7 +25,7 @@ const PostGameContainer = (props) => {
   const { onWrapper, onFooter, onGetScoreboard, scoreboard } = props
 
   useEffect(() => {
-    document.title = 'Spacebar Smasher - Scoreboard'
+    document.title = 'Spacebar Smasher | Scoreboard'
     // document.body.scrollTop = 0
 
     onWrapper(true)

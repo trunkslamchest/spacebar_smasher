@@ -7,6 +7,8 @@ import * as actions from '../store/actions/actionIndex'
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
+import taglines from '../datasets/taglines'
+
 import Wrapper from '../UI/Wrapper/Wrapper'
 
 import HomeHeader from './HomeHeader/HomeHeader'
@@ -24,13 +26,13 @@ const HomeContainer = (props) => {
   const { onWrapper, onFooter, onGetScoreboard, scoreboard } = props
 
   useEffect(() => {
-    document.title = 'Spacebar Smasher - Scoreboard'
     // document.body.scrollTop = 0
 
     onWrapper(true)
     onFooter(true)
 
     if(scoreboard.allScores.length === 0){
+      document.title = `Spacebar Smasher | ${taglines.random()} `
       scoreboardFunctions('get', fetch.get)
       .then(resObj => {
         onGetScoreboard(Object.entries(resObj.players))

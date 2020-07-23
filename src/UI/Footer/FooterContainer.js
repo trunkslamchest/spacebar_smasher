@@ -42,7 +42,7 @@ const FooterContainer = (props) => {
           <FooterFinePrint />
         </div>
       :
-        <></>
+        null
       }
     </>
   )

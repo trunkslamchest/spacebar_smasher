@@ -39,10 +39,9 @@ class GameContainer extends React.Component {
   }
 
   componentDidMount(){
-    document.title = 'Spacebar Smasher - Game'
-    if(this.props.scoreboard.allScores.length === 0){
-      this.props.history.push( routes.home )
-    } else {
+    if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
+    else {
+      document.title = 'Spacebar Smasher | Game'
       this.onMount()
     }
   }
@@ -50,14 +49,13 @@ class GameContainer extends React.Component {
   onMount = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
+    this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
+    this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
     this.onMountTimeout = setTimeout(() => {
       this.props.onWrapper(true)
       this.props.onFooter(true)
     }, 125)
-
-    this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
-    this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
   }
 
   spacebarDown(event){
@@ -75,7 +73,6 @@ class GameContainer extends React.Component {
 
   spacebarUp(event){
     document.addEventListener('keydown', this.spacebarDown)
-
     if((event.keyCode === 32 || event.which === 32)) {
       let pressAvg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
       this.setState({ avgPress: pressAvg })
