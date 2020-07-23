@@ -35,7 +35,7 @@ class PostGameContainer extends React.Component {
     this.onMountTimeout = setTimeout(() => {
       this.props.onWrapper(true)
       this.props.onFooter(true)
-    }, 250)
+    }, 125)
 
     if(this.props.scoreboard.allScores.length === 0){
       scoreboardFunctions('get', fetch.get)
@@ -54,19 +54,19 @@ class PostGameContainer extends React.Component {
     this.onDismountTimeout = setTimeout(() => {
       this.props.onWrapper(false)
       this.props.onFooter(false)
-    }, 250)
+    }, 500)
 
     if (event.target.attributes.nav.value === 'game')  {
       this.exitDismountTimeout = setTimeout(() => {
         this.props.onInitDismount(false)
         this.props.onClearScore()
         this.props.history.push( routes.countdown )
-      }, 500 )
+      }, 750 )
     }
     else this.exitDismountTimeout = setTimeout(() => {
       this.props.onInitDismount(false)
       this.props.history.push( routes.home )
-    }, 500 )
+    }, 750 )
   }
 
   componentWillUnmount(){

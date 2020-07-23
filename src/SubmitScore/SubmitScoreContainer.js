@@ -31,7 +31,7 @@ class SubmitScoreContainer extends React.Component {
     this.onMountTimeout = setTimeout(() => {
       this.props.onFooter(true)
       this.props.onWrapper(true)
-    }, 250)
+    }, 125)
   }
 
   onDismount = (event) => {
@@ -44,12 +44,12 @@ class SubmitScoreContainer extends React.Component {
     this.onDismountTimeout = setTimeout(() => {
       this.props.onFooter(false)
       this.props.onWrapper(false)
-    }, 250)
+    }, 500)
 
     this.exitDismountTimeout = setTimeout(() => {
       this.props.onInitDismount(false)
       this.props.history.push( buttonNav === 'game' ? routes.countdown : buttonNav === 'main_menu' ? routes.home : routes.scoreboard )
-    }, 500)
+    }, 750)
   }
 
   componentWillUnmount(){

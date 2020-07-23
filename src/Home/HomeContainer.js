@@ -35,26 +35,32 @@ class HomeContainer extends React.Component {
   }
 
   onMount = () => {
-    this.props.onFooter(true)
-    this.props.onWrapper(true)
+    this.onMountTimeout = setTimeout(() => {
+      this.props.onFooter(true)
+      this.props.onWrapper(true)
+    }, 125)
   }
 
   onDismount = () => {
-    this.props.onInitDismount(true)
+    this.initDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(true)
+    }, 125)
 
     this.onDismountTimeout = setTimeout(() => {
       this.props.onFooter(false)
       this.props.onWrapper(false)
-    }, 250)
+    }, 500)
 
     this.exitDismountTimeout = setTimeout(() => {
       this.props.onInitDismount(false)
       this.props.onClearScore()
       this.props.history.push( routes.countdown )
-    }, 500 )
+    }, 750 )
   }
 
   componentWillUnmount(){
+    clearTimeout(this.onMountTimeout)
+    clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
     clearTimeout(this.exitDismountTimeout)
   }

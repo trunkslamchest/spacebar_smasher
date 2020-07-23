@@ -49,7 +49,7 @@ class GameContainer extends React.Component {
     this.onMountTimeout = setTimeout(() => {
       this.props.onWrapper(true)
       this.props.onFooter(true)
-    }, 250)
+    }, 125)
 
     this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)

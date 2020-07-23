@@ -28,7 +28,7 @@ class CountdownContainer extends React.Component {
     this.onMountTimeout = setTimeout(() => {
       this.props.onFooter(true)
       this.props.onWrapper(true)
-    }, 250)
+    }, 125)
 
     this.startTimerTimeout = setTimeout(() => {
       this.startTimerInterval = setInterval(
@@ -38,7 +38,10 @@ class CountdownContainer extends React.Component {
   }
 
   onDismount = () => {
-    this.props.onInitDismount(true)
+
+    this.initDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(true)
+    }, 125)
 
     this.onDismountTimeout = setTimeout(() => {
       this.props.onFooter(false)
@@ -64,6 +67,7 @@ class CountdownContainer extends React.Component {
     clearTimeout(this.startTimerTimeout)
     clearInterval(this.startTimerInterval)
     clearTimeout(this.onMountTimeout)
+    clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
     clearTimeout(this.exitDismountTimeout)
   }
