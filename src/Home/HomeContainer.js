@@ -1,11 +1,11 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
+import { homeContainer } from './HomeFunctions/classSwitch'
 
 import taglines from '../datasets/taglines'
 
@@ -57,32 +57,8 @@ const HomeContainer = (props) => {
     }, 750 )
   }
 
-  let wrapperClass
-
-  if(props.detect.device === "mobile"){
-    if(props.detect.orientation === "landscape") {
-      if(props.ui.initDismount) {
-        wrapperClass = "dismount_home_mobile_wrapper_landscape"
-      } else {
-        wrapperClass = "home_mobile_wrapper_landscape"
-      }
-    } else {
-      if(props.ui.initDismount) {
-        wrapperClass = "dismount_home_mobile_wrapper_portrait"
-      } else {
-        wrapperClass = "home_mobile_wrapper_portrait"
-      }
-    }
-  } else {
-    if(props.ui.initDismount) {
-      wrapperClass = "dismount_home_desktop_wrapper"
-    } else {
-      wrapperClass = "home_desktop_wrapper"
-    }
-  }
-
   return(
-    <Wrapper divClass={ wrapperClass }>
+    <Wrapper divClass={ homeContainer(props).wrapper }>
       <HomeHeader onClickStartButton={ onDismount } />
       <ScoreboardContainer />
     </Wrapper>
