@@ -5,6 +5,10 @@ import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
 
+import * as gameFunctions from './GameFunctions'
+
+// import getRank from './GameFunctions/getRank'
+
 import Wrapper from '../UI/Wrapper/Wrapper'
 
 import GameTimer from './GameComponents/GameTimer/GameTimer'
@@ -27,8 +31,8 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (10.00).toFixed(2),
+    timeMark: (10.00).toFixed(2),
   }
 
   constructor(props) {
@@ -56,17 +60,16 @@ class GameContainer extends React.Component {
   }
 
   spacebarDown(event){
-      if((event.keyCode === 32 || event.which === 32)) {
-        event.preventDefault()
-        this.setState({
-          count: this.state.count + 1,
-          power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
-          powerRaw: this.state.powerRaw + 0.025,
-          timeMark: this.state.time
-        }, document.removeEventListener('keydown', this.spacebarDown))
-      }
-
-    this.getRank()
+    if((event.keyCode === 32 || event.which === 32)) {
+      event.preventDefault()
+      this.setState({
+        count: this.state.count + 1,
+        power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+        powerRaw: this.state.powerRaw + 0.025,
+        timeMark: this.state.time,
+        rank: gameFunctions.getRank(this.state.count)
+      }, document.removeEventListener('keydown', this.spacebarDown))
+    }
   }
 
   spacebarUp(event){
@@ -107,21 +110,6 @@ class GameContainer extends React.Component {
     else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
   }
 
-  getRank = () => {
-    if (this.state.count >= 0 && this.state.count < 25) this.setState({ rank: "SUPER BABY FINGERS" })
-    else if (this.state.count >= 25 && this.state.count < 50) this.setState({ rank: "SLOW HANDS McOLD PERSON" })
-    else if (this.state.count >= 50 && this.state.count < 75) this.setState({ rank: "CEMENT WRISTS" })
-    else if (this.state.count >= 75 && this.state.count < 100) this.setState({ rank: "BIG MEATY CLAWS" })
-    else if (this.state.count >= 100 && this.state.count < 125) this.setState({ rank: "HAIRY KNUCKLES" })
-    else if (this.state.count >= 125 && this.state.count < 150) this.setState({ rank: "EDWARD SCISSOR HANDS" })
-    else if (this.state.count >= 150 && this.state.count < 175) this.setState({ rank: "UNTRUSTABLE ALI" })
-    else if (this.state.count >= 175 && this.state.count < 200) this.setState({ rank: "FURIOUS TIGER" })
-    else if (this.state.count >= 200 && this.state.count < 225) this.setState({ rank: "JACKY FENG" })
-    else if (this.state.count >= 225 && this.state.count < 250) this.setState({ rank: "RUSSIAN SPY" })
-    else if (this.state.count >= 250 && this.state.count < 275) this.setState({ rank: "FROG" })
-    else if (this.state.count >= 275 && this.state.count < 300) this.setState({ rank: "SUPER FROG" })
-  }
-
   powerFunctions = () => {
     if (this.state.power <= 0) this.setState({ power: 0 })
     else this.setState({
@@ -138,8 +126,8 @@ class GameContainer extends React.Component {
         count: this.state.count + 1,
         power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
         powerRaw: this.state.powerRaw + 0.025,
+        rank: gameFunctions.getRank(this.state.count)
       })
-      this.getRank()
     }
   }
 
