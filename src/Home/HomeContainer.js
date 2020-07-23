@@ -1,6 +1,7 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { useEffect } from 'react'
 
+import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { fetch, routes } from '../utility/paths'
@@ -18,87 +19,72 @@ import './HomeMobileContainerLandscape.css'
 import './HomeMobileContainerPortrait.css'
 import './HomeMobileDismount.css'
 
-class HomeContainer extends React.Component {
+const HomeContainer = (props) => {
 
-  componentDidMount(){
-    document.title = 'Spacebar Smasher - Home'
+  const { onWrapper, onFooter, onGetScoreboard, scoreboard } = props
 
-    this.props.onFooter(false)
-    this.props.onWrapper(false)
-    this.onMount()
+  useEffect(() => {
+    document.title = 'Spacebar Smasher - Scoreboard'
+    // document.body.scrollTop = 0
 
-    if(this.props.scoreboard.allScores.length === 0){
+    onWrapper(true)
+    onFooter(true)
+
+    if(scoreboard.allScores.length === 0){
       scoreboardFunctions('get', fetch.get)
       .then(resObj => {
-        this.props.onGetScoreboard(Object.entries(resObj.players))
+        onGetScoreboard(Object.entries(resObj.players))
       })
     }
-  }
+  }, [onWrapper, onFooter, onGetScoreboard, scoreboard])
 
-  onMount = () => {
-    this.onMountTimeout = setTimeout(() => {
-      this.props.onFooter(true)
-      this.props.onWrapper(true)
-    }, 125)
-  }
-
-  onDismount = () => {
-    this.initDismountTimeout = setTimeout(() => {
-      this.props.onInitDismount(true)
+  const onDismount = () => {
+    setTimeout(() => {
+      props.onInitDismount(true)
     }, 125)
 
-    this.onDismountTimeout = setTimeout(() => {
-      this.props.onFooter(false)
-      this.props.onWrapper(false)
+    setTimeout(() => {
+      onFooter(false)
+      onWrapper(false)
     }, 500)
 
-    this.exitDismountTimeout = setTimeout(() => {
-      this.props.onInitDismount(false)
-      this.props.onClearScore()
-      this.props.history.push( routes.countdown )
+    setTimeout(() => {
+      props.onInitDismount(false)
+      props.onClearScore()
+      props.history.push( routes.countdown )
     }, 750 )
   }
 
-  componentWillUnmount(){
-    clearTimeout(this.onMountTimeout)
-    clearTimeout(this.initDismountTimeout)
-    clearTimeout(this.onDismountTimeout)
-    clearTimeout(this.exitDismountTimeout)
-  }
+  let wrapperClass
 
-  render(){
-
-    let wrapperClass
-
-    if(this.props.detect.device === "mobile"){
-      if(this.props.detect.orientation === "landscape") {
-        if(this.props.ui.initDismount) {
-          wrapperClass = "dismount_home_mobile_wrapper_landscape"
-        } else {
-          wrapperClass = "home_mobile_wrapper_landscape"
-        }
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
+      if(props.ui.initDismount) {
+        wrapperClass = "dismount_home_mobile_wrapper_landscape"
       } else {
-        if(this.props.ui.initDismount) {
-          wrapperClass = "dismount_home_mobile_wrapper_portrait"
-        } else {
-          wrapperClass = "home_mobile_wrapper_portrait"
-        }
+        wrapperClass = "home_mobile_wrapper_landscape"
       }
     } else {
-      if(this.props.ui.initDismount) {
-        wrapperClass = "dismount_home_desktop_wrapper"
+      if(props.ui.initDismount) {
+        wrapperClass = "dismount_home_mobile_wrapper_portrait"
       } else {
-        wrapperClass = "home_desktop_wrapper"
+        wrapperClass = "home_mobile_wrapper_portrait"
       }
     }
-
-    return(
-      <Wrapper divClass={ wrapperClass }>
-        <HomeHeader onClickStartButton={ this.onDismount } />
-        <ScoreboardContainer />
-      </Wrapper>
-    )
+  } else {
+    if(props.ui.initDismount) {
+      wrapperClass = "dismount_home_desktop_wrapper"
+    } else {
+      wrapperClass = "home_desktop_wrapper"
+    }
   }
+
+  return(
+    <Wrapper divClass={ wrapperClass }>
+      <HomeHeader onClickStartButton={ onDismount } />
+      <ScoreboardContainer />
+    </Wrapper>
+  )
 }
 
 const mapStateToProps = (state) => {

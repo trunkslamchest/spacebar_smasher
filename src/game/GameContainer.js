@@ -1,6 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
+import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
@@ -40,7 +40,11 @@ class GameContainer extends React.Component {
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Game'
-    this.onMount()
+    if(this.props.scoreboard.allScores.length === 0){
+      this.props.history.push( routes.home )
+    } else {
+      this.onMount()
+    }
   }
 
   onMount = () => {
@@ -218,6 +222,7 @@ class GameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
+    scoreboard: state.scoreboard,
     ui: state.ui
   }
 }
