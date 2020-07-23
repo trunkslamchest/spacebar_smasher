@@ -34,8 +34,9 @@
   color: white;
   display: flex;
   flex-direction: column;
+  flex-grow: inherit;
   flex-wrap: nowrap;
-  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(225px + (700 - 225) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
   padding: 0px;
   transform: matrix3d(

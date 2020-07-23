@@ -1,4 +1,19 @@
+.post_game_mobile_wrapper_landscape, .dismount_post_game_mobile_wrapper_landscape {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
 .post_game_mobile_buttons_container_landscape {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   padding-top: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320)));
   animation: onmount_post_game_mobile_buttons_landscape .5s ease-in-out 1;
 }

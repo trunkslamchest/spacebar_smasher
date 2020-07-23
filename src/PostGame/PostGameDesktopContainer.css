@@ -1,12 +1,19 @@
+.post_game_desktop_wrapper, .dismount_post_game_desktop_wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
 
 .post_game_desktop_buttons_container {
-  width: 100%;
+  animation: onmount_post_game_buttons_desktop .5s ease-in-out 1;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   padding-top: calc(25px + (80 - 25) * ((100vw - 500px) / (1920 - 500)));
-  animation: onmount_post_game_buttons_desktop .5s ease-in-out 1;
+  width: 100%;
 }
 
 .post_game_desktop_main_menu_button {

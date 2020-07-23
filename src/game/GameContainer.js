@@ -5,6 +5,7 @@ import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
 
+import Wrapper from '../UI/Wrapper/Wrapper'
 import FooterContainer from '../UI/Footer/FooterContainer'
 
 import GameTimer from './GameComponents/GameTimer/GameTimer'
@@ -210,39 +211,23 @@ class GameContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.wrapper ?
-          <div className={ wrapperClass }>
-            <div className={ pillClass }>
-                <GameTimer
-                  time={ this.state.time }
-                />
-              <div className={ rowClass1 }>
-                <GameCounter
-                  count={ this.state.count }
-                />
-                <div className={ subRowClass1 }>
-                  <GameRank
-                    rank={ this.state.rank }
-                  />
-                  <GamePower
-                    power={ this.state.power }
-                    powerRaw={ this.state.powerRaw }
-                  />
-                </div>
+        <Wrapper divClass={ wrapperClass }>
+          <div className={ pillClass }>
+            <GameTimer time={ this.state.time } />
+            <div className={ rowClass1 }>
+              <GameCounter count={ this.state.count } />
+              <div className={ subRowClass1 }>
+                <GameRank rank={ this.state.rank } />
+                <GamePower power={ this.state.power } powerRaw={ this.state.powerRaw } />
               </div>
-            { this.props.detect.device === "mobile" ?
-                <GameMobileSmashButton
-                  onSmash={this.onSmash}
-                  smashed={this.state.smashed}
-                />
-              :
-                <></>
-              }
             </div>
+            { this.props.detect.device === "mobile" ?
+              <GameMobileSmashButton onSmash={this.onSmash} smashed={this.state.smashed} />
+            :
+              <></>
+            }
           </div>
-        :
-          <></>
-        }
+        </Wrapper>
         <FooterContainer />
       </>
     )

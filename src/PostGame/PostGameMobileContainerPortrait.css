@@ -1,3 +1,13 @@
+.post_game_mobile_wrapper_portrait, .dismount_post_game_mobile_wrapper_portrait {
+  align-content: center;
+  align-items: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
 .post_game_mobile_buttons_container_portrait {
   padding-top: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320)));
   animation: onmount_post_game_buttons_mobile_portrait .5s ease-in-out 1;

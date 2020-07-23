@@ -6,7 +6,9 @@ import * as actions from '../store/actions/actionIndex'
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
+import Wrapper from '../UI/Wrapper/Wrapper'
 import FooterContainer from '../UI/Footer/FooterContainer'
+
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './PostGameDesktopContainer.css'
@@ -46,7 +48,6 @@ class PostGameContainer extends React.Component {
   }
 
   onDismount = (event) => {
-
     this.initDismountTimeout = setTimeout(() => {
       this.props.onInitDismount(true)
     }, 125)
@@ -78,25 +79,29 @@ class PostGameContainer extends React.Component {
   }
 
   render(){
-    let buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
+    let wrapperClass, buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
 
     if(this.props.detect.device === "mobile") {
       if(this.props.detect.orientation === "landscape") {
         if(this.props.ui.initDismount) {
+          wrapperClass = "dismount_post_game_mobile_wrapper_landscape"
           buttonsContainerClass = "dismount_post_game_mobile_buttons_container_landscape"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
           playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
         } else {
+          wrapperClass = "post_game_mobile_wrapper_landscape"
           buttonsContainerClass = "post_game_mobile_buttons_container_landscape"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
           playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
         }
       } else {
         if(this.props.ui.initDismount) {
+          wrapperClass = "dismount_post_game_mobile_wrapper_portrait"
           buttonsContainerClass = "dismount_post_game_mobile_buttons_container_portrait"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
           playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
         } else {
+          wrapperClass = "post_game_mobile_wrapper_portrait"
           buttonsContainerClass = "post_game_mobile_buttons_container_portrait"
           mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
           playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
@@ -104,10 +109,12 @@ class PostGameContainer extends React.Component {
       }
     } else {
       if(this.props.ui.initDismount) {
+        wrapperClass = "dismount_post_game_desktop_wrapper"
         buttonsContainerClass = "dismount_post_game_desktop_buttons_container"
         mainMenuButtonClass = "post_game_desktop_main_menu_button"
         playAgainButtonClass = "post_game_desktop_play_again_button"
       } else {
+        wrapperClass = "post_game_desktop_wrapper"
         buttonsContainerClass = "post_game_desktop_buttons_container"
         mainMenuButtonClass = "post_game_desktop_main_menu_button"
         playAgainButtonClass = "post_game_desktop_play_again_button"
@@ -116,31 +123,27 @@ class PostGameContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.wrapper ?
-          <>
-            <ScoreboardContainer />
-            <div className={ buttonsContainerClass }>
-              <button
-                nav="main_menu"
-                name="main_menu_button"
-                className={ mainMenuButtonClass }
-                onClick={ this.onDismount }
-              >
-                MAIN MENU
-              </button>
-              <button
-                nav="game"
-                name="play_again_button"
-                className={ playAgainButtonClass }
-                onClick={ this.onDismount }
-              >
-                PLAY AGAIN
-              </button>
-            </div>
-          </>
-        :
-          <></>
-        }
+        <Wrapper divClass={ wrapperClass }>
+          <ScoreboardContainer />
+          <div className={ buttonsContainerClass }>
+            <button
+              nav="main_menu"
+              name="main_menu_button"
+              className={ mainMenuButtonClass }
+              onClick={ this.onDismount }
+            >
+              MAIN MENU
+            </button>
+            <button
+              nav="game"
+              name="play_again_button"
+              className={ playAgainButtonClass }
+              onClick={ this.onDismount }
+            >
+              PLAY AGAIN
+            </button>
+          </div>
+        </Wrapper>
         <FooterContainer />
       </>
     )

@@ -1,6 +1,11 @@
 .dismount_post_game_desktop_buttons_container {
-  padding-top: calc(25px + (80 - 25) * ((100vw - 500px) / (1920 - 500)));
   animation: dismount_post_game_desktop_buttons_container .5s ease-in-out 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: calc(25px + (80 - 25) * ((100vw - 500px) / (1920 - 500)));
+  width: 100%;
 }
 
 @keyframes dismount_post_game_desktop_buttons_container

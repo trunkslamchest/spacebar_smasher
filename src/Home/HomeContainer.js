@@ -6,9 +6,11 @@ import * as actions from '../store/actions/actionIndex'
 import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
+import Wrapper from '../UI/Wrapper/Wrapper'
+import FooterContainer from '../UI/Footer/FooterContainer'
+
 import HomeHeader from './HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
-import FooterContainer from '../UI/Footer/FooterContainer'
 
 import './HomeDesktopContainer.css'
 import './HomeDesktopDismount.css'
@@ -93,14 +95,10 @@ class HomeContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.wrapper ?
-          <div className={ wrapperClass }>
-            <HomeHeader onClickStartButton={ this.onDismount } />
-            <ScoreboardContainer />
-          </div>
-        :
-          <></>
-        }
+        <Wrapper divClass={ wrapperClass }>
+          <HomeHeader onClickStartButton={ this.onDismount } />
+          <ScoreboardContainer />
+        </Wrapper>
         <FooterContainer />
       </>
     )
