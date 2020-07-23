@@ -1,37 +1,29 @@
 import * as actionTypes from './actionTypes'
 
-export const showFooter = () => {
+export const initDismount = (bool) => {
   return{
-    type: actionTypes.SHOWFOOTER
+    type: actionTypes.INITDISMOUNT,
+    initDismount: bool
   }
 }
 
-export const hideFooter = () => {
+export const wrapper = (bool) => {
   return{
-    type: actionTypes.HIDEFOOTER
+    type: actionTypes.WRAPPER,
+    wrapper: bool
   }
 }
 
-export const showWrapper = () => {
+export const footer = (bool) => {
   return{
-    type: actionTypes.SHOWWRAPPER
+    type: actionTypes.FOOTER,
+    footer: bool
   }
 }
 
-export const hideWrapper = () => {
+export const postGame = (bool) => {
   return{
-    type: actionTypes.HIDEWRAPPER
-  }
-}
-
-export const initDismount = () => {
-  return{
-    type: actionTypes.INITDISMOUNT
-  }
-}
-
-export const exitDismount = () => {
-  return{
-    type: actionTypes.EXITDISMOUNT
+    type: actionTypes.POSTGAME,
+    postGame: bool
   }
 }

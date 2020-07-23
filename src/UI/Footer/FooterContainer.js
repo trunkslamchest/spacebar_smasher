@@ -36,7 +36,7 @@ const FooterContainer = (props) => {
 
   return(
     <>
-      { props.ui.showFooter ?
+      { props.ui.footer ?
         <div className={ footerClass }>
           <FooterLogosContainer />
           <FooterFinePrint />

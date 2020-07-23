@@ -26,7 +26,7 @@ const ScoreboardContainer = (props) => {
 
   let tableClass, headerClass, headRowClass, rowWrapperClass
 
-  if(props.game.postGame) {
+  if(props.ui.postGame) {
     if(props.detect.device === "mobile"){
       if(props.detect.orientation === "landscape") {
         if(props.ui.initDismount) {
@@ -120,7 +120,7 @@ const ScoreboardContainer = (props) => {
           <h1>SCORE</h1>
           <h1>SCROLLBAR</h1>
         </div>
-          { props.mounted ?
+          { props.scoreboard.allScores.length > 0 ?
             <div className={ rowWrapperClass }>
               { scores }
             </div>
@@ -134,7 +134,6 @@ const ScoreboardContainer = (props) => {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
-    game: state.game,
     scoreboard: state.scoreboard,
     ui: state.ui
   }

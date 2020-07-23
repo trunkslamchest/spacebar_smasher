@@ -20,20 +20,22 @@ import './PostGameMobileDismount.css'
 
 class PostGameContainer extends React.Component {
 
-  state = { mounted: false }
-
   componentDidMount(){
     document.title = 'Spacebar Smasher - Scoreboard'
     // document.body.scrollTop = 0
 
+    this.props.onWrapper(false)
+    this.props.onFooter(false)
     this.props.onPostGame(true)
-    this.props.onHideFooter()
-    this.props.onHideWrapper()
 
-    this.startPostGameTimeout = setTimeout(() => {
-      this.props.onShowFooter()
-      this.props.onShowWrapper()
-    }, 500)
+    this.onMount()
+  }
+
+  onMount = () => {
+    this.onMountTimeout = setTimeout(() => {
+      this.props.onWrapper(true)
+      this.props.onFooter(true)
+    }, 250)
 
     if(this.props.scoreboard.allScores.length === 0){
       scoreboardFunctions('get', fetch.get)
@@ -43,36 +45,36 @@ class PostGameContainer extends React.Component {
     }
   }
 
-  componentDidUpdate(){
-    if (!this.state.mounted && this.props.scoreboard.allScores.length > 0) this.setState({ mounted: true })
-  }
+  onDismount = (event) => {
 
-  onClickButtonFunctions = (event) => {
-    this.props.onInitDismount()
+    this.initDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(true)
+    }, 125)
 
     this.onDismountTimeout = setTimeout(() => {
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
+      this.props.onWrapper(false)
+      this.props.onFooter(false)
     }, 250)
 
     if (event.target.attributes.nav.value === 'game')  {
-      this.resetTimeout = setTimeout(() => {
-        this.props.onExitDismount()
+      this.exitDismountTimeout = setTimeout(() => {
+        this.props.onInitDismount(false)
         this.props.onClearScore()
         this.props.history.push( routes.countdown )
       }, 500 )
     }
-    else this.resetTimeout = setTimeout(() => {
-      this.props.onExitDismount()
+    else this.exitDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(false)
       this.props.history.push( routes.home )
     }, 500 )
   }
 
   componentWillUnmount(){
     this.props.onPostGame(false)
-    clearTimeout(this.startPostGameTimeout)
-    clearTimeout(this.resetTimeout)
+    clearTimeout(this.onMountTimeout)
+    clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
+    clearTimeout(this.exitDismountTimeout)
   }
 
   render(){
@@ -114,17 +116,15 @@ class PostGameContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.showWrapper ?
+        { this.props.ui.wrapper ?
           <>
-            <ScoreboardContainer
-              mounted={ this.state.mounted }
-            />
+            <ScoreboardContainer />
             <div className={ buttonsContainerClass }>
               <button
                 nav="main_menu"
                 name="main_menu_button"
                 className={ mainMenuButtonClass }
-                onClick={ this.onClickButtonFunctions }
+                onClick={ this.onDismount }
               >
                 MAIN MENU
               </button>
@@ -132,7 +132,7 @@ class PostGameContainer extends React.Component {
                 nav="game"
                 name="play_again_button"
                 className={ playAgainButtonClass }
-                onClick={ this.onClickButtonFunctions }
+                onClick={ this.onDismount }
               >
                 PLAY AGAIN
               </button>
@@ -150,7 +150,6 @@ class PostGameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
-    game: state.game,
     scoreboard: state.scoreboard,
     ui: state.ui
   }
@@ -158,15 +157,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter()),
-    onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper()),
-    onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount()),
+    onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
+    onWrapper: (bool) => dispatch(actions.wrapper(bool)),
+    onFooter: (bool) => dispatch(actions.footer(bool)),
+    onPostGame: (bool) => dispatch(actions.postGame(bool)),
     onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
-    onClearScore: () => dispatch(actions.clearScore()),
-    onPostGame: (bool) => dispatch(actions.postGame(bool))
+    onClearScore: () => dispatch(actions.clearScore())
   }
 }
 

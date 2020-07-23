@@ -17,30 +17,36 @@ import './CountdownMobileContainerPortrait.css'
 
 class CountdownContainer extends React.Component {
 
-  state = { time: 5 }
+  state = { time: 1 }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Countdown'
-    this.startCountdown()
+    this.onMount()
   }
 
-  startCountdown = () => {
-    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 1000)}, 1000)
-    this.startCountdownTimeout = setTimeout(() => {
-      this.props.onShowFooter()
-      this.props.onShowWrapper(false)
+  onMount = () => {
+    this.onMountTimeout = setTimeout(() => {
+      this.props.onFooter(true)
+      this.props.onWrapper(true)
     }, 250)
+
+    this.startTimerTimeout = setTimeout(() => {
+      this.startTimerInterval = setInterval(
+        this.timerFunctions, 1000
+      )
+    }, 1000)
   }
 
-  initGame = () => {
-    this.props.onInitDismount()
+  onDismount = () => {
+    this.props.onInitDismount(true)
+
     this.onDismountTimeout = setTimeout(() => {
-      this.props.onExitDismount()
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
+      this.props.onFooter(false)
+      this.props.onWrapper(false)
     }, 250)
 
-    this.showCountdownTimeout = setTimeout(() => {
+    this.exitDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(false)
       this.props.history.push( routes.game )
     }, 500)
   }
@@ -48,18 +54,18 @@ class CountdownContainer extends React.Component {
   timerFunctions = () => {
     if (this.state.time <= 0 || this.state.time === 0) {
       this.setState({ time: 0 })
-      this.initGame()
+      this.onDismount()
       clearInterval(this.timerInterval)
     }
     else this.setState({ time: (this.state.time - 1) })
   }
 
   componentWillUnmount(){
-    clearTimeout(this.startTimer)
-    clearInterval(this.timerInterval)
-    clearTimeout(this.startCountdownTimeout)
-    clearTimeout(this.showCountdownTimeout)
+    clearTimeout(this.startTimerTimeout)
+    clearInterval(this.startTimerInterval)
+    clearTimeout(this.onMountTimeout)
     clearTimeout(this.onDismountTimeout)
+    clearTimeout(this.exitDismountTimeout)
   }
 
   render(){
@@ -81,7 +87,7 @@ class CountdownContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.showWrapper ?
+        { this.props.ui.wrapper ?
           <>
             <div className={ wrapperClass }>
               <div className={ pillClass }>
@@ -105,19 +111,15 @@ class CountdownContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
-    game: state.game,
     ui: state.ui
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter()),
-    onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper()),
-    onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount()),
+    onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
+    onWrapper: (bool) => dispatch(actions.wrapper(bool)),
+    onFooter: (bool) => dispatch(actions.footer(bool))
   }
 }
 

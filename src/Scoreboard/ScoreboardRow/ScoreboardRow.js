@@ -27,7 +27,7 @@ class ScoreboardRow extends React.Component {
 
     let highlightedClass, rowClass, placeClass, nameClass, powerClass, scoreClass
 
-    if(this.props.game.postGame) {
+    if(this.props.ui.postGame) {
       if(this.props.detect.device === "mobile"){
         if(this.props.detect.orientation === "landscape") {
           highlightedClass = "highlighted_row_mobile_landscape"
@@ -105,7 +105,6 @@ class ScoreboardRow extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
-    game: state.game,
     scoreboard: state.scoreboard,
     ui: state.ui
   }

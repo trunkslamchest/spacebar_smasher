@@ -27,8 +27,8 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    time: (30.00).toFixed(2),
-    timeMark: (30.00).toFixed(2),
+    time: (3.00).toFixed(2),
+    timeMark: (3.00).toFixed(2),
   }
 
   constructor(props) {
@@ -39,20 +39,20 @@ class GameContainer extends React.Component {
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Game'
-    this.startGame()
+    this.onMount()
   }
 
-  startGame = () => {
+  onMount = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
-    this.startGameTimeout = setTimeout(() => {
-      this.props.onShowFooter()
-      this.props.onShowWrapper()
+    this.onMountTimeout = setTimeout(() => {
+      this.props.onWrapper(true)
+      this.props.onFooter(true)
     }, 250)
 
-    this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
-    this.startPower = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
+    this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
+    this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
   }
 
   spacebarDown(event){
@@ -77,18 +77,18 @@ class GameContainer extends React.Component {
       this.setState({ avgPress: pressAvg })
     }
 
-    if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
-      document.removeEventListener('keydown', this.spacebarDown)
-      document.removeEventListener('keyup', this.spacebarUp)
+    // if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
+    //   document.removeEventListener('keydown', this.spacebarDown)
+    //   document.removeEventListener('keyup', this.spacebarUp)
 
-      this.setState({
-        count: 0,
-        power: 0,
-        powerRaw: 0,
-        rank: "CHEATER",
-        time: 0.00,
-      }, this.onDismount())
-    }
+    //   this.setState({
+    //     count: 0,
+    //     power: 0,
+    //     powerRaw: 0,
+    //     rank: "CHEATER",
+    //     time: 0.00,
+    //   }, this.onDismount())
+    // }
   }
 
   timerFunctions = () => {
@@ -101,7 +101,7 @@ class GameContainer extends React.Component {
         power_percent: this.state.power,
         rank: this.state.rank,
       })
-      this.stopGame()
+      this.onDismount()
       clearInterval(this.timerInterval)
     }
     else this.setState({ time: (this.state.time - 0.01).toFixed(2) })
@@ -143,30 +143,35 @@ class GameContainer extends React.Component {
     }
   }
 
-  stopGame = () => {
+  onDismount = () => {
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
 
-    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
+    this.initDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(true)
+    }, 500)
 
     this.onDismountTimeout = setTimeout(() => {
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
+      this.props.onFooter(false)
+      this.props.onWrapper(false)
     }, 750)
 
     this.exitDismountTimeout = setTimeout(() => {
-      this.props.onExitDismount()
+      this.props.onInitDismount(false)
       this.props.history.push( routes.submitScore )
     }, 1000)
   }
 
   componentWillUnmount() {
+    document.removeEventListener('keydown', this.spacebarDown)
+    document.removeEventListener('keyup', this.spacebarUp)
     clearInterval(this.timerInterval)
     clearInterval(this.powerInterval)
-    clearTimeout(this.startTimer)
-    clearTimeout(this.startPower)
+    clearTimeout(this.startTimerTimeout)
+    clearTimeout(this.startPowerTimeout)
     clearTimeout(this.spacebarUpListener)
     clearTimeout(this.spacebarDownListener)
+    clearTimeout(this.onMountTimeout)
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
     clearTimeout(this.exitDismountTimeout)
@@ -205,7 +210,7 @@ class GameContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.showWrapper ?
+        { this.props.ui.wrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
                 <GameTimer
@@ -247,19 +252,15 @@ class GameContainer extends React.Component {
 const mapStateToProps = (state) => {
   return{
     detect: state.detect,
-    game: state.game,
     ui: state.ui
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter()),
-    onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper()),
-    onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount()),
+    onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
+    onWrapper: (bool) => dispatch(actions.wrapper(bool)),
+    onFooter: (bool) => dispatch(actions.footer(bool)),
     onStoreScore: (score) => dispatch(actions.storeScore(score))
   }
 }

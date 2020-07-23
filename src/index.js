@@ -12,7 +12,6 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 import detectReducer from './store/reducers/detectReducer'
-import gameReducer from './store/reducers/gameReducer'
 import scoreboardReducer from './store/reducers/scoreboardReducer'
 import uiReducer from './store/reducers/uiReducer'
 
@@ -22,7 +21,6 @@ const history = createBrowserHistory();
 
 const rootReducer = combineReducers({
   detect: detectReducer,
-  game: gameReducer,
   scoreboard: scoreboardReducer,
   ui: uiReducer
 })

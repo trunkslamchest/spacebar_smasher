@@ -4,12 +4,10 @@ export {
 } from './detectActions'
 
 export {
-  showFooter,
-  hideFooter,
-  showWrapper,
-  hideWrapper,
   initDismount,
-  exitDismount
+  wrapper,
+  footer,
+  postGame
 } from './uiActions'
 
 export {
@@ -18,7 +16,3 @@ export {
   storeScore,
   submitScore
 } from './scoreboardActions'
-
-export {
-  postGame
-} from './gameActions'

@@ -19,14 +19,11 @@ import './HomeMobileDismount.css'
 
 class HomeContainer extends React.Component {
 
-  state = { mounted: false }
-
   componentDidMount(){
     document.title = 'Spacebar Smasher - Home'
 
-    this.props.onHideFooter()
-    this.props.onHideWrapper()
-    this.props.onExitDismount()
+    this.props.onFooter(false)
+    this.props.onWrapper(false)
     this.onMount()
 
     if(this.props.scoreboard.allScores.length === 0){
@@ -37,34 +34,29 @@ class HomeContainer extends React.Component {
     }
   }
 
-  componentDidUpdate(){
-    if (!this.state.mounted && this.props.scoreboard.allScores.length > 0) this.setState({ mounted: true })
-  }
-
   onMount = () => {
-    this.props.onShowFooter()
-    this.props.onShowWrapper()
+    this.props.onFooter(true)
+    this.props.onWrapper(true)
   }
 
-  onClickStartButton = () => {
-
-    this.props.onInitDismount()
+  onDismount = () => {
+    this.props.onInitDismount(true)
 
     this.onDismountTimeout = setTimeout(() => {
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
+      this.props.onFooter(false)
+      this.props.onWrapper(false)
     }, 250)
 
     this.exitDismountTimeout = setTimeout(() => {
-      this.props.onExitDismount()
+      this.props.onInitDismount(false)
       this.props.onClearScore()
       this.props.history.push( routes.countdown )
     }, 500 )
   }
 
   componentWillUnmount(){
-    clearTimeout(this.exitDismountTimeout)
     clearTimeout(this.onDismountTimeout)
+    clearTimeout(this.exitDismountTimeout)
   }
 
   render(){
@@ -95,10 +87,10 @@ class HomeContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.showWrapper ?
+        { this.props.ui.wrapper ?
           <div className={ wrapperClass }>
-            <HomeHeader onClickStartButton={ this.onClickStartButton } />
-            <ScoreboardContainer mounted={ this.state.mounted } />
+            <HomeHeader onClickStartButton={ this.onDismount } />
+            <ScoreboardContainer />
           </div>
         :
           <></>
@@ -119,12 +111,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter()),
-    onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper()),
-    onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount()),
+    onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
+    onWrapper: (bool) => dispatch(actions.wrapper(bool)),
+    onFooter: (bool) => dispatch(actions.footer(bool)),
     onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
     onClearScore: () => dispatch(actions.clearScore())
   }

@@ -1,45 +1,47 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
-  showFooter: false,
-  showWrapper: false,
-  initDismount: false
+  initDismount: false,
+  wrapper: false,
+  footer: false,
+  postGame: false
+}
+
+const initDismount = (currentState, action) => {
+  return{
+    ...currentState,
+    initDismount: action.initDismount
+  }
+}
+
+const wrapper = (currentState, action) => {
+  return{
+    ...currentState,
+    wrapper: action.wrapper
+  }
+}
+
+const footer = (currentState, action) => {
+  return{
+    ...currentState,
+    footer: action.footer
+  }
+}
+
+const postGame = (currentState, action) => {
+  return{
+    ...currentState,
+    postGame: action.postGame
+  }
 }
 
 const uiReducer = (currentState = initialState, action) => {
   switch(action.type){
-    case actionTypes.SHOWFOOTER:
-      return {
-        ...currentState,
-        showFooter: true
-      }
-    case actionTypes.HIDEFOOTER:
-      return {
-        ...currentState,
-        showFooter: false
-      }
-    case actionTypes.SHOWWRAPPER:
-      return {
-        ...currentState,
-        showWrapper: true
-      }
-    case actionTypes.HIDEWRAPPER:
-      return {
-        ...currentState,
-        showWrapper: false
-      }
-    case actionTypes.INITDISMOUNT:
-      return {
-        ...currentState,
-        initDismount: true
-      }
-    case actionTypes.EXITDISMOUNT:
-      return {
-        ...currentState,
-        initDismount: false
-      }
-    default:
-      return currentState
+    case actionTypes.INITDISMOUNT: return initDismount(currentState, action)
+    case actionTypes.WRAPPER: return wrapper(currentState, action)
+    case actionTypes.FOOTER: return footer(currentState, action)
+    case actionTypes.POSTGAME: return postGame(currentState, action)
+    default: return currentState
   }
 }
 

@@ -24,34 +24,36 @@ class SubmitScoreContainer extends React.Component {
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Submit Score'
-    this.startSubmitScore()
+    this.onMount()
   }
 
-  startSubmitScore = () => {
-    this.startSubmitScoreTimeout = setTimeout(() => {
-      this.props.onShowFooter()
-      this.props.onShowWrapper()
-    }, 500)
+  onMount = () => {
+    this.onMountTimeout = setTimeout(() => {
+      this.props.onFooter(true)
+      this.props.onWrapper(true)
+    }, 250)
   }
 
   onDismount = (event) => {
     let buttonNav = event.target.attributes.nav.value
 
-    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
+    this.initDismountTimeout = setTimeout(() => {
+      this.props.onInitDismount(true)
+    }, 125)
 
     this.onDismountTimeout = setTimeout(() => {
-      this.props.onHideFooter()
-      this.props.onHideWrapper()
-    }, 750)
+      this.props.onFooter(false)
+      this.props.onWrapper(false)
+    }, 250)
 
     this.exitDismountTimeout = setTimeout(() => {
-      this.props.onExitDismount()
+      this.props.onInitDismount(false)
       this.props.history.push( buttonNav === 'game' ? routes.countdown : buttonNav === 'main_menu' ? routes.home : routes.scoreboard )
-    }, 1000)
+    }, 500)
   }
 
   componentWillUnmount(){
-    clearTimeout(this.startSubmitScoreTimeout)
+    clearTimeout(this.onMountTimeout)
     clearTimeout(this.initDismountTimeout)
     clearTimeout(this.onDismountTimeout)
     clearTimeout(this.exitDismountTimeout)
@@ -90,7 +92,7 @@ class SubmitScoreContainer extends React.Component {
 
     return(
       <>
-        { this.props.ui.showWrapper ?
+        { this.props.ui.wrapper ?
           <div className={ wrapperClass }>
             <div className={ pillClass }>
               <SubmitScoreHeader />
@@ -124,12 +126,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    onShowFooter: () => dispatch(actions.showFooter()),
-    onHideFooter: () => dispatch(actions.hideFooter()),
-    onShowWrapper: () => dispatch(actions.showWrapper()),
-    onHideWrapper: () => dispatch(actions.hideWrapper()),
-    onInitDismount: () => dispatch(actions.initDismount()),
-    onExitDismount: () => dispatch(actions.exitDismount())
+    onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
+    onWrapper: (bool) => dispatch(actions.wrapper(bool)),
+    onFooter: (bool) => dispatch(actions.footer(bool))
   }
 }
 
