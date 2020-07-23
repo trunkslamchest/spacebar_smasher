@@ -6,7 +6,6 @@ import * as actions from '../store/actions/actionIndex'
 import { routes } from '../utility/paths'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
-import FooterContainer from '../UI/Footer/FooterContainer'
 
 import SubmitScoreButtonsContainer from './SubmitScoreComponents/SubmitScoreButtons/SubmitScoreButtonsContainer'
 import SubmitScoreCounter from './SubmitScoreComponents/SubmitScoreCounter/SubmitScoreCounter'
@@ -92,23 +91,20 @@ class SubmitScoreContainer extends React.Component {
   }
 
     return(
-      <>
-        <Wrapper divClass={ wrapperClass }>
-            <div className={ pillClass }>
-              <SubmitScoreHeader />
-              <div className={ rowClass1 }>
-                <SubmitScoreCounter />
-                <div className={ subRowClass1 }>
-                  <SubmitScoreRank />
-                  <SubmitScorePower />
-                </div>
+      <Wrapper divClass={ wrapperClass }>
+          <div className={ pillClass }>
+            <SubmitScoreHeader />
+            <div className={ rowClass1 }>
+              <SubmitScoreCounter />
+              <div className={ subRowClass1 }>
+                <SubmitScoreRank />
+                <SubmitScorePower />
               </div>
-              <SubmitScoreFormContainer onDismount={ this.onDismount } />
             </div>
-            <SubmitScoreButtonsContainer onDismount={ this.onDismount } />
-        </Wrapper>
-        <FooterContainer />
-      </>
+            <SubmitScoreFormContainer onDismount={ this.onDismount } />
+          </div>
+          <SubmitScoreButtonsContainer onDismount={ this.onDismount } />
+      </Wrapper>
     )
   }
 }

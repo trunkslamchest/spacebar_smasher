@@ -6,7 +6,6 @@ import * as actions from '../store/actions/actionIndex'
 import { routes } from '../utility/paths'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
-import FooterContainer from '../UI/Footer/FooterContainer'
 
 import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHeader'
 import CountdownTimer from './CountdownComponents/CountdownTimer/CountdownTimer'
@@ -90,18 +89,15 @@ class CountdownContainer extends React.Component {
     }
 
     return(
-      <>
-        <Wrapper divClass={ wrapperClass }>
-          <div className={ pillClass }>
-            <CountdownHeader />
-            <CountdownTimer
-              time={ this.state.time }
-            />
-            <CountdownTutorial />
-          </div>
-        </Wrapper>
-        <FooterContainer />
-      </>
+      <Wrapper divClass={ wrapperClass }>
+        <div className={ pillClass }>
+          <CountdownHeader />
+          <CountdownTimer
+            time={ this.state.time }
+          />
+          <CountdownTutorial />
+        </div>
+      </Wrapper>
     )
   }
 }

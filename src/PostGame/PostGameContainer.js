@@ -7,7 +7,6 @@ import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
-import FooterContainer from '../UI/Footer/FooterContainer'
 
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
@@ -122,30 +121,27 @@ class PostGameContainer extends React.Component {
     }
 
     return(
-      <>
-        <Wrapper divClass={ wrapperClass }>
-          <ScoreboardContainer />
-          <div className={ buttonsContainerClass }>
-            <button
-              nav="main_menu"
-              name="main_menu_button"
-              className={ mainMenuButtonClass }
-              onClick={ this.onDismount }
-            >
-              MAIN MENU
-            </button>
-            <button
-              nav="game"
-              name="play_again_button"
-              className={ playAgainButtonClass }
-              onClick={ this.onDismount }
-            >
-              PLAY AGAIN
-            </button>
-          </div>
-        </Wrapper>
-        <FooterContainer />
-      </>
+      <Wrapper divClass={ wrapperClass }>
+        <ScoreboardContainer />
+        <div className={ buttonsContainerClass }>
+          <button
+            nav="main_menu"
+            name="main_menu_button"
+            className={ mainMenuButtonClass }
+            onClick={ this.onDismount }
+          >
+            MAIN MENU
+          </button>
+          <button
+            nav="game"
+            name="play_again_button"
+            className={ playAgainButtonClass }
+            onClick={ this.onDismount }
+          >
+            PLAY AGAIN
+          </button>
+        </div>
+      </Wrapper>
     )
   }
 }

@@ -7,7 +7,6 @@ import { fetch, routes } from '../utility/paths'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
-import FooterContainer from '../UI/Footer/FooterContainer'
 
 import HomeHeader from './HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
@@ -94,13 +93,10 @@ class HomeContainer extends React.Component {
     }
 
     return(
-      <>
-        <Wrapper divClass={ wrapperClass }>
-          <HomeHeader onClickStartButton={ this.onDismount } />
-          <ScoreboardContainer />
-        </Wrapper>
-        <FooterContainer />
-      </>
+      <Wrapper divClass={ wrapperClass }>
+        <HomeHeader onClickStartButton={ this.onDismount } />
+        <ScoreboardContainer />
+      </Wrapper>
     )
   }
 }

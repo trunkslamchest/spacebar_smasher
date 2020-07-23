@@ -12,6 +12,7 @@ import CountdownContainer from './Countdown/CountdownContainer'
 import GameContainer from './game/GameContainer'
 import SubmitScoreContainer from './SubmitScore/SubmitScoreContainer'
 import PostGameContainer from './PostGame/PostGameContainer'
+import FooterContainer from './UI/Footer/FooterContainer'
 
 import E404 from './error/E404'
 
@@ -56,6 +57,7 @@ const App = (props) => {
         </Route>
         <Route component={ E404 } />
       </Switch>
+      <FooterContainer />
     </div>
   )
 }
