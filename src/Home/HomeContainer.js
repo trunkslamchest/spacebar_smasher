@@ -19,10 +19,7 @@ import './HomeMobileDismount.css'
 
 class HomeContainer extends React.Component {
 
-  state = {
-    mounted: false,
-    onDismount: false
-  }
+  state = { mounted: false }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Home'
@@ -42,7 +39,6 @@ class HomeContainer extends React.Component {
 
   componentDidUpdate(){
     if (!this.state.mounted && this.props.scoreboard.allScores.length > 0) this.setState({ mounted: true })
-    if (!this.state.onDismount && this.props.ui.initDismount) this.onDismount()
   }
 
   onMount = () => {
@@ -50,26 +46,24 @@ class HomeContainer extends React.Component {
     this.props.onShowWrapper()
   }
 
-  onClickStartButton = (event) => {
-    this.props.onClearScore()
-    this.props.onInitDismount()
-    this.startCountdownTimeout = setTimeout(() => {
-      this.props.onExitDismount()
-      this.props.history.push( routes.countdown )
-    }, 750 )
-  }
+  onClickStartButton = () => {
 
-  onDismount = () => {
-    this.setState({ onDismount: true })
+    this.props.onInitDismount()
 
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 250)
+
+    this.exitDismountTimeout = setTimeout(() => {
+      this.props.onExitDismount()
+      this.props.onClearScore()
+      this.props.history.push( routes.countdown )
+    }, 500 )
   }
 
   componentWillUnmount(){
-    clearTimeout(this.startCountdownTimeout)
+    clearTimeout(this.exitDismountTimeout)
     clearTimeout(this.onDismountTimeout)
   }
 

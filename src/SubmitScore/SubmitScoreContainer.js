@@ -22,8 +22,6 @@ import './SubmitScoreMobileOnmount.css'
 
 class SubmitScoreContainer extends React.Component {
 
-  state = { player: '' }
-
   componentDidMount(){
     document.title = 'Spacebar Smasher - Submit Score'
     this.startSubmitScore()

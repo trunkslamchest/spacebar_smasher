@@ -27,38 +27,36 @@ const App = (props) => {
   }) }, [onDevice, onOrientation])
 
   return (
-    <>
-      <div className="main_container">
-        <Switch>
-          <Route exact path={ routes.home }>
-            <HomeContainer
-              history={ props.history }
-            />
-          </Route>
-          <Route exact path={ routes.countdown }>
-            <CountdownContainer
-              history={ props.history }
-            />
-          </Route>
-          <Route exact path={ routes.game }>
-            <GameContainer
-              history={ props.history }
-            />
-          </Route>
-          <Route exact path={ routes.submitScore }>
-            <SubmitScoreContainer
-              history={ props.history }
-            />
-          </Route>
-          <Route exact path={ routes.scoreboard } >
-            <PostGameContainer
-              history={ props.history }
-            />
-          </Route>
-          <Route component={ E404 } />
-        </Switch>
-      </div>
-    </>
+    <div className="main_container">
+      <Switch>
+        <Route exact path={ routes.home }>
+          <HomeContainer
+            history={ props.history }
+          />
+        </Route>
+        <Route exact path={ routes.countdown }>
+          <CountdownContainer
+            history={ props.history }
+          />
+        </Route>
+        <Route exact path={ routes.game }>
+          <GameContainer
+            history={ props.history }
+          />
+        </Route>
+        <Route exact path={ routes.submitScore }>
+          <SubmitScoreContainer
+            history={ props.history }
+          />
+        </Route>
+        <Route exact path={ routes.scoreboard } >
+          <PostGameContainer
+            history={ props.history }
+          />
+        </Route>
+        <Route component={ E404 } />
+      </Switch>
+    </div>
   )
 }
 

@@ -1,7 +1,7 @@
 import * as actionTypes from './actionTypes'
 
 export const postGame = (bool) => {
-  return{ 
+  return{
     type: actionTypes.POSTGAME,
     postGame: bool
   }

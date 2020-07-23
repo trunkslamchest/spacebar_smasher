@@ -84,7 +84,6 @@ class SubmitScoreFormContainer extends React.Component {
         }
 
         if(this.props.scoreboard.allScores.length > 0){
-
           scoreboardFunctions('post', fetch.post, playerObj)
           .then(resObj => {
             if(!!resObj){
@@ -92,9 +91,7 @@ class SubmitScoreFormContainer extends React.Component {
               this.props.onDismount(event)
             }
           })
-
         } else {
-
           scoreboardFunctions('get', fetch.get)
           .then(resObj => {
             this.props.onGetScoreboard(Object.entries(resObj.players))
@@ -106,7 +103,6 @@ class SubmitScoreFormContainer extends React.Component {
               }
             })
           })
-
         }
       }
     }

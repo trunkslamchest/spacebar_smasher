@@ -27,7 +27,6 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    showMobileSmashButton: false,
     time: (3.00).toFixed(2),
     timeMark: (3.00).toFixed(2),
   }
@@ -48,13 +47,8 @@ class GameContainer extends React.Component {
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
     this.startGameTimeout = setTimeout(() => {
-
       this.props.onShowFooter()
       this.props.onShowWrapper()
-
-      this.setState({
-        showMobileSmashButton: this.props.detect.device === "mobile" ? true : false
-      })
     }, 250)
 
     this.startTimer = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
@@ -139,7 +133,6 @@ class GameContainer extends React.Component {
 
   onSmash = (event) => {
     event.preventDefault()
-
     if(this.state.time > 0) {
       this.setState({
         count: this.state.count + 1,
@@ -155,10 +148,12 @@ class GameContainer extends React.Component {
     document.removeEventListener('keyup', this.spacebarUp)
 
     this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount() }, 500)
+
     this.onDismountTimeout = setTimeout(() => {
       this.props.onHideFooter()
       this.props.onHideWrapper()
     }, 750)
+
     this.exitDismountTimeout = setTimeout(() => {
       this.props.onExitDismount()
       this.props.history.push( routes.submitScore )
@@ -166,16 +161,15 @@ class GameContainer extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.powerInterval)
     clearInterval(this.timerInterval)
-    clearTimeout(this.initDismountTimeout)
-    clearTimeout(this.mobileSmashButtonTimeout)
-    clearTimeout(this.restartGameTimeout)
-    clearTimeout(this.exitDismountTimeout)
-    clearTimeout(this.spacebarDownListener)
-    clearTimeout(this.spacebarUpListener)
-    clearTimeout(this.startPower)
+    clearInterval(this.powerInterval)
     clearTimeout(this.startTimer)
+    clearTimeout(this.startPower)
+    clearTimeout(this.spacebarUpListener)
+    clearTimeout(this.spacebarDownListener)
+    clearTimeout(this.initDismountTimeout)
+    clearTimeout(this.onDismountTimeout)
+    clearTimeout(this.exitDismountTimeout)
   }
 
   render(){
