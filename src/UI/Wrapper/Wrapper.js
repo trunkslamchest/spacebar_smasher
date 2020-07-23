@@ -10,7 +10,7 @@ const Wrapper = (props) => {
           { props.children }
         </div>
       :
-        <></>
+        null
       }
     </>
   )

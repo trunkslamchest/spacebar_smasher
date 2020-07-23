@@ -4,10 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
-
-import * as gameFunctions from './GameFunctions'
-
-// import getRank from './GameFunctions/getRank'
+import getRank from './GameFunctions/getRank'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
 
@@ -67,7 +64,7 @@ class GameContainer extends React.Component {
         power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
         powerRaw: this.state.powerRaw + 0.025,
         timeMark: this.state.time,
-        rank: gameFunctions.getRank(this.state.count)
+        rank: getRank(this.state.count)
       }, document.removeEventListener('keydown', this.spacebarDown))
     }
   }
@@ -111,12 +108,12 @@ class GameContainer extends React.Component {
   }
 
   powerFunctions = () => {
+    if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
     if (this.state.power <= 0) this.setState({ power: 0 })
     else this.setState({
       power: ((this.state.powerRaw - 0.003) / 4).toFixed(3) * 100,
       powerRaw: this.state.powerRaw - 0.003
     })
-    if (this.state.time === 0) this.setState({ power: this.state.power }, clearInterval(this.powerInterval))
   }
 
   onSmash = (event) => {
@@ -126,7 +123,7 @@ class GameContainer extends React.Component {
         count: this.state.count + 1,
         power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
         powerRaw: this.state.powerRaw + 0.025,
-        rank: gameFunctions.getRank(this.state.count)
+        rank: getRank(this.state.count)
       })
     }
   }

@@ -7,9 +7,9 @@ import './SubmitScoreErrorContainer.css'
 
 const SubmitScoreErrorContainer = (props) => {
 
-  const onClickFunctions = (event) => { props.initDismountModal() }
-
   useEffect(() => { document.title = "Spacebar Smasher - Error" }, [])
+
+  const onClickFunctions = (event) => { props.initDismountModal() }
 
   return(
     <div className='submit_score_error_container'>
