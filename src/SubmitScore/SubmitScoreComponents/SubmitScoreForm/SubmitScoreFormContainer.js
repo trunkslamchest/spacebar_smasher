@@ -112,9 +112,6 @@ class SubmitScoreFormContainer extends React.Component {
   componentWillUnmount(){ clearTimeout(this.dismountModalTimeout) }
 
   render(){
-
-    console.log(this.props.scoreboard.score.score)
-
     return(
       <>
       { this.state.modal.show ?

@@ -27,7 +27,7 @@ const SubmitScoreErrorMessages = (props) => {
       }
     })
 
-  if (props.validationErrors.length > 1) headerText = "You cannot place a score on the Leaderboard due to one of the following problems:"
+  if (props.validationErrors.length > 1) headerText = "You cannot place a score on the Leaderboard due to the following problems:"
   else headerText = "You cannot place a score on the Leaderboard due to the following problem:"
 
   return(
@@ -40,9 +40,9 @@ const SubmitScoreErrorMessages = (props) => {
     <div className="submit_score_error_message_wrapper">
       { errorMessageArr }
     </div>
-      <div className="submit_score_error_bottom_message">
-        Try Again, { props.broName }
-      </div>
+    <div className="submit_score_error_bottom_message">
+      Try Again, { props.broName }
+    </div>
     </>
   )
 }

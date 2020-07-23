@@ -97,12 +97,8 @@ class HomeContainer extends React.Component {
       <>
         { this.props.ui.showWrapper ?
           <div className={ wrapperClass }>
-            <HomeHeader
-              onClickStartButton={ this.onClickStartButton }
-            />
-            <ScoreboardContainer
-              mounted={ this.state.mounted }
-            />
+            <HomeHeader onClickStartButton={ this.onClickStartButton } />
+            <ScoreboardContainer mounted={ this.state.mounted } />
           </div>
         :
           <></>
