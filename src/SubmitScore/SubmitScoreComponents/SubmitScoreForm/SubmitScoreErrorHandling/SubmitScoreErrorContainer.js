@@ -15,7 +15,6 @@ const SubmitScoreErrorContainer = (props) => {
     <div className='submit_score_error_container'>
         <SubmitScoreErrorMessages
           broName={ props.broName }
-          count={ props.count }
           validationErrors={ props.validationErrors }
           specialChars={ props.specialChars }
         />

@@ -17,7 +17,7 @@ import './CountdownMobileContainerPortrait.css'
 
 class CountdownContainer extends React.Component {
 
-  state = { time: 1 }
+  state = { time: 5 }
 
   componentDidMount(){
     document.title = 'Spacebar Smasher - Countdown'

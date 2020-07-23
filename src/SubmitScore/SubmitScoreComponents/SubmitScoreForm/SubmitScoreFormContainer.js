@@ -47,7 +47,8 @@ class SubmitScoreFormContainer extends React.Component {
           show: false,
           initDismount: false,
           validationErrors: []
-        }
+        },
+        submitClicked: false
       })
     }, 250)
   }
@@ -63,7 +64,7 @@ class SubmitScoreFormContainer extends React.Component {
 
   addScore = (event) => {
 
-    let postCheck = validatePost(event.target[0].value.trim(), this.props.count)
+    let postCheck = validatePost(event.target[0].value.trim(), this.props.scoreboard.score.score)
 
     if (!(postCheck.valid)) {
       this.setState({
@@ -111,6 +112,9 @@ class SubmitScoreFormContainer extends React.Component {
   componentWillUnmount(){ clearTimeout(this.dismountModalTimeout) }
 
   render(){
+
+    console.log(this.props.scoreboard.score.score)
+
     return(
       <>
       { this.state.modal.show ?
@@ -120,7 +124,6 @@ class SubmitScoreFormContainer extends React.Component {
           >
             <SubmitScoreErrorContainer
               broName={ this.state.broName }
-              count={ this.props.game.score.count }
               validationErrors={ this.state.modal.validationErrors }
               initDismountModal={ this.initDismountModal }
             />
@@ -130,6 +133,7 @@ class SubmitScoreFormContainer extends React.Component {
         }
         <SubmitScoreForm
           onNameChange={ this.onNameChange }
+          modal={ this.state.modal.show }
           submitClicked={ this.state.submitClicked }
           onSubmit={ this.onSubmit }
         />

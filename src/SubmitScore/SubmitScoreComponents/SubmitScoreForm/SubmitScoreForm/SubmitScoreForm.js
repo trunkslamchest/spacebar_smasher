@@ -42,7 +42,7 @@ const SubmitScoreForm = (props) => {
 
   return(
     <>
-      { props.submitClicked ?
+      { props.submitClicked && !props.modal ?
         <div className={ formWrapperClass }>
           <LoadingSubmitScore />
         </div>
