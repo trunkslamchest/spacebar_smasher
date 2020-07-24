@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { scoreboardContainer } from './ScoreboardFunctions/classSwitch'
+
 import ScoreboardRow from './ScoreboardRow/ScoreboardRow'
 
 import LoadingScoreboard from '../UI/Loading/LoadingScoreboard/LoadingScoreboard'
@@ -24,96 +26,12 @@ const ScoreboardContainer = (props) => {
     />
   )
 
-  let tableClass, headerClass, headRowClass, rowWrapperClass
-
-  if(props.ui.postGame) {
-    if(props.detect.device === "mobile"){
-      if(props.detect.orientation === "landscape") {
-        if(props.ui.initDismount) {
-          tableClass = "dismount_scoreboard_table_mobile_post_game_landscape"
-          headerClass = "scoreboard_header_mobile_landscape"
-          headRowClass = "scoreboard_head_row_mobile_landscape"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_landscape"
-        } else {
-          tableClass = "scoreboard_table_mobile_post_game_landscape"
-          headerClass = "scoreboard_header_mobile_landscape"
-          headRowClass = "scoreboard_head_row_mobile_landscape"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_landscape"
-        }
-      } else {
-        if(props.ui.initDismount) {
-          tableClass = "dismount_scoreboard_table_mobile_post_game_portrait"
-          headerClass = "scoreboard_header_mobile_portrait"
-          headRowClass = "scoreboard_head_row_mobile_portrait"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_portrait"
-        } else {
-          tableClass = "scoreboard_table_mobile_post_game_portrait"
-          headerClass = "scoreboard_header_mobile_portrait"
-          headRowClass = "scoreboard_head_row_mobile_portrait"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_portrait"
-        }
-      }
-    } else {
-      if(props.ui.initDismount){
-        tableClass = "dismount_scoreboard_table_desktop_post_game"
-        headerClass = "scoreboard_header_desktop"
-        headRowClass = "scoreboard_head_row_desktop"
-        rowWrapperClass = "scoreboard_sub_row_desktop"
-      } else {
-        tableClass = "scoreboard_table_desktop_post_game"
-        headerClass = "scoreboard_header_desktop"
-        headRowClass = "scoreboard_head_row_desktop"
-        rowWrapperClass = "scoreboard_sub_row_desktop"
-      }
-    }
-  } else {
-    if(props.detect.device === "mobile"){
-      if(props.detect.orientation === "landscape") {
-        if(props.ui.initDismount) {
-          tableClass = "dismount_scoreboard_table_mobile_landscape"
-          headerClass = "scoreboard_header_mobile_landscape"
-          headRowClass = "scoreboard_head_row_mobile_landscape"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_landscape"
-        } else {
-          tableClass = "scoreboard_table_mobile_landscape"
-          headerClass = "scoreboard_header_mobile_landscape"
-          headRowClass = "scoreboard_head_row_mobile_landscape"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_landscape"
-        }
-      } else {
-        if(props.ui.initDismount) {
-          tableClass = "dismount_scoreboard_table_mobile_portrait"
-          headerClass = "scoreboard_header_mobile_portrait"
-          headRowClass = "scoreboard_head_row_mobile_portrait"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_portrait"
-        } else {
-          tableClass = "scoreboard_table_mobile_portrait"
-          headerClass = "scoreboard_header_mobile_portrait"
-          headRowClass = "scoreboard_head_row_mobile_portrait"
-          rowWrapperClass = "scoreboard_row_wrapper_mobile_portrait"
-        }
-      }
-    } else {
-      if(props.ui.initDismount){
-        tableClass = "dismount_scoreboard_table_desktop"
-        headerClass = "scoreboard_header_desktop"
-        headRowClass = "scoreboard_head_row_desktop"
-        rowWrapperClass = "scoreboard_sub_row_desktop"
-      } else {
-        tableClass = "scoreboard_table_desktop"
-        headerClass = "scoreboard_header_desktop"
-        headRowClass = "scoreboard_head_row_desktop"
-        rowWrapperClass = "scoreboard_sub_row_desktop"
-      }
-    }
-  }
-
   return(
-      <div className={ tableClass }>
-        <div className={ headerClass } >
+      <div className={ scoreboardContainer(props).table }>
+        <div className={ scoreboardContainer(props).header } >
             <h1>LEADERBOARD</h1>
         </div>
-        <div className={ headRowClass }>
+        <div className={ scoreboardContainer(props).headRow }>
           <h1>PLACE</h1>
           <h1>NAME</h1>
           <h1>POWER LEVEL</h1>
@@ -121,7 +39,7 @@ const ScoreboardContainer = (props) => {
           <h1>SCROLLBAR</h1>
         </div>
           { props.scoreboard.allScores.length > 0 ?
-            <div className={ rowWrapperClass }>
+            <div className={ scoreboardContainer(props).row }>
               { scores }
             </div>
           :
