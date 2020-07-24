@@ -4,20 +4,16 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { fetch, routes } from '../utility/paths'
-import { postGame } from './PostGameFunctions/classSwitch'
+import { postGameContainer } from './PostGameFunctions/classSwitch'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
+import PostGameButtonsContainer from './PostGameComponents/PostGameButtonsContainer/PostGameButtonsContainer'
 
 import './PostGameDesktopContainer.css'
-import './PostGameDesktopOnmount.css'
-import './PostGameDesktopDismount.css'
-
 import './PostGameMobileContainerLandscape.css'
 import './PostGameMobileContainerPortrait.css'
-import './PostGameMobileOnmount.css'
-import './PostGameMobileDismount.css'
 
 const PostGameContainer = (props) => {
 
@@ -64,26 +60,9 @@ const PostGameContainer = (props) => {
   }
 
   return(
-    <Wrapper divClass={ postGame(props).wrapper }>
+    <Wrapper divClass={ postGameContainer(props).container }>
       <ScoreboardContainer />
-      <div className={ postGame(props).buttonsContainer }>
-        <button
-          nav="main_menu"
-          name="main_menu_button"
-          className={ postGame(props).mainMenuButton }
-          onClick={ onDismount }
-        >
-          MAIN MENU
-        </button>
-        <button
-          nav="game"
-          name="play_again_button"
-          className={ postGame(props).playAgainButton }
-          onClick={ onDismount }
-        >
-          PLAY AGAIN
-        </button>
-      </div>
+      <PostGameButtonsContainer onDismount={ onDismount } />
     </Wrapper>
     )
 }
