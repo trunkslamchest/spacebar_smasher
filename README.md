@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/trunkslamchest/spacebar_smasher/tree/0.37.3"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.37.3-000000"></a>
+  <a href="https://github.com/trunkslamchest/spacebar_smasher/tree/0.37.5"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.37.5-000000"></a>
 </p>
 
 # Contents
@@ -132,7 +132,6 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   - [Firebase](https://firebase.google.com/)
   - [Jamal Farah](https://github.com/moulayja): Co-creator & Contributor
   - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-  - [Fast JSON API](https://github.com/Netflix/fast_jsonapi)
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
   - [React](https://reactjs.org/)
   - [Redux](https://redux.js.org/)

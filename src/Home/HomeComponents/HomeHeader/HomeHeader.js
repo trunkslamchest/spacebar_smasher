@@ -1,7 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { homeHeader } from '../HomeFunctions/classSwitch'
+import { homeHeader } from '../../HomeFunctions/classSwitch'
+
+import HomeStartButton from '../HomeStartButton/HomeStartButton'
 
 import './HomeDesktopHeader.css'
 import './HomeDesktopHeaderDismount.css'
@@ -18,15 +20,7 @@ const HomeHeader = (props) => {
       <div className={ homeHeader(props).header } >
         <h1>SPACEBAR SMASHER</h1>
       </div>
-      <div className={ homeHeader(props).startButtonContainer }>
-        <button
-          name="start_button"
-          className={ homeHeader(props).startButton }
-          onClick={ props.onClickStartButton }
-        >
-          START
-        </button>
-      </div>
+      <HomeStartButton onClickStartButton={ props.onClickStartButton } />
     </div>
   )
 }

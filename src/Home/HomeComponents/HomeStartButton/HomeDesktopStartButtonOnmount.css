@@ -1,0 +1,9 @@
+@keyframes onmount_start_button_container_desktop
+  {
+    0% {
+      transform: translateX(-1500px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }

@@ -1,0 +1,18 @@
+.dismount_start_button_container_desktop {
+  animation: dismount_start_button_container_desktop .5s ease-in-out 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes dismount_start_button_container_desktop {
+  0% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(1500px);
+  }
+  100% {
+    transform: translateX(1500px);
+  }
+}

@@ -70,21 +70,6 @@
     }
   }
 
-/* @keyframes slide_in_from_left_title_text
-  {
-    0% {
-      transform: translateX(-250px);
-    }
-    100% {
-      transform: matrix3d(
-        1,0,0,0.00025,
-        0,1,0,0,
-        0,0,1,0,
-        0,0,0,1
-        ) translateX(15px);
-    }
-  } */
-
 @keyframes slide_down
   {
     0% {top: -500px}
@@ -95,18 +80,6 @@
   {
     50% {
       opacity: 0.5;
-      transform: matrix3d(
-      1,0,0,-0.0005,
-      0,1,0,0,
-      0,0,1,0,
-      0,0,0,1
-      );
-    }
-  }
-
-@keyframes sway
-  {
-    50% {
       transform: matrix3d(
       1,0,0,-0.0005,
       0,1,0,0,

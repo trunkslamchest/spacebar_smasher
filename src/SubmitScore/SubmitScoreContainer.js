@@ -29,15 +29,18 @@ const SubmitScoreContainer = (props) => {
   const history = useHistory()
 
   useEffect(() => {
-    if(scoreboard.allScores.length === 0){
-      history.push( routes.home )
-    } else {
-      document.title = 'Spacebar Smasher | Submit Score'
-      setTimeout(() => {
-        onFooter(true)
-        onWrapper(true)
-      }, 125)
-    }
+    // if(scoreboard.allScores.length === 0) history.push( routes.home )
+    // else {
+    //   document.title = 'Spacebar Smasher | Submit Score'
+    //   setTimeout(() => {
+    //     onFooter(true)
+    //     onWrapper(true)
+    //   }, 125)
+    // }
+    setTimeout(() => {
+      onFooter(true)
+      onWrapper(true)
+    }, 125)
   }, [onFooter, onWrapper, scoreboard, history])
 
   const onDismount = (event) => {

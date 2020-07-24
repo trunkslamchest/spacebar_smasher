@@ -55,25 +55,6 @@
   }
 }
 
-.dismount_start_button_container_mobile_landscape {
-  animation: dismount_start_button_container_mobile_landscape .5s ease-in-out 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes dismount_start_button_container_mobile_landscape {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(1500px);
-  }
-  100% {
-    transform: translateX(1500px);
-  }
-}
-
 .dismount_home_header_mobile_portrait {
   animation: dismount_home_header_mobile_portrait .5s ease-in-out 1;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 0.75) 90%);
@@ -131,24 +112,3 @@
     width: calc(300px + (350 - 300) * ((100vh - 568px) / (823 - 568)));
   }
 }
-
-.dismount_start_button_container_mobile_portrait {
-  animation: dismount_start_button_container_mobile_portrait .5s ease-in-out 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 0 auto 0 auto;
-}
-
-@keyframes dismount_start_button_container_mobile_portrait {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(1000px);
-  }
-  100% {
-    transform: translateX(1000px);
-  }
-}
-

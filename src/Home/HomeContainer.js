@@ -11,7 +11,7 @@ import taglines from '../datasets/taglines'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
 
-import HomeHeader from './HomeHeader/HomeHeader'
+import HomeHeader from './HomeComponents/HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './HomeDesktopContainer.css'
