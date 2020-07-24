@@ -14,7 +14,7 @@ const validatePost = (name, score) => {
 
   for(let char in name) if(specialChars.arr.includes(name[char])) invalidCharArr.push(name[char])
 
-  // if(score < 25) validation['errors'] = [ ...validation.errors, {code: 320, msg: "Your score is less than 25"} ]
+  if(score < 25) validation['errors'] = [ ...validation.errors, {code: 320, msg: "Your score is less than 25"} ]
 
   if(score > 400) validation['errors'] = [ ...validation.errors, {code: 420, msg: `With a score of ${score}, you are probably cheating.`} ]
 

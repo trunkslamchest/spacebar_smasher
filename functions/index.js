@@ -23,7 +23,6 @@ var init = firebase.initializeApp(firebaseConfig)
 admin.initializeApp()
 // init.database()
 
-
 exports.players = functions
   .region('us-east1')
   .https.onRequest((req, res) => {
@@ -38,9 +37,7 @@ exports.players = functions
 
     var parsed = sorted.once('value', function(player){
       player.forEach(function(snap) { players.unshift(snap.val()) })
-      setTimeout(() => {
-        res.json({players})
-      }, 2000)
+      res.json({players})
     })
 
   return parsed
@@ -62,7 +59,5 @@ exports.addScore = functions
 
     firebase.database().ref().update(obj)
 
-    setTimeout(() => {
-      res.status(200).json(Object.values(obj)[0])
-    }, 1000)
+    res.status(200).json(Object.values(obj)[0])
 });

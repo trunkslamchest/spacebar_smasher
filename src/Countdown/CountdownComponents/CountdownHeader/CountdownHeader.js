@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { countdownHeader } from '../../CountdownFunctions/classSwitch'
+
 import './CountdownDesktopHeader.css'
 import './CountdownDesktopHeaderOnmount.css'
 import './CountdownDesktopHeaderDismount.css'
@@ -10,24 +12,8 @@ import './CountdownMobileHeaderDismount.css'
 import './CountdownMobileHeaderOnmount.css'
 
 const CountdownHeader = (props) => {
-
-  let currentClass
-
-  if(props.detect.device === "mobile") {
-    if(props.detect.orientation === "landscape") {
-      if(props.ui.initDismount) currentClass = "dismount_countdown_mobile_header_landscape"
-      else currentClass = "countdown_mobile_header_landscape"
-    } else {
-      if(props.ui.initDismount) currentClass = "dismount_countdown_mobile_header_portrait"
-      else currentClass = "countdown_mobile_header_portrait"
-    }
-  } else {
-    if(props.ui.initDismount) currentClass = "dismount_countdown_desktop_header"
-    else currentClass = "countdown_desktop_header"
-  }
-
   return(
-    <div className={ currentClass }>
+    <div className={ countdownHeader(props).header }>
       <h3>GET READY</h3>
     </div>
   )

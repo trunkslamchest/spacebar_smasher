@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
+import { countdownContainer } from './CountdownFunctions/classSwitch'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
 
@@ -17,7 +18,7 @@ import './CountdownMobileContainerPortrait.css'
 
 class CountdownContainer extends React.Component {
 
-  state = { time: 1 }
+  state = { time: 5 }
 
   componentDidMount(){
     if(this.props.scoreboard.allScores.length === 0){
@@ -76,25 +77,9 @@ class CountdownContainer extends React.Component {
   }
 
   render(){
-
-    let wrapperClass, pillClass
-
-    if(this.props.detect.device === "mobile") {
-      if(this.props.detect.orientation === "landscape") {
-        wrapperClass = "countdown_mobile_wrapper_landscape"
-        pillClass = "countdown_mobile_pill_landscape"
-      } else {
-        wrapperClass = "countdown_mobile_wrapper_portrait"
-        pillClass = "countdown_mobile_pill_portrait"
-      }
-    } else {
-      wrapperClass = "countdown_desktop_wrapper"
-      pillClass = "countdown_desktop_pill"
-    }
-
     return(
-      <Wrapper divClass={ wrapperClass }>
-        <div className={ pillClass }>
+      <Wrapper divClass={ countdownContainer(this.props).wrapper }>
+        <div className={ countdownContainer(this.props).pill }>
           <CountdownHeader />
           <CountdownTimer
             time={ this.state.time }

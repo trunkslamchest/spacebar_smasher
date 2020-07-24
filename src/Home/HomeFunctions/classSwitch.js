@@ -4,8 +4,8 @@ export const homeContainer = (props) => {
     wrapper: ''
   }
 
-  if(props.ui.device === "mobile"){
-    if(props.ui.orientation === "landscape") {
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
       if(props.ui.initDismount) {
         obj['wrapper'] = "dismount_home_mobile_wrapper_landscape"
       } else {
