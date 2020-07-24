@@ -4,10 +4,10 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { fetch, routes } from '../utility/paths'
+import { postGame } from './PostGameFunctions/classSwitch'
 import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
-
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './PostGameDesktopContainer.css'
@@ -63,56 +63,14 @@ const PostGameContainer = (props) => {
     }, 750 )
   }
 
-  let wrapperClass, buttonsContainerClass, mainMenuButtonClass, playAgainButtonClass
-
-  if(props.detect.device === "mobile") {
-    if(props.detect.orientation === "landscape") {
-      if(props.ui.initDismount) {
-        wrapperClass = "dismount_post_game_mobile_wrapper_landscape"
-        buttonsContainerClass = "dismount_post_game_mobile_buttons_container_landscape"
-        mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
-        playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
-      } else {
-        wrapperClass = "post_game_mobile_wrapper_landscape"
-        buttonsContainerClass = "post_game_mobile_buttons_container_landscape"
-        mainMenuButtonClass = "post_game_mobile_main_menu_button_landscape"
-        playAgainButtonClass = "post_game_mobile_play_again_button_landscape"
-      }
-    } else {
-      if(props.ui.initDismount) {
-        wrapperClass = "dismount_post_game_mobile_wrapper_portrait"
-        buttonsContainerClass = "dismount_post_game_mobile_buttons_container_portrait"
-        mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
-        playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
-      } else {
-        wrapperClass = "post_game_mobile_wrapper_portrait"
-        buttonsContainerClass = "post_game_mobile_buttons_container_portrait"
-        mainMenuButtonClass = "post_game_mobile_main_menu_button_portrait"
-        playAgainButtonClass = "post_game_mobile_play_again_button_portrait"
-      }
-    }
-  } else {
-    if(props.ui.initDismount) {
-      wrapperClass = "dismount_post_game_desktop_wrapper"
-      buttonsContainerClass = "dismount_post_game_desktop_buttons_container"
-      mainMenuButtonClass = "post_game_desktop_main_menu_button"
-      playAgainButtonClass = "post_game_desktop_play_again_button"
-    } else {
-      wrapperClass = "post_game_desktop_wrapper"
-      buttonsContainerClass = "post_game_desktop_buttons_container"
-      mainMenuButtonClass = "post_game_desktop_main_menu_button"
-      playAgainButtonClass = "post_game_desktop_play_again_button"
-    }
-  }
-
   return(
-    <Wrapper divClass={ wrapperClass }>
+    <Wrapper divClass={ postGame(props).wrapper }>
       <ScoreboardContainer />
-      <div className={ buttonsContainerClass }>
+      <div className={ postGame(props).buttonsContainer }>
         <button
           nav="main_menu"
           name="main_menu_button"
-          className={ mainMenuButtonClass }
+          className={ postGame(props).mainMenuButton }
           onClick={ onDismount }
         >
           MAIN MENU
@@ -120,7 +78,7 @@ const PostGameContainer = (props) => {
         <button
           nav="game"
           name="play_again_button"
-          className={ playAgainButtonClass }
+          className={ postGame(props).playAgainButton }
           onClick={ onDismount }
         >
           PLAY AGAIN
