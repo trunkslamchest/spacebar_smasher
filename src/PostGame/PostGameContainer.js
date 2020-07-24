@@ -24,13 +24,13 @@ const PostGameContainer = (props) => {
   const { onWrapper, onFooter, onGetScoreboard, scoreboard } = props
 
   useEffect(() => {
-    document.title = 'Spacebar Smasher | Scoreboard'
     // document.body.scrollTop = 0
 
     onWrapper(true)
     onFooter(true)
 
     if(scoreboard.allScores.length === 0){
+      document.title = 'Spacebar Smasher | Scoreboard'
       scoreboardFunctions('get', fetch.get)
       .then(resObj => {
         onGetScoreboard(Object.entries(resObj.players))

@@ -29,8 +29,8 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    time: (5.00).toFixed(2),
-    timeMark: (5.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
   }
 
   constructor(props) {

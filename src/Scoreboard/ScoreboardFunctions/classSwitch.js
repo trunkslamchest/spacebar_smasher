@@ -79,7 +79,7 @@ export const scoreboardContainer = (props) => {
         obj['table'] = "dismount_scoreboard_table_desktop"
         obj['header'] = "scoreboard_header_desktop"
         obj['headRow'] = "scoreboard_head_row_desktop"
-        obj['rowWrapper'] = "scoreboard_sub_row_desktop"
+        obj['row'] = "scoreboard_sub_row_desktop"
       } else {
         obj['table'] = "scoreboard_table_desktop"
         obj['header'] = "scoreboard_header_desktop"

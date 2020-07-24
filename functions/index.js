@@ -5,12 +5,12 @@ const firebase = require("firebase")
 const admin = require('firebase-admin')
 
 const url = {
-  database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
-  // database: 'https://spacebarsmasher-96ba1.firebaseio.com',
-  rootSecured: 'https://localhost:3000',
-  // rootSecured: 'https://trunkslamchest.com',
-  rootUnsecured: 'http://localhost:3000'
-  // rootUnsecured: 'http://trunkslamchest.com'
+  // database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
+  database: 'https://spacebarsmasher-96ba1.firebaseio.com',
+  // rootSecured: 'https://localhost:3000',
+  rootSecured: 'https://trunkslamchest.com',
+  // rootUnsecured: 'http://localhost:3000'
+  rootUnsecured: 'http://trunkslamchest.com'
 }
 
 var firebaseConfig = {
@@ -18,9 +18,9 @@ var firebaseConfig = {
 }
 
 var init = firebase.initializeApp(firebaseConfig)
-// var db = init.database()
-
 admin.initializeApp()
+
+// var db = init.database()
 // init.database()
 
 exports.players = functions
