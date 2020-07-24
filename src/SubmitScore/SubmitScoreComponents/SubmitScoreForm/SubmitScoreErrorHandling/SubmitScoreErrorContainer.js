@@ -30,7 +30,7 @@ const SubmitScoreErrorContainer = (props) => {
           className={ props.fixingRedux || props.fixedRedux ? "fixing_redux_button" : 'submit_score_error_button' }
           onClick={ props.fixingRedux ? null : onClickFixRedux }
         >
-          { props.fixingRedux || props.fixedRedux ? <FixingRedux /> : "FIX"}
+          { props.fixingRedux || props.fixedRedux ? <FixingRedux /> : "FIX" }
         </button>
       :
         <button

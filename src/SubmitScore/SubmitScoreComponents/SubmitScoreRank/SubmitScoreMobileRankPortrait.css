@@ -30,5 +30,4 @@
   padding: 0px 10px 0px 10px;
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;
-  width: calc(250px + (350 - 250) * ((100vw - 500px) / (1920 - 500)));
 }

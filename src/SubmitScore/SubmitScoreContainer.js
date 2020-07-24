@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
+import { submitScoreContainer } from './SubmitScoreFunctions/classSwitch'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
 
@@ -57,42 +58,13 @@ const SubmitScoreContainer = (props) => {
     }, 750)
   }
 
-  let wrapperClass, pillClass, rowClass1, subRowClass1
-
-  if(props.detect.device === "mobile") {
-    if(props.detect.orientation === "landscape") {
-      rowClass1 = 'submit_score_mobile_landscapeR1'
-      subRowClass1 = 'submit_score_mobile_landscapeSR1'
-        if(props.ui.initDismount) {
-            wrapperClass = "submit_score_mobile_wrapper_landscape"
-            pillClass = "dismount_submit_score_mobile_pill_landscape"
-        } else {
-            wrapperClass = "submit_score_mobile_wrapper_landscape"
-            pillClass = "submit_score_mobile_pill_landscape"
-        }
-    } else {
-      rowClass1 = 'submit_score_mobile_portraitR1'
-      subRowClass1 = 'submit_score_mobile_portraitSR1'
-      if(props.ui.initDismount) {
-        wrapperClass = "submit_score_mobile_wrapper_portrait"
-        pillClass = "dismount_submit_score_mobile_pill_portrait"
-      } else {
-        wrapperClass = "submit_score_mobile_wrapper_portrait"
-        pillClass = "submit_score_mobile_pill_portrait"
-      }
-    }
-  } else {
-    wrapperClass = "submit_score_desktop_wrapper"
-    pillClass = "submit_score_desktop_pill"
-  }
-
   return(
-    <Wrapper divClass={ wrapperClass }>
-        <div className={ pillClass }>
+    <Wrapper divClass={ submitScoreContainer(props).wrapper }>
+        <div className={ submitScoreContainer(props).pill }>
           <SubmitScoreHeader />
-          <div className={ rowClass1 }>
+          <div className={ submitScoreContainer(props).row }>
             <SubmitScoreCounter />
-            <div className={ subRowClass1 }>
+            <div className={ submitScoreContainer(props).subRow }>
               <SubmitScoreRank />
               <SubmitScorePower />
             </div>
