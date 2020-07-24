@@ -18,7 +18,7 @@ import './CountdownMobileContainerPortrait.css'
 
 class CountdownContainer extends React.Component {
 
-  state = { time: 5 }
+  state = { time: 1 }
 
   componentDidMount(){
     if(this.props.scoreboard.allScores.length === 0){

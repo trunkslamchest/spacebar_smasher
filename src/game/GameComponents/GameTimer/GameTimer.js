@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { gameTimer } from '../../GameFunctions/classSwitch'
+
 import './GameDesktopTimer.css'
 import './GameDesktopTimerOnmount.css'
 import './GameDesktopTimerDismount.css'
@@ -8,22 +10,8 @@ import './GameMobileTimerLandscape.css'
 import './GameMobileTimerPortrait.css'
 
 const GameMobileTimer = (props) => {
-
-  let currentClass
-
-  if(props.detect.device === "mobile") {
-    if(props.detect.orientation === "landscape") {
-      currentClass = "game_mobile_timer_landscape"
-    } else {
-      currentClass = "game_mobile_timer_portrait"
-    }
-  } else {
-    if(props.ui.initDismount) currentClass = "dismount_game_desktop_timer"
-    else currentClass = "game_desktop_timer"
-  }
-
   return(
-    <div className={ currentClass }>
+    <div className={ gameTimer(props).timer }>
       <h1>TIME</h1>
       <h2>{ props.time ? props.time : (0.00).toFixed(2) }</h2>
     </div>

@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
+import { gameContainer } from './GameFunctions/classSwitch'
 import getRank from './GameFunctions/getRank'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
@@ -166,42 +167,13 @@ class GameContainer extends React.Component {
 
   render(){
 
-    let wrapperClass, pillClass, rowClass1, subRowClass1
-
-    if(this.props.detect.device === "mobile") {
-      if(this.props.detect.orientation === 'landscape') {
-        rowClass1 = 'game_mobile_landscapeR1'
-        subRowClass1 = 'game_mobile_landscapeSR1'
-        if(this.props.ui.initDismount) {
-            wrapperClass = "game_mobile_wrapper_landscape"
-            pillClass = "dismount_game_mobile_pill_landscape"
-        } else {
-            wrapperClass = "game_mobile_wrapper_landscape"
-            pillClass = "game_mobile_pill_landscape"
-        }
-      } else {
-        rowClass1 = 'game_mobile_portraitR1'
-        subRowClass1 = 'game_mobile_portraitSR1'
-        if(this.props.ui.initDismount) {
-          wrapperClass = "game_mobile_wrapper_portrait"
-          pillClass = "dismount_game_mobile_pill_portrait"
-        } else {
-          wrapperClass = "game_mobile_wrapper_portrait"
-          pillClass = "game_mobile_pill_portrait"
-        }
-      }
-    } else {
-      wrapperClass = "game_desktop_wrapper"
-      pillClass = "game_desktop_pill"
-    }
-
     return(
-      <Wrapper divClass={ wrapperClass }>
-        <div className={ pillClass }>
+      <Wrapper divClass={ gameContainer(this.props).wrapper }>
+        <div className={ gameContainer(this.props).pill }>
           <GameTimer time={ this.state.time } />
-          <div className={ rowClass1 }>
+          <div className={ gameContainer(this.props).row }>
             <GameCounter count={ this.state.count } />
-            <div className={ subRowClass1 }>
+            <div className={ gameContainer(this.props).subRow }>
               <GameRank rank={ this.state.rank } />
               <GamePower power={ this.state.power } powerRaw={ this.state.powerRaw } />
             </div>

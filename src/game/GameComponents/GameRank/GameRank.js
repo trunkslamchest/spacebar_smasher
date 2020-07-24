@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { gameRank } from '../../GameFunctions/classSwitch'
+
 import './GameDesktopRank.css'
 import './GameDesktopRankDismount.css'
 import './GameDesktopRankOnmount.css'
@@ -8,22 +10,8 @@ import './GameMobileRankLandscape.css'
 import './GameMobileRankPortrait.css'
 
 const GameRank = (props) => {
-
-  let currentClass
-
-  if(props.detect.device === "mobile") {
-    if(props.detect.orientation === "landscape") {
-      currentClass = "game_mobile_rank_landscape"
-    } else {
-      currentClass = "game_mobile_rank_portrait"
-    }
-  } else {
-    if(props.ui.initDismount) currentClass = "dismount_game_desktop_rank"
-    else currentClass = "game_desktop_rank"
-  }
-
   return(
-    <div className={ currentClass }>
+    <div className={ gameRank(props).rank }>
       <h1>RANK</h1>
       <h2>{ props.rank ? props.rank : "SUPER BABY FINGERS" }</h2>
     </div>

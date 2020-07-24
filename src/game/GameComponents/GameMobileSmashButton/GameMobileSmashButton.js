@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { gameMobileSmashButton } from '../../GameFunctions/classSwitch'
+
 import './GameMobileSmashButtonPortrait.css'
 import './GameMobileSmashButtonLandscape.css'
 
@@ -10,20 +12,10 @@ const GameMobileSmashButton = (props) => {
     props.onSmash(event)
   }
 
-  let currentClass, buttonClass
-
-    if(props.detect.orientation === "landscape") {
-      currentClass = "game_mobile_smash_button_landscape"
-      buttonClass = "smash_button_landscape"
-    } else {
-      currentClass = "game_mobile_smash_button_portrait"
-      buttonClass = "smash_button_portrait"
-    }
-
   return(
-    <div className={ currentClass }>
+    <div className={ gameMobileSmashButton(props).container }>
       <button
-        className={ buttonClass }
+        className={ gameMobileSmashButton(props).button }
         onClick={ onSmashFunctions }
       >
         SMASH!
