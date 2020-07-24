@@ -5,6 +5,7 @@
   border-radius: 30px 0px 0px 30px;
   box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
   color: white !important;
+  filter: blur(0);
   font-family: 'Audiowide';
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -27,6 +28,7 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: black !important;
   cursor: pointer;
+  filter: blur(0);
   transform: matrix3d(
     1,0,0,0,
     0,1,0,0,
@@ -41,6 +43,7 @@
   border: 2px solid black;
   color: black !important;
   cursor: pointer;
+  filter: blur(0);
   transition-property: color;
   transition-duration: .1s, .1s;
   transition-timing-function: ease-in-out;
@@ -50,6 +53,36 @@
   outline: -webkit-focus-ring-color auto 0px;
 }
 
+.post_game_mobile_main_menu_button_disabled_portrait {
+  background: linear-gradient( rgba(100, 100, 100, 1) 10%,rgba(50, 50, 50, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.75), 0 0 5px 0 rgba(255, 255, 255, 0.75);
+  color: grey !important;
+  filter: blur(1px);
+  font-family: 'Audiowide';
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+  transform: matrix3d(
+    1,0,0,0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+    );
+  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.post_game_mobile_main_menu_button_disabled_portrait:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.post_game_mobile_main_menu_button_disabled_portrait span {
+  padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+}
+
 .post_game_mobile_play_again_button_portrait {
   animation: shadow_blink 1.6s infinite;
   background: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
@@ -57,6 +90,7 @@
   border-radius: 0px 30px 30px 0px;
   box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
   color: white !important;
+  filter: blur(0);
   font-family: "Audiowide";
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
@@ -79,6 +113,7 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: black !important;
   cursor: pointer;
+  filter: blur(0);
   transform: matrix3d(
     1,0,0,0,
     0,1,0,0,
@@ -94,6 +129,7 @@
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: black !important;
   cursor: pointer;
+  filter: blur(0);
   transition-property: color;
   transition-duration: .1s, .1s;
   transition-timing-function: ease-in-out;
@@ -101,4 +137,34 @@
 
 .post_game_mobile_play_again_button_portrait:focus {
   outline: -webkit-focus-ring-color auto 0px;
+}
+
+.post_game_mobile_play_again_button_disabled_portrait {
+  background: linear-gradient( rgba(100, 100, 100, 1) 10%,rgba(50, 50, 50, 1) 100%);
+  border: 2px solid grey;
+  border-radius: 0px 30px 30px 0px;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.75), 0 0 5px 0 rgba(255, 255, 255, 0.75);
+  color: grey !important;
+  filter: blur(1px);
+  font-family: 'Audiowide';
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+  transform: matrix3d(
+    1,0,0,-0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+    );
+  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.post_game_mobile_play_again_button_disabled_portrait:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.post_game_mobile_play_again_button_disabled_portrait span {
+  padding: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
 }

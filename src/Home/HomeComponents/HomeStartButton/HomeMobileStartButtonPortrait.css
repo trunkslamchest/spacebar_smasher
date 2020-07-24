@@ -7,7 +7,7 @@
 }
 
 .start_button_mobile_portrait {
-  animation: start_button_sway 2s ease-in-out infinite, shadow_blink 1.5s ease-in-out infinite;
+  animation: start_button_sway 2s ease-in-out .25s infinite, shadow_blink 1.5s ease-in-out infinite;
   background: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid white;
   border-radius: 30px;
@@ -15,7 +15,7 @@
   color: white !important;
   filter: blur(0);
   font-family: "Audiowide";
-  font-size: calc(20px + (25 - 20) * ((100vh - 568px) / (823 - 568)));
+  font-size: calc(20px + (25 - 20) * ((100vw - 568px) / (823 - 568)));
   font-weight: 300 ;
   margin-top: calc(10px + (20 - 10) * ((100vh - 568px) / (823 - 568)));
   margin-bottom: 0;
@@ -27,7 +27,7 @@
   transition-property: color, border;
   transition-duration: .1s, .1s;
   transition-timing-function: ease-in-out;
-  width: calc(175px + (225 - 175) * ((100vh - 568px) / (823 - 568)));
+  width: calc(175px + (225 - 175) * ((100vw - 568px) / (823 - 568)));
 }
 
 .start_button_mobile_portrait:focus {
@@ -51,15 +51,17 @@
   color: grey !important;
   filter: blur(1.5px);
   font-family: "Audiowide";
-  font-size: calc(20px + (25 - 20) * ((100vh - 568px) / (823 - 568)));
+  font-size: calc(20px + (25 - 20) * ((100vw - 568px) / (823 - 568)));
   font-weight: 300 ;
   margin-top: calc(10px + (20 - 10) * ((100vh - 568px) / (823 - 568)));
   margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
   padding: 10px;
   text-shadow: 1px 1px 2px #000;
-  width: calc(175px + (225 - 175) * ((100vh - 568px) / (823 - 568)));
+  width: calc(175px + (225 - 175) * ((100vw - 568px) / (823 - 568)));
+}
+
+.start_button_disabled_mobile_portrait span {
+  padding: calc(20px + (25 - 20) * ((100vw - 568px) / (823 - 568)));
 }
 
 .start_button_disabled_mobile_portrait:focus {

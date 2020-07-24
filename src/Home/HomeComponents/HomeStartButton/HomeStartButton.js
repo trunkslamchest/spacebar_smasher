@@ -29,7 +29,7 @@ const HomeStartButton = (props) => {
         name="disabled_start_button"
         className={ homeStartButton(props).startButtonDisabled }
       >
-        START
+        <span />
       </button>
     }
     </div>

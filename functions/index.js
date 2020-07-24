@@ -40,7 +40,7 @@ exports.players = functions
 
       setTimeout(() => {
         res.json({players})
-      }, 2000)
+      }, 1000)
     })
 
   return parsed
@@ -62,7 +62,5 @@ exports.addScore = functions
 
     firebase.database().ref().update(obj)
 
-    setTimeout(() => {
-      res.status(200).json(Object.values(obj)[0])
-    }, 2000)
+    res.status(200).json(Object.values(obj)[0])
 });

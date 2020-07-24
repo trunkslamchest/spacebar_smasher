@@ -64,35 +64,28 @@ export const postGameButton = (props) => {
 
   var obj = {
     mainMenuButton: '',
-    playAgainButton: ''
+    mainMenuButtonDisabled: '',
+    playAgainButton: '',
+    playAgainButtonDisabled: ''
   }
 
   if(props.detect.device === "mobile") {
     if(props.detect.orientation === "landscape") {
-      if(props.ui.initDismount) {
-        obj['mainMenuButton'] = "post_game_mobile_main_menu_button_landscape"
-        obj['playAgainButton'] = "post_game_mobile_play_again_button_landscape"
-      } else {
-        obj['mainMenuButton'] = "post_game_mobile_main_menu_button_landscape"
-        obj['playAgainButton'] = "post_game_mobile_play_again_button_landscape"
-      }
+      obj['mainMenuButton'] = "post_game_mobile_main_menu_button_landscape"
+      obj['mainMenuButtonDisabled'] = "post_game_mobile_main_menu_button_disabled_landscape"
+      obj['playAgainButton'] = "post_game_mobile_play_again_button_landscape"
+      obj['playAgainButtonDisabled'] = "post_game_mobile_play_again_button_disabled_landscape"
     } else {
-      if(props.ui.initDismount) {
-        obj['mainMenuButton'] = "post_game_mobile_main_menu_button_portrait"
-        obj['playAgainButton'] = "post_game_mobile_play_again_button_portrait"
-      } else {
-        obj['mainMenuButton'] = "post_game_mobile_main_menu_button_portrait"
-        obj['playAgainButton'] = "post_game_mobile_play_again_button_portrait"
-      }
+      obj['mainMenuButton'] = "post_game_mobile_main_menu_button_portrait"
+      obj['mainMenuButtonDisabled'] = "post_game_mobile_main_menu_button_disabled_portrait"
+      obj['playAgainButton'] = "post_game_mobile_play_again_button_portrait"
+      obj['playAgainButtonDisabled'] = "post_game_mobile_play_again_button_disabled_portrait"
     }
   } else {
-    if(props.ui.initDismount) {
-      obj['mainMenuButton'] = "post_game_desktop_main_menu_button"
-      obj['playAgainButton'] = "post_game_desktop_play_again_button"
-    } else {
-      obj['mainMenuButton'] = "post_game_desktop_main_menu_button"
-      obj['playAgainButton'] = "post_game_desktop_play_again_button"
-    }
+    obj['mainMenuButton'] = "post_game_desktop_main_menu_button"
+    obj['mainMenuButtonDisabled'] = "post_game_desktop_main_menu_button_disabled"
+    obj['playAgainButton'] = "post_game_desktop_play_again_button"
+    obj['playAgainButtonDisabled'] = "post_game_desktop_play_again_button_disabled"
   }
 
   return obj

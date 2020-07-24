@@ -1,6 +1,7 @@
 .post_game_desktop_buttons_container {
   animation: onmount_post_game_buttons_container_desktop .5s ease-in-out 1;
   display: flex;
+  filter: blur(0);
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;

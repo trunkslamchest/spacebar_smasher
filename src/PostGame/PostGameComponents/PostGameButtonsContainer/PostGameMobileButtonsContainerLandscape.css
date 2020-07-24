@@ -1,4 +1,5 @@
 .post_game_mobile_buttons_container_landscape {
   animation: onmount_post_game_mobile_buttons_container_landscape .5s ease-in-out 1;
+  filter: blur(0);
   padding-top: calc(35px + (80 - 35) * ((100vw - 320px) / (1920 - 320)));
 }

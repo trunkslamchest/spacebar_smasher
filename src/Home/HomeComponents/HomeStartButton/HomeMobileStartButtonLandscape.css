@@ -7,7 +7,7 @@
 }
 
 .start_button_mobile_landscape {
-  animation: start_button_sway 2s ease-in-out infinite, shadow_blink 1.5s ease-in-out infinite;
+  animation: start_button_sway 2s ease-in-out .25s infinite, shadow_blink 1.5s ease-in-out infinite;
   background: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 2px solid white;
   border-radius: 30px;
@@ -55,4 +55,8 @@
 
 .start_button_disabled_mobile_landscape:focus {
   outline: -webkit-focus-ring-color auto 0px;
+}
+
+.start_button_disabled_mobile_landscape span {
+  padding: calc(20px + (25 - 20) * ((100vw - 568px) / (823 - 568)));
 }
