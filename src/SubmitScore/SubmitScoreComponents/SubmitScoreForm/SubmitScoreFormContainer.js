@@ -26,7 +26,9 @@ class SubmitScoreFormContainer extends React.Component {
       show: false,
       validationErrors: []
     },
-    submitClicked: false
+    submitClicked: false,
+    fixingRedux: false,
+    fixedRedux: false,
   }
 
   initDismountModal = () => {
@@ -53,6 +55,31 @@ class SubmitScoreFormContainer extends React.Component {
     }, 250)
   }
 
+  fixRedux = (event) => {
+    event.persist()
+    this.setState({ fixingRedux: true })
+    scoreboardFunctions('get', fetch.get)
+    .then(resObj => {
+      if(!!resObj){
+        this.props.onGetScoreboard(Object.entries(resObj.players))
+        let playerObj = {
+          ...this.props.scoreboard.score,
+          name: this.state.player,
+          timestamp: getTime('fullDate')
+        }
+        this.setState({ fixedRedux: true, fixingRedux: false })
+        scoreboardFunctions('post', fetch.post, playerObj)
+        .then(resObj => {
+          if(!!resObj){
+            this.initDismountModal()
+            this.props.onSubmitScore(resObj)
+            this.props.onDismount(event)
+          }
+        })
+      }
+    })
+  }
+
   onNameChange = (event) => { this.setState({ [event.target.name]: event.target.value }) }
 
   onSubmit = (event) => {
@@ -73,24 +100,33 @@ class SubmitScoreFormContainer extends React.Component {
           show: true,
           validationErrors: postCheck.errors
         },
-        broName: broNames.random()
+        broName: `Try Again, ${broNames.random()}`
       })
     } else {
       if(!this.state.submitClicked){
-
-        let playerObj = {
-          ...this.props.scoreboard.score,
-          name: this.state.player,
-          timestamp: getTime('fullDate')
-        }
-
-        scoreboardFunctions('post', fetch.post, playerObj)
-        .then(resObj => {
-          if(!!resObj){
-            this.props.onSubmitScore(resObj)
-            this.props.onDismount(event)
+        if(this.props.scoreboard.allScores.length === 0){
+          this.setState({ modal: { validationErrors: [] } })
+          this.setState({
+            modal: {
+              show: true,
+              validationErrors: [{code: 69, msg: "Redux couldn't find the scoreboard" }]
+            },
+            broName: "Click The Button Below To Fix Redux"
+          })
+        } else {
+          let playerObj = {
+            ...this.props.scoreboard.score,
+            name: this.state.player,
+            timestamp: getTime('fullDate')
           }
-        })
+          scoreboardFunctions('post', fetch.post, playerObj)
+          .then(resObj => {
+            if(!!resObj){
+              this.props.onSubmitScore(resObj)
+              this.props.onDismount(event)
+            }
+          })
+        }
       }
     }
   }
@@ -109,10 +145,13 @@ class SubmitScoreFormContainer extends React.Component {
               broName={ this.state.broName }
               validationErrors={ this.state.modal.validationErrors }
               initDismountModal={ this.initDismountModal }
+              fixRedux={ this.fixRedux }
+              fixingRedux={ this.state.fixingRedux }
+              fixedRedux={ this.state.fixedRedux }
             />
           </Modal>
         :
-          <></>
+          null
         }
         <SubmitScoreForm
           onNameChange={ this.onNameChange }

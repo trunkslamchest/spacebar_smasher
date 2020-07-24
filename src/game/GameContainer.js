@@ -96,6 +96,7 @@ class GameContainer extends React.Component {
     if (this.state.time <= 0 || this.state.time === 0) {
       this.setState({ time: 0 })
       this.props.onStoreScore({
+        name: '',
         avgPress: this.state.avgPress,
         score: this.state.count,
         power_level: this.state.powerRaw,

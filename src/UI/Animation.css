@@ -5,7 +5,20 @@
     }
   }
 
-@keyframes text_shadow_blink
+@keyframes text_shadow_blink_white
+  {
+    0% {
+      text-shadow: 0px 0px 2px white;
+    }
+    50% {
+      text-shadow: 0px 0px 4px white;
+    }
+    100% {
+      text-shadow: 0px 0px 2px white;
+    }
+  }
+
+@keyframes text_shadow_blink_yellow
   {
     0% {
       text-shadow: 0px 0px 2px yellow;

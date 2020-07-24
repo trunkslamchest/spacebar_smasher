@@ -33,17 +33,39 @@
   margin: 0 auto 0 auto;
   padding: 0px 0px 0px 0px;
   text-align: center;
-  text-shadow: 0px 0px 2.5px yellow;
 }
 
 .submit_score_error_message_wrapper p {
-  animation: text_shadow_blink 1.5s ease-in-out infinite;
+  animation: text_shadow_blink_yellow 1.5s ease-in-out infinite;
   border-top: 1px solid grey;
   color: yellow;
   font-family: 'Conv_digital-7.mono';
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   padding: 1px;
+  text-shadow: 0px 0px 2.5px yellow;
+}
+
+.submit_score_error_message_wrapper span {
+  animation: text_shadow_blink_white 1.55s ease-in-out infinite;
+  color: white;
+  font-family: 'Conv_digital-7.mono';
+  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: 300;
+  padding: 1px;
+  text-shadow: 0px 0px 2.5px white;
+}
+
+.submit_score_error_message_wrapper p span{
+  animation: text_shadow_blink_red 1.6s ease-in-out infinite;
+  color: red;
+  text-shadow: 0px 0px 2.5px red;
+}
+
+.submit_score_error_message_wrapper p span span{
+  animation: text_shadow_blink_white 1.65s ease-in-out infinite;
+  color: white;
+  text-shadow: 0px 0px 2.5px white;
 }
 
 .submit_score_error_bottom_message {
