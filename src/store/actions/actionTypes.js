@@ -1,6 +1,7 @@
 export const DEVICE = 'DEVICE'
 export const ORIENTATION = 'ORIENTATION'
 
+export const HOME = 'HOME'
 export const INITDISMOUNT = 'INITDISMOUNT'
 export const WRAPPER = 'WRAPPER'
 export const FOOTER = 'FOOTER'

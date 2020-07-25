@@ -20,18 +20,10 @@ const getScoreboard = (currentState, action) => {
   }
 }
 
-const clearScore = (currentState) => {
+const clearScore = (currentState, action) => {
   return{
     ...currentState,
-    score: {
-      name: '',
-      avgPres: 1,
-      power_level: 0.00,
-      power_percent: 0.0,
-      score: 0,
-      rank: "SUPER BABY FINGERS",
-      timestamp: ""
-    }
+    score: action.score
   }
 }
 

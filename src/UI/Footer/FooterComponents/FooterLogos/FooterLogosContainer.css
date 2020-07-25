@@ -3,15 +3,17 @@
   flex-direction: row;
   justify-content: space-evenly;
   margin: 5px auto;
-  width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .footer_logos_mobile_container_landscape {
+  align-content: center;
+  align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-grow: 1;
   justify-content: space-evenly;
-  margin: 5px auto;
-  width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
+  margin-top: 5px;
+  width: 100%;
 }
 
 .footer_logos_mobile_container_portrait {

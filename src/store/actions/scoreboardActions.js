@@ -9,7 +9,16 @@ export const getScoreboard = (value) => {
 
 export const clearScore = () => {
   return{
-    type: actionTypes.CLEARSCORE
+    type: actionTypes.CLEARSCORE,
+    score: {
+      name: '',
+      avgPres: 1,
+      power_level: 0.00,
+      power_percent: 0.0,
+      score: 0,
+      rank: "SUPER BABY FINGERS",
+      timestamp: ""
+    }
   }
 }
 

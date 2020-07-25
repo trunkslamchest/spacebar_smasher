@@ -17,11 +17,12 @@ import './PostGameMobileContainerPortrait.css'
 
 const PostGameContainer = (props) => {
 
-  const { onWrapper, onFooter, onGetScoreboard, scoreboard } = props
+  const { onPostGame, onWrapper, onFooter, onGetScoreboard, scoreboard } = props
 
   useEffect(() => {
     // document.body.scrollTop = 0
 
+    onPostGame(true)
     onWrapper(true)
     onFooter(true)
 
@@ -32,7 +33,7 @@ const PostGameContainer = (props) => {
         onGetScoreboard(Object.entries(resObj.players))
       })
     }
-  }, [onWrapper, onFooter, onGetScoreboard, scoreboard])
+  }, [onPostGame,onWrapper, onFooter, onGetScoreboard, scoreboard])
 
   const onDismount = (event) => {
     setTimeout(() => {
@@ -47,7 +48,6 @@ const PostGameContainer = (props) => {
     if (event.target.attributes.nav.value === 'game')  {
       setTimeout(() => {
         props.onInitDismount(false)
-        props.onClearScore()
         props.onPostGame(false)
         props.history.push( routes.countdown )
       }, 750 )
@@ -81,8 +81,7 @@ const mapDispatchToProps = (dispatch) => {
     onWrapper: (bool) => dispatch(actions.wrapper(bool)),
     onFooter: (bool) => dispatch(actions.footer(bool)),
     onPostGame: (bool) => dispatch(actions.postGame(bool)),
-    onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
-    onClearScore: () => dispatch(actions.clearScore())
+    onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard))
   }
 }
 

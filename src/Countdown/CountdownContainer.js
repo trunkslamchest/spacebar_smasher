@@ -32,6 +32,7 @@ class CountdownContainer extends React.Component {
 
   onMount = () => {
     this.onMountTimeout = setTimeout(() => {
+      this.props.onClearScore()
       this.props.onFooter(true)
       this.props.onWrapper(true)
     }, 125)
@@ -104,7 +105,8 @@ const mapDispatchToProps = (dispatch) => {
   return{
     onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
     onWrapper: (bool) => dispatch(actions.wrapper(bool)),
-    onFooter: (bool) => dispatch(actions.footer(bool))
+    onFooter: (bool) => dispatch(actions.footer(bool)),
+    onClearScore: () => dispatch(actions.clearScore())
   }
 }
 

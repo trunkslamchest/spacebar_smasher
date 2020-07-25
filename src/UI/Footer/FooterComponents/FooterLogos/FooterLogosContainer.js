@@ -11,6 +11,12 @@ import github_logo from '../../../../assets/footer_logo_github.png'
 import HVH_logo from '../../../../assets/footer_logo_HVH4.png'
 import react_logo from '../../../../assets/footer_logo_react2.png'
 
+import firebase_logo_mobile from '../../../../assets/footer_logo_firebase_mobile.png'
+import flatiron_logo_mobile from '../../../../assets/footer_logo_flatiron_mobile.png'
+import github_logo_mobile from '../../../../assets/footer_logo_github_mobile.png'
+import HVH_logo_mobile from '../../../../assets/footer_logo_HVH_mobile.png'
+import react_logo_mobile from '../../../../assets/footer_logo_react_mobile.png'
+
 import './FooterLogosContainer.css'
 
 const FooterLogos = (props) => {
@@ -22,35 +28,35 @@ const FooterLogos = (props) => {
         buttonClass={ footerLogos(props).button }
         buttonName={ "footer_logo_firebase" }
         link={ "https://firebase.google.com/" }
-        logo={ firebase_logo }
+        logo={ props.detect.device === "mobile" ? firebase_logo_mobile : firebase_logo }
       />
       <FooterLogoButton
         altText={ "The Flatiron School" }
         buttonClass={ footerLogos(props).button }
         buttonName={ "footer_logo_flatiron" }
         link={ "https://flatironschool.com/" }
-        logo={ flatiron_logo  }
+        logo={ props.detect.device === "mobile" ? flatiron_logo_mobile : flatiron_logo }
       />
       <FooterLogoButton
         altText={ "Github Repository" }
         buttonClass={ footerLogos(props).button }
         buttonName={ "footer_logo_github" }
         link={ "https://github.com/trunkslamchest/spacebar_smasher" }
-        logo={ github_logo }
+        logo={ props.detect.device === "mobile" ? github_logo_mobile : github_logo }
       />
       <FooterLogoButton
         altText={ "Hudson Valley Host" }
         buttonClass={ footerLogos(props).button }
         buttonName={ "footer_logo_HVH" }
         link={ "https://hudsonvalleyhost.com/" }
-        logo={ HVH_logo }
+        logo={ props.detect.device === "mobile" ? HVH_logo_mobile : HVH_logo }
       />
       <FooterLogoButton
         altText={ "React" }
         buttonClass={ footerLogos(props).button }
         buttonName={ "footer_logo_react" }
         link={ "https://reactjs.org/" }
-        logo={ react_logo }
+        logo={ props.detect.device === "mobile" ? react_logo_mobile : react_logo }
       />
     </div>
   )
@@ -58,8 +64,7 @@ const FooterLogos = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    device: state.detect.device,
-    orientation: state.detect.orientation
+    detect: state.detect
   }
 }
 

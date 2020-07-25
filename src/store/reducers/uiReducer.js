@@ -1,10 +1,18 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
+  home: false,
   initDismount: false,
   wrapper: false,
   footer: false,
   postGame: false
+}
+
+const home = (currentState, action) => {
+  return{
+    ...currentState,
+    home: action.home
+  }
 }
 
 const initDismount = (currentState, action) => {
@@ -37,6 +45,7 @@ const postGame = (currentState, action) => {
 
 const uiReducer = (currentState = initialState, action) => {
   switch(action.type){
+    case actionTypes.HOME: return home(currentState, action)
     case actionTypes.INITDISMOUNT: return initDismount(currentState, action)
     case actionTypes.WRAPPER: return wrapper(currentState, action)
     case actionTypes.FOOTER: return footer(currentState, action)

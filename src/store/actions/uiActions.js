@@ -1,5 +1,12 @@
 import * as actionTypes from './actionTypes'
 
+export const home = (bool) => {
+  return{
+    type: actionTypes.HOME,
+    home: bool
+  }
+}
+
 export const initDismount = (bool) => {
   return{
     type: actionTypes.INITDISMOUNT,

@@ -4,8 +4,8 @@ export const footerContainer = (props) => {
     container: '',
   }
 
-  if(props.device === "mobile"){
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
       if(props.ui.initDismount) {
         obj['container'] = "dismount_footer_mobile_container_landscape"
       } else {
@@ -35,8 +35,8 @@ export const footerFinePrint = (props) => {
     finePrint: ''
   }
 
-  if(props.device === "mobile"){
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
       obj['finePrint'] = "footer_fine_print_mobile_landscape"
     } else {
       obj['finePrint'] = "footer_fine_print_mobile_portrait"
@@ -55,8 +55,8 @@ export const footerLogos = (props) => {
     button: ''
   }
 
-  if(props.device === "mobile"){
-    if(props.orientation === "landscape") {
+  if(props.detect.device === "mobile"){
+    if(props.detect.orientation === "landscape") {
       obj['container'] = "footer_logos_mobile_container_landscape"
       obj['button'] = "logo_rectangle_mobile_landscape"
     } else {

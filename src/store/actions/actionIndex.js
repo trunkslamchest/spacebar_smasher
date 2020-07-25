@@ -4,15 +4,16 @@ export {
 } from './detectActions'
 
 export {
+  home,
   initDismount,
-  wrapper,
   footer,
-  postGame
+  postGame,
+  wrapper
 } from './uiActions'
 
 export {
-  getScoreboard,
   clearScore,
+  getScoreboard,
   storeScore,
   submitScore
 } from './scoreboardActions'

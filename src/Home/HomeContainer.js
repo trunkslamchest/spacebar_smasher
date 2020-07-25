@@ -10,7 +10,6 @@ import { homeContainer } from './HomeFunctions/classSwitch'
 import taglines from '../datasets/taglines'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
-
 import HomeHeader from './HomeComponents/HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
@@ -23,11 +22,12 @@ import './HomeMobileDismount.css'
 
 const HomeContainer = (props) => {
 
-  const { onWrapper, onFooter, onGetScoreboard, scoreboard } = props
+  const { onHome, onWrapper, onFooter, onGetScoreboard, scoreboard } = props
 
   useEffect(() => {
     // document.body.scrollTop = 0
 
+    onHome(true)
     onWrapper(true)
     onFooter(true)
 
@@ -39,7 +39,7 @@ const HomeContainer = (props) => {
         onGetScoreboard(Object.entries(resObj.players))
       })
     }
-  }, [onWrapper, onFooter, onGetScoreboard, scoreboard])
+  }, [onHome, onWrapper, onFooter, onGetScoreboard, scoreboard])
 
   const onDismount = () => {
     setTimeout(() => {
@@ -53,7 +53,7 @@ const HomeContainer = (props) => {
 
     setTimeout(() => {
       props.onInitDismount(false)
-      props.onClearScore()
+      props.onHome(false)
       props.history.push( routes.countdown )
     }, 750 )
   }
@@ -76,11 +76,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{
+    onHome: (bool) => dispatch(actions.home(bool)),
     onInitDismount: (bool) => dispatch(actions.initDismount(bool)),
     onWrapper: (bool) => dispatch(actions.wrapper(bool)),
     onFooter: (bool) => dispatch(actions.footer(bool)),
     onGetScoreboard: (scoreboard) => dispatch(actions.getScoreboard(scoreboard)),
-    onClearScore: () => dispatch(actions.clearScore())
   }
 }
 
