@@ -52,6 +52,7 @@ class GameContainer extends React.Component {
   onMount = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
+
     this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
@@ -62,20 +63,23 @@ class GameContainer extends React.Component {
   }
 
   spacebarDown(event){
-    if((event.keyCode === 32 || event.which === 32)) {
-      event.preventDefault()
-      this.setState({
-        count: this.state.count + 1,
-        power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
-        powerRaw: this.state.powerRaw + 0.025,
-        timeMark: this.state.time,
-        rank: getRank(this.state.count)
-      }, document.removeEventListener('keydown', this.spacebarDown))
+    if(this.props.detect.device === "computer"){
+      if((event.keyCode === 32 || event.which === 32)) {
+        event.preventDefault()
+        this.setState({
+          count: this.state.count + 1,
+          power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+          powerRaw: this.state.powerRaw + 0.025,
+          timeMark: this.state.time,
+          rank: getRank(this.state.count)
+        }, document.removeEventListener('keydown', this.spacebarDown))
+      }
     }
   }
 
   spacebarUp(event){
-    document.addEventListener('keydown', this.spacebarDown)
+    if(this.props.detect.device === "computer") document.addEventListener('keydown', this.spacebarDown)
+
     if((event.keyCode === 32 || event.which === 32)) {
       let pressAvg = ((this.state.timeMark - this.state.time) + this.state.avgPress) / 2
       this.setState({ avgPress: pressAvg })
@@ -122,8 +126,7 @@ class GameContainer extends React.Component {
   }
 
   onSmash = (event) => {
-    event.preventDefault()
-    if(this.state.time > 0) {
+    if(this.state.time > 0 && event.nativeEvent.detail) {
       this.setState({
         count: this.state.count + 1,
         power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
