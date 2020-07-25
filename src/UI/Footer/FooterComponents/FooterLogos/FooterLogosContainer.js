@@ -6,10 +6,10 @@ import { footerLogos } from '../../FooterFunctions/classSwitch'
 import FooterLogoButton from './FooterLogoButton/FooterLogoButton'
 
 import firebase_logo from '../../../../assets/footer_logo_firebase.png'
-import flatiron_logo from '../../../../assets/footer_logo_flatiron2.png'
+import flatiron_logo from '../../../../assets/footer_logo_flatiron.png'
 import github_logo from '../../../../assets/footer_logo_github.png'
-import HVH_logo from '../../../../assets/footer_logo_HVH4.png'
-import react_logo from '../../../../assets/footer_logo_react2.png'
+import HVH_logo from '../../../../assets/footer_logo_HVH.png'
+import react_logo from '../../../../assets/footer_logo_react.png'
 
 import firebase_logo_mobile from '../../../../assets/footer_logo_firebase_mobile.png'
 import flatiron_logo_mobile from '../../../../assets/footer_logo_flatiron_mobile.png'
