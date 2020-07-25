@@ -68,12 +68,12 @@ export const footerLogos = (props) => {
 
   if(props.detect.device === "mobile"){
     if(props.detect.orientation === "landscape") {
-      obj['button'] = "logo_rectangle_mobile_landscape"
+      obj['button'] = "logo_mobile_landscape"
     } else {
-      obj['button'] = "logo_rectangle_mobile_portrait"
+      obj['button'] = "logo_mobile_portrait"
     }
   } else {
-    obj['button'] = "logo_rectangle_desktop"
+    obj['button'] = "logo_desktop"
   }
 
   return obj

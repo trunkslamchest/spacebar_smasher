@@ -1,17 +1,59 @@
-.logo_rectangle_desktop {
+.logo_desktop {
   height: auto;
   max-width: 100%;
-  max-height: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
+  max-height: calc(22px + (40 - 22) * ((100vw - 500px) / (1920 - 500)));
 }
 
-.logo_rectangle_mobile_landscape {
-  margin: 0 auto 0 auto;
+.logo_desktop a {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.logo_desktop a img {
+  max-height: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
+}
+
+.logo_mobile_landscape {
+  border-bottom: 1px solid grey;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.8), 0 0 5px 0 rgba(0, 0, 0, 0.8) inset;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.logo_mobile_landscape a {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.logo_mobile_landscape a img {
   max-height: calc(20px + (40 - 20) * ((100vw - 320px) / (863 - 320)));
-  width: auto;
 }
 
 .logo_rectangle_mobile_portrait {
-  height: auto;
-  max-height: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-  max-width: 100%;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+
+.logo_mobile_portrait a {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.logo_mobile_portrait a img {
+  max-height: calc(20px + (80 - 20) * ((100vw - 320px) / (863 - 320)));
 }

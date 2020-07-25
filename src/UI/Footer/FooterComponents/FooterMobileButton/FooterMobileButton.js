@@ -2,7 +2,9 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import footerMobileButton from '../../../../assets/footer_mobile_button.png'
+import footerMobileButtonOpen from '../../../../assets/footer_mobile_button_open.png'
+import footerMobileButtonClosed from '../../../../assets/footer_mobile_button_closed.png'
+
 
 import './FooterMobileButton.css'
 
@@ -15,16 +17,15 @@ const FooterMobileButton = (props) => {
 
   return(
     <button
-      className={props.landscapeFooter ? 'footer_mobile_button_open' : 'footer_mobile_button_closed' }
+      className={ props.landscapeFooter ? 'footer_mobile_button_open' : 'footer_mobile_button_closed' }
       name="footer_mobile_button"
       onClick={ onClickFunctions }
     >
-      {/* <img
+      <img
         alt='Display Mobile Footer'
         className='footer_mobile_button_img'
-        src={ footerMobileButton }
-      /> */}
-      ?
+        src={ props.landscapeFooter ? footerMobileButtonOpen : footerMobileButtonClosed }
+      />
     </button>
   )
 }

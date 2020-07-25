@@ -1,5 +1,5 @@
 .footer_mobile_fine_print_landscape {
-  margin: 0px 5px 15px 5px;
+  margin: 5px;
 }
 
 .footer_mobile_fine_print_landscape p {
@@ -9,4 +9,9 @@
   margin-block-start: 0px;
   margin-block-end: 0px;
   text-align:center;
+}
+
+.footer_mobile_fine_print_landscape span {
+  display: block;
+  padding: 2px;
 }

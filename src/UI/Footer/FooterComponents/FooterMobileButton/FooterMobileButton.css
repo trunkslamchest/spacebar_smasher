@@ -4,14 +4,16 @@
   border-radius: 0px 0px 15px 15px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: white;
+  display: flex;
   font-family: "Staatliches";
   font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (863 - 320)));
   font-weight: 300;
   height: calc(40px + (50 - 40) * ((100vw - 568px) / (823 - 568)));
+  justify-content: center;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
-  transition: border-radius, border, box-shadow, color .25s ease-in-out 0s;
-  width: 100%;
+  transition: border-radius, border, box-shadow, color .25s ease-in-out 0s, width .1s ease-in-out 0s;
+  width: 75%;
   z-index: 500;
 }
 
@@ -29,13 +31,15 @@
   border-radius: 0px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: black !important;
+  display: flex;
   font-family: "Staatliches";
   font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (863 - 320)));
   font-weight: 300;
   height: calc(40px + (50 - 40) * ((100vw - 568px) / (823 - 568)));
+  justify-content: center;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
-  transition: border-radius, border, box-shadow, color .25s ease-in-out 0s;
+  transition: border-radius, border, box-shadow, color .25s ease-in-out 0s, width .1s ease-in-out 0s;
   width: 100%;
   z-index: 500;
 }
