@@ -15,17 +15,36 @@ import './FooterContainerDismount.css'
 
 class FooterContainer extends React.Component {
 
-  state = { landscapeFooter: false }
+  state = {
+    landscapeFooter: false,
+    initDismountLandscapeFooter: false
+  }
 
-  onShowLandscapeFooter = () => {
-    let switchState = !this.state.landscapeFooter
-    this.setState({ landscapeFooter: switchState })
+  onDismountLandscapeFooter = () => {
+    this.setState({ initDismountLandscapeFooter: true })
+
+    this.dismountLandscapeFooterTimeout = setTimeout(() => {
+      this.setState({ landscapeFooter: false })
+    }, 125)
+
+    this.exitDismountLandscapeFooterTimeout = setTimeout(() => {
+      this.setState({ initDismountLandscapeFooter: false })
+    }, 250)
+  }
+
+  onMountLandscapeFooter = () => {
+    this.setState({ landscapeFooter: true })
   }
 
   componentDidUpdate(){
-    if(this.props.detect.device === 'mobile' && this.props.detect.orientation === 'portrait' && this.state.landscapeFooter) {
+    if(((this.props.detect.device === 'mobile' && this.props.detect.orientation === 'portrait') || this.props.detect.device === 'computer') && this.state.landscapeFooter) {
       this.setState({ landscapeFooter: false })
     }
+  }
+
+  componentWillUnmount(){
+    clearTimeout(this.dismountLandscapeFooterTimeout)
+    clearTimeout(this.exitdisMountLandscapeFooterTimeout)
   }
 
   render(){
@@ -35,9 +54,15 @@ class FooterContainer extends React.Component {
     if(this.props.ui.footer){
       if(this.props.detect.device === 'mobile' && this.props.detect.orientation === 'landscape') {
         if(this.props.ui.home || this.props.ui.postGame){
-          footer = <FooterMobileButton showLandscapeFooter={ this.onShowLandscapeFooter } landscapeFooter={ this.state.landscapeFooter } />
+          footer = <FooterMobileButton
+                    showLandscapeFooter={ this.onShowLandscapeFooter }
+                    onMountLandscapeFooter={ this.onMountLandscapeFooter }
+                    onDismountLandscapeFooter={ this.onDismountLandscapeFooter }
+                    initDismountLandscapeFooter={ this.state.initDismountLandscapeFooter }
+                    landscapeFooter={ this.state.landscapeFooter }
+                  />
         } else {
-          footer = <></>
+          footer = null
         }
       } else {
         footer = <>
@@ -45,7 +70,7 @@ class FooterContainer extends React.Component {
           <FooterFinePrint />
         </>
       }
-    } else footer = <></>
+    } else footer = null
 
     return(
       <div className={ footerContainer(this.props).container }>
@@ -54,9 +79,9 @@ class FooterContainer extends React.Component {
           <>
           <Backdrop
             show={ this.state.landscapeFooter }
-            initDismount={ this.props.initDismount }
+            initDismount={ this.state.initDismountLandscapeFooter }
           />
-          <div className="footer_mobile_wrapper_landscape">
+          <div className={ this.state.initDismountLandscapeFooter ? "dismount_footer_mobile_wrapper_landscape": "footer_mobile_wrapper_landscape"}>
             <FooterLogosContainer />
             <FooterFinePrint />
           </div>

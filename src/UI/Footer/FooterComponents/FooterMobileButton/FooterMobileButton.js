@@ -9,7 +9,8 @@ import './FooterMobileButton.css'
 const FooterMobileButton = (props) => {
 
   const onClickFunctions = (event) => {
-    props.showLandscapeFooter()
+    if(props.landscapeFooter) props.onDismountLandscapeFooter()
+    else props.onMountLandscapeFooter()
   }
 
   return(

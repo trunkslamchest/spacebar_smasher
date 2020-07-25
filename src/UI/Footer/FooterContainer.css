@@ -20,6 +20,7 @@
 }
 
 .footer_mobile_wrapper_landscape{
+  animation: onmount_footer_mobile_container_landscape .25s ease-in-out 1;
   align-items: center;
   background: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(0, 0, 0, 1) 100%);
   border: 1px solid grey;
@@ -36,7 +37,7 @@
   margin: 0px;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
-  z-index: 500;
+  z-index: 499;
 }
 
 .footer_mobile_container_portrait {

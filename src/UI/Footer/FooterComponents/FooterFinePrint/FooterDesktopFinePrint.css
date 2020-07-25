@@ -1,11 +1,11 @@
-.footer_fine_print_desktop {
+.footer_desktop_fine_print {
   margin-left: calc(5px + (10 - 5) * ((100vw - 500px) / (1920 - 500)));
   margin-right: calc(5px + (10 - 5) * ((100vw - 500px) / (1920 - 500)));
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.footer_fine_print_desktop p {
+.footer_desktop_fine_print p {
   color: white;
   font-family: "Helvetica";
   font-size: calc(4px + (11 - 4) * ((100vw - 500px) / (1920 - 500)));

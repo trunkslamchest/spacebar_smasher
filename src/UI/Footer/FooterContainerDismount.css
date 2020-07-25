@@ -54,3 +54,34 @@
       transform: translateY(1000px);
     }
   }
+
+.dismount_footer_mobile_wrapper_landscape {
+  animation: dismount_footer_mobile_wrapper_landscape .25s ease-in-out 1;
+  align-items: center;
+  background: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(0, 0, 0, 1) 100%);
+  border: 1px solid grey;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  font-family: "Staatliches";
+  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (863 - 320)));
+  font-weight: 300;
+  justify-content: space-evenly;
+  margin: 0px;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+  z-index: 499;
+}
+
+@keyframes dismount_footer_mobile_wrapper_landscape
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-1000px);
+    }
+  }

@@ -1,11 +1,11 @@
-.footer_fine_print_mobile_portrait {
+.footer_mobile_fine_print_portrait {
   margin-left: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
   margin-right: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)));
   margin-top: 10px;
   margin-bottom: 5px;
 }
 
-.footer_fine_print_mobile_portrait p {
+.footer_mobile_fine_print_portrait p {
   color: white;
   font-family: "Helvetica";
   font-size: calc(2.6px + (11 - 2.7) * ((100vw - 320px) / (1920 - 320)));

@@ -1,8 +1,8 @@
-.footer_fine_print_mobile_landscape {
+.footer_mobile_fine_print_landscape {
   margin: 0px 5px 15px 5px;
 }
 
-.footer_fine_print_mobile_landscape p {
+.footer_mobile_fine_print_landscape p {
   color: white;
   font-family: "Helvetica";
   font-size: calc(5px + (6 - 5) * ((100vw - 320px) / (823 - 320)));

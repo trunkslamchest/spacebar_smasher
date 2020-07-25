@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 import { footerFinePrint } from '../../FooterFunctions/classSwitch'
 
-import './FooterFinePrintDesktop.css'
-import './FooterFinePrintMobileLandscape.css'
-import './FooterFinePrintMobilePortrait.css'
+import './FooterDesktopFinePrint.css'
+import './FooterMobileFinePrintLandscape.css'
+import './FooterMobileFinePrintPortrait.css'
 
 const FooterFinePrint = (props) => {
 
@@ -15,13 +15,13 @@ const FooterFinePrint = (props) => {
     finePrint = <>
       <p>© 2020</p>
       <p>Created by Jamal Farah & Austin Smith</p>
-      <p>0.37.6 | 07.24.20</p>
+      <p>0.37.6 | 07.25.20</p>
       <p>L.P. © Spacebar Smasher 2020</p>
     </>
   } else {
     finePrint = <>
       <p>© 2020 Created by Jamal Farah & Austin Smith</p>
-      <p>0.37.6 | 07.24.20</p>
+      <p>0.37.6 | 07.25.20</p>
       <p>All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises, L.P. © Spacebar Smasher 2020</p>
     </>
   }

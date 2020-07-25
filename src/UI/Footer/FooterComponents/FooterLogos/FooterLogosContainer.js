@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { footerLogos } from '../../FooterFunctions/classSwitch'
+import { footerLogosContainer, footerLogos } from '../../FooterFunctions/classSwitch'
 
 import FooterLogoButton from './FooterLogoButton/FooterLogoButton'
 
@@ -22,7 +22,7 @@ import './FooterLogosContainer.css'
 const FooterLogos = (props) => {
 
   return(
-    <div className={ footerLogos(props).container }>
+    <div className={ footerLogosContainer(props).logosContainer }>
       <FooterLogoButton
         altText={ "Firebase" }
         buttonClass={ footerLogos(props).button }
@@ -64,7 +64,8 @@ const FooterLogos = (props) => {
 
 const mapStateToProps = (state) => {
   return{
-    detect: state.detect
+    detect: state.detect,
+    ui: state.ui
   }
 }
 
