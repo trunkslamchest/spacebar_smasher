@@ -5,17 +5,17 @@ import { footerLogosContainer, footerLogos } from '../../FooterFunctions/classSw
 
 import FooterLogoButton from './FooterLogoButton/FooterLogoButton'
 
-import firebase_logo from '../../../../assets/footer_logo_firebase.png'
-import flatiron_logo from '../../../../assets/footer_logo_flatiron.png'
-import github_logo from '../../../../assets/footer_logo_github.png'
-import HVH_logo from '../../../../assets/footer_logo_HVH.png'
-import react_logo from '../../../../assets/footer_logo_react.png'
+import firebase_logo from '../../../../assets/footer_logos/footer_logo_firebase.png'
+import flatiron_logo from '../../../../assets/footer_logos/footer_logo_flatiron.png'
+import github_logo from '../../../../assets/footer_logos/footer_logo_github.png'
+import HVH_logo from '../../../../assets/footer_logos/footer_logo_HVH.png'
+import react_logo from '../../../../assets/footer_logos/footer_logo_react.png'
 
-import firebase_logo_mobile from '../../../../assets/footer_logo_firebase_mobile.png'
-import flatiron_logo_mobile from '../../../../assets/footer_logo_flatiron_mobile.png'
-import github_logo_mobile from '../../../../assets/footer_logo_github_mobile.png'
-import HVH_logo_mobile from '../../../../assets/footer_logo_HVH_mobile.png'
-import react_logo_mobile from '../../../../assets/footer_logo_react_mobile.png'
+import firebase_logo_mobile from '../../../../assets/footer_logos/footer_logo_firebase_mobile.png'
+import flatiron_logo_mobile from '../../../../assets/footer_logos/footer_logo_flatiron_mobile.png'
+import github_logo_mobile from '../../../../assets/footer_logos/footer_logo_github_mobile.png'
+import HVH_logo_mobile from '../../../../assets/footer_logos/footer_logo_HVH_mobile.png'
+import react_logo_mobile from '../../../../assets/footer_logos/footer_logo_react_mobile.png'
 
 import './FooterLogosContainer.css'
 

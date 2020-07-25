@@ -5,12 +5,12 @@ const firebase = require("firebase")
 const admin = require('firebase-admin')
 
 const url = {
-  database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
-  // database: 'https://spacebarsmasher-96ba1.firebaseio.com',
-  rootSecured: 'https://localhost:3000',
-  // rootSecured: 'https://trunkslamchest.com',
-  rootUnsecured: 'http://localhost:3000'
-  // rootUnsecured: 'http://trunkslamchest.com'
+  // database: 'http://localhost:9000?ns=spacebarsmasher-96ba1',
+  database: 'https://spacebarsmasher-96ba1.firebaseio.com',
+  // rootSecured: 'https://localhost:3000',
+  rootSecured: 'https://trunkslamchest.com',
+  // rootUnsecured: 'http://localhost:3000'
+  rootUnsecured: 'http://trunkslamchest.com'
 }
 
 var firebaseConfig = {
@@ -38,9 +38,7 @@ exports.players = functions
     var parsed = sorted.once('value', function(player){
       player.forEach(function(snap) { players.unshift(snap.val()) })
 
-      setTimeout(() => {
-        res.json({players})
-      }, 1000)
+      res.json({players})
     })
 
   return parsed

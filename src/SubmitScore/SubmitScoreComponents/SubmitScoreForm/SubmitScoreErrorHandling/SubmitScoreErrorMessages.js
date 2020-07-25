@@ -9,7 +9,9 @@ const SubmitScoreErrorMessages = (props) => {
     if(Object.values(error).length > 2) {
       errorMessageArr.push(<p key={error.code} ><span>ERR_CODE {error.code}<span>:</span></span> { error.msg }<span><span>:</span></span></p>)
         for(let data in error){
-          if(typeof error[data] === "object") errorMessageArr.push(<span key={error.code + props.validationErrors.indexOf(error)} >{ error[data].join(" ") }</span>)
+          if(typeof error[data] === "object") {
+            errorMessageArr.push(<span key={error.code + error[data].length} >{ error[data].join(" ") }</span>)
+          }
         }
     } else {
       errorMessageArr.push(<p key={error.code} ><span>ERR_CODE {error.code}<span>:</span></span> { error.msg }</p>)

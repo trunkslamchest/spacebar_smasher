@@ -139,14 +139,14 @@
 }
 
 .scoreboard_row_wrapper_mobile_landscape::-webkit-scrollbar-button:vertical:decrement {
-  background-image: url(../assets/scrollbar_arrow_up.png);
+  background-image: url(../assets/scoreboard/scrollbar_arrow_up.png);
   background-repeat:no-repeat;
   background-position: center center;
   background-size: cover;
 }
 
 .scoreboard_row_wrapper_mobile_landscape::-webkit-scrollbar-button:vertical:increment {
-  background-image: url(../assets/scrollbar_arrow_down.png);
+  background-image: url(../assets/scoreboard/scrollbar_arrow_down.png);
   background-repeat:no-repeat;
   background-position: center center;
   background-size: cover;

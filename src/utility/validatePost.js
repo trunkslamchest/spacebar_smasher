@@ -20,9 +20,7 @@ const validatePost = (name, score) => {
 
   if(!!invalidCharArr.length) validation['errors'].push({code: 520, msg: "You cannot enter a name with any of these characters", chars: invalidCharArr })
 
-  // if(!!validation['errors'].length) validation['valid'] = false
-
-  validation['valid'] = true
+  if(!!validation['errors'].length) validation['valid'] = false
 
   return validation
 }

@@ -2,8 +2,8 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import footerMobileButtonOpen from '../../../../assets/footer_mobile_button_open.png'
-import footerMobileButtonClosed from '../../../../assets/footer_mobile_button_closed.png'
+import footerMobileButtonOpen from '../../../../assets/footer_mobile_button/footer_mobile_button_open.png'
+import footerMobileButtonClosed from '../../../../assets/footer_mobile_button/footer_mobile_button_closed.png'
 
 
 import './FooterMobileButton.css'

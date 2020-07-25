@@ -21,7 +21,7 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: "Roboto", "Helvetica", "Digital-7 Mono", "Saira Stencil One", "Audiowide", "Staatliches", sans-serif;
-    background-image: url(assets/bg_02.jpg);
+    background-image: url(assets/backgrounds/bg_02.jpg);
     background-repeat:no-repeat;
     background-position: center center;
     background-attachment:fixed;
