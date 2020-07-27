@@ -60,7 +60,7 @@
 
 @keyframes loading_scoreboard {
   0% {
-    left: calc(0% - 10px);
+    left: 0%;
     opacity: 0;
   }
   25% {

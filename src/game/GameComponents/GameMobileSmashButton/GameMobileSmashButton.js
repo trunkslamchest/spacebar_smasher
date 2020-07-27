@@ -8,15 +8,15 @@ import './GameMobileSmashButtonLandscape.css'
 
 const GameMobileSmashButton = (props) => {
 
-  const onSmashFunctions = (event) => {
-    props.onSmash(event)
+  const onMobileSmashFunctions = (event) => {
+    props.onMobileSmash(event)
   }
 
   return(
     <div className={ gameMobileSmashButton(props).container }>
       <button
         className={ gameMobileSmashButton(props).button }
-        onClick={ onSmashFunctions }
+        onClick={ onMobileSmashFunctions }
       >
         SMASH!
       </button>

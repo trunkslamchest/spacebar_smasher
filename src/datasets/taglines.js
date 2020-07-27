@@ -20,7 +20,7 @@ const tagLinesArr = [
 
 const tagLines = {
   arr: tagLinesArr,
-  random: () => { return tagLinesArr[Math.floor(Math.random() * tagLinesArr.length)] }
+  random: (() => { return tagLinesArr[Math.floor(Math.random() * tagLinesArr.length)] })()
 }
 
 export default tagLines

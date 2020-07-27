@@ -1,7 +1,7 @@
 .footer_mobile_button_closed {
   background: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(0, 0, 0, 1) 100%);
   border: 1px solid grey;
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 15px 15px 0px 0px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: white;
   display: flex;
@@ -10,10 +10,11 @@
   font-weight: 300;
   height: calc(40px + (50 - 40) * ((100vw - 568px) / (823 - 568)));
   justify-content: center;
+  order: 2;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
   transition: border-radius, border, box-shadow, color .25s ease-in-out 0s, width .1s ease-in-out 0s;
-  width: 75%;
+  width: calc(75% + 1px);
   z-index: 500;
 }
 
@@ -27,8 +28,8 @@
 
 .footer_mobile_button_open {
   background: linear-gradient(rgba(255, 255, 0, 1),  rgba(212, 144, 57, 1) );
-  border: 1px solid black;
-  border-radius: 0px;
+  border: 0px solid black;
+  /* border-radius: 0px; */
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: black !important;
   display: flex;
@@ -37,10 +38,11 @@
   font-weight: 300;
   height: calc(40px + (50 - 40) * ((100vw - 568px) / (823 - 568)));
   justify-content: center;
+  order: 2;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
   transition: border-radius, border, box-shadow, color .25s ease-in-out 0s, width .1s ease-in-out 0s;
-  width: 100%;
+  width: calc(100% + 1px);
   z-index: 500;
 }
 

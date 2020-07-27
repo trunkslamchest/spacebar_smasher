@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../../../store/actions/actionIndex'
 
 import { fetch } from '../../../utility/paths'
-
 import scoreboardFunctions from '../../../utility/scoreboardFunctions'
-import getTime from '../../../utility/getTime'
 import validatePost from '../../../utility/validatePost'
 
 import broNames from '../../../datasets/broNames'
@@ -64,8 +62,7 @@ class SubmitScoreFormContainer extends React.Component {
         this.props.onGetScoreboard(Object.entries(resObj.players))
         let playerObj = {
           ...this.props.scoreboard.score,
-          name: this.state.player,
-          timestamp: getTime('fullDate')
+          name: this.state.player
         }
         this.setState({ fixedRedux: true, fixingRedux: false })
         scoreboardFunctions('post', fetch.post, playerObj)
@@ -104,7 +101,7 @@ class SubmitScoreFormContainer extends React.Component {
       })
     } else {
       if(!this.state.submitClicked){
-        if(this.props.scoreboard.allScores.length === 0){
+        if(!this.props.scoreboard.allScores || this.props.scoreboard.allScores.length === 0){
           this.setState({ modal: { validationErrors: [] } })
           this.setState({
             modal: {
@@ -116,8 +113,7 @@ class SubmitScoreFormContainer extends React.Component {
         } else {
           let playerObj = {
             ...this.props.scoreboard.score,
-            name: this.state.player,
-            timestamp: getTime('fullDate')
+            name: this.state.player
           }
           scoreboardFunctions('post', fetch.post, playerObj)
           .then(resObj => {

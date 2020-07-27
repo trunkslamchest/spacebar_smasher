@@ -22,8 +22,8 @@
   flex-grow: 1;
   flex-wrap: nowrap;
   height: 100vh;
+  justify-content: flex-end;
   left: 0px;
-  margin-left: 5px;
   position: fixed;
   width: calc(70px + (100 - 70) * ((100vw - 568px) / (823 - 568)));
   z-index: 500;
@@ -35,7 +35,7 @@
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(-1000px);
+      transform: translateY(1000px);
     }
   }
 
@@ -82,6 +82,6 @@
       transform: translateY(0px);
     }
     100% {
-      transform: translateY(-1000px);
+      transform: translateY(1000px);
     }
   }

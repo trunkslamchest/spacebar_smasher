@@ -31,7 +31,7 @@ const HomeContainer = (props) => {
     onWrapper(true)
     onFooter(true)
 
-    document.title = `Spacebar Smasher | ${taglines.random()} `
+    document.title = `Spacebar Smasher | ${taglines.random} `
 
     if(scoreboard.allScores.length === 0){
       scoreboardFunctions('get', fetch.get)

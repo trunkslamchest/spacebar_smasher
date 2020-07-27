@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
+import getTime from '../utility/getTime'
 import { gameContainer } from './GameFunctions/classSwitch'
 import getRank from './GameFunctions/getRank'
 
@@ -29,8 +30,8 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    time: (30.00).toFixed(2),
-    timeMark: (30.00).toFixed(2),
+    time: (3.00).toFixed(2),
+    timeMark: (3.00).toFixed(2),
   }
 
   constructor(props) {
@@ -40,13 +41,13 @@ class GameContainer extends React.Component {
   }
 
   componentDidMount(){
-    if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
-    else {
-      document.title = 'Spacebar Smasher | Game'
-      this.onMount()
-    }
-    // document.title = 'Spacebar Smasher | Game'
-    // this.onMount()
+    // if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
+    // else {
+    //   document.title = 'Spacebar Smasher | Game'
+    //   this.onMount()
+    // }
+    document.title = 'Spacebar Smasher | Game'
+    this.onMount()
   }
 
   onMount = () => {
@@ -85,23 +86,23 @@ class GameContainer extends React.Component {
       this.setState({ avgPress: pressAvg })
     }
 
-    if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
-      document.removeEventListener('keydown', this.spacebarDown)
-      document.removeEventListener('keyup', this.spacebarUp)
+    // if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
+    //   document.removeEventListener('keydown', this.spacebarDown)
+    //   document.removeEventListener('keyup', this.spacebarUp)
 
-      this.setState({
-        count: 0,
-        power: 0,
-        powerRaw: 0,
-        rank: "CHEATER",
-        time: 0.00,
-      }, this.onDismount())
-    }
+    //   this.setState({
+    //     count: 0,
+    //     power: 0,
+    //     powerRaw: 0,
+    //     rank: "CHEATER",
+    //     time: 0.00,
+    //   }, this.onDismount())
+    // }
   }
 
   timerFunctions = () => {
     if (this.state.time <= 0 || this.state.time === 0) {
-      this.setState({ time: 0 })
+      // this.setState({ time: 0 })
       this.props.onStoreScore({
         name: '',
         avgPress: this.state.avgPress,
@@ -109,6 +110,7 @@ class GameContainer extends React.Component {
         power_level: this.state.powerRaw,
         power_percent: this.state.power,
         rank: this.state.rank,
+        timestamp: getTime('fullDate')
       })
       this.onDismount()
       clearInterval(this.timerInterval)
@@ -125,7 +127,7 @@ class GameContainer extends React.Component {
     })
   }
 
-  onSmash = (event) => {
+  onMobileSmash = (event) => {
     if(this.state.time > 0 && event.nativeEvent.detail) {
       this.setState({
         count: this.state.count + 1,
@@ -184,7 +186,7 @@ class GameContainer extends React.Component {
             </div>
           </div>
           { this.props.detect.device === "mobile" ?
-            <GameMobileSmashButton onSmash={this.onSmash} smashed={this.state.smashed} />
+            <GameMobileSmashButton onMobileSmash={this.onMobileSmash} />
           :
             <></>
           }

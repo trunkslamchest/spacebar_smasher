@@ -11,7 +11,7 @@
 @keyframes onmount_footer_mobile_container_landscape
   {
     0% {
-      transform: translateY(-1000px);
+      transform: translateY(1000px);
     }
     100% {
       transform: translateY(0px);
