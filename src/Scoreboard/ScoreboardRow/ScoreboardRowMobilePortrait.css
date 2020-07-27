@@ -1,39 +1,38 @@
-.scoreboard_row_mobile_portrait, .dismount_scoreboard_row_mobile_portrait {
-  width: 100%;
+.scoreboard_row_mobile_portrait {
+  align-content: center;
+  align-items: center;
+  border: 1px solid black;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
-  align-content: center;
-  border: 1px solid grey;
+  width: 100%;
 }
 
-.scoreboard_row_place_mobile_portrait, .dismount_scoreboard_row_place_mobile_portrait {
+.scoreboard_row_place_mobile_portrait {
   font-family: "Staatliches";
-  font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(10px + (15 - 10) * ((100vw - 320px) / (823 - 320)));
   font-weight: 300;
   text-align: center;
   width: 10%;
 }
 
-.scoreboard_row_name_mobile_portrait, .dismount_scoreboard_row_name_mobile_portrait {
+.scoreboard_row_name_mobile_portrait {
   font-family: "Staatliches";
-  font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(10px + (15 - 10) * ((100vw - 320px) / (823 - 320)));
   font-weight: 300;
   text-align: left;
   width: 40%;
 }
 
-
-.scoreboard_row_score_mobile_portrait, .dismount_scoreboard_row_score_mobile_portrait {
+.scoreboard_row_score_mobile_portrait {
   font-family: "Staatliches";
-  font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(10px + (15 - 10) * ((100vw - 320px) / (823 - 320)));
   font-weight: 300;
   text-align: center;
   width: 15%;
 }
 
-.scoreboard_row_power_mobile_portrait, .dismount_scoreboard_row_power_mobile_portrait {
+.scoreboard_row_power_mobile_portrait {
   align-content: center;
   align-items: center;
   display: flex;
@@ -43,44 +42,44 @@
   width: 35%;
 }
 
-.scoreboard_row_power_mobile_portrait span, .dismount_scoreboard_row_power_mobile_portrait span {
+.scoreboard_row_power_mobile_portrait span {
   font-family: "Staatliches";
-  font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(10px + (15 - 10) * ((100vw - 320px) / (823 - 320)));
   font-weight: 300;
   margin: 0 auto 0 auto;
   text-align: center;
-  width: calc(50px + (150 - 50) * ((100vw - 320px) / (1920 - 320)));
-
+  width: calc(50px + (150 - 50) * ((100vw - 320px) / (823 - 320)));
 }
 
-.scoreboard_row_power_mobile_portrait meter, .dismount_scoreboard_row_power_mobile_portrait meter {
+.scoreboard_row_power_mobile_portrait meter {
   margin: 0 auto 0 auto;
   background: none;
   box-sizing: border-box;
-  height: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));;
+  height: calc(5px + (10 - 5) * ((100vw - 320px) / (823 - 320)));
   padding: 0 0 0 0;
-  width: calc(50px + (275 - 50) * ((100vw - 320px) / (1920 - 320)));
+  width: calc(50px + (100 - 50) * ((100vw - 320px) / (823 - 320)));
 }
 
-.scoreboard_row_power_mobile_portrait meter::-webkit-meter-bar, .dismount_scoreboard_row_power_mobile_portrait meter::-webkit-meter-bar {
+.scoreboard_row_power_mobile_portrait meter::-webkit-meter-bar {
   background: #000;
   border-radius: 5px;
   border: 1px solid grey;
   box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.8), 0 0px 5px 0 rgba(0, 0, 0, 0.8);
 }
 
-.scoreboard_row_power_mobile_portrait meter::-webkit-meter-optimum-value, .dismount_scoreboard_row_power_mobile_portrait meter::-webkit-meter-optimum-value {
+.scoreboard_row_power_mobile_portrait meter::-webkit-meter-optimum-value {
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
     #FF5733 100%
   );
   background-size: 100% 100%;
-  border-radius: 5px;
+  border-radius: 2.5px;
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 1) inset;
   width: 100%;
 }
 
-.scoreboard_row_power_mobile_portrait meter::-webkit-meter-suboptimum-value, .dismount_scoreboard_row_power_mobile_portrait meter::-webkit-meter-suboptimum-value {
+.scoreboard_row_power_mobile_portrait meter::-webkit-meter-suboptimum-value {
   background-image: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -88,22 +87,23 @@
     #7A0000 100%
   );
   background-size: 100% 100%;
-  border-radius: 5px;
+  border-radius: 2.5px;
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 1) inset;
   width: 100%;
 }
 
-.scoreboard_row_power_mobile_portrait meter::-webkit-meter-even-less-good-value, .dismount_scoreboard_row_power_mobile_portrait meter::-webkit-meter-even-less-good-value {
+.scoreboard_row_power_mobile_portrait meter::-webkit-meter-even-less-good-value {
   background-image: linear-gradient(
     90deg,
     #107A00 0%,
     #FF5733 100%,
   );
   background-size: 100% 100%;
-  border-radius: 5px;
+  border-radius: 2.5px;
   width: 100%;
 }
 
-.highlighted_row_mobile_portrait, .dismount_highlighted_row_mobile_portrait {
+.highlighted_row_mobile_portrait {
   width: 100%;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
   border: 1px solid black;
@@ -118,9 +118,9 @@
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25);
 }
 
-.highlighted_field_mobile_portrait, .dismount_highlighted_field_mobile_portrait {
+.highlighted_field_mobile_portrait {
   font-family: "Staatliches";
-  font-size: calc(14px + (20 - 14) * ((100vw - 500px) / (1920 - 500)));
+  font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (823 - 320)));
   font-weight: 300;
   text-align: center;
   width: 25%;

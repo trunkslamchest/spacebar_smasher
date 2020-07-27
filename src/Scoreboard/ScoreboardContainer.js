@@ -27,24 +27,24 @@ const ScoreboardContainer = (props) => {
   )
 
   return(
-      <div className={ scoreboardContainer(props).table }>
-        <div className={ scoreboardContainer(props).header } >
-            <h1>LEADERBOARD</h1>
-        </div>
-        <div className={ scoreboardContainer(props).headRow }>
-          <h1>PLACE</h1>
-          <h1>NAME</h1>
-          <h1>POWER LEVEL</h1>
-          <h1>SCORE</h1>
-          <h1>SCROLLBAR</h1>
-        </div>
-          { props.scoreboard.allScores.length > 0 ?
-            <div className={ scoreboardContainer(props).row }>
-              { scores }
-            </div>
-          :
-            <LoadingScoreboard />
-          }
+    <div className={ scoreboardContainer(props).table }>
+      <div className={ scoreboardContainer(props).header } >
+          <h1>LEADERBOARD</h1>
+      </div>
+      <div className={ scoreboardContainer(props).headRow }>
+        <h1>PLACE</h1>
+        <h1>NAME</h1>
+        <h1>POWER LEVEL</h1>
+        <h1>SCORE</h1>
+        <h1>SCROLLBAR</h1>
+      </div>
+        { props.scoreboard.allScores.length > 0 ?
+          <div className={ scoreboardContainer(props).row }>
+            { scores }
+          </div>
+        :
+          <LoadingScoreboard />
+        }
     </div>
   )
 }

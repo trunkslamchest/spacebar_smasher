@@ -9,8 +9,8 @@
 
 .home_header_mobile_portrait {
   animation: onmount_home_header_mobile_portrait .5s ease-in-out 1;
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 0.75) 90%);
-  border: 2px solid white;
+  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 90%);
+  border: 1px solid white;
   border-radius: calc(10px + (15 - 10) * ((100vh - 568px) / (823 - 568)));
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.8), 0 15px 15px 0 rgba(0, 0, 0, 0.8);
   display: flex;
@@ -33,7 +33,7 @@
 .home_header_mobile_portrait h1, .dismount_home_header_mobile_portrait h1 {
   color: yellow;
   font-family: "Saira Stencil One";
-  font-size: calc(26px + (30 - 26) * ((100vh - 568px) / (823 - 568)));
+  font-size: calc(28px + (32 - 28) * ((100vh - 568px) / (823 - 568)));
   font-weight: 300;
   margin: 0 auto 0 auto;
   text-align: center;

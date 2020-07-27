@@ -1,11 +1,11 @@
 .scoreboard_row_desktop, .dismount_scoreboard_row_desktop {
-  width: 100%;
+  align-content: center;
+  align-items: center;
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 1) inset;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
-  align-content: center;
-  border: 1px solid grey;
+  width: 100%;
 }
 
 .scoreboard_row_place_desktop, .dismount_scoreboard_row_place_desktop {
@@ -23,7 +23,6 @@
   text-align: left;
   width: 40%;
 }
-
 
 .scoreboard_row_score_desktop, .dismount_scoreboard_row_score_desktop {
   font-family: "Staatliches";
@@ -57,7 +56,7 @@
   margin: 0 auto 0 auto;
   background: none;
   box-sizing: border-box;
-  height: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));;
+  height: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
   padding: 0 0 0 0;
   width: calc(50px + (275 - 50) * ((100vw - 320px) / (1920 - 320)));
 }
@@ -66,7 +65,7 @@
   background: #000;
   border-radius: 5px;
   border: 1px solid grey;
-  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.8), 0 0px 5px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 1);
 }
 
 .scoreboard_row_power_desktop meter::-webkit-meter-optimum-value, .dismount_scoreboard_row_power_desktop meter::-webkit-meter-optimum-value {
@@ -77,6 +76,7 @@
   );
   background-size: 100% 100%;
   border-radius: 5px;
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 1) inset;
   width: 100%;
 }
 
@@ -89,6 +89,7 @@
   );
   background-size: 100% 100%;
   border-radius: 5px;
+  box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 1) inset;
   width: 100%;
 }
 
