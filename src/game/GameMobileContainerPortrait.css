@@ -18,6 +18,12 @@
   align-items: center;
   align-content: center;
   margin: 0 auto 0 auto;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0002,
+    0,0,1,0,
+    0,0,0,1
+  );
   width: calc(275px + (375 - 275) * ((100vw - 320px) / (411 - 320)));
 }
 

@@ -1,13 +1,23 @@
 @keyframes onmount_game_mobile_pill_landscape
   {
     0% {
-      transform: translateX(-1000px);
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-1000px);
     }
   }
 
 @keyframes onmount_game_mobile_pill_portrait
   {
     0% {
-      transform: translateX(-1000px);
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0002,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-1000px);
     }
   }
