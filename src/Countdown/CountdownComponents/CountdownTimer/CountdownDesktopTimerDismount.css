@@ -1,17 +1,11 @@
 .dismount_countdown_desktop_timer {
   animation: dismount_countdown_desktop_timer .5s ease-in-out 1;
-  background-color: rgba(255,255,255, 1);
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
+  background: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(5, 5, 5, 1) 100%);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 1), 0px 0px 5px 5px rgba(0, 0, 0, 1) inset;
 }
 
 @keyframes dismount_countdown_desktop_timer {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
+  50% {
     transform: translateX(2000px);
   }
 }
