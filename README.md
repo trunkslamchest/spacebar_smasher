@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/trunkslamchest/spacebar_smasher/tree/0.37.6"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.37.6-000000"></a>
+  <a href="https://github.com/trunkslamchest/spacebar_smasher/tree/0.37.7"><img align="center" src="https://img.shields.io/badge/Latest%20Repository-0.37.7-000000"></a>
 </p>
 
 # Contents

@@ -118,7 +118,7 @@
   flex-grow: 1;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  max-height: calc(200px + (400 - 200) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(200px + (275 - 200) * ((100vh - 320px) / (411 - 320)));
   padding: 0px;
   transform: matrix3d(
     1,0,0,0.0,

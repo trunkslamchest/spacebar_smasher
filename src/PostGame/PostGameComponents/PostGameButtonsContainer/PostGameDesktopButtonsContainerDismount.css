@@ -5,7 +5,6 @@
   flex-wrap: nowrap;
   filter: blur(0);
   justify-content: center;
-  padding-top: calc(25px + (80 - 25) * ((100vw - 500px) / (1920 - 500)));
   width: 100%;
 }
 

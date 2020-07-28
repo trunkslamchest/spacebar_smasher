@@ -1,8 +1,8 @@
 export const fetch = {
-  get: 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/players',
-  post: 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore'
-  // get: 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players',
-  // post: 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore'
+  // get: 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/players',
+  // post: 'http://localhost:5001/spacebarsmasher-96ba1/us-east1/addScore'
+  get: 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/players',
+  post: 'https://us-east1-spacebarsmasher-96ba1.cloudfunctions.net/addScore'
 }
 
 export const routes = {
