@@ -33,12 +33,12 @@
 }
 
 .scoreboard_row_power_desktop, .dismount_scoreboard_row_power_desktop {
+  -webkit-appearance: none;
   align-content: center;
   align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  -webkit-appearance: none;
   width: 35%;
 }
 
@@ -53,10 +53,10 @@
 }
 
 .scoreboard_row_power_desktop meter, .dismount_scoreboard_row_power_desktop meter {
-  margin: 0 auto 0 auto;
   background: none;
   box-sizing: border-box;
   height: calc(10px + (20 - 10) * ((100vw - 320px) / (1920 - 320)));
+  margin: 0 auto 0 auto;
   padding: 0 0 0 0;
   width: calc(50px + (275 - 50) * ((100vw - 320px) / (1920 - 320)));
 }
@@ -105,18 +105,17 @@
 }
 
 .highlighted_row_desktop, .dismount_highlighted_row_desktop {
-  width: 100%;
+  align-items: center;
+  align-content: center;
   background-image: linear-gradient(rgb(255, 255, 0, 1),  rgb(212, 144, 57, 1) );
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25);
   border: 1px solid black;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: rgb(0, 0, 0, 1);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25), 0 0 2px 0 rgba(0, 0, 0, 0.25);
+  width: 100%;
 }
 
 .highlighted_field_desktop, .dismount_highlighted_field_desktop {

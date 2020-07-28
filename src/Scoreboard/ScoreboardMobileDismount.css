@@ -11,9 +11,9 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(195px + (260 - 195) * ((100vh - 320px) / (411 - 320)));
   justify-content: flex-start;
   margin: 0 auto 0 auto;
+  max-height: calc(195px + (260 - 195) * ((100vh - 320px) / (411 - 320)));
   padding: 0px;
   transform: matrix3d(
     1,0,0,0.0,
@@ -117,8 +117,8 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(200px + (400 - 200) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
+  max-height: calc(200px + (400 - 200) * ((100vh - 320px) / (1080 - 320)));
   padding: 0px;
   transform: matrix3d(
     1,0,0,0.0,
@@ -169,8 +169,8 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
   justify-content: flex-start;
+  max-height: calc(225px + (750 - 225) * ((100vh - 320px) / (1080 - 320)));
   padding: 0px;
   transform: matrix3d(
     1,0,0,0.0,

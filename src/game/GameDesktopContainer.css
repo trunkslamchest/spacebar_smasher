@@ -1,19 +1,17 @@
 .game_desktop_wrapper {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  padding-top: calc(15px + (60 - 15) * ((100vw - 500px) / (1920 - 500)));
   transform: matrix3d(
     1,0,0,0.0,
     0,1,0,-0.0004,
     0,0,1,0,
     0,0,0,1
   );
-  padding-top: calc(15px + (60 - 15) * ((100vw - 500px) / (1920 - 500)));
 }
 
 .game_desktop_pill {
-  /* border-radius: 0px 0px 30px 30px;
-  box-shadow: 0 15px 0px 0px rgba(125, 125, 125, 1); */
 }

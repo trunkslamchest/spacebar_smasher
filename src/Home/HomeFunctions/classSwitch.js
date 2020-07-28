@@ -102,12 +102,10 @@ export const homeStartButton = (props) => {
       obj['startButtonContainer'] = "dismount_start_button_container_desktop"
       obj['startButton'] = "start_button_desktop"
       obj['startButtonDisabled'] = "start_button_disabled_desktop"
-
     } else {
       obj['startButtonContainer'] = "start_button_container_desktop"
       obj['startButton'] = "start_button_desktop"
       obj['startButtonDisabled'] = "start_button_disabled_desktop"
-
     }
   }
 

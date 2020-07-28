@@ -43,15 +43,11 @@ const HomeContainer = (props) => {
   }, [onHome, onWrapper, onFooter, onGetScoreboard, scoreboard])
 
   const onDismount = () => {
-    setTimeout(() => {
-      props.onInitDismount(true)
-    }, 125)
-
+    setTimeout(() => { props.onInitDismount(true) }, 125)
     setTimeout(() => {
       onFooter(false)
       onWrapper(false)
     }, 500)
-
     setTimeout(() => {
       props.onHome(false)
       props.onInitDismount(false)

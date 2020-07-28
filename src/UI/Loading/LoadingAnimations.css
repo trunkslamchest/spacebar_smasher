@@ -3,28 +3,26 @@
 /* <div class="loadingTriplePulsBars"><div></div><div></div><div></div></div> */
 
 .loadingTriplePulsBars {
-  height: 10px;
+  align-content: flex-start;
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  align-content: flex-start;
-  align-items: center;
+  height: 10px;
   min-height: 50px;
   width: 80%;
 }
 
 .loadingTriplePulsBars div {
-  display: inline-block;
-  position: relative;
-  /* left: 80px; */
-  height: 20px;
-  width: 10px;
-  background: #fff;
   animation: loadingTriplePulseBars 1s cubic-bezier(1, 0, 1, 1) infinite;
-  /* animation: loadingTriplePulseBars 1s ease-in-out infinite; */
-
+  background: #fff;
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 10px;
 }
+
 .loadingTriplePulsBars div:nth-child(1) {
   animation-delay: 0s;
 }
@@ -66,22 +64,22 @@
 
 .lds-ring {
   display: inline-block;
+  height: 80px;
   position: relative;
   width: 80px;
-  height: 80px;
 }
 
 .lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border: 8px solid rgba(191, 191, 191, 1);
   border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: rgba(191, 191, 191, 1) transparent transparent transparent;
+  box-sizing: border-box;
+  display: block;
+  height: 64px;
+  margin: 8px;
+  position: absolute;
+  width: 64px;
 }
 
 .lds-ring div:nth-child(1) {
@@ -111,20 +109,20 @@
 
 .lds-dual-ring {
   display: inline-block;
-  width: 80px;
   height: 80px;
+  width: 80px;
 }
 
 .lds-dual-ring:after {
-  content: " ";
-  display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
+  animation: lds-dual-ring 1.2s linear infinite;
   border-radius: 50%;
   border: 6px solid rgba(191, 191, 191, 1);
   border-color: rgba(191, 191, 191, 1) transparent rgba(191, 191, 191, 1) transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+  content: " ";
+  display: block;
+  height: 64px;
+  margin: 8px;
+  width: 64px;
 }
 
 @keyframes lds-dual-ring
@@ -143,32 +141,32 @@
 .lds-hourglass {
   display: inline-block;
   position: relative;
-  width: 80px;
   height: 80px;
+  width: 80px;
 }
 
 .lds-hourglass:after {
-  content: " ";
-  display: block;
-  border-radius: 50%;
-  width: 0;
-  height: 0;
-  margin: 8px;
+  animation: lds-hourglass 1.2s infinite;
   box-sizing: border-box;
   border: 32px solid rgba(191, 191, 191, 1);
   border-color: rgba(191, 191, 191, 1) transparent rgba(191, 191, 191, 1) transparent;
-  animation: lds-hourglass 1.2s infinite;
+  border-radius: 50%;
+  content: " ";
+  display: block;
+  height: 0;
+  margin: 8px;
+  width: 0;
 }
 
 @keyframes lds-hourglass
 {
   0% {
-    transform: rotate(0);
     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transform: rotate(0);
   }
   50% {
-    transform: rotate(900deg);
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: rotate(900deg);
   }
   100% {
     transform: rotate(1800deg);
@@ -181,8 +179,8 @@
 .lds-roller {
   display: inline-block;
   position: relative;
-  width: 100px;
   height: 100px;
+  width: 100px;
 }
 
 .lds-roller div {
@@ -192,13 +190,13 @@
 
 .lds-roller div:after {
   content: " ";
+  background: rgba(102, 102, 102, 1);
+  border-radius: 50%;
   display: block;
+  height: 10px;
+  margin: -4px 0 0 -4px;
   position: absolute;
   width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(102, 102, 102, 1);
-  margin: -4px 0 0 -4px;
 }
 
 .lds-roller div:nth-child(1) {
@@ -206,8 +204,8 @@
 }
 
 .lds-roller div:nth-child(1):after {
-  top: 63px;
   left: 63px;
+  top: 63px;
 }
 
 .lds-roller div:nth-child(2) {
@@ -215,8 +213,8 @@
 }
 
 .lds-roller div:nth-child(2):after {
-  top: 68px;
   left: 56px;
+  top: 68px;
 }
 
 .lds-roller div:nth-child(3) {
@@ -224,8 +222,8 @@
 }
 
 .lds-roller div:nth-child(3):after {
-  top: 71px;
   left: 48px;
+  top: 71px;
 }
 
 .lds-roller div:nth-child(4) {
@@ -233,8 +231,8 @@
 }
 
 .lds-roller div:nth-child(4):after {
-  top: 72px;
   left: 40px;
+  top: 72px;
 }
 
 .lds-roller div:nth-child(5) {
@@ -242,8 +240,8 @@
 }
 
 .lds-roller div:nth-child(5):after {
-  top: 71px;
   left: 32px;
+  top: 71px;
 }
 
 .lds-roller div:nth-child(6) {
@@ -251,8 +249,8 @@
 }
 
 .lds-roller div:nth-child(6):after {
-  top: 68px;
   left: 24px;
+  top: 68px;
 }
 
 .lds-roller div:nth-child(7) {
@@ -260,8 +258,8 @@
 }
 
 .lds-roller div:nth-child(7):after {
-  top: 63px;
   left: 17px;
+  top: 63px;
 }
 
 .lds-roller div:nth-child(8) {
@@ -269,8 +267,8 @@
 }
 
 .lds-roller div:nth-child(8):after {
-  top: 56px;
   left: 12px;
+  top: 56px;
 }
 
 @keyframes lds-roller

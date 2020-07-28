@@ -1,5 +1,6 @@
 .dismount_home_header_desktop {
   animation: dismount_home_header_desktop .5s ease-in-out 1;
+  align-items: center;
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 90%);
   border: 2px solid white;
   border-radius: calc(10px + (15 - 10) * ((100vw - 500px) / (1080 - 500)));
@@ -7,8 +8,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  height: calc(50px + (75 - 52) * ((100vw - 500px) / (1080 - 500)));
   justify-content: center;
-  align-items: center;
   margin-left: auto;
   margin-right: auto;
   margin-top: calc(5px + (10 - 5) * ((100vh - 500px) / (1080 - 500)));
@@ -19,7 +20,6 @@
     0,0,1,0,
     0,0,0,1
   ) translateX(calc(12.5px + (55 - 12.5) * ((100vw - 500px) / (1920 - 500))));
-  height: calc(50px + (75 - 52) * ((100vw - 500px) / (1080 - 500)));
   width: calc(460px + (690 - 460) * ((100vw - 500px) / (1080 - 500)));
 }
 

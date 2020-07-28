@@ -1,9 +1,9 @@
 .start_button_container_mobile_portrait {
   animation: onmount_start_button_container_mobile_portrait .5s ease-in-out 1;
   align-items: center;
+  filter: blur(0);
   display: flex;
   justify-content: center;
-  filter: blur(0);
 }
 
 .start_button_mobile_portrait {

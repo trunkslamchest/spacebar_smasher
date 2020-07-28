@@ -6,7 +6,6 @@
   top: 10%;
   transform: translateX(-50%);
   width: calc(310px + (1100 - 310) * ((100vw - 320px) / (1920 - 320)));
-  /* width: 75%; */
   z-index: 500;
 }
 

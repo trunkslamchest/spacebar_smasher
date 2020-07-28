@@ -3,7 +3,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../../store/actions/actionIndex'
 
-
 import { footerContainer } from './FooterFunctions/classSwitch'
 
 import FooterButton from './FooterComponents/FooterButton/FooterButton'
@@ -20,9 +19,7 @@ const FooterContainer = (props) => {
 
   const onDismountLogoContainer = () => {
     props.onFooterInitDismountLogosContainer(true)
-
     setTimeout(() => { props.onFooterLogosContainer(false) }, 125)
-
     setTimeout(() => { props.onFooterInitDismountLogosContainer(false) }, 250)
   }
 
@@ -40,15 +37,15 @@ const FooterContainer = (props) => {
       { footer }
       { props.ui.footerLogosContainer ?
         <>
-        <Backdrop
-          show={props.ui.footerLogosContainer }
-          initDismount={ props.ui.footerInitDismountLogosContainer }
-        />
-        <div className={ footerContainer(props).wrapper }>
-          <FooterLogosContainer />
-          <FooterFinePrint />
-        </div>
-      </>
+          <Backdrop
+            show={props.ui.footerLogosContainer }
+            initDismount={ props.ui.footerInitDismountLogosContainer }
+          />
+          <div className={ footerContainer(props).wrapper }>
+            <FooterLogosContainer />
+            <FooterFinePrint />
+          </div>
+        </>
       :
         null
       }

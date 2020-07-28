@@ -13,10 +13,10 @@
 }
 
 .game_desktop_power h1, .dismount_game_desktop_power h1 {
+  color: white;
   font-family: "Staatliches";
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  color: white;
   margin: 0 auto 0 auto;
   padding: 0px 10px 0px 10px;
   text-align: center;
@@ -40,9 +40,9 @@
 }
 
 .game_desktop_power_bar {
-  padding: 0px 0px 10px 0px;
   display: block;
   margin: 0 auto 0 auto;
+  padding: 0px 0px 10px 0px;
   -webkit-appearance: none;
 }
 
@@ -66,7 +66,6 @@
 }
 
 .game_desktop_power_bar meter::-webkit-meter-optimum-value, .dismount_game_desktop_power_bar meter::-webkit-meter-optimum-value {
-  width: 100%;
   background: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -75,10 +74,10 @@
   background-size: 100% 100%;
   border-radius: 5px;
   transition: background 1s 1s ease-in-out;
+  width: 100%;
 }
 
 .game_desktop_power_bar meter::-webkit-meter-suboptimum-value, .dismount_desktop_game_power_bar meter::-webkit-meter-suboptimum-value {
-  width: 100%;
   background: linear-gradient(
     90deg,
     #FFC300 0%,
@@ -88,10 +87,10 @@
   background-size: 100% 100%;
   border-radius: 5px;
   transition: background 1s 1s ease-in-out;
+  width: 100%;
 }
 
 .game_desktop_power_bar meter::-webkit-meter-even-less-good-value, .dismount_game_desktop_power_bar meter::-webkit-meter-even-less-good-value {
-  width: 100%;
   background: linear-gradient(
     90deg,
     #107A00 0%,
@@ -100,4 +99,5 @@
   background-size: 100% 100%;
   border-radius: 5px;
   transition: background 1s 1s ease-in-out;
+  width: 100%;
 }

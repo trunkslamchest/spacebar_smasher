@@ -20,8 +20,8 @@
   font-family: 'Audiowide';
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  padding: 10px;
   margin-right: -5px;
+  padding: 10px;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
   transform: matrix3d(
@@ -70,8 +70,8 @@
   font-family: "Audiowide";
   font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  margin-left: -5px;
   padding: 10px;
+  margin-left: -5px;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
   transform: matrix3d(

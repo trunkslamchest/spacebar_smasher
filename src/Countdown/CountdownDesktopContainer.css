@@ -4,13 +4,13 @@
   flex-grow: 1;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  padding-top: calc(50px + (100 - 50) * ((100vw - 320px) / (1920 - 320)));
   transform: matrix3d(
     1,0,0,0.0,
     0,1,0,-0.0002,
     0,0,1,0,
     0,0,0,1
   );
-  padding-top: calc(50px + (100 - 50) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .countdown_desktop_pill {

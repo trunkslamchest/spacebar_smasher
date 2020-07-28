@@ -7,11 +7,10 @@
 }
 
 .countdown_desktop_header h3, .dismount_countdown_desktop_header h3 {
-  text-align: center;
+  color: white;
   font-family: 'Audiowide';
   font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
   padding: 10px;
-  color: white;
   text-align: center;
 }

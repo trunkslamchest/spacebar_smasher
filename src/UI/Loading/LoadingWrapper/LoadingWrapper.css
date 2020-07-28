@@ -1,14 +1,14 @@
 .loading_wrapper {
   animation: onmount_loading_wrapper .5s ease-in-out 1;
-  min-height: 50vh !important;
-  max-height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
-  width: 50% !important;
+  align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
+  max-height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
+  min-height: 50vh !important;
+  width: 50% !important;
 }
 
 @keyframes onmount_loading_wrapper
@@ -18,25 +18,17 @@
     }
   }
 
-/* .loading_wrapper h1 {
-  color: white;
-  font-family: "Staatliches";
-  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
-  font-weight: 300;
-  text-shadow:25px 25px 25px rgba(0,0,0,1) !important;
-} */
-
 .dismount_loading_wrapper {
   animation: dismount_loading_wrapper .5s ease-in-out 1;
-  min-height: 50vh !important;
-  max-height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
-  width: 50% !important;
+  align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
+  max-height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
+  min-height: 50vh !important;
+  width: 50% !important;
 }
 
 @keyframes dismount_loading_wrapper
@@ -50,28 +42,28 @@
   }
 
 .loading_bar {
-  height: 10px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
   align-content: flex-start;
   align-items: center;
-  min-height: 50px;
-  width: 80%;
   background-color: #000;
   border: 1px solid grey;
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 10px;
+  justify-content: flex-start;
+  min-height: 50px;
+  width: 80%;
 }
 
 .loading_bar div {
-  display: inline-block;
-  position: relative;
-  height: 20px;
-  width: 10px;
-  background-color: yellow;
   animation: loading_scoreboard 1s cubic-bezier(1, 0, 1, 1) infinite;
+  background-color: yellow;
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 10px;
 }
 
 .loading_bar div:nth-child(1) {

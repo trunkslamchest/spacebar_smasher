@@ -1,5 +1,6 @@
-@keyframes onmount_submit_score_desktop_counter {
-  0% {
-    transform: translateX(-2000px);
+@keyframes onmount_submit_score_desktop_counter
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
   }
-}

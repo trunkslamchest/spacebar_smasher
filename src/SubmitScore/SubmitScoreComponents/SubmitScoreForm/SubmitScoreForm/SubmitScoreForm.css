@@ -71,12 +71,12 @@
   transition-property: color;
   transition-duration: .1s, .1s;
   transition-timing-function: ease-in-out;
-    transform: matrix3d(
-      1,0,0,0,
-      0,1,0,0,
-      0,0,1,0,
-      0,0,0,1
-    );
+  transform: matrix3d(
+    1,0,0,0,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
 }
 
 .submit_score_button:active, .dismount_submit_score_button:active {

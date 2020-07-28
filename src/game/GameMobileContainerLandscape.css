@@ -1,24 +1,18 @@
 .game_mobile_wrapper_landscape {
-  /* height: 100%; */
-  flex-grow: 1;
   flex-basis: auto;
-  width: 100%;
-  /* display: flex; */
-  /* align-items: center; */
-  /* align-content: center; */
-  /* justify-content: space-around; */
- /* margin-top: calc(-9px - (15 + -9) * ((100vw - 568px) / (823 - 568))); */
+  flex-grow: 1;
   margin-top: -5px;
+  width: 100%;
 }
 
 .game_mobile_pill_landscape {
   animation: onmount_game_mobile_pill_landscape .5s ease-in-out 1;
+  align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   margin: 0 auto 0 auto;
   transform: matrix3d(
     1,0,0,0.0,
@@ -30,22 +24,22 @@
 }
 
 .game_mobile_landscapeR1 {
+  align-items: stretch;
+  align-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: stretch;
-  align-content: center;
   width: 100%;
 }
 
 .game_mobile_landscapeSR1 {
+  align-items: stretch;
+  align-content: stretch;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: stretch;
-  align-items: stretch;
-  align-content: stretch;
   height: 100%;
   width: 65%;
 }

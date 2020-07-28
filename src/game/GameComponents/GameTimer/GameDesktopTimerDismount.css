@@ -12,7 +12,8 @@
   width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_game_desktop_timer {
+@keyframes dismount_game_desktop_timer
+{
   50% {
     transform: translateX(2000px);
   }

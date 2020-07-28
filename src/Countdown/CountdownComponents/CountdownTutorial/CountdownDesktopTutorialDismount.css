@@ -6,7 +6,8 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 1), 0px 0px 5px 5px rgba(0, 0, 0, 1) inset;
 }
 
-@keyframes dismount_countdown_desktop_tutorial {
+@keyframes dismount_countdown_desktop_tutorial
+{
   50% {
     transform: translateX(2000px);
   }

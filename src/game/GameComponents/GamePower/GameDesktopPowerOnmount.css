@@ -1,4 +1,5 @@
-@keyframes onmount_game_desktop_power {
+@keyframes onmount_game_desktop_power
+{
   0% {
     transform: translateX(-2000px);
   }

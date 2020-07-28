@@ -1,20 +1,20 @@
 .loading_submit_score {
-  display: flex;
-  width: 75%;
-  padding: 5px;
   background-color: #000;
   border: 1px solid grey;
   border-radius: 5px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  display: flex;
+  padding: 5px;
+  width: 75%;
 }
 
 .loading_submit_score div {
-  display: inline-block;
-  position: relative;
-  height: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
-  width: 10px;
-  background-color: yellow;
   animation: loading_submit_score 1s cubic-bezier(1, 0, 1, 1) infinite;
+  background-color: yellow;
+  display: inline-block;
+  height: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  position: relative;
+  width: 10px;
 }
 
 .loading_submit_score div:nth-child(1) {

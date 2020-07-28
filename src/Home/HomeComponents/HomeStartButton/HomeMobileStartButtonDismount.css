@@ -1,8 +1,8 @@
 .dismount_start_button_container_mobile_landscape {
   animation: dismount_start_button_container_mobile_landscape .5s ease-in-out 1;
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 @keyframes dismount_start_button_container_mobile_landscape {

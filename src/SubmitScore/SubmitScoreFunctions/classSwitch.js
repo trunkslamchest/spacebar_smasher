@@ -54,7 +54,6 @@ export const submitScoreHeader = (props) => {
     else obj['header'] = "submit_score_desktop_header"
   }
 
-
   return obj
 }
 
@@ -77,7 +76,6 @@ export const submitScoreCounter = (props) => {
       obj['counter'] = "submit_score_desktop_counter"
     }
   }
-
 
   return obj
 }

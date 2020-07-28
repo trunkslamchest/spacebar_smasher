@@ -7,10 +7,10 @@
 }
 
 .countdown_desktop_tutorial p, .dismount_countdown_desktop_tutorial p {
+  color: white;
   font-family: "Staatliches";
   font-size: calc(18px + (38 - 18) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
-  color: white;
   text-align: center;
   padding: 10px;
 }

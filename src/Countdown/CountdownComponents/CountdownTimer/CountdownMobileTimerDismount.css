@@ -4,7 +4,8 @@
   background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
 }
 
-@keyframes dismount_countdown_mobile_timer_landscape {
+@keyframes dismount_countdown_mobile_timer_landscape
+{
   50% {
     transform: translateX(1000px);
   }
@@ -16,7 +17,8 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 1), 0px 0px 5px 5px rgba(0, 0, 0, 1) inset;
 }
 
-@keyframes dismount_countdown_mobile_timer_portrait {
+@keyframes dismount_countdown_mobile_timer_portrait
+{
   50% {
     transform: translateX(1000px);
   }

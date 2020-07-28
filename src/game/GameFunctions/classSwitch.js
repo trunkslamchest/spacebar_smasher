@@ -7,35 +7,34 @@ export const gameContainer = (props) => {
     subRow: '',
   }
 
-    if(props.detect.device === "mobile") {
-      if(props.detect.orientation === 'landscape') {
-        obj['row'] = 'game_mobile_landscapeR1'
-        obj['subRow'] = 'game_mobile_landscapeSR1'
-        if(props.ui.initDismount) {
-            obj['wrapper'] = "game_mobile_wrapper_landscape"
-            obj['pill'] = "dismount_game_mobile_pill_landscape"
-        } else {
-            obj['wrapper'] = "game_mobile_wrapper_landscape"
-            obj['pill'] = "game_mobile_pill_landscape"
-        }
+  if(props.detect.device === "mobile") {
+    if(props.detect.orientation === 'landscape') {
+      obj['row'] = 'game_mobile_landscapeR1'
+      obj['subRow'] = 'game_mobile_landscapeSR1'
+      if(props.ui.initDismount) {
+          obj['wrapper'] = "game_mobile_wrapper_landscape"
+          obj['pill'] = "dismount_game_mobile_pill_landscape"
       } else {
-        obj['row'] = 'game_mobile_portraitR1'
-        obj['subRow'] = 'game_mobile_portraitSR1'
-        if(props.ui.initDismount) {
-          obj['wrapper'] = "game_mobile_wrapper_portrait"
-          obj['pill'] = "dismount_game_mobile_pill_portrait"
-        } else {
-          obj['wrapper'] = "game_mobile_wrapper_portrait"
-          obj['pill'] = "game_mobile_pill_portrait"
-        }
+          obj['wrapper'] = "game_mobile_wrapper_landscape"
+          obj['pill'] = "game_mobile_pill_landscape"
       }
     } else {
-      obj['wrapper'] = "game_desktop_wrapper"
-      obj['pill'] = "game_desktop_pill"
+      obj['row'] = 'game_mobile_portraitR1'
+      obj['subRow'] = 'game_mobile_portraitSR1'
+      if(props.ui.initDismount) {
+        obj['wrapper'] = "game_mobile_wrapper_portrait"
+        obj['pill'] = "dismount_game_mobile_pill_portrait"
+      } else {
+        obj['wrapper'] = "game_mobile_wrapper_portrait"
+        obj['pill'] = "game_mobile_pill_portrait"
+      }
     }
+  } else {
+    obj['wrapper'] = "game_desktop_wrapper"
+    obj['pill'] = "game_desktop_pill"
+  }
 
   return obj
-
 }
 
 export const gameTimer = (props) => {

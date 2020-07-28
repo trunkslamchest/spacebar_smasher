@@ -1,7 +1,7 @@
 .dismount_submit_score_desktop_buttons_container {
+  animation: dismount_submit_score_desktop_buttons_container .5s ease-in-out 1;
   align-items: baseline;
   align-content: center;
-  animation: dismount_submit_score_desktop_buttons_container .5s ease-in-out 1;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

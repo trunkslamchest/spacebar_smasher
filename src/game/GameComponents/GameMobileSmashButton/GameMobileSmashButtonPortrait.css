@@ -1,10 +1,7 @@
 .game_mobile_smash_button_portrait {
-  touch-action: manipulation;
-  /* background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border-radius: 0px 0px 50px 50px;
-  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8); */
   margin: 0px auto 10px auto;
   text-align: center;
+  touch-action: manipulation;
   width: 100%;
 }
 
@@ -31,15 +28,15 @@
 }
 
 .smash_button_on_smash_portrait {
-  touch-action: manipulation;
   background-image: linear-gradient(rgb(102, 0, 0, 1),  rgb(77, 0, 0, 1) );
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
+  color: white;
   font-family: "Audiowide";
   font-size: calc(20px + (30 - 20) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
-  color: white;
   border-radius: 0px 0px 50px 50px;
   padding: 10px;
-  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.8), 0 10px 15px 0 rgba(0, 0, 0, 0.8);
+  touch-action: manipulation;
   width: 100%;
 }
 

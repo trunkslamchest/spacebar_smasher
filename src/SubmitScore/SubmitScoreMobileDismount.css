@@ -1,11 +1,11 @@
 .dismount_submit_score_mobile_pill_landscape {
   animation: dismount_submit_score_mobile_pill_landscape .5s ease-in-out 1;
+  align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   margin: 0 auto 0 auto;
   transform: matrix3d(
     1,0,0,0.0,
@@ -30,12 +30,12 @@
 
 .dismount_submit_score_mobile_pill_portrait {
   animation: dismount_submit_score_mobile_pill_portrait .5s ease-in-out 1;
+  align-items: center;
+  align-content: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   margin: 0 auto 0 auto;
   transform: matrix3d(
     1,0,0,0.0,

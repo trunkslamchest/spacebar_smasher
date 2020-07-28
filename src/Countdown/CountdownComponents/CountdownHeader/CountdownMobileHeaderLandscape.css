@@ -7,12 +7,11 @@
 }
 
 .countdown_mobile_header_landscape h3, .dismount_countdown_mobile_header_landscape h3 {
-  text-align: center;
+  color: white;
   font-family: 'Audiowide';
   font-size: calc(40px + (50 - 40) * ((100vh - 320px) / (411 - 320)));
   font-weight: 300;
-  padding: 10px;
   margin: 0px;
-  color: white;
+  padding: 10px;
   text-align: center;
 }

@@ -7,10 +7,10 @@
 }
 
 .countdown_mobile_tutorial_landscape p, .dismount_countdown_mobile_tutorial_landscape p {
+  color: white;
   font-family: "Staatliches";
   font-size: calc(18px + (20 - 18) * ((100vw - 568px) / (823 - 568)));
   font-weight: 300;
-  color: white;
-  text-align: center;
   padding: 10px;
+  text-align: center;
 }
