@@ -5,8 +5,8 @@ import * as actions from '../store/actions/actionIndex'
 
 import { routes } from '../utility/paths'
 import getTime from '../utility/getTime'
-import { gameContainer } from './GameFunctions/classSwitch'
 import getRank from './GameFunctions/getRank'
+import { gameContainer } from './GameFunctions/classSwitch'
 
 import Wrapper from '../UI/Wrapper/Wrapper'
 
@@ -43,9 +43,9 @@ class GameContainer extends React.Component {
   componentDidMount(){
     // if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
     // else {
-    //   document.title = 'Spacebar Smasher | Game'
-    //   this.onMount()
+
     // }
+
     document.title = 'Spacebar Smasher | Game'
     this.onMount()
   }
@@ -58,8 +58,8 @@ class GameContainer extends React.Component {
     this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
     this.onMountTimeout = setTimeout(() => {
+      this.props.onFooter(false)
       this.props.onWrapper(true)
-      this.props.onFooter(true)
     }, 125)
   }
 
@@ -142,15 +142,8 @@ class GameContainer extends React.Component {
     document.removeEventListener('keydown', this.spacebarDown)
     document.removeEventListener('keyup', this.spacebarUp)
 
-    this.initDismountTimeout = setTimeout(() => {
-      this.props.onInitDismount(true)
-    }, 500)
-
-    this.onDismountTimeout = setTimeout(() => {
-      this.props.onFooter(false)
-      this.props.onWrapper(false)
-    }, 750)
-
+    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount(true) }, 500)
+    this.onDismountTimeout = setTimeout(() => { this.props.onWrapper(false) }, 750)
     this.exitDismountTimeout = setTimeout(() => {
       this.props.onInitDismount(false)
       this.props.history.push( routes.submitScore )
@@ -188,7 +181,7 @@ class GameContainer extends React.Component {
           { this.props.detect.device === "mobile" ?
             <GameMobileSmashButton onMobileSmash={this.onMobileSmash} />
           :
-            <></>
+            null
           }
         </div>
       </Wrapper>

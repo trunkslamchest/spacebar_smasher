@@ -29,9 +29,10 @@ const FooterFinePrint = (props) => {
     </>
   } else {
     finePrint = <>
+      <p>L.P. © Spacebar Smasher 2020</p>
       <p>Created by Jamal Farah & Austin Smith</p>
       <p>0.37.6 (07.25.20)</p>
-      <p>All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises, L.P. © Spacebar Smasher 2020</p>
+      <p>All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises</p>
     </>
   }
 

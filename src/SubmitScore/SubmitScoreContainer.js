@@ -27,15 +27,12 @@ const SubmitScoreContainer = (props) => {
   useEffect(() => {
     // if(scoreboard.allScores.length === 0) history.push( routes.home )
     // else {
-    //   document.title = 'Spacebar Smasher | Submit Score'
-    //   setTimeout(() => {
-    //     onFooter(true)
-    //     onWrapper(true)
-    //   }, 125)
+
     // }
+
     document.title = 'Spacebar Smasher | Submit Score'
     setTimeout(() => {
-      onFooter(true)
+      onFooter(false)
       onWrapper(true)
     }, 125)
   }, [onFooter, onWrapper, scoreboard, history])
@@ -43,15 +40,8 @@ const SubmitScoreContainer = (props) => {
   const onDismount = (event) => {
     let buttonNav = event.target.attributes.nav.value
 
-    setTimeout(() => {
-      onInitDismount(true)
-    }, 125)
-
-    setTimeout(() => {
-      onFooter(false)
-      onWrapper(false)
-    }, 500)
-
+    setTimeout(() => { onInitDismount(true) }, 125)
+    setTimeout(() => { onWrapper(false) }, 500)
     setTimeout(() => {
       onInitDismount(false)
       props.history.push( buttonNav === 'game' ? routes.countdown : buttonNav === 'main_menu' ? routes.home : routes.scoreboard )

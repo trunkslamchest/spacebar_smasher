@@ -5,6 +5,8 @@ const initialState = {
   initDismount: false,
   wrapper: false,
   footer: false,
+  footerLogosContainer: false,
+  footerInitDismountLogosContainer: false,
   postGame: false
 }
 
@@ -36,6 +38,21 @@ const footer = (currentState, action) => {
   }
 }
 
+const footerLogosContainer = (currentState, action) => {
+  return{
+    ...currentState,
+    footerLogosContainer: action.footerLogosContainer
+  }
+}
+
+const footerInitDismountLogosContainer = (currentState, action) => {
+  return{
+    ...currentState,
+    footerInitDismountLogosContainer: action.footerInitDismountLogosContainer
+  }
+}
+
+
 const postGame = (currentState, action) => {
   return{
     ...currentState,
@@ -49,6 +66,9 @@ const uiReducer = (currentState = initialState, action) => {
     case actionTypes.INITDISMOUNT: return initDismount(currentState, action)
     case actionTypes.WRAPPER: return wrapper(currentState, action)
     case actionTypes.FOOTER: return footer(currentState, action)
+    case actionTypes.FOOTERLOGOSCONTAINER: return footerLogosContainer(currentState, action)
+    case actionTypes.INITDISMOUNTFOOTERLOGOSCONTAINER: return footerInitDismountLogosContainer(currentState, action)
+
     case actionTypes.POSTGAME: return postGame(currentState, action)
     default: return currentState
   }

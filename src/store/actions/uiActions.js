@@ -28,6 +28,20 @@ export const footer = (bool) => {
   }
 }
 
+export const footerLogosContainer = (bool) => {
+  return{
+    type: actionTypes.FOOTERLOGOSCONTAINER,
+    footerLogosContainer: bool
+  }
+}
+
+export const footerInitDismountLogosContainer = (bool) => {
+  return{
+    type: actionTypes.INITDISMOUNTFOOTERLOGOSCONTAINER,
+    footerInitDismountLogosContainer: bool
+  }
+}
+
 export const postGame = (bool) => {
   return{
     type: actionTypes.POSTGAME,

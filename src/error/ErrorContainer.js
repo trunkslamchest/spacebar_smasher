@@ -1,17 +1,17 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-import './Error.css'
+import './ErrorContainer.css'
 
-const E404 = () => {
+const ErrorContainer = () => {
 
   useEffect(() => { document.title = "Spacebar Smasher - 404 Error" }, [])
 
   return(
-    <div className="error_div">
+    <div className="error_container">
       <h3>404 Error</h3>
     </div>
   )
 }
 
-export default E404
+export default ErrorContainer

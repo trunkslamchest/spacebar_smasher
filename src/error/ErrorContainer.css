@@ -1,4 +1,4 @@
-.error_div {
+.error_container {
   z-index: 1;
   width: 80%;
   display: flex;
@@ -8,7 +8,7 @@
   padding-top: calc(250 * ((100vh - 250px) / (1080 - 250)));
 }
 
-.error_div h3 {
+.error_container h3 {
   color: white;
   text-align: center;
   font-family: "Staatliches";

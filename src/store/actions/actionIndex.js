@@ -7,6 +7,8 @@ export {
   home,
   initDismount,
   footer,
+  footerInitDismountLogosContainer,
+  footerLogosContainer,
   postGame,
   wrapper
 } from './uiActions'

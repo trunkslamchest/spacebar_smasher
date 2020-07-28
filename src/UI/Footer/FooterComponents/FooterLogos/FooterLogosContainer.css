@@ -1,11 +1,18 @@
 .footer_desktop_logos_container, .dismount_footer_desktop_logos_container {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin: 5px auto;
+  margin: 5px auto; */
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
-.footer_mobile_logos_container_landscape {
+.footer_mobile_logos_container_landscape, .dismount_footer_mobile_logos_container_landscape {
   align-content: center;
   align-items: center;
   display: flex;
@@ -16,9 +23,16 @@
 }
 
 .footer_mobile_logos_container_portrait, .dismount_footer_mobile_logos_container_portrait {
+  align-content: center;
+  align-items: center;
+  /* border-top: 1px solid grey; */
+  border-bottom: 1px solid grey;
+  /* border-left: 1px solid grey; */
+  /* border-right: 1px solid grey; */
   display: flex;
   flex-direction: row;
+  flex-grow: 1;
   justify-content: space-evenly;
-  margin: 5px auto;
-  width: calc(320px + (1420 - 320) * ((100vw - 320px) / (1920 - 320)));
+  /* padding-top: 5px; */
+  width: 100%;
 }

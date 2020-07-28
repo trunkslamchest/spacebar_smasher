@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
 
+import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { fetch, routes } from '../utility/paths'
@@ -23,28 +23,25 @@ const PostGameContainer = (props) => {
     // document.body.scrollTop = 0
 
     onPostGame(true)
-    onWrapper(true)
-    onFooter(true)
+
+    setTimeout(() => {
+      onFooter(true)
+      onWrapper(true)
+    }, 125)
 
     if(scoreboard.allScores.length === 0){
       document.title = 'Spacebar Smasher | Scoreboard'
       scoreboardFunctions('get', fetch.get)
-      .then(resObj => {
-        onGetScoreboard(Object.entries(resObj.players))
-      })
+      .then(resObj => { onGetScoreboard(Object.entries(resObj.players)) })
     }
   }, [onPostGame,onWrapper, onFooter, onGetScoreboard, scoreboard])
 
   const onDismount = (event) => {
-    setTimeout(() => {
-      props.onInitDismount(true)
-    }, 125)
-
+    setTimeout(() => { props.onInitDismount(true) }, 125)
     setTimeout(() => {
       onWrapper(false)
       onFooter(false)
     }, 500)
-
     if (event.target.attributes.nav.value === 'game')  {
       setTimeout(() => {
         props.onInitDismount(false)

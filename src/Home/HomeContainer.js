@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import * as actions from '../store/actions/actionIndex'
 
 import { fetch, routes } from '../utility/paths'
-import scoreboardFunctions from '../utility/scoreboardFunctions'
 import { homeContainer } from './HomeFunctions/classSwitch'
+import scoreboardFunctions from '../utility/scoreboardFunctions'
 
 import taglines from '../datasets/taglines'
 
@@ -28,16 +28,17 @@ const HomeContainer = (props) => {
     // document.body.scrollTop = 0
 
     onHome(true)
-    onWrapper(true)
-    onFooter(true)
+
+    setTimeout(() => {
+      onFooter(true)
+      onWrapper(true)
+    }, 125)
 
     document.title = `Spacebar Smasher | ${taglines.random} `
 
     if(scoreboard.allScores.length === 0){
       scoreboardFunctions('get', fetch.get)
-      .then(resObj => {
-        onGetScoreboard(Object.entries(resObj.players))
-      })
+      .then(resObj => { onGetScoreboard(Object.entries(resObj.players)) })
     }
   }, [onHome, onWrapper, onFooter, onGetScoreboard, scoreboard])
 
@@ -52,8 +53,8 @@ const HomeContainer = (props) => {
     }, 500)
 
     setTimeout(() => {
-      props.onInitDismount(false)
       props.onHome(false)
+      props.onInitDismount(false)
       props.history.push( routes.countdown )
     }, 750 )
   }

@@ -23,9 +23,9 @@ class CountdownContainer extends React.Component {
   componentDidMount(){
     // if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
     // else {
-    //   document.title = 'Spacebar Smasher | Countdown'
-    //   this.onMount()
+
     // }
+
     document.title = 'Spacebar Smasher | Countdown'
     this.onMount()
   }
@@ -33,27 +33,16 @@ class CountdownContainer extends React.Component {
   onMount = () => {
     this.onMountTimeout = setTimeout(() => {
       this.props.onClearScore()
-      this.props.onFooter(true)
+      this.props.onFooter(false)
       this.props.onWrapper(true)
     }, 125)
 
-    this.startTimerTimeout = setTimeout(() => {
-      this.startTimerInterval = setInterval(
-        this.timerFunctions, 1000
-      )
-    }, 1000)
+    this.startTimerTimeout = setTimeout(() => { this.startTimerInterval = setInterval( this.timerFunctions, 1000 ) }, 1000)
   }
 
   onDismount = () => {
-    this.initDismountTimeout = setTimeout(() => {
-      this.props.onInitDismount(true)
-    }, 125)
-
-    this.onDismountTimeout = setTimeout(() => {
-      this.props.onFooter(false)
-      this.props.onWrapper(false)
-    }, 250)
-
+    this.initDismountTimeout = setTimeout(() => { this.props.onInitDismount(true) }, 125)
+    this.onDismountTimeout = setTimeout(() => { this.props.onWrapper(false) }, 250)
     this.exitDismountTimeout = setTimeout(() => {
       this.props.onInitDismount(false)
       this.props.history.push( routes.game )
@@ -62,7 +51,7 @@ class CountdownContainer extends React.Component {
 
   timerFunctions = () => {
     if (this.state.time <= 0 || this.state.time === 0) {
-      this.setState({ time: 0 })
+      // this.setState({ time: 0 })
       this.onDismount()
       clearInterval(this.timerInterval)
     }
@@ -83,9 +72,7 @@ class CountdownContainer extends React.Component {
       <Wrapper divClass={ countdownContainer(this.props).wrapper }>
         <div className={ countdownContainer(this.props).pill }>
           <CountdownHeader />
-          <CountdownTimer
-            time={ this.state.time }
-          />
+          <CountdownTimer time={ this.state.time } />
           <CountdownTutorial />
         </div>
       </Wrapper>

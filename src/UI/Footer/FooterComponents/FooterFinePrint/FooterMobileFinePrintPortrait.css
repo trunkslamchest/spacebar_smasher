@@ -1,8 +1,11 @@
 .footer_mobile_fine_print_portrait {
+  /* border: 1px solid grey; */
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
   margin-left: calc(5px + (10 - 5) * ((100vw - 320px) / (863 - 320)));
   margin-right: calc(5px + (10 - 5) * ((100vw - 320px) / (863 - 320)));
-  margin-top: 10px;
-  margin-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 100%;
 }
 
 .footer_mobile_fine_print_portrait p {
