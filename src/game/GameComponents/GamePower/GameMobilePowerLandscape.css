@@ -11,7 +11,7 @@
   align-content: center;
   align-items: center;
   text-align: center;
-  padding: 5px;
+  padding: 5px 0px;
 }
 
 .game_mobile_power_landscape h1 {
@@ -33,7 +33,7 @@
   font-family: 'Conv_digital-7.mono';
   font-size: calc(30px + (50 - 30) * ((100vw - 568px) / (823 - 568)));
   font-weight: 300;
-  margin: 0 auto 5px auto;
+  margin: 0 auto 0px auto;
   min-width: calc(150px + (250 - 150) * ((100vw - 568px) / (823 - 568)));
   text-align: center;
   text-shadow: 0px 0px 2.5px yellow;

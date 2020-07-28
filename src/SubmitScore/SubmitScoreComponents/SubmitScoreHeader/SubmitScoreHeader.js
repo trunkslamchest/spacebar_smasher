@@ -13,7 +13,7 @@ import './SubmitScoreMobileHeaderPortrait.css'
 const SubmitScoreHeader = (props) => {
   return(
     <div className={ submitScoreHeader(props).header }>
-      <h1>OUTTA TIME!</h1>
+      <h1>OUTTA TIME</h1>
     </div>
   )
 }

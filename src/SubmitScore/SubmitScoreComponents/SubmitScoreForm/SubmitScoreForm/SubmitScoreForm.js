@@ -43,7 +43,7 @@ const SubmitScoreForm = (props) => {
               className={ submitScoreForm(props).button }
               disabled={ props.submitClicked }
               type="submit"
-              value="Confirm"
+              value="CONFIRM"
             />
           </form>
         </div>

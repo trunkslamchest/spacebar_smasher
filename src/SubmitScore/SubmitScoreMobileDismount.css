@@ -7,16 +7,24 @@
   align-items: center;
   align-content: center;
   margin: 0 auto 0 auto;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+  );
   width: calc(500px + (800 - 500) * ((100vw - 568px) / (823 - 568)));
 }
 
 @keyframes dismount_submit_score_mobile_pill_landscape
   {
-    0% {
-      transform: translateX(0px);
-    }
-    100% {
-      transform: translateX(1000px);
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(1000px);
     }
   }
 
@@ -29,15 +37,23 @@
   align-items: center;
   align-content: center;
   margin: 0 auto 0 auto;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0002,
+    0,0,1,0,
+    0,0,0,1
+  );
   width: calc(275px + (375 - 275) * ((100vw - 320px) / (411 - 320)));
 }
 
 @keyframes dismount_submit_score_mobile_pill_portrait
   {
-    0% {
-      transform: translateX(0px);
-    }
-    100% {
-      transform: translateX(1000px);
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0002,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(1000px);
     }
   }

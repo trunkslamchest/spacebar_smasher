@@ -1,8 +1,10 @@
 .submit_score_mobile_rank_portrait {
-  background-image: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
-  border: 2px solid grey;
-  box-shadow: 0 -10px 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  background: rgb(30, 30, 30, 1);
+  /* border-bottom: 1px solid grey; */
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.75), 0px 0px 5px 2.5px rgba(0, 0, 0, 0.75) inset;
+  padding: 5px;
   text-align: center;
 }
 
@@ -17,11 +19,11 @@
 }
 
 .submit_score_mobile_rank_portrait h2 {
-  animation: text_shadow_blink 1.5s ease-in-out infinite;
+  animation: text_shadow_blink_yellow 1.75s ease-in-out infinite;
   background-color: #000;
   border: 1px solid grey;
   border-radius: 5px;
-  box-shadow: 0 0px 10px 0 rgba(0, 0, 0, 0.8), 0 0px 10px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 1), 0px 0px 2.5px 1px rgba(0, 0, 0, 1) inset, 0px 0px 5px 2.5px rgba(100, 100, 100, 0.75) inset;
   color: yellow;
   font-family: 'Conv_digital-7.mono';
   font-size: calc(23px + (33 - 23) * ((100vw - 500px) / (1920 - 500)));

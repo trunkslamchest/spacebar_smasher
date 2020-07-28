@@ -50,12 +50,12 @@
   background: none;
   border-radius: 5px;
   box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 1);
-  width: 75%;
-  height: 25px;
   box-sizing: border-box;
-  padding: 0 0 0 0;
   display: block;
+  height: 25px;
   margin: 0 auto 0 auto;
+  padding: 0 0 0 0;
+  width: 75%;
 }
 
 .game_desktop_power_bar meter::-webkit-meter-bar, .dismount_game_desktop_power_bar meter::-webkit-meter-bar {

@@ -16,17 +16,12 @@
   width: calc(250px + (500 - 250) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_submit_score_desktop_form_container {
-  0% {
-    transform: translateX(0px);
+@keyframes dismount_submit_score_desktop_form_container
+  {
+    50% {
+      transform: translateX(2000px);
+    }
   }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
-    transform: translateX(2000px);
-  }
-}
 
 .dismount_submit_score_main_menu_button {
   animation: dismount_submit_score_main_menu_button .5s ease-in-out 1;
@@ -51,17 +46,12 @@
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_submit_score_main_menu_button {
-  0% {
-    transform: translateX(0px);
+@keyframes dismount_submit_score_main_menu_button
+  {
+    50% {
+      transform: translateX(2000px);
+    }
   }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
-    transform: translateX(2000px);
-  }
-}
 
 .dismount_submit_score_try_again_button {
   animation: dismount_submit_score_try_again_button .5s ease-in-out 1;
@@ -86,14 +76,9 @@
   width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
 }
 
-@keyframes dismount_submit_score_try_again_button {
-  0% {
-    transform: translateX(0px);
+@keyframes dismount_submit_score_try_again_button
+  {
+    50% {
+      transform: translateX(2000px);
+    }
   }
-  25% {
-    transform: translateX(2000px);
-  }
-  100% {
-    transform: translateX(2000px);
-  }
-}
