@@ -1,7 +1,15 @@
 .submit_score_mobile_wrapper_landscape {
-  height: 100%;
-  flex-grow: 1;
+  align-content: center;
+  align-items: center;
+  display: flex;
   flex-basis: auto;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  height: 99vh;
+  justify-content: space-evenly;
+ /* margin-top: calc(-8px + (10 - -8) * ((100vw - 568px) / (823 - 568))); */
+  margin-top: -10px;
 }
 
 .submit_score_mobile_pill_landscape {
@@ -19,17 +27,7 @@
     0,0,1,0,
     0,0,0,1
   );
-  width: calc(500px + (800 - 500) * ((100vw - 568px) / (823 - 568)));
-}
-
-.submit_score_mobile_pill_landscape_ipad {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  margin: 0 auto 0 auto;
+  width: calc(525px + (750 - 525) * ((100vw - 568px) / (823 - 568)));
 }
 
 .submit_score_mobile_landscapeR1 {

@@ -8,6 +8,7 @@
   /* align-content: center; */
   /* justify-content: space-around; */
  /* margin-top: calc(-9px - (15 + -9) * ((100vw - 568px) / (823 - 568))); */
+  margin-top: -5px;
 }
 
 .game_mobile_pill_landscape {

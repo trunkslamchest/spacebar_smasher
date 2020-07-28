@@ -37,7 +37,7 @@
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
-  max-height: calc(200px + (400 - 200) * ((100vh - 320px) / (1080 - 320)));
+  max-height: calc(200px + (275 - 200) * ((100vh - 320px) / (411 - 320)));
   justify-content: flex-start;
   padding: 0px;
   transform: matrix3d(

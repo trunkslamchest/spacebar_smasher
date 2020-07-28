@@ -55,7 +55,7 @@
   margin: 0 auto 0 auto;
   background: none;
   box-sizing: border-box;
-  height: calc(5px + (10 - 5) * ((100vw - 320px) / (823 - 320)));
+  height: calc(8px + (12 - 8) * ((100vw - 320px) / (823 - 320)));
   padding: 0 0 0 0;
   width: calc(50px + (100 - 50) * ((100vw - 320px) / (823 - 320)));
 }

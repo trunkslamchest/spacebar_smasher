@@ -11,7 +11,7 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px 0px 10px 0px;
   text-align: center;
   width: 100%;
 }
@@ -73,27 +73,18 @@
 
 .submit_score_mobile_button_landscape {
   -webkit-appearance: none;
-  /* align-items: flex-start; */
-  animation: shadow_blink 2s ease-in-out infinite;
   background: linear-gradient( rgb(50, 50, 50, 1) 10%,rgb(0, 0, 0, 1) 100%);
   border: 1px solid white;
   border-radius: 0px 30px 30px 0px;
-  box-shadow: 0 0 1px 1px rgba(255, 255, 0, 0.75);
+  box-shadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 1), 0px 0px 2.5px 1px rgba(0, 0, 0, 1);
   box-sizing: border-box;
   color: white;
   cursor: pointer;
-  /* display: inline-block; */
   font-family: "Audiowide";
   font-size:calc(10px + (25 - 10) * ((100vw - 320px) / (1920 - 320)));
   font-weight: 300;
-  /* letter-spacing: normal; */
   padding-left: 25px;
   padding-right: 25px;
-  /* text-indent: 0px; */
-  /* text-rendering: auto; */
-  /* text-shadow: none; */
-  /* text-transform: none; */
-  /* word-spacing: normal; */
   text-align: center;
   text-decoration: none;
 }

@@ -1,8 +1,8 @@
-.post_game_desktop_wrapper, .dismount_post_game_desktop_wrapper {
+.post_game_desktop_container, .dismount_post_game_desktop_container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  width: 100%;
+  /* width: 100%; */
 }

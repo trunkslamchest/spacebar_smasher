@@ -29,7 +29,9 @@ const SubmitScoreErrorMessages = (props) => {
       </h1>
     </div>
     <div className="submit_score_error_message_wrapper">
-      { errorMessageArr }
+      <div className="submit_score_error_message_window">
+        { errorMessageArr }
+      </div>
     </div>
     <div className="submit_score_error_bottom_message">
       { props.fixingRedux ? "Attempting to Fixing Redux" : props.fixedRedux ? "Redux Successfully Fixed" : props.broName }
