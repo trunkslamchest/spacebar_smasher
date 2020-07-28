@@ -12,7 +12,6 @@ const FooterLogoButton = (props) => {
       >
         <img
           alt={ props.altText}
-          // className={ props.buttonClass }
           name={ props.buttonName }
           src={ props.logo }
         />

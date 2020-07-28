@@ -1,14 +1,13 @@
 .footer_desktop_button_open {
   background: linear-gradient(rgba(255, 255, 0, 1),  rgba(212, 144, 57, 1) );
   border: 0px solid black;
-  /* border-radius: 0px; */
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: black !important;
+  cursor: pointer;
   display: flex;
   font-family: "Staatliches";
   font-size: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
-  /* height: calc(40px + (50 - 40) * ((100vw - 500px) / (1920 - 500))); */
   justify-content: center;
   order: 2;
   text-align: center;
@@ -32,17 +31,17 @@
   border-radius: 15px 15px 0px 0px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
   color: white;
+  cursor: pointer;
   display: flex;
   font-family: "Staatliches";
   font-size: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
   font-weight: 300;
-  /* height: calc(40px + (50 - 40) * ((100vw - 500px) / (1920 - 500))); */
   justify-content: center;
   order: 2;
   text-align: center;
   text-shadow: 1px 1px 2px #000;
   transition: border-radius, border, box-shadow, color .25s ease-in-out 0s, width .1s ease-in-out 0s;
-  width: calc(10% + 1px);
+  width: calc(60px + (120 - 60) * ((100vw - 500px) / (1920 - 500)));
   z-index: 500;
 }
 

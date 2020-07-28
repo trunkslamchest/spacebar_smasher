@@ -1,26 +1,33 @@
 .logo_desktop {
-  /* height: auto;
-  max-width: 100%;
-  max-height: calc(22px + (40 - 22) * ((100vw - 500px) / (1920 - 500))); */
   align-content: center;
   align-items: center;
-  /* border-left: 1px solid grey;
-  border-right: 1px solid grey; */
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
   display: flex;
   flex-grow: 1;
   height: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
   justify-content: center;
   width: 100%;
+}
+
+.logo_desktop:hover {
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.75) inset;
+  cursor: pointer;
+}
+
+.logo_desktop:active {
+  animation: scale_out .1s ease-in-out 1;
+  background: linear-gradient(rgba(255, 255, 0, 1),  rgba(212, 144, 57, 1) );
 }
 
 .logo_desktop a {
   align-content: center;
   align-items: center;
   display: flex;
+  height: 100%;
   justify-content: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 100%;
 }
 
 .logo_desktop a img {
@@ -28,21 +35,28 @@
 }
 
 .logo_mobile_landscape {
-  /* border-bottom: 1px solid grey; */
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
   align-content: center;
   align-items: center;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
   display: flex;
-  justify-content: center;
   flex-grow: 1;
+  justify-content: center;
   width: 100%;
+}
+
+.logo_mobile_landscape:active {
+  animation: scale_out .1s ease-in-out 1;
+  background: linear-gradient(rgba(255, 255, 0, 1),  rgba(212, 144, 57, 1) );
 }
 
 .logo_mobile_landscape a {
   align-content: center;
   align-items: center;
   display: flex;
+  flex-grow: 1;
+  height: 100%;
   justify-content: center;
+  width: 100%;
 }
 
 .logo_mobile_landscape a img {
@@ -52,24 +66,26 @@
 .logo_mobile_portrait {
   align-content: center;
   align-items: center;
-  /* border-left: 1px solid grey;
-  border-right: 1px solid grey; */
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
   display: flex;
   flex-grow: 1;
   height: 100%;
-  padding-top: 5px;
-  padding-bottom: 5px;
   justify-content: center;
   width: 100%;
 }
-
+.logo_mobile_portrait:active {
+  animation: scale_out .1s ease-in-out 1;
+  background: linear-gradient(rgba(255, 255, 0, 1),  rgba(212, 144, 57, 1) );
+}
 
 .logo_mobile_portrait a {
   align-content: center;
   align-items: center;
   display: flex;
   justify-content: center;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width: 100%;
 }
 
 .logo_mobile_portrait a img {
