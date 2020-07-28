@@ -41,7 +41,7 @@
 
 .dismount_footer_mobile_container_portrait {
   animation: dismount_footer_mobile_container_portrait .5s ease-in-out 1;
-  padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320)));
+  /* padding-top: calc(22px + (40 - 22) * ((100vw - 320px) / (1920 - 320))); */
   z-index: 0;
 }
 
