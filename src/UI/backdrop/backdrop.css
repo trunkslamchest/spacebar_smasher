@@ -7,12 +7,6 @@
   top: 0;
   width: 100vw;
   z-index: 100;
-  transform: matrix3d(
-    1,0,0,0.0,
-    0,1,0,0.00014,
-    0,0,1,0,
-    0,0,0,1
-  );
 }
 
 .dismount_backdrop {

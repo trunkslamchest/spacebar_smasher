@@ -1,16 +1,21 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
+import { connect } from 'react-redux'
 import * as actions from '../../../store/actions/actionIndex'
 
 import { fetch } from '../../../utility/paths'
 import scoreboardFunctions from '../../../utility/scoreboardFunctions'
 import validatePost from '../../../utility/validatePost'
+import { submitScoreContainer } from '../../SubmitScoreFunctions/classSwitch'
 
 import broNames from '../../../datasets/broNames'
 
-import SubmitScoreForm from './SubmitScoreForm/SubmitScoreForm'
+import SubmitScoreCounter from '../SubmitScoreCounter/SubmitScoreCounter'
 import SubmitScoreErrorContainer from './SubmitScoreErrorHandling/SubmitScoreErrorContainer'
+import SubmitScoreForm from './SubmitScoreForm/SubmitScoreForm'
+import SubmitScoreHeader from '../SubmitScoreHeader/SubmitScoreHeader'
+import SubmitScorePower from '../SubmitScorePower/SubmitScorePower'
+import SubmitScoreRank from '../SubmitScoreRank/SubmitScoreRank'
 
 import Modal from '../../../UI/modal/modal'
 
@@ -87,9 +92,7 @@ class SubmitScoreFormContainer extends React.Component {
   }
 
   addScore = (event) => {
-
     let postCheck = validatePost(event.target[0].value.trim(), this.props.scoreboard.score.score)
-
     if (!(postCheck.valid)) {
       this.setState({
         modal: {
@@ -132,7 +135,7 @@ class SubmitScoreFormContainer extends React.Component {
   render(){
     return(
       <>
-      { this.state.modal.show ?
+        { this.state.modal.show ?
           <Modal
             show={ this.state.modal.show }
             initDismount={ this.state.modal.initDismount }
@@ -149,12 +152,22 @@ class SubmitScoreFormContainer extends React.Component {
         :
           null
         }
-        <SubmitScoreForm
-          onNameChange={ this.onNameChange }
-          modal={ this.state.modal.show }
-          submitClicked={ this.state.submitClicked }
-          onSubmit={ this.onSubmit }
-        />
+        <div className={ submitScoreContainer(this.props).pill }>
+          <SubmitScoreHeader />
+          <div className={ submitScoreContainer(this.props).row }>
+            <SubmitScoreCounter />
+            <div className={ submitScoreContainer(this.props).subRow }>
+              <SubmitScoreRank />
+              <SubmitScorePower />
+            </div>
+          </div>
+          <SubmitScoreForm
+            onNameChange={ this.onNameChange }
+            modal={ this.state.modal.show }
+            submitClicked={ this.state.submitClicked }
+            onSubmit={ this.onSubmit }
+          />
+        </div>
       </>
     )
   }
@@ -162,6 +175,7 @@ class SubmitScoreFormContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return{
+    detect: state.detect,
     scoreboard: state.scoreboard,
     ui: state.ui
   }

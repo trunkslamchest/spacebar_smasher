@@ -10,11 +10,7 @@ import { submitScoreContainer } from './SubmitScoreFunctions/classSwitch'
 import Wrapper from '../UI/Wrapper/Wrapper'
 
 import SubmitScoreButtonsContainer from './SubmitScoreComponents/SubmitScoreButtons/SubmitScoreButtonsContainer'
-import SubmitScoreCounter from './SubmitScoreComponents/SubmitScoreCounter/SubmitScoreCounter'
-import SubmitScoreHeader from './SubmitScoreComponents/SubmitScoreHeader/SubmitScoreHeader'
 import SubmitScoreFormContainer from './SubmitScoreComponents/SubmitScoreForm/SubmitScoreFormContainer'
-import SubmitScorePower from './SubmitScoreComponents/SubmitScorePower/SubmitScorePower'
-import SubmitScoreRank from './SubmitScoreComponents/SubmitScoreRank/SubmitScoreRank'
 
 import './SubmitScoreDesktopContainer.css'
 import './SubmitScoreMobileContainerLandscape.css'
@@ -64,18 +60,8 @@ const SubmitScoreContainer = (props) => {
 
   return(
     <Wrapper divClass={ submitScoreContainer(props).wrapper }>
-        <div className={ submitScoreContainer(props).pill }>
-          <SubmitScoreHeader />
-          <div className={ submitScoreContainer(props).row }>
-            <SubmitScoreCounter />
-            <div className={ submitScoreContainer(props).subRow }>
-              <SubmitScoreRank />
-              <SubmitScorePower />
-            </div>
-          </div>
-          <SubmitScoreFormContainer onDismount={ onDismount } />
-        </div>
-        <SubmitScoreButtonsContainer onDismount={ onDismount } />
+      <SubmitScoreFormContainer onDismount={ onDismount } />
+      <SubmitScoreButtonsContainer onDismount={ onDismount } />
     </Wrapper>
   )
 }

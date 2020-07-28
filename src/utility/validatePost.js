@@ -14,15 +14,15 @@ const validatePost = (name, score) => {
 
   for(let char in name) if(specialChars.arr.includes(name[char])) invalidCharArr.push(name[char])
 
-  if(score < 25) validation['errors'] = [ ...validation.errors, {code: 320, msg: "Your score is less than 25"} ]
+  // if(score < 25) validation['errors'] = [ ...validation.errors, {code: 320, msg: "Your score is less than 25"} ]
 
   if(score > 400) validation['errors'] = [ ...validation.errors, {code: 420, msg: `With a score of ${score}, you are probably cheating.`} ]
 
   if(!!invalidCharArr.length) validation['errors'].push({code: 520, msg: "You cannot enter a name with any of these characters", chars: invalidCharArr })
 
-  // if(!!validation['errors'].length) validation['valid'] = false
+  if(!!validation['errors'].length) validation['valid'] = false
 
-  validation['valid'] = true
+  // validation['valid'] = true
 
   return validation
 }
