@@ -39,20 +39,20 @@ const PostGameContainer = (props) => {
   const onDismount = (event) => {
     setTimeout(() => { props.onInitDismount(true) }, 125)
     setTimeout(() => {
-      // onWrapper(false)
-      // onFooter(false)
+      onWrapper(false)
+      onFooter(false)
     }, 500)
     if (event.target.attributes.nav.value === 'game')  {
       setTimeout(() => {
-        // props.onInitDismount(false)
-        // props.onPostGame(false)
-        // props.history.push( routes.countdown )
+        props.onInitDismount(false)
+        props.onPostGame(false)
+        props.history.push( routes.countdown )
       }, 750 )
     }
     else setTimeout(() => {
-      // props.onInitDismount(false)
-      // props.onPostGame(false)
-      // props.history.push( routes.home )
+      props.onInitDismount(false)
+      props.onPostGame(false)
+      props.history.push( routes.home )
     }, 750 )
   }
 

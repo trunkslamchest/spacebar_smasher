@@ -7,14 +7,14 @@ export const fetch = {
 
 export const routes = {
   root: '/',
-  home: '/testSub',
-  game: '/testSub/game',
-  countdown: '/testSub/countdown',
-  submitScore: '/testSub/submit_score',
-  scoreboard: '/testSub/scoreboard'
-  // home: '/spacebarsmasher',
-  // game: '/spacebarsmasher/game',
-  // countdown: '/spacebarsmasher/countdown',
-  // submitScore: '/spacebarsmasher/submit_score',
-  // scoreboard: '/spacebarsmasher/scoreboard'
+  // home: '/testSub',
+  // game: '/testSub/game',
+  // countdown: '/testSub/countdown',
+  // submitScore: '/testSub/submit_score',
+  // scoreboard: '/testSub/scoreboard'
+  home: '/spacebarsmasher',
+  game: '/spacebarsmasher/game',
+  countdown: '/spacebarsmasher/countdown',
+  submitScore: '/spacebarsmasher/submit_score',
+  scoreboard: '/spacebarsmasher/scoreboard'
 }

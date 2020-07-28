@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/testSub/static/css/main.edbd4eec.chunk.css",
-    "main.js": "/testSub/static/js/main.b3bc897c.chunk.js",
-    "main.js.map": "/testSub/static/js/main.b3bc897c.chunk.js.map",
-    "runtime-main.js": "/testSub/static/js/runtime-main.545e42bd.js",
-    "runtime-main.js.map": "/testSub/static/js/runtime-main.545e42bd.js.map",
-    "static/js/2.4da9d37f.chunk.js": "/testSub/static/js/2.4da9d37f.chunk.js",
-    "static/js/2.4da9d37f.chunk.js.map": "/testSub/static/js/2.4da9d37f.chunk.js.map",
-    "index.html": "/testSub/index.html",
-    "precache-manifest.1f9d4495ddd2dd548f0f88d839e40e69.js": "/testSub/precache-manifest.1f9d4495ddd2dd548f0f88d839e40e69.js",
-    "service-worker.js": "/testSub/service-worker.js",
-    "static/css/main.edbd4eec.chunk.css.map": "/testSub/static/css/main.edbd4eec.chunk.css.map",
-    "static/js/2.4da9d37f.chunk.js.LICENSE.txt": "/testSub/static/js/2.4da9d37f.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/testSub/static/media/digital-7.mono.da2d95fc.svg"
+    "main.css": "/spacebarsmasher/static/css/main.8febd0bb.chunk.css",
+    "main.js": "/spacebarsmasher/static/js/main.bfa8130a.chunk.js",
+    "main.js.map": "/spacebarsmasher/static/js/main.bfa8130a.chunk.js.map",
+    "runtime-main.js": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js",
+    "runtime-main.js.map": "/spacebarsmasher/static/js/runtime-main.b024a8d1.js.map",
+    "static/js/2.4da9d37f.chunk.js": "/spacebarsmasher/static/js/2.4da9d37f.chunk.js",
+    "static/js/2.4da9d37f.chunk.js.map": "/spacebarsmasher/static/js/2.4da9d37f.chunk.js.map",
+    "index.html": "/spacebarsmasher/index.html",
+    "precache-manifest.73a8d0a0189cf193f55873a7b5747519.js": "/spacebarsmasher/precache-manifest.73a8d0a0189cf193f55873a7b5747519.js",
+    "service-worker.js": "/spacebarsmasher/service-worker.js",
+    "static/css/main.8febd0bb.chunk.css.map": "/spacebarsmasher/static/css/main.8febd0bb.chunk.css.map",
+    "static/js/2.4da9d37f.chunk.js.LICENSE.txt": "/spacebarsmasher/static/js/2.4da9d37f.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/spacebarsmasher/static/media/digital-7.mono.da2d95fc.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.545e42bd.js",
+    "static/js/runtime-main.b024a8d1.js",
     "static/js/2.4da9d37f.chunk.js",
-    "static/css/main.edbd4eec.chunk.css",
-    "static/js/main.b3bc897c.chunk.js"
+    "static/css/main.8febd0bb.chunk.css",
+    "static/js/main.bfa8130a.chunk.js"
   ]
 }

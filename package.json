@@ -6,7 +6,7 @@
   "author": "",
   "license": "ISC",
   "private": true,
-  "homepage": "https://trunkslamchest.com/testSub/",
+  "homepage": "https://trunkslamchest.com/spacebarsmasher/",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
