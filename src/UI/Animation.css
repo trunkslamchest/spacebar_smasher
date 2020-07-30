@@ -1,7 +1,7 @@
 @keyframes shadow_blink
   {
     50% {
-      box-shadow: 0 0 15px 0  rgba(255, 255, 0, 0.0);
+      box-shadow: 0 0 15px 0 rgba(255, 255, 0, 0.0);
     }
   }
 
@@ -218,46 +218,5 @@
     }
     100% {
       opacity: 0;
-    }
-  }
-
-
-@keyframes black_to_white
-  {
-    0% {
-      background-color: #000;
-    }
-    100% {
-      background-color: #fff;
-    }
-  }
-
-@keyframes orange_to_white
-  {
-    0% {
-      background-image: linear-gradient(rgba(245, 167, 66, 1),  rgba(212, 144, 57, 1) );
-    }
-    100% {
-      background-image: linear-gradient(rgba(255, 255, 255, 1),  rgba(219, 219, 219, 1) );
-    }
-  }
-
-@keyframes orange_to_greyblue
-  {
-    0% {
-      background-image: linear-gradient(rgba(245, 167, 66, 1),  rgba(212, 144, 57, 1) );
-    }
-    100% {
-      background-image: linear-gradient(rgba(81, 88, 102, 1),  rgba(40, 44, 52, 1) );
-    }
-  }
-
-@keyframes white_to_orange
-  {
-    0% {
-      background-image: linear-gradient(rgba(255, 255, 255, 1),  rgba(219, 219, 219, 1) );
-    }
-    100% {
-      background-image: linear-gradient(rgba(245, 167, 66, 1),  rgba(212, 144, 57, 1) );
     }
   }

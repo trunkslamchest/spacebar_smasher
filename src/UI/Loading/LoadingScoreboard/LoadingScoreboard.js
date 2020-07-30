@@ -1,6 +1,7 @@
 import React from 'react'
 
-import './LoadingScoreboard.css'
+import './LoadingScoreboard.scss'
+import '../LoadingAnimations.scss'
 
 const LoadingScoreboard = () => {
   return(

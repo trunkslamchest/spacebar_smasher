@@ -1,8 +1,14 @@
+@import '../../functions';
+
+@import '../../borders';
+@import '../../boxShadows';
+@import '../../colors';
+
 .loading_submit_score {
-  background-color: #000;
-  border: 1px solid grey;
+  background: $black;
+  border: $default_border;
   border-radius: 5px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: $default_boxShadow;
   display: flex;
   padding: 5px;
   width: 75%;
@@ -10,9 +16,9 @@
 
 .loading_submit_score div {
   animation: loading_submit_score 1s cubic-bezier(1, 0, 1, 1) infinite;
-  background-color: yellow;
+  background: $yellow;
   display: inline-block;
-  height: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  height: calcHeight(15, 30, 320, 1920);
   position: relative;
   width: 10px;
 }
@@ -31,24 +37,4 @@
 }
 .loading_submit_score div:nth-child(5) {
   animation-delay: -0.4s;
-}
-
-@keyframes loading_submit_score {
-  0% {
-    left: 0%;
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.25;
-  }
-  100% {
-    left: calc(100% - 60px);
-    opacity: 0;
-  }
 }

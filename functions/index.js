@@ -37,9 +37,9 @@ exports.players = functions
 
     var parsed = sorted.once('value', function(player){
       player.forEach(function(snap) { players.unshift(snap.val()) })
-      // setTimeout(() => {
+      setTimeout(() => {
         res.json({players})
-      // }, 150000)
+      }, 5000)
     })
 
   return parsed
@@ -61,7 +61,7 @@ exports.addScore = functions
 
     firebase.database().ref().update(obj)
 
-    // setTimeout(() => {
+    setTimeout(() => {
       res.status(200).json(Object.values(obj)[0])
-    // }, 150000)
+    }, 5000)
 });

@@ -1,6 +1,7 @@
 import React from 'react'
 
-import './LoadingSubmitScore.css'
+import './LoadingSubmitScore.scss'
+import '../LoadingAnimations.scss'
 
 const LoadingSubmitScore = () => {
   return(

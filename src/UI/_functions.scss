@@ -1,0 +1,11 @@
+@function calcHeight($minSize, $maxSize, $minHeight, $maxHeight) {
+  @return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vh - #{$minHeight}px) / (#{$maxHeight} - #{$minHeight})));
+}
+
+@function calcWidth($minSize, $maxSize, $minWidth, $maxWidth) {
+  @return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})));
+}
+
+@function calcSize($minSize, $maxSize, $minWidth, $maxWidth) {
+  @return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})));
+}

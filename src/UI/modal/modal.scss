@@ -1,10 +1,12 @@
+@import '/../_functions';
+
 @mixin modal_wrapper_props {
   left: 50%;
   min-width: 50%;
   position: fixed;
   top: 10%;
   transform: translateX(-50%);
-  width: calc(310px + (1100 - 310) * ((100vw - 320px) / (1920 - 320)));
+  width: calcWidth(310, 1100, 320, 1920);
   z-index: 500;
 }
 

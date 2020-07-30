@@ -1,33 +1,40 @@
-.loading_scoreboard_container {
+@import '../../_functions';
+
+@import '../../borders';
+@import '../../boxShadows';
+@import '../../_colors';
+
+@mixin loading_scoreboard_props {
   align-content: center;
   align-items: center;
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
+}
+
+.loading_scoreboard_container {
+  @include loading_scoreboard_props;
+  flex-direction: column;
+  height: calcHeight(275, 675, 500, 1080);
   justify-content: center;
-  height: calc(275px + (675 - 275) * ((100vh - 500px) / (1080 - 500)));
   width: 75% !important;
 }
 
 .loading_scoreboard_container h1 {
   animation: loading_pulse 2s linear infinite;
-  color: white;
+  color: $white;
   font-family: "Staatliches";
-  font-size: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calcSize(20, 40, 320, 1920);
   font-weight: 300;
 }
 
 .loading_scoreboard {
-  align-items: center;
-  align-content: flex-start;
-  background-color: #000;
-  border: 1px solid grey;
+  @include loading_scoreboard_props;
+  background: $black;
+  border: $default_border;
   border-radius: 5px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8), 0 0 10px 0 rgba(0, 0, 0, 0.8);
-  height: 10px;
-  display: flex;
+  box-shadow: $default_boxShadow;
   flex-direction: row;
-  flex-wrap: nowrap;
+  height: 10px;
   justify-content: flex-start;
   min-height: 50px;
   width: 80%;
@@ -35,7 +42,7 @@
 
 .loading_scoreboard div {
   animation: loading_scoreboard 1s cubic-bezier(1, 0, 1, 1) infinite;
-  background-color: yellow;
+  background: $yellow;
   display: inline-block;
   height: 20px;
   position: relative;
@@ -56,24 +63,4 @@
 }
 .loading_scoreboard div:nth-child(5) {
   animation-delay: -0.4s;
-}
-
-@keyframes loading_scoreboard {
-  0% {
-    left: 0%;
-    opacity: 0;
-  }
-  25% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 0.25;
-  }
-  100% {
-    left: calc(100% - 60px);
-    opacity: 0;
-  }
 }

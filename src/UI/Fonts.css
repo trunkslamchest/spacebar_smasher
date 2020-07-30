@@ -1,5 +1,9 @@
 /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
 
+/* CHECKMARK ✓ ✔
+XMARK ✗ ✘
+TRADEMARK ™ ℠ ® © */
+
 @font-face {
   font-family: 'Conv_digital-7.mono';
   src: url('../assets/fonts/digital-7.mono.eot');

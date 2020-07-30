@@ -1,0 +1,79 @@
+@keyframes loading_scoreboard
+  {
+    0% {
+      left: 0%;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0.25;
+    }
+    100% {
+      left: calc(100% - 60px);
+      opacity: 0;
+    }
+  }
+
+@keyframes loading_submit_score
+  {
+    0% {
+      left: 0%;
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0.25;
+    }
+    100% {
+      left: calc(100% - 60px);
+      opacity: 0;
+    }
+  }
+
+@keyframes loading_bar
+  {
+    0% {
+      left: calc(0% - 10px);
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0.25;
+    }
+    100% {
+      left: calc(100% - 60px);
+      opacity: 0;
+    }
+  }
+
+@keyframes onmount_loading_wrapper
+  {
+    0% {
+      opacity: 0;
+    }
+  }
+
+@keyframes dismount_loading_wrapper
+  {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
