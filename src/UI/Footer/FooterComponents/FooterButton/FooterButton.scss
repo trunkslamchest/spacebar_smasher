@@ -1,6 +1,6 @@
-@import '../../../_globalProps';
-@import '../../../_globalMixins';
-@import '../../../_globalFunctions';
+@import '../../../SCSS/_globalProps';
+@import '../../../SCSS/_globalMixins';
+@import '../../../SCSS/_globalFunctions';
 
 @mixin footer_button_props{
   box-shadow: $default_boxShadow;

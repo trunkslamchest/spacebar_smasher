@@ -1,5 +1,5 @@
-@import '../../../_globalProps';
-@import '../../../_globalFunctions';
+@import '../../../SCSS/_globalProps';
+@import '../../../SCSS/_globalFunctions';
 
 @mixin footer_fine_print_props {
   box-shadow: $default_inset_boxShadow;

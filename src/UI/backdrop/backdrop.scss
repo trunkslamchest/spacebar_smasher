@@ -1,4 +1,4 @@
-@import '../globalProps';
+@import '../SCSS/globalProps';
 
 @mixin backdrop {
   background: transparentize($black, 0.25);
