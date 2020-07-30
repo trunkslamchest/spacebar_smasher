@@ -1,0 +1,64 @@
+@import '../globalProps';
+@import '../globalFunctions';
+
+@import 'mixinFooter';
+
+.footer_desktop_container {
+  @include footer_desktop_container_props;
+  animation: onmount_footer_desktop_container .25s ease-in-out 1;
+}
+
+.dismount_footer_desktop_container {
+  @include footer_desktop_container_props;
+  animation: dismount_footer_desktop_container .5s ease-in-out 1;
+}
+
+.footer_desktop_wrapper{
+  @include footer_desktop_wrapper_props;
+  animation: onmount_footer_desktop_container .25s ease-in-out 1;
+}
+
+.dismount_footer_desktop_wrapper {
+  @include footer_desktop_wrapper_props;
+  animation: dismount_footer_desktop_wrapper .25s ease-in-out 1;
+}
+
+.footer_mobile_container_landscape {
+  @include footer_mobile_container_landscape_props;
+  animation: onmount_footer_mobile_container_landscape .25s ease-in-out 1;
+}
+
+.dismount_footer_mobile_container_landscape {
+  @include footer_mobile_container_landscape_props;
+  animation: dismount_footer_mobile_container_landscape .5s ease-in-out 1;
+}
+
+.footer_mobile_wrapper_landscape {
+  @include footer_mobile_wrapper_landscape_props;
+  animation: onmount_footer_mobile_container_landscape .25s ease-in-out 1;
+}
+
+.dismount_footer_mobile_wrapper_landscape {
+  @include footer_mobile_wrapper_landscape_props;
+  animation: dismount_footer_mobile_wrapper_landscape .25s ease-in-out 1;
+}
+
+.footer_mobile_container_portrait {
+  @include footer_mobile_container_portrait_props;
+  animation: onmount_footer_mobile_container_portrait .25s ease-in-out 1;
+}
+
+.dismount_footer_mobile_container_portrait {
+  @include footer_mobile_container_portrait_props;
+  animation: dismount_footer_mobile_container_portrait .5s ease-in-out 1;
+}
+
+.footer_mobile_wrapper_portrait {
+  @include footer_mobile_wrapper_portrait_props;
+  animation: onmount_footer_mobile_container_portrait .25s ease-in-out 1;
+}
+
+.dismount_footer_mobile_wrapper_portrait {
+  @include footer_mobile_wrapper_portrait_props;
+  animation: dismount_footer_mobile_wrapper_portrait .25s ease-in-out 1;
+}

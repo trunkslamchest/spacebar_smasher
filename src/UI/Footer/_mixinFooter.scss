@@ -1,0 +1,56 @@
+@mixin footer_container_props {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  position: fixed;
+  z-index: 500;
+}
+
+@mixin footer_desktop_container_props {
+  @include footer_container_props;
+  bottom: 0px;
+  width: 60%;
+}
+
+@mixin footer_mobile_container_landscape_props {
+  @include footer_container_props;
+  height: 100vh;
+  left: 0px;
+  width: calcWidth(70, 100, 568, 823);
+}
+
+@mixin footer_mobile_container_portrait_props {
+  @include footer_container_props;
+  bottom: 0px;
+  width: 100vw;
+}
+
+@mixin footer_wrapper_props {
+  align-items: center;
+  background: $darkGrey;
+  border: $default_border;
+  box-shadow: $default_boxShadow;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  margin: 0px;
+  width: 100%;
+  z-index: 499;
+}
+
+@mixin footer_desktop_wrapper_props {
+  @include footer_wrapper_props;
+}
+
+@mixin footer_mobile_wrapper_landscape_props {
+  @include footer_wrapper_props;
+}
+
+@mixin footer_mobile_wrapper_portrait_props {
+  @include footer_wrapper_props;
+}

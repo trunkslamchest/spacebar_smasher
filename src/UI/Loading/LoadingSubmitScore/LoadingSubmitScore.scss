@@ -1,8 +1,5 @@
-@import '../../functions';
-
-@import '../../borders';
-@import '../../boxShadows';
-@import '../../colors';
+@import '../../globalProps';
+@import '../../globalFunctions';
 
 .loading_submit_score {
   background: $black;

@@ -1,8 +1,5 @@
-@import '../../_functions';
-
-@import '../../borders';
-@import '../../boxShadows';
-@import '../../_colors';
+@import '../../globalProps';
+@import '../../globalFunctions';
 
 @mixin loading_scoreboard_props {
   align-content: center;

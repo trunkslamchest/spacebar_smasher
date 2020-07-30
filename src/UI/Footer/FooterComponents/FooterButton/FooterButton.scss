@@ -1,0 +1,126 @@
+@import '../../../_globalProps';
+@import '../../../_globalMixins';
+@import '../../../_globalFunctions';
+
+@mixin footer_button_props{
+  box-shadow: $default_boxShadow;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  order: 2;
+  transition: border-radius, border, box-shadow, color .25s ease-in-out 0s, width .1s ease-in-out 0s;
+  z-index: 500;
+}
+
+.footer_desktop_button_img {
+  height: calcSize(20, 40, 500, 1920);
+  padding: 5px;
+  width: calcSize(20, 40, 500, 1920);
+}
+
+.footer_mobile_button_img_landscape {
+  height: calcSize(20, 30, 568, 823);
+  width: calcSize(20, 30, 568, 823);
+}
+
+.footer_mobile_button_img_portrait {
+  height: calcSize(25, 30, 568, 823);
+  width: calcSize(25, 30, 568, 823);
+}
+
+.footer_desktop_button_open {
+  @include footer_button_props;
+  background: $button_default_hoverActive;
+  border: $button_activeHover_border;
+  width: calc(100% + 1px);
+
+  &:active{
+    animation: scale_out .1s ease-in-out 1;
+  }
+
+  &:focus{
+    @include remove_button_outline
+  }
+}
+
+.footer_desktop_button_closed {
+  @include footer_button_props;
+  background: $button_default;
+  border: $default_border;
+  border-radius: 15px 15px 0px 0px;
+  width: calcWidth(60, 120, 500, 1920);
+
+  &:active{
+    animation: scale_out .1s ease-in-out 1;
+  }
+
+  &:focus{
+    @include remove_button_outline
+  }
+}
+
+.footer_mobile_button_open_landscape {
+  @include footer_button_props;
+  background: $button_default_hoverActive;
+  border: $button_activeHover_border;
+  height: calcHeight(40, 50, 568, 823);
+  width: calc(100% + 1px);
+
+  &:active{
+    animation: scale_out .1s ease-in-out 1;
+  }
+
+  &:focus{
+    @include remove_button_outline
+  }
+}
+
+.footer_mobile_button_closed_landscape {
+  @include footer_button_props;
+  background: $button_default;
+  border: $default_border;
+  border-radius: 15px 15px 0px 0px;
+  height: calcHeight(40, 50, 568, 823);
+  width: calc(75% + 1px);
+
+  &:active{
+    animation: scale_out .1s ease-in-out 1;
+  }
+
+  &:focus{
+    @include remove_button_outline
+  }
+}
+
+.footer_mobile_button_open_portrait {
+  @include footer_button_props;
+  background: $button_default_hoverActive;
+  border: $button_activeHover_border;
+  height: calcSize(40, 50, 568, 823);
+  width: calc(100% + 1px);
+
+  &:active{
+    animation: scale_out .1s ease-in-out 1;
+  }
+
+  &:focus{
+    @include remove_button_outline
+  }
+}
+
+.footer_mobile_button_closed_portrait {
+  @include footer_button_props;
+  background: $button_default;
+  border: $default_border;
+  border-radius: 15px 15px 0px 0px;
+  height: calcSize(40, 50, 568, 823);
+  width: calc(25% + 1px);
+
+  &:active{
+    animation: scale_out .1s ease-in-out 1;
+  }
+
+  &:focus{
+    @include remove_button_outline
+  }
+}

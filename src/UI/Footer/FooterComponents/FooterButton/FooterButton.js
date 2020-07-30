@@ -7,11 +7,7 @@ import { footerButton } from '../../FooterFunctions/classSwitch'
 import footerMobileButtonOpen from '../../../../assets/footer_mobile_button/footer_mobile_button_open.png'
 import footerMobileButtonClosed from '../../../../assets/footer_mobile_button/footer_mobile_button_closed.png'
 
-import './FooterDesktopButton.css'
-
-import './FooterMobileButtonLandscape.css'
-import './FooterMobileButtonPortrait.css'
-
+import './FooterButton.scss'
 
 const FooterButton = (props) => {
 

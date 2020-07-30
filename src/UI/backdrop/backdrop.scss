@@ -1,4 +1,4 @@
-@import '../colors';
+@import '../globalProps';
 
 @mixin backdrop {
   background: transparentize($black, 0.25);

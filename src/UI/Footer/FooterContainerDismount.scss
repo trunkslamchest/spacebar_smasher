@@ -1,0 +1,59 @@
+@keyframes dismount_footer_desktop_container
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(1000px);
+    }
+  }
+
+@keyframes dismount_footer_mobile_container_landscape
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(1000px);
+    }
+  }
+
+@keyframes dismount_footer_mobile_container_portrait
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(1000px);
+    }
+  }
+
+@keyframes dismount_footer_desktop_wrapper
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(1000px);
+    }
+  }
+
+@keyframes dismount_footer_mobile_wrapper_landscape
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(1000px);
+    }
+  }
+
+@keyframes dismount_footer_mobile_wrapper_portrait
+  {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(1000px);
+    }
+  }
