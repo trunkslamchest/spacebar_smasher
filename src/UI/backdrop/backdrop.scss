@@ -1,0 +1,19 @@
+@mixin backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+}
+
+.backdrop {
+  animation: fade_in .3s ease-in-out 1;
+  @include backdrop;
+}
+
+.dismount_backdrop {
+  animation: fade_out .3s ease-in-out 1;
+  @include backdrop;
+}

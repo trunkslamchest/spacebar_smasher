@@ -2,9 +2,8 @@ import React from 'react'
 
 import Backdrop from '../backdrop/backdrop'
 
-import './modal.css'
-import './modalDismount.css'
-import './modalOnmount.css'
+import './modal.scss'
+import './modalAnimation.scss'
 
 const Modal = (props) => {
   return(
