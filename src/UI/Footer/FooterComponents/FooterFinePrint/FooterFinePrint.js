@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 
 import { footerFinePrint } from '../../FooterFunctions/classSwitch'
 
-import './FooterDesktopFinePrint.css'
-import './FooterMobileFinePrintLandscape.css'
-import './FooterMobileFinePrintPortrait.css'
+import './FooterFinePrint.scss'
 
 const FooterFinePrint = (props) => {
 

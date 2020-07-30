@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './FooterLogoButton.css'
+import './FooterLogoButton.scss'
 
 const FooterLogoButton = (props) => {
   return(

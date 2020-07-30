@@ -1,0 +1,54 @@
+@import '../../../_globalProps';
+@import '../../../_globalFunctions';
+
+@mixin footer_fine_print_props {
+  box-shadow: $default_inset_boxShadow;
+  width: 100%;
+
+  p {
+    color: white;
+    font-family: "Helvetica";
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+  }
+}
+
+.footer_desktop_fine_print {
+  @include footer_fine_print_props;
+  flex-grow: 1;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  p {
+    font-size: calcSize(4, 11, 500, 1920);
+  }
+}
+
+.footer_mobile_fine_print_landscape {
+  @include footer_fine_print_props;
+  border-top: 1px solid grey;
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+  p {
+    font-size: calcSize(5, 6, 320, 823);
+  }
+
+  span {
+    display: block;
+    padding: 2px;
+  }
+}
+
+.footer_mobile_fine_print_portrait {
+  @include footer_fine_print_props;
+  margin-left: calcSize(5, 10, 320, 823);
+  margin-right: calcSize(5, 10, 320, 823);
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+  p {
+    font-size: calcSize(3, 11, 320, 823);
+  }
+}

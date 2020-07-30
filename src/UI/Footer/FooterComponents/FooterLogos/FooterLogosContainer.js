@@ -17,7 +17,7 @@ import github_logo_mobile from '../../../../assets/footer_logos/footer_logo_gith
 import HVH_logo_mobile from '../../../../assets/footer_logos/footer_logo_HVH_mobile.png'
 import react_logo_mobile from '../../../../assets/footer_logos/footer_logo_react_mobile.png'
 
-import './FooterLogosContainer.css'
+import './FooterLogosContainer.scss'
 
 const FooterLogos = (props) => {
 

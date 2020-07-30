@@ -1,30 +1,29 @@
-.footer_desktop_logos_container, .dismount_footer_desktop_logos_container {
+@import '../../../_globalProps';
+@import '../../../_globalMixins';
+@import '../../../_globalFunctions';
+
+
+@mixin footer_logos_container_props {
   align-content: center;
   align-items: center;
   display: flex;
-  flex-direction: row;
   flex-grow: 1;
   justify-content: space-evenly;
   width: 100%;
+}
+
+.footer_desktop_logos_container, .dismount_footer_desktop_logos_container {
+  @include footer_logos_container_props;
+  flex-direction: row;
 }
 
 .footer_mobile_logos_container_landscape, .dismount_footer_mobile_logos_container_landscape {
-  align-content: center;
-  align-items: center;
-  display: flex;
+  @include footer_logos_container_props;
   flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-evenly;
-  width: 100%;
 }
 
 .footer_mobile_logos_container_portrait, .dismount_footer_mobile_logos_container_portrait {
-  align-content: center;
-  align-items: center;
+  @include footer_logos_container_props;
   border-bottom: 1px solid grey;
-  display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  justify-content: space-evenly;
-  width: 100%;
 }

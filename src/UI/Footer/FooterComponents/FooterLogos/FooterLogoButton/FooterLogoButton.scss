@@ -1,0 +1,71 @@
+@import '../../../../_globalProps';
+@import '../../../../_globalMixins';
+@import '../../../../_globalFunctions';
+
+@mixin logo_props {
+  align-content: center;
+  align-items: center;
+  box-shadow: $default_inset_boxShadow;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+
+  a {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+
+    }
+  }
+
+  &:active {
+    animation: scale_out .1s ease-in-out 1;
+    background: $button_default_hoverActive;
+  }
+}
+
+.logo_desktop {
+  @include logo_props;
+
+  a {
+    padding: 5px 0px;
+
+    img {
+      max-height: calc(20px + (40 - 20) * ((100vw - 500px) / (1920 - 500)));
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.75) inset;
+    cursor: pointer;
+  }
+}
+
+.logo_mobile_landscape {
+  @include logo_props;
+
+  a {
+    img {
+      max-height: calc(20px + (40 - 20) * ((100vw - 320px) / (863 - 320)));
+    }
+  }
+}
+
+.logo_mobile_portrait {
+  @include logo_props;
+
+  a {
+    padding: 5px 0px;
+
+    img {
+      max-height: calc(20px + (80 - 20) * ((100vw - 320px) / (863 - 320)));
+    }
+  }
+}
