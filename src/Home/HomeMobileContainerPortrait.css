@@ -1,8 +1,0 @@
-.home_mobile_wrapper_portrait {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  width: 100vw;
-}

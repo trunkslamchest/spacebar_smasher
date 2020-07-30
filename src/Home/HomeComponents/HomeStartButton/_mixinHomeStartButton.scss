@@ -1,0 +1,67 @@
+@mixin home_container_props {
+  align-items: center;
+  filter: blur(0);
+  display: flex;
+  justify-content: center;
+}
+
+@mixin start_button_props {
+  animation: start_button_sway 2s ease-in-out .25s infinite, shadow_blink 1.5s ease-in-out infinite;
+  background: $start_button_gradient;
+  border: 2px solid white;
+  border-radius: 30px;
+  box-shadow: $medium_yellow_boxShadow;
+  filter: blur(0);
+  color: $white !important;
+  font-family: "Audiowide";
+  font-weight: 300 ;
+  padding: 10px;
+  text-shadow: $button_activeHover_textShadow;
+  transition-property: color, border;
+  transition-duration: .1s, .1s;
+  transition-timing-function: ease-in-out;
+
+  &:focus {
+    @include remove_button_outline
+  }
+
+  &:hover {
+    animation: blinker_hover .1s ease-in-out 1;
+    background: $button_default_hoverActive;
+    border: $start_button_hoverActive_border;
+    box-shadow: $default_boxShadow;
+    color: black !important;
+    cursor: pointer;
+    transform: matrix3d(
+      1,0,0,0,
+      0,1,0,0,
+      0,0,1,0,
+      0,0,0,1
+    );
+  }
+
+  &:active {
+    animation: scale_out .1s ease-in-out 1;
+    background: $button_default_hoverActive;
+    border: $start_button_hoverActive_border;
+    box-shadow: $default_boxShadow;
+    color: black !important;
+    cursor: pointer;
+  }
+}
+
+@mixin start_button_disabled_props {
+  background: $disabled_button_gradient;
+  border: $disabled_button_border;
+  border-radius: 30px;
+  box-shadow: $medium_black_boxShadow;
+  color: $grey !important;
+  filter: blur(1.5px);
+  font-family: "Audiowide";
+  font-weight: 300 ;
+  padding: 10px;
+
+  &:focus {
+    @include remove_button_outline
+  }
+}

@@ -5,14 +5,8 @@ import { homeHeader } from '../../HomeFunctions/classSwitch'
 
 import HomeStartButton from '../HomeStartButton/HomeStartButton'
 
-import './HomeDesktopHeader.css'
-import './HomeDesktopHeaderDismount.css'
-import './HomeDesktopHeaderOnmount.css'
-
-import './HomeMobileHeaderLandscape.css'
-import './HomeMobileHeaderPortrait.css'
-import './HomeMobileHeaderDismount.css'
-import './HomeMobileHeaderOnmount.css'
+import './HomeHeader.scss'
+import './HomeHeaderAnimation.scss'
 
 const HomeHeader = (props) => {
   return(

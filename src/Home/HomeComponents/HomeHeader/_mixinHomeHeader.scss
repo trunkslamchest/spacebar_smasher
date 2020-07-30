@@ -1,0 +1,88 @@
+@mixin header_wrapper_props {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+}
+
+@mixin header_props {
+  align-items: center;
+  background: $header_gradient;
+  border: $default_border_white;
+  box-shadow: $default_boxShadow;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  h1 {
+    color: yellow;
+    font-family: "Saira Stencil One";
+    font-weight: 300;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding: 0px;
+    text-align: center;
+  }
+}
+
+@mixin header_desktop_props {
+  @include header_props;
+  border-radius: calcSize(10, 15, 500, 1920);
+  height: calcSize(50, 100, 500, 1920);
+  margin-top: calcHeight(5, 10, 500, 1080);
+  margin-bottom: calcHeight(10, 20, 500, 1080);
+  transform: matrix3d(
+    1,0,0,0.00025,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  ) translateX(calcSize(12.5, 55, 500, 1920));
+  width: calcWidth(460, 690, 500, 1080);
+
+  h1 {
+    font-size: calcSize(42, 90, 500, 1920);
+  }
+}
+
+@mixin header_mobile_landscape_props {
+  @include header_props;
+  border-radius: calcSize(10, 15, 568, 823);
+  height: calcSize(40, 50, 568, 823);
+  margin-top: calcHeight(2.5, 5, 320, 411);
+  margin-bottom: calcHeight(5, 7.5, 320, 411);
+  transform: matrix3d(
+    1,0,0,0.00025,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  ) translateX(calcSize(10, 20, 568, 823));
+  width: calcWidth(400, 500, 568, 823);
+
+  h1 {
+    font-size: calcSize(26, 90, 320, 1920);
+  }
+}
+
+@mixin header_mobile_portrait_props {
+  @include header_props;
+  border-radius: calcHeight(10, 15, 568, 823);
+  height: calcHeight(40, 50, 568, 823);
+  margin-top: calcHeight(2, 4, 568, 823);
+  margin-bottom: calcHeight(2.5, 5, 568, 823);
+  transform: matrix3d(
+    1,0,0,0.00025,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  ) translateX(calcHeight(5, 10, 568, 823));
+  width: calcHeight(300, 350, 568, 823);
+
+  h1 {
+    font-size: calcHeight(28, 32, 568, 823);
+  }
+}

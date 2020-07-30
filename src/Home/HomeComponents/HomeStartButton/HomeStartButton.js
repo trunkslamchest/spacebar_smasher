@@ -4,14 +4,8 @@ import { connect } from 'react-redux'
 
 import { homeStartButton } from '../../HomeFunctions/classSwitch'
 
-import './HomeDesktopStartButton.css'
-import './HomeDesktopStartButtonDismount.css'
-import './HomeDesktopStartButtonOnmount.css'
-
-import './HomeMobileStartButtonLandscape.css'
-import './HomeMobileStartButtonPortrait.css'
-import './HomeMobileStartButtonDismount.css'
-import './HomeMobileStartButtonOnmount.css'
+import './HomeStartButton.scss'
+import './HomeStartButtonAnimation.scss'
 
 const HomeStartButton = (props) => {
   return(

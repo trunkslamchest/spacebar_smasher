@@ -13,12 +13,8 @@ import Wrapper from '../UI/Wrapper/Wrapper'
 import HomeHeader from './HomeComponents/HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
-import './HomeDesktopContainer.css'
-import './HomeDesktopDismount.css'
-
-import './HomeMobileContainerLandscape.css'
-import './HomeMobileContainerPortrait.css'
-import './HomeMobileDismount.css'
+import './HomeContainer.scss'
+import './HomeDismount.scss'
 
 const HomeContainer = (props) => {
 

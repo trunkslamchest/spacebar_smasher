@@ -1,7 +1,0 @@
-.home_desktop_wrapper {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-}

@@ -1,0 +1,89 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import '_mixinHomeStartButton';
+
+.start_button_container_desktop {
+  @include home_container_props;
+  animation: onmount_start_button_container_desktop .6s ease-in-out 1;
+}
+
+.start_button_container_mobile_landscape {
+  @include home_container_props;
+  animation: onmount_start_button_container_mobile_landscape .6s ease-in-out 1;
+}
+
+.start_button_container_mobile_portrait {
+  @include home_container_props;
+  animation: onmount_start_button_container_mobile_portrait .5s ease-in-out 1;
+}
+
+.dismount_start_button_container_desktop {
+  @include home_container_props;
+  animation: dismount_start_button_container_desktop .5s ease-in-out 1;
+}
+
+.dismount_start_button_container_mobile_landscape {
+  @include home_container_props;
+  animation: dismount_start_button_container_mobile_landscape .5s ease-in-out 1;
+}
+
+.dismount_start_button_container_mobile_portrait {
+  @include home_container_props;
+  animation: dismount_start_button_container_mobile_portrait .5s ease-in-out 1;
+}
+
+.start_button_desktop {
+  @include start_button_props;
+  font-size: calcSize(20, 40, 500, 1920);
+  width: calcWidth(175, 350, 500, 1920);
+}
+
+.start_button_mobile_landscape {
+  @include start_button_props;
+  font-size: calcSize(20, 25, 568, 823);
+  width: calcWidth(175, 225, 568, 823);
+}
+
+.start_button_mobile_portrait {
+  @include start_button_props;
+  font-size: calcSize(20, 25, 568, 823);
+  margin-top: calcHeight(10, 20, 568, 823);
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: calcWidth(175, 225, 568, 823)
+}
+
+.start_button_disabled_desktop {
+  @include start_button_disabled_props;
+  font-size: calcSize(20, 40, 500, 1920);
+  width: calcWidth(175, 350, 500, 1920);
+
+  span {
+    padding: calcSize(20, 40, 500, 1920);
+  }
+}
+
+.start_button_disabled_mobile_landscape {
+  @include start_button_disabled_props;
+  font-size: calcSize(20, 25, 568, 823);
+  width: calcWidth(175, 225, 568, 823);
+
+  span {
+    padding: calcSize(20, 25, 568, 823);
+  }
+}
+
+.start_button_disabled_mobile_portrait {
+  @include start_button_disabled_props;
+  font-size: calcSize(20, 25, 568, 823);
+  margin-top: calcHeight(10, 20, 568, 823);
+  margin-bottom: 0;
+  width: calcWidth(175, 225, 568, 823);
+
+  span {
+    padding: calcSize(20, 25, 568, 823);
+  }
+}

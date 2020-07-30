@@ -1,0 +1,50 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import '_mixinHomeHeader';
+
+.home_header_desktop_wrapper, .dismount_home_header_desktop_wrapper {
+  @include header_wrapper_props;
+  min-height: calcHeight(110, 200, 500, 1920);
+}
+
+.home_header_desktop {
+  @include header_desktop_props;
+  animation: onmount_home_header_desktop .5s ease-in-out 1;
+}
+
+.dismount_home_header_desktop {
+  @include header_desktop_props;
+  animation: dismount_home_header_desktop .5s ease-in-out 1;
+}
+
+.home_header_mobile_wrapper_landscape, .dismount_home_header_mobile_wrapper_landscape {
+  @include header_wrapper_props;
+  min-height: calcHeight(50, 100, 568, 823);
+}
+
+.home_header_mobile_landscape {
+  @include header_mobile_landscape_props;
+  animation: onmount_home_header_mobile_landscape .5s ease-in-out 1;
+}
+
+.dismount_home_header_mobile_landscape {
+  @include header_mobile_landscape_props;
+  animation: dismount_home_header_mobile_landscape .5s ease-in-out 1;
+}
+
+.home_header_mobile_wrapper_portrait, .dismount_home_header_mobile_wrapper_portrait {
+  @include header_wrapper_props;
+  min-height: calcHeight(40, 100, 568, 823);
+}
+
+.home_header_mobile_portrait {
+  @include header_mobile_portrait_props;
+  animation: onmount_home_header_mobile_portrait .5s ease-in-out 1;
+}
+
+.dismount_home_header_mobile_portrait {
+  @include header_mobile_portrait_props;
+  animation: dismount_home_header_mobile_portrait .5s ease-in-out 1;
+}

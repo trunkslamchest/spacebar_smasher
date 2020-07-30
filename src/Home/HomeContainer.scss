@@ -1,0 +1,21 @@
+@mixin home_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.home_desktop_wrapper {
+  @include home_wrapper;
+}
+
+.home_mobile_wrapper_landscape {
+  @include home_wrapper;
+  width: 100vw;
+}
+
+.home_mobile_wrapper_portrait {
+  @include home_wrapper;
+  width: 100vw;
+}

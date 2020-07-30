@@ -1,0 +1,71 @@
+@keyframes onmount_home_header_desktop
+  {
+    0% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_home_header_desktop
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(2000px);
+    }
+  }
+
+@keyframes onmount_home_header_mobile_landscape
+  {
+    0% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_home_header_mobile_landscape
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(2000px);
+    }
+  }
+
+@keyframes onmount_home_header_mobile_portrait
+  {
+    0% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_home_header_mobile_portrait
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.00025,
+        0,1,0,0,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(1000px);
+    }
+  }
