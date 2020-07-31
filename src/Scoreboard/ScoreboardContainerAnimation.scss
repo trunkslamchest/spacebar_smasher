@@ -1,0 +1,107 @@
+@keyframes onmount_scoreboard_desktop
+  {
+    0% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_scoreboard_table_desktop
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(2000px);
+    }
+  }
+
+@keyframes dismount_scoreboard_table_desktop_post_game
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(2000px);
+    }
+  }
+
+@keyframes onmount_scoreboard_mobile_landscape
+  {
+    0% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-1500px);
+    }
+  }
+
+@keyframes dismount_scoreboard_table_mobile_landscape
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0000,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(1000px);
+    }
+  }
+
+@keyframes dismount_scoreboard_table_mobile_post_game_landscape
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0000,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(1000px);
+    }
+  }
+
+@keyframes onmount_scoreboard_mobile_portrait
+  {
+    0% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(-1500px);
+    }
+  }
+
+@keyframes dismount_scoreboard_table_mobile_portrait
+  {
+    75% {
+      transform: matrix3d(
+        1,0,0,0.0,
+        0,1,0,-0.0004,
+        0,0,1,0,
+        0,0,0,1
+      ) translateX(1000px);
+    }
+  }
+
+@keyframes dismount_scoreboard_table_mobile_post_game_portrait
+{
+  75% {
+    transform: matrix3d(
+      1,0,0,0.0,
+      0,1,0,-0.0004,
+      0,0,1,0,
+      0,0,0,1
+    ) translateX(1000px);
+  }
+}

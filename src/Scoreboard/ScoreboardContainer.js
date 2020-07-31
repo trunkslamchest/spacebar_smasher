@@ -7,14 +7,8 @@ import ScoreboardRow from './ScoreboardRow/ScoreboardRow'
 
 import LoadingScoreboard from '../UI/Loading/LoadingScoreboard/LoadingScoreboard'
 
-import './ScoreboardDesktopContainer.css'
-import './ScoreboardDesktopOnmount.css'
-import './ScoreboardDesktopDismount.css'
-
-import './ScoreboardMobileContainerLandscape.css'
-import './ScoreboardMobileContainerPortrait.css'
-import './ScoreboardMobileOnmount.css'
-import './ScoreboardMobileDismount.css'
+import './ScoreboardContainer.scss'
+import './ScoreboardContainerAnimation.scss'
 
 const ScoreboardContainer = (props) => {
 

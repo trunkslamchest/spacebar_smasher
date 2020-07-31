@@ -16,22 +16,22 @@
 
 .start_button_container_mobile_portrait {
   @include home_container_props;
-  animation: onmount_start_button_container_mobile_portrait .5s ease-in-out 1;
+  animation: onmount_start_button_container_mobile_portrait .6s ease-in-out 1;
 }
 
 .dismount_start_button_container_desktop {
   @include home_container_props;
-  animation: dismount_start_button_container_desktop .5s ease-in-out 1;
+  animation: dismount_start_button_container_desktop .6s ease-in-out 1;
 }
 
 .dismount_start_button_container_mobile_landscape {
   @include home_container_props;
-  animation: dismount_start_button_container_mobile_landscape .5s ease-in-out 1;
+  animation: dismount_start_button_container_mobile_landscape .6s ease-in-out 1;
 }
 
 .dismount_start_button_container_mobile_portrait {
   @include home_container_props;
-  animation: dismount_start_button_container_mobile_portrait .5s ease-in-out 1;
+  animation: dismount_start_button_container_mobile_portrait .6s ease-in-out 1;
 }
 
 .start_button_desktop {

@@ -3,9 +3,7 @@ import { connect } from 'react-redux'
 
 import { scoreboardRow } from '../ScoreboardFunctions/classSwitch'
 
-import './ScoreboardRowDesktop.css'
-import './ScoreboardRowMobileLandscape.css'
-import './ScoreboardRowMobilePortrait.css'
+import './ScoreboardRow.scss'
 
 class ScoreboardRow extends React.Component {
 

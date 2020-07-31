@@ -14,7 +14,7 @@ import HomeHeader from './HomeComponents/HomeHeader/HomeHeader'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 
 import './HomeContainer.scss'
-import './HomeDismount.scss'
+import './HomeContainerAnimation.scss'
 
 const HomeContainer = (props) => {
 

@@ -1,0 +1,97 @@
+@import '../UI/SCSS/_globalProps';
+@import '../UI/SCSS/_globalMixins';
+@import '../UI/SCSS/_globalFunctions';
+
+@import './_mixinScoreboardContainer';
+
+.scoreboard_table_desktop {
+  @include scoreboard_desktop_props;
+  animation: onmount_scoreboard_desktop .5s ease-in-out 1;
+}
+
+.scoreboard_table_mobile_landscape {
+  @include scoreboard_mobile_landscape_props;
+  animation: onmount_scoreboard_mobile_landscape .5s ease-in-out 1;
+}
+
+.scoreboard_table_mobile_portrait {
+  @include scoreboard_mobile_portrait_props;
+  animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
+}
+
+.scoreboard_table_desktop_post_game {
+  @include scoreboard_desktop_postgame_props;
+  animation: onmount_scoreboard_desktop .5s ease-in-out 1;
+}
+
+.scoreboard_table_mobile_post_game_landscape {
+  @include scoreboard_mobile_post_game_landscape_props;
+  animation: onmount_scoreboard_mobile_landscape .5s ease-in-out 1;
+}
+
+.scoreboard_table_mobile_post_game_portrait {
+  @include scoreboard_mobile_post_game_portrait_props;
+  animation: onmount_scoreboard_mobile_portrait .5s ease-in-out 1;
+}
+
+.dismount_scoreboard_table_desktop  {
+  @include scoreboard_desktop_props;
+  animation: dismount_scoreboard_table_desktop .7s ease-in-out 1;
+}
+
+.dismount_scoreboard_table_mobile_landscape {
+  @include scoreboard_mobile_landscape_props;
+  animation: dismount_scoreboard_table_mobile_landscape .5s ease-in-out 1;
+}
+
+.dismount_scoreboard_table_mobile_portrait {
+  @include scoreboard_mobile_portrait_props;
+  animation: dismount_scoreboard_table_mobile_portrait .5s ease-in-out 1;
+}
+
+.dismount_scoreboard_table_desktop_post_game {
+  @include scoreboard_desktop_postgame_props;
+  animation: dismount_scoreboard_table_desktop_post_game .5s ease-in-out 1;
+}
+
+.dismount_scoreboard_table_mobile_post_game_landscape {
+  @include scoreboard_mobile_post_game_landscape_props;
+  animation: dismount_scoreboard_table_mobile_post_game_landscape .5s ease-in-out 1;
+}
+
+.dismount_scoreboard_table_mobile_post_game_portrait {
+  @include scoreboard_mobile_post_game_portrait_props;
+  animation: dismount_scoreboard_table_mobile_post_game_portrait .5s ease-in-out 1;
+}
+
+.scoreboard_header_desktop {
+  @include scoreboard_header_props;
+
+  h1 {
+    font-size: calcSize(20, 30, 320, 1920)
+  }
+}
+
+.scoreboard_header_mobile_landscape {
+  @include scoreboard_header_props;
+
+  h1 {
+    font-size: calcSize(15, 30, 320, 1920)
+  }
+}
+
+.scoreboard_header_mobile_portrait {
+  @include scoreboard_header_props;
+
+  h1 {
+    font-size: calcSize(20, 30, 320, 1920)
+  }
+}
+
+.scoreboard_head_row_desktop, .scoreboard_head_row_mobile_landscape, .scoreboard_head_row_mobile_portrait {
+  @include scoreboard_head_row_props;
+}
+
+.scoreboard_sub_row_desktop, .scoreboard_sub_row_mobile_landscape, .scoreboard_sub_row_mobile_portrait {
+  @include scoreboard_sub_row_props
+}

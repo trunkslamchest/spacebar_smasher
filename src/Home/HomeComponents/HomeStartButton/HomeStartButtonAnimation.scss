@@ -23,18 +23,12 @@
     0% {
       transform: translateX(-2000px);
     }
-    100% {
-      transform: translateX(0px);
-    }
   }
 
 @keyframes onmount_start_button_container_mobile_landscape
   {
     0% {
       transform: translateX(-1000px);
-    }
-    100% {
-      transform: translateX(0px);
     }
   }
 
@@ -47,39 +41,21 @@
 
 @keyframes dismount_start_button_container_desktop
   {
-    0% {
-      transform: translateX(0px);
-    }
-    25% {
-      transform: translateX(2000px);
-    }
-    100% {
+    75% {
       transform: translateX(2000px);
     }
   }
 
 @keyframes dismount_start_button_container_mobile_landscape
   {
-    0% {
-      transform: translateX(0px);
-    }
-    25% {
-      transform: translateX(1000px);
-    }
-    100% {
+    75% {
       transform: translateX(1000px);
     }
   }
 
 @keyframes dismount_start_button_container_mobile_portrait
   {
-    0% {
-      transform: translateX(0px);
-    }
-    25% {
-      transform: translateX(1000px);
-    }
-    100% {
+    75% {
       transform: translateX(1000px);
     }
   }

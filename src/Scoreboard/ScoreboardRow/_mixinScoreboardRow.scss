@@ -1,0 +1,131 @@
+@mixin scoreboard_row_props {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+@mixin scoreboard_row_desktop_props {
+  font-size: calcSize(10, 20, 320, 1920)
+}
+
+@mixin scoreboard_row_mobile_landscape_props {
+  font-size: calcSize(8, 15, 320, 823)
+}
+
+@mixin scoreboard_row_mobile_portrait_props {
+  font-size: calcSize(10, 15, 320, 823)
+}
+
+@mixin scoreboard_field_props {
+  font-family: "Staatliches";
+  font-weight: 300;
+}
+
+@mixin scoreboard_field_place_props {
+  @include scoreboard_field_props;
+  text-align: center;
+  width: 10%;
+}
+
+@mixin scoreboard_field_name_props {
+  @include scoreboard_field_props;
+  text-align: left;
+  width: 40%;
+}
+
+@mixin scoreboard_field_score_props {
+  @include scoreboard_field_props;
+  text-align: center;
+  width: 15%;
+}
+
+@mixin scoreboard_row_power_props {
+  @include scoreboard_field_props;
+  -webkit-appearance: none;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 35%;
+
+  span {
+    margin: 0 auto 0 auto;
+    text-align: center;
+    width: calcWidth(50, 150, 320, 1920);
+  }
+
+  meter {
+    background: none;
+    box-sizing: border-box;
+    margin: 0 auto 0 auto;
+    padding: 0px;
+
+    &::-webkit-meter-bar {
+      background: $black;
+      border: $grey_slim_border;
+      border-radius: 2.5px;
+      box-shadow: $slim_black_boxShadow;
+    }
+
+    &::-webkit-meter-optimum-value {
+      background-image: linear-gradient(
+        90deg,
+        #FFC300 0%,
+        #FF5733 100%
+      );
+      background-size: 100% 100%;
+      border-radius: 2.5px;
+      box-shadow: $slim_black_inset_boxShadow;
+      width: 100%;
+    }
+
+    &::-webkit-meter-suboptimum-value {
+      background-image: linear-gradient(
+        90deg,
+        #FFC300 0%,
+        #FF5733 100%,
+        #7A0000 100%
+      );
+      background-size: 100% 100%;
+      border-radius: 2.5px;
+      box-shadow: $slim_black_inset_boxShadow;
+      width: 100%;
+    }
+
+    &::-webkit-meter-even-less-good-value {
+      background-image: linear-gradient(
+        90deg,
+        #107A00 0%,
+        #FF5733 100%,
+      );
+      background-size: 100% 100%;
+      border-radius: 2.5px;
+      width: 100%;
+    }
+  }
+}
+
+@mixin highlighted_row_props {
+  align-items: center;
+  align-content: center;
+  background-image: $yellow_gradient;
+  box-shadow: $slim_black_inset_boxShadow;
+  border: $black_slim_border;
+  color: $black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+@mixin highlighted_field_props {
+  font-family: "Staatliches";
+  font-weight: 300;
+  text-align: center;
+  width: 25%;
+}

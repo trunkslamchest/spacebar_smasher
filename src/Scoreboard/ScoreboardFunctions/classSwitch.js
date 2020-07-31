@@ -14,24 +14,24 @@ export const scoreboardContainer = (props) => {
           obj['table'] = "dismount_scoreboard_table_mobile_post_game_landscape"
           obj['header'] = "scoreboard_header_mobile_landscape"
           obj['headRow'] = "scoreboard_head_row_mobile_landscape"
-          obj['row'] = "scoreboard_row_wrapper_mobile_landscape"
+          obj['row'] = "scoreboard_sub_row_mobile_landscape"
         } else {
           obj['table'] = "scoreboard_table_mobile_post_game_landscape"
           obj['header'] = "scoreboard_header_mobile_landscape"
           obj['headRow'] = "scoreboard_head_row_mobile_landscape"
-          obj['row'] = "scoreboard_row_wrapper_mobile_landscape"
+          obj['row'] = "scoreboard_sub_row_mobile_landscape"
         }
       } else {
         if(props.ui.initDismount) {
           obj['table'] = "dismount_scoreboard_table_mobile_post_game_portrait"
           obj['header'] = "scoreboard_header_mobile_portrait"
           obj['headRow'] = "scoreboard_head_row_mobile_portrait"
-          obj['row'] = "scoreboard_row_wrapper_mobile_portrait"
+          obj['row'] = "scoreboard_sub_row_mobile_portrait"
         } else {
           obj['table'] = "scoreboard_table_mobile_post_game_portrait"
           obj['header'] = "scoreboard_header_mobile_portrait"
           obj['headRow'] = "scoreboard_head_row_mobile_portrait"
-          obj['row'] = "scoreboard_row_wrapper_mobile_portrait"
+          obj['row'] = "scoreboard_sub_row_mobile_portrait"
         }
       }
     } else {
@@ -54,24 +54,24 @@ export const scoreboardContainer = (props) => {
           obj['table'] = "dismount_scoreboard_table_mobile_landscape"
           obj['header'] = "scoreboard_header_mobile_landscape"
           obj['headRow'] = "scoreboard_head_row_mobile_landscape"
-          obj['row'] = "scoreboard_row_wrapper_mobile_landscape"
+          obj['row'] = "scoreboard_sub_row_mobile_landscape"
         } else {
           obj['table'] = "scoreboard_table_mobile_landscape"
           obj['header'] = "scoreboard_header_mobile_landscape"
           obj['headRow'] = "scoreboard_head_row_mobile_landscape"
-          obj['row'] = "scoreboard_row_wrapper_mobile_landscape"
+          obj['row'] = "scoreboard_sub_row_mobile_landscape"
         }
       } else {
         if(props.ui.initDismount) {
           obj['table'] = "dismount_scoreboard_table_mobile_portrait"
           obj['header'] = "scoreboard_header_mobile_portrait"
           obj['headRow'] = "scoreboard_head_row_mobile_portrait"
-          obj['row'] = "scoreboard_row_wrapper_mobile_portrait"
+          obj['row'] = "scoreboard_sub_row_mobile_portrait"
         } else {
           obj['table'] = "scoreboard_table_mobile_portrait"
           obj['header'] = "scoreboard_header_mobile_portrait"
           obj['headRow'] = "scoreboard_head_row_mobile_portrait"
-          obj['row'] = "scoreboard_row_wrapper_mobile_portrait"
+          obj['row'] = "scoreboard_sub_row_mobile_portrait"
         }
       }
     } else {

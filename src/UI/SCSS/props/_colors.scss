@@ -1,13 +1,16 @@
 $black: rgba(0, 0, 0, 1);
 $white: rgba(255, 255, 255, 1);
 
-$darkGrey: rgba(30, 30, 30, 1);
 $grey: rgba(50, 50, 50, 1);
+$darkGrey: rgba(30, 30, 30, 1);
+$darkerGrey: rgba(20, 20, 20, 1);
 
 $red: rgba(255, 0, 0, 1);
 $yellow: rgba(255, 255, 0, 1);
 $green: rgba(0, 128, 0, 1);
 $orange: rgba(255, 165, 0, 1);
+
+$yellow_gradient: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144, 57, 1) );
 
 $button_default: linear-gradient( rgba(50, 50, 50, 1) 10%, rgba(0, 0, 0, 1) 100%);
 $button_default_hoverActive: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144, 57, 1));
@@ -15,3 +18,5 @@ $button_default_hoverActive: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144
 $header_gradient: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(0, 0, 0, 1) 90%);
 $start_button_gradient: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(0, 0, 0, 1) 100%);
 $disabled_button_gradient: linear-gradient( rgba(100, 100, 100, 1) 10%,rgba(50, 50, 50, 1) 100%);
+
+$scoreboard_background: linear-gradient( rgba(50, 50, 50, 1) 10%,rgba(5, 5, 5, 1) 100%);

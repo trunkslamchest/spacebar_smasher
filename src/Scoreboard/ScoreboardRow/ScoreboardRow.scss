@@ -1,0 +1,114 @@
+@import '../../UI/SCSS/_globalProps';
+@import '../../UI/SCSS/_globalMixins';
+@import '../../UI/SCSS/_globalFunctions';
+
+@import './_mixinScoreboardRow';
+
+.scoreboard_row_desktop {
+  @include scoreboard_row_props;
+  box-shadow: $slim_black_inset_boxShadow;
+}
+
+.scoreboard_row_mobile_landscape {
+  @include scoreboard_row_props;
+  border: $black_slim_border;
+}
+
+.scoreboard_row_mobile_portrait {
+  @include scoreboard_row_props;
+  border: $black_slim_border;
+}
+
+.scoreboard_row_place_desktop {
+  @include scoreboard_field_place_props;
+  @include scoreboard_row_desktop_props;
+}
+
+.scoreboard_row_place_mobile_landscape {
+  @include scoreboard_field_place_props;
+  @include scoreboard_row_mobile_landscape_props;
+}
+
+.scoreboard_row_place_mobile_portrait {
+  @include scoreboard_field_place_props;
+  @include scoreboard_row_mobile_portrait_props;
+}
+
+.scoreboard_row_name_desktop {
+  @include scoreboard_field_name_props;
+  @include scoreboard_row_desktop_props;
+}
+
+.scoreboard_row_name_mobile_landscape {
+  @include scoreboard_field_name_props;
+  @include scoreboard_row_mobile_landscape_props;
+}
+
+.scoreboard_row_name_mobile_portrait {
+  @include scoreboard_field_name_props;
+  @include scoreboard_row_mobile_portrait_props;
+}
+
+.scoreboard_row_score_desktop {
+  @include scoreboard_field_score_props;
+  @include scoreboard_row_desktop_props;
+}
+
+.scoreboard_row_score_mobile_landscape {
+  @include scoreboard_field_score_props;
+  @include scoreboard_row_mobile_landscape_props;
+}
+
+.scoreboard_row_score_mobile_portrait {
+  @include scoreboard_field_score_props;
+  @include scoreboard_row_mobile_portrait_props;
+}
+
+.scoreboard_row_power_desktop {
+  @include scoreboard_row_power_props;
+  @include scoreboard_row_desktop_props;
+
+  meter {
+    height: calcHeight(10, 15, 320, 1920);
+    width: calcWidth(50, 275, 320, 1920);
+  }
+}
+
+.scoreboard_row_power_mobile_landscape {
+  @include scoreboard_row_power_props;
+  @include scoreboard_row_mobile_landscape_props;
+
+  meter {
+    height: calcHeight(5, 10, 320, 823);
+    width: calcWidth(50, 100, 320, 823);
+  }
+}
+
+.scoreboard_row_power_mobile_portrait {
+  @include scoreboard_row_power_props;
+  @include scoreboard_row_mobile_portrait_props;
+
+  meter {
+    height: calcHeight(8, 12, 320, 823);
+    width: calcWidth(50, 100, 320, 823);
+  }
+}
+
+.highlighted_row_desktop, .highlighted_row_mobile_landscape, .highlighted_row_mobile_portrait {
+  @include highlighted_row_props;
+}
+
+.highlighted_field_desktop {
+  @include highlighted_field_props;
+  @include scoreboard_row_desktop_props;
+}
+
+.highlighted_field_mobile_landscape {
+  @include highlighted_field_props;
+  @include scoreboard_row_mobile_landscape_props;
+}
+
+.highlighted_field_mobile_portrait {
+  @include highlighted_field_props;
+  @include scoreboard_row_mobile_portrait_props;
+}
