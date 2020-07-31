@@ -8,6 +8,8 @@
   <img align="center" src="https://img.shields.io/badge/Javascript-1.8.5-F7DF1E">
   <img align="center" src="https://img.shields.io/badge/React.JS-16.13.1-61DAFB">
   <img align="center" src="https://img.shields.io/badge/Redux.JS-7.2.0-764ABC">
+  <img align="center" src="https://img.shields.io/badge/SCSS-4.14.1-c69">
+
 </p>
 
 <p align="center">

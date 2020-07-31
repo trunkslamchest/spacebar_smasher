@@ -9,19 +9,21 @@ const FooterFinePrint = (props) => {
 
   let finePrint
 
+  let verDate = "0.37.8 (07.30.20)"
+
   if(props.detect.device === 'mobile' && props.detect.orientation === 'landscape'){
     finePrint = <>
       <p>Created by</p>
       <p>Jamal Farah</p>
       <p>Austin Smith</p>
       <span/>
-      <p>0.37.7 (07.28.20)</p>
+      <p>{ verDate }</p>
       <span/>
       <p>L.P. © Spacebar Smasher 2020</p>
     </>
   } else if (props.detect.device === 'mobile' && props.detect.orientation === 'portrait'){
     finePrint = <>
-      <p>Created by Jamal Farah & Austin Smith | 0.37.7 (07.28.20) | L.P. © Spacebar Smasher 2020</p>
+      <p>Created by Jamal Farah & Austin Smith | { verDate } | L.P. © Spacebar Smasher 2020</p>
       <span/>
       <p>All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises</p>
     </>
@@ -29,7 +31,7 @@ const FooterFinePrint = (props) => {
     finePrint = <>
       <p>L.P. © Spacebar Smasher 2020</p>
       <p>Created by Jamal Farah & Austin Smith</p>
-      <p>0.37.7 (07.28.20)</p>
+      <p>{ verDate }</p>
       <p>All Spacebar Smasher logos and marks depicted herein are the property of Spacebar Smasher Enterprises and may not be reproduced without the prior written consent of Spacebar Smasher Enterprises</p>
     </>
   }
