@@ -11,9 +11,7 @@ import Wrapper from '../UI/Wrapper/Wrapper'
 import ScoreboardContainer from '../Scoreboard/ScoreboardContainer'
 import PostGameButtonsContainer from './PostGameComponents/PostGameButtonsContainer/PostGameButtonsContainer'
 
-import './PostGameDesktopContainer.css'
-import './PostGameMobileContainerLandscape.css'
-import './PostGameMobileContainerPortrait.css'
+import './PostGameContainer.scss'
 
 const PostGameContainer = (props) => {
 

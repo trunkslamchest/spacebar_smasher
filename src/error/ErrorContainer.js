@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react'
 
-import './ErrorContainer.css'
+import './ErrorContainer.scss'
 
 const ErrorContainer = () => {
 

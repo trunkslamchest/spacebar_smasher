@@ -12,6 +12,10 @@ $orange: rgba(255, 165, 0, 1);
 
 $yellow_gradient: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144, 57, 1) );
 
+$black_gradient: linear-gradient( rgba(50, 50, 50, 1) 10%, rgba(0, 0, 0, 1) 100%);
+
+$grey_gradient: linear-gradient( rgba(100, 100, 100, 1) 10%,rgba(50, 50, 50, 1) 100%);
+
 $button_default: linear-gradient( rgba(50, 50, 50, 1) 10%, rgba(0, 0, 0, 1) 100%);
 $button_default_hoverActive: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144, 57, 1));
 

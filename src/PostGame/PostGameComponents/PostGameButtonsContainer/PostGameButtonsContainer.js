@@ -6,17 +6,10 @@ import { postGameButtonsContainer, postGameButton } from '../../PostGameFunction
 
 import PostGameButton from '../PostGameButton/PostGameButton'
 
-import './PostGameDesktopButtonsContainer.css'
-import './PostGameDesktopButtonsContainerOnmount.css'
-import './PostGameDesktopButtonsContainerDismount.css'
-
-import './PostGameMobileButtonsContainerOnmount.css'
-import './PostGameMobileButtonsContainerDismount.css'
-import './PostGameMobileButtonsContainerLandscape.css'
-import './PostGameMobileButtonsContainerPortrait.css'
+import './PostGameButtonsContainer.scss'
+import './PostGameButtonsContainerAnimation.scss'
 
 const PostGameButtonsContainer = (props) => {
-
   return(
     <div className={ postGameButtonsContainer(props).buttonsContainer }>
     { props.scoreboard.allScores.length ?

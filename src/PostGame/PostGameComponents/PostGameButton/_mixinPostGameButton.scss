@@ -1,0 +1,72 @@
+@mixin post_game_button_props {
+  font-family: 'Audiowide';
+  font-size: calcSize(15, 30, 320, 1920);
+  font-weight: 300;
+  text-align: center;
+  width: calcWidth(150, 300, 320, 1920);
+
+  &:focus {
+    @include remove_button_outline
+  }
+}
+
+@mixin post_game_button_enabled_props {
+  @include post_game_button_props;
+  background: $button_default;
+  border: $white_normal_border;
+  box-shadow: $medium_black_boxShadow;
+  color: $white;
+  filter: blur(0);
+  padding: 10px;
+  text-shadow: $slim_black_textShadow;
+
+  &:focus {
+    @include remove_button_outline
+  }
+
+  &:hover {
+    animation: blinker_hover .1s ease-in-out 1;
+    background: $yellow_gradient;
+    border: $black_normal_border;
+    box-shadow: $medium_black_boxShadow;
+    color: $black;
+    cursor: pointer;
+    filter: blur(0);
+    transform: matrix3d(
+      1,0,0,0,
+      0,1,0,0,
+      0,0,1,0,
+      0,0,0,1
+    );
+  }
+
+  &:active {
+    animation: scale_out .1s ease-in-out 1;
+    background: $yellow_gradient;
+    border: $black_normal_border;
+    box-shadow: $medium_black_boxShadow;
+    color: $black;
+    cursor: pointer;
+    filter: blur(0);
+    transform: matrix3d(
+      1,0,0,0,
+      0,1,0,0,
+      0,0,1,0,
+      0,0,0,1
+    );
+    transition-property: color;
+    transition-duration: .1s, .1s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+@mixin post_game_button_disabled_props {
+  @include post_game_button_props;
+  background: $grey_gradient;
+  border: $grey_normal_border;
+  border-radius: 30px 0px 0px 30px;
+  box-shadow: $medium_white_boxShadow;
+  color: grey !important;
+  filter: blur(1.5px);
+  padding: calcSize(15, 30, 320, 1920);
+}

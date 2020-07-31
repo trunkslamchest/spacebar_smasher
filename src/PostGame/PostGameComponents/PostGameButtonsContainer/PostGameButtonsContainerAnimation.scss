@@ -1,0 +1,41 @@
+@keyframes onmount_post_game_buttons_container_desktop
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_post_game_desktop_buttons_container
+  {
+    100% {
+      transform: translateX(2000px);
+    }
+  }
+
+@keyframes dismount_post_game_mobile_buttons_container_landscape
+  {
+    100% {
+      transform: translateX(1000px);
+    }
+  }
+
+@keyframes onmount_post_game_mobile_buttons_container_landscape
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes onmount_post_game_mobile_buttons_container_portrait
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes dismount_post_game_mobile_buttons_container_portrait
+  {
+    100% {
+      transform: translateX(1000px);
+    }
+  }

@@ -2,9 +2,7 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import './PostGameDesktopButton.css'
-import './PostGameMobileButtonLandscape.css'
-import './PostGameMobileButtonPortrait.css'
+import './PostGameButton.scss'
 
 const PostGameButton = (props) => {
   return(

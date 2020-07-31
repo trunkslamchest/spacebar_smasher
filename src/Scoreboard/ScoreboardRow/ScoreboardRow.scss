@@ -79,7 +79,7 @@
   @include scoreboard_row_mobile_landscape_props;
 
   meter {
-    height: calcHeight(5, 10, 320, 823);
+    height: calcHeight(10, 20, 320, 823);
     width: calcWidth(50, 100, 320, 823);
   }
 }
@@ -89,7 +89,7 @@
   @include scoreboard_row_mobile_portrait_props;
 
   meter {
-    height: calcHeight(8, 12, 320, 823);
+    height: calcHeight(6, 8, 320, 823);
     width: calcWidth(50, 100, 320, 823);
   }
 }

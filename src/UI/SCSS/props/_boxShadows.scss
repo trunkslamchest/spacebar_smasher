@@ -11,7 +11,10 @@ $tiny_inset_boxShadow: 0px 0px 1px 2px rgba(0, 0, 0, 1) inset;
 $small_inset_boxShadow: 0px 0px 1px 2.5px rgba(0, 0, 0, 1) inset;
 $small_inset_boxShadow_reverse: 0px 0px 2.5px 1px rgba(0, 0, 0, 1) inset;
 
-$medium_black_boxShadow: 0 0 5px 0 rgba(255, 255, 255, 0.75);
+$medium_black_boxShadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
 $medium_black_inset_boxShadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5) inset;
+
+$medium_white_boxShadow: 0 0 5px 0 rgba(255, 255, 255, 0.75);
+
 
 $medium_yellow_boxShadow: 0 0 5px 0 rgba(255, 255, 0, 0.75);

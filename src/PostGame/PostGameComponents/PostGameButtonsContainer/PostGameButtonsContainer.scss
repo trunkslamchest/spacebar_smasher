@@ -1,0 +1,42 @@
+@mixin post_game_buttons_container_props {
+  filter: blur(0);
+};
+
+@mixin post_game_buttons_desktop_props {
+  @include post_game_buttons_container_props;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.post_game_desktop_buttons_container {
+  animation: onmount_post_game_buttons_container_desktop .5s ease-in-out 1;
+  @include post_game_buttons_desktop_props;
+}
+
+.dismount_post_game_desktop_buttons_container {
+  animation: dismount_post_game_desktop_buttons_container .5s ease-in-out 1;
+  @include post_game_buttons_desktop_props;
+}
+
+.post_game_mobile_buttons_container_landscape {
+  animation: onmount_post_game_mobile_buttons_container_landscape .5s ease-in-out 1;
+  @include post_game_buttons_container_props;
+}
+
+.dismount_post_game_mobile_buttons_container_landscape {
+  animation: dismount_post_game_mobile_buttons_container_landscape .5s ease-in-out 1;
+  @include post_game_buttons_container_props;
+}
+
+.post_game_mobile_buttons_container_portrait {
+  animation: onmount_post_game_mobile_buttons_container_portrait .5s ease-in-out 1;
+  @include post_game_buttons_container_props;
+}
+
+.dismount_post_game_mobile_buttons_container_portrait {
+  animation: dismount_post_game_mobile_buttons_container_portrait .5s ease-in-out 1;
+  @include post_game_buttons_container_props;
+}

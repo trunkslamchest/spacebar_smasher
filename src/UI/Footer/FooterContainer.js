@@ -12,8 +12,7 @@ import FooterFinePrint from './FooterComponents/FooterFinePrint/FooterFinePrint'
 import Backdrop from '../backdrop/backdrop'
 
 import './FooterContainer.scss'
-import './FooterContainerOnmount.scss'
-import './FooterContainerDismount.scss'
+import './FooterContainerAnimation.scss'
 
 const FooterContainer = (props) => {
 
