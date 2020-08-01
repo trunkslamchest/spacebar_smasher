@@ -27,8 +27,8 @@ class GameContainer extends React.Component {
     power: 0,
     powerRaw: 0,
     rank: "SUPER BABY FINGERS",
-    time: (3.00).toFixed(2),
-    timeMark: (3.00).toFixed(2),
+    time: (30.00).toFixed(2),
+    timeMark: (30.00).toFixed(2),
   }
 
   constructor(props) {
@@ -38,20 +38,19 @@ class GameContainer extends React.Component {
   }
 
   componentDidMount(){
-    // if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
-    // else {
-
-    // }
-
+    if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
+    else {
       document.title = 'Spacebar Smasher | Game'
       this.onMount()
+    }
+
   }
 
   onMount = () => {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
-    // this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
+    this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
     this.onMountTimeout = setTimeout(() => {
@@ -83,18 +82,18 @@ class GameContainer extends React.Component {
       this.setState({ avgPress: pressAvg })
     }
 
-    // if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
-    //   document.removeEventListener('keydown', this.spacebarDown)
-    //   document.removeEventListener('keyup', this.spacebarUp)
+    if( (this.state.avgPress < 0.01 && this.state.time < 28.00) || this.state.count > 400){
+      document.removeEventListener('keydown', this.spacebarDown)
+      document.removeEventListener('keyup', this.spacebarUp)
 
-    //   this.setState({
-    //     count: 0,
-    //     power: 0,
-    //     powerRaw: 0,
-    //     rank: "CHEATER",
-    //     time: 0.00,
-    //   }, this.onDismount())
-    // }
+      this.setState({
+        count: 0,
+        power: 0,
+        powerRaw: 0,
+        rank: "CHEATER",
+        time: 0.00,
+      }, this.onDismount())
+    }
   }
 
   timerFunctions = () => {
