@@ -1,0 +1,61 @@
+@mixin game_wrapper_props {
+  flex-basis: auto;
+  flex-grow: 1;
+  width: 100%;
+}
+
+@mixin game_pill_props {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-grow: 1;
+  margin: 0 auto 0 auto;
+}
+
+@mixin game_pill_mobile_props {
+  @include game_pill_props;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin game_pill_desktop_props {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  padding-top: calcSize(15, 60, 500, 1920);
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+@mixin game_pill_mobile_landscape_props {
+  @include game_pill_mobile_props;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+  );
+  width: calcWidth(500, 750, 568, 823);
+}
+
+@mixin game_pill_mobile_portrait_props {
+  @include game_pill_mobile_props;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0002,
+    0,0,1,0,
+    0,0,0,1
+  );
+  width: calcWidth(275, 375, 320, 411);
+}
+
+@mixin game_pill_mobile_landscape_row_props {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: nowrap;
+}

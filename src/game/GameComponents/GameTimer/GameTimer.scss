@@ -1,0 +1,23 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinGameTimer';
+
+.game_desktop_timer {
+  @include game_timer_desktop_props;
+  animation: onmount_game_desktop_timer .5s ease-in-out 1;
+}
+
+.dismount_game_desktop_timer {
+  @include game_timer_desktop_props;
+  animation: dismount_game_desktop_timer .5s ease-in-out 1;
+}
+
+.game_mobile_timer_landscape {
+  @include game_timer_mobile_landscape_props;
+}
+
+.game_mobile_timer_portrait {
+  @include game_timer_mobile_portrait_props;
+}

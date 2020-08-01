@@ -16,11 +16,8 @@ import GameRank from './GameComponents/GameRank/GameRank'
 import GamePower from './GameComponents/GamePower/GamePower'
 import GameMobileSmashButton from './GameComponents/GameMobileSmashButton/GameMobileSmashButton'
 
-import './GameDesktopContainer.css'
-import './GameMobileContainerLandscape.css'
-import './GameMobileContainerPortrait.css'
-import './GameMobileDismount.css'
-import './GameMobileOnmount.css'
+import './GameContainer.scss'
+import './GameContainerAnimation.scss'
 
 class GameContainer extends React.Component {
 
@@ -54,7 +51,7 @@ class GameContainer extends React.Component {
     this.spacebarDownListener = setTimeout(() => { document.addEventListener('keydown', this.spacebarDown) }, 1000)
     this.spacebarUpListener = setTimeout(() => { document.addEventListener('keyup', this.spacebarUp) }, 1000)
 
-    this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
+    // this.startTimerTimeout = setTimeout(() => { this.timerInterval = setInterval(this.timerFunctions, 10)}, 1000)
     this.startPowerTimeout = setTimeout(() => { this.powerInterval = setInterval(this.powerFunctions, 25)}, 1000)
 
     this.onMountTimeout = setTimeout(() => {
@@ -102,7 +99,7 @@ class GameContainer extends React.Component {
 
   timerFunctions = () => {
     if (this.state.time <= 0 || this.state.time === 0) {
-      // this.setState({ time: 0 })
+      this.setState({ time: 0 })
       this.props.onStoreScore({
         name: '',
         avgPress: this.state.avgPress,
@@ -128,13 +125,15 @@ class GameContainer extends React.Component {
   }
 
   onMobileSmash = (event) => {
-    if(this.state.time > 0 && event.nativeEvent.detail) {
-      this.setState({
-        count: this.state.count + 1,
-        power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
-        powerRaw: this.state.powerRaw + 0.025,
-        rank: getRank(this.state.count)
-      })
+    if(this.state.time > 0 && this.state.time < 30) {
+      if(event.nativeEvent.detail) {
+        this.setState({
+          count: this.state.count + 1,
+          power: ((this.state.powerRaw) / 4).toFixed(3) * 100,
+          powerRaw: this.state.powerRaw + 0.025,
+          rank: getRank(this.state.count)
+        })
+      }
     }
   }
 

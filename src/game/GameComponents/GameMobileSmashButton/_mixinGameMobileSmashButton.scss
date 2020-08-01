@@ -1,0 +1,49 @@
+@mixin game_mobile_smash_button_container_props {
+  text-align: center;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+@mixin smash_button_props {
+  border-radius: 0px 0px 30px 30px;
+  font-family: "Audiowide";
+  font-weight: 300;
+  padding: 10px;
+  touch-action: manipulation;
+  width: 100%;
+
+  &:focus {
+    @include remove_button_outline;
+  }
+
+  &:active {
+    background: $red_gradient;
+    box-shadow: $large_black_reversed_boxShadow, $big_black_inset_boxShadow;
+    color: $white;
+  }
+}
+
+@mixin off_smash_props {
+  @include smash_button_props;
+  background: $yellow_gradient;
+  border-top: $no_border;
+  border-bottom: $grey_normal_border;
+  border-left: $grey_normal_border;
+  border-right: $grey_normal_border;
+  box-shadow: $large_black_reversed_boxShadow, $thin_black_inset_boxShadow;
+  color: $black;
+}
+
+@mixin on_smash_props {
+  @include smash_button_props;
+  background-image: $red_gradient;
+  color: $white;
+}
+
+@mixin smash_button_landscape_props {
+  font-size: calcSize(20, 30, 568, 823);
+}
+
+@mixin smash_button_portrait_props {
+  font-size: calcSize(20, 25, 320, 411);
+}

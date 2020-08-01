@@ -1,3 +1,60 @@
 @mixin remove_button_outline {
   outline: -webkit-focus-ring-color auto 0px;
 }
+
+
+// @import '../../../UI/SCSS/_globalProps';
+// @import '../../../UI/SCSS/_globalMixins';
+// @import '../../../UI/SCSS/_globalFunctions';
+
+// @import './_mixinGameTimer';
+
+// @mixin game_timer_props {
+
+
+//   h1 {
+
+//   }
+
+//   h2 {
+
+//   }
+// }
+
+// @mixin game_timer_desktop_props {
+//   @include game_timer_props;
+
+//   h1 {
+
+//   }
+
+//   h2 {
+
+//   }
+// }
+
+// @mixin game_timer_mobile_landscape_props {
+//   @include game_timer_props;
+
+
+//   h1 {
+
+//   }
+
+//   h2 {
+
+//   }
+// }
+
+// @mixin game_timer_mobile_portrait_props {
+//   @include game_timer_props;
+
+
+//   h1 {
+
+//   }
+
+//   h2 {
+
+//   }
+// }

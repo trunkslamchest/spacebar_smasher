@@ -3,11 +3,8 @@ import { connect } from 'react-redux'
 
 import { gameRank } from '../../GameFunctions/classSwitch'
 
-import './GameDesktopRank.css'
-import './GameDesktopRankDismount.css'
-import './GameDesktopRankOnmount.css'
-import './GameMobileRankLandscape.css'
-import './GameMobileRankPortrait.css'
+import './GameRank.scss'
+import './GameRankAnimation.scss'
 
 const GameRank = (props) => {
   return(

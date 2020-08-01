@@ -1,0 +1,23 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinGameRank';
+
+.game_desktop_rank {
+  @include game_rank_desktop_props;
+  animation: onmount_game_desktop_rank .5s ease-in-out 1;
+}
+
+.dismount_game_desktop_rank {
+  @include game_rank_desktop_props;
+  animation: dismount_game_desktop_rank .5s ease-in-out 1;
+}
+
+.game_mobile_rank_landscape {
+  @include game_rank_mobile_landscape_props;
+}
+
+.game_mobile_rank_portrait {
+  @include game_rank_mobile_portrait_props;
+}

@@ -3,11 +3,8 @@ import { connect } from 'react-redux'
 
 import { gamePower } from '../../GameFunctions/classSwitch'
 
-import './GameDesktopPower.css'
-import './GameDesktopPowerDismount.css'
-import './GameDesktopPowerOnmount.css'
-import './GameMobilePowerLandscape.css'
-import './GameMobilePowerPortrait.css'
+import './GamePower.scss'
+import './GamePowerAnimation.scss'
 
 const GamePower = (props) => {
   return(

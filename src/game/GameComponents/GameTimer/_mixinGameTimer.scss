@@ -1,0 +1,85 @@
+@mixin game_timer_props {
+  background: $darkGrey;
+  border-left: $grey_normal_border;
+  border-right: $grey_normal_border;
+  border-top: $grey_normal_border;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
+
+  h1 {
+    color: $white;
+    font-family: "Staatliches";
+    font-weight: 300;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    padding: 0px;
+  }
+
+  h2 {
+    animation: text_shadow_blink_yellow 1s ease-in-out infinite;
+    background: $black;
+    border-radius: 10px;
+    border: $grey_slim_border;
+    box-shadow: $small_black_inset_boxShadow, $tiny_black_inset_boxShadow, $large_white_inset_boxShadow;
+    color: yellow;
+    font-family: 'Conv_digital-7.mono';
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: $medium_yellow_textShadow;
+  }
+}
+
+@mixin game_timer_desktop_props {
+  @include game_timer_props;
+  margin: 0px auto 0 auto;
+  padding: 10px 0px 5px 0px;
+  text-align: center;
+  width: calcWidth(250, 500, 320, 1920);
+
+  h1 {
+    font-size: calcSize(20, 40, 320, 1920);
+  }
+
+  h2 {
+    font-size: calcSize(75, 150, 320, 1920);
+    padding: 0px;
+    width: calcWidth(200, 400, 320, 1920);
+  }
+}
+
+@mixin game_timer_mobile_landscape_props {
+  @include game_timer_props;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 5px;
+  width: 100%;
+
+  h1 {
+    font-size: calcSize(15, 20, 568, 823);
+  }
+
+  h2 {
+    font-size: calcSize(75, 100, 568, 823);
+    min-width: calcWidth(200, 300, 568, 823);
+    padding: 0px 10px;
+  }
+}
+
+@mixin game_timer_mobile_portrait_props {
+  @include game_timer_props;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+
+  h1 {
+    font-size: calcSize(20, 30, 500, 1920);
+  }
+
+  h2 {
+    font-size: calcSize(75, 150, 500, 1920);
+    padding: 0px;
+    width: calcWidth(250, 400, 500, 1920);
+  }
+}

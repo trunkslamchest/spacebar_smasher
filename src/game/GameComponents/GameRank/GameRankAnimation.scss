@@ -1,0 +1,13 @@
+@keyframes onmount_game_desktop_rank
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_game_desktop_rank
+  {
+    50% {
+      transform: translateX(2000px);
+    }
+  }

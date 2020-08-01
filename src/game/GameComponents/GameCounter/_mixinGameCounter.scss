@@ -1,0 +1,84 @@
+@mixin game_counter_props {
+  background: $darkGrey;
+  border-left: $grey_normal_border;
+  box-shadow: $large_black_boxShadow, $small_black_inset_boxShadow;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-family: "Staatliches";
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h2 {
+    animation: text_shadow_blink_yellow 1.5s ease-in-out infinite;
+    background-color: $black;
+    border: $grey_slim_border;
+    border-radius: 10px;
+    box-shadow: $small_black_boxShadow, $tiny_black_inset_boxShadow, $large_white_inset_boxShadow;
+    color: $yellow;
+    font-family: 'Conv_digital-7.mono';
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@mixin game_counter_desktop_props {
+  @include game_counter_props;
+  border-right: $grey_normal_border;
+  margin: 0px auto;
+  padding: 10px 0px 5px 0px;
+  width: calcWidth(250, 500, 320, 1920);
+
+  h1 {
+    font-size: calcSize(20, 40, 320, 1920);
+    padding: 0px;
+  }
+
+  h2 {
+    font-size: calcSize(75, 125, 320, 1920);
+    padding: 0px;
+    width: calcWidth(150, 300, 320, 1920);
+  }
+}
+
+@mixin game_counter_mobile_landscape_props {
+  @include game_counter_props;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 5px;
+  width: 35%;
+
+  h1 {
+    font-size: calcSize(15, 20, 568, 823);
+    padding: 0px;
+  }
+
+  h2 {
+    font-size: calcSize(75, 150, 500, 1920);
+    padding: 0px;
+    width: calcWidth(150, 175, 568, 823);
+  }
+}
+
+@mixin game_counter_mobile_portrait_props {
+  @include game_counter_props;
+  border-right: $grey_normal_border;
+  padding: 10px;
+
+  h1 {
+    font-size: calcSize(20, 30, 500, 1920);
+    padding: 0px 10px;
+  }
+
+  h2 {
+    font-size: calcSize(75, 125, 500, 1920);
+    padding: 0px 10px;
+    width: calcWidth(200, 300, 500, 1920);
+  }
+}

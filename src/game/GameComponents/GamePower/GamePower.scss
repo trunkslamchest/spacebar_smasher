@@ -1,0 +1,40 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinGamepower';
+
+.game_desktop_power {
+  @include game_power_desktop_props;
+  animation: onmount_game_desktop_power .5s ease-in-out 1;
+  padding: 0px 0px 10px 0px;
+}
+
+.dismount_game_desktop_power {
+  @include game_power_desktop_props;
+  animation: dismount_game_desktop_power .5s ease-in-out 1;
+}
+
+.game_desktop_power_bar {
+  @include game_power_bar_props;
+}
+
+.game_mobile_power_landscape {
+  @include game_power_mobile_landscape_props
+}
+
+.game_mobile_power_bar_landscape {
+  @include game_power_bar_props;
+  padding: 0px;
+  width: 100%;
+}
+
+.game_mobile_power_portrait {
+  @include game_power_mobile_portrait_props;
+}
+
+.game_mobile_power_bar_portrait {
+  @include game_power_bar_props;
+  padding: 0px;
+  width: 100%;
+}

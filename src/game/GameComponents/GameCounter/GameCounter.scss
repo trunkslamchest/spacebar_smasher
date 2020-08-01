@@ -1,0 +1,23 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinGameCounter';
+
+.game_desktop_counter {
+  @include game_counter_desktop_props;
+  animation: onmount_game_desktop_counter .5s ease-in-out 1;
+}
+
+.dismount_game_desktop_counter {
+  @include game_counter_desktop_props;
+  animation: dismount_game_desktop_counter .5s ease-in-out 1;
+}
+
+.game_mobile_counter_landscape, .dismount_game_mobile_counter_landscape {
+  @include game_counter_mobile_landscape_props;
+}
+
+.game_mobile_counter_portrait, .dismount_game_mobile_counter_portrait {
+  @include game_counter_mobile_portrait_props;
+}

@@ -3,11 +3,8 @@ import { connect } from 'react-redux'
 
 import { gameCounter } from '../../GameFunctions/classSwitch'
 
-import './GameDesktopCounter.css'
-import './GameDesktopCounterDismount.css'
-import './GameDesktopCounterOnmount.css'
-import './GameMobileCounterLandscape.css'
-import './GameMobileCounterPortrait.css'
+import './GameCounter.scss'
+import './GameCounterAnimation.scss'
 
 const GameCounter = (props) => {
   return(

@@ -1,0 +1,151 @@
+@mixin game_power_props {
+  background: $darkGrey;
+  border-right: $grey_normal_border;
+  box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-family: "Staatliches";
+    font-weight: 300;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  h2 {
+    animation: text_shadow_blink_yellow 2s ease-in-out infinite;
+    background-color: $black;
+    border: $grey_slim_border;
+    border-radius: 5px;
+    box-shadow: $small_black_boxShadow, $tiny_black_inset_boxShadow, $medium_white_inset_boxShadow;
+    color: $yellow;
+    font-family: 'Conv_digital-7.mono';
+    font-weight: 300;
+    margin: 0px auto;
+    text-align: center;
+    text-shadow: $small_yellow_textShadow;
+  }
+}
+
+@mixin game_power_bar_props {
+  display: block;
+  margin: 0px auto;
+  -webkit-appearance: none;
+
+  meter {
+    background: none;
+    border-radius: 5px;
+    box-shadow: $small_black_boxShadow;
+    box-sizing: border-box;
+    display: block;
+    height: 25px;
+    margin: 0px auto;
+    padding: 0px;
+    width: 75%;
+
+    &::-webkit-meter-bar {
+      background: #000;
+      border-radius: 5px;
+      border: 1px solid grey;
+      box-shadow: $tiny_black_inset_boxShadow, $small_white_inset_boxShadow;
+    }
+
+    &::-webkit-meter-optimum-value {
+      background: linear-gradient(
+        90deg,
+        #FFC300 0%,
+        #FF5733 100%
+      );
+      background-size: 100% 100%;
+      border-radius: 5px;
+      transition: background 1s 1s ease-in-out;
+      width: 100%;
+    }
+
+    &::-webkit-meter-suboptimum-value {
+      background: linear-gradient(
+        90deg,
+        #FFC300 0%,
+        #FF5733 100%,
+        #7A0000 100%
+      );
+      background-size: 100% 100%;
+      border-radius: 5px;
+      transition: background 1s 1s ease-in-out;
+      width: 100%;
+    }
+
+    &::-webkit-meter-even-less-good-value {
+      background: linear-gradient(
+        90deg,
+        #107A00 0%,
+        #FF5733 100%,
+      );
+      background-size: 100% 100%;
+      border-radius: 5px;
+      transition: background 1s 1s ease-in-out;
+      width: 100%;
+    }
+  }
+}
+
+@mixin game_power_desktop_props {
+  @include game_power_props;
+  border-bottom: $grey_normal_border;
+  border-left: $grey_normal_border;
+  border-radius: 0px 0px 30px 30px;
+  margin: 0px auto 10px auto;
+  padding: 5px 0px;
+  width: calcWidth(250, 500, 320, 1920);
+
+  h1 {
+    font-size: calcSize(15, 30, 320, 1920);
+    padding: 0px 10px;
+  }
+
+  h2 {
+    font-size: calcSize(30, 60, 320, 1920);
+    padding: 0px 5px;
+    width: calcWidth(125, 250, 320, 1920);
+  }
+}
+
+@mixin game_power_mobile_landscape_props {
+  @include game_power_props;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 5px 0px;
+
+  h1 {
+    font-size: calcSize(15, 20, 568, 823);
+  }
+
+  h2 {
+    font-Size: calcSize(30, 50, 568, 823);
+    min-width: calcWidth(150, 250, 568, 823);
+  }
+}
+
+@mixin game_power_mobile_portrait_props {
+  @include game_power_props;
+  border-left: $grey_normal_border;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 10px;
+
+  h1 {
+    font-size: calcSize(20, 30, 500, 1920);
+  }
+
+  h2 {
+    font-size: calcSize(40, 60, 500, 1920);
+    padding: 0px 5px;
+    width: calcWidth(150, 300, 500, 1920);
+  }
+}

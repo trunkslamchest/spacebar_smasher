@@ -3,11 +3,8 @@ import { connect } from 'react-redux'
 
 import { gameTimer } from '../../GameFunctions/classSwitch'
 
-import './GameDesktopTimer.css'
-import './GameDesktopTimerOnmount.css'
-import './GameDesktopTimerDismount.css'
-import './GameMobileTimerLandscape.css'
-import './GameMobileTimerPortrait.css'
+import './GameTimer.scss'
+import './GameTimerAnimation.scss'
 
 const GameMobileTimer = (props) => {
   return(

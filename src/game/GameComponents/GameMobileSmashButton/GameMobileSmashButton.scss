@@ -1,0 +1,34 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinGameMobileSmashButton';
+
+.game_mobile_smash_button_landscape {
+  @include game_mobile_smash_button_container_props;
+}
+
+.smash_button_landscape {
+  @include off_smash_props;
+  @include smash_button_landscape_props;
+}
+
+.smash_button_on_smash_landscape {
+  @include on_smash_props;
+  @include smash_button_landscape_props;
+}
+
+.game_mobile_smash_button_portrait {
+  @include game_mobile_smash_button_container_props;
+  margin: 0px auto 10px auto;
+}
+
+.smash_button_portrait {
+  @include off_smash_props;
+  @include smash_button_portrait_props;
+}
+
+.smash_button_on_smash_portrait {
+  @include on_smash_props;
+  @include smash_button_portrait_props;
+}

@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 
 import { gameMobileSmashButton } from '../../GameFunctions/classSwitch'
 
-import './GameMobileSmashButtonPortrait.css'
-import './GameMobileSmashButtonLandscape.css'
+import './GameMobileSmashButton.scss'
 
 const GameMobileSmashButton = (props) => {
 
@@ -18,7 +17,7 @@ const GameMobileSmashButton = (props) => {
         className={ gameMobileSmashButton(props).button }
         onClick={ onMobileSmashFunctions }
       >
-        SMASH!
+        SMASH
       </button>
     </div>
   )
