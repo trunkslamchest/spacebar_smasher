@@ -61,7 +61,7 @@ exports.addScore = functions
 
     firebase.database().ref().update(obj)
 
-    setTimeout(() => {
+    // setTimeout(() => {
       res.status(200).json(Object.values(obj)[0])
-    }, 5000)
+    // }, 5000)
 });

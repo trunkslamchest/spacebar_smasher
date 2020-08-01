@@ -3,13 +3,8 @@ import { connect } from 'react-redux'
 
 import { countdownTimer } from '../../CountdownFunctions/classSwitch'
 
-import './CountdownDesktopTimer.css'
-import './CountdownDesktopTimerDismount.css'
-import './CountdownDesktopTimerOnmount.css'
-import './CountdownMobileTimerLandscape.css'
-import './CountdownMobileTimerPortrait.css'
-import './CountdownMobileTimerDismount.css'
-import './CountdownMobileTimerOnmount.css'
+import './CountdownTimer.scss'
+import './CountdownTimerAnimation.scss'
 
 const CountdownTimer = (props) => {
   return(

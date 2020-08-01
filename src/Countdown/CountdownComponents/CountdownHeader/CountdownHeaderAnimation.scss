@@ -1,0 +1,41 @@
+@keyframes onmount_countdown_desktop_header
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
+  }
+
+@keyframes onmount_countdown_mobile_header_landscape
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes onmount_countdown_mobile_header_portrait
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes dismount_countdown_desktop_header
+  {
+    50% {
+      transform: translateX(2000px);
+    }
+  }
+
+@keyframes dismount_countdown_mobile_header_landscape
+  {
+    50% {
+      transform: translateX(1000px);
+    }
+  }
+
+@keyframes dismount_countdown_mobile_header_portrait
+  {
+    50% {
+      transform: translateX(1000px);
+    }
+  }

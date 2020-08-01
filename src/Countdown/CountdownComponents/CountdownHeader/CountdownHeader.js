@@ -3,13 +3,8 @@ import { connect } from 'react-redux'
 
 import { countdownHeader } from '../../CountdownFunctions/classSwitch'
 
-import './CountdownDesktopHeader.css'
-import './CountdownDesktopHeaderOnmount.css'
-import './CountdownDesktopHeaderDismount.css'
-import './CountdownMobileHeaderLandscape.css'
-import './CountdownMobileHeaderPortrait.css'
-import './CountdownMobileHeaderDismount.css'
-import './CountdownMobileHeaderOnmount.css'
+import './CountdownHeader.scss'
+import './CountdownHeaderAnimation.scss'
 
 const CountdownHeader = (props) => {
   return(

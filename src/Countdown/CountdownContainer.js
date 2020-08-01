@@ -12,9 +12,7 @@ import CountdownHeader from './CountdownComponents/CountdownHeader/CountdownHead
 import CountdownTimer from './CountdownComponents/CountdownTimer/CountdownTimer'
 import CountdownTutorial from './CountdownComponents/CountdownTutorial/CountdownTutorial'
 
-import './CountdownDesktopContainer.css'
-import './CountdownMobileContainerLandscape.css'
-import './CountdownMobileContainerPortrait.css'
+import './CountdownContainer.scss'
 
 class CountdownContainer extends React.Component {
 

@@ -1,0 +1,41 @@
+@keyframes onmount_countdown_desktop_timer
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_countdown_desktop_timer
+  {
+    50% {
+      transform: translateX(2000px);
+    }
+  }
+
+@keyframes onmount_countdown_mobile_landscape_timer
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes dismount_countdown_mobile_landscape_timer
+  {
+    50% {
+      transform: translateX(1000px);
+    }
+  }
+
+@keyframes onmount_countdown_mobile_portrait_timer
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes dismount_countdown_mobile_portrait_timer
+  {
+    50% {
+      transform: translateX(1000px);
+    }
+  }

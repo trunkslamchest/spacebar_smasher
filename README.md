@@ -137,6 +137,7 @@ Spacebar Smasher is an interactive game where a player tries to press the spaceb
   - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
   - [React](https://reactjs.org/)
   - [Redux](https://redux.js.org/)
+  - [SCSS](https://sass-lang.com/)
   - [The Flatiron School](https://flatironschool.com/)
 
 &nbsp;

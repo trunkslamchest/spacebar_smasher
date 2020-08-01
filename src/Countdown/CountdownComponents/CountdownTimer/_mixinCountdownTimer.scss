@@ -1,0 +1,76 @@
+@mixin countdown_timer_props {
+  background: $darkGrey_gradient;
+  box-shadow: $large_black_boxShadow, $normal_black_inset_boxShadow;
+}
+
+@mixin countdown_timer_text_props {
+  text-align: center;
+
+  h1 {
+    font-family: "Audiowide";
+    font-weight: 300;
+  }
+}
+
+@mixin countdown_timer_five_props {
+  animation: shadow_blink 1s infinite 0s;
+  border: $red_normal_border;
+  box-shadow: $small_red_boxShadow, $small_red_inset_boxShadow;
+
+  h1 {
+    animation: text_shadow_blink_red 1.5s infinite 0s;
+    color: $red;
+    text-shadow: $large_red_textShadow;
+  }
+}
+
+@mixin countdown_timer_three_props {
+  animation: shadow_blink 1s infinite 0s;
+  border: $orange_normal_border;
+  box-shadow: $small_orange_boxShadow, $small_orange_inset_boxShadow;
+
+  h1 {
+    animation: text_shadow_blink_orange 1.5s infinite 0s;
+    color: $orange;
+    text-shadow: $large_orange_textShadow;
+  }
+}
+@mixin countdown_timer_one_props {
+  animation: shadow_blink 1s infinite 0s;
+  border: $yellow_normal_border;
+  box-shadow: $small_yellow_boxShadow, $small_yellow_inset_boxShadow;
+
+  h1 {
+    animation: text_shadow_blink_yellow 1.5s infinite 0s;
+    color: $yellow;
+    text-shadow: $large_yellow_textShadow;
+  }
+}
+
+@mixin countdown_timer_go_props {
+  border: $green_normal_border;
+  box-shadow: $small_green_boxShadow, $small_green_inset_boxShadow;
+
+  h1 {
+    color: $green;
+    text-shadow: $large_green_textShadow;
+  }
+}
+
+@mixin countdown_timer_desktop_props {
+  h1 {
+    font-size: calcSize(100, 200, 320, 1920);
+  }
+}
+
+@mixin countdown_timer_mobile_landscape_props {
+  h1 {
+    font-size: calcSize(100, 150, 568, 823);
+  }
+}
+
+@mixin countdown_timer_mobile_portrait_props {
+  h1 {
+    font-size: calcSize(100, 200, 320, 1920);
+  }
+}

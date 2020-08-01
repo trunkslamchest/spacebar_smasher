@@ -1,0 +1,38 @@
+@mixin countdown_tutorial_props {
+  background: $darkGrey;
+  border: $grey_normal_border;
+  border-radius: 0px 0px 30px 30px;
+  box-shadow: $large_black_boxShadow, $normal_black_inset_boxShadow;
+
+  p {
+    color: $white;
+    font-family: "Staatliches";
+    font-weight: 300;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+@mixin countdown_tutorial_desktop_props {
+  @include countdown_tutorial_props;
+
+  p {
+    font-size: calcSize(18, 38, 500, 1920);
+  }
+}
+
+@mixin countdown_tutorial_mobile_landscape_props {
+  @include countdown_tutorial_props;
+
+  p {
+    font-size: calcSize(18, 20, 568, 823);
+  }
+}
+
+@mixin countdown_tutorial_mobile_portrait_props {
+  @include countdown_tutorial_props;
+
+  p {
+    font-size: calcSize(15, 20, 568, 823);
+  }
+}

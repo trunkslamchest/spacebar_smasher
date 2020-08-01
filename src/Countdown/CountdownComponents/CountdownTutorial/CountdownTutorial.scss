@@ -1,0 +1,35 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinCountdownTutorial';
+
+.countdown_desktop_tutorial {
+  @include countdown_tutorial_desktop_props;
+  animation: onmount_countdown_desktop_tutorial .5s ease-in-out 1;
+}
+
+.dismount_countdown_desktop_tutorial {
+  @include countdown_tutorial_desktop_props;
+  animation: dismount_countdown_desktop_tutorial .5s ease-in-out 1;
+}
+
+.countdown_mobile_tutorial_landscape {
+  @include countdown_tutorial_mobile_landscape_props;
+  animation: onmount_countdown_mobile_tutorial_landscape .5s ease-in-out 1;
+}
+
+.dismount_countdown_mobile_tutorial_landscape {
+  @include countdown_tutorial_mobile_landscape_props;
+  animation: dismount_countdown_mobile_tutorial_landscape .5s ease-in-out 1;
+}
+
+.countdown_mobile_tutorial_portrait {
+  @include countdown_tutorial_mobile_portrait_props;
+  animation: onmount_countdown_mobile_tutorial_portrait .5s ease-in-out 1;
+}
+
+.dismount_countdown_mobile_tutorial_portrait {
+  @include countdown_tutorial_mobile_portrait_props;
+  animation: dismount_countdown_mobile_tutorial_portrait .5s ease-in-out 1;
+}

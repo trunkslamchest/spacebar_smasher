@@ -1,0 +1,107 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinCountdowntimer';
+
+.countdown_desktop_timer {
+  @include countdown_timer_props;
+  animation: onmount_countdown_desktop_timer .5s ease-in-out 1;
+}
+
+.dismount_countdown_desktop_timer {
+  @include countdown_timer_props;
+  animation: dismount_countdown_desktop_timer .5s ease-in-out 1;
+}
+
+.countdown_desktop_timer_five {
+  @include countdown_timer_text_props;
+  @include countdown_timer_desktop_props;
+  @include countdown_timer_five_props;
+}
+
+.countdown_desktop_timer_three {
+  @include countdown_timer_text_props;
+  @include countdown_timer_desktop_props;
+  @include countdown_timer_three_props;
+}
+
+.countdown_desktop_timer_one {
+  @include countdown_timer_text_props;
+  @include countdown_timer_desktop_props;
+  @include countdown_timer_one_props;
+}
+
+.countdown_desktop_timer_go {
+  @include countdown_timer_text_props;
+  @include countdown_timer_desktop_props;
+  @include countdown_timer_go_props;
+}
+
+.countdown_mobile_landscape_timer {
+  @include countdown_timer_props;
+  animation: onmount_countdown_mobile_landscape_timer .5s ease-in-out 1;
+}
+
+.dismount_countdown_mobile_landscape_timer {
+  @include countdown_timer_props;
+  animation: dismount_countdown_mobile_landscape_timer .5s ease-in-out 1;
+}
+
+.countdown_mobile_landscape_timer_five {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_landscape_props;
+  @include countdown_timer_five_props;
+}
+
+.countdown_mobile_landscape_timer_three {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_landscape_props;
+  @include countdown_timer_three_props;
+}
+
+.countdown_mobile_landscape_timer_one {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_landscape_props;
+  @include countdown_timer_one_props;
+}
+
+.countdown_mobile_landscape_timer_go {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_landscape_props;
+  @include countdown_timer_go_props;
+}
+
+.countdown_mobile_portrait_timer {
+  @include countdown_timer_props;
+  animation: onmount_countdown_mobile_portrait_timer .5s ease-in-out 1;
+}
+
+.dismount_countdown_mobile_portrait_timer {
+  @include countdown_timer_props;
+  animation: dismount_countdown_mobile_portrait_timer .5s ease-in-out 1;
+}
+
+.countdown_mobile_portrait_timer_five {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_portrait_props;
+  @include countdown_timer_five_props;
+}
+
+.countdown_mobile_portrait_timer_three {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_portrait_props;
+  @include countdown_timer_three_props;
+}
+
+.countdown_mobile_portrait_timer_one {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_portrait_props;
+  @include countdown_timer_one_props;
+}
+
+.countdown_mobile_portrait_timer_go {
+  @include countdown_timer_text_props;
+  @include countdown_timer_mobile_portrait_props;
+  @include countdown_timer_go_props;
+}

@@ -52,11 +52,11 @@ export const countdownTimer = (props) => {
 
   if(props.detect.device === "mobile") {
     if(props.detect.orientation === "landscape") {
-      if(props.ui.initDismount) obj['wrapper'] = "dismount_countdown_mobile_timer_landscape"
-      else obj['wrapper'] = "countdown_mobile_timer_landscape"
+      if(props.ui.initDismount) obj['wrapper'] = "dismount_countdown_mobile_landscape_timer"
+      else obj['wrapper'] = "countdown_mobile_landscape_timer"
     } else {
-      if(props.ui.initDismount) obj['wrapper'] = "dismount_countdown_mobile_timer_portrait"
-      else obj['wrapper'] = "countdown_mobile_timer_portrait"
+      if(props.ui.initDismount) obj['wrapper'] = "dismount_countdown_mobile_portrait_timer"
+      else obj['wrapper'] = "countdown_mobile_portrait_timer"
     }
   } else {
     if(props.ui.initDismount) obj['wrapper'] = "dismount_countdown_desktop_timer"
@@ -66,32 +66,32 @@ export const countdownTimer = (props) => {
   if(props.detect.device === "mobile") {
     if(props.detect.orientation === "landscape") {
       (props.time === 5 || props.time === 4) ?
-          obj['timer'] = "countdown_mobile_timer_five_landscape"
+          obj['timer'] = "countdown_mobile_landscape_timer_five"
         :
           (props.time === 3 || props.time === 2) ?
-            obj['timer'] = "countdown_mobile_timer_three_landscape"
+            obj['timer'] = "countdown_mobile_landscape_timer_three"
           :
             (props.time === 1) ?
-              obj['timer'] = "countdown_mobile_timer_one_landscape"
+              obj['timer'] = "countdown_mobile_landscape_timer_one"
             :
               (props.time === 0) ?
-                obj['timer'] = "countdown_mobile_timer_go_landscape"
+                obj['timer'] = "countdown_mobile_landscape_timer_go"
               :
-                obj['timer'] = "countdown_mobile_timer_blank_landscape"
+                obj['timer'] = "countdown_mobile_landscape_timer_blank"
     } else {
       (props.time === 5 || props.time === 4) ?
-          obj['timer'] = "countdown_mobile_timer_five_portrait"
+          obj['timer'] = "countdown_mobile_portrait_timer_five"
         :
           (props.time === 3 || props.time === 2) ?
-            obj['timer'] = "countdown_mobile_timer_three_portrait"
+            obj['timer'] = "countdown_mobile_portrait_timer_three"
           :
             (props.time === 1) ?
-              obj['timer'] = "countdown_mobile_timer_one_portrait"
+              obj['timer'] = "countdown_mobile_portrait_timer_one"
             :
               (props.time === 0) ?
-                obj['timer'] = "countdown_mobile_timer_go_portrait"
+                obj['timer'] = "countdown_mobile_portrait_timer_go"
               :
-                obj['timer'] = "countdown_mobile_timer_blank_portrait"
+                obj['timer'] = "countdown_mobile_portrait_timer_blank"
     }
   } else {
       (props.time === 5 || props.time === 4) ?

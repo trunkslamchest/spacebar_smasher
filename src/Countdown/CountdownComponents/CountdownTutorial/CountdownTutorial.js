@@ -3,14 +3,17 @@ import { connect } from 'react-redux'
 
 import { countdownTutorial } from '../../CountdownFunctions/classSwitch'
 
-import './CountdownDesktopTutorial.css'
-import './CountdownDesktopTutorialDismount.css'
-import './CountdownDesktopTutorialOnmount.css'
+// import './CountdownDesktopTutorial.css'
+// import './CountdownDesktopTutorialDismount.css'
+// import './CountdownDesktopTutorialOnmount.css'
 
-import './CountdownMobileTutorialLandscape.css'
-import './CountdownMobileTutorialPortrait.css'
-import './CountdownMobileTutorialDismount.css'
-import './CountdownMobileTutorialOnmount.css'
+// import './CountdownMobileTutorialLandscape.css'
+// import './CountdownMobileTutorialPortrait.css'
+// import './CountdownMobileTutorialDismount.css'
+// import './CountdownMobileTutorialOnmount.css'
+
+import './CountdownTutorial.scss'
+import './CountdownTutorialAnimation.scss'
 
 const CountdownTutorial = (props) => {
   return(
