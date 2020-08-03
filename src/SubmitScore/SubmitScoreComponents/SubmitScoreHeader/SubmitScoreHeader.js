@@ -3,12 +3,8 @@ import { connect } from 'react-redux'
 
 import { submitScoreHeader } from '../../SubmitScoreFunctions/classSwitch'
 
-import './SubmitScoreDesktopHeader.css'
-import './SubmitScoreDesktopHeaderOnmount.css'
-import './SubmitScoreDesktopHeaderDismount.css'
-
-import './SubmitScoreMobileHeaderLandscape.css'
-import './SubmitScoreMobileHeaderPortrait.css'
+import './SubmitScoreHeader.scss'
+import './SubmitScoreHeaderAnimation.scss'
 
 const SubmitScoreHeader = (props) => {
   return(

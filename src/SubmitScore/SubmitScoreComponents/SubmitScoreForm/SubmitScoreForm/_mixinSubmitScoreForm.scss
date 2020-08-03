@@ -88,7 +88,7 @@
 @mixin submit_score_form_desktop_container_props {
   @include submit_score_form_container_props;
   padding: 10px 10px 20px 10px;
-  width: calcWidth(250, 500, 320, 1920);
+  width: 100%;
 
   h2 {
     font-size: calcSize(15, 30, 320, 1920);

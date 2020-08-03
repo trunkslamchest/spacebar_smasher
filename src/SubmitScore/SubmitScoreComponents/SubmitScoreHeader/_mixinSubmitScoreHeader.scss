@@ -1,0 +1,59 @@
+@mixin submit_score_header_props {
+  background: $darkGrey;
+  border-left: $grey_normal_border;
+  border-right: $grey_normal_border;
+  border-top: $grey_normal_border;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
+  margin: 0px auto;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+
+  h1 {
+    animation: text_shadow_blink_red 1s ease-in-out infinite;
+    background-color: $black;
+    border-radius: 10px;
+    border: $grey_slim_border;
+    box-shadow: $small_black_boxShadow, $tiny_black_inset_boxShadow, $large_white_inset_boxShadow;
+    color: $red;
+    font-family: 'Conv_digital-7.mono';
+    font-weight: 300;
+    margin: 5px auto;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding: 0px;
+    text-align: center;
+    text-shadow: $medium_red_textShadow;
+  }
+}
+
+@mixin submit_score_header_desktop_props {
+  @include submit_score_header_props;
+
+  h1 {
+    font-size: calcSize(42.5, 85, 320, 1920);
+    width: calcWidth(200, 400, 320, 1920);
+
+  }
+}
+
+@mixin submit_score_header_mobile_landscape_props {
+  @include submit_score_header_props;
+
+  h1 {
+    font-size: calcSize(30, 60, 320, 823);
+    width: calcWidth(220, 440, 320, 823);
+
+  }
+}
+
+@mixin submit_score_header_mobile_portrait_props {
+  @include submit_score_header_props;
+
+  h1 {
+    font-size: calcHeight(30, 60, 411, 823);
+    width: calcWidth(220, 600, 320, 823);
+
+  }
+}

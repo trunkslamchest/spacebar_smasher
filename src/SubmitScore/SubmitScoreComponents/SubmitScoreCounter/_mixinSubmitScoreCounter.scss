@@ -2,6 +2,7 @@
   background: $darkGrey;
   border-left: $grey_normal_border;
   box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
+  padding: 5px;
   text-align: center;
 
   h1 {
@@ -31,8 +32,7 @@
   @include submit_score_counter_props;
   border-right: $grey_normal_border;
   margin: 0px auto;
-  padding: 10px;
-  width: calcWidth(250, 500, 320, 1920);
+  width: 100%;
 
   h1 {
     font-size: calcSize(20, 40, 320, 1920);
@@ -51,7 +51,6 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  padding: 5px;
   width: 35%;
 
   h1 {
@@ -68,7 +67,6 @@
 @mixin submit_score_counter_mobile_portrait_props {
   @include submit_score_counter_props;
   border-right: $grey_normal_border;
-  padding: 5px;
 
   h1 {
     font-size: calcSize(20, 40, 320, 1920);
