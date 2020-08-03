@@ -1,0 +1,71 @@
+@import '../UI/SCSS/_globalProps';
+@import '../UI/SCSS/_globalMixins';
+@import '../UI/SCSS/_globalFunctions';
+
+@import './_mixinSubmitScoreContainer';
+
+.submit_score_desktop_wrapper {
+  @include submit_score_wrapper_props;
+  flex-wrap: nowrap;
+}
+
+.submit_score_desktop_pill {
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+.submit_score_mobile_wrapper_landscape {
+  @include submit_score_wrapper_props;
+  flex-wrap: wrap;
+  margin-top: -10px;
+}
+
+.submit_score_mobile_pill_landscape {
+  @include submit_score_pill_mobile_landscape_props;
+  animation: onmount_submit_score_mobile_pill_landscape .5s ease-in-out 1;
+}
+
+.dismount_submit_score_mobile_pill_landscape {
+  @include submit_score_pill_mobile_landscape_props;
+  animation: dismount_submit_score_mobile_pill_landscape .5s ease-in-out 1;
+}
+
+.submit_score_mobile_landscapeR1 {
+  @include submit_score_pill_mobile_row_props;
+  flex-direction: row;
+}
+
+.submit_score_mobile_landscapeSR1 {
+  @include submit_score_pill_mobile_sub_row_props;
+  height: 100%;
+  width: 65%;
+}
+
+.submit_score_mobile_wrapper_portrait{
+  @include submit_score_wrapper_props;
+  flex-wrap: nowrap;
+}
+
+.submit_score_mobile_pill_portrait {
+  @include submit_score_pill_mobile_portrait_props;
+  animation: onmount_submit_score_mobile_pill_portrait .5s ease-in-out 1;
+}
+
+.dismount_submit_score_mobile_pill_portrait {
+  @include submit_score_pill_mobile_portrait_props;
+  animation: dismount_submit_score_mobile_pill_portrait .5s ease-in-out 1;
+}
+
+.submit_score_mobile_portraitR1 {
+  @include submit_score_pill_mobile_row_props;
+  flex-direction: column;
+}
+
+.submit_score_mobile_portraitSR1 {
+  @include submit_score_pill_mobile_sub_row_props;
+  width: 100%;
+}

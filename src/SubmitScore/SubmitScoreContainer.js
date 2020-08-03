@@ -12,11 +12,8 @@ import Wrapper from '../UI/Wrapper/Wrapper'
 import SubmitScoreButtonsContainer from './SubmitScoreComponents/SubmitScoreButtons/SubmitScoreButtonsContainer'
 import SubmitScoreFormContainer from './SubmitScoreComponents/SubmitScoreForm/SubmitScoreFormContainer'
 
-import './SubmitScoreDesktopContainer.css'
-import './SubmitScoreMobileContainerLandscape.css'
-import './SubmitScoreMobileContainerPortrait.css'
-import './SubmitScoreMobileDismount.css'
-import './SubmitScoreMobileOnmount.css'
+import './SubmitScoreContainer.scss'
+import './SubmitScoreContainerAnimation.scss'
 
 const SubmitScoreContainer = (props) => {
 
@@ -25,15 +22,16 @@ const SubmitScoreContainer = (props) => {
   const history = useHistory()
 
   useEffect(() => {
-    if(scoreboard.allScores.length === 0) history.push( routes.home )
-    else {
+    // if(scoreboard.allScores.length === 0) history.push( routes.home )
+    // else {
+
+    // }
+
       document.title = 'Spacebar Smasher | Submit Score'
       setTimeout(() => {
         onFooter(false)
         onWrapper(true)
       }, 125)
-    }
-
   }, [onFooter, onWrapper, scoreboard, history])
 
   const onDismount = (event) => {

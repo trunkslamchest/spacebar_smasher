@@ -1,0 +1,113 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinSubmitScoreButtonsContainer';
+
+.submit_score_desktop_buttons_container {
+  @include submit_score_desktop_buttons_container_props;
+  animation: onmount_submit_score_desktop_buttons_container .5s ease-in-out 1;
+}
+
+.dismount_submit_score_desktop_buttons_container {
+  @include submit_score_desktop_buttons_container_props;
+  animation: dismount_submit_score_desktop_buttons_container .5s ease-in-out 1;
+}
+
+.submit_score_desktop_main_menu_button {
+  @include submit_score_desktop_button_props;
+  animation: shadow_blink 1.3s infinite;
+  border-radius: 30px 0px 0px 30px;
+  margin-right: -5px;
+  transform: matrix3d(
+    1,0,0,0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+.submit_score_desktop_try_again_button {
+  @include submit_score_desktop_button_props;
+  animation: shadow_blink 1.6s infinite;
+  border-radius: 0px 30px 30px 0px;
+  margin-left: -5px;
+  transform: matrix3d(
+    1,0,0,-0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+.submit_score_mobile_buttons_container_landscape {
+  @include submit_score_mobile_landscape_buttons_container_props;
+  animation: onmount_submit_score_mobile_landscape_buttons_container .5s ease-in-out 1;
+}
+
+.dismount_submit_score_mobile_buttons_container_landscape {
+  @include submit_score_mobile_landscape_buttons_container_props;
+  animation: dismount_submit_score_mobile_landscape_buttons_container .5s ease-in-out 1;
+}
+
+.submit_score_mobile_main_menu_button_landscape {
+  @include submit_score_mobile_landscape_button_props;
+  animation: shadow_blink 1.3s infinite;
+  border-radius: 30px 0px 0px 30px;
+  margin-right: -5px;
+  transform: matrix3d(
+    1,0,0,0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+.submit_score_mobile_try_again_button_landscape {
+  @include submit_score_mobile_landscape_button_props;
+  animation: shadow_blink 1.6s infinite;
+  border-radius: 0px 30px 30px 0px;
+  margin-left: -5px;
+  transform: matrix3d(
+    1,0,0,-0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+.submit_score_mobile_buttons_container_portrait {
+  @include submit_score_mobile_portrait_buttons_container_props;
+  animation: onmount_submit_score_mobile_portrait_buttons_container .5s ease-in-out 1;
+}
+
+.dismount_submit_score_mobile_buttons_container_portrait {
+  @include submit_score_mobile_portrait_buttons_container_props;
+  animation: dismount_submit_score_mobile_portrait_buttons_container .5s ease-in-out 1;
+}
+
+.submit_score_mobile_main_menu_button_portrait {
+  @include submit_score_mobile_portrait_button_props;
+  animation: shadow_blink 1.3s infinite;
+  border-radius: 30px 0px 0px 30px;
+  margin-right: -5px;
+  transform: matrix3d(
+    1,0,0,0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
+}
+
+.submit_score_mobile_try_again_button_portrait {
+  @include submit_score_mobile_portrait_button_props;
+  animation: shadow_blink 1.6s infinite;
+  border-radius: 0px 30px 30px 0px;
+  margin-left: -5px;
+  transform: matrix3d(
+    1,0,0,-0.0005,
+    0,1,0,0,
+    0,0,1,0,
+    0,0,0,1
+  );
+}

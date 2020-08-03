@@ -1,16 +1,18 @@
-.submit_score_mobile_wrapper_portrait{
+@mixin submit_score_wrapper_props {
   align-items: center;
   align-content: center;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-grow: 1;
   justify-content: space-evenly;
-  height: 100%;
-  width: 100%;
 }
 
-.submit_score_mobile_pill_portrait {
-  animation: onmount_submit_score_mobile_pill_portrait .5s ease-in-out 1;
+@mixin submit_score_pill_props {
+
+}
+
+@mixin submit_score_pill_mobile_props {
+  @include submit_score_pill_props;
   align-items: center;
   align-content: center;
   display: flex;
@@ -18,6 +20,25 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto 0 auto;
+}
+
+@mixin submit_score_pill_desktop_props {
+
+}
+
+@mixin submit_score_pill_mobile_landscape_props {
+  @include submit_score_pill_mobile_props;
+  transform: matrix3d(
+    1,0,0,0.0,
+    0,1,0,-0.0004,
+    0,0,1,0,
+    0,0,0,1
+  );
+  width: calc(525px + (750 - 525) * ((100vw - 568px) / (823 - 568)));
+}
+
+@mixin submit_score_pill_mobile_portrait_props {
+  @include submit_score_pill_mobile_props;
   transform: matrix3d(
     1,0,0,0.0,
     0,1,0,-0.0002,
@@ -27,22 +48,20 @@
   width: calc(275px + (375 - 275) * ((100vw - 320px) / (411 - 320)));
 }
 
-.submit_score_mobile_portraitR1 {
+@mixin submit_score_pill_mobile_row_props {
   align-items: stretch;
   align-content: center;
   display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
   width: 100%;
 }
 
-.submit_score_mobile_portraitSR1 {
+@mixin submit_score_pill_mobile_sub_row_props {
   align-items: stretch;
   align-content: stretch;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: stretch;
-  width: 100%;
 }

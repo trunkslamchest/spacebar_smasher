@@ -3,15 +3,8 @@ import { connect } from 'react-redux'
 
 import { submitScoreButtons } from '../../SubmitScoreFunctions/classSwitch'
 
-import './SubmitScoreDesktopButtonsContainer.css'
-import './SubmitScoreDesktopButtonsContainerOnmount.css'
-import './SubmitScoreDesktopButtonsContainerDismount.css'
-
-import './SubmitScoreMobileButtonsContainerLandscape.css'
-import './SubmitScoreMobileButtonsContainerPortrait.css'
-
-import './SubmitScoreMobileButtonsContainerOnmount.css'
-import './SubmitScoreMobileButtonsContainerDismount.css'
+import './SubmitScoreButtonsContainer.scss'
+import './SubmitScoreButtonsContainerAnimation.scss'
 
 const SubmitScoreButtonsContainer = (props) => {
 

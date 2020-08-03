@@ -16,15 +16,16 @@ import './CountdownContainer.scss'
 
 class CountdownContainer extends React.Component {
 
-  state = { time: 5 }
+  state = { time: 1 }
 
   componentDidMount(){
-    if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
-    else {
+    // if(this.props.scoreboard.allScores.length === 0) this.props.history.push( routes.home )
+    // else {
+
+    // }
+
       document.title = 'Spacebar Smasher | Countdown'
       this.onMount()
-    }
-
   }
 
   onMount = () => {

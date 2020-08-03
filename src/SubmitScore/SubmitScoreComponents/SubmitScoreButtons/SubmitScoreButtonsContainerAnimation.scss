@@ -1,0 +1,50 @@
+@keyframes onmount_submit_score_desktop_buttons_container
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_submit_score_desktop_buttons_container
+  {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(2000px);
+    }
+  }
+
+@keyframes onmount_submit_score_mobile_landscape_buttons_container
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes dismount_submit_score_mobile_landscape_buttons_container
+  {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(1000px);
+    }
+  }
+
+@keyframes onmount_submit_score_mobile_portrait_buttons_container
+  {
+    0% {
+      transform: translateX(-1000px);
+    }
+  }
+
+@keyframes dismount_submit_score_mobile_portrait_buttons_container
+  {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(1000px);
+    }
+  }
