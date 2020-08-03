@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './FixingRedux.css'
+import './FixingRedux.scss'
 
 const FixingRedux = () => {
   return(

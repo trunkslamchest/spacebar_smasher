@@ -1,0 +1,137 @@
+@import '../../../../UI/SCSS/_globalProps';
+@import '../../../../UI/SCSS/_globalMixins';
+@import '../../../../UI/SCSS/_globalFunctions';
+
+// @import './_mixinSubmitScoreErrorContainer.scss';
+
+.submit_score_error_container {
+  color: yellow;
+  background: $darkGrey;
+  border-radius: 30px;
+  box-shadow: $large_black_boxShadow, $normal_black_boxShadow;
+}
+
+.submit_score_error_header {
+  border-top: $grey_slim_border;
+  border-left: $grey_slim_border;
+  border-right: $grey_slim_border;
+  border-radius: 30px 30px 0px 0px;
+  box-shadow: $thin_black_inset_boxShadow;
+  display: flex;
+  color: $white;
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+
+  h1 {
+    font-family: "Staatliches";
+    font-size: calcSize(15, 30, 320, 1920);
+    font-weight: 300;
+    margin: 0px auto;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+.submit_score_error_message_wrapper {
+  border-left: $grey_slim_border;
+  border-right: $grey_slim_border;
+  box-shadow: $thin_black_inset_boxShadow;
+  padding: 5px;
+}
+
+.submit_score_error_message_window {
+  background-color: #000;
+  border: $grey_slim_border;
+  border-radius: 10px;
+  box-shadow: $small_black_boxShadow, $tiny_black_inset_boxShadow, $large_white_inset_boxShadow;
+  margin: 0px auto;
+  padding: 0px;
+  text-align: center;
+  width: 90%;
+
+  p {
+    animation: text_shadow_blink_yellow 1.5s ease-in-out infinite;
+    color: $yellow;
+    font-family: 'Conv_digital-7.mono';
+    font-size: calcSize(15, 30, 320, 1920);
+    font-weight: 300;
+    padding: 1px;
+    text-shadow: $small_yellow_textShadow;
+
+    span {
+      animation: text_shadow_blink_red 1.6s ease-in-out infinite;
+      color: $red;
+      text-shadow: $small_red_textShadow;
+
+      span {
+        animation: text_shadow_blink_white 1.65s ease-in-out infinite;
+        color: $white;
+        text-shadow: $small_white_textShadow;
+      }
+    }
+  }
+
+  span {
+    animation: text_shadow_blink_white 1.55s ease-in-out infinite;
+    color: white;
+    font-family: 'Conv_digital-7.mono';
+    font-size: calcSize(15, 30, 320, 1920);
+    font-weight: 300;
+    padding: 1px;
+    text-shadow: $small_white_textShadow;
+  }
+}
+
+.submit_score_error_bottom_message {
+  background: $darkGrey;
+  border-left: $grey_slim_border;
+  border-right: $grey_slim_border;
+  box-shadow: $thin_black_inset_boxShadow;
+  font-family: "Staatliches";
+  font-size: calcSize(10, 20, 320, 1920);
+  font-weight: 300;
+  color: $white;
+  margin: 0px auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.submit_score_error_button {
+  background: $black_gradient;
+  border: $white_normal_border;
+  border-radius: 0px 0px 30px 30px;
+  box-shadow: $small_black_boxShadow;
+  color: $white;
+  font-family: "Audiowide";
+  font-size: calcSize(20, 25, 500, 1920);
+  font-weight: 300;
+  margin: 0px auto;
+  padding: 10px;
+  text-align: center;
+  text-shadow: $slim_black_textShadow;
+  width: 100%;
+
+  &:focus {
+    @include remove_button_outline;
+  }
+
+  &:hover {
+    background: $yellow_gradient;
+    border: $black_normal_border;
+    box-shadow: $large_black_boxShadow;
+    color: $black;
+    cursor: pointer;
+  }
+
+  &:active {
+    animation: scale_out .1s ease-in-out 1;
+    background: $yellow_gradient;
+    border: $black_normal_border;
+    color: $black;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: .1s, .1s;
+    transition-timing-function: ease-in-out;
+  }
+}

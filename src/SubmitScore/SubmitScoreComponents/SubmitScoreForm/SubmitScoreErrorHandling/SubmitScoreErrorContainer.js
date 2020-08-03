@@ -5,7 +5,7 @@ import FixingRedux from './FixingRedux/FixingRedux'
 
 import SubmitScoreErrorMessages from './SubmitScoreErrorMessages'
 
-import './SubmitScoreErrorContainer.css'
+import './SubmitScoreErrorContainer.scss'
 
 const SubmitScoreErrorContainer = (props) => {
 
