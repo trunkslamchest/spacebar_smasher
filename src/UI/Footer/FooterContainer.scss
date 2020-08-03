@@ -1,7 +1,7 @@
 @import '../SCSS/globalProps';
 @import '../SCSS/globalFunctions';
 
-@import 'mixinFooter';
+@import '_mixinFooter';
 
 .footer_desktop_container {
   @include footer_desktop_container_props;

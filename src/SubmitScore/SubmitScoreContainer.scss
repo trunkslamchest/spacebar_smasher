@@ -1,8 +1,8 @@
-@import '../UI/SCSS/_globalProps';
-@import '../UI/SCSS/_globalMixins';
-@import '../UI/SCSS/_globalFunctions';
+@import '../UI/SCSS/globalProps';
+@import '../UI/SCSS/globalMixins';
+@import '../UI/SCSS/globalFunctions';
 
-@import './_mixinSubmitScoreContainer';
+@import 'mixinSubmitScoreContainer';
 
 .submit_score_desktop_wrapper {
   @include submit_score_wrapper_props;

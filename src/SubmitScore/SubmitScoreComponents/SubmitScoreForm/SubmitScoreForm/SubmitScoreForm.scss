@@ -2,7 +2,7 @@
 @import '../../../../UI/SCSS/_globalMixins';
 @import '../../../../UI/SCSS/_globalFunctions';
 
-@import './_mixinSubmitScoreForm.scss';
+@import './_mixinSubmitScoreForm';
 
 .submit_score_desktop_form_container {
   @include submit_score_form_desktop_container_props;

@@ -9,7 +9,7 @@ const FooterFinePrint = (props) => {
 
   let finePrint
 
-  let verDate = "0.37.8 (08.1.20)"
+  let verDate = "0.37.9 (08.3.20)"
 
   if(props.detect.device === 'mobile' && props.detect.orientation === 'landscape'){
     finePrint = <>

@@ -10,14 +10,14 @@
   @return calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})));
 }
 
-@function calcColor($a: 0, $b: 0, $c: 0, $d: 0){
-  @return rgb($a, $b, $c, $d);
-}
+// @function calcColor($a: 0, $b: 0, $c: 0, $d: 0){
+//   @return rgb($a, $b, $c, $d);
+// }
 
-@function calcBlackBoxShadow($a, $b, $c, $d, $e, $f){
-  @if $f {
-    @return #{$a}px #{$b}px #{$c}px #{$d}px rgba(0, 0, 0, $e) #{$f};
-  } @else {
-    @return #{$a}px #{$b}px #{$c}px #{$d}px rgba(0, 0, 0, $e);
-  }
-}
+// @function calcBlackBoxShadow($a, $b, $c, $d, $e, $f){
+//   @if $f {
+//     @return #{$a}px #{$b}px #{$c}px #{$d}px rgba(0, 0, 0, $e) #{$f};
+//   } @else {
+//     @return #{$a}px #{$b}px #{$c}px #{$d}px rgba(0, 0, 0, $e);
+//   }
+// }

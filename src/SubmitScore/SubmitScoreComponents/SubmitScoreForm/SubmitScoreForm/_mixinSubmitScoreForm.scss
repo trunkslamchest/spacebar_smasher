@@ -1,4 +1,3 @@
-
 @mixin submit_score_form_container_props {
   align-content: center;
   align-items: center;
@@ -101,7 +100,7 @@
   width: 100%;
 
   h2 {
-    font-size: calc(15, 30, 320, 1920);
+    font-size: calcSize(15, 30, 320, 1920);
   }
 }
 

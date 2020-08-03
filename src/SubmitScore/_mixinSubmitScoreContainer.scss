@@ -1,5 +1,4 @@
 @mixin submit_score_wrapper_props {
-  align-items: center;
   align-content: center;
   display: flex;
   flex-direction: column;
@@ -7,12 +6,12 @@
   justify-content: space-evenly;
 }
 
-@mixin submit_score_pill_props {
+// @mixin submit_score_pill_props {
 
-}
+// }
 
 @mixin submit_score_pill_mobile_props {
-  @include submit_score_pill_props;
+  // @include submit_score_pill_props;
   align-items: center;
   align-content: center;
   display: flex;
@@ -22,9 +21,9 @@
   margin: 0 auto 0 auto;
 }
 
-@mixin submit_score_pill_desktop_props {
+// @mixin submit_score_pill_desktop_props {
 
-}
+// }
 
 @mixin submit_score_pill_mobile_landscape_props {
   @include submit_score_pill_mobile_props;

@@ -1,7 +1,6 @@
 @mixin game_wrapper_props {
   flex-basis: auto;
   flex-grow: 1;
-  width: 100%;
 }
 
 @mixin game_pill_props {
@@ -45,6 +44,7 @@
 
 @mixin game_pill_mobile_portrait_props {
   @include game_pill_mobile_props;
+  margin-top: calcHeight(40, 125, 568, 823);
   transform: matrix3d(
     1,0,0,0.0,
     0,1,0,-0.0002,
