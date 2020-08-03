@@ -5,12 +5,8 @@ import { submitScoreForm } from '../../../SubmitScoreFunctions/classSwitch'
 
 import LoadingSubmitScore from '../../../../UI/Loading/LoadingSubmitScore/LoadingSubmitScore'
 
-import './SubmitScoreDesktopForm.css'
-import './SubmitScoreDesktopFormDismount.css'
-import './SubmitScoreDesktopFormOnmount.css'
-
-import './SubmitScoreMobileFormLandscape.css'
-import './SubmitScoreMobileFormPortrait.css'
+import './SubmitScoreForm.scss'
+import './SubmitScoreFormAnimation.scss'
 
 const SubmitScoreForm = (props) => {
   return(

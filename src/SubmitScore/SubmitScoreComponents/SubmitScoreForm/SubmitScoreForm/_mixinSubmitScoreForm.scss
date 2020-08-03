@@ -1,0 +1,116 @@
+
+@mixin submit_score_form_container_props {
+  align-content: center;
+  align-items: center;
+  background: $darkGrey;
+  border-bottom: $grey_normal_border;
+  border-left: $grey_normal_border;
+  border-right: $grey_normal_border;
+  border-radius: 0px 0px 30px 30px;
+  box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px;
+  text-align: center;
+
+  h2 {
+    color: $white;
+    font-family: "Staatliches";
+    font-weight: 300;
+    margin: 0px auto;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding: 0px;
+    text-align: center;
+  }
+}
+
+@mixin submit_score_form_props {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@mixin submit_score_text_box_props {
+  animation: text_shadow_blink_yellow 2s ease-in-out infinite;
+  background-color: $black;
+  border: $grey_slim_border;
+  border-radius: 5px 0px 0px 5px;
+  box-shadow: $small_black_boxShadow, $tiny_black_inset_boxShadow, $small_white_inset_boxShadow;
+  color: $yellow;
+  font-family: 'Conv_digital-7.mono';
+  font-weight: 300;
+  padding: 5px;
+  text-align: center;
+
+  &:focus {
+    @include remove_button_outline;
+  }
+
+  &::placeholder {
+    animation: text_shadow_blink_yellow 2s ease-in-out infinite;
+    color: $yellow;
+    font-family: 'Conv_digital-7.mono';
+    font-weight: 300;
+  }
+}
+
+@mixin submit_score_button_props {
+  -webkit-appearance: none;
+  background: $black_gradient;
+  border: $white_slim_border;
+  border-radius: 0px 30px 30px 0px;
+  box-shadow: $small_black_boxShadow;
+  box-sizing: border-box;
+  color: $white;
+  cursor: pointer;
+  font-family: "Audiowide";
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+
+  &:focus {
+    @include remove_button_outline;
+  }
+
+  &:active {
+    animation: scale_out .1s ease-in-out 1;
+    background-image: $yellow_gradient;
+    border: $black_slim_border;
+    color: $black;
+    transition-property: color;
+    transition-duration: .1s, .1s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+@mixin submit_score_form_desktop_container_props {
+  @include submit_score_form_container_props;
+  padding: 10px 10px 20px 10px;
+  width: calcWidth(250, 500, 320, 1920);
+
+  h2 {
+    font-size: calcSize(15, 30, 320, 1920);
+  }
+}
+
+@mixin submit_score_form_mobile_landscape_container_props {
+  @include submit_score_form_container_props;
+  padding: 5px 0px 10px 0px;
+  width: 100%;
+
+  h2 {
+    font-size: calc(15, 30, 320, 1920);
+  }
+}
+
+@mixin submit_score_form_mobile_portrait_container_props {
+  @include submit_score_form_container_props;
+  padding: 5px 0px 10px 0px;
+  width: 95vw;
+
+  h2 {
+    font-size: calcSize(15, 30, 320, 1920);
+  }
+}

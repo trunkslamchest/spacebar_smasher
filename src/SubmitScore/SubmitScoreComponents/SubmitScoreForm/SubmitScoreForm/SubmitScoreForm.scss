@@ -1,0 +1,108 @@
+@import '../../../../UI/SCSS/_globalProps';
+@import '../../../../UI/SCSS/_globalMixins';
+@import '../../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinSubmitScoreForm.scss';
+
+.submit_score_desktop_form_container {
+  @include submit_score_form_desktop_container_props;
+  animation: onmount_submit_score_desktop_form .5s ease-in-out 1;
+}
+
+.dismount_submit_score_desktop_form_container {
+  @include submit_score_form_desktop_container_props;
+  animation: dismount_submit_score_desktop_form_container .5s ease-in-out 1;
+}
+
+.submit_score_desktop_form {
+  @include submit_score_form_props;
+  width: 75%;
+}
+
+.submit_score_desktop_text_box {
+  @include submit_score_text_box_props;
+  font-size: calcSize(15, 30, 320, 1920);
+
+  &::placeholder {
+    font-size: calcSize(15, 30, 320, 1920);
+  }
+}
+
+.submit_score_desktop_button_container {
+  max-width: 25%;
+}
+
+.submit_score_desktop_button {
+  @include submit_score_button_props;
+  font-size: calcSize(10, 20, 320, 1920);
+  padding: 0px 25px;
+
+  &:hover {
+    animation: blinker_hover .1s ease-in-out 1;
+    background: $yellow_gradient;
+    border: $black_slim_border;
+    box-shadow: $large_black_boxShadow;
+    color: $black;
+    transition-property: color;
+    transition-duration: .1s, .1s;
+    transition-timing-function: ease-in-out;
+  }
+}
+
+.submit_score_mobile_form_container_landscape {
+  @include submit_score_form_mobile_landscape_container_props;
+}
+
+.submit_score_mobile_form_landscape {
+  @include submit_score_form_props;
+  width: 75%;
+}
+
+.submit_score_mobile_text_box_landscape {
+  @include submit_score_text_box_props;
+  font-size: calcSize(15, 30, 320, 1920);
+  width: 75%;
+
+  &::placeholder {
+    font-size: calcSize(15, 30, 320, 1920);
+  }
+}
+
+.submit_score_mobile_button_container_landscape {
+  max-width: 25%;
+}
+
+.submit_score_mobile_button_landscape {
+  @include submit_score_button_props;
+  font-size: calcSize(15, 25, 320, 1920);
+  padding: 0px 25px;
+}
+
+.submit_score_mobile_form_container_portrait {
+  @include submit_score_form_mobile_portrait_container_props;
+}
+
+.submit_score_mobile_form_portrait {
+  @include submit_score_form_props;
+  width: 100%;
+}
+
+.submit_score_mobile_text_box_portrait {
+  @include submit_score_text_box_props;
+  font-size: calcSize(15, 30, 320, 1920);
+  width: 50%;
+
+  &::placeholder {
+    font-size: calcSize(15, 30, 320, 1920);
+  }
+}
+
+.submit_score_mobile_button_container_portrait {
+  max-width: 25%;
+}
+
+.submit_score_mobile_button_portrait {
+  @include submit_score_button_props;
+  font-size: calcSize(10, 30, 320, 1920);
+  padding: 5px 10px;
+}
