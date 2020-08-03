@@ -9,7 +9,7 @@
 
 @mixin submit_score_desktop_buttons_container_props {
   @include submit_score_buttons_container_props;
-  margin-top: calc(10px + (50 - 10) * ((100vw - 500px) / (1920 - 500)));
+  margin-top: calcSize(10, 50, 500, 1920);
   padding: 10px;
 }
 
@@ -26,14 +26,14 @@
 }
 
 @mixin submit_score_button_props {
-  background-image: linear-gradient( rgba(50, 50, 50, 1) 10%, rgba(0, 0, 0, 1) 100%);
-  border: 2px solid white;
-  box-shadow: 0 0 5px 0 rgba(255, 255, 0, 0.75), 0 0 5px 0 rgba(255, 255, 0, 0.75);
-  color: white !important;
+  background: $black_gradient;
+  border: $white_normal_border;
+  box-shadow: $medium_yellow_boxShadow;
+  color: $white;
   font-family: 'Audiowide';
   font-weight: 300;
   text-align: center;
-  text-shadow: 1px 1px 2px #000;
+  text-shadow: $slim_black_textShadow;
 
   &:focus {
     @include remove_button_outline;
@@ -41,10 +41,10 @@
 
   &:hover {
     animation: blinker_hover .1s ease-in-out 1;
-    background-image: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144, 57, 1) );
-    border: 2px solid black;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.8), 0 0 15px 0 rgba(0, 0, 0, 0.8);
-    color: rgba(0, 0, 0, 1) !important;
+    background: $yellow_gradient;
+    border: $black_normal_border;
+    box-shadow: $large_black_boxShadow;
+    color: $black;
     cursor: pointer;
     transform: matrix3d(
       1,0,0,0,
@@ -56,9 +56,9 @@
 
   &:active {
     animation: scale_out .1s ease-in-out 1;
-    background: linear-gradient(rgba(255, 255, 0, 1), rgba(212, 144, 57, 1) );
-    border: 2px solid black;
-    color: rgba(0, 0, 0, 1) !important;
+    background: $yellow_gradient;
+    border: $black_normal_border;
+    color: $black;
     cursor: pointer;
     transition-property: color;
     transition-duration: .1s, .1s;
@@ -68,21 +68,22 @@
 
 @mixin submit_score_desktop_button_props {
   @include submit_score_button_props;
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calcSize(15, 30, 320, 1920);
   padding: 10px;
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+  width: calcWidth(150, 300, 320, 1920);
 }
 
 @mixin submit_score_mobile_landscape_button_props {
   @include submit_score_button_props;
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calcSize(15, 30, 320, 1920);
   padding: 10px;
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+  width: calcWidth(150, 300, 320, 1920);
+
 }
 
 @mixin submit_score_mobile_portrait_button_props {
   @include submit_score_button_props;
-  font-size: calc(15px + (30 - 15) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calcSize(15, 30, 320, 1920);
   padding: 10px;
-  width: calc(150px + (300 - 150) * ((100vw - 320px) / (1920 - 320)));
+  width: calcWidth(150, 300, 320, 1920);
 }

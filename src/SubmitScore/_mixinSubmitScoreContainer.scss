@@ -34,7 +34,7 @@
     0,0,1,0,
     0,0,0,1
   );
-  width: calc(525px + (750 - 525) * ((100vw - 568px) / (823 - 568)));
+  width: calcWidth(525, 750, 568, 823);
 }
 
 @mixin submit_score_pill_mobile_portrait_props {
@@ -45,7 +45,7 @@
     0,0,1,0,
     0,0,0,1
   );
-  width: calc(275px + (375 - 275) * ((100vw - 320px) / (411 - 320)));
+  width: calcWidth(275, 375, 320, 411);
 }
 
 @mixin submit_score_pill_mobile_row_props {
