@@ -3,12 +3,8 @@ import { connect } from 'react-redux'
 
 import { submitScoreCounter } from '../../SubmitScoreFunctions/classSwitch'
 
-import './SubmitScoreDesktopCounter.css'
-import './SubmitScoreDesktopCounterOnmount.css'
-import './SubmitScoreDesktopCounterDismount.css'
-
-import './SubmitScoreMobileCounterLandscape.css'
-import './SubmitScoreMobileCounterPortrait.css'
+import './SubmitScoreCounter.scss'
+import './SubmitScoreCounterAnimation.scss'
 
 const SubmitScoreCounter = (props) => {
   return(
