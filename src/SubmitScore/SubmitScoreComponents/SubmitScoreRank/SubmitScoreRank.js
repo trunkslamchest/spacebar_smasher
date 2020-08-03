@@ -3,12 +3,8 @@ import { connect } from 'react-redux'
 
 import { submitScoreRank } from '../../SubmitScoreFunctions/classSwitch'
 
-import './SubmitScoreDesktopRank.css'
-import './SubmitScoreDesktopRankDismount.css'
-import './SubmitScoreDesktopRankOnmount.css'
-
-import './SubmitScoreMobileRankLandscape.css'
-import './SubmitScoreMobileRankPortrait.css'
+import './SubmitScoreRank.scss'
+import './SubmitScoreRankAnimation.scss'
 
 const SubmitScoreRank = (props) => {
   return(

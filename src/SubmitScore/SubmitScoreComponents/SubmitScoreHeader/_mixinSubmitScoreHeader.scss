@@ -6,7 +6,6 @@
   border-radius: 30px 30px 0px 0px;
   box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
   margin: 0px auto;
-  padding: 5px;
   text-align: center;
   width: 100%;
 
@@ -30,6 +29,7 @@
 
 @mixin submit_score_header_desktop_props {
   @include submit_score_header_props;
+  padding: 10px;
 
   h1 {
     font-size: calcSize(42.5, 85, 320, 1920);
@@ -40,6 +40,7 @@
 
 @mixin submit_score_header_mobile_landscape_props {
   @include submit_score_header_props;
+  padding: 5px;
 
   h1 {
     font-size: calcSize(30, 60, 320, 823);
@@ -50,6 +51,7 @@
 
 @mixin submit_score_header_mobile_portrait_props {
   @include submit_score_header_props;
+  padding: 5px;
 
   h1 {
     font-size: calcHeight(30, 60, 411, 823);

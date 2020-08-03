@@ -1,0 +1,24 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinSubmitScoreRank';
+
+.submit_score_desktop_rank {
+  @include submit_score_rank_desktop_props;
+  animation: onmount_submit_score_desktop_rank .5s ease-in-out 1;
+}
+
+.dismount_submit_score_desktop_rank {
+  @include submit_score_rank_desktop_props;
+  animation: dismount_submit_score_desktop_rank .5s ease-in-out 1;
+}
+
+.submit_score_mobile_rank_landscape {
+  @include submit_score_rank_mobile_landscape_props;
+}
+
+.submit_score_mobile_rank_portrait {
+  @include submit_score_rank_mobile_portrait_props;
+}
+

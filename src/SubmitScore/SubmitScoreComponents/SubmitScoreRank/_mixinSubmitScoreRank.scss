@@ -1,0 +1,77 @@
+@mixin submit_score_rank_props {
+  background: $darkGrey;
+  border-right: $grey_normal_border;
+  box-shadow: $large_black_reversed_boxShadow, $small_black_inset_boxShadow;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-family: "Staatliches";
+    font-weight: 300;
+    margin: 0px auto;
+    text-align: center;
+  }
+
+  h2 {
+    animation: text_shadow_blink_yellow 1.75s ease-in-out infinite;
+    background-color: $black;
+    border: $grey_slim_border;
+    border-radius: 5px;
+    box-shadow: $small_black_boxShadow, $tiny_black_inset_boxShadow, $mid_white_inset_boxShadow;
+    color: $yellow;
+    font-family: 'Conv_digital-7.mono';
+    font-weight: 300;
+    margin: 0px auto;
+    text-align: center;
+    text-shadow: $small_yellow_textShadow;
+  }
+}
+
+@mixin submit_score_rank_desktop_props {
+  @include submit_score_rank_props;
+  border-left: $grey_normal_border;
+  margin: 0px auto;
+  padding: 10px;
+  width: 100%;
+
+  h1 {
+    font-size: calcSize(15, 30, 320, 1920);
+  }
+
+  h2 {
+    font-size: calcSize(15, 30, 320, 1920);
+    width: calcWidth(200, 400, 320, 1920);
+  }
+}
+
+@mixin submit_score_rank_mobile_landscape_props {
+  @include submit_score_rank_props;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  h1 {
+    font-size: calcSize(15, 20, 568, 823);
+  }
+
+  h2 {
+    font-size: calcSize(20, 30, 568, 823);
+    min-width: calcWidth(250, 350, 568, 823);
+  }
+}
+
+@mixin submit_score_rank_mobile_portrait_props {
+  @include submit_score_rank_props;
+  border-left: $grey_normal_border;
+
+  h1 {
+    font-size: calcSize(20, 30, 500, 1920);
+  }
+
+  h2 {
+    font-size: calcSize(23, 33, 500, 1920);
+    max-width: 75%;
+    padding: 0px 10px;
+  }
+}
