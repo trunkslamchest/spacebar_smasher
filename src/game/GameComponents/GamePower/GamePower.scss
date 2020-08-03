@@ -2,7 +2,7 @@
 @import '../../../UI/SCSS/_globalMixins';
 @import '../../../UI/SCSS/_globalFunctions';
 
-@import './_mixinGamepower';
+@import './_mixinGamePower';
 
 .game_desktop_power {
   @include game_power_desktop_props;

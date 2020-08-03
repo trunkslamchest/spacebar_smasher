@@ -1,0 +1,35 @@
+@import '../../../UI/SCSS/_globalProps';
+@import '../../../UI/SCSS/_globalMixins';
+@import '../../../UI/SCSS/_globalFunctions';
+
+@import './_mixinSubmitScorePower';
+
+.submit_score_desktop_power {
+  @include submit_score_power_desktop_props;
+  animation: onmount_submit_score_desktop_power .5s ease-in-out 1;
+}
+
+.dismount_submit_score_desktop_power {
+  @include submit_score_power_desktop_props;
+  animation: dismount_submit_score_desktop_power .5s ease-in-out 1;
+}
+
+.submit_score_desktop_power_bar {
+  @include submit_score_power_bar_props;
+}
+
+.submit_score_mobile_power_landscape {
+  @include submit_score_power_mobile_landscape_props;
+}
+
+.submit_score_mobile_power_bar_landscape {
+  @include submit_score_power_bar_props;
+}
+
+.submit_score_mobile_power_portrait {
+  @include submit_score_power_mobile_portrait_props;
+}
+
+.submit_score_mobile_power_bar_portrait {
+  @include submit_score_power_bar_props;
+}

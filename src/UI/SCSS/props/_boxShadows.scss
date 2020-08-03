@@ -1,7 +1,7 @@
-$default_boxShadow: 0 0 10px 0 rgba(0, 0, 0, 0.75), 0 0 10px 0 rgba(0, 0, 0, 0.75);
-$default_inset_boxShadow: 0 0 1px 1px rgba(0, 0, 0, 0.75) inset;
+$default_boxShadow: 0 0 10px 0 rgba(0, 0, 0, 1), 0 0 10px 0 rgba(0, 0, 0, 1);
+$default_inset_boxShadow: 0 0 1px 1px rgba(0, 0, 0, 1) inset;
 
-$scoreboard_boxShadow: 0 15px 10px rgba(0, 0, 0, 0.75);
+$scoreboard_boxShadow: 0 15px 10px rgba(0, 0, 0, 1);
 
 $tiny_inset_boxShadow: 0px 0px 1px 2px rgba(0, 0, 0, 1) inset;
 
@@ -11,55 +11,56 @@ $small_inset_boxShadow_reverse: 0px 0px 2.5px 1px rgba(0, 0, 0, 1) inset;
 $small_white_inset_boxShadow: 0px 0px 5px 2.5px rgba(100, 100, 100, 0.75) inset;
 $medium_white_boxShadow: 0 0 5px 0 rgba(255, 255, 255, 0.75);
 $medium_white_inset_boxShadow: 0px 0px 15px 5px rgba(100, 100, 100, 0.75) inset;
+$normal_white_inset_boxShadow: 0px 0px 5px 5px rgba(100, 100, 100, 0.5) inset;
 $large_white_inset_boxShadow: 0px 0px 15px 10px rgba(100, 100, 100, 0.75) inset;
 
-$small_red_boxShadow: 0px 0px 2px 2px rgba(255, 0, 0, 0.75);
-$small_red_inset_boxShadow: 0px 0px 2px 2px rgba(255, 0, 0, 0.75) inset;
+$small_red_boxShadow: 0px 0px 2px 2px rgba(255, 0, 0, 1);
+$small_red_inset_boxShadow: 0px 0px 2px 2px rgba(255, 0, 0, 1) inset;
 
-$small_orange_boxShadow: 0px 0px 2px 2px rgba(255, 165, 0, 0.75);
-$small_orange_inset_boxShadow: 0px 0px 2px 2px rgba(255, 165, 0, 0.75) inset;
+$small_orange_boxShadow: 0px 0px 2px 2px rgba(255, 165, 0, 1);
+$small_orange_inset_boxShadow: 0px 0px 2px 2px rgba(255, 165, 0, 1) inset;
 
-$small_yellow_boxShadow: 0px 0px 2px 2px rgba(255, 255, 0, 0.75);
-$small_yellow_inset_boxShadow: 0px 0px 2px 2px rgba(255, 255, 0, 0.75) inset;
-$medium_yellow_boxShadow: 0 0 5px 0 rgba(255, 255, 0, 0.75);
+$small_yellow_boxShadow: 0px 0px 2px 2px rgba(255, 255, 0, 1);
+$small_yellow_inset_boxShadow: 0px 0px 2px 2px rgba(255, 255, 0, 1) inset;
+$medium_yellow_boxShadow: 0 0 5px 0 rgba(255, 255, 0, 1);
 
-$small_green_boxShadow: 0px 0px 2px 2px rgba(0, 128, 0, 0.75);
-$small_green_inset_boxShadow:  0px 0px 2px 2px rgba(0, 128, 0, 0.75) inset;
+$small_green_boxShadow: 0px 0px 2px 2px rgba(0, 128, 0, 1);
+$small_green_inset_boxShadow:  0px 0px 2px 2px rgba(0, 128, 0, 1) inset;
 
 $slim_black_boxShadow: 0 0px 1px 1px rgba(0, 0, 0, 1);
 $slim_black_inset_boxShadow: 0 0px 1px 1px rgba(0, 0, 0, 1) inset;
 
 $tiny_black_inset_boxShadow: 0px 0px 2.5px 1px rgba(0, 0, 0, 1) inset;
 
-$thin_black_boxShadow: 0px 0px 2.5px 2.5px rgba(0, 0, 0, 0.75);
-$thin_black_inset_boxShadow: 0px 0px 2.5px 2.5px rgba(0, 0, 0, 0.75) inset;
+$thin_black_boxShadow: 0px 0px 2.5px 2.5px rgba(0, 0, 0, 1);
+$thin_black_inset_boxShadow: 0px 0px 2.5px 2.5px rgba(0, 0, 0, 1) inset;
 
 $small_black_boxShadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 1);
-$small_black_inset_boxShadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 0.75) inset;
+$small_black_inset_boxShadow: 0px 0px 5px 2.5px rgba(0, 0, 0, 1) inset;
 
-$medium_black_boxShadow: 0 0 5px 0 rgba(0, 0, 0, 0.75);
+$medium_black_boxShadow: 0 0 5px 0 rgba(0, 0, 0, 1);
 $medium_black_inset_boxShadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5) inset;
 $normal_black_boxShadow: 0px 0px 5px 5px rgba(0, 0, 0, 1);
 $normal_black_inset_boxShadow: 0px 0px 5px 5px rgba(0, 0, 0, 1) inset;
 
-$big_black_inset_boxShadow: 0 0 10px 10px rgba(0, 0, 0, 0.75) inset;
+$big_black_inset_boxShadow: 0 0 10px 10px rgba(0, 0, 0, 1) inset;
 
 $large_black_boxShadow: 0 10px 15px rgba(0, 0, 0, 1);
-$large_black_reversed_boxShadow: 0 15px 10px rgba(0, 0, 0, 0.75);
+$large_black_reversed_boxShadow: 0 15px 10px rgba(0, 0, 0, 1);
 
 
-// $slim_black_boxShadow: calcBlackBoxShadow(0, 0, 1, 1, 0.75);
-// $slim_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 1, 1, 0.75, inset);
+// $slim_black_boxShadow: calcBlackBoxShadow(0, 0, 1, 1, 1);
+// $slim_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 1, 1, 1, inset);
 
-// $tiny_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 2.5, 1, 0.75, inset);
+// $tiny_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 2.5, 1, 1, inset);
 
-// $thin_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 2.5, 2.5, 0.75, inset);
+// $thin_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 2.5, 2.5, 1, inset);
 
-// $small_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 5, 2.5, 0.75, inset);
+// $small_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 5, 2.5, 1, inset);
 
 
-// $medium_black_boxShadow: calcBlackBoxShadow(0, 0, 5, 0, 0.75);
+// $medium_black_boxShadow: calcBlackBoxShadow(0, 0, 5, 0, 1);
 // $medium_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 10, 5, 0.5, inset);
-// $normal_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 5, 5, 0.75, inset);
-// $large_black_boxShadow: calcBlackBoxShadow(0, 0, 10, 15, 0.75);
-// $large_black_reversed_boxShadow: calcBlackBoxShadow(0, 0, 10, 15, 0.75);
+// $normal_black_inset_boxShadow: calcBlackBoxShadow(0, 0, 5, 5, 1, inset);
+// $large_black_boxShadow: calcBlackBoxShadow(0, 0, 10, 15, 1);
+// $large_black_reversed_boxShadow: calcBlackBoxShadow(0, 0, 10, 15, 1);

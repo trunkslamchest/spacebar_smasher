@@ -3,13 +3,8 @@ import { connect } from 'react-redux'
 
 import { submitScorePower } from '../../SubmitScoreFunctions/classSwitch'
 
-import './SubmitScoreDesktopPower.css'
-import './SubmitScoreDesktopPowerDismount.css'
-import './SubmitScoreDesktopPowerOnmount.css'
-
-import './SubmitScoreMobilePowerLandscape.css'
-import './SubmitScoreMobilePowerPortrait.css'
-
+import './SubmitScorePower.scss'
+import './SubmitScorePowerAnimation.scss'
 
 const SubmitScorePower = (props) => {
   return(

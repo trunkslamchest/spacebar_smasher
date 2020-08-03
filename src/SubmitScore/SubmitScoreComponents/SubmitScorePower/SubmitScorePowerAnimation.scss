@@ -1,0 +1,13 @@
+@keyframes onmount_submit_score_desktop_power
+  {
+    0% {
+      transform: translateX(-2000px);
+    }
+  }
+
+@keyframes dismount_submit_score_desktop_power
+  {
+    75% {
+      transform: translateX(2000px);
+    }
+  }
